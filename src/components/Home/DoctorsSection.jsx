@@ -229,11 +229,11 @@ const DoctorsSection = ({ setShowPopup }) => {
           </div>
         </div>
         <div className="text-left md:text-right w-full md:min-h-96 h-full p-6 pb-16 md:p-6 lg:pr-10 xl:pr-12 bg-gradient-to-t md:bg-gradient-to-l from-[#27407f] to-[#5279be]">
-          <h2 className="text-white z-40 text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-white relative z-40 text-[2rem] leading-10 font-bold mb-6">
             {t("doctors.title1")}
           </h2>
           <p
-            className="md:text-lg z-40 text-white"
+            className="md:text-lg relative z-40 text-white"
             dangerouslySetInnerHTML={{ __html: t("doctors.subtitle") }}
           ></p>
         </div>

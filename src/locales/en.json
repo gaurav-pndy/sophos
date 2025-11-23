@@ -125,8 +125,7 @@
   },
  "hero": {
   "slide1": {
-    "tag": "Expert oncological care",
-    "title": "Expert-level oncologists",
+    "title": "\"Expert oncological care\". <br/>Expert-level oncologists",
     "subtitle1": "Personalized approach for every patient",
     "subtitle2": "Center for modern anti-tumor therapy",
     "button": "Join HDMC+"
@@ -142,8 +141,7 @@
     "button2": "About the specialist"
   },
   "slide3": {
-    "tag": "Center for modern anti-tumor therapy",
-    "title": "Expert-level oncologists",
+    "title": "Center for modern anti-tumor therapy <br/> Expert-level oncologists",
     "subtitle1": "Your comfort and safety.",
     "subtitle2": "International treatment standards.",
     "subtitle3": "Personalized pathways without unnecessary procedures.",
@@ -153,8 +151,7 @@
     "title": "Multidisciplinary outpatient clinic"
   },
   "slide5": {
-    "tag": "Comprehensive check-up programs",
-    "title": "Take care of yourself in advance"
+    "title": "Comprehensive check-up programs <br/> Take care of yourself in advance"
   }
 },
   "aboutClinic": {
@@ -175,14 +172,14 @@
 "feature5": {
   "desc": "A personal coordinator at every step."
 },
-"descText": "The uniqueness of the clinic lies in combining medical knowledge with wisdom and an individualized approach to every patient. We treat not just the disease, but the person — considering their character, physiological characteristics, and needs. Every specialist at the clinic, in addition to their primary specialization, has experience working with oncology patients and maintains oncological vigilance. Thus, diagnostics and treatment in the clinic are carried out at the highest level, taking into account knowledge of prevention, early detection, treatment, management, and additional examinations for all patients, including oncology patients. Attentive care, refined through years of experience, in diagnosing and treating all conditions is our priority! We work with all patients professionally, without unnecessary anxiety, with confidence at every step.",
+"descText": "A multidisciplinary clinic in Moscow with modern diagnostics and expert specialists. The uniqueness of the clinic lies in combining medical knowledge with wisdom and an individualized approach to every patient. We treat not just the disease, but the person — considering their character, physiological characteristics, and needs. Every specialist at the clinic, in addition to their primary specialization, has experience working with oncology patients and maintains oncological vigilance. Thus, diagnostics and treatment in the clinic are carried out at the highest level, taking into account knowledge of prevention, early detection, treatment, management, and additional examinations for all patients, including oncology patients. Attentive care, refined through years of experience, in diagnosing and treating all conditions is our priority! We work with all patients professionally, without unnecessary anxiety, with confidence at every step.",
 "footnote": "Make an appointment for a consultation — start with a clear plan of action.",
     "moreBtn": "Learn More"
   },
   "doctors": {
     "title1": "A modern multidisciplinary outpatient clinic. A wide diagnostic and treatment base",
     "title": "Our Doctors",
-    "subtitle": "Our approach is based on evidence-based medicine and interdisciplinary collaboration. Each clinical step is evaluated taking into account the patient's medical history: we choose safe examination methods, plan treatment without increasing risks, and coordinate tactics in medical consultations. Our priority is safety, consistency, precision of actions and respect for the patient.<br/>The long-term experience of specialists working with patients, including after oncological diseases, allows them to correctly assess the condition after surgery, chemotherapy and radiation therapy, and take into account the specifics of drug interactions and limitations in diagnosis. We are here to carefully understand the situation and offer an informed, safe solution.",
+    "subtitle": "Our approach is based on evidence-based medicine and interdisciplinary collaboration. Each clinical step is evaluated taking into account the patient's medical history: we choose safe examination methods, plan treatment without increasing risks, and coordinate tactics in medical consultations. Our priority is safety, consistency, precision of actions and respect for the patient. The long-term experience of specialists working with patients, including after oncological diseases, allows them to correctly assess the condition after surgery, chemotherapy and radiation therapy, and take into account the specifics of drug interactions and limitations in diagnosis. We are here to carefully understand the situation and offer an informed, safe solution.",
     "filter": {
       "consultType": "Type of Consultation",
       "enterName": "Enter specialization or doctor's name",
@@ -222,6 +219,7 @@
     "international": "INTERNATIONAL",
     "russian": "RUSSIAN",
     "readMore": "Read More",
+    "experience": "Experience",
     "doctorsList": {
       "doctor1": {
         "name": "Subramanian Somasundaram (Dr. Soma)",
@@ -1227,6 +1225,7 @@
       "address": "Ali-Gadzhi Akushinskogo Avenue Building 7, Makhachkala, 2nd floor",
       "schedule": "From 8:00 to 23:00, without days off"
     },
+    "parkingText": "<b>Parking:</b> paid indoor mall parking; free public parking.<br/><b>How to get there by public transport:</b> 10 min. walk from the metro station. Davydkovo or <br/> M. Aminevskaya",
     "button": "Make an appointment"
   },
   "actionBtns": {
@@ -2474,6 +2473,20 @@
   },
 
   "careersPage": {
+  "filters": "Filters",
+  "allDepartments": "All Departments",
+  "medical": "Medical",
+  "nursing": "Nursing",
+  "administrative": "Administrative",
+  "technical": "Technical",
+  "support": "Support",
+  "allTypes": "All Types",
+  "fullTime": "Full Time",
+  "partTime": "Part Time",
+  "contract": "Contract",
+  "internship": "Internship",
+  "remote": "Remote",
+  "clearFilters": "Clear Filters",
     "title": "Join Our Team",
     "subtitle": "Discover exciting career opportunities and grow with us",
     "openPositions": "Open Positions",
@@ -2571,7 +2584,7 @@
 },
 
 "care": {
-  "title": "Oncological Care",
+  "title": "Expert Oncological Care",
   "tab1": "Expert consultation",
   "tab2": "Examination / additional diagnostics",
   "tab3": "Individual treatment plan",

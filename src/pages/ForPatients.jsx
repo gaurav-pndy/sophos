@@ -15,6 +15,7 @@ import NewsTab from "../components/ForPatients/NewsTab";
 import OffersTab from "../components/ForPatients/OffersTab";
 import InsuranceTab from "../components/ForPatients/InsuranceTab";
 import DocumentsTab from "../components/ForPatients/DocumentsTab";
+import { IoDocumentText } from "react-icons/io5";
 
 const PATIENT_TABS = [
   {
@@ -43,8 +44,8 @@ const PATIENT_TABS = [
   },
   {
     key: "blog",
-    labelKey: "header.blog",
-    icon: <FaBlog />,
+    labelKey: "header.patient5",
+    icon: <IoDocumentText />,
     component: NewsTab,
   },
   {

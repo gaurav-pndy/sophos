@@ -22,6 +22,7 @@ import CareersPage from "./pages/CareersPage";
 import BlogDetails from "./pages/BlogDetails";
 import CookiPolicy from "./pages/CookiPolicy";
 import OncologicalCare from "./pages/OncologicalCare";
+import Blogs from "./pages/Blogs";
 
 function App() {
   const [city, setCity] = useState("Moscow");
@@ -106,6 +107,10 @@ function App() {
           element: <PriPolicy />,
         },
 
+        {
+          path: "/blogs",
+          element: <Blogs />,
+        },
         {
           path: "/blog/:blogId",
           element: <BlogDetails />,

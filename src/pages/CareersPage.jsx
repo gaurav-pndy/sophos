@@ -471,7 +471,7 @@ const VacancyCard = ({ vacancy, isOpen, onApply, getLocalizedText, t }) => {
                   </span>
                   {vacancy.salaryRange && (
                     <span className="flex items-center gap-1">
-                      <FaDollarSign className="text-gray-400" />
+                      {/* <FaDollarSign className="text-gray-400" /> */}
                       {formatSalary(vacancy.salaryRange)}
                     </span>
                   )}

@@ -65,12 +65,12 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left - Text & Features */}
           <div>
-            <h2 className="text-brand1 text-4xl font-bold relative z-40 mb-2">
+            <h2 className="text-brand1 text-[2rem] font-bold relative z-40 mb-2">
               {t("aboutClinic.title")}
             </h2>
-            <p className="text-lg text-brand1/80 mb-4 relative z-40 max-w-3xl">
+            {/* <p className="text-lg text-brand1/80 mb-4 relative z-40 max-w-3xl">
               {t("aboutClinic.subtitle")}
-            </p>
+            </p> */}
 
             <div className="text-brand1/90 mb-4">
               Многопрофильная клиника экспертного уровня в Москве. Уникальность

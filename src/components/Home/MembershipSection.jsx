@@ -55,30 +55,13 @@ const MembershipSection = () => {
     <section className="w-full bg-[#fbfbfb] py-10">
       <div className="max-w-[87rem] text-center mx-auto px-4 ">
         <section className="relative rounded-xl  mx-auto  items-center overflow-hidden ">
-          {/* <WaveBackground
-            stroke="rgba(151, 186, 189,"
-            custStyle="md:w-1/2 h-1/2 right-0 bottom-0"
-          /> */}
-          {/* <div className="w-full   h-full z-30 -mb-[1px] md:-mb-0">
-            <div className="relative w-full  h-full">
-              {" "}
-              <img
-                src="https://www.shutterstock.com/shutterstock/photos/2554915839/display_1500/stock-photo-healthcare-professional-holds-a-health-card-symbolizing-modern-patient-identification-efficient-2554915839.jpg"
-                alt="Membership illustration"
-                className="max-w-2xl w-full md:min-h-80 max-h-46 md:max-h-96 h-full object-cover md:rounded-tr-2xl md:rounded-br-2xl"
-              />
-              <div
-                className={`absolute   inset-0 bg-gradient-to-t via-30%  md:bg-gradient-to-l from-[#708b9c] via-[#708b9c]/40 to-transparent  `}
-              ></div>
-            </div>
-          </div> */}
           <div className="text-center w-full  h-full   ">
             <div className="flex justify-center z-40">
               <span className="bg-brand3 px-4 py-2 text-white  rounded-full font-medium mb-4 flex items-center gap-2">
                 <LuCrown className="text-lg" /> {t("membership.badge")}
               </span>
             </div>
-            <h2 className="text-brand1 mx-auto z-40 text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-brand1 mx-auto z-40 text-[2rem] font-bold mb-6">
               {" "}
               {t("membership.title")}
             </h2>

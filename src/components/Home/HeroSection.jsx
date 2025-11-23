@@ -32,7 +32,7 @@ const slides = [
   },
 ];
 
-const HeroSection = () => {
+const HeroSection = ({ setShowPopup }) => {
   const { t } = useTranslation();
 
   return (
@@ -62,21 +62,21 @@ const HeroSection = () => {
                     <SlBadge className="text-2xl p-0 text-white " />
                   </div>
                   <div className="w-1 h-12 bg-white/40 rounded" />
-                  <span className="text-white/80 md:text-lg ml-2">
-                    {" "}
-                    {t("hero.slide1.tag")}
-                  </span>
                 </div>
-                <h1 className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-5xl xl:leading-12 mb-2">
-                  {t("hero.slide1.title")}
-                </h1>
+                <h1
+                  className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-2"
+                  dangerouslySetInnerHTML={{ __html: t("hero.slide1.title") }}
+                ></h1>
                 <ul className="text-gray-200 list-disc ml-4 mt-4 text-lg z-40 xl:text-xl mb-4">
                   <li>{t("hero.slide1.subtitle1")} </li>
                   <li>{t("hero.slide1.subtitle2")} </li>
                 </ul>
-                {/* <button className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300">
-                  {t("hero.slide1.button")}
-                </button> */}
+                <Link
+                  to="/oncological-care"
+                  className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                >
+                  {t("moreBtn")}
+                </Link>
               </div>
             </div>
             <div className="w-full lg:col-span-3 -mt-[2px] lg:-mt-0 lg:-ml-[1px] -z-10 flex items-center">
@@ -84,7 +84,7 @@ const HeroSection = () => {
                 <img
                   src="/hero1.avif"
                   alt="Hero illustration"
-                  className="w-full md:max-h-[28rem] lg:max-h-80 xl:max-h-[31rem] h-auto object-cover"
+                  className="w-full md:max-h-[28rem]  xl:h-[34rem] h-auto object-cover"
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#016885] via-[#016885]/40 to-transparent via-40%`}
@@ -110,7 +110,7 @@ const HeroSection = () => {
                   </div>
                   <div className="w-1 h-12 bg-white/40 rounded" />
                 </div>
-                <h1 className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-5xl xl:leading-12 mb-2">
+                <h1 className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-2">
                   {t("hero.slide2.title")}
                 </h1>
                 <ul className="text-gray-200 list-disc ml-4 mt-2 md:mt-4 text-sm z-40 xl:text-xl mb-4">
@@ -121,7 +121,10 @@ const HeroSection = () => {
                   <li>{t("hero.slide2.subtitle5")} </li>
                 </ul>
                 <div className="flex text-sm md:text-base gap-2 md:gap-4">
-                  <button className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-4 md:px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300">
+                  <button
+                    onClick={() => setShowPopup(true)}
+                    className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-4 md:px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                  >
                     {t("hero.slide2.button1")}
                   </button>
                   <Link
@@ -155,34 +158,37 @@ const HeroSection = () => {
               stroke="rgba(200, 200, 200,"
               custStyle="lg:w-[40%] h-[60%] left-0 top-0"
             />
-            <div className="flex lg:w-[48%] flex-col md:flex-row md:min-h-[17.5rem] lg:min-h-auto px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-0 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#52656c] to-[#cececc]">
+            <div className="flex lg:w-[48%]  flex-col md:flex-row md:min-h-[17.5rem] lg:min-h-auto px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-0 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#52656c] to-[#cececc]">
               <div className="flex-1 flex flex-col items-start">
                 <div className="mb-2 flex z-40 items-center">
                   <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">
                     <MdDiscount className="text-2xl text-white " />
                   </div>
                   <div className="w-1 h-12 bg-white/40 rounded" />
-                  <span className="text-white/80 md:text-lg ml-2">
-                    {" "}
-                    {t("hero.slide3.tag")}
-                  </span>
                 </div>
-                <h1 className="text-white font-bold z-40 text-3xl xl:text-5xl leading-12 mb-2">
-                  {t("hero.slide3.title")}
-                </h1>
+                <h1
+                  className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-2"
+                  dangerouslySetInnerHTML={{ __html: t("hero.slide3.title") }}
+                ></h1>
                 <ul className="text-gray-200 list-disc ml-4 mt-4 text-lg z-40 xl:text-xl mb-4">
                   <li>{t("hero.slide3.subtitle1")} </li>
                   <li>{t("hero.slide3.subtitle2")} </li>
                   <li>{t("hero.slide3.subtitle3")} </li>
                   <li>{t("hero.slide3.subtitle4")} </li>
                 </ul>
+                <Link
+                  to="/oncological-care"
+                  className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                >
+                  {t("moreBtn")}
+                </Link>
               </div>
             </div>
             <div className="w-full lg:w-[52%] h-full -mt-[2px] lg:-mt-0 lg:-ml-[1px] -z-10 flex items-center">
               <div className="relative w-full h-full">
                 <img
                   src="/hero3.avif"
-                  className="w-full h-full md:h-auto lg:min-h-96  object-cover xl:max-h-[31rem]"
+                  className="w-full h-full md:h-auto lg:min-h-120  object-cover xl:h-[34rem] 2xl:max-h-[31rem]"
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#cececc] via-[#cececc]/30 to-transparent via-20%`}
@@ -198,7 +204,7 @@ const HeroSection = () => {
           >
             <WaveBackground
               stroke="rgba(100, 100, 100,"
-              custStyle="md:w-[40%] h-[60%] left-0 top-0"
+              custStyle="lg:w-[40%] h-[60%] left-0 top-0"
             />
             <div className="flex flex-col lg:w-[48%] md:flex-row md:min-h-[17.5rem] lg:min-h-auto  px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#3a183e] to-[#888291]">
               <div className="flex-1 flex flex-col items-start">
@@ -208,9 +214,15 @@ const HeroSection = () => {
                   </div>
                   <div className="w-1 h-12 bg-white/40 rounded" />
                 </div>
-                <h1 className="text-white font-bold z-40 text-3xl lg:text-5xl leading-12 mb-2">
+                <h1 className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-4">
                   {t("hero.slide4.title")}
                 </h1>
+                <Link
+                  to="/"
+                  className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                >
+                  {t("moreBtn")}
+                </Link>
               </div>
             </div>
             <div className="w-full lg:w-[52%] h-full -mt-[2px] lg:-mt-0 lg:-ml-[1px]  -z-10 flex items-center">
@@ -233,7 +245,7 @@ const HeroSection = () => {
           >
             <WaveBackground
               stroke="rgba(100, 100, 100,"
-              custStyle="md:w-[40%] h-[60%] left-0 top-0"
+              custStyle="lg:w-[40%] h-[60%] left-0 top-0"
             />
             <div className="flex flex-col lg:w-[48%] md:flex-row md:min-h-[17.5rem] lg:min-h-auto  px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#164a3d] to-[#3e7963]">
               <div className="flex-1 flex flex-col items-start">
@@ -242,14 +254,17 @@ const HeroSection = () => {
                     <FaHandHoldingHeart className="text-2xl text-white " />
                   </div>
                   <div className="w-1 h-12 bg-white/40 rounded" />
-                  <span className="text-white/80 text-lg ml-2">
-                    {" "}
-                    {t("hero.slide5.tag")}
-                  </span>
                 </div>
-                <h1 className="text-white font-bold z-40 text-3xl lg:text-5xl leading-12 mb-2">
-                  {t("hero.slide5.title")}
-                </h1>
+                <h1
+                  className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-4"
+                  dangerouslySetInnerHTML={{ __html: t("hero.slide5.title") }}
+                ></h1>
+                <Link
+                  to="/oncological-care"
+                  className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                >
+                  {t("moreBtn")}
+                </Link>
               </div>
             </div>
             <div className="w-full lg:w-[52%] h-full -mt-[2px] lg:-mt-0 lg:-ml-[1px]  -z-10 flex items-center">

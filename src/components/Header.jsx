@@ -997,7 +997,7 @@ const Header = ({ city, setCity, setShowPopup }) => {
             {t("header.reviews")}{" "}
           </button>{" "}
           <Link
-            to="/for-patients#blog"
+            to="/blogs"
             className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
           >
             {" "}
@@ -1409,7 +1409,7 @@ const Header = ({ city, setCity, setShowPopup }) => {
                   {t("header.reviews")}
                 </button>{" "}
                 <Link
-                  to="/blog"
+                  to="/blogs"
                   className="  hover:underline whitespace-nowrap"
                 >
                   {" "}
