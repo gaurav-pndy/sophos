@@ -42,6 +42,7 @@ const DoctorDetails = ({ setShowPopup }) => {
 
         if (result.success) {
           setDoctor(result.data);
+          console.log(result.data);
         } else {
           throw new Error(result.error);
         }
@@ -139,6 +140,8 @@ const DoctorDetails = ({ setShowPopup }) => {
   };
 
   const formattedDoctor = doctor ? formatDoctorData(doctor) : null;
+
+  console.log(formattedDoctor);
 
   const TAB_LIST = [
     { key: "about", labelKey: "doctors.tabs.tab1" },

@@ -491,6 +491,12 @@ const Header = ({ city, setCity, setShowPopup }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   const handleScrollToPatientsSection = (sectionId) => {
     if (isOpen) setIsOpen(false);
     if (location.pathname === "/for-patients") {
@@ -736,7 +742,11 @@ const Header = ({ city, setCity, setShowPopup }) => {
         transition={{ delay: 0.2, duration: 0.4 }}
       >
         {/* Logo now here */}
-        <Link to="/" className="flex  items-center gap-2 mr-2">
+        <Link
+          to="/"
+          onClick={handleLogoClick}
+          className="flex  items-center gap-2 mr-2"
+        >
           <img src="/HD.png" alt="Logo" className="h-5 md:h-7 object-contain" />
         </Link>
 
