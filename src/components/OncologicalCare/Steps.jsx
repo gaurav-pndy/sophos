@@ -1,5 +1,16 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FaArrowRight } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaUserMd,
+  FaClinicMedical,
+  FaRegCalendarCheck,
+  FaHeartbeat,
+  FaClipboardList,
+  FaVials,
+  FaBriefcaseMedical,
+} from "react-icons/fa";
 
 const Steps = () => {
   const { t } = useTranslation();
@@ -50,8 +61,18 @@ const Steps = () => {
     },
   };
 
+  const icons = {
+    tab1: <FaClinicMedical className="text-2xl " />,
+    tab2: <FaUserMd className="text-2xl" />,
+    tab3: <FaRegCalendarCheck className="text-2xl" />,
+    tab4: <FaHeartbeat className="text-2xl" />,
+    tab5: <FaClipboardList className="text-2xl" />,
+    tab6: <FaVials className="text-2xl" />,
+    tab7: <FaBriefcaseMedical className="text-2xl" />,
+  };
+
   return (
-    <section className="grid max-w-7xl  mt-12 mx-auto md:grid-cols-2 md:gap-10">
+    <section className="grid max-w-7xl mt-12 mx-auto md:grid-cols-2 md:gap-10 bg-brand1/10 p-4 md:p-8 xl:p-12 rounded-2xl">
       {/* Left Column - Tabs */}
       <div className="flex flex-col gap-2">
         {Object.keys(stepsData).map((tabKey) => (
@@ -59,33 +80,48 @@ const Steps = () => {
             key={tabKey}
             onClick={() => setActiveTab(tabKey)}
             className={`
-                flex items-center gap-3 p-4 rounded-xl font-semibold text-left text-[1rem] cursor-pointer
-                shadow transition-all duration-300
-                hover:-translate-y-[2px] hover:shadow-lg
-                ${
-                  activeTab === tabKey
-                    ? "bg-brand1 text-white shadow-md"
-                    : "bg-white text-brand1"
-                }
-              `}
+      flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left text-[1rem] cursor-pointer
+      shadow transition-all duration-300
+      hover:-translate-y-[2px] hover:shadow-lg
+      ${
+        activeTab === tabKey
+          ? "bg-brand1 text-white shadow-md"
+          : "bg-white text-brand1"
+      }
+    `}
           >
-            <span className="text-2xl">{stepsData[tabKey].number}.</span>
-            {stepsData[tabKey].title}
+            <p className="flex items-center ">
+              {icons[tabKey] /* icon */}
+              <span className=" ml-3 mr-2">{stepsData[tabKey].number}.</span>
+              {stepsData[tabKey].title}
+            </p>
+            {activeTab === tabKey && <FaArrowRight />}
           </button>
         ))}
       </div>
 
-      {/* Right Column - Content */}
-      <div className="bg-white rounded-xl p-6 md:p-8 shadow flex flex-col ">
-        <h3 className="text-2xl md:text-3xl font-bold text-brand1 mb-8">
-          {stepsData[activeTab].number}. {stepsData[activeTab].title}
-        </h3>
-        <img
-          src={stepsData[activeTab].image}
-          alt={stepsData[activeTab].title}
-          className="w-full max-w-lg rounded-xl shadow border border-brand4 mb-4 object-cover"
-          style={{ maxHeight: "320px" }}
-        />
+      {/* Right Column - Content with slide-from-bottom animation */}
+      <div className="relative flex justify-end">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="bg-white rounded-2xl p-6 md:p-8 shadow flex flex-col max-w-lg"
+          >
+            <h3 className="text-2xl md:text-3xl font-bold text-brand1 mb-8">
+              {stepsData[activeTab].title}
+            </h3>
+            <img
+              src={stepsData[activeTab].image}
+              alt={stepsData[activeTab].title}
+              className="w-full max-w-lg rounded-xl shadow border border-brand4 mb-4 object-cover"
+              style={{ maxHeight: "320px" }}
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

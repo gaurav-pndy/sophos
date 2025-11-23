@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaTelegramPlane,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { TiLocationArrowOutline } from "react-icons/ti";
 
 const YandexMap = ({ center, zoom, placemarks, language }) => {
@@ -136,7 +141,40 @@ const AddressSection = ({ city, setShowPopup }) => {
 
               <div className="flex text-black gap-2 mb-1">
                 <FaPhoneAlt className="text-brand1 mt-1.5" />
-                <span className="font-semibold">{clinic.phone}</span>
+                <div>
+                  <a href={`tel:${clinic.phone}`} className="font-semibold">
+                    {clinic.phone}
+                  </a>
+                  <div className="mt-2 flex items-center gap-3 min-w-0">
+                    <a
+                      href={`https://wa.me/${clinic.phone}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-500 text-xl hover:scale-125 transition-all duration-300"
+                      aria-label="WhatsApp"
+                    >
+                      <FaWhatsapp />
+                    </a>
+                    <a
+                      href="https://t.me/medclinic"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sky-500 text-xl  hover:scale-125 transition-all duration-300"
+                      aria-label="Telegram"
+                    >
+                      <FaTelegramPlane />
+                    </a>
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-500 text-lg xl:text-2xl hover:scale-125 transition-all duration-300"
+                      aria-label="Max"
+                    >
+                      <img src="/max.png" alt="" className="w-5" />
+                    </a>
+                  </div>
+                </div>
               </div>
               <div className="flex text-black gap-2 mb-1">
                 <TiLocationArrowOutline className="text-brand1 text-xl mt-1" />

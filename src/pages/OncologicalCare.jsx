@@ -21,7 +21,7 @@ const OncologicalCare = () => {
         <div className="max-w-6xl mx-auto px-4 text-center">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Block 1 */}
-            <div className="bg-white rounded-2xl shadow-md p-8 text-left">
+            <div className="bg-brand1/10  rounded-2xl shadow-md p-8 text-left">
               <h3 className="text-2xl text-center font-bold text-brand1 mb-6">
                 {t("care.block1.title")}
               </h3>
@@ -32,7 +32,7 @@ const OncologicalCare = () => {
             </div>
 
             {/* Block 2 */}
-            <div className="bg-white rounded-2xl shadow-md p-8 text-left">
+            <div className="bg-brand1/10 rounded-2xl shadow-md p-8 text-left">
               <h3 className="text-2xl font-bold text-center text-brand1 mb-6">
                 {t("care.block2.title")}
               </h3>

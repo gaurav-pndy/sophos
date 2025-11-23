@@ -25,7 +25,7 @@ const FeedbackForm = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-8 rounded-lg shadow-md border border-brand4 max-w-5xl mx-auto"
+          className="bg-white p-8 rounded-lg shadow-md border border-brand4 max-w-3xl mx-auto"
         >
           <label
             className="block text-brand1 font-semibold mb-2"

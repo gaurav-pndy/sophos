@@ -82,7 +82,7 @@ const HeroSection = () => {
             <div className="w-full lg:col-span-3 -mt-[2px] lg:-mt-0 lg:-ml-[1px] -z-10 flex items-center">
               <div className="relative w-full">
                 <img
-                  src="https://images.unsplash.com/photo-1598885159329-9377168ac375?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="/hero1.avif"
                   alt="Hero illustration"
                   className="w-full md:max-h-[28rem] lg:max-h-80 xl:max-h-[31rem] h-auto object-cover"
                 />
@@ -181,7 +181,7 @@ const HeroSection = () => {
             <div className="w-full lg:w-[52%] h-full -mt-[2px] lg:-mt-0 lg:-ml-[1px] -z-10 flex items-center">
               <div className="relative w-full h-full">
                 <img
-                  src="https://plus.unsplash.com/premium_photo-1681400584017-8fb0a5856bea?q=80&w=1238&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="/hero3.avif"
                   className="w-full h-full md:h-auto lg:min-h-96  object-cover xl:max-h-[31rem]"
                 />
                 <div
@@ -216,7 +216,7 @@ const HeroSection = () => {
             <div className="w-full lg:w-[52%] h-full -mt-[2px] lg:-mt-0 lg:-ml-[1px]  -z-10 flex items-center">
               <div className="relative w-full h-full">
                 <img
-                  src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1168&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="/hero4.avif"
                   className="w-full h-full max-h-[31rem] md:h-auto object-cover "
                 />
                 <div
@@ -226,6 +226,7 @@ const HeroSection = () => {
             </div>
           </div>
         </SwiperSlide>
+
         <SwiperSlide>
           <div
             className={`mx-auto relative w-full min-h-[84vh] md:min-h-auto grid lg:flex items-stretch`}
@@ -254,7 +255,7 @@ const HeroSection = () => {
             <div className="w-full lg:w-[52%] h-full -mt-[2px] lg:-mt-0 lg:-ml-[1px]  -z-10 flex items-center">
               <div className="relative w-full h-full">
                 <img
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="/hero5.avif"
                   className="w-full h-full md:h-auto object-cover max-h-[31rem]"
                 />
                 <div

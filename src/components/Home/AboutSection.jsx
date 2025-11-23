@@ -104,14 +104,14 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <p className="font-bold text-brand1/90 text-lg mb-8">
+            <p className="font-bold text-brand1/90 text-lg mb-14">
               {t("aboutClinic.footnote")}
             </p>
 
             {/* Button */}
             <Link
               to={"/about"}
-              className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit"
+              className="bg-brand1  relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit"
             >
               {t("moreBtn")}
             </Link>
