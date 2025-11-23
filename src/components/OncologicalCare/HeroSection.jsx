@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="w-full   h-full z-30 -mt-[3px] md:-mt-0">
         <div className="relative w-full  h-full">
           <img
-            src="https://images.unsplash.com/photo-1598884143267-586d90a32141?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/onco-care.avif"
             alt="Services illustration"
             className=" w-full md:min-h-80  max-h-96 h-full object-cover md:rounded-tr-2xl md:rounded-br-2xl"
           />

@@ -55,7 +55,7 @@ const AboutSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="about" className="w-full py-16 ">
+    <section id="about" className="w-full py-10 pt-16 ">
       <div className="max-w-[87rem] relative bg-gradient-to-r from-gray-300  to-gray-100 mx-auto p-4 md:p-10 rounded-xl w-full">
         <WaveBackground
           stroke="rgba(340, 340, 340,"

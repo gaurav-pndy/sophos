@@ -52,7 +52,7 @@ const MembershipSection = () => {
   ];
 
   return (
-    <section className="w-full bg-[#fbfbfb] py-16">
+    <section className="w-full bg-[#fbfbfb] py-10">
       <div className="max-w-[87rem] text-center mx-auto px-4 ">
         <section className="relative rounded-xl  mx-auto  items-center overflow-hidden ">
           {/* <WaveBackground

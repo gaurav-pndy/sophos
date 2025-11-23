@@ -13,7 +13,9 @@ import {
   FaChevronUp,
 } from "react-icons/fa";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru/api";
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://apimanager.health-direct.ru/api";
 
 // Basic HTML sanitization function
 const sanitizeHTML = (html) => {
@@ -257,7 +259,7 @@ const OffersTab = () => {
           </p>
         </div>
 
-        <div className="flex justify-center items-center py-16">
+        <div className="flex justify-center items-center py-10">
           <div className="text-center max-w-md">
             <div className="w-20 h-20 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <FaExclamationTriangle className="text-red-500 text-3xl" />
@@ -448,7 +450,7 @@ const OffersTab = () => {
         </>
       ) : (
         // No offers available
-        <div className="text-center py-16">
+        <div className="text-center py-10">
           <div className="w-24 h-24 bg-gradient-to-r from-gray-200 to-gray-300 rounded-3xl flex items-center justify-center mx-auto mb-6">
             <FaTag className="text-gray-400 text-3xl" />
           </div>

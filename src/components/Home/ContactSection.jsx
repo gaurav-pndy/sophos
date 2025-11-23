@@ -96,7 +96,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="w-full bg-[#fafbfc] py-16 mb-8">
+    <section className="w-full bg-[#fafbfc] py-10 mb-8">
       <div className="max-w-[87rem] mx-auto px-4">
         <div className="max-w-[87rem] text-center mx-auto px-4">
           <h2 className="text-brand1 text-center text-4xl font-bold mb-6">

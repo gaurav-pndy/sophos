@@ -29,7 +29,7 @@ const EarlyAbout = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="max-w-[87rem] mx-auto py-16 px-4">
+    <section className="max-w-[87rem] mx-auto py-10 px-4">
       <div className="max-w-[87rem] mx-auto px-4 flex flex-col md:flex-row items-center  gap-8 md:gap-16">
         {/* Left side: Text */}
         <div className="md:w-1/2 text-left">

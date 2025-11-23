@@ -115,7 +115,7 @@ const AddressSection = ({ city, setShowPopup }) => {
   );
 
   return (
-    <section id="contact" className="w-full bg-[#fafbfc] py-16">
+    <section id="contact" className="w-full bg-[#fafbfc] py-10">
       <div className="max-w-[87rem] text-center mx-auto px-4">
         <h2 className="text-brand1 text-center text-4xl font-bold mb-6">
           {t("address.title")}

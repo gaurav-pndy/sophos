@@ -29,7 +29,7 @@ const EarlyWhy = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="max-w-[87rem] mx-auto px-4 py-16 flex flex-col md:flex-row gap-12 md:gap-16 items-center">
+    <section className="max-w-[87rem] mx-auto px-4 py-10 flex flex-col md:flex-row gap-12 md:gap-16 items-center">
       {/* Left: Image and stat card */}
       <div className="relative w-full max-w-2xl flex-shrink-0">
         <img

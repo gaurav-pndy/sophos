@@ -204,7 +204,7 @@ const CareersPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section
-      <div className="bg-gradient-to-r from-brand1 to-brand3 text-white py-16">
+      <div className="bg-gradient-to-r from-brand1 to-brand3 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -344,7 +344,7 @@ const CareersPage = () => {
           </div>
         ) : (
           // No vacancies available
-          <div className="text-center py-16">
+          <div className="text-center py-10">
             <div className="w-24 h-24 bg-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <FaBriefcase className="text-gray-400 text-3xl" />
             </div>

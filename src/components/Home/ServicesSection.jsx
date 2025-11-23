@@ -11,7 +11,7 @@ const ServicesSection = () => {
   const services = servicesData;
 
   return (
-    <section id="services" className="w-full bg-[#fbfbfc] py-16">
+    <section id="services" className="w-full bg-[#fbfbfc] py-10">
       <div className="max-w-[87rem] text-center mx-auto px-4">
         <section className="relative rounded-xl  mx-auto grid md:grid-cols-2 items-center overflow-hidden md:min-h-96">
           <WaveBackground

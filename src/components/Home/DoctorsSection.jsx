@@ -170,7 +170,7 @@ const DoctorsSection = ({ setShowPopup }) => {
   // Loading state
   if (loading && doctors.length === 0) {
     return (
-      <section className="w-full py-16 flex justify-center items-center min-h-96">
+      <section className="w-full py-10 flex justify-center items-center min-h-96">
         <div className="text-center">
           <FaSpinner className="animate-spin text-4xl text-brand1 mx-auto mb-4" />
           <p className="text-brand1 text-lg">
@@ -184,7 +184,7 @@ const DoctorsSection = ({ setShowPopup }) => {
   // Error state
   if (error && doctors.length === 0) {
     return (
-      <section className="w-full py-16 flex justify-center items-center min-h-96">
+      <section className="w-full py-10 flex justify-center items-center min-h-96">
         <div className="text-center text-red-600">
           <p className="mb-4">
             {t("error") || "Error"}: {error}
@@ -203,7 +203,7 @@ const DoctorsSection = ({ setShowPopup }) => {
   return (
     <section
       id="doctors"
-      className="w-full py-16 flex flex-col items-start max-w-[87rem] px-4 mx-auto"
+      className="w-full py-10 flex flex-col items-start max-w-[87rem] px-4 mx-auto"
     >
       {/* --- Header --- */}
       <section className="relative rounded-xl mx-auto grid md:grid-cols-2 items-center overflow-hidden md:min-h-96">
