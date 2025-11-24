@@ -1188,15 +1188,15 @@ const Header = ({ city, setCity, setShowPopup }) => {
 
               <div className="flex flex-col mb-6">
                 <label htmlFor="city" className="text-xs mb-1">
-                  Select your City:
+                  {t("header.selectCity")}
                 </label>
                 <select
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   className="border rounded-lg px-2 py-1"
                 >
-                  <option value="Moscow">Moscow</option>
-                  <option value="Makhachkala">Makhachkala</option>
+                  <option value="Moscow">{t("header.moscow")}</option>
+                  <option value="Makhachkala">{t("header.makhachkala")}</option>
                 </select>
               </div>
 
@@ -1261,7 +1261,6 @@ const Header = ({ city, setCity, setShowPopup }) => {
                         {doctorsItems.map((item, idx) =>
                           item.subItems ? (
                             <div key={idx}>
-                              {/* Button for categories like Онкологи */}
                               <button
                                 onClick={() =>
                                   setOpenSubCategory(
@@ -1284,7 +1283,6 @@ const Header = ({ city, setCity, setShowPopup }) => {
                                 />
                               </button>
 
-                              {/* Sub-category expansion */}
                               <AnimatePresence>
                                 {openSubCategory === item.label && (
                                   <motion.div
@@ -1389,9 +1387,10 @@ const Header = ({ city, setCity, setShowPopup }) => {
                         {patientItems.map((p, idx) => (
                           <button
                             key={idx}
-                            onClick={() =>
-                              handleScrollToPatientsSection(p.path)
-                            }
+                            onClick={() => {
+                              handleScrollToPatientsSection(p.path);
+                              setIsOpen(false);
+                            }}
                             className="block text-left"
                           >
                             {p.label}
@@ -1402,7 +1401,10 @@ const Header = ({ city, setCity, setShowPopup }) => {
                   </AnimatePresence>
                 </div>
                 <button
-                  onClick={() => handleScrollToSection("#reviews")}
+                  onClick={() => {
+                    handleScrollToSection("#reviews");
+                    setIsOpen(false);
+                  }}
                   className="text-left  whitespace-nowrap"
                 >
                   {" "}
@@ -1410,19 +1412,24 @@ const Header = ({ city, setCity, setShowPopup }) => {
                 </button>{" "}
                 <Link
                   to="/blogs"
+                  onClick={() => setIsOpen(false)}
                   className="  hover:underline whitespace-nowrap"
                 >
                   {" "}
                   {t("header.blog")}
                 </Link>{" "}
                 <button
-                  onClick={() => handleScrollToSection("#contact")}
+                  onClick={() => {
+                    handleScrollToSection("#contact");
+                    setIsOpen(false);
+                  }}
                   className="text-left   hover:underline whitespace-nowrap"
                 >
                   {" "}
                   {t("header.contact")}
                 </button>{" "}
                 <Link
+                  onClick={() => setIsOpen(false)}
                   to="/telemedicine-consultation"
                   className="  hover:underline whitespace-nowrap"
                 >
@@ -1430,6 +1437,7 @@ const Header = ({ city, setCity, setShowPopup }) => {
                   {t("header.telemedicine")}
                 </Link>{" "}
                 <Link
+                  onClick={() => setIsOpen(false)}
                   to="/early-detection-program"
                   className="  hover:underline whitespace-nowrap"
                 >
@@ -1437,6 +1445,7 @@ const Header = ({ city, setCity, setShowPopup }) => {
                   {t("header.earlyDiagnosis")}
                 </Link>{" "}
                 <Link
+                  onClick={() => setIsOpen(false)}
                   to="/oncological-care"
                   className="  hover:underline whitespace-nowrap"
                 >
