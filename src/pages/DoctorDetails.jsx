@@ -18,7 +18,7 @@ import { MdWork } from "react-icons/md";
 import { GiDiploma } from "react-icons/gi";
 
 const API_BASE =
-  import.meta.env.VITE_API_BASE_URL ||
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:3003/api"
   "https://apimanager.health-direct.ru/api";
 
 const DoctorDetails = ({ setShowPopup }) => {
@@ -68,6 +68,8 @@ const DoctorDetails = ({ setShowPopup }) => {
 
     const fullName = `${getLocalizedField(doc.firstName)} ${getLocalizedField(
       doc.lastName
+    )} ${getLocalizedField(
+      doc.middleName
     )}`.trim();
     const specialty = getLocalizedField(doc.specialty);
     const location = getLocalizedField(doc.location);

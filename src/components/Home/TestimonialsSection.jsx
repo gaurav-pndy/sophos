@@ -8,37 +8,129 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { doctorsData } from "../../data/doctors";
 
 const TestimonialsSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [selectedIdx, setSelectedIdx] = useState(null);
   const [readMoreIdx, setReadMoreIdx] = useState(null);
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Collect all reviews from doctors data
-  const testimonials = [];
+  const getLocalizedValue = (value, currentLanguage = i18n.language) => {
+    if (!value) return "";
 
-  doctorsData.forEach((doctor) => {
-    // Check if reviews exist and is a translation key
-    if (doctor.reviews && typeof doctor.reviews === "string") {
-      const reviewsArray = t(doctor.reviews, { returnObjects: true });
-
-      if (Array.isArray(reviewsArray)) {
-        reviewsArray.forEach((review) => {
-          testimonials.push({
-            ...review,
-            doctorName: t(doctor.name),
-            doctorId: doctor.id,
-            // If review has videoUrl or videoId, include it
-            videoId: review.videoId || review.videoUrl,
-          });
-        });
-      }
+    if (typeof value === "object" && value !== null) {
+      return (
+        value[currentLanguage] ||
+        value.en ||
+        value.ru ||
+        Object.values(value)[0] ||
+        ""
+      );
     }
-  });
+
+    return value.toString();
+  };
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(
+          "http://localhost:3003/api/reviews/public"
+        );
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("API Response:", data);
+
+        if (data.success && data.reviews) {
+          const transformedTestimonials = data.reviews.map((review, index) => {
+            const patientName = getLocalizedValue(review.patientName);
+
+            const description = getLocalizedValue(review.description);
+
+            let doctorName = "Doctor";
+            if (review.doctorId) {
+              if (typeof review.doctorId === "object") {
+                const firstName = getLocalizedValue(review.doctorId.firstName);
+                const lastName = getLocalizedValue(review.doctorId.lastName);
+                doctorName = `${firstName} ${lastName}`.trim();
+              } else {
+                doctorName = "Doctor";
+              }
+            }
+
+            return {
+              id: review._id || `review-${index}`,
+              name: patientName || "Anonymous Patient",
+              text: description || "No review text available",
+              rating: review.rating || 5,
+              doctorName: doctorName,
+              doctorId:
+                typeof review.doctorId === "object"
+                  ? review.doctorId._id
+                  : review.doctorId,
+              date: review.date || review.postedAt || new Date().toISOString(),
+              status: review.status || "Approved",
+              originalData: review,
+            };
+          });
+
+          console.log("Transformed testimonials:", transformedTestimonials);
+          setTestimonials(transformedTestimonials);
+        } else {
+          console.warn("No reviews found in response");
+          setTestimonials([]);
+        }
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+        setError(error.message);
+        setTestimonials([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchReviews();
+  }, [i18n.language]);
+
+  useEffect(() => {
+    if (testimonials.length > 0) {
+      const updatedTestimonials = testimonials.map((testimonial) => {
+        const originalData = testimonial.originalData;
+        if (originalData) {
+          return {
+            ...testimonial,
+            name: getLocalizedValue(originalData.patientName),
+            text: getLocalizedValue(originalData.description),
+            doctorName: originalData.doctorId
+              ? `${getLocalizedValue(
+                  originalData.doctorId.firstName
+                )} ${getLocalizedValue(originalData.doctorId.lastName)}`
+              : "Doctor",
+          };
+        }
+        return testimonial;
+      });
+      setTestimonials(updatedTestimonials);
+    }
+  }, [i18n.language]);
+
+
+  const handleAddReview= async() =>{
+    console.log("add review clicked")
+    try {
+      
+    } catch (error) {
+      
+    }
+  }
 
   const handleOpen = (idx) => setSelectedIdx(idx);
   const handleReadMore = (idx) => setReadMoreIdx(idx);
@@ -46,8 +138,28 @@ const TestimonialsSection = () => {
   const prevRef = useRef();
   const nextRef = useRef();
 
+  if (loading) {
+    return (
+      <section id="reviews" className="w-full py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center">Loading testimonials...</div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section id="reviews" className="w-full py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center text-red-500">Error: {error}</div>
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section id="reviews" className="w-full py-12 bg-white ">
+    <section id="reviews" className="w-full py-12 bg-white">
       <div className="max-w-7xl relative mx-auto px-4">
         <h2 className="text-brand1 text-center text-4xl md:text-5xl font-bold mb-10">
           {t("testimonials.title")}
@@ -57,7 +169,7 @@ const TestimonialsSection = () => {
         <div className="absolute top-1/2 left-0 xl:-left-5 transform -translate-y-1/2 z-20 flex">
           <button
             ref={prevRef}
-            className="cursor-pointer  text-brand1  transition"
+            className="cursor-pointer text-brand1 transition"
           >
             <FaChevronLeft size={32} />
           </button>
@@ -65,7 +177,7 @@ const TestimonialsSection = () => {
         <div className="absolute top-1/2 right-0 xl:-right-5 transform -translate-y-1/2 z-20 flex">
           <button
             ref={nextRef}
-            className="cursor-pointer text-brand1  transition"
+            className="cursor-pointer text-brand1 transition"
           >
             <FaChevronRight size={32} />
           </button>
@@ -73,88 +185,65 @@ const TestimonialsSection = () => {
 
         {/* Swiper carousel */}
         <div className="mb-7">
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={24}
-            slidesPerView={1}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-            loop={true}
-            onSwiper={(swiper) => {
-              // Delay assigning refs until after render
-              setTimeout(() => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
-              });
-            }}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="custom-swiper" // Add this class
-          >
-            {testimonials.map((test, idx) => (
-              <SwiperSlide key={idx} className="py-10">
-                <TestimonialCard
-                  test={test}
-                  idx={idx}
-                  handleOpen={handleOpen}
-                  handleReadMore={handleReadMore}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {testimonials.length > 0 ? (
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={24}
+              slidesPerView={1}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+              loop={testimonials.length > 1}
+              onSwiper={(swiper) => {
+                setTimeout(() => {
+                  if (prevRef.current && nextRef.current) {
+                    swiper.params.navigation.prevEl = prevRef.current;
+                    swiper.params.navigation.nextEl = nextRef.current;
+                    swiper.navigation.init();
+                    swiper.navigation.update();
+                  }
+                });
+              }}
+              breakpoints={{
+                768: { slidesPerView: Math.min(2, testimonials.length) },
+                1024: { slidesPerView: Math.min(3, testimonials.length) },
+              }}
+              className="custom-swiper"
+            >
+              {testimonials.map((test, idx) => (
+                <SwiperSlide key={test.id} className="py-10">
+                  <TestimonialCard
+                    test={test}
+                    idx={idx}
+                    handleOpen={handleOpen}
+                    handleReadMore={handleReadMore}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <div className="text-center text-gray-500 py-10">
+              No testimonials available
+            </div>
+          )}
         </div>
 
         {/* CTA */}
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-5">
           <Link to="/reviews">
             <button className="bg-brand1 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 text-lg">
               {t("testimonials.allBtn")}
             </button>
           </Link>
+          <button onClick={()=> (handleAddReview())} className="bg-brand1 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 text-lg">
+            {t("testimonials.addReview")}
+          </button>
         </div>
       </div>
 
-      {/* Video modal */}
-      {selectedIdx !== null && testimonials[selectedIdx].videoId && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center">
-          <div className="bg-white rounded-2xl shadow-xl max-w-3xl w-full mx-4 p-6 pt-14 relative flex flex-col">
-            <button
-              className="absolute top-4 right-4 text-2xl text-brand1 hover:text-brand5"
-              onClick={() => setSelectedIdx(null)}
-              aria-label="Close"
-            >
-              <IoClose />
-            </button>
-            <div className="w-full aspect-video mb-6 rounded-xl overflow-hidden">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${testimonials[selectedIdx].videoId}?autoplay=1`}
-                title="Patient testimonial video"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="rounded-xl w-full h-full"
-              />
-            </div>
-            <div className="font-bold text-lg text-brand1 mb-2">
-              {testimonials[selectedIdx].name}
-            </div>
-            <div className="text-brand1 text-base leading-snug">
-              {testimonials[selectedIdx].text}
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Read More modal */}
-      {readMoreIdx !== null && (
+      {readMoreIdx !== null && testimonials[readMoreIdx] && (
         <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl shadow-xl max-w-3xl w-full max-h-[85vh] overflow-y-auto p-6 pt-14 relative">
             <button
@@ -174,9 +263,7 @@ const TestimonialsSection = () => {
               />
               <div className="flex-1">
                 <div className="font-bold text-xl text-brand1 mb-1">
-                  {testimonials[readMoreIdx].name?.match(
-                    /^(.+?)\s*\((.+?)\)$/
-                  )?.[1] || testimonials[readMoreIdx].name}
+                  {testimonials[readMoreIdx].name}
                 </div>
                 <div className="flex items-center gap-2 text-brand1/70">
                   <img
@@ -184,15 +271,26 @@ const TestimonialsSection = () => {
                     alt="Russia"
                     className="w-6 h-4 object-cover rounded-sm"
                   />
-                  {
-                    testimonials[readMoreIdx].name?.match(
-                      /^(.+?)\s*\((.+?)\)$/
-                    )?.[2]
-                  }
+                  Patient
                 </div>
                 <div className="flex items-center gap-1 mt-1 text-brand1 font-semibold">
-                  5 <FaStar className="text-yellow-400" />
+                  {testimonials[readMoreIdx].rating}{" "}
+                  <FaStar className="text-yellow-400" />
                 </div>
+                <div className="text-sm text-gray-500 mt-1">
+                  {testimonials[readMoreIdx].date &&
+                    new Date(
+                      testimonials[readMoreIdx].date
+                    ).toLocaleDateString()}
+                </div>
+              </div>
+            </div>
+
+            {/* Doctor info */}
+            <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+              <div className="text-sm text-gray-600">Review for:</div>
+              <div className="font-semibold text-brand1">
+                {testimonials[readMoreIdx].doctorName}
               </div>
             </div>
 
@@ -219,54 +317,37 @@ const TestimonialCard = ({ test, idx, handleOpen, handleReadMore }) => {
   }, [test.text]);
 
   const hasVideo = !!test.videoId;
-
   const { t } = useTranslation();
-
-  // Extract name and city from format "Name (City)"
-  const nameMatch = test.name?.match(/^(.+?)\s*\((.+?)\)$/);
-  const displayName = nameMatch ? nameMatch[1].trim() : test.name;
-  const city = nameMatch ? nameMatch[2].trim() : "";
-
-  // All reviews are from Russia, all get 5 stars
-  const isoCode = "ru";
-  const stars = 5;
-
-  // Generate a consistent placeholder image based on index
-  const placeholderImage = `https://i.pravatar.cc/150?img=${(idx % 70) + 1}`;
 
   return (
     <div
       className={`rounded-lg shadow-md h-80 p-6 flex flex-col transition-all duration-300 hover:shadow-xl ${
         hasVideo
-          ? "bg-gradient-to-br from-brand2 to-brand1 text-white "
-          : "bg-white text-brand1 "
+          ? "bg-gradient-to-br from-brand2 to-brand1 text-white"
+          : "bg-white text-brand1"
       } cursor-pointer relative`}
     >
       {/* Avatar + name */}
       <div className="flex gap-3 mb-4">
         <img
-          src={test.gender === "male" ? "/male.svg" : "/female.svg"}
-          alt={displayName}
-          className="w-20  h-20  rounded-full object-cover border-4 border-brand4/40"
+          src="/nopic.jpg"
+          alt={test.name}
+          className="w-20 h-20 rounded-full object-cover border-4 border-brand4/40"
         />
         <div className="flex-1 flex items-start justify-between">
           <div>
-            <div className="font-semibold text-lg md:text-xl">
-              {displayName}
+            <div className="font-semibold text-lg md:text-xl">{test.name}</div>
+            <div className="text-sm md:text-base flex items-center gap-2">
+              <img
+                src="https://flagcdn.com/24x18/ru.png"
+                alt="Russia"
+                className="w-6 h-4 object-cover rounded-sm"
+              />
+              Patient
             </div>
-            {city && (
-              <div className="text-sm md:text-base flex items-center gap-2">
-                <img
-                  src={`https://flagcdn.com/24x18/${isoCode}.png`}
-                  alt="Russia"
-                  className="w-6 h-4 object-cover rounded-sm"
-                />
-                {city}
-              </div>
-            )}
           </div>
           <div className="flex items-center gap-1 font-semibold">
-            {stars} <FaStar className="text-yellow-300" />
+            {test.rating} <FaStar className="text-yellow-300" />
           </div>
         </div>
       </div>

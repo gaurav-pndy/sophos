@@ -9,6 +9,21 @@ const Reviews = () => {
   const { t } = useTranslation();
   const [selectedIdx, setSelectedIdx] = useState(null);
   const [readMoreIdx, setReadMoreIdx] = useState(null);
+  
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003/api" || "https://apimanager.health-direct.ru/api";
+
+  useEffect(() =>{
+    const fetchReviews = async() =>{
+      try {
+        const response = await fetch("http://localhost:3003/api/reviews/public")
+        console.log(response.data)
+        
+      } catch (error) {
+        console.error(error.message)
+      }
+    }
+    fetchReviews()
+  }, [])
 
   // Collect all reviews from doctors data
   const testimonials = [];
@@ -251,6 +266,7 @@ const TestimonialCard = ({ test, idx, handleOpen, handleReadMore }) => {
           </button>
         </div>
       )}
+      
     </div>
   );
 };

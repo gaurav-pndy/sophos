@@ -1181,7 +1181,8 @@
   },
   "testimonials": {
     "title": "Feedback from our Patients",
-    "allBtn": "All reviews"
+    "allBtn": "All reviews",
+    "addReview" :"Submit your review"
   },
   "contact": {
     "title": "Contact Us",
