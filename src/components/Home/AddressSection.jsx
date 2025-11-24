@@ -12,6 +12,8 @@ const YandexMap = ({ center, zoom, placemarks, language }) => {
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = `https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=${language}`;
@@ -188,7 +190,13 @@ const AddressSection = ({ city, setShowPopup }) => {
               </div>
               <div className="flex text-black gap-2 mb-1">
                 <TiLocationArrowOutline className="text-brand1 text-xl mt-1" />
-                <span className="font-semibold">{t("address.route")}</span>
+                <a
+                  href="https://yandex.com/maps/-/CLWImIyZ"
+                  target="_blank"
+                  className="font-semibold"
+                >
+                  {t("address.route")}
+                </a>
               </div>
 
               <button

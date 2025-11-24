@@ -750,7 +750,7 @@ const Header = ({ city, setCity, setShowPopup }) => {
           <img src="/HD.png" alt="Logo" className="h-5 md:h-7 object-contain" />
         </Link>
 
-        <div className="hidden lg:flex justify-end gap-3 xl:gap-6 mr-3 xl:mr-6 items-center flex-1 text-sm xl:text-base font-medium">
+        <div className="hidden lg:flex justify-end gap-3 xl:gap-6 mr-3 xl:mr-6 items-center flex-1 text-sm xl:text-base font-semibold">
           {" "}
           <div
             onMouseEnter={() => setShowAboutDropdown(true)}
@@ -1031,7 +1031,7 @@ const Header = ({ city, setCity, setShowPopup }) => {
       </motion.nav>
 
       <nav className="hidden lg:flex z-100 py-2 w-full bg-brand1/10 justify-end ">
-        <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 text-sm xl:text-base font-medium">
+        <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 text-sm xl:text-base font-semibold">
           {" "}
           <Link
             to="/telemedicine-consultation"

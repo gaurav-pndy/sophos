@@ -1208,7 +1208,7 @@
     "makhachkala": "Makhachkala",
     "another": "Another city",
     "message": "Message",
-    "checkbox1": "I agree with the <a href='/privacy-policy' target='_blank' class='text-blue-500 underline'> Privacy Policy </a> and the processing of personal data",
+    "checkbox1": "I agree with the <a href='/about#privacy' target='_blank' class='text-blue-500 underline'> Privacy Policy </a> and the processing of personal data",
     "checkbox2": "I give my consent to receive informational messages, advertising and promotional offer",
     "button": "Send"
   },

@@ -299,7 +299,6 @@ const ContactSection = () => {
                 <div className="flex items-start mt-2 mb-4">
                   <input
                     type="checkbox"
-                    required
                     checked={form.agree2}
                     onChange={(e) =>
                       setForm({ ...form, agree2: e.target.checked })
