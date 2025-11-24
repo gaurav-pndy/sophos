@@ -45,6 +45,7 @@ const DoctorsSection = ({ setShowPopup }) => {
 
       if (result.success) {
         setDoctors(result.data || []);
+        console.log("doc", result.data);
       } else {
         throw new Error(result.error);
       }
@@ -68,6 +69,7 @@ const DoctorsSection = ({ setShowPopup }) => {
 
       if (result.success) {
         setSpecializations(result.data || []);
+        console.log("spec", result.data);
       } else {
         throw new Error(result.error);
       }
@@ -127,8 +129,12 @@ const DoctorsSection = ({ setShowPopup }) => {
       : "";
 
     return {
+      ...doc,
       id: doc.id || doc._id,
       name: fullName,
+      firstName: doc.firstName,
+      middleName: doc.middleName,
+      lastName: doc.lastName,
       specialty,
       location,
       about,
@@ -167,8 +173,10 @@ const DoctorsSection = ({ setShowPopup }) => {
     return matchesType && matchesSpecialization && matchesSearch;
   });
 
+  console.log("filt", filteredDoctors);
+
   // Loading state
-  if (loading && doctors.length === 0) {
+  if (loading && doctors.length === 0 && filteredDoctors.length === 0) {
     return (
       <section className="w-full py-10 flex justify-center items-center min-h-96">
         <div className="text-center">
@@ -285,10 +293,12 @@ const DoctorsSection = ({ setShowPopup }) => {
                 onChange={(e) => setSpecialization(e.target.value)}
                 className="w-full border border-brand4/40 rounded-lg px-3 py-2.5 text-sm text-brand1 outline-none focus:border-brand1 transition-all bg-white"
               >
-                <option value="All">{t("doctors.filter.all")}</option>
+                <option value="All">
+                  {t("doctors.filter.all") || "All Specializations"}
+                </option>
                 {specializations.map((opt) => (
                   <option key={opt.id} value={opt.id}>
-                    {getLocalizedField(opt.label)}
+                    {opt.label} {opt.count && `(${opt.count})`}
                   </option>
                 ))}
               </select>
@@ -331,60 +341,68 @@ const DoctorsSection = ({ setShowPopup }) => {
             nextEl: ".next-btn",
           }}
         >
-          {filteredDoctors.slice(0, 5).map((doc) => (
-            <SwiperSlide key={doc.id}>
-              <Link
-                to={`/doctors/${doc.id}`}
-                className="bg-white my-4 rounded-xl hover:scale-105 hover:bg-brand4/20 hover:shadow-lg cursor-pointer shadow-md transition-all duration-300 p-4 flex flex-col justify-between"
-              >
-                <div className="flex-1 flex flex-col">
-                  <img
-                    src={doc.image}
-                    alt={doc.name}
-                    className="w-full h-64 object-cover object-top rounded-lg bg-gray-100"
-                    onError={(e) => {
-                      e.target.src = "/doctors.png";
-                    }}
-                  />
-                  <div className="font-bold text-black text-xl mt-4 mb-3">
-                    {doc.name}
-                  </div>
-                  {doc.position && (
-                    <p className="text-brand1 text-sm font-medium mb-3">
-                      {doc.position}
-                    </p>
-                  )}
-                  <div className="flex flex-wrap gap-1">
-                    {doc.tags.slice(0, 3).map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-2 py-1 rounded-full border border-brand4 text-black text-xs"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {doc.tags.length > 3 && (
-                      <span className="px-2 py-1 rounded-full border border-brand4 text-black text-xs">
-                        +{doc.tags.length - 3}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <button
-                  onClick={() => setShowPopup(true)}
-                  className="mt-4 px-6 py-2.5 w-full border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
-                >
-                  {t("doctors.btn1")}
-                </button>
+          {[...filteredDoctors]
+            .reverse()
+            .slice(0, 5)
+            .map((doc) => (
+              <SwiperSlide key={doc.id}>
                 <Link
                   to={`/doctors/${doc.id}`}
-                  className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                  className="bg-white my-4 rounded-xl hover:scale-105 hover:bg-brand4/20 hover:shadow-lg cursor-pointer shadow-md transition-all duration-300 p-4 flex flex-col justify-between min-h-132"
                 >
-                  {t("doctors.btn2")}
+                  <div className="flex-1 flex flex-col">
+                    <img
+                      src={doc.image}
+                      alt={doc.name}
+                      className="w-full h-64 object-cover object-top rounded-lg bg-gray-100"
+                      onError={(e) => {
+                        e.target.src = "/doctors.png";
+                      }}
+                    />
+                    <div className="font-bold text-black text-xl mt-4 mb-3">
+                      <span className="uppercase">
+                        {" "}
+                        {doc.lastName[i18n.language]}
+                      </span>{" "}
+                      {doc.firstName[i18n.language]}{" "}
+                      {doc.middleName[i18n.language]}
+                    </div>
+                    {doc.position && (
+                      <p className="text-brand1 text-sm font-medium mb-3">
+                        {doc.position}
+                      </p>
+                    )}
+                    <div className="flex flex-wrap gap-1">
+                      {doc.tags.slice(0, 3).map((tag, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 rounded-full border border-brand4 text-black text-xs"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {doc.tags.length > 3 && (
+                        <span className="px-2 py-1 rounded-full border border-brand4 text-black text-xs">
+                          +{doc.tags.length - 3}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setShowPopup(true)}
+                    className="mt-4 px-6 py-2.5 w-full border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                  >
+                    {t("doctors.btn1")}
+                  </button>
+                  <Link
+                    to={`/doctors/${doc.id}`}
+                    className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                  >
+                    {t("doctors.btn2")}
+                  </Link>
                 </Link>
-              </Link>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            ))}
         </Swiper>
       ) : (
         !loading && (

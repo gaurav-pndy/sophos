@@ -114,6 +114,9 @@ const DoctorDetails = ({ setShowPopup }) => {
     return {
       id: doc.id || doc._id,
       name: fullName,
+      firstName: doc.firstName,
+      lastName: doc.lastName,
+      middleName: doc.middleName,
       specialty,
       location,
       branches,
@@ -323,7 +326,12 @@ const DoctorDetails = ({ setShowPopup }) => {
           <div className="bg-white rounded-3xl shadow-xl border border-brand4/10 px-6 md:px-10 py-8">
             <div className="flex">
               <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold text-brand1 mb-4">
-                {formattedDoctor.name}
+                <span className="uppercase">
+                  {" "}
+                  {formattedDoctor.lastName[i18n.language]}
+                </span>{" "}
+                {formattedDoctor.firstName[i18n.language]}{" "}
+                {formattedDoctor.middleName[i18n.language]}
               </h1>
               <p className="flex-1 text-right whitespace-nowrap text-brand1/80 text-lg font-semibold">
                 {formattedDoctor.reviews.length} {t("doctors.reviews")}

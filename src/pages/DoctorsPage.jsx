@@ -128,8 +128,12 @@ const DoctorsPage = ({ setShowPopup }) => {
       : "";
 
     return {
+      ...doc,
       id: doc.id || doc._id,
       name: fullName,
+      firstName: doc.firstName,
+      lastName: doc.lastName,
+      middleName: doc.middleName,
       specialty,
       location,
       about,
@@ -378,7 +382,7 @@ const DoctorsPage = ({ setShowPopup }) => {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
-          {cards.map((doc) => (
+          {[...cards].reverse().map((doc) => (
             <Link
               key={doc.id}
               to={`/doctors/${doc.id}`}
@@ -424,7 +428,12 @@ const DoctorsPage = ({ setShowPopup }) => {
                 {/* Doctor Information */}
                 <div className="flex-1">
                   <h3 className="font-bold text-black text-xl mb-2 line-clamp-2 leading-tight">
-                    {doc.name}
+                    <span className="uppercase">
+                      {" "}
+                      {doc.lastName[i18n.language]}
+                    </span>{" "}
+                    {doc.firstName[i18n.language]}{" "}
+                    {doc.middleName[i18n.language]}
                   </h3>
 
                   {/* Position */}
