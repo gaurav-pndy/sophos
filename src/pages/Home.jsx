@@ -69,7 +69,7 @@ const Home = ({ city, setShowPopup }) => {
 
       {/* <PatientMap /> */}
       <MembershipSection />
-      {/* <TestimonialsSection /> */}
+      <TestimonialsSection />
       <FeedbackForm />
 
       {/* <BookingForm /> */}
