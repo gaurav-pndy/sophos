@@ -1427,7 +1427,7 @@
     "firstName": "имя",
     "middleName": "отчество",
     "lastName": "фамилия",
-    "email": "Email",
+    "email": "Электронная почта",
     "phone": "Телефон",
     "city": "Город",
     "chooseCity": "Выберите город",
