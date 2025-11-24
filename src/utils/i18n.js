@@ -14,15 +14,12 @@ i18n
       ru: { translation: ruTranslation },
     },
 
-    fallbackLng: "ru", // Default if nothing is detected
+    fallbackLng: "ru",
 
     detection: {
-      order: ["querystring", "localStorage", "navigator"],
+      order: ["querystring", "localStorage"], // <-- navigator removed
       lookupQuerystring: "lng",
-
-      // VERY IMPORTANT → this makes "ru" the default
-      caches: ["localStorage"],
-      checkWhitelist: true,
+      caches: ["localStorage"], // store selected language
     },
 
     interpolation: {
