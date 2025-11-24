@@ -301,7 +301,7 @@ const HeroSection = ({ setShowPopup }) => {
                 ></h1>
 
                 <Link
-                  to="/"
+                  to="/for-patients#offers"
                   className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
                 >
                   {t("moreBtn")}
