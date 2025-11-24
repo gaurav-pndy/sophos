@@ -84,6 +84,7 @@ const DoctorDetails = ({ setShowPopup }) => {
       doc.internationalMemberships
     );
     const russianMemberships = getLocalizedField(doc.russianMemberships);
+    const professionalDevelopments= getLocalizedField(doc.professionalDevelopments);
     const awards = getLocalizedField(doc.awards);
     const regalia = getLocalizedField(doc.regalia);
 
@@ -130,6 +131,7 @@ const DoctorDetails = ({ setShowPopup }) => {
       scientificActivities,
       internationalMemberships,
       russianMemberships,
+      professionalDevelopments,
       awards,
       regalia,
       tags: tags.filter((tag) => tag && tag.trim() !== ""),
@@ -544,7 +546,26 @@ const DoctorDetails = ({ setShowPopup }) => {
               )}
             </section>
 
-            {/* Reviews Section */}
+
+            {/*Professional Development Section */}
+            <section
+              ref={sectionRefs.professionalDevelopments}
+              className="pt-2 pb-6 scroll-mt-28 mt-16"
+            >
+              <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                {t("doctors.tabs.tab6")}
+              </h2>
+              {formattedDoctor.professionalDevelopments && (
+                <div
+                  className="prose max-w-none text-gray-700"
+                  dangerouslySetInnerHTML={{
+                    __html: formattedDoctor.professionalDevelopments,
+                  }}
+                />
+              )}
+            </section>
+
+            {/* Reviews Section 
             <section
               ref={sectionRefs.reviews}
               className="pt-2 pb-6 scroll-mt-28 mt-16"
@@ -614,6 +635,7 @@ const DoctorDetails = ({ setShowPopup }) => {
                 </p>
               )}
             </section>
+            */}
 
             {/* Video Section */}
             <section
