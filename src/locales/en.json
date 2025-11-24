@@ -125,9 +125,10 @@
   },
  "hero": {
   "slide1": {
-    "title": "\"Expert oncological care\" <br/>Expert-level oncologists",
-    "subtitle1": "Personalized approach for every patient",
-    "subtitle2": "Center for modern anti-tumor therapy",
+    "title": "Expert oncological care",
+    "subtitle1": "Expert-level oncologists",
+    "subtitle2": "Personalized approach for every patient",
+    "subtitle3": "Center for modern anti-tumor therapy",
     "button": "Join HDMC+"
   },
   "slide2": {
@@ -141,7 +142,7 @@
     "button2": "About the specialist"
   },
   "slide3": {
-    "title": "Center for modern anti-tumor therapy <br/> Expert-level oncologists",
+    "title": "Center for modern anti-tumor therapy",
     "subtitle1": "Your comfort and safety.",
     "subtitle2": "International treatment standards.",
     "subtitle3": "Personalized pathways without unnecessary procedures.",
@@ -151,7 +152,11 @@
     "title": "Multidisciplinary outpatient clinic"
   },
   "slide5": {
-    "title": "Comprehensive check-up programs <br/> Take care of yourself in advance"
+    "title": "Comprehensive check-up programs",
+    "subtitle1": "Take care of yourself in advance"
+  },
+  "slide6": {
+    "title": "Open House Day"
   }
 },
   "aboutClinic": {
