@@ -52,16 +52,16 @@ const MembershipSection = () => {
   ];
 
   return (
-    <section className="w-full bg-[#fbfbfb] py-10">
+    <section className="w-full  py-6">
       <div className="max-w-[87rem] text-center mx-auto px-4 ">
         <section className="relative rounded-xl  mx-auto  items-center overflow-hidden ">
           <div className="text-center w-full  h-full   ">
             <div className="flex justify-center z-40">
-              <span className="bg-brand3 px-4 py-2 text-white  rounded-full font-medium mb-4 flex items-center gap-2">
+              <span className="bg-brand3 px-4 py-2 text-white  rounded-full font-medium mb-2 flex items-center gap-2">
                 <LuCrown className="text-lg" /> {t("membership.badge")}
               </span>
             </div>
-            <h2 className="text-brand1 mx-auto z-40 text-[2rem] font-bold mb-6">
+            <h2 className="text-brand1 mx-auto z-40 text-[2rem] leading-10 font-bold mb-4">
               {" "}
               {t("membership.title")}
             </h2>
@@ -72,7 +72,7 @@ const MembershipSection = () => {
         </section>
 
         {/* Features grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6  mt-10 md:mt-14 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6  mt-8 mb-8">
           {features.map((f, i) => (
             <div
               key={i}
@@ -90,7 +90,7 @@ const MembershipSection = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-10 mb-2">
+        <div className="flex justify-center mt-10 ">
           <Link
             to={"/hdmc-plus"}
             className="bg-brand1 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 block mx-auto"

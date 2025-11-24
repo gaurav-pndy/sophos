@@ -41,7 +41,7 @@ const TelemedicineHero = ({ setShowPopup }) => {
 
       {/* LEFT SIDE */}
       <div className="w-full md:min-h-80 flex flex-col justify-center h-full p-6 pb-16 md:p-6 lg:p-10 xl:p-12 bg-gradient-to-b md:bg-gradient-to-r from-brand1 to-[#8abfcf]">
-        <h1 className="text-white relative z-40 text-3xl md:text-5xl font-bold mb-4">
+        <h1 className="text-white relative z-40 text-3xl md:text-5xl xl:text-6xl font-bold mb-4">
           {t("telemedicine.hero.titleLine1")}
           <br />
           <span>{t("telemedicine.hero.titleLine2")}</span>

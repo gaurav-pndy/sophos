@@ -203,14 +203,10 @@ const OffersTab = () => {
       <div className="space-y-8">
         <div className="space-y-4">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-12 h-12 bg-gradient-to-r from-brand1 to-brand3 rounded-2xl flex items-center justify-center">
-              <FaTag className="text-white text-xl" />
-            </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold text-brand1">
                 {t("forPatientsPage.heading3")}
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-brand1 to-brand3 rounded-full mt-1"></div>
             </div>
           </div>
           <p className="text-gray-600 text-lg leading-relaxed">
@@ -287,14 +283,10 @@ const OffersTab = () => {
       {/* Header */}
       <div className="space-y-4">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-12 h-12 bg-gradient-to-r from-brand1 to-brand3 rounded-2xl flex items-center justify-center shadow-lg">
-            <FaTag className="text-white text-xl" />
-          </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand1">
               {t("forPatientsPage.heading3")}
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-brand1 to-brand3 rounded-full mt-1"></div>
           </div>
         </div>
         <p className="text-gray-600 text-lg leading-relaxed">

@@ -17,9 +17,9 @@ const FeedbackForm = () => {
   };
 
   return (
-    <section id="reviews" className="w-full py-12 bg-white">
+    <section id="reviews" className="w-full pt-3 pb-6  ">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-brand1 text-center text-[2rem] font-bold mb-10">
+        <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-8">
           {t("testimonials.title")}
         </h2>
 

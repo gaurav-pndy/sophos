@@ -7,7 +7,7 @@ const OncoInsurance = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="max-w-[87rem] mt-16 text-center mx-auto px-4 ">
+    <section className="max-w-[87rem] mt-6 text-center mx-auto px-4 ">
       <div className="relative rounded-xl  mx-auto grid md:grid-cols-2 items-center overflow-hidden md:min-h-80">
         <WaveBackground
           stroke="rgba(151, 186, 189,"
@@ -26,11 +26,11 @@ const OncoInsurance = () => {
             ></div>
           </div>
         </div>
-        <div className="text-left md:text-right w-full md:min-h-80  h-full  p-6  md:p-6 lg:pr-10 xl:pr-12 bg-gradient-to-t md:bg-gradient-to-l from-[#303b4b] flex flex-col justify-center to-[#a4b5bf]">
-          <div className="flex flex-col gap-5 items-start md:items-end text-white  w-full">
+        <div className="text-left md:text-right w-full md:min-h-80  h-full  p-6  md:p-6  bg-gradient-to-t md:bg-gradient-to-l from-[#303b4b] flex flex-col justify-center to-[#a4b5bf]">
+          <div className="flex flex-col gap-4 items-start md:items-end text-white  w-full">
             <div className="flex items-center z-40 gap-3 ">
               <FaUserShield className="text-3xl" />
-              <span className="text-2xl md:text-5xl font-bold">
+              <span className="text-[2rem] leading-10 font-bold">
                 {t("earlyDetection.insurance.title")}
               </span>
             </div>

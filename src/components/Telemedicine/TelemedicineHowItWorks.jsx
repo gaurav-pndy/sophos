@@ -28,12 +28,12 @@ const TelemedicineHowItWorks = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full py-10 bg-white">
+    <section className="w-full py-6 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-brand1 mx-auto text-center text-4xl md:text-5xl font-bold mb-6">
+        <h2 className="text-brand1 mx-auto text-center text-[2rem] font-bold mb-4">
           {t("telemedicine.howitworks.header")}
         </h2>
-        <p className="md:text-lg text-center text-brand1/80 mb-10 max-w-3xl mx-auto">
+        <p className="md:text-lg text-center text-brand1/80 mb-8 max-w-3xl mx-auto">
           {t("telemedicine.howitworks.subtitle")}
         </p>
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0 relative">

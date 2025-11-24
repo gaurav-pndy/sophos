@@ -26,11 +26,11 @@ const TelemedicineCTA = ({ setShowPopup }) => {
             ></div>
           </div>
         </div>
-        <div className="text-left md:text-right w-full md:min-h-96  h-full  p-6  md:p-6 lg:pr-10 xl:pr-12 bg-gradient-to-t md:bg-gradient-to-l from-[#024879] flex flex-col justify-center to-[#94bfe9]">
-          <h2 className="text-white z-40 text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow">
+        <div className="text-left md:text-right w-full md:min-h-96  h-full  p-6  md:p-6  bg-gradient-to-t md:bg-gradient-to-l from-[#024879] flex flex-col justify-center to-[#94bfe9]">
+          <h2 className="text-white z-40 text-[2rem] leading-10 font-bold mb-4 drop-shadow">
             {t("telemedicine.cta.title")}
           </h2>
-          <p className="text-white/90 text-lg z-40 lg:text-xl font-medium mb-9">
+          <p className="text-white/90 text-lg z-40 lg:text-xl font-medium mb-8">
             {t("telemedicine.cta.subtitle")}
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-end z-40 mb-6">

@@ -11,15 +11,15 @@ const ServicesSection = () => {
   const services = servicesData;
 
   return (
-    <section id="services" className="w-full bg-[#fbfbfc] py-10">
+    <section id="services" className="w-full bg-[#fbfbfc] py-6">
       <div className="max-w-[87rem] text-center mx-auto px-4">
         <section className="relative rounded-xl  mx-auto grid md:grid-cols-2 items-center overflow-hidden md:min-h-96">
           <WaveBackground
             stroke="rgba(251, 186, 189,"
             custStyle="md:w-1/2 h-[65%] left-0 top-0"
           />
-          <div className="text-left  w-full md:min-h-96  h-full  p-6 pb-16 md:p-6 lg:pl-10 xl:pl-12 bg-gradient-to-b md:bg-gradient-to-r from-[#012135] to-[#4378a0]">
-            <h2 className="text-white z-40 text-[2rem]  font-bold mb-6">
+          <div className="text-left  w-full md:min-h-96  h-full  p-6 pb-16 md:p-6 flex flex-col justify-center bg-gradient-to-b md:bg-gradient-to-r from-[#012135] to-[#4378a0]">
+            <h2 className="text-white z-40 text-[2rem] leading-10 font-bold mb-4">
               {t("services.title")}
             </h2>
             <p

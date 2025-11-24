@@ -29,7 +29,7 @@ const EarlyWhy = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="max-w-[87rem] mx-auto px-4 py-10 flex flex-col md:flex-row gap-12 md:gap-16 items-center">
+    <section className="max-w-[87rem] mx-auto px-4 py-6 flex flex-col md:flex-row gap-12 md:gap-16 items-center">
       {/* Left: Image and stat card */}
       <div className="relative w-full max-w-2xl flex-shrink-0">
         <img
@@ -46,7 +46,7 @@ const EarlyWhy = () => {
       </div>
       {/* Right: Content */}
       <div className="flex-1 flex flex-col items-start max-w-2xl">
-        <h2 className="text-brand1 mx-auto  text-4xl md:text-5xl font-bold mb-6">
+        <h2 className="text-brand1  text-[2rem] leading-10 font-bold mb-4 ">
           {t("earlyDetection.why.heading")}
         </h2>
         <div className="md:text-lg text-brand1/80 mb-8 max-w-3xl mx-auto">

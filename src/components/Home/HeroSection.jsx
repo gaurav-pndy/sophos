@@ -49,25 +49,25 @@ const HeroSection = ({ setShowPopup }) => {
       >
         <SwiperSlide>
           <div
-            className={`mx-auto relative w-full  grid lg:grid-cols-5 items-stretch`}
+            className={`mx-auto relative w-full overflow-hidden h-[45rem] lg:h-[28rem] xl:h-[30rem] grid lg:flex items-stretch`}
           >
             <WaveBackground
               stroke="rgba(100, 100, 100,"
               custStyle="lg:w-[40%] h-[60%] left-0 top-0"
             />
-            <div className="flex flex-col  md:flex-row lg:col-span-2 px-6 lg:px-0 md:pl-12 lg:pl-6 xl:pl-20 w-full py-6 min-h-[30rem] md:min-h-auto xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#002b3e] to-[#016885]">
+            <div className="flex flex-col h-full md:flex-row lg:col-span-2 px-6 lg:px-0 md:pl-12 lg:pl-6 xl:pl-20 w-full py-6 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#002b3e] to-[#016885]">
               <div className="flex-1 flex flex-col items-start">
-                <div className="mb-2 flex z-40 items-center">
+                <div className="mb-2 flex relative z-40 items-center">
                   <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">
                     <SlBadge className="text-2xl p-0 text-white " />
                   </div>
                   <div className="w-1 h-12 bg-white/40 rounded" />
                 </div>
                 <h1
-                  className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-2"
+                  className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-2"
                   dangerouslySetInnerHTML={{ __html: t("hero.slide1.title") }}
                 ></h1>
-                <ul className="text-gray-200 list-disc ml-4 mt-4 text-lg z-40 xl:text-xl mb-4">
+                <ul className="text-gray-200 list-disc ml-4 md:mt-4 text-sm lg:text-lg z-40 xl:text-xl mb-4">
                   <li>{t("hero.slide1.subtitle1")} </li>
                   <li>{t("hero.slide1.subtitle2")} </li>
                 </ul>
@@ -79,12 +79,12 @@ const HeroSection = ({ setShowPopup }) => {
                 </Link>
               </div>
             </div>
-            <div className="w-full lg:col-span-3 -mt-[2px] lg:-mt-0 lg:-ml-[1px] -z-10 flex items-center">
-              <div className="relative w-full">
+            <div className="w-full h-full lg:col-span-3 -z-10 flex items-center">
+              <div className="relative w-full h-full -mt-px lg:-mt-0 lg:-ml-px">
                 <img
                   src="/hero1.avif"
                   alt="Hero illustration"
-                  className="w-full md:max-h-[28rem]  xl:h-[34rem] h-auto object-cover"
+                  className="w-full h-full object-cover"
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#016885] via-[#016885]/40 to-transparent via-40%`}
@@ -96,13 +96,13 @@ const HeroSection = ({ setShowPopup }) => {
 
         <SwiperSlide>
           <div
-            className={`mx-auto relative w-full grid lg:flex  items-stretch`}
+            className={`mx-auto relative w-full overflow-hidden h-[45rem] lg:h-[28rem] xl:h-[30rem] grid lg:flex items-stretch`}
           >
             <WaveBackground
               stroke="rgba(200, 200, 200,"
               custStyle="lg:w-[40%] h-[60%] left-0 top-0"
             />
-            <div className="flex flex-col md:flex-row lg:w-[60%] px-6 lg:px-0 md:pl-12 lg:pl-6 xl:pl-20 w-full py-6  xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#989996] to-[#cbd0ce]">
+            <div className="flex flex-col h-full md:flex-row lg:w-[60%] px-6 lg:px-0 md:pl-12 lg:pl-6 xl:pl-20 w-full py-6 xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#989996] to-[#cbd0ce]">
               <div className="flex-1 flex flex-col items-start">
                 <div className="mb-2 flex z-40 items-center">
                   <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">
@@ -110,10 +110,10 @@ const HeroSection = ({ setShowPopup }) => {
                   </div>
                   <div className="w-1 h-12 bg-white/40 rounded" />
                 </div>
-                <h1 className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-2">
+                <h1 className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-2">
                   {t("hero.slide2.title")}
                 </h1>
-                <ul className="text-gray-200 list-disc ml-4 mt-2 md:mt-4 text-sm z-40 xl:text-xl mb-4">
+                <ul className="text-gray-200 list-disc ml-4  md:mt-4 text-sm z-40 lg:text-lg xl:text-xl  mb-4">
                   <li>{t("hero.slide2.subtitle1")} </li>
                   <li>{t("hero.slide2.subtitle2")} </li>
                   <li>{t("hero.slide2.subtitle3")} </li>
@@ -136,11 +136,11 @@ const HeroSection = ({ setShowPopup }) => {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-[40%] -z-10 flex items-center">
-              <div className="relative w-full">
+            <div className="w-full h-full lg:w-[40%] -z-10 flex items-center">
+              <div className="relative w-full h-full -mt-px lg:-mt-0 lg:-ml-px">
                 <img
                   src="/hero2.jpg"
-                  className="w-full max-h-80 md:max-h-[31rem] h-auto object-cover object-top"
+                  className="w-full h-full object-cover object-top"
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#cbd0ce] via-[#cbd0ce]/30 to-transparent via-20%`}
@@ -152,13 +152,13 @@ const HeroSection = ({ setShowPopup }) => {
 
         <SwiperSlide>
           <div
-            className={`mx-auto relative w-full min-h-[84vh] md:min-h-auto h-full grid lg:flex  items-stretch`}
+            className={`mx-auto relative w-full overflow-hidden h-[45rem] lg:h-[28rem] xl:h-[30rem] grid lg:flex items-stretch`}
           >
             <WaveBackground
               stroke="rgba(200, 200, 200,"
               custStyle="lg:w-[40%] h-[60%] left-0 top-0"
             />
-            <div className="flex lg:w-[48%]  flex-col md:flex-row md:min-h-[17.5rem] lg:min-h-auto px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-0 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#52656c] to-[#cececc]">
+            <div className="flex lg:w-[58%] h-full flex-col md:flex-row px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-0 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#52656c] to-[#cececc]">
               <div className="flex-1 flex flex-col items-start">
                 <div className="mb-2 flex z-40 items-center">
                   <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">
@@ -167,10 +167,10 @@ const HeroSection = ({ setShowPopup }) => {
                   <div className="w-1 h-12 bg-white/40 rounded" />
                 </div>
                 <h1
-                  className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-2"
+                  className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-2"
                   dangerouslySetInnerHTML={{ __html: t("hero.slide3.title") }}
                 ></h1>
-                <ul className="text-gray-200 list-disc ml-4 mt-4 text-lg z-40 xl:text-xl mb-4">
+                <ul className="text-gray-200 list-disc ml-4 md:mt-4 text-sm  lg:text-lg z-40 xl:text-xl mb-4">
                   <li>{t("hero.slide3.subtitle1")} </li>
                   <li>{t("hero.slide3.subtitle2")} </li>
                   <li>{t("hero.slide3.subtitle3")} </li>
@@ -184,12 +184,9 @@ const HeroSection = ({ setShowPopup }) => {
                 </Link>
               </div>
             </div>
-            <div className="w-full lg:w-[52%] h-full -mt-[2px] lg:-mt-0 lg:-ml-[1px] -z-10 flex items-center">
-              <div className="relative w-full h-full">
-                <img
-                  src="/hero3.avif"
-                  className="w-full h-full md:h-auto lg:min-h-120  object-cover xl:h-[34rem] 2xl:max-h-[31rem]"
-                />
+            <div className="w-full h-full lg:w-[52%] -z-10 flex items-center">
+              <div className="relative w-full h-full -mt-px lg:-mt-0 lg:-ml-px">
+                <img src="/hero3.avif" className="w-full h-full object-cover" />
                 <div
                   className={`absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#cececc] via-[#cececc]/30 to-transparent via-20%`}
                 ></div>
@@ -200,13 +197,13 @@ const HeroSection = ({ setShowPopup }) => {
 
         <SwiperSlide>
           <div
-            className={`mx-auto relative w-full min-h-[84vh] md:min-h-auto grid lg:flex items-stretch`}
+            className={`mx-auto relative w-full overflow-hidden h-[45rem] lg:h-[28rem] xl:h-[30rem] grid lg:flex items-stretch`}
           >
             <WaveBackground
               stroke="rgba(100, 100, 100,"
               custStyle="lg:w-[40%] h-[60%] left-0 top-0"
             />
-            <div className="flex flex-col lg:w-[48%] md:flex-row md:min-h-[17.5rem] lg:min-h-auto  px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#3a183e] to-[#888291]">
+            <div className="flex flex-col h-full lg:w-[48%] md:flex-row px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#3a183e] to-[#888291]">
               <div className="flex-1 flex flex-col items-start">
                 <div className="mb-2 flex z-40 items-center">
                   <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">
@@ -214,7 +211,7 @@ const HeroSection = ({ setShowPopup }) => {
                   </div>
                   <div className="w-1 h-12 bg-white/40 rounded" />
                 </div>
-                <h1 className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-4">
+                <h1 className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-4">
                   {t("hero.slide4.title")}
                 </h1>
                 <Link
@@ -225,11 +222,11 @@ const HeroSection = ({ setShowPopup }) => {
                 </Link>
               </div>
             </div>
-            <div className="w-full lg:w-[52%] h-full -mt-[2px] lg:-mt-0 lg:-ml-[1px]  -z-10 flex items-center">
-              <div className="relative w-full h-full">
+            <div className="w-full h-full lg:w-[52%] -z-10 flex items-center">
+              <div className="relative w-full h-full -mt-px lg:-mt-0 lg:-ml-px">
                 <img
                   src="/hero4.avif"
-                  className="w-full h-full max-h-[31rem] md:h-auto object-cover "
+                  className="w-full h-full object-cover "
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#888291] via-[#888291]/30 to-transparent via-20%`}
@@ -241,13 +238,13 @@ const HeroSection = ({ setShowPopup }) => {
 
         <SwiperSlide>
           <div
-            className={`mx-auto relative w-full min-h-[84vh] md:min-h-auto grid lg:flex items-stretch`}
+            className={`mx-auto relative w-full overflow-hidden h-[45rem] lg:h-[28rem] xl:h-[30rem] grid lg:flex items-stretch`}
           >
             <WaveBackground
               stroke="rgba(100, 100, 100,"
               custStyle="lg:w-[40%] h-[60%] left-0 top-0"
             />
-            <div className="flex flex-col lg:w-[48%] md:flex-row md:min-h-[17.5rem] lg:min-h-auto  px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#164a3d] to-[#3e7963]">
+            <div className="flex flex-col h-full lg:w-[48%] md:flex-row px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#164a3d] to-[#3e7963]">
               <div className="flex-1 flex flex-col items-start">
                 <div className="mb-2 flex z-40 items-center">
                   <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">
@@ -256,7 +253,7 @@ const HeroSection = ({ setShowPopup }) => {
                   <div className="w-1 h-12 bg-white/40 rounded" />
                 </div>
                 <h1
-                  className="text-white font-bold z-40 text-3xl lg:text-2xl xl:text-4xl xl:leading-12 mb-4"
+                  className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-4"
                   dangerouslySetInnerHTML={{ __html: t("hero.slide5.title") }}
                 ></h1>
                 <Link
@@ -267,12 +264,9 @@ const HeroSection = ({ setShowPopup }) => {
                 </Link>
               </div>
             </div>
-            <div className="w-full lg:w-[52%] h-full -mt-[2px] lg:-mt-0 lg:-ml-[1px]  -z-10 flex items-center">
-              <div className="relative w-full h-full">
-                <img
-                  src="/hero5.avif"
-                  className="w-full h-full md:h-auto object-cover max-h-[31rem]"
-                />
+            <div className="w-full h-full lg:w-[52%] -z-10 flex items-center">
+              <div className="relative w-full h-full -mt-[2px] lg:-mt-0 lg:-ml-px">
+                <img src="/hero5.avif" className="w-full h-full object-cover" />
                 <div
                   className={`absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#3e7963] via-[#3e7963]/30 to-transparent via-20%`}
                 ></div>

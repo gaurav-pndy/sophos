@@ -100,10 +100,10 @@ const ForPatients = () => {
         />
 
         <div className="w-full md:min-h-80 flex flex-col justify-center h-full p-6 pb-16 md:p-6 lg:p-10 xl:p-12 bg-gradient-to-b md:bg-gradient-to-r from-[#6f452f] to-[#242a2d]">
-          <h1 className="text-white relative z-40 text-4xl md:text-6xl xl:text-7xl font-bold mb-4">
+          <h1 className="text-white relative z-40 text-4xl md:text-5xl xl:text-6xl font-bold mb-4">
             {t("forPatientsPage.title")}
           </h1>
-          <p className="text-white relative z-40 text-lg md:text-2xl font-medium drop-shadow">
+          <p className="text-white relative z-40 text-lg md:text-xl font-medium drop-shadow">
             {t("forPatientsPage.subtitle")}
           </p>
         </div>

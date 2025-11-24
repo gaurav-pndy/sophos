@@ -64,11 +64,11 @@ const TelemedicineExperts = () => {
     : [];
 
   return (
-    <div className="py-10">
+    <div className="py-6">
       <div className="max-w-[87rem] mx-auto px-4">
         {/* Specialties Section */}
         <div className="text-center mb-12">
-          <h2 className="text-brand1 mx-auto text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-brand1 mx-auto text-[2rem] leading-10 font-bold mb-4">
             {t("telemedicine.specialties.header")}
           </h2>
           <p className="md:text-lg text-brand1/80 mb-8 max-w-3xl mx-auto">
@@ -114,7 +114,7 @@ const TelemedicineExperts = () => {
         {selectedSpecialty && (
           <div className="animate-fadeIn">
             <div className="text-center mb-8">
-              <h2 className="text-brand1 mx-auto text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-brand1 mx-auto text-[2rem] leading-10 font-bold mb-4">
                 {t("telemedicine.doctors.header")}
               </h2>
               <p className="md:text-lg text-brand1/80 mb-8 max-w-3xl mx-auto">

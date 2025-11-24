@@ -211,7 +211,7 @@ const DoctorsSection = ({ setShowPopup }) => {
   return (
     <section
       id="doctors"
-      className="w-full py-10 flex flex-col items-start max-w-[87rem] px-4 mx-auto"
+      className="w-full py-6 flex flex-col items-start max-w-[87rem] px-4 mx-auto"
     >
       {/* --- Header --- */}
       <section className="relative rounded-xl mx-auto grid md:grid-cols-2 items-center overflow-hidden md:min-h-96">
@@ -236,8 +236,8 @@ const DoctorsSection = ({ setShowPopup }) => {
             ></div>
           </div>
         </div>
-        <div className="text-left md:text-right w-full md:min-h-96 h-full p-6 pb-16 md:p-6 lg:pr-10 xl:pr-12 bg-gradient-to-t md:bg-gradient-to-l from-[#27407f] to-[#5279be]">
-          <h2 className="text-white relative z-40 text-[2rem] leading-10 font-bold mb-6">
+        <div className="text-left md:text-right w-full md:min-h-96 h-full p-6 pb-16 md:p-6  bg-gradient-to-t md:bg-gradient-to-l from-[#27407f] to-[#5279be]">
+          <h2 className="text-white relative z-40 text-[2rem] leading-10 font-bold mb-4">
             {t("doctors.title1")}
           </h2>
           <p

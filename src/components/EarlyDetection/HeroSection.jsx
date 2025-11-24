@@ -39,7 +39,7 @@ const HeroSection = () => {
         </div>
 
         {/* Title */}
-        <h1 className="text-white text-3xl relative z-40 md:text-6xl font-bold mb-4">
+        <h1 className="text-white text-4xl md:text-5xl xl:text-6xl relative z-40  font-bold mb-4">
           {t("earlyDetection.hero.title")}
         </h1>
 

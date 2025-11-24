@@ -202,7 +202,7 @@ const DoctorsPage = ({ setShowPopup }) => {
         <div className="w-full md:min-h-80 flex flex-col justify-center h-full p-6 pb-16 md:p-6 lg:p-10 xl:p-12 bg-gradient-to-b md:bg-gradient-to-r from-[#362d29] to-[#6f6763]">
           {/* Fixed: Using FaUserMd instead of FaUserDoctor */}
           <FaUserMd className="text-white relative z-40 text-5xl mb-4 drop-shadow-lg" />
-          <h1 className="text-white relative z-40 text-4xl md:text-6xl xl:text-7xl font-bold mb-4">
+          <h1 className="text-white relative z-40 text-4xl md:text-5xl xl:text-6xl font-bold mb-4">
             {t("doctors.title") || "Our Doctors"}
           </h1>
           <p
