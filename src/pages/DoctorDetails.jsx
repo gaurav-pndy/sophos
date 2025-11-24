@@ -34,7 +34,7 @@ const DoctorDetails = ({ setShowPopup }) => {
     const fetchDoctor = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${API_BASE}/api/doctors-profile/${doctorId}`);
+        const response = await fetch(`${API_BASE}/api/website/doctors/${doctorId}`);
 
         if (!response.ok) throw new Error("Failed to fetch doctor");
 
