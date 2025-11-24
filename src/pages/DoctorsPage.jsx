@@ -11,8 +11,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import WaveBackground from "../components/WaveBackground";
 
- const API_BASE =
-    import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
 const DoctorsPage = ({ setShowPopup }) => {
   const { t, i18n } = useTranslation();
@@ -24,6 +24,25 @@ const DoctorsPage = ({ setShowPopup }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const formatSpecializationsList = (specString = "") => {
+    const formatted = specString
+      .split(",") // split by comma
+      .map((s) => s.trim()) // remove spaces
+      .filter(Boolean) // remove empty items
+      .map((s) => {
+        // Capitalize first letter of each word, but preserve existing capitalization for proper nouns
+        return s
+          .split(" ")
+          .map(
+            (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+          )
+          .join(" ");
+      })
+      .filter((s, i, arr) => arr.indexOf(s) === i); // remove duplicates
+
+    return formatted;
+  };
+
   // Fetch doctors data from backend
   const fetchDoctors = async () => {
     try {
@@ -31,8 +50,10 @@ const DoctorsPage = ({ setShowPopup }) => {
       const params = new URLSearchParams();
 
       if (type !== "All") params.append("type", type);
-      if (specialization !== "All")
+      if (specialization !== "All") {
+        // Pass the specialization label directly to backend
         params.append("specialization", specialization);
+      }
       if (searchTerm) params.append("search", searchTerm);
       params.append("language", i18n.language);
       params.append("page", "1");
@@ -67,7 +88,60 @@ const DoctorsPage = ({ setShowPopup }) => {
       const result = await response.json();
 
       if (result.success) {
-        setSpecializations(result.data);
+        // First, collect all unique labels and map them to their original data
+        const labelMap = new Map();
+
+        result.data.forEach((item) => {
+          const formattedLabels = formatSpecializationsList(item.label);
+
+          formattedLabels.forEach((label) => {
+            if (!labelMap.has(label)) {
+              labelMap.set(label, {
+                id: label,
+                label: label,
+                originalItems: [],
+              });
+            }
+            // Store the original item to calculate count later
+            labelMap.get(label).originalItems.push(item);
+          });
+        });
+
+        // Now fetch the actual count for each unique specialization
+        const specializationsWithCount = await Promise.all(
+          Array.from(labelMap.values()).map(async (spec) => {
+            try {
+              // Fetch doctors count for this specific specialization
+              const params = new URLSearchParams();
+              params.append("specialization", spec.id);
+              params.append("language", i18n.language);
+              params.append("page", "1");
+              params.append("limit", "1"); // We only need the count
+
+              const response = await fetch(
+                `${API_BASE}/api/website/doctors?${params}`
+              );
+              if (response.ok) {
+                const result = await response.json();
+                return {
+                  ...spec,
+                  count: result.pagination?.totalDoctors || 0,
+                  uniqueKey: `${spec.id.replace(/\s+/g, "-")}-${Date.now()}`,
+                };
+              }
+            } catch (err) {
+              console.error(`Error fetching count for ${spec.label}:`, err);
+            }
+
+            return {
+              ...spec,
+              count: 0,
+              uniqueKey: `${spec.id.replace(/\s+/g, "-")}-${Date.now()}`,
+            };
+          })
+        );
+
+        setSpecializations(specializationsWithCount);
       } else {
         throw new Error(result.error);
       }
@@ -153,6 +227,7 @@ const DoctorsPage = ({ setShowPopup }) => {
   useEffect(() => {
     if (location.hash) {
       const hashKey = location.hash.replace("#", "");
+      // Check if hash matches any specialization label
       const specExists = specializations.some((s) => s.id === hashKey);
       if (specExists) setSpecialization(hashKey);
     }
@@ -313,7 +388,7 @@ const DoctorsPage = ({ setShowPopup }) => {
                     {t("doctors.filter.all") || "All Specializations"}
                   </option>
                   {specializations.map((opt) => (
-                    <option key={opt.id} value={opt.id}>
+                    <option key={opt.uniqueKey} value={opt.id}>
                       {opt.label} {opt.count && `(${opt.count})`}
                     </option>
                   ))}
