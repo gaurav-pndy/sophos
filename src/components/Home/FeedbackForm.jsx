@@ -7,29 +7,29 @@ import { toast } from "react-toastify";
 const FeedbackForm = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  
+
   const [form, setForm] = useState({
     patientName: {
       en: { firstName: "", middleName: "", lastName: "" },
-      ru: { firstName: "", middleName: "", lastName: "" }
+      ru: { firstName: "", middleName: "", lastName: "" },
     },
     description: {
       en: "",
-      ru: ""
+      ru: "",
     },
     contactInfo: {
       phone: "",
       email: "",
       whatsapp: false,
       telegram: false,
-      max: false
+      max: false,
     },
     rating: 0,
     doctorId: "",
     doctorEmail: "",
-    status: "Posted"
+    status: "Posted",
   });
-  
+
   const [doctors, setDoctors] = useState([]);
   const [profilePicture, setProfilePicture] = useState(null);
   const [videoFiles, setVideoFiles] = useState([]);
@@ -44,43 +44,45 @@ const FeedbackForm = () => {
     fetchDoctors();
   }, []);
 
-const fetchDoctors = async () => {
-  setDoctorsLoading(true);
-  try {
-    const response = await fetch(`${API_BASE}/api/doctors-profile/minimal`);
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+  const fetchDoctors = async () => {
+    setDoctorsLoading(true);
+    try {
+      const response = await fetch(`${API_BASE}/api/doctors-profile/minimal`);
 
-    const data = await response.json();
-   
-    
-    // Extract doctors from the formattedDoctors property
-    const doctorsData = data.formattedDoctors || [];
-    
-    console.log('Final doctors data:', doctorsData);
-    setDoctors(doctorsData);
-    
-    if (doctorsData.length === 0) {
-      console.warn('No doctors found in the response');
-    }
-  } catch (error) {
-    console.error("Error fetching doctors:", error);
-    toast.error("Failed to load doctors list");
-    setDoctors([]);
-  } finally {
-    setDoctorsLoading(false);
-  }
-};
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-console.log(doctors)
+      const data = await response.json();
+
+      // Extract doctors from the formattedDoctors property
+      const doctorsData = data.formattedDoctors || [];
+
+      console.log("Final doctors data:", doctorsData);
+      setDoctors(doctorsData);
+
+      if (doctorsData.length === 0) {
+        console.warn("No doctors found in the response");
+      }
+    } catch (error) {
+      console.error("Error fetching doctors:", error);
+      toast.error("Failed to load doctors list");
+      setDoctors([]);
+    } finally {
+      setDoctorsLoading(false);
+    }
+  };
+
+  console.log(doctors);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validation
-    if (!form.patientName[currentLanguage].firstName || !form.patientName[currentLanguage].lastName) {
+    if (
+      !form.patientName[currentLanguage].firstName ||
+      !form.patientName[currentLanguage].lastName
+    ) {
       toast.error("Please fill in your first and last name");
       return;
     }
@@ -104,28 +106,28 @@ console.log(doctors)
 
     try {
       const formData = new FormData();
-      
+
       // Add text fields
-      formData.append('patientName', JSON.stringify(form.patientName));
-      formData.append('description', JSON.stringify(form.description));
-      formData.append('contactInfo', JSON.stringify(form.contactInfo));
-      formData.append('rating', form.rating.toString());
-      formData.append('status', form.status);
-      
+      formData.append("patientName", JSON.stringify(form.patientName));
+      formData.append("description", JSON.stringify(form.description));
+      formData.append("contactInfo", JSON.stringify(form.contactInfo));
+      formData.append("rating", form.rating.toString());
+      formData.append("status", form.status);
+
       // Add doctor info if selected
       if (form.doctorId) {
-        formData.append('doctorId', form.doctorId);
-        formData.append('doctorEmail', form.doctorEmail);
+        formData.append("doctorId", form.doctorId);
+        formData.append("doctorEmail", form.doctorEmail);
       }
 
       // Add profile picture
       if (profilePicture) {
-        formData.append('profilePicture', profilePicture);
+        formData.append("profilePicture", profilePicture);
       }
 
       // Add video/files
-      videoFiles.forEach(file => {
-        formData.append('files', file);
+      videoFiles.forEach((file) => {
+        formData.append("files", file);
       });
 
       const response = await fetch(`${API_BASE}/api/reviews`, {
@@ -139,38 +141,42 @@ console.log(doctors)
       }
 
       const data = await response.json();
-      
+
       toast.success("Review submitted successfully!");
-      
+
       // Reset form
       setForm({
         patientName: {
           en: { firstName: "", middleName: "", lastName: "" },
-          ru: { firstName: "", middleName: "", lastName: "" }
+          ru: { firstName: "", middleName: "", lastName: "" },
         },
         description: {
           en: "",
-          ru: ""
+          ru: "",
         },
         contactInfo: {
           phone: "",
           email: "",
           whatsapp: false,
           telegram: false,
-          max: false
+          max: false,
         },
         rating: 0,
         doctorId: "",
         doctorEmail: "",
-        status: "Posted"
+        status: "Posted",
       });
       setProfilePicture(null);
       setVideoFiles([]);
-
     } catch (error) {
       console.error("Error submitting review:", error);
-      if (error.message.includes("Failed to fetch") || error.message.includes("Connection refused")) {
-        toast.error("Cannot connect to server. Please make sure the backend is running.");
+      if (
+        error.message.includes("Failed to fetch") ||
+        error.message.includes("Connection refused")
+      ) {
+        toast.error(
+          "Cannot connect to server. Please make sure the backend is running."
+        );
       } else {
         toast.error("Error submitting review. Please try again.");
       }
@@ -180,63 +186,65 @@ console.log(doctors)
   };
 
   const handleNameChange = (field, value) => {
-    setForm(prev => ({
+    setForm((prev) => ({
       ...prev,
       patientName: {
         ...prev.patientName,
         [currentLanguage]: {
           ...prev.patientName[currentLanguage],
-          [field]: value
-        }
-      }
+          [field]: value,
+        },
+      },
     }));
   };
 
   const handleDescriptionChange = (value) => {
-    setForm(prev => ({
+    setForm((prev) => ({
       ...prev,
       description: {
         ...prev.description,
-        [currentLanguage]: value
-      }
+        [currentLanguage]: value,
+      },
     }));
   };
 
   const handleContactChange = (field, value) => {
-    setForm(prev => ({
+    setForm((prev) => ({
       ...prev,
       contactInfo: {
         ...prev.contactInfo,
-        [field]: value
-      }
+        [field]: value,
+      },
     }));
   };
 
   const handleDoctorChange = (e) => {
     const selectedDoctorId = e.target.value;
     if (selectedDoctorId) {
-      const selectedDoctor = doctors.find(doctor => doctor._id === selectedDoctorId);
-      setForm(prev => ({
+      const selectedDoctor = doctors.find(
+        (doctor) => doctor._id === selectedDoctorId
+      );
+      setForm((prev) => ({
         ...prev,
         doctorId: selectedDoctor._id,
-        doctorEmail: selectedDoctor.email
+        doctorEmail: selectedDoctor.email,
       }));
     } else {
-      setForm(prev => ({
+      setForm((prev) => ({
         ...prev,
         doctorId: "",
-        doctorEmail: ""
+        doctorEmail: "",
       }));
     }
   };
 
   const handleVideoUpload = (e) => {
     const files = Array.from(e.target.files);
-    setVideoFiles(prev => [...prev, ...files]);
+    setVideoFiles((prev) => [...prev, ...files]);
   };
 
   const removeVideoFile = (index) => {
-    setVideoFiles(prev => prev.filter((_, i) => i !== index));
+    setVideoFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
   return (
@@ -266,22 +274,27 @@ console.log(doctors)
               ) : (
                 doctors.map((doctor) => (
                   <option key={doctor._id} value={doctor._id}>
-                    {doctor.displayName?.[currentLanguage] || 
-                     `${doctor.lastName?.[currentLanguage]} ${doctor.firstName?.[currentLanguage]} ${doctor.middleName?.[currentLanguage]}`}
+                    {doctor.displayName?.[currentLanguage] ||
+                      `${doctor.lastName?.[currentLanguage]} ${doctor.firstName?.[currentLanguage]} ${doctor.middleName?.[currentLanguage]}`}
                   </option>
                 ))
               )}
             </select>
             {form.doctorId && (
               <p className="text-sm text-gray-600 mt-2">
-                Selected: {doctors.find(d => d._id === form.doctorId)?.displayName?.[currentLanguage]}
+                Selected:{" "}
+                {
+                  doctors.find((d) => d._id === form.doctorId)?.displayName?.[
+                    currentLanguage
+                  ]
+                }
               </p>
             )}
           </div>
 
           {/* Name Fields */}
           <div className="grid grid-cols-2 gap-4 mb-6">
-             <div>
+            <div>
               <label className="block text-brand1 font-semibold mb-2">
                 {t("contact.lastName")} *
               </label>
@@ -290,7 +303,7 @@ console.log(doctors)
                 required
                 className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
                 value={form.patientName[currentLanguage].lastName}
-                onChange={(e) => handleNameChange('lastName', e.target.value)}
+                onChange={(e) => handleNameChange("lastName", e.target.value)}
               />
             </div>
             <div>
@@ -302,10 +315,10 @@ console.log(doctors)
                 required
                 className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
                 value={form.patientName[currentLanguage].firstName}
-                onChange={(e) => handleNameChange('firstName', e.target.value)}
+                onChange={(e) => handleNameChange("firstName", e.target.value)}
               />
             </div>
-           
+
             <div className="col-span-2">
               <label className="block text-brand1 font-semibold mb-2">
                 {t("contact.middleName")}
@@ -314,7 +327,7 @@ console.log(doctors)
                 type="text"
                 className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
                 value={form.patientName[currentLanguage].middleName}
-                onChange={(e) => handleNameChange('middleName', e.target.value)}
+                onChange={(e) => handleNameChange("middleName", e.target.value)}
               />
             </div>
           </div>
@@ -328,7 +341,7 @@ console.log(doctors)
               <PhoneInput
                 defaultCountry="ru"
                 value={form.contactInfo.phone}
-                onChange={(phone) => handleContactChange('phone', phone)}
+                onChange={(phone) => handleContactChange("phone", phone)}
                 className="rounded-lg border border-brand4 text-sm w-full"
                 inputClassName="!bg-transparent !border-none !w-full !px-3 !py-2 focus:!outline-none"
               />
@@ -338,7 +351,9 @@ console.log(doctors)
                     type="checkbox"
                     className="accent-[#59302a]"
                     checked={form.contactInfo.whatsapp}
-                    onChange={(e) => handleContactChange('whatsapp', e.target.checked)}
+                    onChange={(e) =>
+                      handleContactChange("whatsapp", e.target.checked)
+                    }
                   />
                   <span>Whatsapp</span>
                 </label>
@@ -347,7 +362,9 @@ console.log(doctors)
                     type="checkbox"
                     className="accent-[#59302a]"
                     checked={form.contactInfo.telegram}
-                    onChange={(e) => handleContactChange('telegram', e.target.checked)}
+                    onChange={(e) =>
+                      handleContactChange("telegram", e.target.checked)
+                    }
                   />
                   <span>Telegram</span>
                 </label>
@@ -356,7 +373,9 @@ console.log(doctors)
                     type="checkbox"
                     className="accent-[#59302a]"
                     checked={form.contactInfo.max}
-                    onChange={(e) => handleContactChange('max', e.target.checked)}
+                    onChange={(e) =>
+                      handleContactChange("max", e.target.checked)
+                    }
                   />
                   <span>Max</span>
                 </label>
@@ -371,7 +390,7 @@ console.log(doctors)
                 required
                 className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
                 value={form.contactInfo.email}
-                onChange={(e) => handleContactChange('email', e.target.value)}
+                onChange={(e) => handleContactChange("email", e.target.value)}
               />
             </div>
           </div>
@@ -386,8 +405,10 @@ console.log(doctors)
                 <button
                   key={star}
                   type="button"
-                  className={`text-2xl ${star <= form.rating ? 'text-yellow-400' : 'text-gray-300'}`}
-                  onClick={() => setForm(prev => ({ ...prev, rating: star }))}
+                  className={`text-2xl ${
+                    star <= form.rating ? "text-yellow-400" : "text-gray-300"
+                  }`}
+                  onClick={() => setForm((prev) => ({ ...prev, rating: star }))}
                 >
                   ★
                 </button>
@@ -416,7 +437,9 @@ console.log(doctors)
             </label>
             <div
               className="border border-brand4 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-brand1 hover:bg-brand1/5"
-              onClick={() => document.getElementById("profile-picture-upload").click()}
+              onClick={() =>
+                document.getElementById("profile-picture-upload").click()
+              }
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -426,11 +449,15 @@ console.log(doctors)
                 stroke="currentColor"
                 strokeWidth={1.5}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4v16m8-8H4"
+                />
               </svg>
               <p className="text-brand1 text-center">
-                {profilePicture 
-                  ? `Selected: ${profilePicture.name}` 
+                {profilePicture
+                  ? `Selected: ${profilePicture.name}`
                   : "Click to upload profile picture"}
               </p>
               <input
@@ -460,7 +487,11 @@ console.log(doctors)
                 stroke="currentColor"
                 strokeWidth={1.5}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4v16m8-8H4"
+                />
               </svg>
               <p className="text-brand1 text-center">
                 {t("testimonials.clickOrDrag")}
@@ -474,13 +505,18 @@ console.log(doctors)
                 onChange={handleVideoUpload}
               />
             </div>
-            
+
             {/* Display selected video files */}
             {videoFiles.length > 0 && (
               <div className="mt-4">
-                <p className="text-brand1 font-semibold mb-2">Selected files:</p>
+                <p className="text-brand1 font-semibold mb-2">
+                  Selected files:
+                </p>
                 {videoFiles.map((file, index) => (
-                  <div key={index} className="flex items-center justify-between bg-gray-50 p-2 rounded mb-2">
+                  <div
+                    key={index}
+                    className="flex items-center justify-between bg-gray-50 p-2 rounded mb-2"
+                  >
                     <span className="text-brand1 text-sm">{file.name}</span>
                     <button
                       type="button"
