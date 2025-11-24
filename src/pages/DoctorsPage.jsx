@@ -184,13 +184,7 @@ const DoctorsPage = ({ setShowPopup }) => {
 
     // Create tags from specialty and subSpecialties
     const tags = [specialty];
-    if (doc.subSpecialties && doc.subSpecialties.length > 0) {
-      tags.push(
-        ...doc.subSpecialties
-          .map((sub) => getLocalizedField(sub))
-          .filter(Boolean)
-      );
-    }
+
 
     // Format languages
     const languages = doc.languages
