@@ -2633,6 +2633,9 @@
   "btn1": "Contact the coordinator",
   "btn2": "Learn more about International Oncology Boards"
 }
-
+,
+"news": {
+  "readMore":"Read More"
+}
 
 }

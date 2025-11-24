@@ -42,7 +42,7 @@ export default function NewsTab() {
                   to={`/about-diseases/${news.id}`}
                   className="inline-block  text-lg font-medium hover:underline transition"
                 >
-                  Read more
+                  {t("news.readMore")}
                 </Link>
               </div>
             </div>
