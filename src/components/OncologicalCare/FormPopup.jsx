@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import { PhoneInput } from "react-international-phone";
+import { toast } from "react-toastify";
 
 const FormPopup = () => {
   const { t } = useTranslation();
@@ -20,8 +21,86 @@ const FormPopup = () => {
     agree2: false,
   });
   const [loading, setLoading] = useState(false);
+
+  const API_BASE =
+    import.meta.env.VITE_API_BASE_URL ||
+    "http://localhost:3003";
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validation - email is required based on your schema
+    if (!form.firstName || !form.lastName || !form.phone || !form.city || !form.email) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+
+    if (!form.agree1 || !form.agree2) {
+      toast.error("Please agree to the terms and conditions");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const formData = {
+        firstName: form.firstName,
+        lastName: form.lastName,
+        middleName: form.middleName,
+        phoneNumber: form.phone,
+        whatsapp: form.whatsapp,
+        telegram: form.telegram,
+        max: form.max,
+        city: form.city,
+        message: form.message,
+        email: form.email,
+      };
+
+      console.log("Sending patient coordination data:", formData);
+
+      const response = await fetch(`${API_BASE}/api/patient-coordination-forms`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Error response:", errorText);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Success response:", data);
+
+      toast.success("Form submitted successfully!");
+      // Reset form
+      setForm({
+        firstName: "",
+        middleName: "",
+        lastName: "",
+        phone: "",
+        whatsapp: false,
+        telegram: false,
+        max: false,
+        email: "",
+        city: "",
+        message: "",
+        agree1: false,
+        agree2: false,
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="relative z-40 p-4 md:p-8">
         {/* Name + Phone + Email + City */}
         <div className="grid grid-cols-2 gap-4 mb-3">
@@ -121,10 +200,11 @@ const FormPopup = () => {
           {/* Email */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.email")}
+              {t("contact.email")} *
             </label>
             <input
               type="email"
+              required
               className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
