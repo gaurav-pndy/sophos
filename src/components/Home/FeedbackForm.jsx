@@ -38,7 +38,7 @@ const FeedbackForm = () => {
 
   const API_BASE =
     import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
-    
+
   // Fetch doctors list on component mount
   useEffect(() => {
     fetchDoctors();
@@ -281,6 +281,18 @@ console.log(doctors)
 
           {/* Name Fields */}
           <div className="grid grid-cols-2 gap-4 mb-6">
+             <div>
+              <label className="block text-brand1 font-semibold mb-2">
+                {t("contact.lastName")} *
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
+                value={form.patientName[currentLanguage].lastName}
+                onChange={(e) => handleNameChange('lastName', e.target.value)}
+              />
+            </div>
             <div>
               <label className="block text-brand1 font-semibold mb-2">
                 {t("contact.firstName")} *
@@ -293,18 +305,7 @@ console.log(doctors)
                 onChange={(e) => handleNameChange('firstName', e.target.value)}
               />
             </div>
-            <div>
-              <label className="block text-brand1 font-semibold mb-2">
-                {t("contact.lastName")} *
-              </label>
-              <input
-                type="text"
-                required
-                className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
-                value={form.patientName[currentLanguage].lastName}
-                onChange={(e) => handleNameChange('lastName', e.target.value)}
-              />
-            </div>
+           
             <div className="col-span-2">
               <label className="block text-brand1 font-semibold mb-2">
                 {t("contact.middleName")}
