@@ -38,7 +38,7 @@ const DoctorsPage = ({ setShowPopup }) => {
       params.append("page", "1");
       params.append("limit", "50");
 
-      const response = await fetch(`${API_BASE}/api/doctors-profile?${params}`);
+      const response = await fetch(`${API_BASE}/api/website/doctors?${params}`);
       if (!response.ok) throw new Error("Failed to fetch doctors");
 
       const result = await response.json();
