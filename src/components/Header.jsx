@@ -491,6 +491,12 @@ const Header = ({ city, setCity, setShowPopup }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   const handleScrollToPatientsSection = (sectionId) => {
     if (isOpen) setIsOpen(false);
     if (location.pathname === "/for-patients") {
@@ -653,15 +659,6 @@ const Header = ({ city, setCity, setShowPopup }) => {
           {/* Socials & Language Switch */}
           <div className="hidden lg:flex items-center gap-2 justify-end min-w-0">
             <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-500 text-lg xl:text-2xl hover:scale-125 transition-all duration-300"
-              aria-label="WhatsApp"
-            >
-              <img src="/max.png" alt="" className="w-6" />
-            </a>
-            <a
               href="https://wa.me/74951234567"
               target="_blank"
               rel="noopener noreferrer"
@@ -678,6 +675,15 @@ const Header = ({ city, setCity, setShowPopup }) => {
               aria-label="Telegram"
             >
               <FaTelegramPlane />
+            </a>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 text-lg xl:text-2xl hover:scale-125 transition-all duration-300"
+              aria-label="Max"
+            >
+              <img src="/max.png" alt="" className="w-6" />
             </a>
             <div
               className="relative md:ml-2 flex gap-1 md:gap-2 items-center"
@@ -736,11 +742,15 @@ const Header = ({ city, setCity, setShowPopup }) => {
         transition={{ delay: 0.2, duration: 0.4 }}
       >
         {/* Logo now here */}
-        <Link to="/" className="flex  items-center gap-2 mr-2">
+        <Link
+          to="/"
+          onClick={handleLogoClick}
+          className="flex  items-center gap-2 mr-2"
+        >
           <img src="/HD.png" alt="Logo" className="h-5 md:h-7 object-contain" />
         </Link>
 
-        <div className="hidden lg:flex justify-end gap-3 xl:gap-6 mr-3 xl:mr-6 items-center flex-1 text-sm xl:text-base font-medium">
+        <div className="hidden lg:flex justify-end gap-3 xl:gap-6 mr-3 xl:mr-6 items-center flex-1 text-sm xl:text-base font-semibold">
           {" "}
           <div
             onMouseEnter={() => setShowAboutDropdown(true)}
@@ -987,11 +997,11 @@ const Header = ({ city, setCity, setShowPopup }) => {
             {t("header.reviews")}{" "}
           </button>{" "}
           <Link
-            to="/hdmc-plus"
+            to="/blogs"
             className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
           >
             {" "}
-            HDMC+
+            {t("header.blog")}
           </Link>{" "}
           <button
             onClick={() => handleScrollToSection("#contact")}
@@ -1021,7 +1031,7 @@ const Header = ({ city, setCity, setShowPopup }) => {
       </motion.nav>
 
       <nav className="hidden lg:flex z-100 py-2 w-full bg-brand1/10 justify-end ">
-        <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 text-sm xl:text-base font-medium">
+        <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 text-sm xl:text-base font-semibold">
           {" "}
           <Link
             to="/telemedicine-consultation"
@@ -1038,21 +1048,12 @@ const Header = ({ city, setCity, setShowPopup }) => {
             {t("header.earlyDiagnosis")}{" "}
           </Link>{" "}
           <Link
-            to="/center-of-expertise"
+            to="/oncological-care"
             className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
           >
             {" "}
-            {t("header.expertise")}{" "}
+            {t("header.oncologicalCare")}{" "}
           </Link>{" "}
-          <a
-            href="https://pathologica.ru/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
-          >
-            {" "}
-            Pathologica
-          </a>{" "}
           <button
             onClick={() => setShowPopup(true)}
             className=" min-w-48 xl:min-w-56 bg-[#125e84] text-white px-4 py-2 rounded-lg font-normal hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap hidden md:flex justify-center items-center gap-2"
@@ -1408,11 +1409,11 @@ const Header = ({ city, setCity, setShowPopup }) => {
                   {t("header.reviews")}
                 </button>{" "}
                 <Link
-                  to="/hdmc-plus"
+                  to="/blogs"
                   className="  hover:underline whitespace-nowrap"
                 >
                   {" "}
-                  HDMC+
+                  {t("header.blog")}
                 </Link>{" "}
                 <button
                   onClick={() => handleScrollToSection("#contact")}
@@ -1436,20 +1437,12 @@ const Header = ({ city, setCity, setShowPopup }) => {
                   {t("header.earlyDiagnosis")}
                 </Link>{" "}
                 <Link
-                  to="/center-of-expertise"
+                  to="/oncological-care"
                   className="  hover:underline whitespace-nowrap"
                 >
                   {" "}
-                  {t("header.expertise")}
+                  {t("header.oncologicalCare")}
                 </Link>{" "}
-                <a
-                  href="https://pathologica.ru/"
-                  target="_blank"
-                  className="  hover:underline whitespace-nowrap"
-                >
-                  {" "}
-                  Pathologica
-                </a>{" "}
               </nav>
             </motion.aside>
           </>

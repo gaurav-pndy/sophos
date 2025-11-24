@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop";
 import BookingPopup from "../components/BookingPopup";
 import { useState } from "react";
+import ConsentBanner from "../components/ConsentBanner";
 
 const AppLayout = ({ city, setCity, showPopup, setShowPopup }) => {
   return (
@@ -17,6 +18,7 @@ const AppLayout = ({ city, setCity, showPopup, setShowPopup }) => {
         <BookingPopup show={showPopup} onClose={() => setShowPopup(false)} />
         <Footer city={city} />
       </div>
+      <ConsentBanner />
     </div>
   );
 };

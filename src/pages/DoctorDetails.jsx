@@ -42,6 +42,7 @@ const DoctorDetails = ({ setShowPopup }) => {
 
         if (result.success) {
           setDoctor(result.data);
+          console.log(result.data);
         } else {
           throw new Error(result.error);
         }
@@ -115,6 +116,9 @@ const DoctorDetails = ({ setShowPopup }) => {
     return {
       id: doc.id || doc._id,
       name: fullName,
+      firstName: doc.firstName,
+      lastName: doc.lastName,
+      middleName: doc.middleName,
       specialty,
       location,
       branches,
@@ -141,6 +145,8 @@ const DoctorDetails = ({ setShowPopup }) => {
   };
 
   const formattedDoctor = doctor ? formatDoctorData(doctor) : null;
+
+  console.log(formattedDoctor);
 
   const TAB_LIST = [
     { key: "about", labelKey: "doctors.tabs.tab1" },
@@ -322,7 +328,12 @@ const DoctorDetails = ({ setShowPopup }) => {
           <div className="bg-white rounded-3xl shadow-xl border border-brand4/10 px-6 md:px-10 py-8">
             <div className="flex">
               <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold text-brand1 mb-4">
-                {formattedDoctor.name}
+                <span className="uppercase">
+                  {" "}
+                  {formattedDoctor.lastName[i18n.language]}
+                </span>{" "}
+                {formattedDoctor.firstName[i18n.language]}{" "}
+                {formattedDoctor.middleName[i18n.language]}
               </h1>
               <p className="flex-1 text-right whitespace-nowrap text-brand1/80 text-lg font-semibold">
                 {formattedDoctor.reviews.length} {t("doctors.reviews")}
@@ -345,97 +356,10 @@ const DoctorDetails = ({ setShowPopup }) => {
                   {tag}
                 </span>
               ))}
-            </div>
-
-            {/* Info cards with icons and brand colors */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              {/* Location/Branch Card
-              <div className="flex items-start gap-3 p-4 bg-brand4/10 rounded-xl border border-brand4/20">
-                <div className="flex items-center justify-center w-10 md:w-12 h-10 md:h-12 from-[#125e84] to-[#33babd] bg-gradient-to-br rounded-xl">
-                  <FaMapMarkerAlt className="text-white text-2xl" />
-                </div>
-                <div>
-                  <div className="text-xs font-semibold text-brand1/60 uppercase tracking-wide mb-1">
-                    {t("doctors.location")}
-                  </div>
-                  <div className="text-brand1 md:text-lg font-medium">
-                    {formattedDoctor.location}
-                  </div>
-                  {formattedDoctor.branches && (
-                    <div className="text-xs text-brand1/70 mt-1">
-                      <strong>Branches:</strong> {formattedDoctor.branches}
-                    </div>
-                  )}
-                </div>
-              </div>
-               */}
-
-              {/* Languages Card */}
-              <div className="flex items-start gap-3 p-4 bg-brand4/10 rounded-xl border border-brand4/20">
-                <div className="flex items-center justify-center w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-[#c668a9] to-[#af6ca5] rounded-xl">
-                  <FaLanguage className="text-white text-2xl" />
-                </div>
-                <div>
-                  <div className="text-xs font-semibold text-brand1/60 uppercase tracking-wide mb-1">
-                    {t("doctors.languages")}
-                  </div>
-                  <div className="text-brand1 md:text-lg font-medium">
-                    {formattedDoctor.languages}
-                  </div>
-                </div>
-              </div>
-
-              {/* Services Card */}
-              {(formattedDoctor.services?.online ||
-                formattedDoctor.services?.offline) && (
-                <div className="flex items-start gap-3 p-4 bg-brand4/10 rounded-xl border border-brand4/20">
-                  <div className="flex items-center justify-center w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-[#f59e0b] to-[#d97706] rounded-xl">
-                    <FaVideo className="text-white text-2xl" />
-                  </div>
-                  <div>
-                    {/*
-                    <div className="text-xs font-semibold text-brand1/60 uppercase tracking-wide mb-1">
-                      Services
-                    </div>
-                    */}
-                    <div className="space-y-1">
-                      {formattedDoctor.services?.online && (
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-brand1 text-sm font-medium">
-                            Remote Consultation
-                          </span>
-                        </div>
-                      )}
-                      {formattedDoctor.services?.offline && (
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <span className="text-brand1 text-sm font-medium">
-                            In-Person Consultation
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Branches Card (if location is empty) */}
-              {!formattedDoctor.location && formattedDoctor.branches && (
-                <div className="flex items-start gap-3 p-4 bg-brand4/10 rounded-xl border border-brand4/20">
-                  <div className="flex items-center justify-center w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-[#34d399] to-[#10b981] rounded-xl">
-                    <FaClinicMedical className="text-white text-2xl" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold text-brand1/60 uppercase tracking-wide mb-1">
-                      Branches
-                    </div>
-                    <div className="text-brand1 md:text-lg font-medium">
-                      {formattedDoctor.branches}
-                    </div>
-                  </div>
-                </div>
-              )}
+              <span className="px-4 py-1.5 bg-brand4/20 text-brand1 rounded-full text-base font-semibold border border-brand4/30">
+                {t("doctors.experience")} :{" "}
+                {doctor.yearOfExperience ? doctor.yearOfExperience : "N/A"}
+              </span>
             </div>
           </div>
 

@@ -18,7 +18,9 @@ const PartnerCarousel = () => {
         {allLogos.concat(allLogos).map((logo, i) => (
           <div
             key={i}
-            className="flex justify-center items-center flex-shrink-0  px-10 "
+            className={`flex justify-center items-center flex-shrink-0 ${
+              logo.alt === "RemesloDobra logo" ? "px-0" : "px-5"
+            }  `}
           >
             <a
               href={logo.url}
@@ -29,7 +31,9 @@ const PartnerCarousel = () => {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="h-16 w-full object-contain filter grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300"
+                className={`h-auto max-h-24  object-contain filter grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300 ${
+                  logo.alt === "HD logo" ? "w-72" : ""
+                } ${logo.alt == "ECRC logo" ? "w-34" : "w-60"}`}
               />
             </a>
           </div>

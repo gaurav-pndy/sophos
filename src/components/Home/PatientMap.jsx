@@ -76,7 +76,7 @@ const PatientMap = () => {
   const totalPatients = locations.reduce((sum, loc) => sum + loc.patients, 0);
 
   return (
-    <div className="w-full py-16">
+    <div className="w-full py-10">
       <div className="max-w-[87rem] w-full mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

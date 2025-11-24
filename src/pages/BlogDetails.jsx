@@ -132,7 +132,7 @@ const BlogDetails = () => {
       {/* HERO SECTION */}
       <section className="relative rounded-2xl max-w-7xl max-h-96 mx-auto grid md:grid-cols-2 items-center overflow-hidden md:min-h-96 shadow-lg">
         <WaveBackground
-          stroke="rgb(200, 200, 200)"
+          stroke="rgb(300, 300, 300,"
           custStyle="md:w-1/2 h-1/2 left-0 top-0"
         />
 
@@ -175,7 +175,7 @@ const BlogDetails = () => {
           <div className="relative w-full h-full">
             {blog.image ? (
               <img
-                src={`${API_BASE}${blog.image}`}
+                src={`${blog.image}`}
                 alt={blog.title}
                 className="w-full max-h-96 h-full object-cover md:rounded-tr-2xl md:rounded-br-2xl"
                 onError={(e) => {
@@ -236,9 +236,10 @@ const BlogDetails = () => {
               {/* Description */}
               {blog.description && (
                 <div className="mb-8">
-                  <p className="text-xl leading-relaxed text-gray-700">
-                    {blog.description}
-                  </p>
+                  <p
+                    className="text-xl leading-relaxed text-gray-700"
+                    dangerouslySetInnerHTML={{ __html: blog.description }}
+                  ></p>
                 </div>
               )}
 
@@ -252,9 +253,10 @@ const BlogDetails = () => {
                 /* If no content, show description as main content */
                 blog.description && (
                   <div className="prose prose-lg max-w-none">
-                    <p className="text-gray-700 leading-relaxed text-lg">
-                      {blog.description}
-                    </p>
+                    <p
+                      className="text-gray-700 leading-relaxed text-lg"
+                      dangerouslySetInnerHTML={{ __html: blog.description }}
+                    ></p>
                   </div>
                 )
               )}

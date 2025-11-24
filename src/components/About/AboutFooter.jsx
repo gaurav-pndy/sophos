@@ -6,8 +6,8 @@ const AboutFooter = ({ city }) => {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full max-w-[87rem] mx-auto rounded-xl py-16 flex flex-col items-center justify-center text-center bg-gradient-to-br from-brand5 to-brand1">
-      <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow">
+    <section className="w-full max-w-[87rem] mx-auto rounded-xl py-6 flex flex-col items-center justify-center text-center bg-gradient-to-br from-brand5 to-brand1">
+      <h2 className="text-white text-[2rem] leading-10 font-bold mb-4 drop-shadow">
         {t("about.footer.title")}
       </h2>
       <p className="text-white/90 text-lg lg:text-xl font-medium mb-9">

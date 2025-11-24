@@ -8,10 +8,32 @@ import {
   FaWhatsapp,
   FaTelegramPlane,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Footer = ({ city }) => {
   const { t } = useTranslation();
+
+  const scrollToSection = (sectionId) => {
+    const target = document.querySelector(sectionId);
+    if (target) {
+      const topOffset =
+        target.getBoundingClientRect().top + window.scrollY - 150;
+      window.scrollTo({ top: topOffset, behavior: "smooth" });
+    }
+  };
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleScrollToSection = (sectionId) => {
+    if (location.pathname === "/") {
+      // Already on homepage → just scroll
+      scrollToSection(sectionId);
+    } else {
+      // Go to homepage first, then scroll
+      navigate("/", { state: { scrollTo: sectionId } });
+    }
+  };
 
   return (
     <footer id="footer" className="bg-brand1 text-white pt-8 pb-4 px-4">
@@ -26,34 +48,35 @@ const Footer = ({ city }) => {
           <h3 className="text-lg font-semibold mb-4">
             {t("footer.navigation")}
           </h3>
-          <div className="flex md:grid md:grid-cols-2 flex-col gap-1">
-            <a href="#" className=" hover:text-brand2">
-              {t("header.home")}{" "}
-            </a>
-            <a href="#" className=" hover:text-brand2">
+          <div className="flex md:grid md:grid-cols-1 flex-col gap-1">
+            <button
+              onClick={() => handleScrollToSection("#about")}
+              className=" hover:text-brand2 text-left cursor-pointer"
+            >
               {t("header.about")}{" "}
-            </a>
-            <a href="#" className=" hover:text-brand2">
+            </button>
+            <button
+              onClick={() => handleScrollToSection("#doctors")}
+              className=" hover:text-brand2 text-left cursor-pointer"
+            >
               {t("header.doctors")}{" "}
-            </a>
-            <a href="#" className=" hover:text-brand2">
+            </button>
+            <Link to="/for-patients" className=" hover:text-brand2">
+              {t("header.forPatients")}{" "}
+            </Link>
+            <button
+              onClick={() => handleScrollToSection("#services")}
+              className=" hover:text-brand2 text-left cursor-pointer"
+            >
               {t("header.services")}{" "}
-            </a>
+            </button>
             <a href="#" className=" hover:text-brand2">
-              {t("header.forPatients")}
+              {t("header.priceList")}
             </a>
-            {/* <a href="#" className=" hover:text-brand2">
-              {t("header.ctScan")}{" "}
-            </a> */}
-            <a href="#" className=" hover:text-brand2">
-              {t("header.offers")}
-            </a>
-            <a href="#" className=" hover:text-brand2">
-              HDMC+{" "}
-            </a>
-            <a href="#" className=" hover:text-brand2">
-              {t("header.reviews")}{" "}
-            </a>
+
+            <Link to="/about#vacancies" className=" hover:text-brand2">
+              {t("header.vacancies")}
+            </Link>
           </div>
         </div>
 
@@ -67,11 +90,11 @@ const Footer = ({ city }) => {
               {t("footer.priceList")}
             </a> */}
 
-            <Link to="/about#offer" className="hover:underline">
-              {t("footer.agreement")}
+            <Link to="/about#licenses" className="hover:underline">
+              {t("footer.licenses")}
             </Link>
-            <Link to="/about#privacy" className="hover:underline">
-              {t("footer.privacy")}
+            <Link to="#" className="hover:underline">
+              {t("footer.documents")}
             </Link>
           </div>
         </div>
@@ -156,6 +179,15 @@ const Footer = ({ city }) => {
               className="bg-[#039be5] hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-full"
             >
               <FaTelegramPlane size={24} />
+            </a>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 bg-[#793be4] hover:scale-110 transition-all duration-300 cursor-pointer p-2  rounded-full text-lg xl:text-2xl  "
+              aria-label="Max"
+            >
+              <img src="/max.png" alt="" className="w-6" />
             </a>
           </div>
         </div>

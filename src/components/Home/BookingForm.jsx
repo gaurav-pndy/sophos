@@ -120,7 +120,7 @@ const BookingForm = () => {
 
   // Step rendering
   return (
-    <section className="w-full bg-[#fafbfc] py-16">
+    <section className="w-full bg-[#fafbfc] py-10">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-brand1 text-center  text-4xl font-bold mb-6">
           Запись на прием

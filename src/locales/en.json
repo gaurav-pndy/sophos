@@ -37,12 +37,15 @@
     "telemedicine": "Telemedicine",
     "addresses": "Addresses",
     "contact": "Contact",
-    "about": "About Us",
+    "about": "About the clinic",
     "forPatients": "For Patients",
     "ctScan": "CT Scan 24/7",
     "offers": "Offers",
     "reviews": "Reviews",
+    "blog": "Blog/News",
     "expertise": "Center Of Expertise",
+    "priceList": "Price List",
+    "vacancies": "Vacancies",
     "cityConfirm": {
       "question": "Is your city Moscow ?",
       "yes": "Yes",
@@ -53,7 +56,7 @@
     "makhachkala": "Makhachkala",
     "moscowAddress": "Aminyevskoye Highway 6, <br />подъезд 1",
     "makhachkalaAddress": "Ali-Gadzhi Akushinskogo Avenue 7",
-    "search": "Search...",
+    "search": "Diagnosis/Service Search",
     "about1": "Information about the medical organization",
     "about2": "Licenses and certificates",
     "about3": "Contacts of regulatory authorities",
@@ -69,6 +72,7 @@
     "patient5": "About diseases",
     "patient6": "Documents",
     "oncologist": "Oncologists",
+    "oncologicalCare": "Oncological Care",
     "doctorsDrop": {
       "d1": "Oncologists",
       "d2": "Pathologist",
@@ -119,68 +123,68 @@
       }
     }
   },
-  "hero": {
-    "slide1": {
-      "title": "HDMC+ Premium Membership",
-      "subtitle": "Priority scheduling, discounted checkups, personal care coordinator",
-      "button": "Join HDMC+"
-    },
-    "slide2": {
-      "title": "International Multispecialty Expert Telemedicine",
-      "subtitle": "Expert consultations with leading world specialists",
-      "button": "Make an appointment"
-    },
-    "slide3": {
-      "title": "Special Offers"
-    },
-    "slide4": {
-      "title": "Charitable Foundation"
-    }
+ "hero": {
+  "slide1": {
+    "title": "Expert oncological care",
+    "subtitle1": "Expert-level oncologists",
+    "subtitle2": "Personalized approach for every patient",
+    "subtitle3": "Center for modern anti-tumor therapy",
+    "button": "Join HDMC+"
   },
+  "slide2": {
+    "title": "NECHUSHKINA Valentina Mikhailovna",
+    "subtitle1": "Head of the Oncogynecology Department at Health-Direct",
+    "subtitle2": "Over 25 years of experience in oncogynecology, more than 10,000 successful surgeries",
+    "subtitle3": "Practicing surgeon, oncologist, obstetrician-gynecologist, Doctor of Medical Sciences, professor",
+    "subtitle4": "World-renowned oncogynecologist",
+    "subtitle5": "Five-year overall survival rate for ovarian cancer patients (stages IIIC–IV) operated on at the first stage is over 80%",
+    "button1": "Make an appointment",
+    "button2": "About the specialist"
+  },
+  "slide3": {
+    "title": "Center for modern anti-tumor therapy",
+    "subtitle1": "Your comfort and safety",
+    "subtitle2": "International treatment standards",
+    "subtitle3": "Personalized pathways without unnecessary procedures",
+    "subtitle4": "A personal coordinator at every step"
+  },
+  "slide4": {
+    "title": "Multidisciplinary outpatient clinic"
+  },
+  "slide5": {
+    "title": "Comprehensive check-up programs",
+    "subtitle1": "Take care of yourself in advance"
+  },
+  "slide6": {
+    "title": "Open House Day"
+  }
+},
   "aboutClinic": {
     "title": "About Clinic",
     "subtitle": "A multidisciplinary clinic in Moscow with modern diagnostics and expert specialists.",
-    "feature1": {
-      "title": "Moscow & Makhachkala",
-      "desc": "Modern clinics in two cities"
-    },
-    "feature2": {
-      "title": "International Standards",
-      "desc": "World-class quality"
-    },
-    "feature3": {
-      "title": "Multidisciplinary Team",
-      "desc": "Top category doctors"
-    },
-    "feature4": {
-      "title": "Early diagnosis of diseases is a personalized approach",
-      "desc": ""
-    },
-    "feature5": {
-      "title": "Working hours",
-      "desc": "from 8:00 to 23:00 seven days a week"
-    },
-    "stat1": {
-      "value": "40+",
-      "label": "specialties"
-    },
-    "stat2": {
-      "value": "50+",
-      "label": "experts"
-    },
-    "stat3": {
-      "value": "24/7",
-      "label": "Oncological board"
-    },
-    "stat4": {
-      "value": "10k+",
-      "label": "Telemedicine"
-    },
+   "feature1": {
+  "desc": "Multidisciplinary outpatient clinic — diagnostics and therapy in one place."
+},
+"feature2": {
+  "desc": "Center for modern anti-tumor therapy."
+},
+"feature3": {
+  "desc": "Doctors of the highest category"
+},
+"feature4": {
+  "desc": "Personalized care pathways without unnecessary procedures."
+},
+"feature5": {
+  "desc": "A personal coordinator at every step."
+},
+"descText": "A multidisciplinary clinic in Moscow with modern diagnostics and expert specialists. The uniqueness of the clinic lies in combining medical knowledge with wisdom and an individualized approach to every patient. We treat not just the disease, but the person — considering their character, physiological characteristics, and needs. Every specialist at the clinic, in addition to their primary specialization, has experience working with oncology patients and maintains oncological vigilance. Thus, diagnostics and treatment in the clinic are carried out at the highest level, taking into account knowledge of prevention, early detection, treatment, management, and additional examinations for all patients, including oncology patients. Attentive care, refined through years of experience, in diagnosing and treating all conditions is our priority! We work with all patients professionally, without unnecessary anxiety, with confidence at every step.",
+"footnote": "Make an appointment for a consultation — start with a clear plan of action.",
     "moreBtn": "Learn More"
   },
   "doctors": {
+    "title1": "A modern multidisciplinary outpatient clinic. A wide diagnostic and treatment base",
     "title": "Our Doctors",
-    "subtitle": "Our team is more than just experienced specialists. <br/> These are doctors shaping the modern medical landscape — organizing national and international conferences and seminars, publishing scientific papers, developing clinical guidelines and educational programs. </div> <br/> By working in an interdisciplinary format and combining expertise across fields, we create accessible and effective algorithms even for the most complex clinical cases. </div> <br/> We don’t compete — we build a professional community where knowledge, experience, and collaboration work for the benefit of the patient.",
+    "subtitle": "Our approach is based on evidence-based medicine and interdisciplinary collaboration. Each clinical step is evaluated taking into account the patient's medical history: we choose safe examination methods, plan treatment without increasing risks, and coordinate tactics in medical consultations. Our priority is safety, consistency, precision of actions and respect for the patient. The long-term experience of specialists working with patients, including after oncological diseases, allows them to correctly assess the condition after surgery, chemotherapy and radiation therapy, and take into account the specifics of drug interactions and limitations in diagnosis. We are here to carefully understand the situation and offer an informed, safe solution.",
     "filter": {
       "consultType": "Type of Consultation",
       "enterName": "Enter specialization or doctor's name",
@@ -189,10 +193,16 @@
       "start": "Start Search",
       "consultationType": "Type of Consultation",
       "all": "All",
-      "personal": "Full-time",
-      "remote": "Remote",
+      "personal": "Onsite",
+      "remote": "Online",
       "specialization": "Doctor Specialization"
     },
+    "notFound": "No Doctors Found",
+    "notFOundDesc": "No doctors match your current filters. Try adjusting your search criteria.",
+    "resetFilters": "Reset All Filters",
+
+     "btn1": "Sign up",
+    "btn2": "Learn More",
     "searchPlaceholder": "Search the doctors...",
     "noDoctors": "There are currently no specialists available in this field.",
     "noVideos": "No Videos",
@@ -214,9 +224,11 @@
     "qualTitle": "Professional Development",
     "skillsTitle": "Advanced Training",
     "internTitle": "Internships and Additional Education",
+    "advancedTrainingTitle": "Advanced Training",
     "international": "INTERNATIONAL",
     "russian": "RUSSIAN",
     "readMore": "Read More",
+    "experience": "Experience",
     "doctorsList": {
       "doctor1": {
         "name": "Subramanian Somasundaram (Dr. Soma)",
@@ -1180,15 +1192,22 @@
     }
   },
   "testimonials": {
-    "title": "Feedback from our Patients",
-    "allBtn": "All reviews",
-    "addReview" :"Submit your review"
+    "title": "Leave a Review",
+    "yourName": "Your Name",
+    "yourReview": "Your Review",
+    "uploadVideo": "Upload Video (Optional)",
+    "clickOrDrag": "Click or drag video to upload",
+    "videoSelected": "Video selected: ",
+    "btn": "Leave Review",
+    "allBtn": "All reviews"
   },
   "contact": {
     "title": "Contact Us",
     "subtitle": "Get in touch with us in any convenient way. We work for your health and are ready to answer all your questions.",
     "heading": "Send a Message",
-    "name": "Name",
+     "firstName": "First Name",
+    "middleName": "Patronymic",
+    "lastName": "Last Name",
     "email": "Email",
     "phone": "Phone",
     "city": "City",
@@ -1197,7 +1216,7 @@
     "makhachkala": "Makhachkala",
     "another": "Another city",
     "message": "Message",
-    "checkbox1": "I agree with the <a href='/privacy-policy' target='_blank' class='text-blue-500 underline'> Privacy Policy </a> and the processing of personal data",
+    "checkbox1": "I agree with the <a href='/about#privacy' target='_blank' class='text-blue-500 underline'> Privacy Policy </a> and the processing of personal data",
     "checkbox2": "I give my consent to receive informational messages, advertising and promotional offer",
     "button": "Send"
   },
@@ -1205,16 +1224,20 @@
     "title": "Our Address",
     "subtitle": "Two modern clinics in Moscow and Makhachkala for your convenience",
     "route": "Set a route",
+    "addressTitle": "Address",
+    "scheduleTitle": "Schedule",
+    "phoneTitle": "Phone",
     "clinic1": {
       "title": "HDMC",
-      "address": "Kvartal West, Moscow, Aminyevskoye Highway Building 6, Entrance 1, 4th and 5th floor",
-      "schedule": "From 8:00 to 23:00, without days off"
+      "address": "Business center Kvartal West, <br/>Moscow, 6 Aminyevskoe highway, entrance 1,<br/> 4th and 5th floors",
+      "schedule": "from 8:00 to 23:00, seven days a week"
     },
     "clinic2": {
       "title": "Ali-Gadzhi Akushinskogo Avenue",
       "address": "Ali-Gadzhi Akushinskogo Avenue Building 7, Makhachkala, 2nd floor",
       "schedule": "From 8:00 to 23:00, without days off"
     },
+    "parkingText": "<b>Parking:</b> paid indoor mall parking; free public parking.<br/><b>How to get there by public transport:</b> 10 min. walk from the metro station. Davydkovo or <br/> M. Aminevskaya",
     "button": "Make an appointment"
   },
   "actionBtns": {
@@ -1224,8 +1247,9 @@
   },
   "footer": {
     "desc": "International project \"Health-Direct\" <br />Autonomous Non-Profit Organization <br />\"Scientific and Educational Center\" <br />\"Eurasian Oncology Program 'EAFO'\"",
-    "navigation": "Navigation",
-    "documents": "Documents",
+    "navigation": "Fast Links",
+    "licenses": "Licenses and Permits",
+    "documents": "Legal Documents",
     "priceList": "Service Price List",
     "agreement": "Offer Agreement",
     "privacy": "Privacy Policy",
@@ -2461,6 +2485,20 @@
   },
 
   "careersPage": {
+  "filters": "Filters",
+  "allDepartments": "All Departments",
+  "medical": "Medical",
+  "nursing": "Nursing",
+  "administrative": "Administrative",
+  "technical": "Technical",
+  "support": "Support",
+  "allTypes": "All Types",
+  "fullTime": "Full Time",
+  "partTime": "Part Time",
+  "contract": "Contract",
+  "internship": "Internship",
+  "remote": "Remote",
+  "clearFilters": "Clear Filters",
     "title": "Join Our Team",
     "subtitle": "Discover exciting career opportunities and grow with us",
     "openPositions": "Open Positions",
@@ -2541,5 +2579,45 @@
   "more": "more",
   "common":{
     "close": "Close"
-  }
+  },
+
+
+  "cookie": {
+  "message": "By staying on the website, you agree to the ",
+  "link": "cookie usage policy",
+  "accept": "Accept",
+  "heading": "Cookie Usage Agreement",
+  "lastUpdated": "Updated: November 23",
+  "para1": "HD Clinic LLC uses cookies — small text files placed on users’ computers for the purpose of analyzing their activity, enabling the proper functioning of this web resource (hereinafter referred to as the site), site navigation, correct operation of services, web analytics, visitor action recordings, tracking traffic sources, and evaluating the effectiveness of online and offline advertising, necessary for advertising and analytical services.",
+  "para2": "The site uses the Yandex.Metrica web analytics service provided by Yandex LLC and the google.ru/analytics web analytics service provided by Google LLC. These services use cookie technology. The information collected using cookies (the user's IP address, date and time of the site visit, browser and operating system types, type and model of mobile device, traffic source, information about user behavior on the site including the number and names of viewed pages; age, gender, interests, geographic location of the user, and other technical data) cannot identify you, but may help us improve the site’s performance.",
+  "para3": "Information about your use of the site collected through cookies will be transferred to Yandex LLC and Google LLC, which will process this information to evaluate your use of the site, compile reports for us on site activity, and provide other services. Yandex LLC and Google LLC process this information in accordance with the terms of use of their services.",
+  "para4": "HD Clinic LLC processes user data in accordance with the “Personal Data Processing Policy.” Some site features may be used without providing personal data. However, to use certain special features of the site, it is necessary to provide some information, including personal data. By staying on the site, you agree to the cookie usage policy.",
+  "footer": "You may refuse the use of cookies by selecting the appropriate settings in your browser."
+},
+
+"care": {
+  "title": "Expert Oncological Care",
+  "tab1": "Expert consultation",
+  "tab2": "Examination / additional diagnostics",
+  "tab3": "Individual treatment plan",
+  "tab4": "International oncology board (tumor board)",
+  "tab5": "Treatment (chemo / targeted / immunotherapy / surgery)",
+  "tab6": "Supportive therapy and rehabilitation",
+  "tab7": "Dynamic follow-up",
+  "block1": {
+    "title": "Personal Patient Coordinator",
+    "point1": "This is your main point of contact: the specialist answers questions, schedules appointments, organizes visits and examinations, and helps with documents.",
+    "point2": "They do not replace the doctor but work closely with your attending physician and diagnostic team. This means they are always aware of your treatment plan, which significantly saves time — yours and your family's."
+  },
+  "block2": {
+    "title": "Comfort and Service",
+    "point1": "Private rooms",
+    "point2": "Modern treatment standards",
+    "point3": "VIP options (personal assistance)"
+  },
+  "btn1": "Contact the coordinator",
+  "btn2": "Learn more about International Oncology Boards"
+}
+
+
 }

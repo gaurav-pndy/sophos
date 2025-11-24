@@ -552,24 +552,19 @@ const ServiceDetails = ({ setShowPopup }) => {
                               </span>
                             ))}
                           </div>
-                          {/* <div className="text-brand1 text-sm mb-3 line-clamp-2">
-                            {doc.desc}
-                          </div>
-                          <div className="flex flex-row gap-4 items-center mb-3 text-brand1/90 text-xs">
-                            <span className="flex items-center">
-                              <FaLocationDot className="mr-1" /> {doc.location}
-                            </span>
-                          </div>
-                          <div className="text-brand1/60 text-xs">
-                            {t("doctors.languages")}:
-                          </div>
-                          <div className="text-brand1 text-sm font-medium">
-                            {doc.langs}
-                          </div> */}
                         </div>
-                        <button className="mt-4 px-6 py-2.5 w-full bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center">
-                          {t("doctors.viewProfile")}
+                        <button
+                          onClick={() => setShowPopup(true)}
+                          className="mt-4 px-6 py-2.5 w-full border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                        >
+                          {t("doctors.btn1")}
                         </button>
+                        <Link
+                          to={`/doctors/${doc.id}`}
+                          className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                        >
+                          {t("doctors.btn2")}
+                        </Link>
                       </Link>
                     </SwiperSlide>
                   ))}

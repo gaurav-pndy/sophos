@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
 import PartnerCarousel from "../components/Home/PartnerCarousel";
+import FeedbackForm from "../components/Home/FeedbackForm";
 
 const Home = ({ city, setShowPopup }) => {
   const location = useLocation();
@@ -60,20 +61,21 @@ const Home = ({ city, setShowPopup }) => {
   };
   return (
     <div>
-      <HeroSection />
+      <HeroSection setShowPopup={setShowPopup} />
       <AboutSection />
 
-      <DoctorsSection />
+      <DoctorsSection setShowPopup={setShowPopup} />
       <ServicesSection />
 
-      <PatientMap />
+      {/* <PatientMap /> */}
       <MembershipSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
+      <FeedbackForm />
 
       {/* <BookingForm /> */}
       <AddressSection city={city} setShowPopup={setShowPopup} />
       <ContactSection />
-      <div className="pb-16">
+      {/* <div className="pb-16">
         <div className="text-center text-brand1 font-bold text-2xl md:text-4xl mb-16 ">
           {t("membership.faq.title")}{" "}
         </div>
@@ -84,7 +86,6 @@ const Home = ({ city, setShowPopup }) => {
               onClick={() => toggleFAQ(idx)}
               className="rounded-lg bg-white border border-brand4/20 px-6 py-4 cursor-pointer transition shadow-md"
             >
-              {/* Question + Icon */}
               <div className="flex justify-between items-center font-medium text-black text-lg">
                 <span>{item.question}</span>
                 <motion.div
@@ -95,7 +96,6 @@ const Home = ({ city, setShowPopup }) => {
                 </motion.div>
               </div>
 
-              {/* Answer */}
               <AnimatePresence>
                 {openIndex === idx && (
                   <motion.div
@@ -114,7 +114,7 @@ const Home = ({ city, setShowPopup }) => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       <ActionButtons setShowPopup={setShowPopup} />
       <PartnerCarousel />

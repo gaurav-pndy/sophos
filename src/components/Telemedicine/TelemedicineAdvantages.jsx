@@ -29,9 +29,9 @@ const TelemedicineAdvantages = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full bg-[#f6fcfd] py-14 md:py-20">
+    <section className="w-full bg-[#f6fcfd] py-6">
       <div className="max-w-[87rem] mx-auto px-4">
-        <h2 className="text-brand1 text-4xl md:text-5xl text-center font-bold mb-10 md:mb-14">
+        <h2 className="text-brand1 text-[2rem] leading-10 text-center font-bold mb-8">
           {t("telemedicine.advantages.header")}
         </h2>
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">

@@ -20,6 +20,9 @@ import Reviews from "./pages/Reviews";
 import AboutDiseases from "./pages/AboutDiseases";
 import CareersPage from "./pages/CareersPage";
 import BlogDetails from "./pages/BlogDetails";
+import CookiPolicy from "./pages/CookiPolicy";
+import OncologicalCare from "./pages/OncologicalCare";
+import Blogs from "./pages/Blogs";
 
 function App() {
   const [city, setCity] = useState("Moscow");
@@ -41,7 +44,7 @@ function App() {
         },
         {
           path: "/doctors",
-          element: <DoctorsPage />,
+          element: <DoctorsPage setShowPopup={setShowPopup} />,
         },
         {
           path: "/doctors/:doctorId",
@@ -105,8 +108,20 @@ function App() {
         },
 
         {
+          path: "/blogs",
+          element: <Blogs />,
+        },
+        {
           path: "/blog/:blogId",
           element: <BlogDetails />,
+        },
+        {
+          path: "/cookie-policy",
+          element: <CookiPolicy />,
+        },
+        {
+          path: "/oncological-care",
+          element: <OncologicalCare />,
         },
       ],
     },

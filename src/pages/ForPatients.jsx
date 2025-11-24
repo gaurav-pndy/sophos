@@ -15,6 +15,7 @@ import NewsTab from "../components/ForPatients/NewsTab";
 import OffersTab from "../components/ForPatients/OffersTab";
 import InsuranceTab from "../components/ForPatients/InsuranceTab";
 import DocumentsTab from "../components/ForPatients/DocumentsTab";
+import { IoDocumentText } from "react-icons/io5";
 
 const PATIENT_TABS = [
   {
@@ -43,8 +44,8 @@ const PATIENT_TABS = [
   },
   {
     key: "blog",
-    labelKey: "forPatientsPage.heading5",
-    icon: <FaBlog />,
+    labelKey: "header.patient5",
+    icon: <IoDocumentText />,
     component: NewsTab,
   },
   {
@@ -99,10 +100,10 @@ const ForPatients = () => {
         />
 
         <div className="w-full md:min-h-80 flex flex-col justify-center h-full p-6 pb-16 md:p-6 lg:p-10 xl:p-12 bg-gradient-to-b md:bg-gradient-to-r from-[#6f452f] to-[#242a2d]">
-          <h1 className="text-white relative z-40 text-4xl md:text-6xl xl:text-7xl font-bold mb-4">
+          <h1 className="text-white relative z-40 text-4xl md:text-5xl xl:text-6xl font-bold mb-4">
             {t("forPatientsPage.title")}
           </h1>
-          <p className="text-white relative z-40 text-lg md:text-2xl font-medium drop-shadow">
+          <p className="text-white relative z-40 text-lg md:text-xl font-medium drop-shadow">
             {t("forPatientsPage.subtitle")}
           </p>
         </div>
@@ -146,7 +147,7 @@ const ForPatients = () => {
               >
                 {tab.icon}
               </span>
-              <span className="break-all">{t(tab.labelKey)}</span>
+              <span className="">{t(tab.labelKey)}</span>
             </button>
           ))}
         </nav>

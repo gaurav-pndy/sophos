@@ -13,7 +13,7 @@ import WaveBackground from "../components/WaveBackground";
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003/api" || "https://apimanager.health-direct.ru/api";
 
-const DoctorsPage = () => {
+const DoctorsPage = ({ setShowPopup }) => {
   const { t, i18n } = useTranslation();
   const [type, setType] = useState("All");
   const [specialization, setSpecialization] = useState("All");
@@ -126,8 +126,12 @@ const DoctorsPage = () => {
       : "";
 
     return {
+      ...doc,
       id: doc.id || doc._id,
       name: fullName,
+      firstName: doc.firstName,
+      lastName: doc.lastName,
+      middleName: doc.middleName,
       specialty,
       location,
       about,
@@ -196,13 +200,13 @@ const DoctorsPage = () => {
         <div className="w-full md:min-h-80 flex flex-col justify-center h-full p-6 pb-16 md:p-6 lg:p-10 xl:p-12 bg-gradient-to-b md:bg-gradient-to-r from-[#362d29] to-[#6f6763]">
           {/* Fixed: Using FaUserMd instead of FaUserDoctor */}
           <FaUserMd className="text-white relative z-40 text-5xl mb-4 drop-shadow-lg" />
-          <h1 className="text-white relative z-40 text-4xl md:text-6xl xl:text-7xl font-bold mb-4">
+          <h1 className="text-white relative z-40 text-4xl md:text-5xl xl:text-6xl font-bold mb-4">
             {t("doctors.title") || "Our Doctors"}
           </h1>
-          <p className="text-white/90 relative z-40 text-lg">
-            {t("doctors.subtitle") ||
-              "Find the right specialist for your needs"}
-          </p>
+          <p
+            className="text-white/90 relative z-40 "
+            dangerouslySetInnerHTML={{ __html: t("doctors.subtitle") }}
+          ></p>
         </div>
         <div className="w-full h-full z-30 -mt-[1px] md:-mt-0">
           <div className="relative w-full h-full">
@@ -213,7 +217,7 @@ const DoctorsPage = () => {
               playsInline
               src="https://www.shutterstock.com/shutterstock/videos/1072064371/preview/stock-footage-close-up-hands-of-therapist-gp-and-patient-doctor-strokes-arm-of-ill-woman-consoling-after-news.webm"
               alt="Services illustration"
-              className="max-w-2xl w-full md:min-h-96 max-h-[28rem] h-full object-cover md:rounded-tr-2xl md:rounded-br-2xl"
+              className="max-w-2xl w-full md:min-h-96 max-h-[31rem] h-full object-cover md:rounded-tr-2xl md:rounded-br-2xl"
             />
             <div className="absolute inset-0 bg-gradient-to-b via-30% md:bg-gradient-to-r from-[#6f6763] via-[#6f6763]/40 to-transparent"></div>
           </div>
@@ -376,7 +380,7 @@ const DoctorsPage = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
-          {cards.map((doc) => (
+          {[...cards].reverse().map((doc) => (
             <Link
               key={doc.id}
               to={`/doctors/${doc.id}`}
@@ -422,7 +426,12 @@ const DoctorsPage = () => {
                 {/* Doctor Information */}
                 <div className="flex-1">
                   <h3 className="font-bold text-black text-xl mb-2 line-clamp-2 leading-tight">
-                    {doc.name}
+                    <span className="uppercase">
+                      {" "}
+                      {doc.lastName[i18n.language]}
+                    </span>{" "}
+                    {doc.firstName[i18n.language]}{" "}
+                    {doc.middleName[i18n.language]}
                   </h3>
 
                   {/* Position */}
@@ -465,42 +474,21 @@ const DoctorsPage = () => {
                       </span>
                     )}
                   </div>
-                 
-
-                  {/* Location 
-                  {doc.location && (
-                    <div className="flex items-center text-brand1/70 text-sm mb-3">
-                      <FaMapMarkerAlt className="w-3 h-3 mr-1.5" />
-                      <span className="line-clamp-1">{doc.location}</span>
-                    </div>
-                  )}
-                  */}
-
-                  {/* Fees 
-                  <div className="text-brand1 font-semibold text-lg mb-3">
-                    Consultation: {doc.fees}
-                  </div>
-                  */}
-
-                  {/* About (truncated) - Using dangerouslySetInnerHTML for HTML content
-                  {doc.about && (
-                    <div
-                      className="text-brand1/80 text-sm line-clamp-3 mb-3 leading-relaxed"
-                      dangerouslySetInnerHTML={{
-                        __html:
-                          doc.about.length > 150
-                            ? doc.about.substring(0, 150) + "..."
-                            : doc.about,
-                      }}
-                    />
-                  )}
-                     */}
                 </div>
               </div>
               {/* View Profile Button */}
-              <button className="mt-4 px-6 py-3 w-full bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center group-hover:shadow-xl group-hover:shadow-brand1/50 transform group-hover:-translate-y-0.5">
-                {t("doctors.viewProfile") || "View Full Profile"}
+              <button
+                onClick={() => setShowPopup(true)}
+                className="mt-4 px-6 py-2.5 w-full border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+              >
+                {t("doctors.btn1")}
               </button>
+              <Link
+                to={`/doctors/${doc.id}`}
+                className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+              >
+                {t("doctors.btn2")}
+              </Link>
             </Link>
           ))}
         </div>
