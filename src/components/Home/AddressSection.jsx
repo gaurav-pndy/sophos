@@ -154,7 +154,10 @@ const AddressSection = ({ city, setShowPopup }) => {
               <div className="flex text-black gap-2 mb-1">
                 <FaPhoneAlt className="text-brand1 mt-1.5" />
                 <div>
-                  <a href={`tel:${clinic.phone}`} className="font-semibold">
+                  <a
+                    href={`tel:${clinic.phone}`}
+                    className="font-semibold hover:text-brand1 transition-all duration-300"
+                  >
                     {clinic.phone}
                   </a>
                   <div className="mt-2 flex items-center gap-3 min-w-0">
@@ -193,7 +196,7 @@ const AddressSection = ({ city, setShowPopup }) => {
                 <a
                   href="https://yandex.com/maps/-/CLWImIyZ"
                   target="_blank"
-                  className="font-semibold"
+                  className="font-semibold hover:text-brand1 transition-all duration-300"
                 >
                   {t("address.route")}
                 </a>

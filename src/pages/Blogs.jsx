@@ -33,6 +33,7 @@ export default function Blogs() {
 
       if (data.success) {
         setBlogs(data.blogs || []);
+        console.log("blogb", data.blogs);
       } else {
         throw new Error(data.message || "Failed to fetch blogs");
       }
@@ -117,7 +118,7 @@ export default function Blogs() {
             <div className="w-full md:w-2/5 lg:w-1/3 mb-4 md:mb-0">
               {blog.image ? (
                 <img
-                  src={`${API_BASE}${blog.image}`}
+                  src={`${blog.image}`}
                   alt={blog.title}
                   className="w-full h-48 md:h-56 object-cover border border-brand3 rounded-xl"
                   onError={(e) => {
@@ -181,9 +182,12 @@ export default function Blogs() {
               )}
 
               {blog.description ? (
-                <p className="text-base md:text-lg leading-relaxed mb-6 line-clamp-3">
-                  {truncateDescription(blog.description)}
-                </p>
+                <p
+                  className="text-base md:text-lg leading-relaxed mb-6 line-clamp-3"
+                  dangerouslySetInnerHTML={{
+                    __html: truncateDescription(blog.description),
+                  }}
+                ></p>
               ) : (
                 <p className="text-white/50 text-base md:text-lg leading-relaxed mb-6 italic">
                   {t("noDescription") || "No description available"}

@@ -131,7 +131,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       required
-                      className="border border-brand4 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.lastName}
                       onChange={(e) =>
                         setForm({ ...form, lastName: e.target.value })
@@ -146,7 +146,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       required
-                      className="border border-brand4 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.firstName}
                       onChange={(e) =>
                         setForm({ ...form, firstName: e.target.value })
@@ -161,7 +161,7 @@ const ContactSection = () => {
                     </label>
                     <input
                       type="text"
-                      className="border border-brand4 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.middleName}
                       onChange={(e) =>
                         setForm({ ...form, middleName: e.target.value })
@@ -178,7 +178,7 @@ const ContactSection = () => {
                       defaultCountry="ru"
                       value={form.phone}
                       onChange={(phone) => setForm({ ...form, phone })}
-                      className="border border-brand4 rounded-lg bg-white/90 text-sm w-full backdrop-blur-sm"
+                      className=" rounded-lg bg-white/90 text-sm w-full backdrop-blur-sm"
                       inputClassName="!bg-transparent !border-none !w-full !px-3 !py-2 focus:!outline-none"
                     />
                     {/* Messaging apps below phone */}
@@ -229,7 +229,7 @@ const ContactSection = () => {
                     </label>
                     <input
                       type="email"
-                      className="border border-brand4 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.email}
                       onChange={(e) =>
                         setForm({ ...form, email: e.target.value })
@@ -244,7 +244,7 @@ const ContactSection = () => {
                     </label>
                     <select
                       required
-                      className="border border-brand4 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.city}
                       onChange={(e) =>
                         setForm({ ...form, city: e.target.value })
@@ -268,7 +268,7 @@ const ContactSection = () => {
                     {t("contact.message")}
                   </label>
                   <textarea
-                    className="border border-brand4 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                    className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                     rows={3}
                     value={form.message}
                     onChange={(e) =>

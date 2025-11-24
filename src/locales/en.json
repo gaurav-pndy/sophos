@@ -143,10 +143,10 @@
   },
   "slide3": {
     "title": "Center for modern anti-tumor therapy",
-    "subtitle1": "Your comfort and safety.",
-    "subtitle2": "International treatment standards.",
-    "subtitle3": "Personalized pathways without unnecessary procedures.",
-    "subtitle4": "A personal coordinator at every step."
+    "subtitle1": "Your comfort and safety",
+    "subtitle2": "International treatment standards",
+    "subtitle3": "Personalized pathways without unnecessary procedures",
+    "subtitle4": "A personal coordinator at every step"
   },
   "slide4": {
     "title": "Multidisciplinary outpatient clinic"
@@ -193,10 +193,13 @@
       "start": "Start Search",
       "consultationType": "Type of Consultation",
       "all": "All",
-      "personal": "Full-time",
-      "remote": "Remote",
+      "personal": "Onsite",
+      "remote": "Online",
       "specialization": "Doctor Specialization"
     },
+    "notFound": "No Doctors Found",
+    "notFOundDesc": "No doctors match your current filters. Try adjusting your search criteria.",
+    "resetFilters": "Reset All Filters",
 
      "btn1": "Sign up",
     "btn2": "Learn More",

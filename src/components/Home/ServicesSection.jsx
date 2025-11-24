@@ -18,7 +18,7 @@ const ServicesSection = () => {
             stroke="rgba(251, 186, 189,"
             custStyle="md:w-1/2 h-[65%] left-0 top-0"
           />
-          <div className="text-left  w-full md:min-h-96  h-full  p-6 pb-16 md:p-6 flex flex-col justify-center bg-gradient-to-b md:bg-gradient-to-r from-[#012135] to-[#4378a0]">
+          <div className="text-left  w-full md:min-h-96  h-full  p-6 pb-16 md:p-6 flex flex-col  bg-gradient-to-b md:bg-gradient-to-r from-[#012135] to-[#4378a0]">
             <h2 className="text-white z-40 text-[2rem] leading-10 font-bold mb-4">
               {t("services.title")}
             </h2>

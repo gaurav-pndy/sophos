@@ -422,12 +422,9 @@ const DoctorsSection = ({ setShowPopup }) => {
                 />
               </svg>
               <h3 className="text-brand1 text-xl font-semibold mb-2">
-                No doctors found
+                {t("doctors.notFound")}
               </h3>
-              <p className="text-brand1/70 mb-6">
-                No doctors match your current filters. Try adjusting your search
-                criteria.
-              </p>
+              <p className="text-brand1/70 mb-6">{t("doctors.notFoundDesc")}</p>
               <button
                 onClick={() => {
                   setType("All");
@@ -436,7 +433,7 @@ const DoctorsSection = ({ setShowPopup }) => {
                 }}
                 className="px-6 py-2 bg-brand1 text-white rounded-lg hover:bg-brand5/90 transition-colors font-medium"
               >
-                Reset All Filters
+                {t("doctors.resetFilters")}
               </button>
             </div>
           </div>
