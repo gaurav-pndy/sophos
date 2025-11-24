@@ -38,7 +38,7 @@ const DoctorsPage = ({ setShowPopup }) => {
       params.append("page", "1");
       params.append("limit", "50");
 
-      const response = await fetch(`${API_BASE}/website/doctors?${params}`);
+      const response = await fetch(`${API_BASE}/api/doctors-profile?${params}`);
       if (!response.ok) throw new Error("Failed to fetch doctors");
 
       const result = await response.json();
@@ -60,7 +60,7 @@ const DoctorsPage = ({ setShowPopup }) => {
   const fetchSpecializations = async () => {
     try {
       const response = await fetch(
-        `${API_BASE}/website/doctors/specializations?language=${i18n.language}`
+        `${API_BASE}/api/website/doctors/specializations?language=${i18n.language}`
       );
       if (!response.ok) throw new Error("Failed to fetch specializations");
 
