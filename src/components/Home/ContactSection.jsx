@@ -100,6 +100,9 @@ const handleSubmit = async (e) => {
   }
 };
 
+  const RequiredAsterisk = () => <span className="text-red-500 ml-1">*</span>;
+
+
   return (
     <section className="w-full bg-[#fafbfc] pt-3 pb-6 mb-6">
       <div className="max-w-[87rem] mx-auto px-4">
@@ -131,7 +134,7 @@ const handleSubmit = async (e) => {
                   {/* Last Name */}
                   <div>
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.lastName")} *
+                      {t("contact.lastName")} <RequiredAsterisk/>
                     </label>
                     <input
                       type="text"
@@ -146,7 +149,7 @@ const handleSubmit = async (e) => {
                   {/* First Name */}
                   <div>
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.firstName")} *
+                      {t("contact.firstName")} <RequiredAsterisk/>
                     </label>
                     <input
                       type="text"
@@ -177,7 +180,7 @@ const handleSubmit = async (e) => {
                   {/* Phone with country code (react-international-phone) */}
                   <div>
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.phone")} *
+                      {t("contact.phone")} <RequiredAsterisk/>
                     </label>
                     <PhoneInput
                       defaultCountry="ru"
@@ -230,7 +233,7 @@ const handleSubmit = async (e) => {
                   {/* Email */}
                   <div>
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.email")}
+                      {t("contact.email")} <RequiredAsterisk/>
                     </label>
                     <input
                       type="email"
@@ -245,7 +248,7 @@ const handleSubmit = async (e) => {
                   {/* City */}
                   <div>
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.city")} *
+                      {t("contact.city")} <RequiredAsterisk/>
                     </label>
                     <select
                       required

@@ -28,6 +28,8 @@ const FeedbackForm = () => {
     doctorId: "",
     doctorEmail: "",
     status: "Posted",
+    agree1: false,
+    agree2: false
   });
 
   const [doctors, setDoctors] = useState([]);
@@ -78,17 +80,12 @@ const FeedbackForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validation
+    // Validation - removed phone and email validation
     if (
       !form.patientName[currentLanguage].firstName ||
       !form.patientName[currentLanguage].lastName
     ) {
       toast.error("Please fill in your first and last name");
-      return;
-    }
-
-    if (!form.contactInfo.phone || !form.contactInfo.email) {
-      toast.error("Please fill in phone and email");
       return;
     }
 
@@ -247,6 +244,9 @@ const FeedbackForm = () => {
     setVideoFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
+  // Required field indicator component
+  const RequiredAsterisk = () => <span className="text-red-500 ml-1">*</span>;
+
   return (
     <section id="reviews" className="w-full pt-3 pb-6">
       <div className="max-w-6xl mx-auto px-4">
@@ -261,16 +261,16 @@ const FeedbackForm = () => {
           {/* Doctor Selection (Optional) */}
           <div className="mb-6">
             <label className="block text-brand1 font-semibold mb-2">
-              Select Doctor (Optional)
+              {t("testimonials.selectDoctor")}
             </label>
             <select
               className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
               value={form.doctorId}
               onChange={handleDoctorChange}
             >
-              <option value="">-- Select a doctor --</option>
+              <option value="">{t("testimonials.selectADoctor")}</option>
               {doctorsLoading ? (
-                <option disabled>Loading doctors...</option>
+                <option disabled>{t("testimonials.loadingDoctors")}</option>
               ) : (
                 doctors.map((doctor) => (
                   <option key={doctor._id} value={doctor._id}>
@@ -282,7 +282,7 @@ const FeedbackForm = () => {
             </select>
             {form.doctorId && (
               <p className="text-sm text-gray-600 mt-2">
-                Selected:{" "}
+                {t("testimonials.selected")}:{" "}
                 {
                   doctors.find((d) => d._id === form.doctorId)?.displayName?.[
                     currentLanguage
@@ -296,7 +296,7 @@ const FeedbackForm = () => {
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-brand1 font-semibold mb-2">
-                {t("contact.lastName")} *
+                {t("contact.lastName")} <RequiredAsterisk />
               </label>
               <input
                 type="text"
@@ -308,7 +308,7 @@ const FeedbackForm = () => {
             </div>
             <div>
               <label className="block text-brand1 font-semibold mb-2">
-                {t("contact.firstName")} *
+                {t("contact.firstName")} <RequiredAsterisk />
               </label>
               <input
                 type="text"
@@ -336,7 +336,7 @@ const FeedbackForm = () => {
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-brand1 font-semibold mb-2">
-                {t("contact.phone")} *
+                {t("contact.phone")}
               </label>
               <PhoneInput
                 defaultCountry="ru"
@@ -383,11 +383,10 @@ const FeedbackForm = () => {
             </div>
             <div>
               <label className="block text-brand1 font-semibold mb-2">
-                {t("contact.email")} *
+                {t("contact.email")}
               </label>
               <input
                 type="email"
-                required
                 className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
                 value={form.contactInfo.email}
                 onChange={(e) => handleContactChange("email", e.target.value)}
@@ -398,7 +397,7 @@ const FeedbackForm = () => {
           {/* Rating */}
           <div className="mb-6">
             <label className="block text-brand1 font-semibold mb-2">
-              Rating *
+              {t("testimonials.rating")} <RequiredAsterisk />
             </label>
             <div className="flex gap-2">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -419,7 +418,7 @@ const FeedbackForm = () => {
           {/* Review Text */}
           <div className="mb-6">
             <label className="block text-brand1 font-semibold mb-2">
-              {t("testimonials.yourReview")} *
+              {t("testimonials.yourReview")} <RequiredAsterisk />
             </label>
             <textarea
               className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
@@ -433,7 +432,7 @@ const FeedbackForm = () => {
           {/* Profile Picture Upload */}
           <div className="mb-6">
             <label className="block text-brand1 font-semibold mb-2">
-              Profile Picture
+              {t("testimonials.profilePicture")}
             </label>
             <div
               className="border border-brand4 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-brand1 hover:bg-brand1/5"
@@ -458,7 +457,7 @@ const FeedbackForm = () => {
               <p className="text-brand1 text-center">
                 {profilePicture
                   ? `Selected: ${profilePicture.name}`
-                  : "Click to upload profile picture"}
+                  : t("testimonials.clickToUpload")}
               </p>
               <input
                 id="profile-picture-upload"
@@ -510,7 +509,7 @@ const FeedbackForm = () => {
             {videoFiles.length > 0 && (
               <div className="mt-4">
                 <p className="text-brand1 font-semibold mb-2">
-                  Selected files:
+                  {t("testimonials.selectedFiles")}:
                 </p>
                 {videoFiles.map((file, index) => (
                   <div
@@ -523,13 +522,49 @@ const FeedbackForm = () => {
                       onClick={() => removeVideoFile(index)}
                       className="text-red-500 hover:text-red-700"
                     >
-                      Remove
+                      {t("testimonials.remove")}
                     </button>
                   </div>
                 ))}
               </div>
             )}
           </div>
+
+                          {/* Checkboxes */}
+                <div className="flex items-start mt-4 text-brand1">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={form.agree1}
+                    onChange={(e) =>
+                      setForm({ ...form, agree1: e.target.checked })
+                    }
+                    className="mr-2 mt-1"
+                    id="form-agree1"
+                  />
+                  <label
+                    htmlFor="form-agree1"
+                    className="text-sm font-medium"
+                    dangerouslySetInnerHTML={{ __html: t("contact.checkbox1") }}
+                  ></label>
+                </div>
+
+                <div className="flex items-start mt-2 mb-4 text-brand1">
+                  <input
+                    type="checkbox"
+                    checked={form.agree2}
+                    onChange={(e) =>
+                      setForm({ ...form, agree2: e.target.checked })
+                    }
+                    className="mr-2 mt-1"
+                    id="form-agree2"
+                  />
+                  <label
+                    htmlFor="form-agree2"
+                    className="text-sm font-medium"
+                    dangerouslySetInnerHTML={{ __html: t("contact.checkbox2") }}
+                  ></label>
+                </div>
 
           {/* Submit Button */}
           <button

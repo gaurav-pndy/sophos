@@ -1199,7 +1199,21 @@
     "clickOrDrag": "Click or drag video to upload",
     "videoSelected": "Video selected: ",
     "btn": "Leave Review",
-    "allBtn": "All reviews"
+    "allBtn": "All reviews",
+
+
+    "selectDoctor": "Select Doctor (Optional)",
+    "selectADoctor": "-- Select a doctor --",
+    "loadingDoctors": "Loading doctors...",
+    "selected": "Selected",
+    "rating": "Rating",
+
+    "profilePicture": "Profile Picture",
+    "selectedFiles": "Selected files",
+    "remove": "Remove",
+    "clickToUpload": "Click to upload profile picture",
+
+    "noReview": "No reviews available yet."
   },
   "contact": {
     "title": "Contact Us",

@@ -98,6 +98,10 @@ const FormPopup = () => {
     }
   };
 
+
+    const RequiredAsterisk = () => <span className="text-red-500 ml-1">*</span>;
+
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="relative z-40 p-4 md:p-8">
@@ -106,7 +110,7 @@ const FormPopup = () => {
           {/* Last Name */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.lastName")} *
+              {t("contact.lastName")} <RequiredAsterisk/>
             </label>
             <input
               type="text"
@@ -119,7 +123,7 @@ const FormPopup = () => {
           {/* First Name */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.firstName")} *
+              {t("contact.firstName")} <RequiredAsterisk/>
             </label>
             <input
               type="text"
@@ -146,7 +150,7 @@ const FormPopup = () => {
           {/* Phone with country code (react-international-phone) */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.phone")} *
+              {t("contact.phone")} <RequiredAsterisk/>
             </label>
             <PhoneInput
               defaultCountry="ru"
@@ -199,7 +203,7 @@ const FormPopup = () => {
           {/* Email */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.email")} *
+              {t("contact.email")} <RequiredAsterisk/>
             </label>
             <input
               type="email"
@@ -213,7 +217,7 @@ const FormPopup = () => {
           {/* City */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.city")} *
+              {t("contact.city")} <RequiredAsterisk/>
             </label>
             <select
               required

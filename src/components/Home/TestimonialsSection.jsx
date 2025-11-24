@@ -199,6 +199,11 @@ const TestimonialsSection = () => {
   const prevRef = useRef();
   const nextRef = useRef();
 
+  // Don't render anything if no testimonials
+  if (!loading && !error && testimonials.length === 0) {
+    return null;
+  }
+
   if (loading) {
     return (
       <section id="reviews" className="w-full py-12 bg-white">
@@ -223,10 +228,6 @@ const TestimonialsSection = () => {
     <>
       <section id="reviews" className="w-full py-12 bg-white">
         <div className="max-w-7xl relative mx-auto px-4">
-          <h2 className="text-brand1 text-center text-4xl md:text-5xl font-bold mb-10">
-            {t("testimonials.title")}
-          </h2>
-
           {/* Custom arrows */}
           <div className="absolute top-1/2 left-0 xl:-left-5 transform -translate-y-1/2 z-20 flex">
             <button
@@ -300,7 +301,6 @@ const TestimonialsSection = () => {
                 {t("testimonials.allBtn")}
               </button>
             </Link>
-      
           </div>
         </div>
 

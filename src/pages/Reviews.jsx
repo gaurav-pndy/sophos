@@ -195,9 +195,7 @@ const Reviews = () => {
   return (
     <section id="reviews" className="w-full py-12 bg-white">
       <div className="max-w-[87rem] relative mx-auto px-4">
-        <h2 className="text-brand1 text-center text-4xl md:text-5xl font-bold mb-10">
-          {t("testimonials.title")}
-        </h2>
+      
 
         <div className="mb-7 grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10">
           {testimonials.length > 0 ? (
@@ -215,7 +213,7 @@ const Reviews = () => {
             ))
           ) : (
             <div className="col-span-3 text-center text-gray-500 py-10">
-              No reviews available yet.
+              {t("testimonials.noReview")}
             </div>
           )}
         </div>
