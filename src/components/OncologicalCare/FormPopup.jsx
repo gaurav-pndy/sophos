@@ -23,8 +23,7 @@ const FormPopup = () => {
   const [loading, setLoading] = useState(false);
 
   const API_BASE =
-    import.meta.env.VITE_API_BASE_URL ||
-    "http://localhost:3003";
+    import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -12,64 +12,76 @@ const Reviews = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003";
+
+  const API_BASE =
+    import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
   // Helper function to get localized value from nested structure
   const getLocalizedValue = (obj, currentLanguage = i18n.language) => {
     if (!obj) return "";
-    
+
     if (typeof obj === "string") return obj;
-    
+
     if (obj[currentLanguage] !== undefined) {
       return obj[currentLanguage];
     }
-    
+
     if (obj.en !== undefined) return obj.en;
     if (obj.ru !== undefined) return obj.ru;
-    
+
     if (obj.firstName || obj.middleName || obj.lastName) {
       const firstName = getLocalizedValue(obj.firstName, currentLanguage);
       const middleName = getLocalizedValue(obj.middleName, currentLanguage);
       const lastName = getLocalizedValue(obj.lastName, currentLanguage);
-      return `${firstName} ${middleName} ${lastName}`.trim().replace(/\s+/g, ' ');
+      return `${firstName} ${middleName} ${lastName}`
+        .trim()
+        .replace(/\s+/g, " ");
     }
-    
+
     return "";
   };
 
   // Helper to get full name from patientName object
   const getPatientName = (patientName, currentLanguage = i18n.language) => {
     if (!patientName) return "Anonymous Patient";
-    
+
     if (typeof patientName === "string") return patientName;
-    
+
     if (patientName[currentLanguage]) {
       const nameObj = patientName[currentLanguage];
       const firstName = nameObj.firstName || "";
       const middleName = nameObj.middleName || "";
       const lastName = nameObj.lastName || "";
-      return `${firstName} ${middleName} ${lastName}`.trim().replace(/\s+/g, ' ');
+      return `${firstName} ${middleName} ${lastName}`
+        .trim()
+        .replace(/\s+/g, " ");
     }
-    
+
     if (patientName.en) {
       const nameObj = patientName.en;
       const firstName = nameObj.firstName || "";
       const middleName = nameObj.middleName || "";
       const lastName = nameObj.lastName || "";
-      return `${firstName} ${middleName} ${lastName}`.trim().replace(/\s+/g, ' ');
+      return `${firstName} ${middleName} ${lastName}`
+        .trim()
+        .replace(/\s+/g, " ");
     }
-    
+
     return "Anonymous Patient";
   };
 
   // Helper to get description text
   const getDescription = (description, currentLanguage = i18n.language) => {
     if (!description) return "No review text available";
-    
+
     if (typeof description === "string") return description;
-    
-    return description[currentLanguage] || description.en || description.ru || "No review text available";
+
+    return (
+      description[currentLanguage] ||
+      description.en ||
+      description.ru ||
+      "No review text available"
+    );
   };
 
   // Helper to get file URL
@@ -101,7 +113,7 @@ const Reviews = () => {
           const transformedTestimonials = data.reviews.map((review, index) => {
             const patientName = getPatientName(review.patientName);
             const description = getDescription(review.description);
-            
+
             let doctorName = "Doctor";
             if (review.doctorId) {
               if (typeof review.doctorId === "object") {
@@ -114,7 +126,8 @@ const Reviews = () => {
             }
 
             // Check if there are video files
-            const hasVideo = review.reviewFileIds && review.reviewFileIds.length > 0;
+            const hasVideo =
+              review.reviewFileIds && review.reviewFileIds.length > 0;
             const videoId = hasVideo ? review.reviewFileIds[0] : null;
 
             return {
@@ -123,7 +136,10 @@ const Reviews = () => {
               text: description,
               rating: review.rating || 5,
               doctorName: doctorName,
-              doctorId: typeof review.doctorId === "object" ? review.doctorId._id : review.doctorId,
+              doctorId:
+                typeof review.doctorId === "object"
+                  ? review.doctorId._id
+                  : review.doctorId,
               date: review.postedAt || new Date().toISOString(),
               status: review.status || "Approved",
               hasVideo: hasVideo,
@@ -220,7 +236,9 @@ const Reviews = () => {
             {/* Header with avatar and info */}
             <div className="flex gap-4 mb-6 pb-4 border-b border-brand4/20">
               <img
-                src={getProfileImageUrl(testimonials[readMoreIdx].userProfileId)}
+                src={getProfileImageUrl(
+                  testimonials[readMoreIdx].userProfileId
+                )}
                 alt={testimonials[readMoreIdx].name}
                 className="w-24 h-24 rounded-full object-cover border-4 border-brand4/40"
                 onError={(e) => {
@@ -266,25 +284,32 @@ const Reviews = () => {
             </div>
 
             {/* Video files if any */}
-            {testimonials[readMoreIdx].reviewFileIds && testimonials[readMoreIdx].reviewFileIds.length > 0 && (
-              <div className="mt-6">
-                <div className="text-sm text-gray-600 mb-2">Attached videos:</div>
-                <div className="grid grid-cols-2 gap-2">
-                  {testimonials[readMoreIdx].reviewFileIds.map((fileId, index) => (
-                    <div key={fileId} className="relative">
-                      <video
-                        controls
-                        className="w-full h-32 object-cover rounded-lg"
-                        src={getFileUrl(fileId)}
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                      <div className="text-xs text-center mt-1">Video {index + 1}</div>
-                    </div>
-                  ))}
+            {testimonials[readMoreIdx].reviewFileIds &&
+              testimonials[readMoreIdx].reviewFileIds.length > 0 && (
+                <div className="mt-6">
+                  <div className="text-sm text-gray-600 mb-2">
+                    Attached videos:
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {testimonials[readMoreIdx].reviewFileIds.map(
+                      (fileId, index) => (
+                        <div key={fileId} className="relative">
+                          <video
+                            controls
+                            className="w-full h-32 object-cover rounded-lg"
+                            src={getFileUrl(fileId)}
+                          >
+                            Your browser does not support the video tag.
+                          </video>
+                          <div className="text-xs text-center mt-1">
+                            Video {index + 1}
+                          </div>
+                        </div>
+                      )
+                    )}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
           </div>
         </div>
       )}
@@ -300,7 +325,7 @@ const Reviews = () => {
             >
               <IoClose size={32} />
             </button>
-            
+
             <div className="bg-black rounded-lg overflow-hidden">
               <video
                 controls
@@ -311,15 +336,18 @@ const Reviews = () => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            
+
             {/* Video info */}
             <div className="mt-4 text-white">
-              <div className="font-semibold text-lg">{testimonials[videoModalIdx].name}</div>
+              <div className="font-semibold text-lg">
+                {testimonials[videoModalIdx].name}
+              </div>
               <div className="text-sm text-gray-300">
                 Review for {testimonials[videoModalIdx].doctorName}
               </div>
               <div className="flex items-center gap-1 mt-1">
-                {testimonials[videoModalIdx].rating} <FaStar className="text-yellow-400" />
+                {testimonials[videoModalIdx].rating}{" "}
+                <FaStar className="text-yellow-400" />
               </div>
             </div>
           </div>
@@ -329,7 +357,14 @@ const Reviews = () => {
   );
 };
 
-const TestimonialCard = ({ test, idx, handleOpenVideo, handleReadMore, getProfileImageUrl, getFileUrl }) => {
+const TestimonialCard = ({
+  test,
+  idx,
+  handleOpenVideo,
+  handleReadMore,
+  getProfileImageUrl,
+  getFileUrl,
+}) => {
   const [isOverflowing, setIsOverflowing] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
@@ -411,7 +446,7 @@ const TestimonialCard = ({ test, idx, handleOpenVideo, handleReadMore, getProfil
               <source src={getFileUrl(test.videoId)} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            
+
             {/* Video controls overlay */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity">
               <div className="flex gap-4">
@@ -431,7 +466,11 @@ const TestimonialCard = ({ test, idx, handleOpenVideo, handleReadMore, getProfil
                   }}
                   className="bg-white/90 text-brand1 rounded-full p-3 shadow-lg hover:bg-white transition"
                 >
-                  {isMuted ? <FaVolumeMute size={16} /> : <FaVolumeUp size={16} />}
+                  {isMuted ? (
+                    <FaVolumeMute size={16} />
+                  ) : (
+                    <FaVolumeUp size={16} />
+                  )}
                 </button>
                 <button
                   onClick={(e) => {
@@ -444,7 +483,7 @@ const TestimonialCard = ({ test, idx, handleOpenVideo, handleReadMore, getProfil
                 </button>
               </div>
             </div>
-            
+
             {/* Play button for initial state */}
             {!isPlaying && (
               <div className="absolute inset-0 flex items-center justify-center">
@@ -460,7 +499,7 @@ const TestimonialCard = ({ test, idx, handleOpenVideo, handleReadMore, getProfil
               </div>
             )}
           </div>
-          
+
           {/* Video label */}
           <div className="text-xs text-center mt-1 opacity-80">
             Click to play full screen
@@ -469,7 +508,11 @@ const TestimonialCard = ({ test, idx, handleOpenVideo, handleReadMore, getProfil
       )}
 
       {/* Text - Show less text if there's a video */}
-      <div className={`${test.hasVideo ? 'flex-1' : 'flex-1 border-t border-brand4 pt-4'} relative`}>
+      <div
+        className={`${
+          test.hasVideo ? "flex-1" : "flex-1 border-t border-brand4 pt-4"
+        } relative`}
+      >
         <div
           ref={textRef}
           className={test.hasVideo ? "line-clamp-3" : "line-clamp-5"}

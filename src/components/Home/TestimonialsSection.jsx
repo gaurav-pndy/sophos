@@ -28,7 +28,8 @@ const TestimonialsSection = () => {
   const [error, setError] = useState(null);
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
 
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003";
+  const API_BASE =
+    import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
   // Helper function to get localized value from nested structure
   const getLocalizedValue = (obj, currentLanguage = i18n.language) => {

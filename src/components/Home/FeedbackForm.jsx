@@ -36,8 +36,9 @@ const FeedbackForm = () => {
   const [loading, setLoading] = useState(false);
   const [doctorsLoading, setDoctorsLoading] = useState(false);
 
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003";
-
+  const API_BASE =
+    import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
+    
   // Fetch doctors list on component mount
   useEffect(() => {
     fetchDoctors();
