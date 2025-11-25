@@ -114,7 +114,7 @@ const FormPopup = () => {
     <form onSubmit={handleSubmit}>
       <div className="relative z-40 p-4 md:p-8">
         {/* Name + Phone + Email + City */}
-        <div className="grid grid-cols-2 gap-4 mb-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
           {/* Last Name */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
@@ -143,7 +143,7 @@ const FormPopup = () => {
           </div>
 
           {/* Middle Name */}
-          <div>
+          <div className="md:col-span-2">
             <label className="block text-brand1 font-semibold mb-1">
               {t("contact.middleName")}
             </label>
@@ -155,8 +155,22 @@ const FormPopup = () => {
             />
           </div>
 
-          {/* Phone with country code (react-international-phone) */}
-          <div className="relative">
+          {/* Email - Full width on mobile */}
+          <div className="md:col-span-2">
+            <label className="block text-brand1 font-semibold mb-1">
+              {t("contact.email")} <RequiredAsterisk />
+            </label>
+            <input
+              type="email"
+              required
+              className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+            />
+          </div>
+
+          {/* Phone with country code (react-international-phone) - Full width on mobile */}
+          <div className="md:col-span-2">
             <label className="block text-brand1 font-semibold mb-1">
               {t("contact.phone")} <RequiredAsterisk />
             </label>
@@ -211,22 +225,8 @@ const FormPopup = () => {
             </div>
           </div>
 
-          {/* Email */}
-          <div>
-            <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.email")} <RequiredAsterisk />
-            </label>
-            <input
-              type="email"
-              required
-              className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-            />
-          </div>
-
           {/* City */}
-          <div>
+          <div className="md:col-span-2">
             <label className="block text-brand1 font-semibold mb-1">
               {t("contact.city")} <RequiredAsterisk />
             </label>
@@ -264,7 +264,7 @@ const FormPopup = () => {
             required
             checked={form.agree1}
             onChange={(e) => setForm({ ...form, agree1: e.target.checked })}
-            className="mr-2 mt-1"
+            className="mr-2 mt-1 flex-shrink-0"
             id="form-agree1"
           />
           <label
@@ -279,7 +279,7 @@ const FormPopup = () => {
             type="checkbox"
             checked={form.agree2}
             onChange={(e) => setForm({ ...form, agree2: e.target.checked })}
-            className="mr-2 mt-1"
+            className="mr-2 mt-1 flex-shrink-0"
             id="form-agree2"
           />
           <label
