@@ -123,65 +123,65 @@
       }
     }
   },
- "hero": {
-  "slide1": {
-    "title": "Expert oncological care",
-    "subtitle1": "Expert-level oncologists",
-    "subtitle2": "Personalized approach for every patient",
-    "subtitle3": "Center for modern anti-tumor therapy",
-    "button": "Join HDMC+",
-    "button2": "Contact the coordinator"
+  "hero": {
+    "slide1": {
+      "title": "Expert oncological care",
+      "subtitle1": "Expert-level oncologists",
+      "subtitle2": "Personalized approach for every patient",
+      "subtitle3": "Center for modern anti-tumor therapy",
+      "button": "Join HDMC+",
+      "button2": "Contact the coordinator"
+    },
+    "slide2": {
+      "title": "NECHUSHKINA Valentina Mikhailovna",
+      "subtitle1": "Head of the Oncogynecology Department at Health-Direct",
+      "subtitle2": "Over 25 years of experience in oncogynecology, more than 10,000 successful surgeries",
+      "subtitle3": "Practicing surgeon, oncologist, obstetrician-gynecologist, Doctor of Medical Sciences, professor",
+      "subtitle4": "World-renowned oncogynecologist",
+      "subtitle5": "Five-year overall survival rate for ovarian cancer patients (stages IIIC–IV) operated on at the first stage is over 80%",
+      "button1": "Make an appointment",
+      "button2": "About the specialist"
+    },
+    "slide3": {
+      "title": "Center for modern anti-tumor therapy",
+      "subtitle1": "Your comfort and safety",
+      "subtitle2": "International treatment standards",
+      "subtitle3": "Personalized pathways without unnecessary procedures",
+      "subtitle4": "A personal coordinator at every step"
+    },
+    "slide4": {
+      "title": "Multidisciplinary outpatient clinic",
+      "button2": "Make an appointment for a consultation"
+    },
+    "slide5": {
+      "title": "Comprehensive check-up programs",
+      "subtitle1": "Take care of yourself in advance",
+      "button2": "Подобрать программу"
+    },
+    "slide6": {
+      "title": "Open House Day"
+    }
   },
-  "slide2": {
-    "title": "NECHUSHKINA Valentina Mikhailovna",
-    "subtitle1": "Head of the Oncogynecology Department at Health-Direct",
-    "subtitle2": "Over 25 years of experience in oncogynecology, more than 10,000 successful surgeries",
-    "subtitle3": "Practicing surgeon, oncologist, obstetrician-gynecologist, Doctor of Medical Sciences, professor",
-    "subtitle4": "World-renowned oncogynecologist",
-    "subtitle5": "Five-year overall survival rate for ovarian cancer patients (stages IIIC–IV) operated on at the first stage is over 80%",
-    "button1": "Make an appointment",
-    "button2": "About the specialist"
-  },
-  "slide3": {
-    "title": "Center for modern anti-tumor therapy",
-    "subtitle1": "Your comfort and safety",
-    "subtitle2": "International treatment standards",
-    "subtitle3": "Personalized pathways without unnecessary procedures",
-    "subtitle4": "A personal coordinator at every step"
-  },
-  "slide4": {
-    "title": "Multidisciplinary outpatient clinic",
-    "button2": "Make an appointment for a consultation"
-  },
-  "slide5": {
-    "title": "Comprehensive check-up programs",
-    "subtitle1": "Take care of yourself in advance",
-    "button2": "Подобрать программу"
-  },
-  "slide6": {
-    "title": "Open House Day"
-  }
-},
   "aboutClinic": {
     "title": "About Clinic",
     "subtitle": "A multidisciplinary clinic in Moscow with modern diagnostics and expert specialists.",
-   "feature1": {
-  "desc": "Multidisciplinary outpatient clinic — diagnostics and therapy in one place."
-},
-"feature2": {
-  "desc": "Center for modern anti-tumor therapy."
-},
-"feature3": {
-  "desc": "Doctors of the highest category"
-},
-"feature4": {
-  "desc": "Personalized care pathways without unnecessary procedures."
-},
-"feature5": {
-  "desc": "A personal coordinator at every step."
-},
-"descText": "A multidisciplinary clinic in Moscow with modern diagnostics and expert specialists. The uniqueness of the clinic lies in combining medical knowledge with wisdom and an individualized approach to every patient. We treat not just the disease, but the person — considering their character, physiological characteristics, and needs. Every specialist at the clinic, in addition to their primary specialization, has experience working with oncology patients and maintains oncological vigilance. Thus, diagnostics and treatment in the clinic are carried out at the highest level, taking into account knowledge of prevention, early detection, treatment, management, and additional examinations for all patients, including oncology patients. Attentive care, refined through years of experience, in diagnosing and treating all conditions is our priority! We work with all patients professionally, without unnecessary anxiety, with confidence at every step.",
-"footnote": "Make an appointment for a consultation — start with a clear plan of action.",
+    "feature1": {
+      "desc": "Multidisciplinary outpatient clinic — diagnostics and therapy in one place."
+    },
+    "feature2": {
+      "desc": "Center for modern anti-tumor therapy."
+    },
+    "feature3": {
+      "desc": "Doctors of the highest category"
+    },
+    "feature4": {
+      "desc": "Personalized care pathways without unnecessary procedures."
+    },
+    "feature5": {
+      "desc": "A personal coordinator at every step."
+    },
+    "descText": "A multidisciplinary clinic in Moscow with modern diagnostics and expert specialists. The uniqueness of the clinic lies in combining medical knowledge with wisdom and an individualized approach to every patient. We treat not just the disease, but the person — considering their character, physiological characteristics, and needs. Every specialist at the clinic, in addition to their primary specialization, has experience working with oncology patients and maintains oncological vigilance. Thus, diagnostics and treatment in the clinic are carried out at the highest level, taking into account knowledge of prevention, early detection, treatment, management, and additional examinations for all patients, including oncology patients. Attentive care, refined through years of experience, in diagnosing and treating all conditions is our priority! We work with all patients professionally, without unnecessary anxiety, with confidence at every step.",
+    "footnote": "Make an appointment for a consultation — start with a clear plan of action.",
     "moreBtn": "Learn More"
   },
   "doctors": {
@@ -204,7 +204,7 @@
     "notFOundDesc": "No doctors match your current filters. Try adjusting your search criteria.",
     "resetFilters": "Reset All Filters",
 
-     "btn1": "Sign up",
+    "btn1": "Sign up",
     "btn2": "Learn More",
     "searchPlaceholder": "Search the doctors...",
     "noDoctors": "There are currently no specialists available in this field.",
@@ -1081,7 +1081,7 @@
     },
     "s4": {
       "title": "Chemotherapy",
-      "about": "A team of leading specialists jointly studies your cancer at the genetic level to create a truly personalized treatment plan."
+      "about": "Center for Modern Antitumor Drug Therapy<br/><br/>Drug therapy for malignant neoplasms is the treatment of oncological diseases using medications aimed at destroying or restraining the growth of cancer cells. In our clinic, we combine international standards of oncological care with attentive and caring attitude towards each patient. Our team provides modern antitumor treatment based on scientific evidence and clinical experience, creating all conditions for comfortable therapy.<br/><br/>We accompany the patient at every stage — from diagnosis to recovery, helping to maintain quality of life and inner balance.<br/><br/><b>Accurate diagnosis is the foundation of successful treatment.</b><br/><br/>At HDMC, the diagnostic process is organized in accordance with international clinical protocols. Patients undergo a full range of examinations — laboratory, instrumental and molecular genetic studies, imaging methods (MRI, CT, PET/CT) — quickly, safely and in comfortable conditions. This approach allows not only to determine the stage and characteristics of the tumor, but also to select personalized therapy specifically for your type of disease. All decisions are made collectively at the oncological council.<br/><br/>We pay great attention to informing the patient and their family — we explain in detail all stages of therapy, possible side effects and methods of their prevention.<br/><br/><b>Modern methods of drug therapy</b><br/><br/>HDMC uses all modern types of antitumor drug treatment.<br/>The choice of method is always individual — depending on the type and stage of the tumor, concomitant diseases and the patient's general condition.<br/>The main goal of therapy is to maximally effectively affect the tumor while maintaining quality of life.<br/><br/><b>Chemotherapy</b><br/><br/>Chemotherapy remains one of the main methods of treating malignant tumors.<br/>Its task is to stop the growth and spread of tumor cells.<br/>At HDMC, chemotherapy is conducted according to international protocols, with precise selection of dosages and administration regimens. We use both classical and modern drugs with improved tolerability profiles. Treatment is accompanied by supportive therapy that helps minimize side effects — nausea, weakness, reduced immunity.<br/>Patients are under constant supervision of doctors and nurses, and all procedures are performed in the comfortable conditions of a day hospital.<br/><br/><b>Targeted Therapy</b><br/><br/>Targeted therapy acts on specific molecules involved in the growth of tumor cells. Such treatment works selectively, almost without affecting healthy tissues. Before prescription, molecular genetic testing of the tumor is performed to determine the presence of targets for targeted drugs.<br/>This allows selecting treatment that is maximally effective for this particular patient.<br/><br/>Advantages:<br/><ul class='list-disc list-inside mt-2 space-y-2'><li>high precision and selectivity of action;</li><li>lower toxicity compared to classical chemotherapy;</li><li>possibility of long-term use without hospitalization;</li><li>maintenance of usual lifestyle during treatment.</li></ul><br/><b>Immunotherapy</b><br/><br/>Immunotherapy helps the body fight the tumor on its own by activating its own immune system. HDMC uses modern drugs — immune checkpoint inhibitors and monoclonal antibodies acting at the cellular mechanism level. Immunotherapy can be used both independently and in combination with other methods. It has the potential for long-term disease control and formation of sustainable antitumor immunity with good tolerability.<br/><br/><b>Endocrine Therapy</b><br/><br/>Endocrine (hormonal) therapy is used for tumors sensitive to hormones — for example, breast cancer or prostate cancer.<br/>The goal of treatment is to block the effects of hormones that stimulate tumor growth.<br/>Treatment is conducted in the form of tablet preparations or injections, often — on an outpatient basis. Endocrine therapy is easily tolerated, suitable for long-term use and allows patients to maintain their usual active life.<br/><br/><b>Supportive Therapy</b><br/><br/>Supportive therapy is an integral part of treatment at HDMC.<br/>It is aimed at maintaining quality of life, preventing and correcting possible side effects.<br/>We apply:<br/><ul class='list-disc list-inside mt-2 space-y-2'><li>antiemetic therapy;</li><li>prevention of neutropenia and anemia;</li><li>nutritional support (individual nutrition);</li><li>pain control;</li><li>psychological support.</li></ul><br/>Oncological treatment is a journey that requires not only professionalism but also support. We accompany patients and their loved ones at every stage: from diagnosis to the recovery period.<br/>The HDMC team is always available — to answer questions, adjust therapy and help maintain confidence in recovery.<br/><br/><p class='font-semibold'>Submit a request</p><p class='font-semibold'>Call by phone: +7 (499) 685-30-00</p><p class='font-semibold'>Order a callback</p>"
     },
     "s5": {
       "title": "Placement of a Venous Port System for Chemotherapy",
@@ -1205,7 +1205,6 @@
     "btn": "Leave Review",
     "allBtn": "All reviews",
 
-
     "selectDoctor": "Select Doctor (Optional)",
     "selectADoctor": "-- Select a doctor --",
     "loadingDoctors": "Loading doctors...",
@@ -1223,7 +1222,7 @@
     "title": "Contact Us",
     "subtitle": "Get in touch with us in any convenient way.<br>We work for your health and are ready to answer all your questions.",
     "heading": "Send a Message",
-     "firstName": "First Name",
+    "firstName": "First Name",
     "middleName": "Patronymic",
     "lastName": "Last Name",
     "email": "Email",
@@ -2504,22 +2503,22 @@
 
   "careersPage": {
     "noFileChosen": "No file chosen",
-  "chooseFile": "Choose File",
-  "fileSelected": "File Selected",
-  "filters": "Filters",
-  "allDepartments": "All Departments",
-  "medical": "Medical",
-  "nursing": "Nursing",
-  "administrative": "Administrative",
-  "technical": "Technical",
-  "support": "Support",
-  "allTypes": "All Types",
-  "fullTime": "Full Time",
-  "partTime": "Part Time",
-  "contract": "Contract",
-  "internship": "Internship",
-  "remote": "Remote",
-  "clearFilters": "Clear Filters",
+    "chooseFile": "Choose File",
+    "fileSelected": "File Selected",
+    "filters": "Filters",
+    "allDepartments": "All Departments",
+    "medical": "Medical",
+    "nursing": "Nursing",
+    "administrative": "Administrative",
+    "technical": "Technical",
+    "support": "Support",
+    "allTypes": "All Types",
+    "fullTime": "Full Time",
+    "partTime": "Part Time",
+    "contract": "Contract",
+    "internship": "Internship",
+    "remote": "Remote",
+    "clearFilters": "Clear Filters",
     "title": "Join Our Team",
     "subtitle": "Discover exciting career opportunities and grow with us",
     "openPositions": "Open Positions",
@@ -2599,52 +2598,50 @@
   "noTitle": "Untitled",
   "noTags": "No tags",
   "more": "more",
-  "common":{
+  "common": {
     "close": "Close"
   },
 
-
   "cookie": {
-  "message": "By staying on the website, you agree to the ",
-  "link": "cookie usage policy",
-  "accept": "Accept",
-  "heading": "Cookie Usage Agreement",
-  "lastUpdated": "Updated: November 23",
-  "para1": "HD Clinic LLC uses cookies — small text files placed on users’ computers for the purpose of analyzing their activity, enabling the proper functioning of this web resource (hereinafter referred to as the site), site navigation, correct operation of services, web analytics, visitor action recordings, tracking traffic sources, and evaluating the effectiveness of online and offline advertising, necessary for advertising and analytical services.",
-  "para2": "The site uses the Yandex.Metrica web analytics service provided by Yandex LLC and the google.ru/analytics web analytics service provided by Google LLC. These services use cookie technology. The information collected using cookies (the user's IP address, date and time of the site visit, browser and operating system types, type and model of mobile device, traffic source, information about user behavior on the site including the number and names of viewed pages; age, gender, interests, geographic location of the user, and other technical data) cannot identify you, but may help us improve the site’s performance.",
-  "para3": "Information about your use of the site collected through cookies will be transferred to Yandex LLC and Google LLC, which will process this information to evaluate your use of the site, compile reports for us on site activity, and provide other services. Yandex LLC and Google LLC process this information in accordance with the terms of use of their services.",
-  "para4": "HD Clinic LLC processes user data in accordance with the “Personal Data Processing Policy.” Some site features may be used without providing personal data. However, to use certain special features of the site, it is necessary to provide some information, including personal data. By staying on the site, you agree to the cookie usage policy.",
-  "footer": "You may refuse the use of cookies by selecting the appropriate settings in your browser."
-},
+    "message": "By staying on the website, you agree to the ",
+    "link": "cookie usage policy",
+    "accept": "Accept",
+    "heading": "Cookie Usage Agreement",
+    "lastUpdated": "Updated: November 23",
+    "para1": "HD Clinic LLC uses cookies — small text files placed on users’ computers for the purpose of analyzing their activity, enabling the proper functioning of this web resource (hereinafter referred to as the site), site navigation, correct operation of services, web analytics, visitor action recordings, tracking traffic sources, and evaluating the effectiveness of online and offline advertising, necessary for advertising and analytical services.",
+    "para2": "The site uses the Yandex.Metrica web analytics service provided by Yandex LLC and the google.ru/analytics web analytics service provided by Google LLC. These services use cookie technology. The information collected using cookies (the user's IP address, date and time of the site visit, browser and operating system types, type and model of mobile device, traffic source, information about user behavior on the site including the number and names of viewed pages; age, gender, interests, geographic location of the user, and other technical data) cannot identify you, but may help us improve the site’s performance.",
+    "para3": "Information about your use of the site collected through cookies will be transferred to Yandex LLC and Google LLC, which will process this information to evaluate your use of the site, compile reports for us on site activity, and provide other services. Yandex LLC and Google LLC process this information in accordance with the terms of use of their services.",
+    "para4": "HD Clinic LLC processes user data in accordance with the “Personal Data Processing Policy.” Some site features may be used without providing personal data. However, to use certain special features of the site, it is necessary to provide some information, including personal data. By staying on the site, you agree to the cookie usage policy.",
+    "footer": "You may refuse the use of cookies by selecting the appropriate settings in your browser."
+  },
 
-"care": {
-  "title": "Expert Oncological Care",
-  "tab1": "Expert consultation",
-  "tab2": "Examination / additional diagnostics",
-  "tab3": "Individual treatment plan",
-  "tab4": "International oncology board (tumor board)",
-  "tab5": "Treatment (chemo / targeted / immunotherapy / surgery)",
-  "tab6": "Supportive therapy and rehabilitation",
-  "tab7": "Dynamic follow-up",
-  "block1": {
-    "title": "Personal Patient Coordinator",
-    "point1": "This is your main point of contact: the specialist answers questions, schedules appointments, organizes visits and examinations, and helps with documents.",
-    "point2": "They do not replace the doctor but work closely with your attending physician and diagnostic team. This means they are always aware of your treatment plan, which significantly saves time — yours and your family's."
+  "care": {
+    "title": "Expert Oncological Care",
+    "tab1": "Expert consultation",
+    "tab2": "Examination / additional diagnostics",
+    "tab3": "Individual treatment plan",
+    "tab4": "International oncology board (tumor board)",
+    "tab5": "Treatment (chemo / targeted / immunotherapy / surgery)",
+    "tab6": "Supportive therapy and rehabilitation",
+    "tab7": "Dynamic follow-up",
+    "block1": {
+      "title": "Personal Patient Coordinator",
+      "point1": "This is your main point of contact: the specialist answers questions, schedules appointments, organizes visits and examinations, and helps with documents.",
+      "point2": "They do not replace the doctor but work closely with your attending physician and diagnostic team. This means they are always aware of your treatment plan, which significantly saves time — yours and your family's."
+    },
+    "block2": {
+      "title": "Comfort and Service",
+      "point1": "Private rooms",
+      "point2": "Modern treatment standards",
+      "point3": "VIP options (personal assistance)"
+    },
+    "btn1": "Contact the coordinator",
+    "btn2": "Learn more about International Oncology Boards"
   },
-  "block2": {
-    "title": "Comfort and Service",
-    "point1": "Private rooms",
-    "point2": "Modern treatment standards",
-    "point3": "VIP options (personal assistance)"
+  "news": {
+    "readMore": "Read More"
   },
-  "btn1": "Contact the coordinator",
-  "btn2": "Learn more about International Oncology Boards"
-}
-,
-"news": {
-  "readMore":"Read More"
-},
-"contactViaPhone": {
+  "contactViaPhone": {
     "title": "Request a callback",
     "phoneLabel": "Phone number",
     "submit": "Submit",
@@ -2655,5 +2652,4 @@
       "message": "Your request has been submitted successfully. We will call you back soon."
     }
   }
-
 }

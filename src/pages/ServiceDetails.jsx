@@ -427,16 +427,24 @@ const ServiceDetails = ({ setShowPopup }) => {
             }}
             dangerouslySetInnerHTML={{ __html: t(service.about) }}
           ></div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 mt-8">
         <button 
+        style={{
+              color: service.color1,
+              border: `1px solid ${service.color1}`
+            }}
           onClick={() => setIsBookingPopupOpen(true)}
-          className="flex items-center justify-center px-6 py-3 border-2 border-[#947d76] text-[#947d76] rounded-lg hover:bg-[#947d76] hover:text-white transition-colors"
+          className="flex items-center justify-center px-6 py-3 border-2 rounded-lg hover:text-white transition-colors"
         >
           Оставьте заявку
         </button>
         <button 
+         style={{
+              background: service.color1,
+              border: `1px solid ${service.color1}`
+            }}
           onClick={() => setIsContactPopupOpen(true)}
-          className="flex items-center justify-center px-6 py-3 bg-[#947d76] text-white rounded-lg hover:bg-[#836c65] transition-colors"
+          className="flex items-center justify-center px-6 py-3  text-white rounded-lg transition-colors"
         >
           Заказать обратный звонок
         </button>

@@ -9,6 +9,10 @@ function ContactViaPhonePopup({ onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const API_BASE =
+  import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!phoneNumber.trim()) return;
@@ -16,7 +20,7 @@ function ContactViaPhonePopup({ onClose }) {
     setIsSubmitting(true);
     try {
       const response = await fetch(
-        "http://localhost:3003/api/website/contact-via-phone",
+        `${API_BASE}/api/website/contact-via-phone`,
         {
           method: "POST",
           headers: {

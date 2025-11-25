@@ -44,7 +44,7 @@ export const servicesData = [
     title: "services.s4.title",
     // subtitle: "services.s4.subtitle",
     // btn: "services.s4.btn",
-    // about: "services.s4.about",
+    about: "services.s4.about",
     video: "/chemo.mp4",
     color1: "#698bff",
     color2: "#000039",
