@@ -142,7 +142,6 @@ const DoctorDetails = ({ setShowPopup }) => {
 
   const formattedDoctor = doctor ? formatDoctorData(doctor) : null;
 
-  console.log(formattedDoctor);
 
   const TAB_LIST = [
     { key: "about", labelKey: "doctors.tabs.tab1" },
