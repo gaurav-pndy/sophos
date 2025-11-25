@@ -311,7 +311,7 @@ const FeedbackForm = () => {
         {!showSuccessPopup && (
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-lg shadow-md border border-brand4 max-w-3xl mx-auto"
+            className="bg-white p-4 md:p-8 rounded-lg shadow-md border border-brand4 max-w-3xl mx-auto"
           >
             {/* Doctor Selection (Optional) */}
             <div className="mb-6">
@@ -349,7 +349,7 @@ const FeedbackForm = () => {
             </div>
 
             {/* Name Fields */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div>
                 <label className="block text-brand1 font-semibold mb-2">
                   {t("contact.lastName")} <RequiredAsterisk />
@@ -375,7 +375,7 @@ const FeedbackForm = () => {
                 />
               </div>
 
-              <div className="col-span-2">
+              <div className="col-span-1 md:col-span-2">
                 <label className="block text-brand1 font-semibold mb-2">
                   {t("contact.middleName")}
                 </label>
@@ -388,9 +388,9 @@ const FeedbackForm = () => {
               </div>
             </div>
 
-            {/* Contact Info */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div>
+            {/* Contact Info - Full width on mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="md:col-span-2">
                 <label className="block text-brand1 font-semibold mb-2">
                   {t("contact.email")}
                 </label>
@@ -401,7 +401,7 @@ const FeedbackForm = () => {
                   onChange={(e) => handleContactChange("email", e.target.value)}
                 />
               </div>
-              <div>
+              <div className="md:col-span-2">
                 <label className="block text-brand1 font-semibold mb-2">
                   {t("contact.phone")}
                 </label>

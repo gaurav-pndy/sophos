@@ -176,13 +176,13 @@ const ContactSection = () => {
               />
 
               <div className="relative bg-gradient-to-b md:bg-gradient-to-r from-[#816c65] to-[#c9a89d] z-40 p-4 md:p-10">
-                <div className="font-medium text-2xl mb-10 flex items-center gap-2 text-white">
+                <div className="font-medium text-2xl mb-6 md:mb-10 flex items-center gap-2 text-white">
                   <IoPaperPlaneOutline />
                   {t("contact.heading")}
                 </div>
 
                 {/* Name + Phone + Email + City */}
-                <div className="grid grid-cols-2 gap-4 mb-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-3">
                   {/* Last Name */}
                   <div>
                     <label className="block text-white font-semibold mb-1">
@@ -191,7 +191,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       required
-                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.lastName}
                       onChange={(e) =>
                         setForm({ ...form, lastName: e.target.value })
@@ -206,7 +206,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       required
-                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.firstName}
                       onChange={(e) =>
                         setForm({ ...form, firstName: e.target.value })
@@ -215,13 +215,13 @@ const ContactSection = () => {
                   </div>
 
                   {/* Middle Name */}
-                  <div>
+                  <div className="md:col-span-2">
                     <label className="block text-white font-semibold mb-1">
                       {t("contact.middleName")}
                     </label>
                     <input
                       type="text"
-                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.middleName}
                       onChange={(e) =>
                         setForm({ ...form, middleName: e.target.value })
@@ -229,8 +229,24 @@ const ContactSection = () => {
                     />
                   </div>
 
-                  {/* Phone with country code (react-international-phone) */}
-                  <div>
+                  {/* Email - Full width on mobile */}
+                  <div className="md:col-span-2">
+                    <label className="block text-white font-semibold mb-1">
+                      {t("contact.email")} <RequiredAsterisk/>
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      value={form.email}
+                      onChange={(e) =>
+                        setForm({ ...form, email: e.target.value })
+                      }
+                    />
+                  </div>
+
+                  {/* Phone with country code (react-international-phone) - Full width on mobile */}
+                  <div className="md:col-span-2">
                     <label className="block text-white font-semibold mb-1">
                       {t("contact.phone")} <RequiredAsterisk/>
                     </label>
@@ -238,12 +254,12 @@ const ContactSection = () => {
                       defaultCountry="ru"
                       value={form.phone}
                       onChange={(phone) => setForm({ ...form, phone })}
-                      className=" rounded-lg bg-white/90 text-sm w-full backdrop-blur-sm"
+                      className="rounded-lg bg-white/90 text-sm w-full backdrop-blur-sm"
                       inputClassName="!bg-transparent !border-none !w-full !px-3 !py-2 focus:!outline-none"
                     />
                     {/* Messaging apps below phone */}
-                    <div className="">
-                      <div className="flex flex-wrap gap-4 text-white text-sm mt-2">
+                    <div className="mt-2">
+                      <div className="flex flex-wrap gap-3 md:gap-4 text-white text-sm">
                         <label className="flex items-center gap-2 cursor-pointer">
                           <input
                             type="checkbox"
@@ -282,29 +298,14 @@ const ContactSection = () => {
                     </div>
                   </div>
 
-                  {/* Email */}
-                  <div>
-                    <label className="block text-white font-semibold mb-1">
-                      {t("contact.email")} <RequiredAsterisk/>
-                    </label>
-                    <input
-                      type="email"
-                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
-                      value={form.email}
-                      onChange={(e) =>
-                        setForm({ ...form, email: e.target.value })
-                      }
-                    />
-                  </div>
-
                   {/* City */}
-                  <div>
+                  <div className="md:col-span-2">
                     <label className="block text-white font-semibold mb-1">
                       {t("contact.city")} <RequiredAsterisk/>
                     </label>
                     <select
                       required
-                      className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.city}
                       onChange={(e) =>
                         setForm({ ...form, city: e.target.value })
@@ -323,12 +324,12 @@ const ContactSection = () => {
                 </div>
 
                 {/* Message */}
-                <div>
+                <div className="mt-3">
                   <label className="block text-white font-semibold mb-1">
                     {t("contact.message")}
                   </label>
                   <textarea
-                    className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                    className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                     rows={3}
                     value={form.message}
                     onChange={(e) =>
@@ -346,7 +347,7 @@ const ContactSection = () => {
                     onChange={(e) =>
                       setForm({ ...form, agree1: e.target.checked })
                     }
-                    className="mr-2 mt-1"
+                    className="mr-2 mt-1 flex-shrink-0"
                     id="form-agree1"
                   />
                   <label
@@ -363,7 +364,7 @@ const ContactSection = () => {
                     onChange={(e) =>
                       setForm({ ...form, agree2: e.target.checked })
                     }
-                    className="mr-2 mt-1"
+                    className="mr-2 mt-1 flex-shrink-0"
                     id="form-agree2"
                   />
                   <label

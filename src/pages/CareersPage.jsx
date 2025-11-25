@@ -13,6 +13,8 @@ import {
   FaTimes,
   FaCheckCircle,
 } from "react-icons/fa";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
@@ -602,6 +604,21 @@ const ApplicationForm = ({
   });
   const [formErrors, setFormErrors] = useState({});
 
+    const handlePhoneChange = (phone) => {
+    setFormData((prev) => ({
+      ...prev,
+      phoneNumber: phone,
+    }));
+
+    // Clear error when user starts typing
+    if (formErrors.phoneNumber) {
+      setFormErrors((prev) => ({
+        ...prev,
+        phoneNumber: "",
+      }));
+    }
+  };
+
   const handleInputChange = (e) => {
     const { name, value, type, checked, files } = e.target;
     setFormData((prev) => ({
@@ -839,28 +856,32 @@ const ApplicationForm = ({
                 )}
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("careersPage.phone", "Phone Number")}{" "}
-                  <span className="text-red-500 ml-1">*</span>
-                </label>
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
-                  onChange={handleInputChange}
-                  className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand1 focus:border-transparent ${
-                    formErrors.phoneNumber
-                      ? "border-red-500"
-                      : "border-gray-300"
-                  }`}
-                />
-                {formErrors.phoneNumber && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {formErrors.phoneNumber}
-                  </p>
-                )}
-              </div>
+<div>
+  <label className="block text-sm font-medium text-gray-700 mb-2">
+    {t("careersPage.phone", "Phone Number")}
+    <span className="text-red-500 ml-1">*</span>
+  </label>
+
+  {/* Wrapper with border */}
+  <div
+    className={`flex items-center rounded-lg border px-0 py-0 ${
+      formErrors.phoneNumber ? "border-red-500" : "border-gray-300"
+    }`}
+  >
+    <PhoneInput
+      defaultCountry="ru"
+      value={formData.phoneNumber}
+      onChange={handlePhoneChange}
+      className="w-full"
+      inputClassName="!bg-transparent !border-none !w-full !px-0 py-2 focus:!outline-none"
+    />
+  </div>
+
+  {formErrors.phoneNumber && (
+    <p className="text-red-500 text-sm mt-1">{formErrors.phoneNumber}</p>
+  )}
+</div>
+
             </div>
 
             {/* Resume Upload */}
