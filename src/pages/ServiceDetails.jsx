@@ -356,12 +356,20 @@ const ServiceDetails = ({ setShowPopup }) => {
           {/* <p className="text-white text-lg md:text-2xl mb-6 drop-shadow">
             {service.subtitle && t(service.subtitle)}
           </p> */}
-          <button
-            onClick={() => setShowPopup(true)}
-            className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-white text-brand1 text-lg font-medium hover:text-white hover:bg-transparent cursor-pointer transition-all duration-300 border border-white "
-          >
-            {service.btn ? t(service.btn) : t("services.s1.btn")}
-          </button>
+          <div className="flex gap-4">
+            <button
+              onClick={() => setShowPopup(true)}
+              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-white text-brand1 text-lg font-medium hover:text-white hover:bg-transparent cursor-pointer transition-all duration-300 border border-white "
+            >
+              {service.btn ? t(service.btn) : t("services.s1.btn")}
+            </button>
+            <button
+              onClick={() => setIsContactPopupOpen(true)}
+              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-transparent  text-white text-lg font-medium hover: hover:text-brand1  cursor-pointer transition-all duration-300 border border-white "
+            >
+              {t("services.contactPopup")}
+            </button>
+          </div>
         </div>
 
         <div className="w-full   h-full z-30 -mt-[1px] md:-mt-0">
@@ -419,38 +427,15 @@ const ServiceDetails = ({ setShowPopup }) => {
       <div className="max-w-[87rem] mx-auto ">
         {/* О УСЛУГЕ */}
         {activeTab === "about" && (
-          <div className="bg-white rounded-2xl shadow p-8 text-lg "
->
-          <div
-            style={{
-              color: service.color1,
-            }}
-            dangerouslySetInnerHTML={{ __html: t(service.about) }}
-          ></div>
-          <div className="flex gap-4 mt-8">
-        <button 
-        style={{
-              color: service.color1,
-              border: `1px solid ${service.color1}`
-            }}
-          onClick={() => setIsBookingPopupOpen(true)}
-          className="flex items-center justify-center px-6 py-3 border-2 rounded-lg hover:text-white transition-colors"
-        >
-          {t("services.bookAppointment")}
-        </button>
-        <button 
-         style={{
-              background: service.color1,
-              border: `1px solid ${service.color1}`
-            }}
-          onClick={() => setIsContactPopupOpen(true)}
-          className="flex items-center justify-center px-6 py-3  text-white rounded-lg transition-colors"
-        >
-          {t("services.contactPopup")}
-        </button>
-      </div>
+          <div className="bg-white rounded-2xl shadow p-8 text-lg ">
+            <div
+              style={{
+                color: service.color1,
+              }}
+              dangerouslySetInnerHTML={{ __html: t(service.about) }}
+            ></div>
+            <div className="flex gap-4 mt-8"></div>
           </div>
-
         )}
         {activeTab === "diseases" && (
           <div
@@ -684,17 +669,16 @@ const ServiceDetails = ({ setShowPopup }) => {
 
         {activeTab === "other" && <OtherServices />}
 
-         {isBookingPopupOpen && (
-        <BookingPopup 
-        show={isBookingPopupOpen}
-        onClose={() => setIsBookingPopupOpen(false)} />
-      )}
+        {isBookingPopupOpen && (
+          <BookingPopup
+            show={isBookingPopupOpen}
+            onClose={() => setIsBookingPopupOpen(false)}
+          />
+        )}
 
-      {isContactPopupOpen && (
-        <ContactViaPhonePopup
-          onClose={() => setIsContactPopupOpen(false)}
-        />
-      )}
+        {isContactPopupOpen && (
+          <ContactViaPhonePopup onClose={() => setIsContactPopupOpen(false)} />
+        )}
       </div>
     </div>
   );
