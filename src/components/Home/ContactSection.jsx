@@ -110,9 +110,10 @@ const handleSubmit = async (e) => {
           <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-4">
             {t("contact.title")}
           </h2>
-          <p className="md:text-lg text-center text-brand1/80 mb-8 max-w-3xl mx-auto">
-            {t("contact.subtitle")}
-          </p>
+<p 
+  className="md:text-lg text-center text-brand1/80 mb-8 max-w-3xl mx-auto"
+  dangerouslySetInnerHTML={{ __html: t("contact.subtitle") }}
+/>
         </div>
 
         <div>

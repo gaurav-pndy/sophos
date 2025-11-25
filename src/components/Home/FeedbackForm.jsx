@@ -274,8 +274,9 @@ const FeedbackForm = () => {
               ) : (
                 doctors.map((doctor) => (
                   <option key={doctor._id} value={doctor._id}>
-                    {doctor.displayName?.[currentLanguage] ||
-                      `${doctor.lastName?.[currentLanguage]} ${doctor.firstName?.[currentLanguage]} ${doctor.middleName?.[currentLanguage]}`}
+                    {`${doctor.lastName?.[currentLanguage]?.toUpperCase()} ${
+                        doctor.firstName?.[currentLanguage]
+                      } ${doctor.middleName?.[currentLanguage]}`}
                   </option>
                 ))
               )}

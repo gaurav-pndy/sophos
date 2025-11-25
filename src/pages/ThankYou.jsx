@@ -263,7 +263,7 @@ const ThankYou = () => {
               href="mailto:donate@medsi.ru"
               className="text-brand4 font-semibold hover:text-brand5 underline transition-colors"
             >
-              donate@medsi.ru
+              donate@hdmc.ru
             </a>
           </p>
         </div>

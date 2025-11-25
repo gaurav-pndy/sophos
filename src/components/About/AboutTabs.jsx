@@ -98,18 +98,18 @@ const AboutTabs = ({ city }) => {
   return (
     <section id="about-tabs" className="max-w-[87rem] mx-auto  py-12">
       {/* Tabs header */}
-      <nav className="mb-6 grid grid-cols-2  xl:grid-cols-4 justify-between gap-4 flex-wrap">
+      <nav className="mb-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 flex-wrap">
         {TABS.map((tab) => (
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
             className={`flex items-center gap-2 px-4 py-3 font-semibold rounded-xl cursor-pointer transition-all 
-              ${
-                activeTab === tab.key
-                  ? "bg-brand1 text-white"
-                  : "text-brand1/70 bg-brand4/20 hover:text-brand1"
-              }
-            `}
+        ${
+          activeTab === tab.key
+            ? "bg-brand1 text-white"
+            : "text-brand1/70 bg-brand4/20 hover:text-brand1"
+        }
+      `}
           >
             <span
               className={`${
@@ -118,7 +118,7 @@ const AboutTabs = ({ city }) => {
             >
               {tab.icon}
             </span>
-            <span className=" text-sm md:text-base text-left">
+            <span className="text-sm md:text-base text-left">
               {t(tab.labelKey)}
             </span>
           </button>

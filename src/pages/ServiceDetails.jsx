@@ -15,12 +15,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FiFilter, FiSearch } from "react-icons/fi";
+import BookingPopup from "../components/BookingPopup";
+import ContactViaPhonePopup from "../components/ContactViaPhonePopup";
 
 const ServiceDetails = ({ setShowPopup }) => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("about");
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  const [isBookingPopupOpen, setIsBookingPopupOpen] = useState(false);
+  const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
 
   const { serviceId } = useParams();
   const service = servicesData.find((s) => s.id === serviceId);
@@ -414,13 +419,30 @@ const ServiceDetails = ({ setShowPopup }) => {
       <div className="max-w-[87rem] mx-auto ">
         {/* О УСЛУГЕ */}
         {activeTab === "about" && (
+          <div className="bg-white rounded-2xl shadow p-8 text-lg "
+>
           <div
-            className="bg-white rounded-2xl shadow p-8 text-lg "
             style={{
               color: service.color1,
             }}
             dangerouslySetInnerHTML={{ __html: t(service.about) }}
           ></div>
+          <div className="flex gap-4">
+        <button 
+          onClick={() => setIsBookingPopupOpen(true)}
+          className="flex items-center justify-center px-6 py-3 border-2 border-[#947d76] text-[#947d76] rounded-lg hover:bg-[#947d76] hover:text-white transition-colors"
+        >
+          Оставьте заявку
+        </button>
+        <button 
+          onClick={() => setIsContactPopupOpen(true)}
+          className="flex items-center justify-center px-6 py-3 bg-[#947d76] text-white rounded-lg hover:bg-[#836c65] transition-colors"
+        >
+          Заказать обратный звонок
+        </button>
+      </div>
+          </div>
+
         )}
         {activeTab === "diseases" && (
           <div
@@ -653,6 +675,18 @@ const ServiceDetails = ({ setShowPopup }) => {
         )}
 
         {activeTab === "other" && <OtherServices />}
+
+         {isBookingPopupOpen && (
+        <BookingPopup 
+        show={isBookingPopupOpen}
+        onClose={() => setIsBookingPopupOpen(false)} />
+      )}
+
+      {isContactPopupOpen && (
+        <ContactViaPhonePopup
+          onClose={() => setIsContactPopupOpen(false)}
+        />
+      )}
       </div>
     </div>
   );
