@@ -142,18 +142,54 @@ const DoctorDetails = ({ setShowPopup }) => {
 
   const formattedDoctor = doctor ? formatDoctorData(doctor) : null;
 
-  const TAB_LIST = [
-    { key: "about", labelKey: "doctors.tabs.tab1" },
-    { key: "experience", labelKey: "doctors.tabs.tab2" },
-    { key: "activities", labelKey: "doctors.tabs.tab3" },
-    { key: "reviews", labelKey: "doctors.tabs.tab4" },
-    { key: "video", labelKey: "doctors.tabs.tab5" },
+  // Define all possible tabs with their conditions
+  const ALL_TABS = [
+    { 
+      key: "about", 
+      labelKey: "doctors.tabs.tab1",
+      condition: formattedDoctor?.about || 
+                formattedDoctor?.internationalMemberships || 
+                formattedDoctor?.russianMemberships || 
+                formattedDoctor?.awards || 
+                formattedDoctor?.regalia
+    },
+    { 
+      key: "experience", 
+      labelKey: "doctors.tabs.tab2",
+      condition: formattedDoctor?.workExperience || 
+                formattedDoctor?.education || 
+                formattedDoctor?.advancedTraining
+    },
+    { 
+      key: "activities", 
+      labelKey: "doctors.tabs.tab3",
+      condition: formattedDoctor?.scientificActivities
+    },
+    { 
+      key: "professionalDevelopments", 
+      labelKey: "doctors.tabs.tab6",
+      condition: formattedDoctor?.professionalDevelopments
+    },
+    { 
+      key: "reviews", 
+      labelKey: "doctors.tabs.tab4",
+      condition: formattedDoctor?.reviews && formattedDoctor.reviews.length > 0
+    },
+    { 
+      key: "video", 
+      labelKey: "doctors.tabs.tab5",
+      condition: formattedDoctor?.videoUrl && formattedDoctor.videoUrl.length > 0
+    },
   ];
+
+  // Filter tabs to only show those with content
+  const ACTIVE_TABS = ALL_TABS.filter(tab => tab.condition);
 
   const sectionRefs = {
     about: useRef(null),
     experience: useRef(null),
     activities: useRef(null),
+    professionalDevelopments: useRef(null),
     reviews: useRef(null),
     video: useRef(null),
   };
@@ -329,11 +365,6 @@ const DoctorDetails = ({ setShowPopup }) => {
                 {formattedDoctor.firstName[i18n.language]}{" "}
                 {formattedDoctor.middleName[i18n.language]}
               </h1>
-              {/*
-              <p className="flex-1 text-right whitespace-nowrap text-brand1/80 text-lg font-semibold">
-                {formattedDoctor.reviews.length} {t("doctors.reviews")}
-              </p>
-              */}
             </div>
 
             {/* Position */}
@@ -357,173 +388,184 @@ const DoctorDetails = ({ setShowPopup }) => {
                 {doctor.yearOfExperience ? doctor.yearOfExperience : "N/A"}
               </span>
             </div>
+
+            {/* Only show tabs if there are active tabs */}
+            {ACTIVE_TABS.length > 0 && (
+              <nav className="flex gap-6 mb-5 overflow-x-auto scrollbar-none px-2">
+                {ACTIVE_TABS.map((tab) => (
+                  <button
+                    key={tab.key}
+                    className="font-semibold text-brand1 px-1 pb-2 border-b-2 border-transparent hover:border-brand1 transition whitespace-nowrap hover:text-brand1 focus:outline-none uppercase text-sm cursor-pointer"
+                    onClick={() => handleTabClick(tab.key)}
+                  >
+                    {t(tab.labelKey)}
+                  </button>
+                ))}
+              </nav>
+            )}
           </div>
 
           <div className="mt-8 bg-white rounded-3xl shadow-xl border border-brand4/10 px-6 md:px-10 py-8">
-            {/* Tab navigation */}
-            <nav className="flex gap-6 mb-5 overflow-x-auto scrollbar-none px-2">
-              {TAB_LIST.map((tab) => (
-                <button
-                  key={tab.key}
-                  className="font-semibold text-brand1 px-1 pb-2 border-b-2 border-transparent hover:border-brand1 transition whitespace-nowrap hover:text-brand1 focus:outline-none uppercase text-sm cursor-pointer"
-                  onClick={() => handleTabClick(tab.key)}
-                >
-                  {t(tab.labelKey)}
-                </button>
-              ))}
-            </nav>
-
             {/* About Section */}
-            <section ref={sectionRefs.about} className="pt-2 pb-6 scroll-mt-28">
-              <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
-                {t("doctors.tabs.tab1")}
-              </h2>
-              <div className="text-gray-700">
-                {formattedDoctor.about && (
-                  <div
-                    className="prose max-w-none"
-                    dangerouslySetInnerHTML={{ __html: formattedDoctor.about }}
-                  />
-                )}
-
-                {/* Professional Memberships */}
-                {(formattedDoctor.internationalMemberships ||
-                  formattedDoctor.russianMemberships) && (
-                  <div className="mt-8">
-                    <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
-                      <span className="bg-brand3 p-2.5 rounded-lg">
-                        <FaUserTie className="shrink-0 text-2xl text-white" />
-                      </span>{" "}
-                      {t("doctors.membershipsTitle")}
-                    </h2>
-
-                    {formattedDoctor.internationalMemberships && (
-                      <>
-                        <h3 className="text-lg text-black font-semibold mb-2">
-                          {t("doctors.international")}
-                        </h3>
-                        <div
-                          className="prose max-w-none"
-                          dangerouslySetInnerHTML={{
-                            __html: formattedDoctor.internationalMemberships,
-                          }}
-                        />
-                      </>
-                    )}
-
-                    {formattedDoctor.russianMemberships && (
-                      <>
-                        <h3 className="text-lg text-black font-semibold mb-2 mt-6">
-                          {t("doctors.russian")}
-                        </h3>
-                        <div
-                          className="prose max-w-none"
-                          dangerouslySetInnerHTML={{
-                            __html: formattedDoctor.russianMemberships,
-                          }}
-                        />
-                      </>
-                    )}
-                  </div>
-                )}
-
-                {/* Awards */}
-                {formattedDoctor.awards && (
-                  <div className="mt-8">
-                    <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
-                      <span className="bg-brand3 p-2.5 rounded-lg">
-                        <FaAward className="shrink-0 text-2xl text-white" />
-                      </span>{" "}
-                      {t("doctors.awardsTitle")}
-                    </h2>
+            {(formattedDoctor.about || 
+              formattedDoctor.internationalMemberships || 
+              formattedDoctor.russianMemberships || 
+              formattedDoctor.awards || 
+              formattedDoctor.regalia) && (
+              <section ref={sectionRefs.about} className="pt-2 pb-6 scroll-mt-28">
+                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                  {t("doctors.tabs.tab1")}
+                </h2>
+                <div className="text-gray-700">
+                  {formattedDoctor.about && (
                     <div
                       className="prose max-w-none"
-                      dangerouslySetInnerHTML={{
-                        __html: formattedDoctor.awards,
-                      }}
+                      dangerouslySetInnerHTML={{ __html: formattedDoctor.about }}
                     />
-                  </div>
-                )}
+                  )}
 
-                {/* Regalia */}
-                {formattedDoctor.regalia && (
-                  <div className="mt-8">
-                    <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
-                      <span className="bg-brand3 p-2.5 rounded-lg">
-                        <GiDiploma className="shrink-0 text-2xl text-white" />
-                      </span>{" "}
-                      {t("doctors.regaliaTitle")}
-                    </h2>
-                    <p>{formattedDoctor.regalia}</p>
-                  </div>
-                )}
-              </div>
-            </section>
+                  {/* Professional Memberships */}
+                  {(formattedDoctor.internationalMemberships ||
+                    formattedDoctor.russianMemberships) && (
+                    <div className="mt-8">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                        <span className="bg-brand3 p-2.5 rounded-lg">
+                          <FaUserTie className="shrink-0 text-2xl text-white" />
+                        </span>{" "}
+                        {t("doctors.membershipsTitle")}
+                      </h2>
+
+                      {formattedDoctor.internationalMemberships && (
+                        <>
+                          <h3 className="text-lg text-black font-semibold mb-2">
+                            {t("doctors.international")}
+                          </h3>
+                          <div
+                            className="prose max-w-none"
+                            dangerouslySetInnerHTML={{
+                              __html: formattedDoctor.internationalMemberships,
+                            }}
+                          />
+                        </>
+                      )}
+
+                      {formattedDoctor.russianMemberships && (
+                        <>
+                          <h3 className="text-lg text-black font-semibold mb-2 mt-6">
+                            {t("doctors.russian")}
+                          </h3>
+                          <div
+                            className="prose max-w-none"
+                            dangerouslySetInnerHTML={{
+                              __html: formattedDoctor.russianMemberships,
+                            }}
+                          />
+                        </>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Awards */}
+                  {formattedDoctor.awards && (
+                    <div className="mt-8">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                        <span className="bg-brand3 p-2.5 rounded-lg">
+                          <FaAward className="shrink-0 text-2xl text-white" />
+                        </span>{" "}
+                        {t("doctors.awardsTitle")}
+                      </h2>
+                      <div
+                        className="prose max-w-none"
+                        dangerouslySetInnerHTML={{
+                          __html: formattedDoctor.awards,
+                        }}
+                      />
+                    </div>
+                  )}
+
+                  {/* Regalia */}
+                  {formattedDoctor.regalia && (
+                    <div className="mt-8">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                        <span className="bg-brand3 p-2.5 rounded-lg">
+                          <GiDiploma className="shrink-0 text-2xl text-white" />
+                        </span>{" "}
+                        {t("doctors.regaliaTitle")}
+                      </h2>
+                      <p>{formattedDoctor.regalia}</p>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
 
             {/* Experience & Education Section */}
-            <section
-              ref={sectionRefs.experience}
-              className="pt-2 pb-0 scroll-mt-28 mt-16"
-            >
-              <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
-                {t("doctors.tabs.tab2")}
-              </h2>
-              <div className="text-gray-700">
-                {formattedDoctor.workExperience && (
-                  <div className="mb-8">
-                    <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
-                      <span className="bg-brand3 p-2.5 rounded-lg">
-                        <MdWork className="shrink-0 text-2xl text-white" />
-                      </span>{" "}
-                      {t("doctors.expTitle")}
-                    </h2>
-                    <div
-                      className="prose max-w-none"
-                      dangerouslySetInnerHTML={{
-                        __html: formattedDoctor.workExperience,
-                      }}
-                    />
-                  </div>
-                )}
+            {(formattedDoctor.workExperience || 
+              formattedDoctor.education || 
+              formattedDoctor.advancedTraining) && (
+              <section
+                ref={sectionRefs.experience}
+                className="pt-2 pb-0 scroll-mt-28 mt-16"
+              >
+                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                  {t("doctors.tabs.tab2")}
+                </h2>
+                <div className="text-gray-700">
+                  {formattedDoctor.workExperience && (
+                    <div className="mb-8">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                        <span className="bg-brand3 p-2.5 rounded-lg">
+                          <MdWork className="shrink-0 text-2xl text-white" />
+                        </span>{" "}
+                        {t("doctors.expTitle")}
+                      </h2>
+                      <div
+                        className="prose max-w-none"
+                        dangerouslySetInnerHTML={{
+                          __html: formattedDoctor.workExperience,
+                        }}
+                      />
+                    </div>
+                  )}
 
-                {formattedDoctor.education && (
-                  <div className="mb-8">
-                    <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
-                      <span className="bg-brand3 p-2.5 rounded-lg">
-                        <FaGraduationCap className="shrink-0 text-2xl text-white" />
-                      </span>{" "}
-                      {t("doctors.eduTitle")}
-                    </h2>
-                    <div
-                      className="prose max-w-none"
-                      dangerouslySetInnerHTML={{
-                        __html: formattedDoctor.education,
-                      }}
-                    />
-                  </div>
-                )}
+                  {formattedDoctor.education && (
+                    <div className="mb-8">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                        <span className="bg-brand3 p-2.5 rounded-lg">
+                          <FaGraduationCap className="shrink-0 text-2xl text-white" />
+                        </span>{" "}
+                        {t("doctors.eduTitle")}
+                      </h2>
+                      <div
+                        className="prose max-w-none"
+                        dangerouslySetInnerHTML={{
+                          __html: formattedDoctor.education,
+                        }}
+                      />
+                    </div>
+                  )}
 
-                {formattedDoctor.advancedTraining && (
-                  <div className="mb-8">
-                    <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
-                      <span className="bg-brand3 p-2.5 rounded-lg">
-                        <FaChalkboardTeacher className="shrink-0 text-2xl text-white" />
-                      </span>{" "}
-                      {t("doctors.advancedTrainingTitle")}
-                    </h2>
-                    <div
-                      className="prose max-w-none"
-                      dangerouslySetInnerHTML={{
-                        __html: formattedDoctor.advancedTraining,
-                      }}
-                    />
-                  </div>
-                )}
-              </div>
-            </section>
+                  {formattedDoctor.advancedTraining && (
+                    <div className="mb-8">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                        <span className="bg-brand3 p-2.5 rounded-lg">
+                          <FaChalkboardTeacher className="shrink-0 text-2xl text-white" />
+                        </span>{" "}
+                        {t("doctors.advancedTrainingTitle")}
+                      </h2>
+                      <div
+                        className="prose max-w-none"
+                        dangerouslySetInnerHTML={{
+                          __html: formattedDoctor.advancedTraining,
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
 
             {/* Scientific Activities Section */}
-
             {formattedDoctor.scientificActivities && (
               <section
                 ref={sectionRefs.activities}
@@ -543,7 +585,7 @@ const DoctorDetails = ({ setShowPopup }) => {
               </section>
             )}
 
-            {/*Professional Development Section */}
+            {/* Professional Development Section */}
             {formattedDoctor.professionalDevelopments && (
               <section
                 ref={sectionRefs.professionalDevelopments}
@@ -563,15 +605,15 @@ const DoctorDetails = ({ setShowPopup }) => {
               </section>
             )}
 
-            {/* Reviews Section 
-            <section
-              ref={sectionRefs.reviews}
-              className="pt-2 pb-6 scroll-mt-28 mt-16"
-            >
-              <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
-                {t("doctors.tabs.tab4")}
-              </h2>
-              {formattedDoctor.reviews.length > 0 ? (
+            {/* Reviews Section - Commented out as per original
+            {formattedDoctor.reviews && formattedDoctor.reviews.length > 0 && (
+              <section
+                ref={sectionRefs.reviews}
+                className="pt-2 pb-6 scroll-mt-28 mt-16"
+              >
+                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                  {t("doctors.tabs.tab4")}
+                </h2>
                 <div className="space-y-6 mt-6">
                   {formattedDoctor.reviews.map((review, i) => {
                     const isExpanded = expanded === i;
@@ -627,43 +669,38 @@ const DoctorDetails = ({ setShowPopup }) => {
                     );
                   })}
                 </div>
-              ) : (
-                <p className="text-gray-500 text-center py-8">
-                  {t("doctors.noReviews")}
-                </p>
-              )}
-            </section>
+              </section>
+            )}
             */}
 
             {/* Video Section */}
-            {formattedDoctor.videoUrl &&
-              formattedDoctor.videoUrl.length > 0 && (
-                <section
-                  ref={sectionRefs.video}
-                  className="pt-2 pb-0 scroll-mt-28 mt-16"
-                >
-                  <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
-                    {t("doctors.tabs.tab5")}
-                  </h2>
+            {formattedDoctor.videoUrl && formattedDoctor.videoUrl.length > 0 && (
+              <section
+                ref={sectionRefs.video}
+                className="pt-2 pb-0 scroll-mt-28 mt-16"
+              >
+                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                  {t("doctors.tabs.tab5")}
+                </h2>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                    {formattedDoctor.videoUrl.map((video, i) => (
-                      <div
-                        key={i}
-                        className="aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
-                      >
-                        <iframe
-                          src={video}
-                          title={`Video ${i + 1}`}
-                          allowFullScreen
-                          className="w-full h-full border-none"
-                          loading="lazy" // Added for better performance
-                        ></iframe>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                  {formattedDoctor.videoUrl.map((video, i) => (
+                    <div
+                      key={i}
+                      className="aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                    >
+                      <iframe
+                        src={video}
+                        title={`Video ${i + 1}`}
+                        allowFullScreen
+                        className="w-full h-full border-none"
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         </main>
       </div>
