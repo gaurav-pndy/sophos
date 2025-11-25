@@ -365,7 +365,7 @@ const ServiceDetails = ({ setShowPopup }) => {
             </button>
             <button
               onClick={() => setIsContactPopupOpen(true)}
-              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-transparent  text-white text-lg font-medium hover: hover:text-brand1  cursor-pointer transition-all duration-300 border border-white "
+              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-transparent  text-white text-lg font-medium hover: hover:text-brand1 hover:bg-white cursor-pointer transition-all duration-300 border border-white "
             >
               {t("services.contactPopup")}
             </button>
