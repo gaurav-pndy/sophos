@@ -287,12 +287,19 @@ const HeroSection = ({ setShowPopup }) => {
                   <ul className="text-gray-200 list-disc ml-4  text-sm  lg:text-lg z-40 xl:text-xl mb-6">
                     <li>{t("hero.slide5.subtitle1")} </li>
                   </ul>
+                  <div className="flex gap-4">
                   <Link
                     to="/early-detection-program"
                     className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
                   >
                     {t("moreBtn")}
                   </Link>
+                  <button
+  className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+>
+  {t("hero.slide5.button2")}
+</button>
+</div>
                   
                 </div>
               </div>

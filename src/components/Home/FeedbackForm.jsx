@@ -29,7 +29,7 @@ const FeedbackForm = () => {
     doctorEmail: "",
     status: "Posted",
     agree1: false,
-    agree2: false
+    agree2: false,
   });
 
   const [doctors, setDoctors] = useState([]);
@@ -336,6 +336,17 @@ const FeedbackForm = () => {
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-brand1 font-semibold mb-2">
+                {t("contact.email")}
+              </label>
+              <input
+                type="email"
+                className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
+                value={form.contactInfo.email}
+                onChange={(e) => handleContactChange("email", e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="block text-brand1 font-semibold mb-2">
                 {t("contact.phone")}
               </label>
               <PhoneInput
@@ -380,17 +391,6 @@ const FeedbackForm = () => {
                   <span>Max</span>
                 </label>
               </div>
-            </div>
-            <div>
-              <label className="block text-brand1 font-semibold mb-2">
-                {t("contact.email")}
-              </label>
-              <input
-                type="email"
-                className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
-                value={form.contactInfo.email}
-                onChange={(e) => handleContactChange("email", e.target.value)}
-              />
             </div>
           </div>
 
@@ -530,41 +530,37 @@ const FeedbackForm = () => {
             )}
           </div>
 
-                          {/* Checkboxes */}
-                <div className="flex items-start mt-4 text-brand1">
-                  <input
-                    type="checkbox"
-                    required
-                    checked={form.agree1}
-                    onChange={(e) =>
-                      setForm({ ...form, agree1: e.target.checked })
-                    }
-                    className="mr-2 mt-1"
-                    id="form-agree1"
-                  />
-                  <label
-                    htmlFor="form-agree1"
-                    className="text-sm font-medium"
-                    dangerouslySetInnerHTML={{ __html: t("contact.checkbox1") }}
-                  ></label>
-                </div>
+          {/* Checkboxes */}
+          <div className="flex items-start mt-4 text-brand1">
+            <input
+              type="checkbox"
+              required
+              checked={form.agree1}
+              onChange={(e) => setForm({ ...form, agree1: e.target.checked })}
+              className="mr-2 mt-1"
+              id="form-agree1"
+            />
+            <label
+              htmlFor="form-agree1"
+              className="text-sm font-medium"
+              dangerouslySetInnerHTML={{ __html: t("contact.checkbox1") }}
+            ></label>
+          </div>
 
-                <div className="flex items-start mt-2 mb-4 text-brand1">
-                  <input
-                    type="checkbox"
-                    checked={form.agree2}
-                    onChange={(e) =>
-                      setForm({ ...form, agree2: e.target.checked })
-                    }
-                    className="mr-2 mt-1"
-                    id="form-agree2"
-                  />
-                  <label
-                    htmlFor="form-agree2"
-                    className="text-sm font-medium"
-                    dangerouslySetInnerHTML={{ __html: t("contact.checkbox2") }}
-                  ></label>
-                </div>
+          <div className="flex items-start mt-2 mb-4 text-brand1">
+            <input
+              type="checkbox"
+              checked={form.agree2}
+              onChange={(e) => setForm({ ...form, agree2: e.target.checked })}
+              className="mr-2 mt-1"
+              id="form-agree2"
+            />
+            <label
+              htmlFor="form-agree2"
+              className="text-sm font-medium"
+              dangerouslySetInnerHTML={{ __html: t("contact.checkbox2") }}
+            ></label>
+          </div>
 
           {/* Submit Button */}
           <button
