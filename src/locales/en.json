@@ -1061,6 +1061,8 @@
     "tab4": "Prices",
     "tab5": "Other Services",
     "tab6": "Diseases",
+    "bookAppointment": "Book an Appointment",
+    "contactPopup": "Order a callback",
     "s1": {
       "title": "Specialist Consultation",
       "subtitle": "In-person and Remote Consultations",
@@ -1216,6 +1218,10 @@
     "remove": "Remove",
     "clickToUpload": "Click to upload profile picture",
 
+     "successTitle": "Thank You!",
+    "successMessage": "Your review has been submitted successfully.",
+    "autoClose": "Closing automatically in 5 seconds...",
+
     "noReview": "No reviews available yet."
   },
   "contact": {
@@ -1235,7 +1241,10 @@
     "message": "Message",
     "checkbox1": "I agree with the <a href='/about#privacy' target='_blank' class='text-blue-500 underline'> Privacy Policy </a> and the processing of personal data",
     "checkbox2": "I give my consent to receive informational messages, advertising and promotional offer",
-    "button": "Send"
+    "button": "Send",
+    "successTitle": "Thank You!",
+    "successMessage": "Your message has been sent successfully. We will contact you soon!",
+    "autoClose": "Closing automatically in 5 seconds..."
   },
   "address": {
     "title": "Our Address",
@@ -2524,6 +2533,9 @@
     "openPositions": "Open Positions",
     "totalApplications": "Total Applications",
     "activeRoles": "Active Roles",
+     "successTitle": "Application Submitted!",
+    "successMessage": "Thank you for your application. We will review it and contact you soon.",
+    "autoClose": "Closing automatically in 5 seconds...",
     "errors": {
       "loading": "Error Loading Vacancies"
     },

@@ -436,7 +436,7 @@ const ServiceDetails = ({ setShowPopup }) => {
           onClick={() => setIsBookingPopupOpen(true)}
           className="flex items-center justify-center px-6 py-3 border-2 rounded-lg hover:text-white transition-colors"
         >
-          Оставьте заявку
+          {t("services.bookAppointment")}
         </button>
         <button 
          style={{
@@ -446,7 +446,7 @@ const ServiceDetails = ({ setShowPopup }) => {
           onClick={() => setIsContactPopupOpen(true)}
           className="flex items-center justify-center px-6 py-3  text-white rounded-lg transition-colors"
         >
-          Заказать обратный звонок
+          {t("services.contactPopup")}
         </button>
       </div>
           </div>

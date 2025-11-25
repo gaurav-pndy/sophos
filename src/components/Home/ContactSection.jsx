@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import { PhoneInput } from "react-international-phone";
@@ -23,97 +23,148 @@ const ContactSection = () => {
     agree2: false,
   });
   const [loading, setLoading] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const API_BASE =
     import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  // Auto-close success popup after 5 seconds
+  useEffect(() => {
+    if (showSuccessPopup) {
+      const timer = setTimeout(() => {
+        setShowSuccessPopup(false);
+      }, 5000);
 
-  // Update validation to include email
-  if (!form.firstName || !form.lastName || !form.phone || !form.city || !form.email) {
-    toast.error("Please fill in all required fields");
-    return;
-  }
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccessPopup]);
 
-  if (!form.agree1 || !form.agree2) {
-    toast.error("Please agree to the terms and conditions");
-    return;
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  setLoading(true);
-
-  try {
-    const formData = {
-      firstName: form.firstName,
-      lastName: form.lastName,
-      middleName: form.middleName,
-      phoneNumber: form.phone,
-      whatsapp: form.whatsapp,
-      telegram: form.telegram,
-      max: form.max,
-      city: form.city,
-      message: form.message,
-      email: form.email, // Make sure this is included
-    };
-
-    console.log("Sending data:", formData);
-
-    const response = await fetch(`${API_BASE}/api/contact-us`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Error response:", errorText);
-      throw new Error(`HTTP error! status: ${response.status}`);
+    // Update validation to include email
+    if (!form.firstName || !form.lastName || !form.phone || !form.city || !form.email) {
+      toast.error("Please fill in all required fields");
+      return;
     }
 
-    const data = await response.json();
-    console.log("Success response:", data);
+    if (!form.agree1 || !form.agree2) {
+      toast.error("Please agree to the terms and conditions");
+      return;
+    }
 
-    toast.success("Message sent successfully!");
-    // Reset form
-    setForm({
-      firstName: "",
-      middleName: "",
-      lastName: "",
-      phone: "",
-      whatsapp: false,
-      telegram: false,
-      max: false,
-      email: "",
-      city: "",
-      message: "",
-      agree1: false,
-      agree2: false,
-    });
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    toast.error("Network error. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
+    setLoading(true);
+
+    try {
+      const formData = {
+        firstName: form.firstName,
+        lastName: form.lastName,
+        middleName: form.middleName,
+        phoneNumber: form.phone,
+        whatsapp: form.whatsapp,
+        telegram: form.telegram,
+        max: form.max,
+        city: form.city,
+        message: form.message,
+        email: form.email, // Make sure this is included
+      };
+
+      console.log("Sending data:", formData);
+
+      const response = await fetch(`${API_BASE}/api/contact-us`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Error response:", errorText);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Success response:", data);
+
+      // Show success popup instead of toast
+      setShowSuccessPopup(true);
+
+      // Reset form
+      setForm({
+        firstName: "",
+        middleName: "",
+        lastName: "",
+        phone: "",
+        whatsapp: false,
+        telegram: false,
+        max: false,
+        email: "",
+        city: "",
+        message: "",
+        agree1: false,
+        agree2: false,
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const RequiredAsterisk = () => <span className="text-red-500 ml-1">*</span>;
-
 
   return (
     <section className="w-full bg-[#fafbfc] pt-3 pb-6 mb-6">
       <div className="max-w-[87rem] mx-auto px-4">
+        {/* Success Popup */}
+        {showSuccessPopup && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-xl">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg
+                  className="w-8 h-8 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                {t("contact.successTitle") || "Thank You!"}
+              </h3>
+              <p className="text-gray-600 mb-6">
+                {t("contact.successMessage") || "Your message has been sent successfully. We will contact you soon!"}
+              </p>
+              <div className="w-full bg-gray-200 rounded-full h-2">
+                <div 
+                  className="bg-green-500 h-2 rounded-full transition-all duration-5000 ease-linear"
+                  style={{ width: '100%' }}
+                ></div>
+              </div>
+              <p className="text-sm text-gray-500 mt-2">
+                {t("contact.autoClose") || "Closing automatically in 5 seconds..."}
+              </p>
+            </div>
+          </div>
+        )}
+
         <div className="max-w-[87rem] text-center mx-auto px-4">
           <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-4">
             {t("contact.title")}
           </h2>
-<p 
-  className="md:text-lg text-center text-brand1/80 mb-8 max-w-3xl mx-auto"
-  dangerouslySetInnerHTML={{ __html: t("contact.subtitle") }}
-/>
+          <p 
+            className="md:text-lg text-center text-brand1/80 mb-8 max-w-3xl mx-auto"
+            dangerouslySetInnerHTML={{ __html: t("contact.subtitle") }}
+          />
         </div>
 
         <div>

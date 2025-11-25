@@ -47,11 +47,23 @@ const CareersPage = () => {
   const [applicationLoading, setApplicationLoading] = useState(false);
   const [applicationError, setApplicationError] = useState(null);
   const [applicationSuccess, setApplicationSuccess] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [filters, setFilters] = useState({
     department: "",
     employmentType: "",
   });
   const { t, i18n } = useTranslation();
+
+  // Auto-close success popup after 5 seconds
+  useEffect(() => {
+    if (showSuccessPopup) {
+      const timer = setTimeout(() => {
+        setShowSuccessPopup(false);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccessPopup]);
 
   // Fetch published vacancies
   const fetchVacancies = async () => {
@@ -143,6 +155,7 @@ const CareersPage = () => {
       if (result.success) {
         setApplicationSuccess(true);
         setShowApplicationForm(false);
+        setShowSuccessPopup(true);
         // Refresh vacancies to update application count
         fetchVacancies();
       } else {
@@ -203,27 +216,43 @@ const CareersPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header Section
-      <div className="bg-gradient-to-r from-brand1 to-brand3 text-white py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <FaBriefcase className="text-3xl" />
+      {/* Success Popup */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-xl">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-8 h-8 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {t("careersPage.title", "Join Our Team")}
-            </h1>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              {t(
-                "careersPage.subtitle",
-                "Discover exciting career opportunities and grow with us"
-              )}
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              {t("careersPage.successTitle", "Application Submitted!")}
+            </h3>
+            <p className="text-gray-600 mb-6">
+              {t("careersPage.successMessage", "Thank you for your application. We will review it and contact you soon.")}
+            </p>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div 
+                className="bg-green-500 h-2 rounded-full transition-all duration-5000 ease-linear"
+                style={{ width: '100%' }}
+              ></div>
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              {t("careersPage.autoClose", "Closing automatically in 5 seconds...")}
             </p>
           </div>
         </div>
-      </div>
-
-       */}
+      )}
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
