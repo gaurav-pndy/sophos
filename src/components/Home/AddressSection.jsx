@@ -121,7 +121,7 @@ const AddressSection = ({ city, setShowPopup }) => {
 
   const mapLang = currentLang === "ru" ? "ru_RU" : "en_US";
 
-  // ✅ Filter clinic based on city prop
+  // Filter clinic based on city prop
   const filteredClinics = clinics.filter(
     (clinic) => clinic.city.toLowerCase() === city.toLowerCase()
   );
