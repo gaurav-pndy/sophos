@@ -114,7 +114,8 @@ const FormPopup = () => {
     <div className="h-full flex flex-col">
       <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
         {/* Scrollable form content */}
-        <div className="flex-1 overflow-y-auto">
+       <div className="h-[70vh] flex flex-col overflow-auto">
+
           <div className="p-4 md:p-6">
             {/* Name + Phone + Email + City */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
