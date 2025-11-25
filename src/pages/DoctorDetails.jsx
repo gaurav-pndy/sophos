@@ -17,9 +17,8 @@ import {
 import { MdWork } from "react-icons/md";
 import { GiDiploma } from "react-icons/gi";
 
-  const API_BASE =
-    import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
-
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
 const DoctorDetails = ({ setShowPopup }) => {
   const { doctorId } = useParams();
@@ -34,7 +33,9 @@ const DoctorDetails = ({ setShowPopup }) => {
     const fetchDoctor = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${API_BASE}/api/website/doctors/${doctorId}`);
+        const response = await fetch(
+          `${API_BASE}/api/website/doctors/${doctorId}`
+        );
 
         if (!response.ok) throw new Error("Failed to fetch doctor");
 
@@ -69,9 +70,7 @@ const DoctorDetails = ({ setShowPopup }) => {
 
     const fullName = `${getLocalizedField(doc.firstName)} ${getLocalizedField(
       doc.lastName
-    )} ${getLocalizedField(
-      doc.middleName
-    )}`.trim();
+    )} ${getLocalizedField(doc.middleName)}`.trim();
     const specialty = getLocalizedField(doc.specialty);
     const location = getLocalizedField(doc.location);
     const about = getLocalizedField(doc.about);
@@ -84,7 +83,9 @@ const DoctorDetails = ({ setShowPopup }) => {
       doc.internationalMemberships
     );
     const russianMemberships = getLocalizedField(doc.russianMemberships);
-    const professionalDevelopments= getLocalizedField(doc.professionalDevelopments);
+    const professionalDevelopments = getLocalizedField(
+      doc.professionalDevelopments
+    );
     const awards = getLocalizedField(doc.awards);
     const regalia = getLocalizedField(doc.regalia);
 
@@ -98,7 +99,6 @@ const DoctorDetails = ({ setShowPopup }) => {
 
     // Create tags from specialty and subSpecialties
     const tags = [specialty];
-
 
     // Format languages
     const languages = doc.languages
@@ -336,7 +336,6 @@ const DoctorDetails = ({ setShowPopup }) => {
                 {formattedDoctor.reviews.length} {t("doctors.reviews")}
               </p>
               */}
-
             </div>
 
             {/* Position */}
@@ -466,7 +465,7 @@ const DoctorDetails = ({ setShowPopup }) => {
             {/* Experience & Education Section */}
             <section
               ref={sectionRefs.experience}
-              className="pt-2 pb-6 scroll-mt-28 mt-16"
+              className="pt-2 pb-0 scroll-mt-28 mt-16"
             >
               <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
                 {t("doctors.tabs.tab2")}
@@ -526,41 +525,45 @@ const DoctorDetails = ({ setShowPopup }) => {
             </section>
 
             {/* Scientific Activities Section */}
-            <section
-              ref={sectionRefs.activities}
-              className="pt-2 pb-6 scroll-mt-28 mt-16"
-            >
-              <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
-                {t("doctors.tabs.tab3")}
-              </h2>
-              {formattedDoctor.scientificActivities && (
-                <div
-                  className="prose max-w-none text-gray-700"
-                  dangerouslySetInnerHTML={{
-                    __html: formattedDoctor.scientificActivities,
-                  }}
-                />
-              )}
-            </section>
 
+            {formattedDoctor.scientificActivities && (
+              <section
+                ref={sectionRefs.activities}
+                className="pt-2 pb-0 scroll-mt-28 mt-16"
+              >
+                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                  {t("doctors.tabs.tab3")}
+                </h2>
+                {formattedDoctor.scientificActivities && (
+                  <div
+                    className="prose max-w-none text-gray-700"
+                    dangerouslySetInnerHTML={{
+                      __html: formattedDoctor.scientificActivities,
+                    }}
+                  />
+                )}
+              </section>
+            )}
 
             {/*Professional Development Section */}
-            <section
-              ref={sectionRefs.professionalDevelopments}
-              className="pt-2 pb-6 scroll-mt-28 mt-16"
-            >
-              <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
-                {t("doctors.tabs.tab6")}
-              </h2>
-              {formattedDoctor.professionalDevelopments && (
-                <div
-                  className="prose max-w-none text-gray-700"
-                  dangerouslySetInnerHTML={{
-                    __html: formattedDoctor.professionalDevelopments,
-                  }}
-                />
-              )}
-            </section>
+            {formattedDoctor.professionalDevelopments && (
+              <section
+                ref={sectionRefs.professionalDevelopments}
+                className="pt-2 pb-0 scroll-mt-28 mt-16"
+              >
+                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                  {t("doctors.tabs.tab6")}
+                </h2>
+                {formattedDoctor.professionalDevelopments && (
+                  <div
+                    className="prose max-w-none text-gray-700"
+                    dangerouslySetInnerHTML={{
+                      __html: formattedDoctor.professionalDevelopments,
+                    }}
+                  />
+                )}
+              </section>
+            )}
 
             {/* Reviews Section 
             <section
@@ -635,36 +638,34 @@ const DoctorDetails = ({ setShowPopup }) => {
             */}
 
             {/* Video Section */}
-            <section
-              ref={sectionRefs.video}
-              className="pt-2 pb-2 scroll-mt-28 mt-16"
-            >
-              <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
-                {t("doctors.tabs.tab5")}
-              </h2>
-              {formattedDoctor.videoUrl &&
-              formattedDoctor.videoUrl.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                  {formattedDoctor.videoUrl.map((video, i) => (
-                    <div
-                      key={i}
-                      className="aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
-                    >
-                      <iframe
-                        src={video}
-                        title={`Video ${i + 1}`}
-                        allowFullScreen
-                        className="w-full h-full border-none"
-                      ></iframe>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-gray-500 text-center py-8">
-                  {t("doctors.noVideos")}
-                </p>
+            {formattedDoctor.videoUrl &&
+              formattedDoctor.videoUrl.length > 0 && (
+                <section
+                  ref={sectionRefs.video}
+                  className="pt-2 pb-0 scroll-mt-28 mt-16"
+                >
+                  <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                    {t("doctors.tabs.tab5")}
+                  </h2>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    {formattedDoctor.videoUrl.map((video, i) => (
+                      <div
+                        key={i}
+                        className="aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                      >
+                        <iframe
+                          src={video}
+                          title={`Video ${i + 1}`}
+                          allowFullScreen
+                          className="w-full h-full border-none"
+                          loading="lazy" // Added for better performance
+                        ></iframe>
+                      </div>
+                    ))}
+                  </div>
+                </section>
               )}
-            </section>
           </div>
         </main>
       </div>
