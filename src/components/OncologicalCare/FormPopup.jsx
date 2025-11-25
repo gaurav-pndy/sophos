@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import { PhoneInput } from "react-international-phone";
 import { toast } from "react-toastify";
+import "react-international-phone/style.css";
 
 const FormPopup = () => {
   const { t } = useTranslation();
@@ -29,7 +30,13 @@ const FormPopup = () => {
     e.preventDefault();
 
     // Validation - email is required based on your schema
-    if (!form.firstName || !form.lastName || !form.phone || !form.city || !form.email) {
+    if (
+      !form.firstName ||
+      !form.lastName ||
+      !form.phone ||
+      !form.city ||
+      !form.email
+    ) {
       toast.error("Please fill in all required fields");
       return;
     }
@@ -57,13 +64,16 @@ const FormPopup = () => {
 
       console.log("Sending patient coordination data:", formData);
 
-      const response = await fetch(`${API_BASE}/api/patient-coordination-forms`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${API_BASE}/api/patient-coordination-forms`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         const errorText = await response.text();
@@ -98,9 +108,7 @@ const FormPopup = () => {
     }
   };
 
-
-    const RequiredAsterisk = () => <span className="text-red-500 ml-1">*</span>;
-
+  const RequiredAsterisk = () => <span className="text-red-500 ml-1">*</span>;
 
   return (
     <form onSubmit={handleSubmit}>
@@ -110,12 +118,12 @@ const FormPopup = () => {
           {/* Last Name */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.lastName")} <RequiredAsterisk/>
+              {t("contact.lastName")} <RequiredAsterisk />
             </label>
             <input
               type="text"
               required
-              className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+              className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
               value={form.lastName}
               onChange={(e) => setForm({ ...form, lastName: e.target.value })}
             />
@@ -123,12 +131,12 @@ const FormPopup = () => {
           {/* First Name */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.firstName")} <RequiredAsterisk/>
+              {t("contact.firstName")} <RequiredAsterisk />
             </label>
             <input
               type="text"
               required
-              className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+              className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
               value={form.firstName}
               onChange={(e) => setForm({ ...form, firstName: e.target.value })}
             />
@@ -141,27 +149,30 @@ const FormPopup = () => {
             </label>
             <input
               type="text"
-              className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+              className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
               value={form.middleName}
               onChange={(e) => setForm({ ...form, middleName: e.target.value })}
             />
           </div>
 
           {/* Phone with country code (react-international-phone) */}
-          <div>
+          <div className="relative">
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.phone")} <RequiredAsterisk/>
+              {t("contact.phone")} <RequiredAsterisk />
             </label>
-            <PhoneInput
-              defaultCountry="ru"
-              value={form.phone}
-              onChange={(phone) => setForm({ ...form, phone })}
-              className="rounded-lg bg-white/90 text-sm w-full backdrop-blur-sm"
-              inputClassName="!bg-transparent !border-none !w-full !px-3 !py-2 focus:!outline-none"
-            />
+            <div className="relative">
+              <PhoneInput
+                defaultCountry="ru"
+                value={form.phone}
+                onChange={(phone) => setForm({ ...form, phone })}
+                className="phone-input-custom"
+                inputClassName="!bg-white/90 !border !border-gray-300 !rounded-lg !text-sm !w-full !px-3 !py-2 focus:!outline-none focus:!border-brand1 focus:!ring-1 focus:!ring-brand1"
+                dropdownClassName="!z-50 !relative"
+              />
+            </div>
             {/* Messaging apps below phone */}
-            <div className="">
-              <div className="flex flex-wrap gap-4 text-brand1 text-sm mt-2">
+            <div className="mt-2">
+              <div className="flex flex-wrap gap-4 text-brand1 text-sm">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
@@ -203,12 +214,12 @@ const FormPopup = () => {
           {/* Email */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.email")} <RequiredAsterisk/>
+              {t("contact.email")} <RequiredAsterisk />
             </label>
             <input
               type="email"
               required
-              className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+              className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
             />
@@ -217,11 +228,11 @@ const FormPopup = () => {
           {/* City */}
           <div>
             <label className="block text-brand1 font-semibold mb-1">
-              {t("contact.city")} <RequiredAsterisk/>
+              {t("contact.city")} <RequiredAsterisk />
             </label>
             <select
               required
-              className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+              className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
               value={form.city}
               onChange={(e) => setForm({ ...form, city: e.target.value })}
             >
@@ -239,7 +250,7 @@ const FormPopup = () => {
             {t("contact.message")}
           </label>
           <textarea
-            className=" bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+            className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
             rows={3}
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -294,6 +305,36 @@ const FormPopup = () => {
           )}
         </button>
       </div>
+
+      <style jsx>{`
+        :global(.phone-input-custom) {
+          position: relative;
+          z-index: 40;
+        }
+        :global(.react-international-phone-country-selector) {
+          z-index: 50 !important;
+        }
+        :global(.react-international-phone-country-selector-dropdown) {
+          z-index: 60 !important;
+          position: absolute !important;
+          top: 100% !important;
+          left: 0 !important;
+          background: white !important;
+          border: 1px solid #d1d5db !important;
+          border-radius: 0.5rem !important;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+          max-height: 200px !important;
+          overflow-y: auto !important;
+        }
+        :global(.react-international-phone-country-selector-button) {
+          z-index: 50 !important;
+          position: relative !important;
+          background: white !important;
+          border: 1px solid #d1d5db !important;
+          border-radius: 0.5rem !important;
+        }
+      `}</style>
     </form>
   );
 };
