@@ -39,7 +39,6 @@ const HeroSection = ({ setShowPopup }) => {
   const [showFormPopup, setShowFormPopup] = useState(false);
   const [showBookingPopup, setShowBookingPopup] = useState(false);
 
-
   return (
     <div>
       <div className="relative w-full flex items-center justify-center overflow-hidden">
@@ -81,7 +80,7 @@ const HeroSection = ({ setShowPopup }) => {
                   <div className="flex gap-4">
                     <Link
                       to="/oncological-care"
-                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                      className="flex justify-center items-center bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
                     >
                       {t("moreBtn")}
                     </Link>
@@ -197,7 +196,6 @@ const HeroSection = ({ setShowPopup }) => {
                   >
                     {t("moreBtn")}
                   </Link>
-                 
                 </div>
               </div>
               <div className="w-full h-full lg:w-[52%] -z-10 flex items-center">
@@ -234,20 +232,19 @@ const HeroSection = ({ setShowPopup }) => {
                     {t("hero.slide4.title")}
                   </h1>
                   <div className="flex gap-4">
-                  <Link
-                    to="/services/service1"
-                    className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
-                  >
-                    {t("moreBtn")}
-                  </Link>
-                  <button
-  onClick={() => setShowBookingPopup(true)}
-  className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
->
-  {t("hero.slide4.button2")}
-</button>
-
-                    </div>
+                    <Link
+                      to="/services/service1"
+                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                    >
+                      {t("moreBtn")}
+                    </Link>
+                    <button
+                      onClick={() => setShowBookingPopup(true)}
+                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                    >
+                      {t("hero.slide4.button2")}
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className="w-full h-full lg:w-[52%] -z-10 flex items-center">
@@ -288,19 +285,16 @@ const HeroSection = ({ setShowPopup }) => {
                     <li>{t("hero.slide5.subtitle1")} </li>
                   </ul>
                   <div className="flex gap-4">
-                  <Link
-                    to="/early-detection-program"
-                    className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
-                  >
-                    {t("moreBtn")}
-                  </Link>
-                  <button
-  className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
->
-  {t("hero.slide5.button2")}
-</button>
-</div>
-                  
+                    <Link
+                      to="/early-detection-program"
+                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                    >
+                      {t("moreBtn")}
+                    </Link>
+                    <button className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300">
+                      {t("hero.slide5.button2")}
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className="w-full h-full lg:w-[52%] -z-10 flex items-center">
@@ -386,13 +380,11 @@ const HeroSection = ({ setShowPopup }) => {
       )}
 
       {showBookingPopup && (
-     <BookingPopup
-  show={showBookingPopup}
-  onClose={() => setShowBookingPopup(false)}
-/>
-
-)}
-
+        <BookingPopup
+          show={showBookingPopup}
+          onClose={() => setShowBookingPopup(false)}
+        />
+      )}
     </div>
   );
 };

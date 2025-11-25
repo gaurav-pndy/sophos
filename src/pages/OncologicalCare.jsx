@@ -55,7 +55,7 @@ const OncologicalCare = () => {
         </button>
         <Link
           to="/services/service3"
-          className="bg-white cursor-pointer border border-brand1 text-brand1 font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand1 hover:text-white transition-all duration-300"
+          className="bg-white cursor-pointer text-center border border-brand1 text-brand1 font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand1 hover:text-white transition-all duration-300"
         >
           {t("care.btn2")}
         </Link>
