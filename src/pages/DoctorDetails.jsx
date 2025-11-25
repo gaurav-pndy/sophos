@@ -331,9 +331,12 @@ const DoctorDetails = ({ setShowPopup }) => {
                 {formattedDoctor.firstName[i18n.language]}{" "}
                 {formattedDoctor.middleName[i18n.language]}
               </h1>
+              {/*
               <p className="flex-1 text-right whitespace-nowrap text-brand1/80 text-lg font-semibold">
                 {formattedDoctor.reviews.length} {t("doctors.reviews")}
               </p>
+              */}
+
             </div>
 
             {/* Position */}

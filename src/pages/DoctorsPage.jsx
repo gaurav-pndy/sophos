@@ -458,40 +458,20 @@ const DoctorsPage = ({ setShowPopup }) => {
             >
               {" "}
               <div className="flex-1 flex flex-col">
-                {/* Doctor Image with GridFS data */}
-                <div className="relative overflow-hidden rounded-lg mb-4">
-                  <img
-                    src={doc.image}
-                    alt={doc.name}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300 bg-gray-100"
-                    onError={(e) => {
-                      e.target.src = "/doctors.png";
-                      e.target.className =
-                        "w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300 bg-gray-200";
-                    }}
-                  />
+{/* Doctor Image */}
+<div className="relative aspect-square w-full overflow-hidden rounded-lg mb-4 bg-gray-100">
+  <img
+    src={doc.image}
+    alt={doc.name}
+    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
+    onError={(e) => {
+      e.target.src = "/doctors.png";
+      e.target.className =
+        "w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300 bg-gray-200";
+    }}
+  />
+</div>
 
-                  {/* Service Type Badges - Glass Effect with React Icons 
-                  <div className="absolute bottom-3 left-3 right-3 flex gap-2">
-                    {doc.services?.online && (
-                      <div className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-full backdrop-blur-md bg-black/20 border border-white/30 shadow-lg">
-                        <FaVideo className="text-white text-xs" />
-                        <span className="text-white text-xs font-semibold">
-                          Remote
-                        </span>
-                      </div>
-                    )}
-                    {doc.services?.offline && (
-                      <div className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-full backdrop-blur-md bg-black/20 border border-white/30 shadow-lg">
-                        <FaUser className="text-white text-xs" />
-                        <span className="text-white text-xs font-semibold">
-                          In-Person
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                  */}
-                </div>
 
                 {/* Doctor Information */}
                 <div className="flex-1">

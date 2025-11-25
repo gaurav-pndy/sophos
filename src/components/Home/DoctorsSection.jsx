@@ -344,14 +344,17 @@ const DoctorsSection = ({ setShowPopup }) => {
                   className="bg-white my-4 rounded-xl hover:scale-105 hover:bg-brand4/20 hover:shadow-lg cursor-pointer shadow-md transition-all duration-300 p-4 flex flex-col justify-between min-h-132"
                 >
                   <div className="flex-1 flex flex-col">
-                    <img
-                      src={doc.image}
-                      alt={doc.name}
-                      className="w-full h-64 object-cover object-top rounded-lg bg-gray-100"
-                      onError={(e) => {
-                        e.target.src = "/doctors.png";
-                      }}
-                    />
+                    <div className="w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+  <img
+    src={doc.image}
+    alt={doc.name}
+    className="w-full h-full object-cover object-center"
+    onError={(e) => {
+      e.target.src = "/doctors.png";
+    }}
+  />
+</div>
+
                     <div className="font-bold text-black text-xl mt-4 mb-3">
                       <span className="uppercase">
                         {" "}
