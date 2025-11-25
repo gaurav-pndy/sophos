@@ -129,7 +129,8 @@
     "subtitle1": "Expert-level oncologists",
     "subtitle2": "Personalized approach for every patient",
     "subtitle3": "Center for modern anti-tumor therapy",
-    "button": "Join HDMC+"
+    "button": "Join HDMC+",
+    "button2": "Contact the coordinator"
   },
   "slide2": {
     "title": "NECHUSHKINA Valentina Mikhailovna",
@@ -149,7 +150,8 @@
     "subtitle4": "A personal coordinator at every step"
   },
   "slide4": {
-    "title": "Multidisciplinary outpatient clinic"
+    "title": "Multidisciplinary outpatient clinic",
+    "button2": "Make an appointment for a consultation"
   },
   "slide5": {
     "title": "Comprehensive check-up programs",
@@ -2500,6 +2502,9 @@
   },
 
   "careersPage": {
+    "noFileChosen": "No file chosen",
+  "chooseFile": "Choose File",
+  "fileSelected": "File Selected",
   "filters": "Filters",
   "allDepartments": "All Departments",
   "medical": "Medical",
@@ -2552,7 +2557,7 @@
     "phone": "Phone Number",
     "resume": "Resume/CV",
     "acceptedFormats": "Accepted formats: PDF, DOC, DOCX (Max 5MB)",
-    "agreeTerms": "I agree to the processing of my personal data and accept the privacy policy",
+    "agreeTerms": "I agree to the processing of my personal data and accept the <a href='/about#privacy' target='_blank' class='text-blue-500 underline'> Privacy Policy </a>",
     "cancel": "Cancel",
     "submitting": "Submitting...",
     "submitApplication": "Submit Application",

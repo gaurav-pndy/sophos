@@ -8,7 +8,9 @@ const CookiPolicy = () => {
       <h1 className="text-4xl text-brand1 font-bold mb-4">
         {t("cookie.heading")}
       </h1>
+      {/*
       <p className="mb-6 text-brand3">{t("cookie.lastUpdated")}</p>
+      */}
 
       <p className="mb-4 text-brand1 text-lg">{t("cookie.para1")}</p>
 

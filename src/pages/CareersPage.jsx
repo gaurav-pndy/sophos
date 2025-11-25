@@ -569,6 +569,7 @@ const ApplicationForm = ({
     phoneNumber: "",
     resume: null,
     agreedToTerms: false,
+    agree2: false,
   });
   const [formErrors, setFormErrors] = useState({});
 
@@ -627,6 +628,9 @@ const ApplicationForm = ({
         "careersPage.validation.agreeTerms",
         "You must agree to the terms"
       );
+
+    if (!formData.agree2)
+      errors.agree2 = t("contact.checkbox2Error", "This field is required");
 
     // File validation
     if (formData.resume) {
@@ -730,7 +734,29 @@ const ApplicationForm = ({
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("careersPage.firstName", "First Name")} *
+                  {t("careersPage.lastName", "Last Name")}{" "}
+                  <span className="text-red-500 ml-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand1 focus:border-transparent ${
+                    formErrors.lastName ? "border-red-500" : "border-gray-300"
+                  }`}
+                />
+                {formErrors.lastName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {formErrors.lastName}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t("careersPage.firstName", "First Name")}{" "}
+                  <span className="text-red-500 ml-1">*</span>
                 </label>
                 <input
                   type="text"
@@ -762,30 +788,11 @@ const ApplicationForm = ({
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("careersPage.lastName", "Last Name")} *
-              </label>
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleInputChange}
-                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand1 focus:border-transparent ${
-                  formErrors.lastName ? "border-red-500" : "border-gray-300"
-                }`}
-              />
-              {formErrors.lastName && (
-                <p className="text-red-500 text-sm mt-1">
-                  {formErrors.lastName}
-                </p>
-              )}
-            </div>
-
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("careersPage.email", "Email")} *
+                  {t("careersPage.email", "Email")}{" "}
+                  <span className="text-red-500 ml-1">*</span>
                 </label>
                 <input
                   type="email"
@@ -805,7 +812,8 @@ const ApplicationForm = ({
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("careersPage.phone", "Phone Number")} *
+                  {t("careersPage.phone", "Phone Number")}{" "}
+                  <span className="text-red-500 ml-1">*</span>
                 </label>
                 <input
                   type="tel"
@@ -829,20 +837,42 @@ const ApplicationForm = ({
             {/* Resume Upload */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("careersPage.resume", "Resume/CV")} *
+                {t("careersPage.resume", "Resume/CV")}
               </label>
-              <input
-                type="file"
-                name="resume"
-                onChange={handleInputChange}
-                accept=".pdf,.doc,.docx"
-                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand1 focus:border-transparent ${
-                  formErrors.resume ? "border-red-500" : "border-gray-300"
-                }`}
-              />
+
+              <div className="relative">
+                <input
+                  id="resumeInput"
+                  type="file"
+                  name="resume"
+                  onChange={handleInputChange}
+                  accept=".pdf,.doc,.docx"
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                />
+
+                <div
+                  className={`w-full px-3 py-2 border rounded-lg bg-white flex items-center justify-between 
+        ${formErrors.resume ? "border-red-500" : "border-gray-300"}`}
+                >
+                  <span className="text-gray-700 text-sm">
+                    {formData.resume
+                      ? formData.resume.name
+                      : t("careersPage.noFileChosen", "No file chosen")}
+                  </span>
+
+                  <button
+                    type="button"
+                    className="px-3 py-1 bg-brand1 text-white rounded-md text-sm pointer-events-none"
+                  >
+                    {t("careersPage.chooseFile", "Choose File")}
+                  </button>
+                </div>
+              </div>
+
               {formErrors.resume && (
                 <p className="text-red-500 text-sm mt-1">{formErrors.resume}</p>
               )}
+
               {formData.resume && (
                 <p className="text-sm text-green-600 mt-1">
                   {t("careersPage.fileSelected", "File selected")}:{" "}
@@ -850,6 +880,7 @@ const ApplicationForm = ({
                   {(formData.resume.size / 1024 / 1024).toFixed(2)} MB)
                 </p>
               )}
+
               <p className="text-sm text-gray-500 mt-1">
                 {t(
                   "careersPage.acceptedFormats",
@@ -868,18 +899,43 @@ const ApplicationForm = ({
                   onChange={handleInputChange}
                   className="mt-1 rounded border-gray-300 text-brand1 focus:ring-brand1"
                 />
-                <span className="text-sm text-gray-700">
-                  {t(
-                    "careersPage.agreeTerms",
-                    "I agree to the processing of my personal data and accept the privacy policy"
-                  )}{" "}
-                  *
-                </span>
+                <span
+                  className="text-sm text-gray-700"
+                  dangerouslySetInnerHTML={{
+                    __html: t("careersPage.agreeTerms"),
+                  }}
+                ></span>
+                <span className="text-red-500 ml-1">*</span>
               </label>
+
               {formErrors.agreedToTerms && (
                 <p className="text-red-500 text-sm mt-1">
                   {formErrors.agreedToTerms}
                 </p>
+              )}
+            </div>
+
+            {/* Second Checkbox */}
+            <div className="mt-4">
+              <label className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  name="agree2"
+                  checked={formData.agree2}
+                  onChange={handleInputChange}
+                  className="mt-1 rounded border-gray-300 text-brand1 focus:ring-brand1"
+                />
+                <span
+                  className="text-sm text-gray-700"
+                  dangerouslySetInnerHTML={{
+                    __html: t("contact.checkbox2"),
+                  }}
+                ></span>
+                <span className="text-red-500 ml-1">*</span>
+              </label>
+
+              {formErrors.agree2 && (
+                <p className="text-red-500 text-sm mt-1">{formErrors.agree2}</p>
               )}
             </div>
 
