@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useTranslation } from "react-i18next";
 import { FiUsers } from "react-icons/fi";
 import { LuBuilding2 } from "react-icons/lu";
@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { FaUserDoctor, FaUsersLine } from "react-icons/fa6";
 import { GiMedicines } from "react-icons/gi";
 import { RiPsychotherapyLine } from "react-icons/ri";
+import BookingPopup from "../BookingPopup";
 
 const features = [
   {
@@ -53,6 +54,8 @@ const stats = [
 
 const AboutSection = () => {
   const { t } = useTranslation();
+  const [showBookingPopup, setShowBookingPopup] = useState(false);
+  
 
   return (
     <section id="about" className="w-full py-6 mt-6 ">
@@ -111,12 +114,22 @@ const AboutSection = () => {
               </p>
 
               {/* Button */}
-              <Link
-                to={"/about"}
-                className="bg-brand1  relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit"
-              >
-                {t("moreBtn")}
-              </Link>
+<div className="flex flex-col sm:flex-row gap-4">
+  <Link
+    to={"/about"}
+    className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
+  >
+    {t("moreBtn")}
+  </Link>
+  <button
+    onClick={() => setShowBookingPopup(true)}
+    className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
+  >
+    {t("aboutClinic.bookBtn")}
+  </button>
+</div>
+
+
             </div>
 
             {/* Right - Image */}
@@ -130,6 +143,14 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
+
+       {showBookingPopup && (
+        <BookingPopup
+          show={showBookingPopup}
+          onClose={() => setShowBookingPopup(false)}
+        />
+      )}
+
     </section>
   );
 };

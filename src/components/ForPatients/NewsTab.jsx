@@ -6,9 +6,11 @@ export default function NewsTab() {
   const { t } = useTranslation();
   return (
     <section>
+      {/*
       <h2 className="text-3xl mb-10 md:text-4xl font-bold text-brand1">
         Запись на приём
       </h2>
+      */}
       <div className="grid gap-10">
         {newsData.map((news) => (
           <div

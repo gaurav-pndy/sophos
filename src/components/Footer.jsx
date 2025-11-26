@@ -27,10 +27,8 @@ const Footer = ({ city }) => {
 
   const handleScrollToSection = (sectionId) => {
     if (location.pathname === "/") {
-      // Already on homepage → just scroll
       scrollToSection(sectionId);
     } else {
-      // Go to homepage first, then scroll
       navigate("/", { state: { scrollTo: sectionId } });
     }
   };
@@ -40,16 +38,15 @@ const Footer = ({ city }) => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr] gap-8">
         {/* Column 1: Logo and about */}
         <div className="flex-1">
-          <img 
-            src="/hd-logo-white.svg" 
-            alt="Logo" 
+          <img
+            src="/hd-logo-white.svg"
+            alt="Logo"
             className="h-10"
-            style={{ 
-              filter: 'brightness(0) invert(1)',
-              WebkitFilter: 'brightness(0) invert(1)'
+            style={{
+              filter: "brightness(0) invert(1)",
+              WebkitFilter: "brightness(0) invert(1)",
             }}
             onError={(e) => {
-              // Fallback to PNG if SVG fails
               e.target.src = "/hd-logo-white.png";
             }}
           />
