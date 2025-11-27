@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { FaLocationDot, FaSpinner } from "react-icons/fa6";
+import { FaSpinner } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FiFilter, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import WaveBackground from "../WaveBackground";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
-  "https://apimanager.health-direct.ru/api";
+  "https://apimanager.health-direct.ru";
 
 const DoctorsSection = ({ setShowPopup }) => {
   const { t, i18n } = useTranslation();
@@ -24,28 +23,47 @@ const DoctorsSection = ({ setShowPopup }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch doctors data from backend
+  // Format specializations list (same as DoctorsPage)
+  const formatSpecializationsList = (specString = "") => {
+    const formatted = specString
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((s) => {
+        return s
+          .split(" ")
+          .map(
+            (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+          )
+          .join(" ");
+      })
+      .filter((s, i, arr) => arr.indexOf(s) === i);
+
+    return formatted;
+  };
+
+  // Fetch doctors data from backend WITH FILTERS
   const fetchDoctors = async () => {
     try {
       setLoading(true);
       const params = new URLSearchParams();
 
       if (type !== "All") params.append("type", type);
-      if (specialization !== "All")
+      if (specialization !== "All") {
         params.append("specialization", specialization);
+      }
       if (searchTerm) params.append("search", searchTerm);
       params.append("language", i18n.language);
       params.append("page", "1");
-      params.append("limit", "12"); // Limit for homepage section
+      params.append("limit", "12");
 
-      const response = await fetch(`${API_BASE}/website/doctors?${params}`);
+      const response = await fetch(`${API_BASE}/api/website/doctors?${params}`);
       if (!response.ok) throw new Error("Failed to fetch doctors");
 
       const result = await response.json();
 
       if (result.success) {
         setDoctors(result.data || []);
-        console.log("doc", result.data);
       } else {
         throw new Error(result.error);
       }
@@ -61,15 +79,64 @@ const DoctorsSection = ({ setShowPopup }) => {
   const fetchSpecializations = async () => {
     try {
       const response = await fetch(
-        `${API_BASE}/website/doctors/specializations?language=${i18n.language}`
+        `${API_BASE}/api/website/doctors/specializations?language=${i18n.language}`
       );
       if (!response.ok) throw new Error("Failed to fetch specializations");
 
       const result = await response.json();
 
       if (result.success) {
-        setSpecializations(result.data || []);
-        console.log("spec", result.data);
+        // Use the same formatting logic as DoctorsPage
+        const labelMap = new Map();
+
+        result.data.forEach((item) => {
+          const formattedLabels = formatSpecializationsList(item.label);
+
+          formattedLabels.forEach((label) => {
+            if (!labelMap.has(label)) {
+              labelMap.set(label, {
+                id: label,
+                label: label,
+                originalItems: [],
+              });
+            }
+            labelMap.get(label).originalItems.push(item);
+          });
+        });
+
+        const specializationsWithCount = await Promise.all(
+          Array.from(labelMap.values()).map(async (spec) => {
+            try {
+              const params = new URLSearchParams();
+              params.append("specialization", spec.id);
+              params.append("language", i18n.language);
+              params.append("page", "1");
+              params.append("limit", "1");
+
+              const response = await fetch(
+                `${API_BASE}/api/website/doctors?${params}`
+              );
+              if (response.ok) {
+                const result = await response.json();
+                return {
+                  ...spec,
+                  count: result.pagination?.totalDoctors || 0,
+                  uniqueKey: `${spec.id.replace(/\s+/g, "-")}-${Date.now()}`,
+                };
+              }
+            } catch (err) {
+              console.error(`Error fetching count for ${spec.label}:`, err);
+            }
+
+            return {
+              ...spec,
+              count: 0,
+              uniqueKey: `${spec.id.replace(/\s+/g, "-")}-${Date.now()}`,
+            };
+          })
+        );
+
+        setSpecializations(specializationsWithCount);
       } else {
         throw new Error(result.error);
       }
@@ -110,16 +177,8 @@ const DoctorsSection = ({ setShowPopup }) => {
     const about = getLocalizedField(doc.about);
     const position = getLocalizedField(doc.position);
 
-    // Create tags from specialty and subSpecialties
+    // Create tags from specialty
     const tags = [specialty];
-
-    // Format languages
-    const languages = doc.languages
-      ? doc.languages
-          .map((lang) => getLocalizedField(lang))
-          .filter(Boolean)
-          .join(", ")
-      : "";
 
     return {
       ...doc,
@@ -133,43 +192,12 @@ const DoctorsSection = ({ setShowPopup }) => {
       about,
       position,
       tags: tags.filter((tag) => tag && tag.trim() !== ""),
-      languages,
       image: doc.imageUrl || "/default-doctor.jpg",
-      type: doc.services?.online ? "remote" : "personal", // Determine type based on services
-      fees: doc.feesAmount ? `${doc.feesAmount} ${doc.currency || ""}` : "",
     };
   });
 
-  // Filter doctors based on type
-  const filteredDoctors = cards.filter((doc) => {
-    const matchesType =
-      type === "All" ||
-      (type === "Personal" && doc.type === "personal") ||
-      (type === "Remote" && doc.type === "remote");
-
-    const matchesSpecialization =
-      specialization === "All" ||
-      (doc.tags &&
-        doc.tags.some((tag) =>
-          specializations.some(
-            (spec) => spec.label === tag && spec.id === specialization
-          )
-        ));
-
-    const matchesSearch =
-      doc.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doc.about.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doc.tags.some((tag) =>
-        tag.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-
-    return matchesType && matchesSpecialization && matchesSearch;
-  });
-
-  console.log("filt", filteredDoctors);
-
   // Loading state
-  if (loading && doctors.length === 0 && filteredDoctors.length === 0) {
+  if (loading && doctors.length === 0) {
     return (
       <section className="w-full py-10 flex justify-center items-center min-h-96">
         <div className="text-center">
@@ -290,7 +318,7 @@ const DoctorsSection = ({ setShowPopup }) => {
                   {t("doctors.filter.all") || "All Specializations"}
                 </option>
                 {specializations.map((opt) => (
-                  <option key={opt.id} value={opt.id}>
+                  <option key={opt.uniqueKey} value={opt.id}>
                     {opt.label} {opt.count && `(${opt.count})`}
                   </option>
                 ))}
@@ -318,7 +346,7 @@ const DoctorsSection = ({ setShowPopup }) => {
       )}
 
       {/* --- Swiper with Filtered Results --- */}
-      {filteredDoctors.length > 0 ? (
+      {cards.length > 0 ? (
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}
@@ -334,9 +362,9 @@ const DoctorsSection = ({ setShowPopup }) => {
             nextEl: ".next-btn",
           }}
         >
-          {[...filteredDoctors]
+          {[...cards]
             .reverse()
-            .slice(0, 5)
+            .slice(0, 4) // Show up to 8 doctors in swiper
             .map((doc) => (
               <SwiperSlide key={doc.id}>
                 <div className="h-full">
@@ -364,11 +392,10 @@ const DoctorsSection = ({ setShowPopup }) => {
                       {/* Name with consistent line handling */}
                       <div className="font-bold text-black text-xl mt-4 mb-3 min-h-[3.5rem]">
                         <span className="uppercase block truncate">
-                          {doc.lastName[i18n.language]}
+                          {getLocalizedField(doc.lastName)}
                         </span>
                         <span className="block truncate">
-                          {doc.firstName[i18n.language]}{" "}
-                          {doc.middleName[i18n.language]}
+                          {getLocalizedField(doc.firstName)} {getLocalizedField(doc.middleName)}
                         </span>
                       </div>
 
@@ -398,7 +425,7 @@ const DoctorsSection = ({ setShowPopup }) => {
                       </div>
                     </div>
 
-                    {/* Buttons at the bottom - will align automatically with grid */}
+                    {/* Buttons at the bottom */}
                     <div className="mt-auto space-y-2">
                       <button
                         onClick={(e) => {
@@ -442,7 +469,6 @@ const DoctorsSection = ({ setShowPopup }) => {
               <h3 className="text-brand1 text-xl font-semibold mb-2">
                 {t("doctors.notFound")}
               </h3>
-              <p className="text-brand1/70 mb-6">{t("doctors.notFoundDesc")}</p>
               <button
                 onClick={() => {
                   setType("All");

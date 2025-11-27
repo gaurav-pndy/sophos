@@ -1246,7 +1246,8 @@
     "button": "Send",
     "successTitle": "Thank You!",
     "successMessage": "Your message has been sent successfully. We will contact you soon!",
-    "autoClose": "Closing automatically in 5 seconds..."
+    "autoClose": "Closing automatically in 5 seconds...",
+    "dragAndDrop": "Click or drag the documents to upload"
   },
   "address": {
     "title": "Our Address",

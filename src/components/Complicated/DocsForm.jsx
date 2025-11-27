@@ -209,7 +209,7 @@ const DocsForm = () => {
                   />
                 </svg>
                 <p className="text-brand1 text-center">
-                  Click or drag the documents to upload
+                  {t("contact.dragAndDrop")}
                 </p>
                 <input
                   id="docs-upload"

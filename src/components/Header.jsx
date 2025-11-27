@@ -1033,7 +1033,7 @@ const Header = ({ city, setCity, setShowPopup }) => {
       <nav className="hidden lg:flex z-100 py-2 w-full bg-brand1/10 justify-end ">
         <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 text-sm xl:text-base font-semibold">
           {" "}
-             {/*
+          {/*
           <Link
             to="/telemedicine-consultation"
             className="  hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
@@ -1437,7 +1437,6 @@ const Header = ({ city, setCity, setShowPopup }) => {
                   {" "}
                   {t("header.contact")}
                 </button>{" "}
-
                 {/*
                 <Link
                   onClick={() => setIsOpen(false)}
@@ -1463,6 +1462,13 @@ const Header = ({ city, setCity, setShowPopup }) => {
                 >
                   {" "}
                   {t("header.oncologicalCare")}
+                </Link>{" "}
+                <Link
+                  to="/complicated-cases"
+                  className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
+                >
+                  {" "}
+                  {t("header.complicated")}{" "}
                 </Link>{" "}
               </nav>
             </motion.aside>
