@@ -726,7 +726,11 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 )}
               </div>
             </div>
-            <button className="border hidden md:flex border-[#125e84] text-[#125e84] px-4 py-1.5 rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap">
+            <button className="border hidden md:flex border-[#125e84] text-[#125e84] px-4 py-1.5 rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap"
+            onClick={() => {
+  setShowUserAccount(true);
+  setIsOpen(false);
+}}>
               <FaUser className="" />
               {t("header.personalAccount")}
             </button>
