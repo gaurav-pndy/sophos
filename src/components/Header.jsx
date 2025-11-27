@@ -1054,6 +1054,13 @@ const Header = ({ city, setCity, setShowPopup }) => {
             {" "}
             {t("header.oncologicalCare")}{" "}
           </Link>{" "}
+          <Link
+            to="/complicated-cases"
+            className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
+          >
+            {" "}
+            {t("header.complicated")}{" "}
+          </Link>{" "}
           <button
             onClick={() => setShowPopup(true)}
             className=" min-w-48 xl:min-w-56 bg-[#125e84] text-white px-4 py-2 rounded-lg font-normal hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap hidden md:flex justify-center items-center gap-2"

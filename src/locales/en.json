@@ -73,6 +73,7 @@
     "patient6": "Documents",
     "oncologist": "Oncologists",
     "oncologicalCare": "Oncological Care",
+    "complicated": "Complicated Cases",
     "doctorsDrop": {
       "d1": "Oncologists",
       "d2": "Pathologist",

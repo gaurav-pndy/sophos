@@ -23,6 +23,7 @@ import BlogDetails from "./pages/BlogDetails";
 import CookiPolicy from "./pages/CookiPolicy";
 import OncologicalCare from "./pages/OncologicalCare";
 import Blogs from "./pages/Blogs";
+import ComplicatedCases from "./pages/ComplicatedCases";
 
 function App() {
   const [city, setCity] = useState("Moscow");
@@ -122,6 +123,10 @@ function App() {
         {
           path: "/oncological-care",
           element: <OncologicalCare />,
+        },
+        {
+          path: "/complicated-cases",
+          element: <ComplicatedCases />,
         },
       ],
     },
