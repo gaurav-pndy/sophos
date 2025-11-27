@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SlBadge } from "react-icons/sl";
 import WaveBackground from "../components/WaveBackground";
 import { MdManageAccounts } from "react-icons/md";
@@ -7,6 +7,9 @@ import { FaHandHoldingHeart, FaLaptopMedical } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { GrOrganization } from "react-icons/gr";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { RxCross1 } from "react-icons/rx";
+import DocsForm from "../components/Complicated/DocsForm";
 
 const ComplicatedCases = () => {
   const content = [
@@ -61,6 +64,8 @@ const ComplicatedCases = () => {
       ],
     },
   ];
+
+  const [showPopup, setShowPopup] = useState(false);
 
   const scrollToSection = (sectionId) => {
     const target = document.querySelector(sectionId);
@@ -154,14 +159,45 @@ const ComplicatedCases = () => {
           </div>
         ))}
       </section>
-      <div className="flex w-full justify-center my-10">
+      <div className="flex flex-col pb-12 items-center gap-4">
         <button
-          onClick={() => handleScrollToSection("#contact")}
-          className="  bg-[#125e84] text-white px-10 py-3.5 text-lg rounded-lg  hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap "
+          className="bg-brand1 cursor-pointer border border-brand1 text-white font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand5/90 transition-all duration-300"
+          onClick={() => setShowPopup(true)}
         >
           Отправить документы
         </button>
       </div>
+
+      <AnimatePresence>
+        {showPopup && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="bg-white rounded-xl shadow-lg max-w-2xl w-full mx-4 p-6 pt-10 relative"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <button
+                  className="absolute top-4 z-50 right-4 text-brand1 cursor-pointer text-2xl"
+                  onClick={() => setShowPopup(false)}
+                  aria-label="Close"
+                >
+                  <RxCross1 />
+                </button>
+                <DocsForm />
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
