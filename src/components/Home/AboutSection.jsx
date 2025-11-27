@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FiUsers } from "react-icons/fi";
 import { LuBuilding2 } from "react-icons/lu";
@@ -55,115 +55,115 @@ const stats = [
 const AboutSection = () => {
   const { t } = useTranslation();
   const [showBookingPopup, setShowBookingPopup] = useState(false);
-  
 
   return (
     <section id="about" className="w-full py-6 mt-6 ">
       <div className="max-w-[87rem] mx-auto px-4">
-<div
-  className="relative mx-auto p-4 md:p-6 rounded-xl w-full h-full
-  bg-gradient-to-r from-[#bfbaaa] via-[#bfbaaa] to-[#bfbaaa]"
->
-  <WaveBackground
-    stroke="rgba(340, 340, 340,"
-    custStyle="md:w-1/2 h-1/2 left-0 top-0"
-  />
-  
-  {/* Top Section - Text + Image */}
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-    {/* Left - Text & Features */}
-    <div className="flex flex-col gap-4">
-      <h2 className="text-brand1 text-[2rem] leading-10 font-bold relative z-40 ">
-        {t("aboutClinic.title")}
-      </h2>
+        <div
+          className="relative mx-auto p-4 md:p-6 rounded-xl w-full h-full
+  bg-gradient-to-r from-[#bfbaaa] via-[#e6e4db] to-[#f5f5f2]"
+        >
+          <WaveBackground
+            stroke="rgba(340, 340, 340,"
+            custStyle="md:w-2/3 h-1/2 left-0 top-0"
+          />
 
-      <div className="text-brand1/90 ">
-        Многопрофильная клиника экспертного уровня в Москве.
-        Уникальность клиники заключается в объединении медицинских
-        знаний и мудрости по отношению к каждому пациенту. Мы лечим не
-        болезнь, а человека с его характером, физиологическими
-        особенностями и потребностями. Каждый специалист клиники, помимо
-        своей специализации, имеет опыт ведения онкологических пациентов
-        и онкологическую настороженность. Таким образом, диагностика и
-        лечение в клинике проходит на высшем уровне с учетом знаний о
-        профилактике, раннем выявлении, лечении, ведении, дообследовании
-        всех пациентов, в том числе и онкологических. Внимательное,
-        выверенное многолетним опытом отношение к диагностике и лечению
-        всех заболеваний - наш приоритет! Мы профессионально занимаемся
-        всеми пациентами, без лишней тревоги, с уверенностью в каждом
-        шаге.
-      </div>
+          {/* Top Section - Text + Image */}
+          <div className="flex flex-col xl:flex-row gap-10 items-center">
+            {/* Left - Text & Features */}
+            <div className="flex flex-col gap-4">
+              <h2 className="text-black text-[2rem] leading-10 font-bold relative z-40 ">
+                {t("aboutClinic.title")}
+              </h2>
 
-      {/* Features */}
-      <div className="flex flex-col gap-2 ">
-        {features.map((f, i) => (
-          <div key={i} className="flex items-center gap-4">
-            <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-[#125e84] to-[#33babd] rounded-lg shrink-0 ">
-              {f.icon}
+              <div className="text-black ">
+                Многопрофильная клиника экспертного уровня в Москве.
+                Уникальность клиники заключается в объединении медицинских
+                знаний и мудрости по отношению к каждому пациенту. Мы лечим не
+                болезнь, а человека с его характером, физиологическими
+                особенностями и потребностями. Каждый специалист клиники, помимо
+                своей специализации, имеет опыт ведения онкологических пациентов
+                и онкологическую настороженность. Таким образом, диагностика и
+                лечение в клинике проходит на высшем уровне с учетом знаний о
+                профилактике, раннем выявлении, лечении, ведении, дообследовании
+                всех пациентов, в том числе и онкологических. Внимательное,
+                выверенное многолетним опытом отношение к диагностике и лечению
+                всех заболеваний - наш приоритет! Мы профессионально занимаемся
+                всеми пациентами, без лишней тревоги, с уверенностью в каждом
+                шаге.
+              </div>
+
+              {/* Features */}
+              <div className="flex flex-col gap-2 ">
+                {features.map((f, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-[#125e84] to-[#33babd] rounded-lg shrink-0 ">
+                      {f.icon}
+                    </div>
+                    <div>
+                      <div className="text-black z-40  leading-tight">
+                        {t(f.desc)}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="font-bold text-black text-lg ">
+                {t("aboutClinic.footnote")}
+              </p>
+
+              {/* Button */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to={"/about"}
+                  className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
+                >
+                  {t("moreBtn")}
+                </Link>
+                <button
+                  onClick={() => setShowBookingPopup(true)}
+                  className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
+                >
+                  {t("aboutClinic.bookBtn")}
+                </button>
+              </div>
             </div>
-            <div>
-              <div className="text-brand1/90 z-40  leading-tight">
-                {t(f.desc)}
+
+            {/* Right - Image with background blending */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative max-w-3xl xl:w-md">
+                {/* Background color overlay to blend with the main background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#bfbaaa] via-[#bfbaaa] to-[#f6f4ec] mix-blend-multiply rounded-xl"></div>
+
+                {/* Image with gradient mask for smooth blending */}
+                <div className="relative overflow-hidden rounded-xl">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#bfbaaa] via-transparent to-[#f6f4ec] opacity-70 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#bfbaaa] via-transparent to-transparent opacity-50 z-10"></div>
+                  <img
+                    src="/about-hosp.jpg"
+                    alt="About Clinic"
+                    className="w-full h-full object-cover relative z-0"
+                    style={{
+                      maskImage:
+                        "linear-gradient(to right, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)",
+                      WebkitMaskImage:
+                        "linear-gradient(to right, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)",
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-
-      <p className="font-bold text-brand1/90 text-lg ">
-        {t("aboutClinic.footnote")}
-      </p>
-
-      {/* Button */}
-      <div className="flex flex-col sm:flex-row gap-4">
-        <Link
-          to={"/about"}
-          className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
-        >
-          {t("moreBtn")}
-        </Link>
-        <button
-          onClick={() => setShowBookingPopup(true)}
-          className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
-        >
-          {t("aboutClinic.bookBtn")}
-        </button>
-      </div>
-    </div>
-
-    {/* Right - Image with background blending */}
-    <div className="flex justify-center lg:justify-end">
-      <div className="relative w-full max-w-2xl">
-        {/* Background color overlay to blend with the main background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#bfbaaa] via-[#bfbaaa] to-[#bfbaaa] mix-blend-multiply rounded-xl"></div>
-        
-        {/* Image with gradient mask for smooth blending */}
-        <div className="relative overflow-hidden rounded-xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#bfbaaa] via-transparent to-[#bfbaaa] opacity-70 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#bfbaaa] via-transparent to-transparent opacity-50 z-10"></div>
-          <img
-            src="/about-hosp.jpg"
-            alt="About Clinic"
-            className="w-full h-full object-cover relative z-0"
-            style={{
-              maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)',
-              WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)'
-            }}
-          />
         </div>
       </div>
-    </div>
-  </div>
-</div>
-      </div>
 
-       {showBookingPopup && (
+      {showBookingPopup && (
         <BookingPopup
           show={showBookingPopup}
           onClose={() => setShowBookingPopup(false)}
         />
       )}
-
     </section>
   );
 };
