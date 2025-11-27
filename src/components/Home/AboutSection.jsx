@@ -61,7 +61,7 @@ const AboutSection = () => {
       <div className="max-w-[87rem] mx-auto px-4">
         <div
           className="relative mx-auto p-4 md:p-6 rounded-xl w-full h-full
-  bg-gradient-to-r from-[#bfbaaa] via-[#e6e4db] to-[#f5f5f2]"
+  bg-gradient-to-r from-[#eae9e3] via-[#f5f5f2] to-[#ffffff]"
         >
           <WaveBackground
             stroke="rgba(340, 340, 340,"
@@ -134,12 +134,12 @@ const AboutSection = () => {
             <div className="flex justify-center lg:justify-end">
               <div className="relative max-w-3xl xl:w-md">
                 {/* Background color overlay to blend with the main background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#bfbaaa] via-[#bfbaaa] to-[#f6f4ec] mix-blend-multiply rounded-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#e6e4db] via-[#e6e4db] to-[#f6f4ec] mix-blend-multiply rounded-xl"></div>
 
                 {/* Image with gradient mask for smooth blending */}
                 <div className="relative overflow-hidden rounded-xl">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#bfbaaa] via-transparent to-[#f6f4ec] opacity-70 z-10"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#bfbaaa] via-transparent to-transparent opacity-50 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#e6e4db] via-transparent to-[#f6f4ec] opacity-70 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#e6e4db] via-transparent to-transparent opacity-50 z-10"></div>
                   <img
                     src="/about-hosp.jpg"
                     alt="About Clinic"
