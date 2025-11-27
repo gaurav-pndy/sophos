@@ -22,6 +22,12 @@ const DocsForm = () => {
     agree2: false,
   });
   const [loading, setLoading] = useState(false);
+  const [docFiles, setDocFiles] = useState([]);
+
+  const handleDocUpload = (e) => {
+    const files = Array.from(e.target.files);
+    setDocFiles((prev) => [...prev, ...files]);
+  };
 
   const RequiredAsterisk = () => <span className="text-red-500 ml-1">*</span>;
 
@@ -184,7 +190,10 @@ const DocsForm = () => {
             </div>
 
             <div className="flex-1">
-              <div className="border border-brand4 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-brand1 hover:bg-brand1/5 h-full">
+              <div
+                className="border border-brand4 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-brand1 hover:bg-brand1/5 h-full"
+                onClick={() => document.getElementById("docs-upload").click()}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-8 w-8 text-brand1 mb-2"
@@ -208,6 +217,7 @@ const DocsForm = () => {
                   accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt"
                   multiple
                   className="hidden"
+                  onChange={handleDocUpload}
                 />
               </div>
             </div>
