@@ -14,19 +14,19 @@ const AppLayout = ({ city, setCity, showPopup, setShowPopup }) => {
   return (
     <div>
       <ScrollToTop />
-      <Header 
-        city={city} 
-        setCity={setCity} 
-        setShowPopup={setShowPopup} 
+      <Header
+        city={city}
+        setCity={setCity}
+        setShowPopup={setShowPopup}
         setShowUserAccount={setShowUserAccount}
       />
       <div className="mt-14 lg:mt-42 xl:mt-44">
         <Outlet />
         <FloatingButton onClick={() => setShowPopup(true)} />
         <BookingPopup show={showPopup} onClose={() => setShowPopup(false)} />
-        <UserAccountPopup 
-          show={showUserAccount} 
-          onClose={() => setShowUserAccount(false)} 
+        <UserAccountPopup
+          show={showUserAccount}
+          onClose={() => setShowUserAccount(false)}
         />
         <Footer city={city} />
       </div>
