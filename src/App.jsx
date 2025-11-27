@@ -24,10 +24,12 @@ import CookiPolicy from "./pages/CookiPolicy";
 import OncologicalCare from "./pages/OncologicalCare";
 import Blogs from "./pages/Blogs";
 import ComplicatedCases from "./pages/ComplicatedCases";
+import UserAccountPopup from "./components/UserAccountPopup";
 
 function App() {
   const [city, setCity] = useState("Moscow");
   const [showPopup, setShowPopup] = useState(false);
+  const [showUserAccount, setShowUserAccount] = useState(false);
   const router = createBrowserRouter([
     {
       element: (
@@ -36,6 +38,7 @@ function App() {
           setCity={setCity}
           showPopup={showPopup}
           setShowPopup={setShowPopup}
+          setShowUserAccount={setShowUserAccount} 
         />
       ),
       children: [

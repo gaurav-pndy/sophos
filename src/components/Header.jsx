@@ -65,7 +65,7 @@ import {
 import { BsThermometerHalf } from "react-icons/bs";
 import { AiOutlineUserSwitch } from "react-icons/ai";
 
-const Header = ({ city, setCity, setShowPopup }) => {
+const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false); // mobile dropdown
@@ -1181,10 +1181,14 @@ const Header = ({ city, setCity, setShowPopup }) => {
               </div>
 
               <div className="flex flex-col gap-2 text-lg mb-4">
-                <button className="bg-[#125e84] text-white px-6 py-2 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4">
-                  <FaUser className="text-lg" />
-                  {t("header.personalAccount")}
-                </button>
+               <button className="bg-[#125e84] text-white px-6 py-2 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4"
+onClick={() => {
+  setShowUserAccount(true);
+  setIsOpen(false);
+}}>
+  <FaUser className="text-lg" />
+  {t("header.personalAccount")}
+</button>
                 <button
                   onClick={() => setShowPopup(true)}
                   className="border border-[#125e84] text-[#125e84] px-6 py-2 rounded-lg font-medium flex gap-2 items-center hover:bg-[#125e84]/10 cursor-pointer transition whitespace-nowrap"
