@@ -13,6 +13,8 @@ import {
   FaTimes,
   FaCheckCircle,
 } from "react-icons/fa";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
@@ -47,11 +49,23 @@ const CareersPage = () => {
   const [applicationLoading, setApplicationLoading] = useState(false);
   const [applicationError, setApplicationError] = useState(null);
   const [applicationSuccess, setApplicationSuccess] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [filters, setFilters] = useState({
     department: "",
     employmentType: "",
   });
   const { t, i18n } = useTranslation();
+
+  // Auto-close success popup after 5 seconds
+  useEffect(() => {
+    if (showSuccessPopup) {
+      const timer = setTimeout(() => {
+        setShowSuccessPopup(false);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccessPopup]);
 
   // Fetch published vacancies
   const fetchVacancies = async () => {
@@ -143,6 +157,7 @@ const CareersPage = () => {
       if (result.success) {
         setApplicationSuccess(true);
         setShowApplicationForm(false);
+        setShowSuccessPopup(true);
         // Refresh vacancies to update application count
         fetchVacancies();
       } else {
@@ -203,27 +218,43 @@ const CareersPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header Section
-      <div className="bg-gradient-to-r from-brand1 to-brand3 text-white py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <FaBriefcase className="text-3xl" />
+      {/* Success Popup */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-xl">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-8 h-8 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {t("careersPage.title", "Join Our Team")}
-            </h1>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              {t(
-                "careersPage.subtitle",
-                "Discover exciting career opportunities and grow with us"
-              )}
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              {t("careersPage.successTitle", "Application Submitted!")}
+            </h3>
+            <p className="text-gray-600 mb-6">
+              {t("careersPage.successMessage", "Thank you for your application. We will review it and contact you soon.")}
+            </p>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div 
+                className="bg-green-500 h-2 rounded-full transition-all duration-5000 ease-linear"
+                style={{ width: '100%' }}
+              ></div>
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              {t("careersPage.autoClose", "Closing automatically in 5 seconds...")}
             </p>
           </div>
         </div>
-      </div>
-
-       */}
+      )}
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -569,8 +600,24 @@ const ApplicationForm = ({
     phoneNumber: "",
     resume: null,
     agreedToTerms: false,
+    agree2: false,
   });
   const [formErrors, setFormErrors] = useState({});
+
+    const handlePhoneChange = (phone) => {
+    setFormData((prev) => ({
+      ...prev,
+      phoneNumber: phone,
+    }));
+
+    // Clear error when user starts typing
+    if (formErrors.phoneNumber) {
+      setFormErrors((prev) => ({
+        ...prev,
+        phoneNumber: "",
+      }));
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked, files } = e.target;
@@ -627,6 +674,9 @@ const ApplicationForm = ({
         "careersPage.validation.agreeTerms",
         "You must agree to the terms"
       );
+
+    if (!formData.agree2)
+      errors.agree2 = t("contact.checkbox2Error", "This field is required");
 
     // File validation
     if (formData.resume) {
@@ -730,7 +780,29 @@ const ApplicationForm = ({
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("careersPage.firstName", "First Name")} *
+                  {t("careersPage.lastName", "Last Name")}{" "}
+                  <span className="text-red-500 ml-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand1 focus:border-transparent ${
+                    formErrors.lastName ? "border-red-500" : "border-gray-300"
+                  }`}
+                />
+                {formErrors.lastName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {formErrors.lastName}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t("careersPage.firstName", "First Name")}{" "}
+                  <span className="text-red-500 ml-1">*</span>
                 </label>
                 <input
                   type="text"
@@ -762,30 +834,11 @@ const ApplicationForm = ({
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("careersPage.lastName", "Last Name")} *
-              </label>
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleInputChange}
-                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand1 focus:border-transparent ${
-                  formErrors.lastName ? "border-red-500" : "border-gray-300"
-                }`}
-              />
-              {formErrors.lastName && (
-                <p className="text-red-500 text-sm mt-1">
-                  {formErrors.lastName}
-                </p>
-              )}
-            </div>
-
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("careersPage.email", "Email")} *
+                  {t("careersPage.email", "Email")}{" "}
+                  <span className="text-red-500 ml-1">*</span>
                 </label>
                 <input
                   type="email"
@@ -803,46 +856,73 @@ const ApplicationForm = ({
                 )}
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("careersPage.phone", "Phone Number")} *
-                </label>
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
-                  onChange={handleInputChange}
-                  className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand1 focus:border-transparent ${
-                    formErrors.phoneNumber
-                      ? "border-red-500"
-                      : "border-gray-300"
-                  }`}
-                />
-                {formErrors.phoneNumber && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {formErrors.phoneNumber}
-                  </p>
-                )}
-              </div>
+<div>
+  <label className="block text-sm font-medium text-gray-700 mb-2">
+    {t("careersPage.phone", "Phone Number")}
+    <span className="text-red-500 ml-1">*</span>
+  </label>
+
+  {/* Wrapper with border */}
+  <div
+    className={`flex items-center rounded-lg border px-0 py-0 ${
+      formErrors.phoneNumber ? "border-red-500" : "border-gray-300"
+    }`}
+  >
+    <PhoneInput
+      defaultCountry="ru"
+      value={formData.phoneNumber}
+      onChange={handlePhoneChange}
+      className="w-full"
+      inputClassName="!bg-transparent !border-none !w-full !px-0 py-2 focus:!outline-none"
+    />
+  </div>
+
+  {formErrors.phoneNumber && (
+    <p className="text-red-500 text-sm mt-1">{formErrors.phoneNumber}</p>
+  )}
+</div>
+
             </div>
 
             {/* Resume Upload */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("careersPage.resume", "Resume/CV")} *
+                {t("careersPage.resume", "Resume/CV")}
               </label>
-              <input
-                type="file"
-                name="resume"
-                onChange={handleInputChange}
-                accept=".pdf,.doc,.docx"
-                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand1 focus:border-transparent ${
-                  formErrors.resume ? "border-red-500" : "border-gray-300"
-                }`}
-              />
+
+              <div className="relative">
+                <input
+                  id="resumeInput"
+                  type="file"
+                  name="resume"
+                  onChange={handleInputChange}
+                  accept=".pdf,.doc,.docx"
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                />
+
+                <div
+                  className={`w-full px-3 py-2 border rounded-lg bg-white flex items-center justify-between 
+        ${formErrors.resume ? "border-red-500" : "border-gray-300"}`}
+                >
+                  <span className="text-gray-700 text-sm">
+                    {formData.resume
+                      ? formData.resume.name
+                      : t("careersPage.noFileChosen", "No file chosen")}
+                  </span>
+
+                  <button
+                    type="button"
+                    className="px-3 py-1 bg-brand1 text-white rounded-md text-sm pointer-events-none"
+                  >
+                    {t("careersPage.chooseFile", "Choose File")}
+                  </button>
+                </div>
+              </div>
+
               {formErrors.resume && (
                 <p className="text-red-500 text-sm mt-1">{formErrors.resume}</p>
               )}
+
               {formData.resume && (
                 <p className="text-sm text-green-600 mt-1">
                   {t("careersPage.fileSelected", "File selected")}:{" "}
@@ -850,6 +930,7 @@ const ApplicationForm = ({
                   {(formData.resume.size / 1024 / 1024).toFixed(2)} MB)
                 </p>
               )}
+
               <p className="text-sm text-gray-500 mt-1">
                 {t(
                   "careersPage.acceptedFormats",
@@ -868,18 +949,43 @@ const ApplicationForm = ({
                   onChange={handleInputChange}
                   className="mt-1 rounded border-gray-300 text-brand1 focus:ring-brand1"
                 />
-                <span className="text-sm text-gray-700">
-                  {t(
-                    "careersPage.agreeTerms",
-                    "I agree to the processing of my personal data and accept the privacy policy"
-                  )}{" "}
-                  *
-                </span>
+                <span
+                  className="text-sm text-gray-700"
+                  dangerouslySetInnerHTML={{
+                    __html: t("careersPage.agreeTerms"),
+                  }}
+                ></span>
+                <span className="text-red-500 ml-1">*</span>
               </label>
+
               {formErrors.agreedToTerms && (
                 <p className="text-red-500 text-sm mt-1">
                   {formErrors.agreedToTerms}
                 </p>
+              )}
+            </div>
+
+            {/* Second Checkbox */}
+            <div className="mt-4">
+              <label className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  name="agree2"
+                  checked={formData.agree2}
+                  onChange={handleInputChange}
+                  className="mt-1 rounded border-gray-300 text-brand1 focus:ring-brand1"
+                />
+                <span
+                  className="text-sm text-gray-700"
+                  dangerouslySetInnerHTML={{
+                    __html: t("contact.checkbox2"),
+                  }}
+                ></span>
+                <span className="text-red-500 ml-1">*</span>
+              </label>
+
+              {formErrors.agree2 && (
+                <p className="text-red-500 text-sm mt-1">{formErrors.agree2}</p>
               )}
             </div>
 

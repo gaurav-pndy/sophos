@@ -72,7 +72,7 @@ const Steps = () => {
   };
 
   return (
-    <section className="grid max-w-7xl mt-12 mx-auto md:grid-cols-2 md:gap-10 bg-brand1/10 p-4 md:p-8 xl:p-12 rounded-2xl">
+    <section className="grid max-w-7xl mt-12 mx-auto md:grid-cols-2 gap-6 md:gap-10 bg-brand1/10 p-4 md:p-8 xl:p-12 rounded-2xl">
       {/* Left Column - Tabs */}
       <div className="flex flex-col gap-2">
         {Object.keys(stepsData).map((tabKey) => (
@@ -109,7 +109,7 @@ const Steps = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="bg-white rounded-2xl p-6 md:p-8 shadow flex flex-col max-w-lg"
+            className="bg-white rounded-2xl p-6 md:p-8 shadow flex flex-col max-w-lg w-full"
           >
             <h3 className="text-2xl md:text-3xl font-bold text-brand1 mb-8">
               {stepsData[activeTab].title}

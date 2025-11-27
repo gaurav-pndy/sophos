@@ -108,7 +108,7 @@ const ForPatients = () => {
           </p>
         </div>
 
-        <div className="w-full h-full z-30 -mt-[3px] md:-mt-0">
+        <div className="w-full h-full z-30 -mt-[3px] md:-mt-0 -ml-[1px]">
           <div className="relative w-full h-full">
             <video
               autoPlay

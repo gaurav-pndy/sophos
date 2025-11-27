@@ -72,9 +72,11 @@ const HeroSection = () => {
           <button className="bg-white text-brand1 z-40 font-semibold px-8 py-3  rounded-lg hover:bg-transparent hover:text-white transition shadow cursor-pointer border border-white">
             {t("earlyDetection.hero.programButton")}
           </button>
+          {/*
           <button className="bg-transparent text-white z-40 font-semibold px-8 py-3  rounded-lg hover:bg-white hover:text-brand1 transition shadow cursor-pointer border border-white">
             {t("earlyDetection.hero.moreButton")}
           </button>
+          */}
         </div>
       </div>
 

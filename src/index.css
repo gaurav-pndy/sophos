@@ -15,14 +15,5 @@
 }
 
 
-.react-international-phone-input-container{
-  z-index: 50 !important;
-  position: relative !important;
-  border-top-left-radius: 0.5rem !important;
-  border-bottom-left-radius: 0.5rem !important;
-  overflow: hidden !important;
-}
 
-.react-international-phone-country-selector-dropdown{
-  width: auto !important;
-}
+

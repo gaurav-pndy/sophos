@@ -15,12 +15,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FiFilter, FiSearch } from "react-icons/fi";
+import BookingPopup from "../components/BookingPopup";
+import ContactViaPhonePopup from "../components/ContactViaPhonePopup";
 
 const ServiceDetails = ({ setShowPopup }) => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("about");
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  const [isBookingPopupOpen, setIsBookingPopupOpen] = useState(false);
+  const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
 
   const { serviceId } = useParams();
   const service = servicesData.find((s) => s.id === serviceId);
@@ -351,12 +356,20 @@ const ServiceDetails = ({ setShowPopup }) => {
           {/* <p className="text-white text-lg md:text-2xl mb-6 drop-shadow">
             {service.subtitle && t(service.subtitle)}
           </p> */}
-          <button
-            onClick={() => setShowPopup(true)}
-            className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-white text-brand1 text-lg font-medium hover:text-white hover:bg-transparent cursor-pointer transition-all duration-300 border border-white "
-          >
-            {service.btn ? t(service.btn) : t("services.s1.btn")}
-          </button>
+          <div className="flex gap-4">
+            <button
+              onClick={() => setShowPopup(true)}
+              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-white text-brand1 text-lg font-medium hover:text-white hover:bg-transparent cursor-pointer transition-all duration-300 border border-white "
+            >
+              {service.btn ? t(service.btn) : t("services.s1.btn")}
+            </button>
+            <button
+              onClick={() => setIsContactPopupOpen(true)}
+              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-transparent  text-white text-lg font-medium hover: hover:text-brand1 hover:bg-white cursor-pointer transition-all duration-300 border border-white "
+            >
+              {t("services.contactPopup")}
+            </button>
+          </div>
         </div>
 
         <div className="w-full   h-full z-30 -mt-[1px] md:-mt-0">
@@ -414,13 +427,15 @@ const ServiceDetails = ({ setShowPopup }) => {
       <div className="max-w-[87rem] mx-auto ">
         {/* О УСЛУГЕ */}
         {activeTab === "about" && (
-          <div
-            className="bg-white rounded-2xl shadow p-8 text-lg "
-            style={{
-              color: service.color1,
-            }}
-            dangerouslySetInnerHTML={{ __html: t(service.about) }}
-          ></div>
+          <div className="bg-white rounded-2xl shadow p-8 text-lg ">
+            <div
+              style={{
+                color: service.color1,
+              }}
+              dangerouslySetInnerHTML={{ __html: t(service.about) }}
+            ></div>
+            <div className="flex gap-4 mt-8"></div>
+          </div>
         )}
         {activeTab === "diseases" && (
           <div
@@ -653,6 +668,17 @@ const ServiceDetails = ({ setShowPopup }) => {
         )}
 
         {activeTab === "other" && <OtherServices />}
+
+        {isBookingPopupOpen && (
+          <BookingPopup
+            show={isBookingPopupOpen}
+            onClose={() => setIsBookingPopupOpen(false)}
+          />
+        )}
+
+        {isContactPopupOpen && (
+          <ContactViaPhonePopup onClose={() => setIsContactPopupOpen(false)} />
+        )}
       </div>
     </div>
   );

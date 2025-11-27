@@ -12,7 +12,7 @@ import WaveBackground from "../WaveBackground";
 import { Link } from "react-router-dom";
 
 const MembershipSection = () => {
-  // Which FAQ is open
+
   const [openIndex, setOpenIndex] = useState(null);
 
   const { t } = useTranslation();

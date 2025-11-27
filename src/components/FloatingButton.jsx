@@ -22,14 +22,15 @@ const FloatingButton = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`fixed bottom-6 w-[80%] md:w-fit z-40 right-1/2 translate-x-1/2 md:right-6 md:translate-0 px-6 py-4 flex justify-center items-center gap-3 rounded-full font-semibold shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 ${
+      className={`fixed bottom-6 z-40 w-fit right-6 px-4 py-4 md:px-6 flex justify-center items-center gap-3 rounded-full font-semibold shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 ${
         overFooter
           ? "bg-white text-brand1 hover:bg-gray-200"
           : "bg-brand1 text-white hover:bg-brand5/90"
       }`}
     >
       <FaCalendarCheck className="text-2xl" />
-      {t("header.bookAppointment")}
+      {/* Hide text on small screens, show on medium and above */}
+      <span className="hidden md:inline">{t("header.bookAppointment")}</span>
     </button>
   );
 };

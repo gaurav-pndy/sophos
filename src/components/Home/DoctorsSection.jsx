@@ -112,13 +112,6 @@ const DoctorsSection = ({ setShowPopup }) => {
 
     // Create tags from specialty and subSpecialties
     const tags = [specialty];
-    if (doc.subSpecialties && doc.subSpecialties.length > 0) {
-      tags.push(
-        ...doc.subSpecialties
-          .map((sub) => getLocalizedField(sub))
-          .filter(Boolean)
-      );
-    }
 
     // Format languages
     const languages = doc.languages
@@ -346,61 +339,86 @@ const DoctorsSection = ({ setShowPopup }) => {
             .slice(0, 5)
             .map((doc) => (
               <SwiperSlide key={doc.id}>
-                <Link
-                  to={`/doctors/${doc.id}`}
-                  className="bg-white my-4 rounded-xl hover:scale-105 hover:bg-brand4/20 hover:shadow-lg cursor-pointer shadow-md transition-all duration-300 p-4 flex flex-col justify-between min-h-132"
-                >
-                  <div className="flex-1 flex flex-col">
-                    <img
-                      src={doc.image}
-                      alt={doc.name}
-                      className="w-full h-64 object-cover object-top rounded-lg bg-gray-100"
-                      onError={(e) => {
-                        e.target.src = "/doctors.png";
-                      }}
-                    />
-                    <div className="font-bold text-black text-xl mt-4 mb-3">
-                      <span className="uppercase">
-                        {" "}
-                        {doc.lastName[i18n.language]}
-                      </span>{" "}
-                      {doc.firstName[i18n.language]}{" "}
-                      {doc.middleName[i18n.language]}
-                    </div>
-                    {doc.position && (
-                      <p className="text-brand1 text-sm font-medium mb-3">
-                        {doc.position}
-                      </p>
-                    )}
-                    <div className="flex flex-wrap gap-1">
-                      {doc.tags.slice(0, 3).map((tag, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-1 rounded-full border border-brand4 text-black text-xs"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                      {doc.tags.length > 3 && (
-                        <span className="px-2 py-1 rounded-full border border-brand4 text-black text-xs">
-                          +{doc.tags.length - 3}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => setShowPopup(true)}
-                    className="mt-4 px-6 py-2.5 w-full border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
-                  >
-                    {t("doctors.btn1")}
-                  </button>
+                <div className="h-full">
                   <Link
                     to={`/doctors/${doc.id}`}
-                    className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                    className="
+                bg-white my-4 rounded-xl 
+                hover:scale-105 hover:bg-brand4/20 hover:shadow-lg 
+                cursor-pointer shadow-md transition-all duration-300 p-4 
+                flex flex-col h-full"
                   >
-                    {t("doctors.btn2")}
+                    <div className="flex-1 flex flex-col">
+                      {/* Image with consistent aspect ratio */}
+                      <div className="w-full aspect-[4/4] overflow-hidden rounded-lg bg-gray-100">
+                        <img
+                          src={doc.image}
+                          alt={doc.name}
+                          className="w-full h-full object-cover object-center"
+                          onError={(e) => {
+                            e.target.src = "/doctors.png";
+                          }}
+                        />
+                      </div>
+
+                      {/* Name with consistent line handling */}
+                      <div className="font-bold text-black text-xl mt-4 mb-3 min-h-[3.5rem]">
+                        <span className="uppercase block truncate">
+                          {doc.lastName[i18n.language]}
+                        </span>
+                        <span className="block truncate">
+                          {doc.firstName[i18n.language]}{" "}
+                          {doc.middleName[i18n.language]}
+                        </span>
+                      </div>
+
+                      {/* Position with consistent height */}
+                      {doc.position && (
+                        <p className="text-brand1 text-sm font-medium mb-3 min-h-[2.5rem] line-clamp-2">
+                          {doc.position}
+                        </p>
+                      )}
+
+                      {/* Tags with consistent height */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {doc.tags.slice(0, 3).map((tag, i) => (
+                          <span
+                            key={i}
+                            className="px-2 py-1 rounded-full border border-brand4 text-black text-xs truncate max-w-full"
+                            title={tag}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                        {doc.tags.length > 3 && (
+                          <span className="px-2 py-1 rounded-full border border-brand4 text-black text-xs">
+                            +{doc.tags.length - 3}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Buttons at the bottom - will align automatically with grid */}
+                    <div className="mt-auto space-y-2">
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setShowPopup(true);
+                        }}
+                        className="w-full px-6 py-2.5 border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                      >
+                        {t("doctors.btn1")}
+                      </button>
+                      <Link
+                        to={`/doctors/${doc.id}`}
+                        className="w-full px-6 py-2.5 border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer block"
+                      >
+                        {t("doctors.btn2")}
+                      </Link>
+                    </div>
                   </Link>
-                </Link>
+                </div>
               </SwiperSlide>
             ))}
         </Swiper>

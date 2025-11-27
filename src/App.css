@@ -7,3 +7,14 @@
 .map-tint:hover > ymaps {
   filter: grayscale(0) sepia(0.1) hue-rotate(320deg) saturate(2);
 }
+
+/* This prevents clipping of the dropdown */
+:global(.react-international-phone-country-selector) {
+  overflow: visible !important;
+}
+
+/* This ensures dropdown appears above everything */
+:global(.react-international-phone-country-selector-dropdown) {
+  position: absolute !important;
+  z-index: 999999 !important;
+}
