@@ -32,11 +32,11 @@ const features = [
     title: "aboutClinic.feature4.title",
     desc: "aboutClinic.feature4.desc",
   },
-  {
-    icon: <FaUser className="text-white text-lg" />,
-    title: "aboutClinic.feature5.title",
-    desc: "aboutClinic.feature5.desc",
-  },
+  // {
+  //   icon: <FaUser className="text-white text-lg" />,
+  //   title: "aboutClinic.feature5.title",
+  //   desc: "aboutClinic.feature5.desc",
+  // },
 ];
 
 const stats = [
@@ -69,35 +69,23 @@ const AboutSection = () => {
           />
 
           {/* Top Section - Text + Image */}
-          <div className="flex flex-col xl:flex-row gap-10 items-center">
+          <div className="flex flex-col lg:flex-row gap-6 xl:gap-10 items-center">
             {/* Left - Text & Features */}
             <div className="flex flex-col gap-4">
               <h2 className="text-black text-[2rem] leading-10 font-bold relative z-40 ">
                 {t("aboutClinic.title")}
               </h2>
 
-              <div className="text-black ">
-                Многопрофильная клиника экспертного уровня в Москве.
-                Уникальность клиники заключается в объединении медицинских
-                знаний и мудрости по отношению к каждому пациенту. Мы лечим не
-                болезнь, а человека с его характером, физиологическими
-                особенностями и потребностями. Каждый специалист клиники, помимо
-                своей специализации, имеет опыт ведения онкологических пациентов
-                и онкологическую настороженность. Таким образом, диагностика и
-                лечение в клинике проходит на высшем уровне с учетом знаний о
-                профилактике, раннем выявлении, лечении, ведении, дообследовании
-                всех пациентов, в том числе и онкологических. Внимательное,
-                выверенное многолетним опытом отношение к диагностике и лечению
-                всех заболеваний - наш приоритет! Мы профессионально занимаемся
-                всеми пациентами, без лишней тревоги, с уверенностью в каждом
-                шаге.
-              </div>
+              <div
+                className="text-black "
+                dangerouslySetInnerHTML={{ __html: t("aboutClinic.desc") }}
+              ></div>
 
               {/* Features */}
-              <div className="flex flex-col gap-2 ">
+              <div className="grid md:grid-cols-2 gap-2 ">
                 {features.map((f, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-[#125e84] to-[#33babd] rounded-lg shrink-0 ">
+                  <div key={i} className="flex gap-2 xl:items-center xl:gap-4">
+                    <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-[#125e84] to-[#33babd] rounded-lg shrink-0 mt-1 xl:mt-0">
                       {f.icon}
                     </div>
                     <div>
@@ -132,7 +120,7 @@ const AboutSection = () => {
 
             {/* Right - Image with background blending */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative max-w-3xl xl:w-md">
+              <div className="relative max-w-3xl lg:w-sm xl:w-md">
                 {/* Background color overlay to blend with the main background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#e6e4db] via-[#e6e4db] to-[#f6f4ec] mix-blend-multiply rounded-xl"></div>
 

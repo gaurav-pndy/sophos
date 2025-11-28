@@ -185,7 +185,6 @@ const DoctorsPage = ({ setShowPopup }) => {
     // Create tags from specialty and subSpecialties
     const tags = [specialty];
 
-
     // Format languages
     const languages = doc.languages
       ? doc.languages
@@ -458,20 +457,19 @@ const DoctorsPage = ({ setShowPopup }) => {
             >
               {" "}
               <div className="flex-1 flex flex-col">
-{/* Doctor Image */}
-<div className="relative aspect-square w-full overflow-hidden rounded-lg mb-4 bg-gray-100">
-  <img
-    src={doc.image}
-    alt={doc.name}
-    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
-    onError={(e) => {
-      e.target.src = "/doctors.png";
-      e.target.className =
-        "w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300 bg-gray-200";
-    }}
-  />
-</div>
-
+                {/* Doctor Image */}
+                <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-4 bg-gray-100">
+                  <img
+                    src={doc.image}
+                    alt={doc.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
+                    onError={(e) => {
+                      e.target.src = "/doctors.png";
+                      e.target.className =
+                        "w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300 bg-gray-200";
+                    }}
+                  />
+                </div>
 
                 {/* Doctor Information */}
                 <div className="flex-1">

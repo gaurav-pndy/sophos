@@ -163,29 +163,30 @@
       "title": "Open House Day"
     }
   },
-  "aboutClinic": {
-    "title": "About Clinic",
-    "subtitle": "A multidisciplinary clinic in Moscow with modern diagnostics and expert specialists.",
-    "feature1": {
-      "desc": "Multidisciplinary outpatient clinic — diagnostics and therapy in one place."
-    },
-    "feature2": {
-      "desc": "Center for modern anti-tumor therapy."
-    },
-    "feature3": {
-      "desc": "Doctors of the highest category"
-    },
-    "feature4": {
-      "desc": "Personalized care pathways without unnecessary procedures."
-    },
-    "feature5": {
-      "desc": "A personal coordinator at every step."
-    },
-    "descText": "A multidisciplinary clinic in Moscow with modern diagnostics and expert specialists. The uniqueness of the clinic lies in combining medical knowledge with wisdom and an individualized approach to every patient. We treat not just the disease, but the person — considering their character, physiological characteristics, and needs. Every specialist at the clinic, in addition to their primary specialization, has experience working with oncology patients and maintains oncological vigilance. Thus, diagnostics and treatment in the clinic are carried out at the highest level, taking into account knowledge of prevention, early detection, treatment, management, and additional examinations for all patients, including oncology patients. Attentive care, refined through years of experience, in diagnosing and treating all conditions is our priority! We work with all patients professionally, without unnecessary anxiety, with confidence at every step.",
-    "footnote": "Make an appointment for a consultation — start with a clear plan of action.",
-    "moreBtn": "Learn More",
-    "bookBtn": "Make an appointment for a consultation"
+ "aboutClinic": {
+  "title": "A Multidisciplinary Expert-Level Clinic in Moscow",
+  "bookBtn": "Book a Consultation",
+
+  "desc": "The uniqueness of our clinic lies in combining medical expertise with thoughtful, attentive care for every patient. We treat not just the illness, but the person—with their character, physiological traits, and individual needs. <br/> Every specialist at our clinic, in addition to their main field of practice, has experience working with oncology patients and maintains a high level of oncological vigilance. Diagnostics and treatment are carried out at the highest level, with a strong focus on prevention, early detection, treatment, follow-up, and comprehensive care of all patients, including those with oncological conditions. Based on many years of experience, we provide professional care to all patients, including the most complex cases.",
+  
+  "feature1": {
+    "desc": "Multidisciplinary outpatient care — diagnostics and treatment in one place."
   },
+  "feature2": {
+    "desc": "Center for modern anti-tumor therapy."
+  },
+  "feature3": {
+    "desc": "Expert consultations (second opinion)."
+  },
+  "feature4": {
+    "desc": "A personal coordinator at every step."
+  },
+  "feature5": {
+    "desc": "A personal coordinator at every step."
+  },
+
+  "footnote": "Book a consultation — start with a clear action plan."
+},
   "doctors": {
     "title1": "A modern multidisciplinary outpatient clinic. A wide diagnostic and treatment base",
     "title": "Our Doctors",
@@ -1266,7 +1267,7 @@
       "address": "Ali-Gadzhi Akushinskogo Avenue Building 7, Makhachkala, 2nd floor",
       "schedule": "From 8:00 to 23:00, without days off"
     },
-    "parkingText": "<b>Parking:</b> paid indoor mall parking; free public parking.<br/><b>How to get there by public transport:</b> 10 min. walk from the metro station. Davydkovo or <br/> M. Aminevskaya",
+    "parkingText": "<b>Parking:</b> paid indoor mall parking; free public parking.<br/><b>How to get there by public transport:</b> 10 min. walk from the metro station. <span class='whitespace-nowrap'> Davydkovo or M. Aminevskaya </span>",
     "button": "Make an appointment"
   },
   "actionBtns": {

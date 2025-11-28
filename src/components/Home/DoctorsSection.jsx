@@ -10,8 +10,7 @@ import { Link } from "react-router-dom";
 import WaveBackground from "../WaveBackground";
 
 const API_BASE =
-  import.meta.env.VITE_API_BASE_URL ||
-  "https://apimanager.health-direct.ru";
+  import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
 const DoctorsSection = ({ setShowPopup }) => {
   const { t, i18n } = useTranslation();
@@ -353,8 +352,8 @@ const DoctorsSection = ({ setShowPopup }) => {
           slidesPerView={1}
           breakpoints={{
             768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 },
-            1380: { slidesPerView: 4 },
+            1000: { slidesPerView: 3 },
+            1200: { slidesPerView: 4 },
           }}
           className="w-full h-full overflow-visible mt-2"
           navigation={{
@@ -395,7 +394,8 @@ const DoctorsSection = ({ setShowPopup }) => {
                           {getLocalizedField(doc.lastName)}
                         </span>
                         <span className="block truncate">
-                          {getLocalizedField(doc.firstName)} {getLocalizedField(doc.middleName)}
+                          {getLocalizedField(doc.firstName)}{" "}
+                          {getLocalizedField(doc.middleName)}
                         </span>
                       </div>
 
