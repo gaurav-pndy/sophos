@@ -20,13 +20,13 @@ const PopupButtons = () => {
 
         <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
           <button
-            className="bg-brand1 cursor-pointer border border-brand1 text-white font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand5/90 transition-all duration-300"
+            className="bg-brand1 cursor-pointer border border-brand1 text-white font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand5/90 transition-all duration-300 w-full md:w-fit"
             onClick={() => setShowFeedbackPopup(true)}
           >
             {t("contactAndFeedback.btn1")}
           </button>
           <button
-            className="bg-transparent cursor-pointer border border-brand1 text-brand1 font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand1 hover:text-white transition-all duration-300"
+            className="bg-transparent cursor-pointer border border-brand1 w-full md:w-fit text-brand1 font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand1 hover:text-white transition-all duration-300"
             onClick={() => setShowContactPopup(true)}
           >
             {t("contactAndFeedback.btn2")}
@@ -45,7 +45,7 @@ const PopupButtons = () => {
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="bg-white rounded-xl shadow-lg max-w-4xl w-full mx-4 p-6 pt-10 relative  overflow-hidden "
+                className="bg-white rounded-xl shadow-lg max-w-4xl w-full mx-4 p-4 md:p-6 pt-10 relative  overflow-hidden "
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
@@ -78,7 +78,7 @@ const PopupButtons = () => {
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="bg-white rounded-xl shadow-lg max-w-[87rem] w-full mx-4 p-6 pt-10 relative  overflow-hidden "
+                className="bg-white rounded-xl shadow-lg max-w-[87rem] w-full mx-4 p-4 md:p-6 pt-10 relative  overflow-hidden "
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
