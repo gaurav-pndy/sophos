@@ -14,7 +14,7 @@ const PopupButtons = () => {
   return (
     <section id="contact-and-feedback" className="w-full  pt-3 pb-12">
       <div className="max-w-[87rem] mx-auto px-4">
-        <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-4">
+        <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-8">
           {t("contactAndFeedback.text")}{" "}
         </h2>
 
