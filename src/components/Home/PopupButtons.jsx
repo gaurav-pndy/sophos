@@ -45,7 +45,7 @@ const PopupButtons = () => {
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="bg-white rounded-xl shadow-lg max-w-4xl w-full mx-4 p-4 md:p-6 pt-10 relative  overflow-hidden "
+                className="bg-white rounded-xl shadow-lg max-w-4xl w-full mx-4 p-4 md:p-6 pt-10 md:pt-12 relative  overflow-hidden "
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
@@ -78,7 +78,7 @@ const PopupButtons = () => {
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="bg-white rounded-xl shadow-lg max-w-[87rem] w-full mx-4 p-4 md:p-6 pt-10 relative  overflow-hidden "
+                className="bg-white rounded-xl shadow-lg max-w-[87rem] w-full mx-4 p-4 md:p-6 pt-10 md:pt-12 relative  overflow-hidden "
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
