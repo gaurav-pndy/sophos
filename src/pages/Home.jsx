@@ -80,8 +80,8 @@ const Home = ({ city, setShowPopup }) => {
 
       <PopupButtons />
 
-      <ActionButtons setShowPopup={setShowPopup} />
-      <PartnerCarousel />
+      {/* <ActionButtons setShowPopup={setShowPopup} />
+      <PartnerCarousel /> */}
     </div>
   );
 };

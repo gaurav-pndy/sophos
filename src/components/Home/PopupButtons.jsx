@@ -12,11 +12,11 @@ const PopupButtons = () => {
   const [showContactPopup, setShowContactPopup] = useState(false);
 
   return (
-    <section id="contact-and-feedback" className="w-full  py-6 pb-12">
+    <section id="contact-and-feedback" className="w-full  pt-3 pb-12">
       <div className="max-w-[87rem] mx-auto px-4">
-        <p className="md:text-lg text-center text-brand1 mb-8 max-w-3xl mx-auto">
+        <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-4">
           {t("contactAndFeedback.text")}{" "}
-        </p>
+        </h2>
 
         <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
           <button

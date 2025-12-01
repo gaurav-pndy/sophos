@@ -1010,7 +1010,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             {t("header.blog")}
           </Link>{" "}
           <button
-            onClick={() => handleScrollToSection("#contact-and-feedback")}
+            onClick={() => handleScrollToSection("#contact")}
             className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
           >
             {" "}
@@ -1441,7 +1441,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </Link>{" "}
                 <button
                   onClick={() => {
-                    handleScrollToSection("#contact-and-feedback");
+                    handleScrollToSection("#contact");
                     setIsOpen(false);
                   }}
                   className="text-left   hover:underline whitespace-nowrap"
