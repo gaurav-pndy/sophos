@@ -16,6 +16,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
 import PartnerCarousel from "../components/Home/PartnerCarousel";
 import FeedbackForm from "../components/Home/FeedbackForm";
+import PopupButtons from "../components/Home/PopupButtons";
 
 const Home = ({ city, setShowPopup }) => {
   const location = useLocation();
@@ -71,51 +72,13 @@ const Home = ({ city, setShowPopup }) => {
       <MembershipSection />
       */}
       <TestimonialsSection />
-      <FeedbackForm />
+      {/* <FeedbackForm /> */}
 
       {/* <BookingForm /> */}
       <AddressSection city={city} setShowPopup={setShowPopup} />
-      <ContactSection />
-      {/* <div className="pb-16">
-        <div className="text-center text-brand1 font-bold text-2xl md:text-4xl mb-16 ">
-          {t("membership.faq.title")}{" "}
-        </div>
-        <div className="max-w-3xl mx-auto flex flex-col gap-4 mb-7">
-          {faq.map((item, idx) => (
-            <div
-              key={idx}
-              onClick={() => toggleFAQ(idx)}
-              className="rounded-lg bg-white border border-brand4/20 px-6 py-4 cursor-pointer transition shadow-md"
-            >
-              <div className="flex justify-between items-center font-medium text-black text-lg">
-                <span>{item.question}</span>
-                <motion.div
-                  animate={{ rotate: openIndex === idx ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <FaChevronDown className="text-brand1" />
-                </motion.div>
-              </div>
+      {/* <ContactSection /> */}
 
-              <AnimatePresence>
-                {openIndex === idx && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="mt-2 text-brand1 text-left">
-                      {item.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
-        </div>
-      </div> */}
+      <PopupButtons />
 
       <ActionButtons setShowPopup={setShowPopup} />
       <PartnerCarousel />

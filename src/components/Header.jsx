@@ -726,11 +726,13 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 )}
               </div>
             </div>
-            <button className="border hidden md:flex border-[#125e84] text-[#125e84] px-4 py-1.5 rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap"
-            onClick={() => {
-  setShowUserAccount(true);
-  setIsOpen(false);
-}}>
+            <button
+              className="border hidden md:flex border-[#125e84] text-[#125e84] px-4 py-1.5 rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap"
+              onClick={() => {
+                setShowUserAccount(true);
+                setIsOpen(false);
+              }}
+            >
               <FaUser className="" />
               {t("header.personalAccount")}
             </button>
@@ -994,7 +996,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             </AnimatePresence>
           </div>
           <button
-            onClick={() => handleScrollToSection("#reviews")}
+            onClick={() => handleScrollToSection("#contact-and-feedback")}
             className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
           >
             {" "}
@@ -1008,7 +1010,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             {t("header.blog")}
           </Link>{" "}
           <button
-            onClick={() => handleScrollToSection("#contact")}
+            onClick={() => handleScrollToSection("#contact-and-feedback")}
             className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
           >
             {" "}
@@ -1185,14 +1187,16 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               </div>
 
               <div className="flex flex-col gap-2 text-lg mb-4">
-               <button className="bg-[#125e84] text-white px-6 py-2 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4"
-onClick={() => {
-  setShowUserAccount(true);
-  setIsOpen(false);
-}}>
-  <FaUser className="text-lg" />
-  {t("header.personalAccount")}
-</button>
+                <button
+                  className="bg-[#125e84] text-white px-6 py-2 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4"
+                  onClick={() => {
+                    setShowUserAccount(true);
+                    setIsOpen(false);
+                  }}
+                >
+                  <FaUser className="text-lg" />
+                  {t("header.personalAccount")}
+                </button>
                 <button
                   onClick={() => setShowPopup(true)}
                   className="border border-[#125e84] text-[#125e84] px-6 py-2 rounded-lg font-medium flex gap-2 items-center hover:bg-[#125e84]/10 cursor-pointer transition whitespace-nowrap"
@@ -1419,7 +1423,7 @@ onClick={() => {
                 </div>
                 <button
                   onClick={() => {
-                    handleScrollToSection("#reviews");
+                    handleScrollToSection("#contact-and-feedback");
                     setIsOpen(false);
                   }}
                   className="text-left  whitespace-nowrap"
@@ -1437,7 +1441,7 @@ onClick={() => {
                 </Link>{" "}
                 <button
                   onClick={() => {
-                    handleScrollToSection("#contact");
+                    handleScrollToSection("#contact-and-feedback");
                     setIsOpen(false);
                   }}
                   className="text-left   hover:underline whitespace-nowrap"

@@ -1250,6 +1250,11 @@
     "autoClose": "Closing automatically in 5 seconds...",
     "dragAndDrop": "Click or drag the documents to upload"
   },
+    "contactAndFeedback": {
+    "text": "If you want to leave a review or contact us, click here:",
+    "btn1": "Leave a review",
+    "btn2": "Contact us"
+  },
   "address": {
     "title": "Our Address",
     "subtitle": "Two modern clinics in Moscow and Makhachkala for your convenience",

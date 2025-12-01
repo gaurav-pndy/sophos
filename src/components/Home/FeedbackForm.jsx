@@ -20,11 +20,11 @@ const FeedbackForm = () => {
     contactInfo: {
       phone: "",
       email: "",
-    //  whatsapp: false,
-    //  telegram: false,
-    //  max: false,
+      //  whatsapp: false,
+      //  telegram: false,
+      //  max: false,
     },
-   // rating: 0,
+    // rating: 0,
     doctorId: "",
     doctorEmail: "",
     status: "Posted",
@@ -120,7 +120,7 @@ const FeedbackForm = () => {
       formData.append("patientName", JSON.stringify(form.patientName));
       formData.append("description", JSON.stringify(form.description));
       formData.append("contactInfo", JSON.stringify(form.contactInfo));
-     // formData.append("rating", form.rating.toString());
+      // formData.append("rating", form.rating.toString());
       formData.append("status", form.status);
 
       // Add doctor info if selected
@@ -167,11 +167,11 @@ const FeedbackForm = () => {
         contactInfo: {
           phone: "",
           email: "",
-    //      whatsapp: false,
-    //      telegram: false,
-    //      max: false,
+          //      whatsapp: false,
+          //      telegram: false,
+          //      max: false,
         },
-    //    rating: 0,
+        //    rating: 0,
         doctorId: "",
         doctorEmail: "",
         status: "Posted",
@@ -265,9 +265,9 @@ const FeedbackForm = () => {
   return (
     <section id="reviews" className="w-full pt-3 pb-6">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-8">
+        {/* <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-8">
           {t("testimonials.title")}
-        </h2>
+        </h2> */}
 
         {/* Success Popup */}
         {showSuccessPopup && (
@@ -292,16 +292,18 @@ const FeedbackForm = () => {
                 {t("testimonials.successTitle") || "Thank You!"}
               </h3>
               <p className="text-gray-600 mb-6">
-                {t("testimonials.successMessage") || "Your review has been submitted successfully."}
+                {t("testimonials.successMessage") ||
+                  "Your review has been submitted successfully."}
               </p>
               <div className="w-full bg-gray-200 rounded-full h-2">
-                <div 
+                <div
                   className="bg-green-500 h-2 rounded-full transition-all duration-5000 ease-linear"
-                  style={{ width: '100%' }}
+                  style={{ width: "100%" }}
                 ></div>
               </div>
               <p className="text-sm text-gray-500 mt-2">
-                {t("testimonials.autoClose") || "Closing automatically in 5 seconds..."}
+                {t("testimonials.autoClose") ||
+                  "Closing automatically in 5 seconds..."}
               </p>
             </div>
           </div>
@@ -330,8 +332,8 @@ const FeedbackForm = () => {
                   doctors.map((doctor) => (
                     <option key={doctor._id} value={doctor._id}>
                       {`${doctor.lastName?.[currentLanguage]?.toUpperCase()} ${
-                          doctor.firstName?.[currentLanguage]
-                        } ${doctor.middleName?.[currentLanguage]}`}
+                        doctor.firstName?.[currentLanguage]
+                      } ${doctor.middleName?.[currentLanguage]}`}
                     </option>
                   ))
                 )}
@@ -371,7 +373,9 @@ const FeedbackForm = () => {
                   required
                   className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
                   value={form.patientName[currentLanguage].firstName}
-                  onChange={(e) => handleNameChange("firstName", e.target.value)}
+                  onChange={(e) =>
+                    handleNameChange("firstName", e.target.value)
+                  }
                 />
               </div>
 
@@ -383,7 +387,9 @@ const FeedbackForm = () => {
                   type="text"
                   className="w-full border border-brand4 rounded-lg p-3 text-brand1 focus:outline-none focus:ring-2 focus:ring-brand1"
                   value={form.patientName[currentLanguage].middleName}
-                  onChange={(e) => handleNameChange("middleName", e.target.value)}
+                  onChange={(e) =>
+                    handleNameChange("middleName", e.target.value)
+                  }
                 />
               </div>
             </div>
@@ -489,101 +495,106 @@ const FeedbackForm = () => {
             </div>
 
             {/* Profile Picture Upload */}
-<div className="flex flex-col md:flex-row gap-4 mb-6">
-  
-  {/* Profile Picture Upload */}
-  <div className="flex-1">
-    <div
-      className="border border-brand4 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-brand1 hover:bg-brand1/5 h-full"
-      onClick={() => document.getElementById("profile-picture-upload").click()}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-8 w-8 text-brand1 mb-2"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 4v16m8-8H4"
-        />
-      </svg>
-      <p className="text-brand1 text-center">
-        {profilePicture
-          ? `Selected: ${profilePicture.name}`
-          : t("testimonials.clickToUpload")}
-      </p>
-      <input
-        id="profile-picture-upload"
-        type="file"
-        accept="image/*"
-        className="hidden"
-        onChange={(e) => setProfilePicture(e.target.files[0] || null)}
-      />
-    </div>
-  </div>
+            <div className="flex flex-col md:flex-row gap-4 mb-6">
+              {/* Profile Picture Upload */}
+              <div className="flex-1">
+                <div
+                  className="border border-brand4 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-brand1 hover:bg-brand1/5 h-full"
+                  onClick={() =>
+                    document.getElementById("profile-picture-upload").click()
+                  }
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-brand1 mb-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                  <p className="text-brand1 text-center">
+                    {profilePicture
+                      ? `Selected: ${profilePicture.name}`
+                      : t("testimonials.clickToUpload")}
+                  </p>
+                  <input
+                    id="profile-picture-upload"
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(e) =>
+                      setProfilePicture(e.target.files[0] || null)
+                    }
+                  />
+                </div>
+              </div>
 
-  {/* Video Upload */}
-  <div className="flex-1">
-    <div
-      className="border border-brand4 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-brand1 hover:bg-brand1/5 h-full"
-      onClick={() => document.getElementById("video-upload").click()}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-8 w-8 text-brand1 mb-2"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 4v16m8-8H4"
-        />
-      </svg>
-      <p className="text-brand1 text-center">
-        {t("testimonials.clickOrDrag")}
-      </p>
-      <input
-        id="video-upload"
-        type="file"
-        accept="video/*"
-        multiple
-        className="hidden"
-        onChange={handleVideoUpload}
-      />
-    </div>
-  </div>
-</div>
+              {/* Video Upload */}
+              <div className="flex-1">
+                <div
+                  className="border border-brand4 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-brand1 hover:bg-brand1/5 h-full"
+                  onClick={() =>
+                    document.getElementById("video-upload").click()
+                  }
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-brand1 mb-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                  <p className="text-brand1 text-center">
+                    {t("testimonials.clickOrDrag")}
+                  </p>
+                  <input
+                    id="video-upload"
+                    type="file"
+                    accept="video/*"
+                    multiple
+                    className="hidden"
+                    onChange={handleVideoUpload}
+                  />
+                </div>
+              </div>
+            </div>
 
-{/* Display selected video files */}
-{videoFiles.length > 0 && (
-  <div className="mt-4 mb-6">
-    <p className="text-brand1 font-semibold mb-2">
-      {t("testimonials.selectedFiles")}:
-    </p>
-    {videoFiles.map((file, index) => (
-      <div
-        key={index}
-        className="flex items-center justify-between bg-gray-50 p-2 rounded mb-2"
-      >
-        <span className="text-brand1 text-sm">{file.name}</span>
-        <button
-          type="button"
-          onClick={() => removeVideoFile(index)}
-          className="text-red-500 hover:text-red-700"
-        >
-          {t("testimonials.remove")}
-        </button>
-      </div>
-    ))}
-  </div>
-)}
+            {/* Display selected video files */}
+            {videoFiles.length > 0 && (
+              <div className="mt-4 mb-6">
+                <p className="text-brand1 font-semibold mb-2">
+                  {t("testimonials.selectedFiles")}:
+                </p>
+                {videoFiles.map((file, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between bg-gray-50 p-2 rounded mb-2"
+                  >
+                    <span className="text-brand1 text-sm">{file.name}</span>
+                    <button
+                      type="button"
+                      onClick={() => removeVideoFile(index)}
+                      className="text-red-500 hover:text-red-700"
+                    >
+                      {t("testimonials.remove")}
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Checkboxes */}
             <div className="flex items-start mt-4 text-brand1">

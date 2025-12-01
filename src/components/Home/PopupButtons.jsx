@@ -1,0 +1,106 @@
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { AnimatePresence, motion } from "framer-motion";
+import { RxCross1 } from "react-icons/rx";
+import FeedbackForm from "./FeedbackForm";
+import ContactSection from "./ContactSection";
+
+const PopupButtons = () => {
+  const { t } = useTranslation();
+
+  const [showFeedbackPopup, setShowFeedbackPopup] = useState(false);
+  const [showContactPopup, setShowContactPopup] = useState(false);
+
+  return (
+    <section id="contact-and-feedback" className="w-full  py-6 pb-12">
+      <div className="max-w-[87rem] mx-auto px-4">
+        <p className="md:text-lg text-center text-brand1 mb-8 max-w-3xl mx-auto">
+          {t("contactAndFeedback.text")}{" "}
+        </p>
+
+        <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
+          <button
+            className="bg-brand1 cursor-pointer border border-brand1 text-white font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand5/90 transition-all duration-300"
+            onClick={() => setShowFeedbackPopup(true)}
+          >
+            {t("contactAndFeedback.btn1")}
+          </button>
+          <button
+            className="bg-transparent cursor-pointer border border-brand1 text-brand1 font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand1 hover:text-white transition-all duration-300"
+            onClick={() => setShowContactPopup(true)}
+          >
+            {t("contactAndFeedback.btn2")}
+          </button>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {showFeedbackPopup && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="bg-white rounded-xl shadow-lg max-w-4xl w-full mx-4 p-6 pt-10 relative  overflow-hidden "
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <button
+                  className="absolute top-4 z-50 right-4 text-brand1 cursor-pointer text-2xl"
+                  onClick={() => setShowFeedbackPopup(false)}
+                  aria-label="Close"
+                >
+                  <RxCross1 />
+                </button>
+                <div className="max-h-[80vh] overflow-y-scroll">
+                  <FeedbackForm />
+                </div>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {showContactPopup && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="bg-white rounded-xl shadow-lg max-w-[87rem] w-full mx-4 p-6 pt-10 relative  overflow-hidden "
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <button
+                  className="absolute top-4 z-50 right-4 text-brand1 cursor-pointer text-2xl"
+                  onClick={() => setShowContactPopup(false)}
+                  aria-label="Close"
+                >
+                  <RxCross1 />
+                </button>
+                <div className="max-h-[80vh] overflow-y-scroll">
+                  <ContactSection />
+                </div>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+};
+
+export default PopupButtons;

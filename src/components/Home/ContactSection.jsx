@@ -43,7 +43,13 @@ const ContactSection = () => {
     e.preventDefault();
 
     // Update validation to include email
-    if (!form.firstName || !form.lastName || !form.phone || !form.city || !form.email) {
+    if (
+      !form.firstName ||
+      !form.lastName ||
+      !form.phone ||
+      !form.city ||
+      !form.email
+    ) {
       toast.error("Please fill in all required fields");
       return;
     }
@@ -142,22 +148,24 @@ const ContactSection = () => {
                 {t("contact.successTitle") || "Thank You!"}
               </h3>
               <p className="text-gray-600 mb-6">
-                {t("contact.successMessage") || "Your message has been sent successfully. We will contact you soon!"}
+                {t("contact.successMessage") ||
+                  "Your message has been sent successfully. We will contact you soon!"}
               </p>
               <div className="w-full bg-gray-200 rounded-full h-2">
-                <div 
+                <div
                   className="bg-green-500 h-2 rounded-full transition-all duration-5000 ease-linear"
-                  style={{ width: '100%' }}
+                  style={{ width: "100%" }}
                 ></div>
               </div>
               <p className="text-sm text-gray-500 mt-2">
-                {t("contact.autoClose") || "Closing automatically in 5 seconds..."}
+                {t("contact.autoClose") ||
+                  "Closing automatically in 5 seconds..."}
               </p>
             </div>
           </div>
         )}
 
-        <div className="max-w-[87rem] text-center mx-auto px-4">
+        {/* <div className="max-w-[87rem] text-center mx-auto px-4">
           <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-4">
             {t("contact.title")}
           </h2>
@@ -165,7 +173,7 @@ const ContactSection = () => {
             className="md:text-lg text-center text-brand1/80 mb-8 max-w-3xl mx-auto"
             dangerouslySetInnerHTML={{ __html: t("contact.subtitle") }}
           />
-        </div>
+        </div> */}
 
         <div>
           <form onSubmit={handleSubmit}>
@@ -186,7 +194,7 @@ const ContactSection = () => {
                   {/* Last Name */}
                   <div>
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.lastName")} <RequiredAsterisk/>
+                      {t("contact.lastName")} <RequiredAsterisk />
                     </label>
                     <input
                       type="text"
@@ -201,7 +209,7 @@ const ContactSection = () => {
                   {/* First Name */}
                   <div>
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.firstName")} <RequiredAsterisk/>
+                      {t("contact.firstName")} <RequiredAsterisk />
                     </label>
                     <input
                       type="text"
@@ -232,7 +240,7 @@ const ContactSection = () => {
                   {/* Email - Full width on mobile */}
                   <div className="md:col-span-2">
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.email")} <RequiredAsterisk/>
+                      {t("contact.email")} <RequiredAsterisk />
                     </label>
                     <input
                       type="email"
@@ -248,7 +256,7 @@ const ContactSection = () => {
                   {/* Phone with country code (react-international-phone) - Full width on mobile */}
                   <div className="md:col-span-2">
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.phone")} <RequiredAsterisk/>
+                      {t("contact.phone")} <RequiredAsterisk />
                     </label>
                     <PhoneInput
                       defaultCountry="ru"
@@ -301,7 +309,7 @@ const ContactSection = () => {
                   {/* City */}
                   <div className="md:col-span-2">
                     <label className="block text-white font-semibold mb-1">
-                      {t("contact.city")} <RequiredAsterisk/>
+                      {t("contact.city")} <RequiredAsterisk />
                     </label>
                     <select
                       required
