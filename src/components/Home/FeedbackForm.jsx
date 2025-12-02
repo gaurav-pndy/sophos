@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { FaStar } from "react-icons/fa";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { toast } from "react-toastify";
@@ -20,11 +21,11 @@ const FeedbackForm = () => {
     contactInfo: {
       phone: "",
       email: "",
-      //  whatsapp: false,
-      //  telegram: false,
-      //  max: false,
+      whatsapp: false,
+      telegram: false,
+      max: false,
     },
-    // rating: 0,
+    rating: 0,
     doctorId: "",
     doctorEmail: "",
     status: "Posted",
@@ -120,7 +121,7 @@ const FeedbackForm = () => {
       formData.append("patientName", JSON.stringify(form.patientName));
       formData.append("description", JSON.stringify(form.description));
       formData.append("contactInfo", JSON.stringify(form.contactInfo));
-      // formData.append("rating", form.rating.toString());
+      formData.append("rating", form.rating.toString());
       formData.append("status", form.status);
 
       // Add doctor info if selected
@@ -167,11 +168,11 @@ const FeedbackForm = () => {
         contactInfo: {
           phone: "",
           email: "",
-          //      whatsapp: false,
-          //      telegram: false,
-          //      max: false,
+          whatsapp: false,
+          telegram: false,
+          max: false,
         },
-        //    rating: 0,
+        rating: 0,
         doctorId: "",
         doctorEmail: "",
         status: "Posted",
@@ -349,7 +350,6 @@ const FeedbackForm = () => {
                 </p>
               )}
             </div>
-
             {/* Name Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div>
@@ -393,7 +393,6 @@ const FeedbackForm = () => {
                 />
               </div>
             </div>
-
             {/* Contact Info - Full width on mobile */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="md:col-span-2">
@@ -418,68 +417,68 @@ const FeedbackForm = () => {
                   className="rounded-lg border border-brand4 text-sm w-full"
                   inputClassName="!bg-transparent !border-none !w-full !px-3 !py-2 focus:!outline-none"
                 />
-                {/*
-                <div className="flex flex-wrap gap-4 text-brand1 text-sm mt-2">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="accent-[#59302a]"
-                      checked={form.contactInfo.whatsapp}
-                      onChange={(e) =>
-                        handleContactChange("whatsapp", e.target.checked)
-                      }
-                    />
-                    <span>Whatsapp</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="accent-[#59302a]"
-                      checked={form.contactInfo.telegram}
-                      onChange={(e) =>
-                        handleContactChange("telegram", e.target.checked)
-                      }
-                    />
-                    <span>Telegram</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="accent-[#59302a]"
-                      checked={form.contactInfo.max}
-                      onChange={(e) =>
-                        handleContactChange("max", e.target.checked)
-                      }
-                    />
-                    <span>Max</span>
-                  </label>
+                <div className="mt-2">
+                  <div className="flex flex-wrap gap-3 md:gap-4 text-brand1 text-sm">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="accent-[#59302a]"
+                        checked={form.contactInfo.whatsapp}
+                        onChange={(e) =>
+                          handleContactChange("whatsapp", e.target.checked)
+                        }
+                      />
+                      <span>Whatsapp</span>
+                    </label>
+
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="accent-[#59302a]"
+                        checked={form.contactInfo.telegram}
+                        onChange={(e) =>
+                          handleContactChange("telegram", e.target.checked)
+                        }
+                      />
+                      <span>Telegram</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="accent-[#59302a]"
+                        checked={form.contactInfo.max}
+                        onChange={(e) =>
+                          handleContactChange("max", e.target.checked)
+                        }
+                      />
+                      <span>Max</span>
+                    </label>
+                  </div>
                 </div>
-                */}
               </div>
             </div>
 
-            {/* Rating 
             <div className="mb-6">
               <label className="block text-brand1 font-semibold mb-2">
-                {t("testimonials.rating")} <RequiredAsterisk />
+                {t("testimonials.rating")}
               </label>
               <div className="flex gap-2">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <button
                     key={star}
                     type="button"
-                    className={`text-2xl ${
+                    className={`text-3xl ${
                       star <= form.rating ? "text-yellow-400" : "text-gray-300"
                     }`}
-                    onClick={() => setForm((prev) => ({ ...prev, rating: star }))}
+                    onClick={() =>
+                      setForm((prev) => ({ ...prev, rating: star }))
+                    }
                   >
-                    ★
+                    <FaStar />
                   </button>
                 ))}
               </div>
             </div>
-            */}
-
             {/* Review Text */}
             <div className="mb-6">
               <label className="block text-brand1 font-semibold mb-2">
@@ -493,7 +492,6 @@ const FeedbackForm = () => {
                 required
               />
             </div>
-
             {/* Profile Picture Upload */}
             <div className="flex flex-col md:flex-row gap-4 mb-6">
               {/* Profile Picture Upload */}
@@ -571,7 +569,6 @@ const FeedbackForm = () => {
                 </div>
               </div>
             </div>
-
             {/* Display selected video files */}
             {videoFiles.length > 0 && (
               <div className="mt-4 mb-6">
@@ -595,7 +592,6 @@ const FeedbackForm = () => {
                 ))}
               </div>
             )}
-
             {/* Checkboxes */}
             <div className="flex items-start mt-4 text-brand1">
               <input
@@ -612,7 +608,6 @@ const FeedbackForm = () => {
                 dangerouslySetInnerHTML={{ __html: t("contact.checkbox1") }}
               ></label>
             </div>
-
             <div className="flex items-start mt-2 mb-4 text-brand1">
               <input
                 type="checkbox"
@@ -627,7 +622,6 @@ const FeedbackForm = () => {
                 dangerouslySetInnerHTML={{ __html: t("contact.checkbox2") }}
               ></label>
             </div>
-
             {/* Submit Button */}
             <button
               type="submit"

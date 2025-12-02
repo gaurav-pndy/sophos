@@ -72,12 +72,13 @@ const AboutSection = () => {
           <div className="flex flex-col lg:flex-row gap-6 xl:gap-10 items-center">
             {/* Left - Text & Features */}
             <div className="flex flex-col gap-4">
-              <h2 className="text-black text-[2rem] leading-10 font-bold relative z-40 "
-              dangerouslySetInnerHTML={{ __html: t("aboutClinic.title") }}>
-              </h2>
+              <h2
+                className="text-black text-[2rem] leading-10 font-bold relative z-40 "
+                dangerouslySetInnerHTML={{ __html: t("aboutClinic.title") }}
+              ></h2>
 
               <div
-                className="text-black "
+                className="text-black md:text-lg"
                 dangerouslySetInnerHTML={{ __html: t("aboutClinic.desc") }}
               ></div>
 
@@ -89,7 +90,7 @@ const AboutSection = () => {
                       {f.icon}
                     </div>
                     <div>
-                      <div className="text-black z-40  leading-tight font-bold">
+                      <div className="text-black z-40 md:text-lg leading-tight font-semibold">
                         {t(f.desc)}
                       </div>
                     </div>

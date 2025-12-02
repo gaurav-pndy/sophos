@@ -17,6 +17,8 @@ import { FaChevronDown } from "react-icons/fa";
 import PartnerCarousel from "../components/Home/PartnerCarousel";
 import FeedbackForm from "../components/Home/FeedbackForm";
 import PopupButtons from "../components/Home/PopupButtons";
+import CareSection from "../components/Home/CareSection";
+import CareSection2 from "../components/Home/CareSection2";
 
 const Home = ({ city, setShowPopup }) => {
   const location = useLocation();
@@ -66,6 +68,8 @@ const Home = ({ city, setShowPopup }) => {
       <AboutSection />
 
       <DoctorsSection setShowPopup={setShowPopup} />
+      <CareSection />
+      <CareSection2 />
       <ServicesSection />
 
       {/* <PatientMap /> 

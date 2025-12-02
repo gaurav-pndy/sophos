@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { FaSpinner } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 import WaveBackground from "../WaveBackground";
+import ReactCountryFlag from "react-country-flag";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
@@ -148,6 +149,7 @@ const DoctorsSection = ({ setShowPopup }) => {
   // Initial data fetch
   useEffect(() => {
     fetchDoctors();
+    console.log("API Response:", doctors);
     fetchSpecializations();
   }, [i18n.language]);
 
@@ -155,6 +157,7 @@ const DoctorsSection = ({ setShowPopup }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       fetchDoctors();
+      console.log("API Response:", doctors);
     }, 300);
 
     return () => clearTimeout(timeoutId);
@@ -164,6 +167,11 @@ const DoctorsSection = ({ setShowPopup }) => {
   const getLocalizedField = (field, fallback = "") => {
     if (!field) return fallback;
     return field[i18n.language] || field.en || field.ru || fallback;
+  };
+
+  const formatExperience = (years) => {
+    if (!years) return null;
+    return years > 40 ? "Стаж работы более 40 лет" : `Стаж работы ${years} лет`;
   };
 
   // Prepare doctor cards for display from backend data
@@ -187,13 +195,26 @@ const DoctorsSection = ({ setShowPopup }) => {
       middleName: doc.middleName,
       lastName: doc.lastName,
       specialty,
-      location,
+      location: doc.location,
       about,
       position,
       tags: tags.filter((tag) => tag && tag.trim() !== ""),
       image: doc.imageUrl || "/default-doctor.jpg",
     };
   });
+
+  const getCountryCodeFromLocation = (location) => {
+    if (!location) return null;
+
+    const loc = location.toLowerCase();
+
+    if (loc.includes("russia") || loc.includes("россия")) return "RU";
+    if (loc.includes("israel") || loc.includes("израиль")) return "IL";
+    if (loc.includes("germany") || loc.includes("германия")) return "DE";
+    if (loc.includes("usa") || loc.includes("united states")) return "US";
+
+    return null; // fallback
+  };
 
   // Loading state
   if (loading && doctors.length === 0) {
@@ -249,14 +270,14 @@ const DoctorsSection = ({ setShowPopup }) => {
               playsInline
               src="https://www.shutterstock.com/shutterstock/videos/3441635569/preview/stock-footage-multi-cultural-medical-team-wearing-scrubs-with-digital-tablet-walking-along-corridor-in-modern.webm"
               alt="Doctors video"
-              className="max-w-2xl w-full md:min-h-96 h-full object-cover md:rounded-tr-2xl md:rounded-br-2xl"
+              className=" w-full md:min-h-96 h-full object-cover md:rounded-tr-2xl md:rounded-br-2xl"
             />
             <div
               className={`absolute inset-0 bg-gradient-to-t via-30% md:bg-gradient-to-l from-[#5279be] via-[#5279be]/40 to-transparent`}
             ></div>
           </div>
         </div>
-        <div className="text-left md:text-right w-full md:min-h-96 h-full p-6 pb-16 md:p-6  bg-gradient-to-t md:bg-gradient-to-l from-[#27407f] to-[#5279be]">
+        <div className=" w-full md:min-h-96 h-full p-6 pb-16 md:p-6  bg-gradient-to-t md:bg-gradient-to-l from-[#27407f] to-[#5279be]">
           <h2 className="text-white relative z-40 text-[2rem] leading-10 font-bold mb-4">
             {t("doctors.title1")}
           </h2>
@@ -347,13 +368,13 @@ const DoctorsSection = ({ setShowPopup }) => {
       {/* --- Swiper with Filtered Results --- */}
       {cards.length > 0 ? (
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
           spaceBetween={20}
           slidesPerView={1}
+          autoplay={{ delay: 4000 }}
+          loop={true}
           breakpoints={{
-            768: { slidesPerView: 2 },
-            1000: { slidesPerView: 3 },
-            1200: { slidesPerView: 4 },
+            1024: { slidesPerView: 2 },
           }}
           className="w-full h-full overflow-visible mt-2"
           navigation={{
@@ -366,85 +387,102 @@ const DoctorsSection = ({ setShowPopup }) => {
             .slice(0, 4) // Show up to 8 doctors in swiper
             .map((doc) => (
               <SwiperSlide key={doc.id}>
-                <div className="h-full">
-                  <Link
-                    to={`/doctors/${doc.id}`}
-                    className="
-                bg-white my-4 rounded-xl 
-                hover:scale-105 hover:bg-brand4/20 hover:shadow-lg 
-                cursor-pointer shadow-md transition-all duration-300 p-4 
-                flex flex-col h-full"
-                  >
-                    <div className="flex-1 flex flex-col">
-                      {/* Image with consistent aspect ratio */}
-                      <div className="w-full aspect-[4/4] overflow-hidden rounded-lg bg-gray-100">
-                        <img
-                          src={doc.image}
-                          alt={doc.name}
-                          className="w-full h-full object-cover object-center"
-                          onError={(e) => {
-                            e.target.src = "/doctors.png";
+                <div className="bg-white my-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-4 flex flex-col md:flex-row gap-4 items-start h-full">
+                  {/* LEFT COLUMN: IMAGE */}
+                  <div className="relative w-full md:w-68 lg:w-56 h-full md:h-68 lg:h-56 xl:h-68 xl:w-68 rounded-xl overflow-hidden bg-gray-100 shrink-0">
+                    <img
+                      src={doc.imageUrl || "/doctors.png"}
+                      alt={doc.name}
+                      className="w-full h-full object-cover"
+                    />
+
+                    {/* Country Flag */}
+                    {getCountryCodeFromLocation(
+                      getLocalizedField(doc.location)
+                    ) && (
+                      <div className="absolute top-2 right-2 bg-white rounded-full shadow ">
+                        <ReactCountryFlag
+                          countryCode={getCountryCodeFromLocation(
+                            getLocalizedField(doc.location)
+                          )}
+                          svg
+                          style={{
+                            width: "30px",
+                            height: "30px",
+                            borderRadius: "50%",
                           }}
                         />
                       </div>
+                    )}
 
-                      {/* Name with consistent line handling */}
-                      <div className="font-bold text-black text-xl mt-4 mb-3 min-h-[3.5rem]">
-                        <span className="uppercase block truncate">
-                          {getLocalizedField(doc.lastName)}
-                        </span>
-                        <span className="block truncate">
-                          {getLocalizedField(doc.firstName)}{" "}
-                          {getLocalizedField(doc.middleName)}
-                        </span>
+                    {/* Experience Badge */}
+                    {/* {doc.experienceYears && (
+        <div className="absolute bottom-2 left-2 bg-white text-xs px-2 py-1 rounded-md shadow">
+          Стаж работы {doc.experienceYears} лет
+        </div>
+      )} */}
+                  </div>
+
+                  {/* RIGHT COLUMN */}
+                  <div className="flex flex-col justify-between min-h-68 lg:min-h-auto xl:min-h-68 flex-1">
+                    {/* NAME */}
+                    <div>
+                      <div className="font-bold text-black text-lg xl:text-xl  mb-1 leading-tight">
+                        {getLocalizedField(doc.lastName)}
+                        <br />
+                        {getLocalizedField(doc.firstName)}{" "}
+                        {getLocalizedField(doc.middleName)}
                       </div>
 
-                      {/* Position with consistent height */}
-                      {doc.position && (
-                        <p className="text-brand1 text-sm font-medium mb-3 min-h-[2.5rem] line-clamp-2">
-                          {doc.position}
-                        </p>
-                      )}
-
-                      {/* Tags with consistent height */}
-                      <div className="flex flex-wrap gap-1 mb-4">
+                      <div className="flex flex-wrap gap-1 my-2">
+                        {" "}
                         {doc.tags.slice(0, 3).map((tag, i) => (
                           <span
                             key={i}
-                            className="px-2 py-1 rounded-full border border-brand4 text-black text-xs truncate max-w-full"
+                            className="px-2 py-1 rounded-full border border-brand4 text-black text-[0.6rem] xl:text-xs truncate max-w-full"
                             title={tag}
                           >
-                            {tag}
+                            {" "}
+                            {tag}{" "}
                           </span>
-                        ))}
+                        ))}{" "}
                         {doc.tags.length > 3 && (
                           <span className="px-2 py-1 rounded-full border border-brand4 text-black text-xs">
-                            +{doc.tags.length - 3}
+                            {" "}
+                            +{doc.tags.length - 3}{" "}
                           </span>
-                        )}
+                        )}{" "}
                       </div>
-                    </div>
 
-                    {/* Buttons at the bottom */}
+                      {doc.about && (
+                        <p
+                          className="text-brand1 text-sm mb-2 min-h-[2.5rem] lg:line-clamp-2 leading-tight line-clamp-4 xl:line-clamp-4"
+                          dangerouslySetInnerHTML={{ __html: doc.about }}
+                        ></p>
+                      )}
+                    </div>
                     <div className="mt-auto space-y-2">
+                      {" "}
                       <button
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
                           setShowPopup(true);
                         }}
-                        className="w-full px-6 py-2.5 border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                        className="w-full px-6 py-2 border text-sm border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
                       >
-                        {t("doctors.btn1")}
-                      </button>
+                        {" "}
+                        {t("doctors.btn1")}{" "}
+                      </button>{" "}
                       <Link
                         to={`/doctors/${doc.id}`}
-                        className="w-full px-6 py-2.5 border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer block"
+                        className="w-full px-6 py-2 text-sm border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer block"
                       >
-                        {t("doctors.btn2")}
-                      </Link>
+                        {" "}
+                        {t("doctors.btn2")}{" "}
+                      </Link>{" "}
                     </div>
-                  </Link>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}

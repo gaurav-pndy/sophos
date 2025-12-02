@@ -32,7 +32,7 @@ const ServicesSection = () => {
               <img
                 src="https://www.shutterstock.com/shutterstock/photos/2650049105/display_1500/stock-photo-health-care-insurance-medical-protection-online-system-patient-safety-hospital-services-claim-2650049105.jpg"
                 alt="Services illustration"
-                className="max-w-2xl w-full md:min-h-96 max-h-[28rem] h-full object-cover md:rounded-tr-2xl md:rounded-br-2xl"
+                className=" w-full md:min-h-96 max-h-[28rem] h-full object-cover md:rounded-tr-2xl md:rounded-br-2xl"
               />
               <div
                 className={`absolute   inset-0 bg-gradient-to-b via-30%  md:bg-gradient-to-r from-[#4378a0] via-[#4378a0]/40 to-transparent  `}

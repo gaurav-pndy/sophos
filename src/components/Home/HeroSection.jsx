@@ -60,8 +60,8 @@ const HeroSection = ({ setShowPopup }) => {
                 stroke="rgba(100, 100, 100,"
                 custStyle="lg:w-[40%] h-[60%] left-0 top-0"
               />
-              <div className="flex flex-col h-full md:flex-row lg:col-span-2 px-6 lg:px-0 md:pl-12 lg:pl-6 xl:pl-20 w-full py-6 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#002b3e] to-[#016885]">
-                <div className="flex-1 flex flex-col items-start">
+              <div className="flex flex-col h-full md:flex-row lg:col-span-2 px-4 lg:pr-0   w-full py-6 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#002b3e] to-[#016885] xl:justify-end">
+                <div className="flex-1 w-full xl:max-w-[42.5rem] flex flex-col items-start">
                   <div className="mb-2 flex relative z-40 items-center">
                     <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">
                       <SlBadge className="text-2xl p-0 text-white " />
@@ -108,7 +108,7 @@ const HeroSection = ({ setShowPopup }) => {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <div
               className={`mx-auto relative w-full overflow-hidden h-[45rem] lg:h-[28rem] xl:h-[30rem] grid lg:flex items-stretch`}
             >
@@ -162,9 +162,9 @@ const HeroSection = ({ setShowPopup }) => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
 
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <div
               className={`mx-auto relative w-full overflow-hidden h-[45rem] lg:h-[28rem] xl:h-[30rem] grid lg:flex items-stretch`}
             >
@@ -210,7 +210,7 @@ const HeroSection = ({ setShowPopup }) => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
 
           <SwiperSlide>
             <div
@@ -220,8 +220,8 @@ const HeroSection = ({ setShowPopup }) => {
                 stroke="rgba(100, 100, 100,"
                 custStyle="lg:w-[40%] h-[60%] left-0 top-0"
               />
-              <div className="flex flex-col h-full lg:w-[48%] md:flex-row px-6 md:pl-12 xl:pl-20 w-full py-6 md:py-10 xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#3a183e] to-[#888291]">
-                <div className="flex-1 flex flex-col items-start">
+              <div className="flex flex-col h-full lg:w-[48%] md:flex-row px-4  lg:pr-0 xl:justify-end w-full py-6 md:py-10 xl:py-4 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#3a183e] to-[#888291]">
+                <div className="flex-1 w-full  xl:max-w-[40rem]  flex flex-col items-start">
                   <div className="mb-2 flex z-40 items-center">
                     <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">
                       <FaHandHoldingHeart className="text-2xl text-white " />
@@ -261,7 +261,7 @@ const HeroSection = ({ setShowPopup }) => {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <div
               className={`mx-auto relative w-full overflow-hidden h-[45rem] lg:h-[28rem] xl:h-[30rem] grid lg:flex items-stretch`}
             >
@@ -352,7 +352,7 @@ const HeroSection = ({ setShowPopup }) => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
 

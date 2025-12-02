@@ -548,7 +548,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <div className="hidden lg:flex flex-col">
+          {/* <div className="hidden lg:flex flex-col">
             <label htmlFor="city" className="text-xs mb-1">
               {t("header.selectCity")}
             </label>
@@ -560,7 +560,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               <option value="Moscow">{t("moscow")}</option>
               <option value="Makhachkala">{t("makhachkala")}</option>
             </select>
-          </div>
+          </div> */}
 
           {/* City Confirmation Popup */}
           {showCityInit && (
@@ -1039,15 +1039,21 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       <nav className="hidden lg:flex z-100 py-2 w-full bg-brand1/10 justify-end ">
         <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 text-sm xl:text-base font-semibold">
           {" "}
-          {/*
+          <button
+            onClick={() => setShowPopup(true)}
+            className=" min-w-48 xl:min-w-56 bg-[#125e84] text-white px-4 py-2 rounded-lg font-normal hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap hidden md:flex justify-center items-center gap-2"
+          >
+            <FaCalendarCheck className="text-lg" />
+
+            {t("header.bookAppointment")}
+          </button>
           <Link
-            to="/telemedicine-consultation"
-            className="  hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
+            to="/services/service1"
+            className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
           >
             {" "}
-            {t("header.telemedicine")}{" "}
+            {t("header.service1")}{" "}
           </Link>{" "}
-           */}
           <Link
             to="/early-detection-program"
             className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
@@ -1062,21 +1068,6 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             {" "}
             {t("header.oncologicalCare")}{" "}
           </Link>{" "}
-          <Link
-            to="/complicated-cases"
-            className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
-          >
-            {" "}
-            {t("header.complicated")}{" "}
-          </Link>{" "}
-          <button
-            onClick={() => setShowPopup(true)}
-            className=" min-w-48 xl:min-w-56 bg-[#125e84] text-white px-4 py-2 rounded-lg font-normal hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap hidden md:flex justify-center items-center gap-2"
-          >
-            <FaCalendarCheck className="text-lg" />
-
-            {t("header.bookAppointment")}
-          </button>
         </div>
       </nav>
 
@@ -1206,7 +1197,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   {t("header.bookAppointment")}
                 </button>
               </div>
-
+              {/* 
               <div className="flex flex-col mb-6">
                 <label htmlFor="city" className="text-xs mb-1">
                   {t("header.selectCity")}
@@ -1219,7 +1210,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   <option value="Moscow">{t("header.moscow")}</option>
                   <option value="Makhachkala">{t("header.makhachkala")}</option>
                 </select>
-              </div>
+              </div> */}
 
               <nav className="flex  flex-col gap-4 text-lg">
                 <div>
@@ -1449,16 +1440,14 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   {" "}
                   {t("header.contact")}
                 </button>{" "}
-                {/*
                 <Link
                   onClick={() => setIsOpen(false)}
-                  to="/telemedicine-consultation"
+                  to="/services/service1"
                   className="  hover:underline whitespace-nowrap"
                 >
                   {" "}
-                  {t("header.telemedicine")}
+                  {t("header.service1")}
                 </Link>{" "}
-                */}
                 <Link
                   onClick={() => setIsOpen(false)}
                   to="/early-detection-program"
@@ -1474,13 +1463,6 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 >
                   {" "}
                   {t("header.oncologicalCare")}
-                </Link>{" "}
-                <Link
-                  to="/complicated-cases"
-                  className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
-                >
-                  {" "}
-                  {t("header.complicated")}{" "}
                 </Link>{" "}
               </nav>
             </motion.aside>

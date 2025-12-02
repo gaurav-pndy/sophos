@@ -403,42 +403,6 @@ const OffersTab = () => {
           </div>
 
           {/* Terms & Conditions */}
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-8 mt-8 border border-gray-200">
-            <div className="flex items-start gap-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-brand1 to-brand3 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
-                <FaCheckCircle className="text-white text-2xl" />
-              </div>
-              <div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">
-                  {t("forPatientsPage.offers.termsTitle")}
-                </h4>
-                <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-brand3 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>
-                      {t("forPatientsPage.offers.terms.noCombination")}
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-brand3 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>
-                      {t("forPatientsPage.offers.terms.availability")}
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-brand3 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>
-                      {t("forPatientsPage.offers.terms.modification")}
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-brand3 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>{t("forPatientsPage.offers.terms.contact")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </>
       ) : (
         // No offers available

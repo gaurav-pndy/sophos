@@ -241,16 +241,22 @@ const CareersPage = () => {
               {t("careersPage.successTitle", "Application Submitted!")}
             </h3>
             <p className="text-gray-600 mb-6">
-              {t("careersPage.successMessage", "Thank you for your application. We will review it and contact you soon.")}
+              {t(
+                "careersPage.successMessage",
+                "Thank you for your application. We will review it and contact you soon."
+              )}
             </p>
             <div className="w-full bg-gray-200 rounded-full h-2">
-              <div 
+              <div
                 className="bg-green-500 h-2 rounded-full transition-all duration-5000 ease-linear"
-                style={{ width: '100%' }}
+                style={{ width: "100%" }}
               ></div>
             </div>
             <p className="text-sm text-gray-500 mt-2">
-              {t("careersPage.autoClose", "Closing automatically in 5 seconds...")}
+              {t(
+                "careersPage.autoClose",
+                "Closing automatically in 5 seconds..."
+              )}
             </p>
           </div>
         </div>
@@ -553,7 +559,7 @@ const VacancyCard = ({ vacancy, isOpen, onApply, getLocalizedText, t }) => {
                   {t("careersPage.applications", "Applications")}:{" "}
                   {vacancy.applicationCount || 0}
                 </span>
-                {vacancy.applicationDeadline && (
+                {/* {vacancy.applicationDeadline && (
                   <span
                     className={
                       isUrgent && isOpen ? "text-red-600 font-semibold" : ""
@@ -562,7 +568,7 @@ const VacancyCard = ({ vacancy, isOpen, onApply, getLocalizedText, t }) => {
                     {t("careersPage.deadline", "Deadline")}:{" "}
                     {new Date(vacancy.applicationDeadline).toLocaleDateString()}
                   </span>
-                )}
+                )} */}
               </div>
               {vacancy.showApplyButton && (
                 <button
@@ -604,7 +610,7 @@ const ApplicationForm = ({
   });
   const [formErrors, setFormErrors] = useState({});
 
-    const handlePhoneChange = (phone) => {
+  const handlePhoneChange = (phone) => {
     setFormData((prev) => ({
       ...prev,
       phoneNumber: phone,
@@ -856,32 +862,35 @@ const ApplicationForm = ({
                 )}
               </div>
 
-<div>
-  <label className="block text-sm font-medium text-gray-700 mb-2">
-    {t("careersPage.phone", "Phone Number")}
-    <span className="text-red-500 ml-1">*</span>
-  </label>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t("careersPage.phone", "Phone Number")}
+                  <span className="text-red-500 ml-1">*</span>
+                </label>
 
-  {/* Wrapper with border */}
-  <div
-    className={`flex items-center rounded-lg border px-0 py-0 ${
-      formErrors.phoneNumber ? "border-red-500" : "border-gray-300"
-    }`}
-  >
-    <PhoneInput
-      defaultCountry="ru"
-      value={formData.phoneNumber}
-      onChange={handlePhoneChange}
-      className="w-full"
-      inputClassName="!bg-transparent !border-none !w-full !px-0 py-2 focus:!outline-none"
-    />
-  </div>
+                {/* Wrapper with border */}
+                <div
+                  className={`flex items-center rounded-lg border px-0 py-0 ${
+                    formErrors.phoneNumber
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  }`}
+                >
+                  <PhoneInput
+                    defaultCountry="ru"
+                    value={formData.phoneNumber}
+                    onChange={handlePhoneChange}
+                    className="w-full"
+                    inputClassName="!bg-transparent !border-none !w-full !px-0 py-2 focus:!outline-none"
+                  />
+                </div>
 
-  {formErrors.phoneNumber && (
-    <p className="text-red-500 text-sm mt-1">{formErrors.phoneNumber}</p>
-  )}
-</div>
-
+                {formErrors.phoneNumber && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {formErrors.phoneNumber}
+                  </p>
+                )}
+              </div>
             </div>
 
             {/* Resume Upload */}

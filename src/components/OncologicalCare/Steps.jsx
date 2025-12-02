@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaStethoscope } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaUserMd,
@@ -11,6 +11,7 @@ import {
   FaVials,
   FaBriefcaseMedical,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Steps = () => {
   const { t } = useTranslation();
@@ -98,6 +99,21 @@ const Steps = () => {
             {activeTab === tabKey && <FaArrowRight />}
           </button>
         ))}
+        <Link
+          to="/complicated-cases"
+          className={`
+      flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left text-[1rem] cursor-pointer
+      shadow transition-all duration-300
+      hover:-translate-y-[2px] hover:shadow-lg
+      bg-white text-brand1
+    `}
+        >
+          <p className="flex items-center ">
+            <FaStethoscope className="text-2xl" />
+            <span className=" ml-3 mr-2">8.</span>
+            {t("care.tab8")}
+          </p>
+        </Link>
       </div>
 
       {/* Right Column - Content with slide-from-bottom animation */}
