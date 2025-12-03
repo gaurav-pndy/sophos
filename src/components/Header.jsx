@@ -1201,7 +1201,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </button>
               </div>
               {/* 
-              <div className="flex flex-colmb-6">
+              <div className="flex flex-colm-6">
                 <label htmlFor="city" className="text-xs mb-1">
                   {t("header.selectCity")}
                 </label>
