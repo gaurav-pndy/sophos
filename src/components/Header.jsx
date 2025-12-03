@@ -541,7 +541,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
   return (
     <header className="w-full border-b border-brand4 text-brand1 fixed top-0 z-50 bg-white">
       {/* Top Bar */}
-      <div className="flex w-full bg-gradient-to-r from-white via-white to-[#f3f5f7]">
+      <div className="flex w-full bg-gradient-to-r from-white from-20% xl:from-25% to-40% xl:to-45% to-[#f3f5f7]">
         <motion.div
           className="flex max-w-[90rem] w-full mx-auto flex-col lg:flex-row items-center justify-between lg:justify-end  px-4 lg:py-3 text-xs xl:text-sm"
           initial={{ opacity: 0, y: -10 }}
@@ -1051,7 +1051,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         </div>
       </motion.nav>
 
-      <nav className="hidden lg:flex z-100 py-2 w-full bg-gradient-to-r from-white via-white to-brand1/10 justify-end ">
+      <nav className="hidden lg:flex z-100 py-2 w-full bg-gradient-to-r from-white from-20% xl:from-25% to-40% xl:to-45% to-brand1/10 justify-end ">
         <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 base-text font-semibold">
           {" "}
           <button
