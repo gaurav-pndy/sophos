@@ -388,7 +388,7 @@ const DoctorsSection = ({ setShowPopup }) => {
         >
           {[...cards]
             .reverse()
-            .slice(0, 4) // Show up to 8 doctors in swiper
+            .slice(0, 5) 
             .map((doc) => (
               <SwiperSlide key={doc.id}>
                 <div className="bg-white my-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-4 flex flex-col md:flex-row gap-4 items-start h-full">
