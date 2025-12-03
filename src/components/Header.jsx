@@ -66,7 +66,7 @@ import { BsThermometerHalf } from "react-icons/bs";
 import { AiOutlineUserSwitch } from "react-icons/ai";
 
 const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false); // mobile dropdown
   const [isAboutOpen, setIsAboutOpen] = useState(false); // mobile dropdown
@@ -756,7 +756,19 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           onClick={handleLogoClick}
           className="flex  items-center gap-2 mr-2"
         >
-          <img src="/HD.png" alt="Logo" className="h-5 md:h-7 object-contain" />
+          {i18n.language === "en" ? (
+            <img
+              src="/logo_en.png"
+              alt="Logo"
+              className="h-12 md:h-16 object-contain"
+            />
+          ) : (
+            <img
+              src="/logo_ru.png"
+              alt="Logo"
+              className="h-12 md:h-16 object-contain"
+            />
+          )}
         </Link>
 
         <div className="hidden lg:flex justify-end gap-3  xl:gap-6 mx-3 xl:mx-6 items-center flex-1 base-text font-semibold">
@@ -1201,7 +1213,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </button>
               </div>
               {/* 
-              <div className="flex flex-col mb-6">
+              <div className="flex flex-col m-6">
                 <label htmlFor="city" className="text-xs mb-1">
                   {t("header.selectCity")}
                 </label>

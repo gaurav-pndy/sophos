@@ -386,110 +386,107 @@ const DoctorsSection = ({ setShowPopup }) => {
             nextEl: ".next-btn",
           }}
         >
-          {[...cards]
-            .reverse()
-            .slice(0, 5) 
-            .map((doc) => (
-              <SwiperSlide key={doc.id}>
-                <div className="bg-white my-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-4 flex flex-col md:flex-row gap-4 items-start h-full">
-                  {/* LEFT COLUMN: IMAGE */}
-                  <div className="relative w-full md:w-68 lg:w-56 h-full md:h-68 lg:h-56 xl:h-68 xl:w-68 rounded-xl overflow-hidden bg-gray-100 shrink-0">
-                    <img
-                      src={doc.imageUrl || "/doctors.png"}
-                      alt={doc.name}
-                      className="w-full h-full object-cover"
-                    />
+          {[...cards].reverse().map((doc) => (
+            <SwiperSlide key={doc.id}>
+              <div className="bg-white my-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-4 flex flex-col md:flex-row gap-4 items-start h-full">
+                {/* LEFT COLUMN: IMAGE */}
+                <div className="relative w-full md:w-68 lg:w-56 h-full md:h-68 lg:h-56 xl:h-68 xl:w-68 rounded-xl overflow-hidden bg-gray-100 shrink-0">
+                  <img
+                    src={doc.imageUrl || "/doctors.png"}
+                    alt={doc.name}
+                    className="w-full h-full object-cover"
+                  />
 
-                    {/* Country Flag */}
-                    {getCountryCodeFromLocation(
-                      getLocalizedField(doc.location)
-                    ) && (
-                      <div className="absolute top-2 right-2 bg-white rounded-full shadow ">
-                        <ReactCountryFlag
-                          countryCode={getCountryCodeFromLocation(
-                            getLocalizedField(doc.location)
-                          )}
-                          svg
-                          style={{
-                            width: "30px",
-                            height: "30px",
-                            borderRadius: "50%",
-                          }}
-                        />
-                      </div>
-                    )}
+                  {/* Country Flag */}
+                  {getCountryCodeFromLocation(
+                    getLocalizedField(doc.location)
+                  ) && (
+                    <div className="absolute top-2 right-2 bg-white rounded-full shadow ">
+                      <ReactCountryFlag
+                        countryCode={getCountryCodeFromLocation(
+                          getLocalizedField(doc.location)
+                        )}
+                        svg
+                        style={{
+                          width: "30px",
+                          height: "30px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </div>
+                  )}
 
-                    {/* Experience Badge */}
-                    {doc.yearOfExperience && (
-                      <div className="absolute bottom-2 right-2 font-semibold bg-white base-text px-2 py-1 rounded-md shadow">
-                        Стаж {doc.yearOfExperience} лет
-                      </div>
+                  {/* Experience Badge */}
+                  {doc.yearOfExperience && (
+                    <div className="absolute bottom-2 right-2 font-semibold bg-white base-text px-2 py-1 rounded-md shadow">
+                      Стаж {doc.yearOfExperience} лет
+                    </div>
+                  )}
+                </div>
+
+                {/* RIGHT COLUMN */}
+                <div className="flex flex-col justify-between min-h-68 lg:min-h-auto xl:min-h-68 flex-1">
+                  {/* NAME */}
+                  <div>
+                    <div className="font-bold text-black subheading  mb-1 leading-tight">
+                      {getLocalizedField(doc.lastName).toUpperCase()}
+                      <br />
+                      {getLocalizedField(doc.firstName)}{" "}
+                      {getLocalizedField(doc.middleName)}
+                    </div>
+
+                    <div className="flex flex-wrap gap-1 my-2">
+                      {" "}
+                      {doc.tags.slice(0, 3).map((tag, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 rounded-full border border-brand4 text-black small-text truncate max-w-full"
+                          title={tag}
+                        >
+                          {" "}
+                          {tag}{" "}
+                        </span>
+                      ))}{" "}
+                      {doc.tags.length > 3 && (
+                        <span className="px-2 py-1 rounded-full border border-brand4 text-black small-text">
+                          {" "}
+                          +{doc.tags.length - 3}{" "}
+                        </span>
+                      )}{" "}
+                    </div>
+
+                    {doc.description && (
+                      <p
+                        className="text-brand1 small-text mb-2 min-h-[2.5rem] lg:line-clamp-2 leading-tight line-clamp-4 xl:line-clamp-3"
+                        dangerouslySetInnerHTML={{ __html: doc.description }}
+                      ></p>
                     )}
                   </div>
-
-                  {/* RIGHT COLUMN */}
-                  <div className="flex flex-col justify-between min-h-68 lg:min-h-auto xl:min-h-68 flex-1">
-                    {/* NAME */}
-                    <div>
-                      <div className="font-bold text-black subheading  mb-1 leading-tight">
-                        {getLocalizedField(doc.lastName).toUpperCase()}
-                        <br />
-                        {getLocalizedField(doc.firstName)}{" "}
-                        {getLocalizedField(doc.middleName)}
-                      </div>
-
-                      <div className="flex flex-wrap gap-1 my-2">
-                        {" "}
-                        {doc.tags.slice(0, 3).map((tag, i) => (
-                          <span
-                            key={i}
-                            className="px-2 py-1 rounded-full border border-brand4 text-black small-text truncate max-w-full"
-                            title={tag}
-                          >
-                            {" "}
-                            {tag}{" "}
-                          </span>
-                        ))}{" "}
-                        {doc.tags.length > 3 && (
-                          <span className="px-2 py-1 rounded-full border border-brand4 text-black small-text">
-                            {" "}
-                            +{doc.tags.length - 3}{" "}
-                          </span>
-                        )}{" "}
-                      </div>
-
-                      {doc.description && (
-                        <p
-                          className="text-brand1 small-text mb-2 min-h-[2.5rem] lg:line-clamp-2 leading-tight line-clamp-4 xl:line-clamp-3"
-                          dangerouslySetInnerHTML={{ __html: doc.description }}
-                        ></p>
-                      )}
-                    </div>
-                    <div className="mt-auto space-y-2">
+                  <div className="mt-auto space-y-2">
+                    {" "}
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setShowPopup(true);
+                      }}
+                      className="w-full px-6 py-2.5 border text-sm border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                    >
                       {" "}
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setShowPopup(true);
-                        }}
-                        className="w-full px-6 py-2.5 border text-sm border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
-                      >
-                        {" "}
-                        {t("doctors.btn1")}{" "}
-                      </button>{" "}
-                      <Link
-                        to={`/doctors/${doc.id}`}
-                        className="w-full px-6 py-2.5 text-sm border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer block"
-                      >
-                        {" "}
-                        {t("doctors.btn2")}{" "}
-                      </Link>{" "}
-                    </div>
+                      {t("doctors.btn1")}{" "}
+                    </button>{" "}
+                    <Link
+                      to={`/doctors/${doc.id}`}
+                      className="w-full px-6 py-2.5 text-sm border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer block"
+                    >
+                      {" "}
+                      {t("doctors.btn2")}{" "}
+                    </Link>{" "}
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       ) : (
         !loading && (
