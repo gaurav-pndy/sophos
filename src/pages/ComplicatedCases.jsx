@@ -99,7 +99,11 @@ const ComplicatedCases = () => {
             stroke="rgba(100, 100, 100,"
             custStyle="lg:w-[40%] h-[60%] left-0 top-0"
           />
-          <div className="flex flex-col h-full md:flex-row lg:col-span-2 px-6 lg:px-0 md:pl-12 lg:pl-6 xl:pl-20 w-full py-6 mx-auto items-center gap-10 bg-gradient-to-b lg:bg-gradient-to-r from-[#131e23] to-[#253133]">
+          <div
+            className="max-w-7xl mx-auto w-full flex flex-col h-full md:flex-row lg:col-span-2 
+px-4 md:px-6 lg:px-12 py-6 items-center gap-10 
+bg-gradient-to-b lg:bg-gradient-to-r from-[#131e23] to-[#253133]"
+          >
             <div className="flex-1 flex flex-col items-start">
               <div className="mb-2 flex relative z-40 items-center">
                 <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">

@@ -429,7 +429,7 @@ const DoctorsSection = ({ setShowPopup }) => {
                     {/* NAME */}
                     <div>
                       <div className="font-bold text-black text-lg xl:text-xl  mb-1 leading-tight">
-                        {getLocalizedField(doc.lastName)}
+                        {getLocalizedField(doc.lastName).toUpperCase()}
                         <br />
                         {getLocalizedField(doc.firstName)}{" "}
                         {getLocalizedField(doc.middleName)}
