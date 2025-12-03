@@ -11,7 +11,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Footer = ({ city }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const scrollToSection = (sectionId) => {
     const target = document.querySelector(sectionId);
@@ -38,18 +38,33 @@ const Footer = ({ city }) => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr] gap-8">
         {/* Column 1: Logo and about */}
         <div className="flex-1">
-          <img
-            src="/hd-logo-white.svg"
-            alt="Logo"
-            className="h-10"
-            style={{
-              filter: "brightness(0) invert(1)",
-              WebkitFilter: "brightness(0) invert(1)",
-            }}
-            onError={(e) => {
-              e.target.src = "/hd-logo-white.png";
-            }}
-          />
+          {i18n.language === "en" ? (
+            <img
+              src="/logo_en.png"
+              alt="Logo"
+              className="h-20 md:h-24"
+              style={{
+                filter: "brightness(0) invert(1)",
+                WebkitFilter: "brightness(0) invert(1)",
+              }}
+              onError={(e) => {
+                e.target.src = "/logo_en.png";
+              }}
+            />
+          ) : (
+            <img
+              src="/logo_ru.png"
+              alt="Logo"
+              className="h-20 md:h-24"
+              style={{
+                filter: "brightness(0) invert(1)",
+                WebkitFilter: "brightness(0) invert(1)",
+              }}
+              onError={(e) => {
+                e.target.src = "/logo_ru.png";
+              }}
+            />
+          )}
         </div>
 
         {/* Column 2: Navigation links */}

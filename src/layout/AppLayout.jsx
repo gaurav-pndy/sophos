@@ -20,7 +20,7 @@ const AppLayout = ({ city, setCity, showPopup, setShowPopup }) => {
         setShowPopup={setShowPopup}
         setShowUserAccount={setShowUserAccount}
       />
-      <div className="mt-14 lg:mt-42 xl:mt-44">
+      <div className="mt-20 md:mt-24 lg:mt-52 xl:mt-54">
         <Outlet />
         <FloatingButton onClick={() => setShowPopup(true)} />
         <BookingPopup show={showPopup} onClose={() => setShowPopup(false)} />
