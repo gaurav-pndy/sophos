@@ -419,7 +419,7 @@ const DoctorsSection = ({ setShowPopup }) => {
                     {/* Experience Badge */}
                     {doc.yearOfExperience && (
                       <div className="absolute bottom-2 right-2 font-bold bg-white text-xs px-2 py-1 rounded-md shadow">
-                        Стаж работы {doc.yearOfExperience} лет
+                        Стаж {doc.yearOfExperience} лет
                       </div>
                     )}
                   </div>
