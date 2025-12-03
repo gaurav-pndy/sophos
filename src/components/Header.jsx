@@ -541,7 +541,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
   return (
     <header className="w-full border-b border-brand4 text-brand1 fixed top-0 z-50 bg-white">
       {/* Top Bar */}
-      <div className="flex w-full bg-[#f3f5f7]">
+      <div className="flex w-full bg-gradient-to-r from-white via-white to-[#f3f5f7]">
         <motion.div
           className="flex max-w-[90rem] w-full mx-auto flex-col lg:flex-row items-center justify-between lg:justify-end  px-4 lg:py-3 text-xs xl:text-sm"
           initial={{ opacity: 0, y: -10 }}
@@ -745,7 +745,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
       {/* Desktop Nav Bar with Logo */}
       <motion.nav
-        className="flex max-w-[90rem]  w-full mx-auto items-center justify-between px-4 py-4 lg:py-2"
+        className="flex max-w-[90rem] relative  w-full mx-auto items-center justify-between px-4 py-2"
         initial={{ opacity: 0, y: -5 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.4 }}
@@ -754,19 +754,19 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         <Link
           to="/"
           onClick={handleLogoClick}
-          className="flex  items-center gap-2 mr-2"
+          className="flex lg:absolute items-center gap-2 mr-2"
         >
           {i18n.language === "en" ? (
             <img
               src="/logo_en.png"
               alt="Logo"
-              className="h-12 md:h-16 object-contain"
+              className="h-16 md:h-20 xl:h-24 object-contain"
             />
           ) : (
             <img
               src="/logo_ru.png"
               alt="Logo"
-              className="h-12 md:h-16 object-contain"
+              className="h-16 md:h-20 xl:h-24 object-contain"
             />
           )}
         </Link>
@@ -1051,7 +1051,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         </div>
       </motion.nav>
 
-      <nav className="hidden lg:flex z-100 py-2 w-full bg-brand1/10 justify-end ">
+      <nav className="hidden lg:flex z-100 py-2 w-full bg-gradient-to-r from-white via-white to-brand1/10 justify-end ">
         <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 base-text font-semibold">
           {" "}
           <button
