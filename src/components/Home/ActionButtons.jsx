@@ -53,7 +53,7 @@ const ActionButtons = ({ setShowPopup }) => {
           to="/thank-you-hdmc"
           className="
         flex items-center gap-2 w-full  md:w-fit
-        px-8 py-3 
+        px-8 py-3
         bg-brand2
         border-none
         text-white
