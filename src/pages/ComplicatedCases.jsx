@@ -101,10 +101,10 @@ const ComplicatedCases = () => {
           />
           <div
             className="max-w-7xl mx-auto w-full flex flex-col h-full md:flex-row lg:col-span-2 
-px-4 md:px-6 lg:px-12 py-6 items-center gap-10 
+px-4 lg:pr-0 xl:justify-end  py-6 items-center gap-10 
 bg-gradient-to-b lg:bg-gradient-to-r from-[#131e23] to-[#253133]"
           >
-            <div className="flex-1 flex flex-col items-start">
+            <div className="flex-1 flex w-full  xl:max-w-[37.5rem] flex-col items-start">
               <div className="mb-2 flex relative z-40 items-center">
                 <div className="bg-white/[0.13] flex justify-center items-center rounded-full p-3 mr-4">
                   <SlBadge className="text-2xl p-0 text-white " />
