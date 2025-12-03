@@ -1215,7 +1215,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </select>
               </div> */}
 
-              <nav className="flex  flex-col gap-4 base-text">
+              <nav className="flex flex-col gap-4 base-text">
                 <div>
                   <button
                     onClick={() => setIsAboutOpen(!isAboutOpen)}
