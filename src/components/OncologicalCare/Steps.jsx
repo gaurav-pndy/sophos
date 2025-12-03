@@ -81,7 +81,7 @@ const Steps = () => {
             key={tabKey}
             onClick={() => setActiveTab(tabKey)}
             className={`
-      flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left text-[1rem] cursor-pointer
+      flex items-center justify-between base-text gap-3 p-4 rounded-xl font-semibold text-left text-[1rem] cursor-pointer
       shadow transition-all duration-300
       hover:-translate-y-[2px] hover:shadow-lg
       ${
@@ -127,7 +127,7 @@ const Steps = () => {
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="bg-white rounded-2xl p-6 md:p-8 shadow flex flex-col max-w-lg w-full"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-brand1 mb-8">
+            <h3 className="subheading font-bold text-brand1 mb-8">
               {stepsData[activeTab].title}
             </h3>
             <img

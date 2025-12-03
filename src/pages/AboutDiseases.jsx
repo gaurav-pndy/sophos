@@ -45,7 +45,7 @@ const AboutDiseases = () => {
             }, ${news.color1}, ${news.color2})`,
           }}
         >
-          <h1 className="text-white z-40 text-3xl md:text-[2.5rem] font-bold ">
+          <h1 className="text-white z-40 heading1 font-bold ">
             {t(news.title)}
           </h1>
         </div>
@@ -73,7 +73,7 @@ const AboutDiseases = () => {
         {/* О УСЛУГЕ */}
 
         <div
-          className="bg-white rounded-2xl shadow p-8 text-lg "
+          className="bg-white rounded-2xl shadow p-8 base-text "
           style={{
             color: news.color1,
           }}

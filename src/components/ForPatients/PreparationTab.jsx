@@ -21,25 +21,23 @@ const PreparationTab = ({ t }) => {
     <div className="space-y-6">
       {/* Header */}
       <div className="space-y-3">
-        <h2 className="text-3xl md:text-4xl font-bold text-brand1">
+        <h2 className="heading1 font-bold text-brand1">
           Подготовка к исследованиям
         </h2>
       </div>
 
       {/* CT/MRI General Info */}
-      <div className="rounded-2xl p-6 border border-brand4">
-        <div className="flex items-center gap-3 mb-4">
+      <div className="rounded-2xl base-text p-6 border border-brand4">
+        <div className="flex subheading items-center gap-3 mb-4">
           <div className="bg-brand3 p-3 rounded-xl">
-            <FaXRay className="text-white text-2xl" />
+            <FaXRay className="text-white " />
           </div>
-          <h3 className="text-2xl font-bold text-brand1">
-            Подготовка к КТ и МРТ
-          </h3>
+          <h3 className="font-bold text-brand1">Подготовка к КТ и МРТ</h3>
         </div>
 
         <div className="space-y-4">
           <div className="bg-white p-4 rounded-xl">
-            <h4 className="font-bold text-xl text-brand1 mb-3 flex items-center gap-2">
+            <h4 className="font-bold  text-brand1 mb-3 flex items-center gap-2">
               <FaClock className="text-brand3" />
               Общая информация
             </h4>
@@ -86,7 +84,7 @@ const PreparationTab = ({ t }) => {
                     Перед исследованием необходимо снять все металлические
                     предметы:
                   </h4>
-                  <div className="grid md:grid-cols-2 gap-3 text-sm text-gray-700">
+                  <div className="grid md:grid-cols-2 gap-3 small-text text-gray-700">
                     <div className="flex gap-2">
                       <span className="text-brand3">✓</span>
                       <span>
@@ -121,7 +119,7 @@ const PreparationTab = ({ t }) => {
             <h4 className="font-bold text-brand1 mb-3">
               АБСОЛЮТНЫЕ ПРОТИВОПОКАЗАНИЯ К ПРОВЕДЕНИЮ МРТ-ИССЛЕДОВАНИЯ:
             </h4>
-            <ul className="space-y-1 text-sm text-gray-700">
+            <ul className="space-y-1 small-text text-gray-700">
               <li>
                 • Несовместимые с МРТ кардиостимулятор, ICD (имплантируемый
                 кардиовертер- дефибриллятор), нейростимулятор
@@ -140,18 +138,18 @@ const PreparationTab = ({ t }) => {
       </div>
 
       {/* Collapsible Sections */}
-      <div className="space-y-3">
+      <div className="space-y-3 base-text">
         {/* MRI Internal Organs */}
         <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
           <button
             onClick={() => toggleSection("mri-organs")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <FaMicroscope className="text-brand1 text-2xl" />
+                <FaMicroscope className="text-brand1 " />
               </div>
-              <span className="font-semibold text-brand1 text-left text-lg">
+              <span className="font-semibold text-brand1 text-left">
                 МРТ внутренних органов (МРТ брюшной полости, МРТ забрюшинного
                 пространства, МРТ малого таза) (комплексное обследование) /
                 МР-урография (почки, мочеточники)
@@ -201,11 +199,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("ct-urinary")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <FaXRay className="text-brand1 text-2xl" />
+                <FaXRay className="text-brand1 " />
               </div>
-              <span className="font-semibold text-brand1 text-lg text-left">
+              <span className="font-semibold text-brand1  text-left">
                 КТ мочевыводящих путей (почки, мочеточники, мочевой пузырь)
               </span>
             </div>
@@ -250,11 +248,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("abdominal")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <MdHealthAndSafety className="text-brand1 text-2xl" />
+                <MdHealthAndSafety className="text-brand1 " />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold  text-brand1 text-left">
                 МРТ и КТ органов брюшной полости и забрюшинного пространства
                 (печень, селезенка, поджелудочная железа, почки, надпочечники)
               </span>
@@ -306,11 +304,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("pelvic")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <MdHealthAndSafety className="text-brand1 text-2xl" />
+                <MdHealthAndSafety className="text-brand1 " />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold  text-brand1 text-left">
                 МРТ и КТ органов малого таза
               </span>
             </div>
@@ -412,11 +410,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("kidneys")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <MdHealthAndSafety className="text-brand1 text-2xl" />
+                <MdHealthAndSafety className="text-brand1 " />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold  text-brand1 text-left">
                 МРТ и КТ почек и надпочечников, КТ забрюшинного пространства
                 с внутривенным болюсным контрастированием
               </span>
@@ -457,11 +455,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("heart")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <MdHealthAndSafety className="text-brand1 text-2xl" />
+                <MdHealthAndSafety className="text-brand1" />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold  text-brand1 text-left">
                 МРТ сердца
               </span>
             </div>
@@ -498,11 +496,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("intestine")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <MdHealthAndSafety className="text-brand1 text-2xl" />
+                <MdHealthAndSafety className="text-brand1" />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold text-brand1 text-left">
                 МРТ тонкой кишки, КТ тонкой кишки с двойным контрастированием
               </span>
             </div>
@@ -542,11 +540,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("mr")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <MdHealthAndSafety className="text-brand1 text-2xl" />
+                <MdHealthAndSafety className="text-brand1 " />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold  text-brand1 text-left">
                 МР-холангиопанкреатография
               </span>
             </div>
@@ -587,11 +585,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("ultrasound")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <FaFileAlt className="text-brand1 text-2xl" />
+                <FaFileAlt className="text-brand1 " />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold  text-brand1 text-left">
                 Ультразвуковое исследование
               </span>
             </div>
@@ -610,7 +608,7 @@ const PreparationTab = ({ t }) => {
                   УЗИ брюшной полости, забрюшинного пространства:
                 </p>
                 <ul className="list-disc list-outside ml-4 space-y-1">
-                  <li>• Исследование проводится натощак</li>
+                  <li> Исследование проводится натощак</li>
                   <li>Исследование проводится натощак.</li>
                   <li>
                     Если исследование выполняется утром, то рекомендуется легкий
@@ -724,11 +722,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("endoscopy1")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <FaMicroscope className="text-brand1 text-2xl" />
+                <FaMicroscope className="text-brand1 " />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold  text-brand1 text-left">
                 Эзофагогастродуоденоскопия:
               </span>
             </div>
@@ -775,11 +773,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("endoscopy2")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <FaMicroscope className="text-brand1 text-2xl" />
+                <FaMicroscope className="text-brand1 " />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold  text-brand1 text-left">
                 Колоноскопия:{" "}
               </span>
             </div>
@@ -821,11 +819,11 @@ const PreparationTab = ({ t }) => {
             onClick={() => toggleSection("endoscopy3")}
             className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex subheading items-center gap-3">
               <div className="bg-brand1/20 p-2 rounded-lg">
-                <FaMicroscope className="text-brand1 text-2xl" />
+                <FaMicroscope className="text-brand1 " />
               </div>
-              <span className="font-semibold text-lg text-brand1 text-left">
+              <span className="font-semibold  text-brand1 text-left">
                 ПЭТ-КТ:
               </span>
             </div>

@@ -64,6 +64,7 @@ const DoctorsSection = ({ setShowPopup }) => {
 
       if (result.success) {
         setDoctors(result.data || []);
+        console.log("DoctorsSection", result.data);
       } else {
         throw new Error(result.error);
       }
@@ -182,6 +183,7 @@ const DoctorsSection = ({ setShowPopup }) => {
     const specialty = getLocalizedField(doc.specialty);
     const location = getLocalizedField(doc.location);
     const about = getLocalizedField(doc.about);
+    const description = getLocalizedField(doc.description);
     const position = getLocalizedField(doc.position);
 
     // Create tags from specialty
@@ -197,6 +199,7 @@ const DoctorsSection = ({ setShowPopup }) => {
       specialty,
       location: doc.location,
       about,
+      description,
       position,
       tags: tags.filter((tag) => tag && tag.trim() !== ""),
       image: doc.imageUrl || "/default-doctor.jpg",
@@ -279,11 +282,11 @@ const DoctorsSection = ({ setShowPopup }) => {
           </div>
         </div>
         <div className=" w-full md:min-h-96 h-full p-6 pb-16 md:p-6  bg-gradient-to-t md:bg-gradient-to-l from-[#27407f] to-[#5279be]">
-          <h2 className="text-white relative z-40 text-[2rem] leading-10 font-bold mb-4">
+          <h2 className="text-white relative z-40 heading1 leading-10 font-bold mb-4">
             {t("doctors.title1")}
           </h2>
           <p
-            className="md:text-lg relative z-40 text-white"
+            className="base-text relative z-40 text-white"
             dangerouslySetInnerHTML={{ __html: t("doctors.subtitle") }}
           ></p>
         </div>
@@ -301,10 +304,10 @@ const DoctorsSection = ({ setShowPopup }) => {
           >
             {/* Type of Consultation */}
             <div>
-              <label className="text-sm font-medium text-brand1 block mb-2">
+              <label className="small-text font-medium text-brand1 block mb-2">
                 {t("doctors.filter.consultType")}
               </label>
-              <div className="flex gap-3">
+              <div className="flex small-text gap-3">
                 {[
                   { label: t("doctors.filter.all"), value: "All" },
                   { label: t("doctors.filter.personal"), value: "Personal" },
@@ -313,7 +316,7 @@ const DoctorsSection = ({ setShowPopup }) => {
                   <button
                     key={item.value}
                     onClick={() => setType(item.value)}
-                    className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
+                    className={`px-4 py-2 rounded-lg border font-medium transition-all ${
                       type === item.value
                         ? "bg-brand1 text-white border-brand1"
                         : "bg-white border-brand4 text-brand1 hover:bg-brand4/20"
@@ -327,13 +330,13 @@ const DoctorsSection = ({ setShowPopup }) => {
 
             {/* Specialization */}
             <div>
-              <label className="text-sm font-medium text-brand1 block mb-2">
+              <label className="small-text font-medium text-brand1 block mb-2">
                 {t("doctors.filter.specialization")}
               </label>
               <select
                 value={specialization}
                 onChange={(e) => setSpecialization(e.target.value)}
-                className="w-full border border-brand4/40 rounded-lg px-3 py-2.5 text-sm text-brand1 outline-none focus:border-brand1 transition-all bg-white"
+                className="w-full border border-brand4/40 rounded-lg px-3 py-2.5 small-text text-brand1 outline-none focus:border-brand1 transition-all bg-white"
               >
                 <option value="All">
                   {t("doctors.filter.all") || "All Specializations"}
@@ -418,7 +421,7 @@ const DoctorsSection = ({ setShowPopup }) => {
 
                     {/* Experience Badge */}
                     {doc.yearOfExperience && (
-                      <div className="absolute bottom-2 right-2 font-bold bg-white text-xs px-2 py-1 rounded-md shadow">
+                      <div className="absolute bottom-2 right-2 font-semibold bg-white base-text px-2 py-1 rounded-md shadow">
                         Стаж {doc.yearOfExperience} лет
                       </div>
                     )}
@@ -428,7 +431,7 @@ const DoctorsSection = ({ setShowPopup }) => {
                   <div className="flex flex-col justify-between min-h-68 lg:min-h-auto xl:min-h-68 flex-1">
                     {/* NAME */}
                     <div>
-                      <div className="font-bold text-black text-lg xl:text-xl  mb-1 leading-tight">
+                      <div className="font-bold text-black subheading  mb-1 leading-tight">
                         {getLocalizedField(doc.lastName).toUpperCase()}
                         <br />
                         {getLocalizedField(doc.firstName)}{" "}
@@ -440,7 +443,7 @@ const DoctorsSection = ({ setShowPopup }) => {
                         {doc.tags.slice(0, 3).map((tag, i) => (
                           <span
                             key={i}
-                            className="px-2 py-1 rounded-full border border-brand4 text-black text-[0.6rem] xl:text-xs truncate max-w-full"
+                            className="px-2 py-1 rounded-full border border-brand4 text-black small-text truncate max-w-full"
                             title={tag}
                           >
                             {" "}
@@ -448,17 +451,17 @@ const DoctorsSection = ({ setShowPopup }) => {
                           </span>
                         ))}{" "}
                         {doc.tags.length > 3 && (
-                          <span className="px-2 py-1 rounded-full border border-brand4 text-black text-xs">
+                          <span className="px-2 py-1 rounded-full border border-brand4 text-black small-text">
                             {" "}
                             +{doc.tags.length - 3}{" "}
                           </span>
                         )}{" "}
                       </div>
 
-                      {doc.about && (
+                      {doc.description && (
                         <p
-                          className="text-brand1 text-sm mb-2 min-h-[2.5rem] lg:line-clamp-2 leading-tight line-clamp-4 xl:line-clamp-4"
-                          dangerouslySetInnerHTML={{ __html: doc.about }}
+                          className="text-brand1 small-text mb-2 min-h-[2.5rem] lg:line-clamp-2 leading-tight line-clamp-4 xl:line-clamp-3"
+                          dangerouslySetInnerHTML={{ __html: doc.description }}
                         ></p>
                       )}
                     </div>
@@ -470,14 +473,14 @@ const DoctorsSection = ({ setShowPopup }) => {
                           e.stopPropagation();
                           setShowPopup(true);
                         }}
-                        className="w-full px-6 py-2 border text-sm border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                        className="w-full px-6 py-2.5 border text-sm border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
                       >
                         {" "}
                         {t("doctors.btn1")}{" "}
                       </button>{" "}
                       <Link
                         to={`/doctors/${doc.id}`}
-                        className="w-full px-6 py-2 text-sm border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer block"
+                        className="w-full px-6 py-2.5 text-sm border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer block"
                       >
                         {" "}
                         {t("doctors.btn2")}{" "}
@@ -526,7 +529,7 @@ const DoctorsSection = ({ setShowPopup }) => {
       <div className="w-full mt-10 flex justify-center">
         <Link
           to={"/doctors"}
-          className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit"
+          className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-2.5 base-text shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit"
         >
           {t("moreBtn")}
         </Link>

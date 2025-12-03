@@ -29,7 +29,7 @@ export default function NewsTab() {
             {/* Right: Content */}
             <div className="flex flex-col justify-between w-full md:w-2/3 mt-4 md:mt-0 md:ml-6">
               <div>
-                <h3 className="text-2xl md:text-3xl font-semibold text-brand1 mb-4">
+                <h3 className="subheading font-semibold text-brand1 mb-4">
                   {t(news.title)}
                 </h3>
                 {/*
@@ -42,7 +42,7 @@ export default function NewsTab() {
               <div className="mt-6">
                 <Link
                   to={`/about-diseases/${news.id}`}
-                  className="inline-block  text-lg font-medium hover:underline transition"
+                  className="inline-block  base-text font-medium hover:underline transition"
                 >
                   {t("news.readMore")}
                 </Link>

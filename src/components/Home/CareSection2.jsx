@@ -67,8 +67,7 @@ const CareSection2 = () => {
   return (
     <section className="w-full  pt-3 pb-6">
       <div className="max-w-7xl text-center mx-auto px-4">
-        <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-8">
-          <FaStethoscope className="inline-block mr-3 text-teal-600" />
+        <h2 className="text-brand1 text-center heading1 leading-10 font-bold mb-8">
           Экспертная онкологическая помощь
         </h2>
 
@@ -86,7 +85,7 @@ const CareSection2 = () => {
               <div className="text-4xl text-brand1 mb-2 flex justify-center">
                 {icons.tab1}
               </div>
-              <p className="font-semibold xl:text-lg text-brand1/90">
+              <p className="font-semibold base-text text-brand1/90">
                 {stepsData.tab1.number}. {stepsData.tab1.title}
               </p>
             </motion.div>
@@ -105,7 +104,7 @@ const CareSection2 = () => {
               <div className="text-3xl text-brand1 mb-2 flex justify-center">
                 {icons.tab2}
               </div>
-              <p className="font-semibold xl:text-lg text-brand1/90">
+              <p className="font-semibold base-text text-brand1/90">
                 {stepsData.tab2.number}. {stepsData.tab2.title}
               </p>
             </motion.div>
@@ -124,7 +123,7 @@ const CareSection2 = () => {
               <div className="text-3xl text-brand1 mb-2 flex justify-center">
                 {icons.tab3}
               </div>
-              <p className="font-semibold xl:text-lg text-brand1/90">
+              <p className="font-semibold base-text text-brand1/90">
                 {stepsData.tab3.number}. {stepsData.tab3.title}
               </p>
             </motion.div>
@@ -149,7 +148,7 @@ const CareSection2 = () => {
               <div className="text-3xl text-brand1 mb-2 flex justify-center">
                 {icons.tab4}
               </div>
-              <p className="font-semibold xl:text-lg text-brand1/90">
+              <p className="font-semibold base-text text-brand1/90">
                 {stepsData.tab4.number}. {stepsData.tab4.title}
               </p>
             </motion.div>
@@ -168,7 +167,7 @@ const CareSection2 = () => {
               <div className="text-3xl text-brand1 mb-2 flex justify-center">
                 {icons.tab5}
               </div>
-              <p className="font-semibold xl:text-lg text-brand1/90">
+              <p className="font-semibold base-text text-brand1/90">
                 {stepsData.tab5.number}. {stepsData.tab5.title}
               </p>
             </motion.div>
@@ -187,7 +186,7 @@ const CareSection2 = () => {
               <div className="text-3xl text-brand1 mb-2 flex justify-center">
                 {icons.tab6}
               </div>
-              <p className="font-semibold xl:text-lg text-brand1/90">
+              <p className="font-semibold base-text text-brand1/90">
                 {stepsData.tab6.number}. {stepsData.tab6.title}
               </p>
             </motion.div>
@@ -212,7 +211,7 @@ const CareSection2 = () => {
               <div className="text-3xl text-brand1 mb-2 flex justify-center">
                 {icons.tab7}
               </div>
-              <p className="font-semibold xl:text-lg text-brand1/90">
+              <p className="font-semibold base-text text-brand1/90">
                 {stepsData.tab7.number}. {stepsData.tab7.title}
               </p>
             </motion.div>
@@ -233,7 +232,7 @@ const CareSection2 = () => {
                 {icons.tab8}
               </div>
               <p
-                className="font-semibold xl:text-lg text-brand1/90"
+                className="font-semibold base-text text-brand1/90"
                 dangerouslySetInnerHTML={{
                   __html: `${stepsData.tab8.number}. ${stepsData.tab8.title}`,
                 }}
@@ -244,10 +243,10 @@ const CareSection2 = () => {
 
         {/* Info Block Below Flowchart */}
         <div className="bg-brand1/10  rounded-2xl shadow-md p-8 text-left">
-          <h3 className="text-2xl text-center font-bold text-brand1 mb-6">
+          <h3 className="subheading text-center font-bold text-brand1 mb-6">
             {t("care.block1.title")}
           </h3>
-          <ul className="space-y-4 text-lg text-brand1/90">
+          <ul className="space-y-4 base-text text-brand1/90">
             <li>• {t("care.block1.point1")}</li>
             <li>• {t("care.block1.point2")}</li>
           </ul>

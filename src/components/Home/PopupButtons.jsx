@@ -14,19 +14,19 @@ const PopupButtons = () => {
   return (
     <section id="contact-and-feedback" className="w-full  pt-3 pb-12">
       <div className="max-w-[87rem] mx-auto px-4">
-        <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-8">
+        <h2 className="text-brand1 text-center heading1 leading-10 font-bold mb-8">
           {t("contactAndFeedback.text")}{" "}
         </h2>
 
         <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
           <button
-            className="bg-brand1 cursor-pointer border border-brand1 text-white font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand5/90 transition-all duration-300 w-full md:w-fit"
+            className="bg-brand1 cursor-pointer border border-brand1 text-white font-semibold rounded-lg px-6 py-2.5 base-text shadow hover:bg-brand5/90 transition-all duration-300 w-full md:w-fit"
             onClick={() => setShowFeedbackPopup(true)}
           >
             {t("contactAndFeedback.btn1")}
           </button>
           <button
-            className="bg-transparent cursor-pointer border border-brand1 w-full md:w-fit text-brand1 font-semibold rounded-lg px-6 py-3 shadow hover:bg-brand1 hover:text-white transition-all duration-300"
+            className="bg-transparent cursor-pointer border border-brand1 w-full md:w-fit text-brand1 font-semibold rounded-lg px-6 py-2.5 base-text shadow hover:bg-brand1 hover:text-white transition-all duration-300"
             onClick={() => setShowContactPopup(true)}
           >
             {t("contactAndFeedback.btn2")}

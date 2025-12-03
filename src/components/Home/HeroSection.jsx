@@ -69,10 +69,10 @@ const HeroSection = ({ setShowPopup }) => {
                     <div className="w-1 h-12 bg-white/40 rounded" />
                   </div>
                   <h1
-                    className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-4"
+                    className="text-white font-bold z-40 heading1 xl:leading-12 mb-4"
                     dangerouslySetInnerHTML={{ __html: t("hero.slide1.title") }}
                   ></h1>
-                  <ul className="text-gray-200 list-disc ml-4 text-sm lg:text-lg z-40 xl:text-xl mb-6">
+                  <ul className="text-gray-200 list-disc ml-4 base-text z-40  mb-6">
                     <li>{t("hero.slide1.subtitle1")} </li>
                     <li>{t("hero.slide1.subtitle2")} </li>
                     <li>{t("hero.slide1.subtitle3")} </li>
@@ -80,13 +80,13 @@ const HeroSection = ({ setShowPopup }) => {
                   <div className="flex gap-4">
                     <Link
                       to="/oncological-care"
-                      className="flex justify-center items-center bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                      className="flex justify-center items-center bg-white relative base-text z-40 text-teal-900 font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-gray-200 transition-all duration-300"
                     >
                       {t("moreBtn")}
                     </Link>
                     <button
                       onClick={() => setShowFormPopup(true)}
-                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-gray-200 transition-all duration-300"
                     >
                       {t("hero.slide1.button2")}
                     </button>
@@ -228,13 +228,13 @@ const HeroSection = ({ setShowPopup }) => {
                     </div>
                     <div className="w-1 h-12 bg-white/40 rounded" />
                   </div>
-                  <h1 className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-6">
+                  <h1 className="text-white font-bold z-40 heading1 xl:leading-12 mb-6">
                     {t("hero.slide4.title")}
                   </h1>
                   <div className="flex gap-4">
                     <Link
                       to="/services/service1"
-                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
+                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-gray-200 transition-all base-text duration-300"
                     >
                       {t("moreBtn")}
                     </Link>

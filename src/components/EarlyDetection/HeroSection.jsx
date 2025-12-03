@@ -33,18 +33,18 @@ const HeroSection = () => {
         className={` w-full md:min-h-80 flex flex-col justify-center h-full  p-6 pb-16 md:p-6 lg:p-10 xl:p-12 bg-gradient-to-b md:bg-gradient-to-r from-[#0d7431] to-[#e2cfc8]  `}
       >
         <div className="flex justify-center z-40 md:justify-start">
-          <span className="flex items-center gap-2 px-6 py-2 text-base rounded-full bg-[#c4c1af] text-white shadow">
+          <span className="flex items-center gap-2 px-6 py-2 small-text rounded-full bg-[#c4c1af] text-white shadow">
             {t("earlyDetection.hero.programBadge")}
           </span>
         </div>
 
         {/* Title */}
-        <h1 className="text-white text-4xl md:text-5xl xl:text-6xl relative z-40  font-bold mb-4">
+        <h1 className="text-white heading1 relative z-40  font-bold mb-4">
           {t("earlyDetection.hero.title")}
         </h1>
 
         {/* ✨ Animated feature slideshow */}
-        <div className="relative h-8 w-full z-40 text-center md:h-10 mb-4">
+        <div className="relative h-4 w-full z-40 text-center md:h-6 mb-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -52,7 +52,7 @@ const HeroSection = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.6 }}
-              className="absolute  mx-auto  w-full text-center  md:text-left text-[#e8dcda] drop-shadow-lg drop-shadow-black/30 text-xl md:text-3xl font-semibold"
+              className="absolute  mx-auto  w-full text-center  md:text-left text-[#e8dcda] drop-shadow-lg drop-shadow-black/30 subheading font-semibold"
             >
               {features[currentIndex]}
             </motion.div>
@@ -60,16 +60,16 @@ const HeroSection = () => {
         </div>
 
         {/* Subtitle + Description */}
-        <div className="text-white text-lg z-40 md:text-2xl font-medium mb-2 drop-shadow">
+        <div className="text-white subheading z-40  font-medium mb-2 drop-shadow">
           {t("earlyDetection.hero.subtitle")}
         </div>
-        <div className="text-white/90 text-lg z-40 font-normal max-w-2xl mx-auto mb-6 drop-shadow">
+        <div className="text-white/90 base-text z-40 font-normal max-w-2xl mx-auto mb-6 drop-shadow">
           {t("earlyDetection.hero.description")}
         </div>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-6  justify-center md:justify-start">
-          <button className="bg-white text-brand1 z-40 font-semibold px-8 py-3  rounded-lg hover:bg-transparent hover:text-white transition shadow cursor-pointer border border-white">
+          <button className="bg-white text-brand1 z-40 font-semibold px-8 py-2.5 base-text  rounded-lg hover:bg-transparent hover:text-white transition shadow cursor-pointer border border-white">
             {t("earlyDetection.hero.programButton")}
           </button>
           {/*

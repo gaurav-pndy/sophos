@@ -147,12 +147,12 @@ export default function Blogs() {
             {/* Right: Content */}
             <div className="flex flex-col w-full md:w-3/5 lg:w-2/3 md:ml-6">
               {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-semibold text-brand1 mb-3">
+              <h3 className="subheading font-semibold text-brand1 mb-3">
                 {blog.title || t("noTitle") || "Untitled"}
               </h3>
 
               {/* Published Date */}
-              <p className="text-brand2 text-sm md:text-base mb-4">
+              <p className="text-brand2 small-text mb-4">
                 {t("published") || "Published"}: {formatDate(blog.showAt)}
               </p>
 
@@ -162,7 +162,7 @@ export default function Blogs() {
                   {blog.tags.slice(0, 3).map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-brand1/20 text-brand1 rounded-full text-xs md:text-sm font-medium"
+                      className="px-3 py-1 bg-brand1/20 text-brand1 rounded-full small-text font-medium"
                     >
                       #{tag}
                     </span>
@@ -175,7 +175,7 @@ export default function Blogs() {
                 </div>
               ) : (
                 <div className="mb-4">
-                  <span className="px-3 py-1 bg-white/10 text-white/50 rounded-full text-xs md:text-sm">
+                  <span className="px-3 py-1 bg-white/10 text-white/50 rounded-full small-text">
                     {t("noTags") || "No tags"}
                   </span>
                 </div>
@@ -183,13 +183,13 @@ export default function Blogs() {
 
               {blog.description ? (
                 <p
-                  className="text-base md:text-lg leading-relaxed mb-6 line-clamp-3"
+                  className="base-text leading-relaxed mb-6 line-clamp-3"
                   dangerouslySetInnerHTML={{
                     __html: truncateDescription(blog.description),
                   }}
                 ></p>
               ) : (
-                <p className="text-white/50 text-base md:text-lg leading-relaxed mb-6 italic">
+                <p className="text-white/50 base-text leading-relaxed mb-6 italic">
                   {t("noDescription") || "No description available"}
                 </p>
               )}
@@ -198,7 +198,7 @@ export default function Blogs() {
               <div className="mt-auto">
                 <Link
                   to={`/blog/${blog._id}?lang=${currentLanguage}`}
-                  className="inline-flex items-center text-lg font-medium text-brand1 hover:text-brand2 transition-colors group"
+                  className="inline-flex items-center base-text font-medium text-brand1 hover:text-brand2 transition-colors group"
                 >
                   {t("readMore") || "Read more"}
                   <svg

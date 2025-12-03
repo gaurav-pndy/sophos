@@ -60,68 +60,72 @@ const CareSection = () => {
   return (
     <section className="w-full pt-3 pb-6">
       <div className="max-w-[87rem] text-center mx-auto px-4">
-        <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-8">
+        <h2 className="text-brand1 text-center heading1 leading-10 font-bold mb-8">
           Экспертная онкологическая помощь
         </h2>
         <div className="grid mx-auto md:grid-cols-2 gap-6 md:gap-10 bg-brand1/10 p-4 md:p-8 xl:p-12 rounded-2xl">
           {/* Left Column - Tabs */}
-<div className="flex flex-col gap-2">
-  {Object.keys(stepsData).map((tabKey) => (
-    <button
-      key={tabKey}
-      className={`
-        flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left text-[1rem] cursor-pointer
+          <div className="flex flex-col gap-2">
+            {Object.keys(stepsData).map((tabKey) => (
+              <button
+                key={tabKey}
+                className={`
+        flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
         shadow transition-all duration-300
         hover:-translate-y-[2px] hover:shadow-lg
         bg-white text-brand1
       `}
-    >
-      <div className="flex items-center">
-        {icons[tabKey]}
-        <span className="ml-3 mr-2">
-          {stepsData[tabKey].number}.
-        </span>
-        <span 
-          dangerouslySetInnerHTML={{ 
-            __html: stepsData[tabKey].title 
-          }} 
-        />
-      </div>
-    </button>
-  ))}
-  
-  {/* Tab 8 - Keep as button with dangerouslySetInnerHTML since it contains its own <a> tag */}
-  <button
-    className={`
+              >
+                <div className="flex items-center">
+                  {icons[tabKey]}
+                  <span className="ml-3 mr-2">{stepsData[tabKey].number}.</span>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: stepsData[tabKey].title,
+                    }}
+                  />
+                </div>
+              </button>
+            ))}
+
+            {/* Tab 8 - Keep as button with dangerouslySetInnerHTML since it contains its own <a> tag */}
+            <button
+              className={`
       flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left text-[1rem] cursor-pointer
       shadow transition-all duration-300
       hover:-translate-y-[2px] hover:shadow-lg
       bg-white text-brand1
     `}
-  >
-    <div className="flex items-center">
-      <FaStethoscope className="text-2xl" />
-      <span className="ml-3 mr-2">8.</span>
-      <span 
-        dangerouslySetInnerHTML={{ 
-          __html: t("care.tab8") 
-        }} 
-      />
-    </div>
-  </button>
-</div>
+            >
+              <div className="flex items-center base-text">
+                <FaStethoscope className="text-2xl" />
+                <span className="ml-3 mr-2">8.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: t("care.tab8"),
+                  }}
+                />
+              </div>
+            </button>
+          </div>
 
           {/* Right Column - Content with slide-from-bottom animation */}
           <div className="bg-brand1/10 rounded-2xl shadow-md p-8 text-left">
-            <h3 className="text-2xl text-center font-bold text-brand1 mb-6">
+            <h3 className="subheading text-center font-bold text-brand1 mb-6">
               {t("care.block1.title")}
             </h3>
-            <ul className="space-y-4 text-lg text-brand1/90">
+            <ul className="space-y-4 base-text text-brand1/90">
               <li>
-                • <span dangerouslySetInnerHTML={{ __html: t("care.block1.point1") }} />
+                •{" "}
+                <span
+                  dangerouslySetInnerHTML={{ __html: t("care.block1.point1") }}
+                />
               </li>
               <li>
-                • <span dangerouslySetInnerHTML={{ __html: t("care.block1.point2") }} />
+                •{" "}
+                <span
+                  dangerouslySetInnerHTML={{ __html: t("care.block1.point2") }}
+                />
               </li>
             </ul>
           </div>

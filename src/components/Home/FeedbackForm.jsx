@@ -314,7 +314,7 @@ const FeedbackForm = () => {
         {!showSuccessPopup && (
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-4 md:p-8 rounded-lg shadow-md border border-brand4 max-w-3xl mx-auto"
+            className="bg-white p-4 md:p-8 base-text rounded-lg shadow-md border border-brand4 max-w-3xl mx-auto"
           >
             {/* Doctor Selection (Optional) */}
             <div className="mb-6">
@@ -418,7 +418,7 @@ const FeedbackForm = () => {
                   inputClassName="!bg-transparent !border-none !w-full !px-3 !py-2 focus:!outline-none"
                 />
                 <div className="mt-2">
-                  <div className="flex flex-wrap gap-3 md:gap-4 text-brand1 text-sm">
+                  <div className="flex flex-wrap gap-3 md:gap-4 text-brand1 small-text">
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="checkbox"
@@ -604,7 +604,7 @@ const FeedbackForm = () => {
               />
               <label
                 htmlFor="form-agree1"
-                className="text-sm font-medium"
+                className="small-text font-medium"
                 dangerouslySetInnerHTML={{ __html: t("contact.checkbox1") }}
               ></label>
             </div>
@@ -618,7 +618,7 @@ const FeedbackForm = () => {
               />
               <label
                 htmlFor="form-agree2"
-                className="text-sm font-medium"
+                className="small-text font-medium"
                 dangerouslySetInnerHTML={{ __html: t("contact.checkbox2") }}
               ></label>
             </div>
@@ -626,7 +626,7 @@ const FeedbackForm = () => {
             <button
               type="submit"
               disabled={loading}
-              className="bg-brand1 cursor-pointer text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 w-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-brand1 cursor-pointer text-white font-semibold rounded-lg px-8 py-2.5 base-text shadow hover:bg-brand5/90 w-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mx-auto"></div>

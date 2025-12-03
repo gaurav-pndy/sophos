@@ -8,7 +8,7 @@ const DocumentsTab = ({ t }) => {
       name: "Устав ЭЙЧДИ КЛИНИК",
       date: "01-11-2025 22:55",
       size: "4,425 KB",
-      icon: <FaFileAlt className="text-brand1 text-3xl" />,
+      icon: <FaFileAlt className="text-brand1 text-2xl" />,
       url: "/docs/Устав ЭЙЧДИ КЛИНИК.pdf",
     },
     {
@@ -16,7 +16,7 @@ const DocumentsTab = ({ t }) => {
       name: "Карточка ЭЙЧДИ КЛИНИК",
       date: "01-11-2025 12:19",
       size: "181 KB",
-      icon: <FaFileAlt className="text-brand1 text-3xl" />,
+      icon: <FaFileAlt className="text-brand1 text-2xl" />,
       url: "/docs/Карточка ЭЙЧДИ КЛИНИК.pdf",
     },
     {
@@ -24,7 +24,7 @@ const DocumentsTab = ({ t }) => {
       name: "ОГРН ИНН ЭЙЧДИ КЛИНИК",
       date: "01-11-2025 12:19",
       size: "226 KB",
-      icon: <FaFileAlt className="text-brand1 text-3xl" />,
+      icon: <FaFileAlt className="text-brand1 text-2xl" />,
       url: "/docs/ОГРН ИНН ЭЙЧДИ КЛИНИК.pdf",
     },
     {
@@ -32,7 +32,7 @@ const DocumentsTab = ({ t }) => {
       name: "ЕГРЮЛ ЭЙЧДИ КЛИНИК",
       date: "01-11-2025 12:19",
       size: "185 KB",
-      icon: <FaFileAlt className="text-brand1 text-3xl" />,
+      icon: <FaFileAlt className="text-brand1 text-2xl" />,
       url: "/docs/ЕГРЮЛ ЭЙЧДИ КЛИНИК.pdf",
     },
   ];
@@ -41,9 +41,7 @@ const DocumentsTab = ({ t }) => {
     <div className="space-y-6">
       {/* Header */}
       <div className="space-y-3">
-        <h2 className="text-3xl md:text-4xl font-bold text-brand1">
-          Документы
-        </h2>
+        <h2 className="heading1 font-bold text-brand1">Документы</h2>
       </div>
 
       {/* Documents Grid */}
@@ -63,7 +61,7 @@ const DocumentsTab = ({ t }) => {
               </div>
 
               {/* Content */}
-              <h3 className="font-semibold text-lg text-brand1  group-hover:text-brand3 transition-colors line-clamp-2">
+              <h3 className="font-semibold base-text text-brand1  group-hover:text-brand3 transition-colors line-clamp-2">
                 {doc.name}
               </h3>
             </div>

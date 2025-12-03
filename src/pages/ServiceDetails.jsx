@@ -323,7 +323,7 @@ const ServiceDetails = ({ setShowPopup }) => {
         background: `linear-gradient(to right, ${service.color1}20, ${service.color2}20)`,
       }}
     >
-      <div className="mb-4 max-w-[87rem] mx-auto text-brand1 flex gap-2 font-semibold items-center">
+      <div className="mb-4 max-w-[87rem] mx-auto text-brand1 flex gap-2 font-semibold items-center small-text">
         {" "}
         <button
           onClick={scrollToServices}
@@ -350,7 +350,7 @@ const ServiceDetails = ({ setShowPopup }) => {
             }, ${service.color1}, ${service.color2})`,
           }}
         >
-          <h1 className="text-white z-40 text-3xl md:text-[2.5rem] font-bold mb-8">
+          <h1 className="text-white z-40 heading1 font-bold mb-8">
             {t(service.title)}
           </h1>
           {/* <p className="text-white text-lg md:text-2xl mb-6 drop-shadow">
@@ -359,13 +359,13 @@ const ServiceDetails = ({ setShowPopup }) => {
           <div className="flex gap-4">
             <button
               onClick={() => setShowPopup(true)}
-              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-white text-brand1 text-lg font-medium hover:text-white hover:bg-transparent cursor-pointer transition-all duration-300 border border-white "
+              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-2.5 rounded-lg bg-white text-brand1 base-text font-medium hover:text-white hover:bg-transparent cursor-pointer transition-all duration-300 border border-white "
             >
               {service.btn ? t(service.btn) : t("services.s1.btn")}
             </button>
             <button
               onClick={() => setIsContactPopupOpen(true)}
-              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-3 rounded-lg bg-transparent  text-white text-lg font-medium hover: hover:text-brand1 hover:bg-white cursor-pointer transition-all duration-300 border border-white "
+              className="flex relative z-40 items-center justify-center gap-2 w-full md:w-fit px-6 py-2.5 rounded-lg bg-transparent  text-white base-text font-medium hover: hover:text-brand1 hover:bg-white cursor-pointer transition-all duration-300 border border-white "
             >
               {t("services.contactPopup")}
             </button>
@@ -408,7 +408,7 @@ const ServiceDetails = ({ setShowPopup }) => {
         {TABS.map((tab) => (
           <button
             key={tab.key}
-            className={`flex-1 cursor-pointer text-lg py-3 rounded-lg font-semibold transition ${
+            className={`flex-1 cursor-pointer base-text py-3 rounded-lg font-semibold transition ${
               activeTab === tab.key
                 ? "bg-white shadow"
                 : "text-white hover:bg-white/20"
@@ -427,7 +427,7 @@ const ServiceDetails = ({ setShowPopup }) => {
       <div className="max-w-[87rem] mx-auto ">
         {/* О УСЛУГЕ */}
         {activeTab === "about" && (
-          <div className="bg-white rounded-2xl shadow p-8 text-lg ">
+          <div className="bg-white rounded-2xl shadow p-8 base-text ">
             <div
               style={{
                 color: service.color1,
@@ -439,7 +439,7 @@ const ServiceDetails = ({ setShowPopup }) => {
         )}
         {activeTab === "diseases" && (
           <div
-            className="bg-white rounded-2xl shadow p-8 text-lg "
+            className="bg-white rounded-2xl shadow p-8 base-text "
             style={{
               color: service.color1,
             }}
@@ -554,7 +554,7 @@ const ServiceDetails = ({ setShowPopup }) => {
                             alt={doc.name}
                             className="w-full h-64 object-cover object-top rounded-lg"
                           />
-                          <div className="font-bold text-black text-xl mt-4 mb-3">
+                          <div className="font-bold text-black subheading mt-4 mb-3">
                             {doc.name}
                           </div>
                           <div className="flex flex-wrap gap-1 mb-3">
@@ -570,13 +570,13 @@ const ServiceDetails = ({ setShowPopup }) => {
                         </div>
                         <button
                           onClick={() => setShowPopup(true)}
-                          className="mt-4 px-6 py-2.5 w-full border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                          className="mt-4 px-6 py-2.5 base-text w-full border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
                         >
                           {t("doctors.btn1")}
                         </button>
                         <Link
                           to={`/doctors/${doc.id}`}
-                          className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                          className="mt-2 px-6 py-2.5 w-full base-text border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
                         >
                           {t("doctors.btn2")}
                         </Link>
@@ -588,7 +588,7 @@ const ServiceDetails = ({ setShowPopup }) => {
                 <div className="w-full mt-10 flex justify-center">
                   <Link
                     to={"/doctors"}
-                    className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit"
+                    className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-2.5 base-text shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit"
                   >
                     {t("moreBtn")}
                   </Link>
@@ -610,7 +610,7 @@ const ServiceDetails = ({ setShowPopup }) => {
                           alt={t(doc.name)}
                           className="w-full h-60 object-top object-cover rounded-lg"
                         />
-                        <div className="font-bold text-black text-xl mt-4 mb-3">
+                        <div className="font-bold text-black subheading mt-4 mb-3">
                           {t(doc.name)}
                         </div>
                         <div className="flex flex-wrap gap-1 mb-3">
@@ -640,7 +640,7 @@ const ServiceDetails = ({ setShowPopup }) => {
                           {t(doc.langs)}
                         </div>
                       </div>
-                      <button className="mt-4 px-6 py-2.5 w-full bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center">
+                      <button className="mt-4 px-6 py-2.5 w-full bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all base-text duration-300 shadow-lg shadow-brand1/30 text-center">
                         {t("doctors.viewProfile")}
                       </button>
                     </Link>
@@ -652,7 +652,7 @@ const ServiceDetails = ({ setShowPopup }) => {
         {/* ОТЗЫВЫ */}
         {activeTab === "reviews" && (
           <div className="bg-white rounded-2xl shadow p-8">
-            <div className="text-brand1/70">
+            <div className="text-brand1/70 base-text">
               Отзывов еще нет, либо они не добавлены.
             </div>
           </div>
@@ -661,7 +661,7 @@ const ServiceDetails = ({ setShowPopup }) => {
         {activeTab === "prices" && (
           <div className="bg-white rounded-2xl shadow p-8">
             {/* Insert your pricing table here */}
-            <div className="text-brand1 font-bold text-xl mb-3">
+            <div className="text-brand1 font-bold subheading mb-3">
               Стоимость консультации
             </div>
           </div>

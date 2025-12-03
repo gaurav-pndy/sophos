@@ -54,10 +54,10 @@ const Footer = ({ city }) => {
 
         {/* Column 2: Navigation links */}
         <div className="flex-1">
-          <h3 className="text-lg font-semibold mb-4">
+          <h3 className="base-text font-semibold mb-4">
             {t("footer.navigation")}
           </h3>
-          <div className="flex md:grid md:grid-cols-1 flex-col gap-1">
+          <div className="flex md:grid base-text md:grid-cols-1 flex-col gap-1">
             <button
               onClick={() => handleScrollToSection("#about")}
               className=" hover:text-brand2 text-left cursor-pointer"
@@ -90,10 +90,8 @@ const Footer = ({ city }) => {
         </div>
 
         {/* Column 3: Documents */}
-        <div className="flex-1">
-          <h3 className="text-lg font-semibold mb-4">
-            {t("footer.documents")}
-          </h3>
+        <div className="flex-1 base-text">
+          <h3 className=" font-semibold mb-4">{t("footer.documents")}</h3>
           <div className="flex flex-col gap-1 text-white/90">
             <Link to="/about#licenses" className="hover:underline">
               {t("footer.licenses")}
@@ -105,8 +103,8 @@ const Footer = ({ city }) => {
         </div>
 
         {/* Column 4: Contact info */}
-        <div className="flex-1 text-sm">
-          <h3 className="text-lg font-semibold mb-4">
+        <div className="flex-1 small-text">
+          <h3 className="base-text font-semibold mb-4">
             {}
             {t("footer.contact")}
           </h3>
@@ -199,7 +197,7 @@ const Footer = ({ city }) => {
       </div>
 
       {/* Copyright */}
-      <div className="text-center text-white/60 text-sm mt-4">
+      <div className="text-center text-white/60 small-text mt-4">
         {t("footer.copyright")}
       </div>
     </footer>

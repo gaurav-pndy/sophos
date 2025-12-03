@@ -19,11 +19,11 @@ const ServicesSection = () => {
             custStyle="md:w-1/2 h-[65%] left-0 top-0"
           />
           <div className="text-left  w-full md:min-h-96  h-full  p-6 pb-16 md:p-6 flex flex-col  bg-gradient-to-b md:bg-gradient-to-r from-[#012135] to-[#4378a0]">
-            <h2 className="text-white z-40 text-[2rem] leading-10 font-bold mb-4">
+            <h2 className="text-white z-40 heading1 leading-10 font-bold mb-4">
               {t("services.title")}
             </h2>
             <p
-              className="md:text-lg z-40 text-white"
+              className="base-text z-40 text-white"
               dangerouslySetInnerHTML={{ __html: t("services.subtitle") }}
             ></p>
           </div>
@@ -58,7 +58,7 @@ const ServicesSection = () => {
               </div>
 
               <div>
-                <h3 className="text-left group-hover:text-brand2 group-hover:scale-105 transition-all duration-300 cursor-pointer text-gray-900 mb-1 text-lg leading-snug">
+                <h3 className="text-left group-hover:text-brand2 group-hover:scale-105 transition-all duration-300 cursor-pointer text-gray-900 mb-1 base-text leading-snug">
                   {t(service.title)}
                 </h3>
               </div>

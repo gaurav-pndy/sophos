@@ -73,12 +73,12 @@ const AboutSection = () => {
             {/* Left - Text & Features */}
             <div className="flex flex-col gap-4">
               <h2
-                className="text-black text-[2rem] leading-10 font-bold relative z-40 "
+                className="text-black heading1 leading-10 font-bold relative z-40 "
                 dangerouslySetInnerHTML={{ __html: t("aboutClinic.title") }}
               ></h2>
 
               <div
-                className="text-black md:text-lg"
+                className="text-black base-text"
                 dangerouslySetInnerHTML={{ __html: t("aboutClinic.desc") }}
               ></div>
 
@@ -90,7 +90,7 @@ const AboutSection = () => {
                       {f.icon}
                     </div>
                     <div>
-                      <div className="text-black z-40 md:text-lg leading-tight font-semibold">
+                      <div className="text-black z-40 base-text leading-tight font-semibold">
                         {t(f.desc)}
                       </div>
                     </div>
@@ -98,7 +98,7 @@ const AboutSection = () => {
                 ))}
               </div>
 
-              <p className="font-bold text-black text-lg ">
+              <p className="font-bold text-black base-text ">
                 {t("aboutClinic.footnote")}
               </p>
 
@@ -106,13 +106,13 @@ const AboutSection = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to={"/about"}
-                  className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
+                  className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-2.5 base-text shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
                 >
                   {t("moreBtn")}
                 </Link>
                 <button
                   onClick={() => setShowBookingPopup(true)}
-                  className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
+                  className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-2.5 base-text shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"
                 >
                   {t("aboutClinic.bookBtn")}
                 </button>

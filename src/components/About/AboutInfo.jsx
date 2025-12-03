@@ -25,15 +25,15 @@ const AboutInfo = ({ city }) => {
       {/* Main Card */}
       <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-6 ">
         {/* Header Section */}
-        <div className="flex lg:items-center gap-4 mb-8">
-          <div className="flex h-14 w-14 items-center justify-center bg-gradient-to-br from-[#125e84] to-[#33babd] rounded-xl shrink-0 shadow-md mt-2 lg:mt-0">
-            <FaHospital className="text-white text-2xl" />
+        <div className="flex flex-col md:flex-row lg:items-center gap-4 mb-8">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#125e84] to-[#33babd] rounded-xl shrink-0 shadow-md mt-2 lg:mt-0">
+            <FaHospital className="text-white text-3xl" />
           </div>
           <div className="flex-1">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#125e84] mb-1">
+            <h3 className="heading1 font-bold text-[#125e84] ">
               {t("about.info.title")}
             </h3>
-            <p className="text-[#125e84]/70 text-base md:text-lg">
+            <p className="text-[#125e84]/70 base-text">
               {t("about.info.subtitle")}
             </p>
           </div>
@@ -45,11 +45,11 @@ const AboutInfo = ({ city }) => {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <FaClipboardList className="text-2xl text-[#63cacc]" />
-              <span className="font-semibold text-lg text-[#125e84]">
+              <span className="font-semibold subheading text-[#125e84]">
                 {t("about.info.fullName")}
               </span>
             </div>
-            <p className="text-[#125e84]/80 leading-relaxed ml-9">
+            <p className="text-[#125e84]/80 base-text leading-relaxed ml-9">
               {city === "Moscow"
                 ? t("about.info.companyName1")
                 : t("about.info.companyName2")}
@@ -60,7 +60,7 @@ const AboutInfo = ({ city }) => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <FaMapMarkerAlt className="text-2xl text-[#63cacc]" />
-              <span className="font-semibold text-lg text-[#125e84]">
+              <span className="font-semibold subheading text-[#125e84]">
                 {t("about.info.locations")}
               </span>
             </div>
@@ -69,7 +69,7 @@ const AboutInfo = ({ city }) => {
                 {/* <span className="bg-[#63cacc]/50 text-[#125e84] font-medium rounded-full text-xs px-3 py-1 w-fit">
                   {t("about.info.moscow")}
                 </span> */}
-                <p className="text-[#125e84]/80 text-sm leading-relaxed">
+                <p className="text-[#125e84]/80 base-text leading-relaxed">
                   {city === "Moscow"
                     ? t("about.info.moscowAddress")
                     : t("about.info.makhachkalaAddress")}
@@ -82,28 +82,28 @@ const AboutInfo = ({ city }) => {
         {/* Registration Details */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 border-b border-[#63cacc]/20 pb-8 mb-8">
           <div className="space-y-1">
-            <div className="font-bold text-[#63cacc] text-sm uppercase tracking-wide">
+            <div className="font-bold text-[#63cacc] small-text uppercase tracking-wide">
               {t("about.info.ogrn")}
             </div>
-            <div className="text-[#125e84]/90 font-medium">
+            <div className="text-[#125e84]/90 font-medium base-text">
               {city === "Moscow"
                 ? "1247700412068, 04.06.2024"
                 : "1190571014545, 11.11.2019"}
             </div>
           </div>
           <div className="space-y-1">
-            <div className="font-bold text-[#63cacc] text-sm uppercase tracking-wide">
+            <div className="font-bold text-[#63cacc] small-text uppercase tracking-wide">
               {t("about.info.tax")}
             </div>
-            <div className="text-[#125e84]/90 font-medium">
+            <div className="text-[#125e84]/90 font-medium base-text">
               {city === "Moscow" ? "9727077651" : "0572024746"}
             </div>
           </div>
           <div className="space-y-1">
-            <div className="font-bold text-[#63cacc] text-sm uppercase tracking-wide">
+            <div className="font-bold text-[#63cacc] small-text uppercase tracking-wide">
               {t("about.info.checkpoint")}
             </div>
-            <div className="text-[#125e84]/90 font-medium">
+            <div className="text-[#125e84]/90 font-medium base-text">
               {city === "Moscow" ? "772701001" : "057201001"}
             </div>
           </div>
@@ -115,11 +115,11 @@ const AboutInfo = ({ city }) => {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <FaUserTie className="text-xl text-[#63cacc]" />
-              <span className="font-semibold text-lg text-[#125e84]">
+              <span className="font-semibold subheading text-[#125e84]">
                 {t("about.info.owners")}
               </span>
             </div>
-            <p className="text-[#125e84]/80 leading-relaxed ml-8">
+            <p className="text-[#125e84]/80 leading-relaxed base-text ml-8">
               {t("about.info.ownersDesc")}
             </p>
           </div>
@@ -128,11 +128,11 @@ const AboutInfo = ({ city }) => {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <FaClipboardList className="text-xl text-[#63cacc]" />
-              <span className="font-semibold text-lg text-[#125e84]">
+              <span className="font-semibold subheading text-[#125e84]">
                 {t("about.info.management")}
               </span>
             </div>
-            <ul className="ml-8 text-[#125e84]/80 space-y-2 list-disc list-outside">
+            <ul className="ml-8 text-[#125e84]/80 space-y-2 list-disc list-outsid base-text">
               <li className="leading-relaxed">
                 {city === "Moscow"
                   ? t("about.info.point3")
@@ -153,11 +153,11 @@ const AboutInfo = ({ city }) => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <FaRegClock className="text-xl text-[#63cacc]" />
-              <span className="font-semibold text-lg text-[#125e84]">
+              <span className="font-semibold subheading text-[#125e84]">
                 {t("about.info.schedule")}
               </span>
             </div>
-            <div className="text-[#125e84]/80 leading-relaxed ml-8 ">
+            <div className="text-[#125e84]/80 base-text leading-relaxed ml-8 ">
               {t("about.info.scheduleDesc")}
             </div>
           </div>
@@ -166,12 +166,12 @@ const AboutInfo = ({ city }) => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <FaPhoneAlt className="text-xl text-[#63cacc]" />
-              <span className="font-semibold text-lg text-[#125e84]">
+              <span className="font-semibold subheading text-[#125e84]">
                 {t("about.info.serviceContacts")}
               </span>
             </div>
             <div className="text-[#125e84]/80 leading-relaxed ml-8 ">
-              <p className="font-medium">
+              <p className="font-medium base-text">
                 {city === "Moscow" ? "+7 (499) 685 3000" : ""}{" "}
               </p>
             </div>
@@ -182,10 +182,10 @@ const AboutInfo = ({ city }) => {
         <div className="flex items-start gap-4 bg-[#63cacc]/10 rounded-xl p-6">
           <FaCalendarCheck className="text-[#63cacc] text-2xl shrink-0 mt-1" />
           <div className="space-y-2">
-            <div className="font-semibold text-lg text-[#125e84]">
+            <div className="font-semibold subheading text-[#125e84]">
               {t("about.info.chiefReception")}
             </div>
-            <div className="text-[#125e84]/80 leading-relaxed ">
+            <div className="text-[#125e84]/80 base-text leading-relaxed ">
               {t("about.info.receptionDesc")}
             </div>
           </div>

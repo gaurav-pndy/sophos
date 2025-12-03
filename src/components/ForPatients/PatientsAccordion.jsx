@@ -64,10 +64,10 @@ const PatientsAccordion = () => {
                 {panel.icon}
               </div>
               <div>
-                <div className="text-lg md:text-xl font-semibold text-brand1">
+                <div className="subheading font-semibold text-brand1">
                   {t(panel.title)}
                 </div>
-                <div className="text-brand1/80 text-sm md:text-base">
+                <div className="text-brand1/80 base-text">
                   {t(panel.subtitle)}
                 </div>
               </div>
@@ -103,7 +103,7 @@ const PatientsAccordion = () => {
               >
                 <div className="px-7 pb-8 pt-0 accordion-content">
                   <div
-                    className="prose max-w-none text-brand1 text-base"
+                    className="prose max-w-none text-brand1 base-text"
                     dangerouslySetInnerHTML={{ __html: t(panel.contentKey) }}
                   />
                 </div>

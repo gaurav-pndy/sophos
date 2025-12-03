@@ -144,46 +144,49 @@ const DoctorDetails = ({ setShowPopup }) => {
 
   // Define all possible tabs with their conditions
   const ALL_TABS = [
-    { 
-      key: "about", 
+    {
+      key: "about",
       labelKey: "doctors.tabs.tab1",
-      condition: formattedDoctor?.about || 
-                formattedDoctor?.internationalMemberships || 
-                formattedDoctor?.russianMemberships || 
-                formattedDoctor?.awards || 
-                formattedDoctor?.regalia
+      condition:
+        formattedDoctor?.about ||
+        formattedDoctor?.internationalMemberships ||
+        formattedDoctor?.russianMemberships ||
+        formattedDoctor?.awards ||
+        formattedDoctor?.regalia,
     },
-    { 
-      key: "experience", 
+    {
+      key: "experience",
       labelKey: "doctors.tabs.tab2",
-      condition: formattedDoctor?.workExperience || 
-                formattedDoctor?.education || 
-                formattedDoctor?.advancedTraining
+      condition:
+        formattedDoctor?.workExperience ||
+        formattedDoctor?.education ||
+        formattedDoctor?.advancedTraining,
     },
-    { 
-      key: "activities", 
+    {
+      key: "activities",
       labelKey: "doctors.tabs.tab3",
-      condition: formattedDoctor?.scientificActivities
+      condition: formattedDoctor?.scientificActivities,
     },
-    { 
-      key: "professionalDevelopments", 
+    {
+      key: "professionalDevelopments",
       labelKey: "doctors.tabs.tab6",
-      condition: formattedDoctor?.professionalDevelopments
+      condition: formattedDoctor?.professionalDevelopments,
     },
-    { 
-      key: "reviews", 
+    {
+      key: "reviews",
       labelKey: "doctors.tabs.tab4",
-      condition: formattedDoctor?.reviews && formattedDoctor.reviews.length > 0
+      condition: formattedDoctor?.reviews && formattedDoctor.reviews.length > 0,
     },
-    { 
-      key: "video", 
+    {
+      key: "video",
       labelKey: "doctors.tabs.tab5",
-      condition: formattedDoctor?.videoUrl && formattedDoctor.videoUrl.length > 0
+      condition:
+        formattedDoctor?.videoUrl && formattedDoctor.videoUrl.length > 0,
     },
   ];
 
   // Filter tabs to only show those with content
-  const ACTIVE_TABS = ALL_TABS.filter(tab => tab.condition);
+  const ACTIVE_TABS = ALL_TABS.filter((tab) => tab.condition);
 
   const sectionRefs = {
     about: useRef(null),
@@ -343,11 +346,11 @@ const DoctorDetails = ({ setShowPopup }) => {
 
             <button
               onClick={() => setShowPopup(true)}
-              className="w-full bg-brand1 text-white rounded-2xl py-3 font-semibold text-lg mb-2 hover:bg-brand5 transition-all shadow"
+              className="w-full bg-brand1 text-white rounded-2xl py-2.5 font-semibold base-text mb-2 hover:bg-brand5 transition-all shadow"
             >
               {t("doctors.bookAppt")}
             </button>
-            <button className="w-full border-2 border-brand1 text-brand1 rounded-2xl py-3 font-semibold text-lg bg-white hover:bg-brand4/10 transition-all shadow">
+            <button className="w-full border-2 border-brand1 text-brand1 rounded-2xl py-2.5 font-semibold base-text bg-white hover:bg-brand4/10 transition-all shadow">
               {t("doctors.onlineConsult")}
             </button>
           </div>
@@ -357,7 +360,7 @@ const DoctorDetails = ({ setShowPopup }) => {
         <main className="flex-1 min-w-0">
           <div className="bg-white rounded-3xl shadow-xl border border-brand4/10 px-6 md:px-10 py-8">
             <div className="flex">
-              <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold text-brand1 mb-4">
+              <h1 className="heading1 font-semibold text-brand1 mb-4">
                 <span className="uppercase">
                   {" "}
                   {formattedDoctor.lastName[i18n.language]}
@@ -369,16 +372,16 @@ const DoctorDetails = ({ setShowPopup }) => {
 
             {/* Position */}
             {formattedDoctor.position && (
-              <p className="text-brand1 text-xl font-medium mb-4">
+              <p className="text-brand1 base-text font-medium mb-4">
                 {formattedDoctor.position}
               </p>
             )}
 
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap  gap-2 mb-4">
               {formattedDoctor.tags.map((tag, i) => (
                 <span
                   key={i}
-                  className="px-4 py-1.5 bg-brand4/20 text-brand1 rounded-full text-base font-semibold border border-brand4/30"
+                  className="px-4 py-1.5 bg-brand4/20 text-brand1 rounded-full base-text font-semibold border border-brand4/30"
                 >
                   {tag}
                 </span>
@@ -391,7 +394,7 @@ const DoctorDetails = ({ setShowPopup }) => {
 
             {/* Only show tabs if there are active tabs */}
             {ACTIVE_TABS.length > 0 && (
-              <nav className="flex gap-6 mb-5 overflow-x-auto scrollbar-none px-2">
+              <nav className="flex gap-6 mt-5 overflow-x-auto scrollbar-none px-2">
                 {ACTIVE_TABS.map((tab) => (
                   <button
                     key={tab.key}
@@ -407,20 +410,25 @@ const DoctorDetails = ({ setShowPopup }) => {
 
           <div className="mt-8 bg-white rounded-3xl shadow-xl border border-brand4/10 px-6 md:px-10 py-8">
             {/* About Section */}
-            {(formattedDoctor.about || 
-              formattedDoctor.internationalMemberships || 
-              formattedDoctor.russianMemberships || 
-              formattedDoctor.awards || 
+            {(formattedDoctor.about ||
+              formattedDoctor.internationalMemberships ||
+              formattedDoctor.russianMemberships ||
+              formattedDoctor.awards ||
               formattedDoctor.regalia) && (
-              <section ref={sectionRefs.about} className="pt-2 pb-6 scroll-mt-28">
-                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+              <section
+                ref={sectionRefs.about}
+                className="pt-2 pb-6 scroll-mt-28"
+              >
+                <h2 className=" border-b pb-2 border-brand5 heading1 font-semibold text-brand1 mb-10">
                   {t("doctors.tabs.tab1")}
                 </h2>
-                <div className="text-gray-700">
+                <div className="text-gray-700 base-text">
                   {formattedDoctor.about && (
                     <div
                       className="prose max-w-none"
-                      dangerouslySetInnerHTML={{ __html: formattedDoctor.about }}
+                      dangerouslySetInnerHTML={{
+                        __html: formattedDoctor.about,
+                      }}
                     />
                   )}
 
@@ -428,20 +436,20 @@ const DoctorDetails = ({ setShowPopup }) => {
                   {(formattedDoctor.internationalMemberships ||
                     formattedDoctor.russianMemberships) && (
                     <div className="mt-8">
-                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 subheading mb-5 text-brand1">
                         <span className="bg-brand3 p-2.5 rounded-lg">
-                          <FaUserTie className="shrink-0 text-2xl text-white" />
+                          <FaUserTie className="shrink-0  text-white" />
                         </span>{" "}
                         {t("doctors.membershipsTitle")}
                       </h2>
 
                       {formattedDoctor.internationalMemberships && (
                         <>
-                          <h3 className="text-lg text-black font-semibold mb-2">
+                          <h3 className="base-text text-black font-semibold mb-2">
                             {t("doctors.international")}
                           </h3>
                           <div
-                            className="prose max-w-none"
+                            className="prose base-text max-w-none"
                             dangerouslySetInnerHTML={{
                               __html: formattedDoctor.internationalMemberships,
                             }}
@@ -451,11 +459,11 @@ const DoctorDetails = ({ setShowPopup }) => {
 
                       {formattedDoctor.russianMemberships && (
                         <>
-                          <h3 className="text-lg text-black font-semibold mb-2 mt-6">
+                          <h3 className="base-text text-black font-semibold mb-2 mt-6">
                             {t("doctors.russian")}
                           </h3>
                           <div
-                            className="prose max-w-none"
+                            className="prose base-text max-w-none"
                             dangerouslySetInnerHTML={{
                               __html: formattedDoctor.russianMemberships,
                             }}
@@ -468,14 +476,14 @@ const DoctorDetails = ({ setShowPopup }) => {
                   {/* Awards */}
                   {formattedDoctor.awards && (
                     <div className="mt-8">
-                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 subheading mb-5 text-brand1">
                         <span className="bg-brand3 p-2.5 rounded-lg">
-                          <FaAward className="shrink-0 text-2xl text-white" />
+                          <FaAward className="shrink-0 text-white" />
                         </span>{" "}
                         {t("doctors.awardsTitle")}
                       </h2>
                       <div
-                        className="prose max-w-none"
+                        className="prose base-text max-w-none"
                         dangerouslySetInnerHTML={{
                           __html: formattedDoctor.awards,
                         }}
@@ -486,13 +494,13 @@ const DoctorDetails = ({ setShowPopup }) => {
                   {/* Regalia */}
                   {formattedDoctor.regalia && (
                     <div className="mt-8">
-                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 subheading mb-5 text-brand1">
                         <span className="bg-brand3 p-2.5 rounded-lg">
-                          <GiDiploma className="shrink-0 text-2xl text-white" />
+                          <GiDiploma className="shrink-0  text-white" />
                         </span>{" "}
                         {t("doctors.regaliaTitle")}
                       </h2>
-                      <p>{formattedDoctor.regalia}</p>
+                      <p className="base-text">{formattedDoctor.regalia}</p>
                     </div>
                   )}
                 </div>
@@ -500,22 +508,22 @@ const DoctorDetails = ({ setShowPopup }) => {
             )}
 
             {/* Experience & Education Section */}
-            {(formattedDoctor.workExperience || 
-              formattedDoctor.education || 
+            {(formattedDoctor.workExperience ||
+              formattedDoctor.education ||
               formattedDoctor.advancedTraining) && (
               <section
                 ref={sectionRefs.experience}
                 className="pt-2 pb-0 scroll-mt-28 mt-16"
               >
-                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                <h2 className="heading1 border-b pb-2 border-brand5  font-semibold text-brand1 mb-10">
                   {t("doctors.tabs.tab2")}
                 </h2>
-                <div className="text-gray-700">
+                <div className="text-gray-700 base-text">
                   {formattedDoctor.workExperience && (
                     <div className="mb-8">
-                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 subheading mb-5 text-brand1">
                         <span className="bg-brand3 p-2.5 rounded-lg">
-                          <MdWork className="shrink-0 text-2xl text-white" />
+                          <MdWork className="shrink-0  text-white" />
                         </span>{" "}
                         {t("doctors.expTitle")}
                       </h2>
@@ -530,9 +538,9 @@ const DoctorDetails = ({ setShowPopup }) => {
 
                   {formattedDoctor.education && (
                     <div className="mb-8">
-                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 subheading mb-5 text-brand1">
                         <span className="bg-brand3 p-2.5 rounded-lg">
-                          <FaGraduationCap className="shrink-0 text-2xl text-white" />
+                          <FaGraduationCap className="shrink-0  text-white" />
                         </span>{" "}
                         {t("doctors.eduTitle")}
                       </h2>
@@ -547,9 +555,9 @@ const DoctorDetails = ({ setShowPopup }) => {
 
                   {formattedDoctor.advancedTraining && (
                     <div className="mb-8">
-                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 text-[1.6rem] mb-5 text-brand1">
+                      <h2 className="font-semibold flex items-center gap-2 md:gap-4 subheading mb-5 text-brand1">
                         <span className="bg-brand3 p-2.5 rounded-lg">
-                          <FaChalkboardTeacher className="shrink-0 text-2xl text-white" />
+                          <FaChalkboardTeacher className="shrink-0  text-white" />
                         </span>{" "}
                         {t("doctors.advancedTrainingTitle")}
                       </h2>
@@ -571,12 +579,12 @@ const DoctorDetails = ({ setShowPopup }) => {
                 ref={sectionRefs.activities}
                 className="pt-2 pb-0 scroll-mt-28 mt-16"
               >
-                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                <h2 className="heading1 border-b pb-2 border-brand5  font-semibold text-brand1 mb-10">
                   {t("doctors.tabs.tab3")}
                 </h2>
                 {formattedDoctor.scientificActivities && (
                   <div
-                    className="prose max-w-none text-gray-700"
+                    className="prose max-w-none base-text text-gray-700"
                     dangerouslySetInnerHTML={{
                       __html: formattedDoctor.scientificActivities,
                     }}
@@ -591,12 +599,12 @@ const DoctorDetails = ({ setShowPopup }) => {
                 ref={sectionRefs.professionalDevelopments}
                 className="pt-2 pb-0 scroll-mt-28 mt-16"
               >
-                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
+                <h2 className="heading1 border-b pb-2 border-brand5  font-semibold text-brand1 mb-10">
                   {t("doctors.tabs.tab6")}
                 </h2>
                 {formattedDoctor.professionalDevelopments && (
                   <div
-                    className="prose max-w-none text-gray-700"
+                    className="prose max-w-none base-text text-gray-700"
                     dangerouslySetInnerHTML={{
                       __html: formattedDoctor.professionalDevelopments,
                     }}
@@ -674,33 +682,34 @@ const DoctorDetails = ({ setShowPopup }) => {
             */}
 
             {/* Video Section */}
-            {formattedDoctor.videoUrl && formattedDoctor.videoUrl.length > 0 && (
-              <section
-                ref={sectionRefs.video}
-                className="pt-2 pb-0 scroll-mt-28 mt-16"
-              >
-                <h2 className="text-xl border-b pb-2 border-brand5 md:text-4xl font-semibold text-brand1 mb-10">
-                  {t("doctors.tabs.tab5")}
-                </h2>
+            {formattedDoctor.videoUrl &&
+              formattedDoctor.videoUrl.length > 0 && (
+                <section
+                  ref={sectionRefs.video}
+                  className="pt-2 pb-0 scroll-mt-28 mt-16"
+                >
+                  <h2 className="heading1 border-b pb-2 border-brand5  font-semibold text-brand1 mb-10">
+                    {t("doctors.tabs.tab5")}
+                  </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                  {formattedDoctor.videoUrl.map((video, i) => (
-                    <div
-                      key={i}
-                      className="aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
-                    >
-                      <iframe
-                        src={video}
-                        title={`Video ${i + 1}`}
-                        allowFullScreen
-                        className="w-full h-full border-none"
-                        loading="lazy"
-                      ></iframe>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    {formattedDoctor.videoUrl.map((video, i) => (
+                      <div
+                        key={i}
+                        className="aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                      >
+                        <iframe
+                          src={video}
+                          title={`Video ${i + 1}`}
+                          allowFullScreen
+                          className="w-full h-full border-none"
+                          loading="lazy"
+                        ></iframe>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
           </div>
         </main>
       </div>

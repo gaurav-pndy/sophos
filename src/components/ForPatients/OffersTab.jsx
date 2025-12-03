@@ -54,7 +54,7 @@ const OffersTab = () => {
     return (
       <div className="mb-4">
         <div
-          className={`text-gray-600 text-sm leading-relaxed ${
+          className={`text-gray-600 base-text leading-relaxed ${
             isExpanded ? "" : "line-clamp-2"
           }`}
           dangerouslySetInnerHTML={createMarkup(description)}
@@ -284,12 +284,12 @@ const OffersTab = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-3 mb-2">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-brand1">
+            <h2 className="heading1 font-bold text-brand1">
               {t("forPatientsPage.heading3")}
             </h2>
           </div>
         </div>
-        <p className="text-gray-600 text-lg leading-relaxed">
+        <p className="text-gray-600 base-text leading-relaxed">
           {t("forPatientsPage.text3")}
         </p>
       </div>
@@ -305,16 +305,16 @@ const OffersTab = () => {
               >
                 {/* Popularity Badge */}
                 {offer.popularity > 80 && (
-                  <div className="absolute top-4 left-4 z-10 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow-lg">
-                    <FaStar className="text-xs" />
+                  <div className="absolute top-4 left-4 z-10 bg-yellow-500 text-white px-3 py-1 rounded-full small-text font-semibold flex items-center gap-1 shadow-lg">
+                    <FaStar className="" />
                     {t("forPatientsPage.offers.popular")}
                   </div>
                 )}
 
                 {/* Days Left Badge */}
                 {offer.daysLeft !== null && offer.daysLeft <= 7 && (
-                  <div className="absolute top-4 right-4 z-10 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow-lg">
-                    <FaClock className="text-xs" />
+                  <div className="absolute top-4 right-4 z-10 bg-red-500 text-white px-3 py-1 rounded-full small-text font-semibold flex items-center gap-1 shadow-lg">
+                    <FaClock className="small-text" />
                     {t("forPatientsPage.offers.daysLeft", {
                       count: offer.daysLeft,
                     })}
@@ -355,14 +355,14 @@ const OffersTab = () => {
                 <div className="p-6 flex flex-col flex-grow">
                   {/* Category and Discount */}
                   <div className="flex justify-between items-start mb-4">
-                    <span className="inline-block bg-brand4/20 text-brand1 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="inline-block bg-brand4/20 text-brand1 px-3 py-1 rounded-full small-text font-medium">
                       {offer.category}
                     </span>
                   </div>
 
                   {/* Title */}
                   <h3
-                    className="text-xl font-bold text-gray-900 mb-2 line-clamp-2 leading-tight"
+                    className="subheading font-bold text-gray-900 mb-2 line-clamp-2 leading-tight"
                     dangerouslySetInnerHTML={createMarkup(offer.title)}
                   />
 
@@ -374,7 +374,7 @@ const OffersTab = () => {
 
                   {/* Validity - Only show if available */}
                   {offer.validity && (
-                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                    <div className="flex items-center gap-2 small-text text-gray-500 mb-4">
                       <FaClock className="text-gray-400" />
                       <span>{offer.validity}</span>
                     </div>
@@ -392,7 +392,7 @@ const OffersTab = () => {
                         setSelectedOffer(offer);
                       }
                     }}
-                    className="w-full bg-gradient-to-r from-brand1 to-brand3 text-white py-3 px-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn mt-4"
+                    className="w-full bg-gradient-to-r from-brand1 to-brand3 text-white py-2.5 base-text px-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn mt-4"
                   >
                     {offer.buttonText}
                     <FaArrowRight className="group-hover/btn:translate-x-1 transition-transform duration-300" />
@@ -410,20 +410,20 @@ const OffersTab = () => {
           <div className="w-24 h-24 bg-gradient-to-r from-gray-200 to-gray-300 rounded-3xl flex items-center justify-center mx-auto mb-6">
             <FaTag className="text-gray-400 text-3xl" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-3">
+          <h3 className="subheading font-bold text-gray-900 mb-3">
             {t("forPatientsPage.offers.noOffers.title")}
           </h3>
-          <p className="text-gray-600 mb-8 max-w-md mx-auto">
+          <p className="text-gray-600 mb-8 base-text max-w-md mx-auto">
             {t("forPatientsPage.offers.noOffers.description")}
           </p>
           <div className="flex gap-4 justify-center">
             <button
               onClick={fetchActivePromos}
-              className="px-8 py-3 bg-gradient-to-r from-brand1 to-brand3 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+              className="px-8 py-2.5 base-text bg-gradient-to-r from-brand1 to-brand3 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
             >
               {t("forPatientsPage.offers.noOffers.refresh")}
             </button>
-            <button className="px-8 py-3 border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300">
+            <button className="px-8 py-2.5 base-text border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300">
               {t("forPatientsPage.offers.noOffers.contact")}
             </button>
           </div>
@@ -436,18 +436,18 @@ const OffersTab = () => {
           <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <h3
-                className="text-2xl font-bold text-gray-900 mb-4"
+                className="subheading font-bold text-gray-900 mb-4"
                 dangerouslySetInnerHTML={createMarkup(selectedOffer.title)}
               />
               <p
-                className="text-gray-600 mb-6"
+                className="text-gray-600 base-text mb-6"
                 dangerouslySetInnerHTML={createMarkup(
                   selectedOffer.description
                 )}
               />
               <button
                 onClick={() => setSelectedOffer(null)}
-                className="w-full py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors"
+                className="w-full py-2.5 base-text bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors"
               >
                 {t("common.close")}
               </button>

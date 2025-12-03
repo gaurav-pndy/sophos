@@ -30,14 +30,14 @@ const OncoInsurance = () => {
           <div className="flex flex-col gap-4 items-start md:items-end text-white  w-full">
             <div className="flex items-center z-40 gap-3 ">
               <FaUserShield className="text-3xl" />
-              <span className="text-[2rem] leading-10 font-bold">
+              <span className="heading1 leading-10 font-bold">
                 {t("earlyDetection.insurance.title")}
               </span>
             </div>
-            <div className="md:text-xl relative z-40 font-normal mb-3">
+            <div className="base-text relative z-40 font-normal mb-3">
               {t("earlyDetection.insurance.desc")}
             </div>
-            <button className=" bg-white relative z-40 text-brand1 font-semibold text-base px-7 py-3 rounded-lg shadow hover:bg-transparent border border-white transition-all duration-300 cursor-pointer hover:text-white">
+            <button className=" bg-white relative z-40 text-brand1 font-semibold text-base px-7 py-2.5 base-text rounded-lg shadow hover:bg-transparent border border-white transition-all duration-300 cursor-pointer hover:text-white">
               {t("earlyDetection.insurance.button")}
             </button>
           </div>

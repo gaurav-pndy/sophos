@@ -14,6 +14,31 @@
   display: none !important;
 }
 
+.heading1{
+  font-size: 1.75rem;
+  @media (width >= 80rem /* 1280px */) {
+        font-size: 2.25rem ;
+    }
+}
+.subheading {
+  font-size: 1.2rem;
+    @media (width >= 80em /* 1280px */) {
+        font-size: 1.5rem ;
+    }
+}
 
+.base-text {
+   font-size: 0.9rem;
+  @media (width >= 80rem /* 1280px */) {
+    font-size: 1.05rem;
+  }
+}
+
+.small-text {
+  font-size: 0.65rem;
+    @media (width >= 80rem /* 1280px */) {
+        font-size: 0.85rem 
+    }
+}
 
 

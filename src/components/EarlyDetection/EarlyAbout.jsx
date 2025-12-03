@@ -33,10 +33,10 @@ const EarlyAbout = () => {
       <div className="max-w-[87rem] mx-auto px-4 flex flex-col md:flex-row items-center  gap-8 md:gap-16">
         {/* Left side: Text */}
         <div className="md:w-1/2 text-left">
-          <h2 className="text-brand1 text-[2rem] leading-10 font-bold mb-4">
+          <h2 className="text-brand1 heading1 leading-10 font-bold mb-4">
             {t("earlyDetection.about.heading")}
           </h2>
-          <p className="md:text-lg text-brand1/90">
+          <p className="base-text text-brand1/90">
             {" "}
             {t("earlyDetection.about.topText")}
           </p>
@@ -54,13 +54,13 @@ const EarlyAbout = () => {
 
       <div className="bg-brand1/10 p-4 mt-10 md:p-12 rounded-xl mb-10">
         <div className="max-w-4xl mx-auto">
-          <h3 className="font-bold text-[2rem] leading-10 text-brand2 mb-4">
+          <h3 className="font-bold heading1 leading-10 text-brand2 mb-4">
             {t("earlyDetection.about.missionTitle")}
           </h3>
-          <div className="text-brand1/90 text-base md:text-lg mb-4">
+          <div className="text-brand1/90 base-text mb-4">
             {t("earlyDetection.about.missionText")}
           </div>
-          <div className="text-brand2 font-semibold md:text-xl mt-2">
+          <div className="text-brand2 font-semibold base-text mt-2">
             {t("earlyDetection.about.missionHighlight")}
           </div>
         </div>
@@ -76,17 +76,17 @@ const EarlyAbout = () => {
             <span className="flex items-center justify-center w-14 h-14 rounded-lg bg-brand1/30 mb-4">
               {feat.icon}
             </span>
-            <div className="mt-2 mb-4 text-xl font-semibold text-black group-hover:text-brand2 transition-all duration-300 ">
+            <div className="mt-2 mb-4 subheading font-semibold text-black group-hover:text-brand2 transition-all duration-300 ">
               {t(feat.title)}
             </div>
-            <div className="text-brand1 group-hover:text-brand2 transition-all duration-300 ">
+            <div className="text-brand1 base-text group-hover:text-brand2 transition-all duration-300 ">
               {t(feat.desc)}
             </div>
           </div>
         ))}
       </div>
 
-      <div className="text-center text-brand1/90  max-w-4xl mx-auto mt-10 text-xl leading-relaxed">
+      <div className="text-center text-brand1/90  max-w-4xl mx-auto mt-10 base-text leading-relaxed">
         {t("earlyDetection.about.bottomText")}
       </div>
     </section>

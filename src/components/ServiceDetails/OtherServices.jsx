@@ -35,7 +35,7 @@ const OtherServices = () => {
 
             <div>
               <h3
-                className={`text-left  group-hover:scale-105 transition-all duration-300 cursor-pointer ${
+                className={`text-left base-text  group-hover:scale-105 transition-all duration-300 cursor-pointer ${
                   service.id === currentService.id
                     ? "text-white"
                     : "text-gray-900 group-hover:text-brand2"

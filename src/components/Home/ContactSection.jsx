@@ -184,13 +184,13 @@ const ContactSection = () => {
               />
 
               <div className="relative bg-gradient-to-b md:bg-gradient-to-r from-[#816c65] to-[#c9a89d] z-40 p-4 md:p-10">
-                <div className="font-medium text-2xl mb-6 md:mb-10 flex items-center gap-2 text-white">
+                <div className="font-medium subheading mb-6 md:mb-10 flex items-center gap-2 text-white">
                   <IoPaperPlaneOutline />
                   {t("contact.heading")}
                 </div>
 
                 {/* Name + Phone + Email + City */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-3">
+                <div className="grid base-text grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-3">
                   {/* Last Name */}
                   <div>
                     <label className="block text-white font-semibold mb-1">
@@ -267,7 +267,7 @@ const ContactSection = () => {
                     />
                     {/* Messaging apps below phone */}
                     <div className="mt-2">
-                      <div className="flex flex-wrap gap-3 md:gap-4 text-white text-sm">
+                      <div className="flex flex-wrap gap-3 md:gap-4 text-white small-text">
                         <label className="flex items-center gap-2 cursor-pointer">
                           <input
                             type="checkbox"
@@ -360,7 +360,7 @@ const ContactSection = () => {
                   />
                   <label
                     htmlFor="form-agree1"
-                    className="text-sm font-medium text-white"
+                    className="small-text font-medium text-white"
                     dangerouslySetInnerHTML={{ __html: t("contact.checkbox1") }}
                   ></label>
                 </div>
@@ -377,7 +377,7 @@ const ContactSection = () => {
                   />
                   <label
                     htmlFor="form-agree2"
-                    className="text-sm font-medium text-white"
+                    className="small-text font-medium text-white"
                     dangerouslySetInnerHTML={{ __html: t("contact.checkbox2") }}
                   ></label>
                 </div>
@@ -386,7 +386,7 @@ const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#59302a] rounded-lg cursor-pointer flex items-center justify-center gap-2 mt-2 px-2 py-3 text-white font-semibold text-base shadow hover:bg-[#69372c] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#59302a] rounded-lg cursor-pointer flex items-center justify-center gap-2 mt-2 px-2 py-2.5 base-text text-white font-semibold text-base shadow hover:bg-[#69372c] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>

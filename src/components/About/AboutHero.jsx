@@ -17,11 +17,11 @@ const AboutHero = () => {
       <div
         className={` w-full md:min-h-80 flex flex-col justify-center h-full  p-6 pb-16 md:p-6 lg:p-10 xl:p-12 bg-gradient-to-b md:bg-gradient-to-r from-brand1 to-[#8abfcf]  `}
       >
-        <FaRegHospital className="text-white relative z-40 text-5xl mb-4 drop-shadow-lg" />
-        <h1 className="text-white relative z-40 text-4xl md:text-5xl xl:text-6xl font-bold mb-4 ">
+        <FaRegHospital className="text-white relative z-40 text-4xl mb-4 drop-shadow-lg" />
+        <h1 className="text-white relative z-40 heading1 font-bold mb-4 ">
           {t("about.hero.title")}
         </h1>
-        <p className="text-white relative z-40 text-lg md:text-xl font-medium  drop-shadow">
+        <p className="text-white relative z-40 base-text font-medium  drop-shadow">
           {t("about.hero.subtitle")}
         </p>
       </div>

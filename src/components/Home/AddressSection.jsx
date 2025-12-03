@@ -129,7 +129,7 @@ const AddressSection = ({ city, setShowPopup }) => {
   return (
     <section id="contact" className="w-full bg-[#fafbfc] pt-3 pb-6">
       <div className="max-w-[87rem] text-center mx-auto px-4">
-        <h2 className="text-brand1 text-center text-[2rem] leading-10 font-bold mb-8">
+        <h2 className="text-brand1 text-center heading1 leading-10 font-bold mb-8">
           {t("address.title")}
         </h2>
         {/* <p className="md:text-lg text-center text-brand1/80 mb-8 max-w-3xl mx-auto">
@@ -142,12 +142,12 @@ const AddressSection = ({ city, setShowPopup }) => {
               <div className="flex items-start text-left gap-2 text-black text-lg mb-1">
                 <FaMapMarkerAlt className="mt-1.5 text-brand1" />
                 <div>
-                  <h4 className="font-medium">{clinic.title}</h4>
+                  <h4 className="font-medium base-text">{clinic.title}</h4>
                   <p
-                    className="text-brand1 text-sm"
+                    className="text-brand1 small-text"
                     dangerouslySetInnerHTML={{ __html: clinic.address }}
                   ></p>
-                  <p className="text-brand1 text-sm">{clinic.schedule}</p>
+                  <p className="text-brand1 small-text">{clinic.schedule}</p>
                 </div>
               </div>
 
@@ -156,7 +156,7 @@ const AddressSection = ({ city, setShowPopup }) => {
                 <div>
                   <a
                     href={`tel:${clinic.phone}`}
-                    className="font-semibold hover:text-brand1 transition-all duration-300"
+                    className="font-semibold hover:text-brand1 transition-all duration-300 base-text"
                   >
                     {clinic.phone}
                   </a>
@@ -196,7 +196,7 @@ const AddressSection = ({ city, setShowPopup }) => {
                 <a
                   href="https://yandex.com/maps/-/CLWImIyZ"
                   target="_blank"
-                  className="font-semibold hover:text-brand1 transition-all duration-300"
+                  className="font-semibold hover:text-brand1 transition-all duration-300 base-text"
                 >
                   {t("address.route")}
                 </a>
@@ -204,13 +204,13 @@ const AddressSection = ({ city, setShowPopup }) => {
 
               <button
                 onClick={() => setShowPopup(true)}
-                className="bg-brand1 text-white font-semibold rounded-lg px-4 py-2.5 shadow hover:bg-brand5/90  cursor-pointer transition-all duration-300 text-sm w-full"
+                className="bg-brand1 text-white font-semibold rounded-lg px-4 py-2.5 shadow hover:bg-brand5/90  cursor-pointer transition-all duration-300 base-text w-full"
               >
                 {t("address.button")}
               </button>
 
               <div
-                className="text-brand1 text-left text-sm mt-2"
+                className="text-brand1 text-left small-text mt-2"
                 dangerouslySetInnerHTML={{ __html: t("address.parkingText") }}
               ></div>
             </div>

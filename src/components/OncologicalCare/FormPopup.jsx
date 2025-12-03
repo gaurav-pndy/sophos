@@ -114,8 +114,7 @@ const FormPopup = () => {
     <div className="h-full flex flex-col">
       <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
         {/* Scrollable form content */}
-       <div className="h-[70vh] flex flex-col overflow-auto">
-
+        <div className="h-[70vh] base-text flex flex-col overflow-auto">
           <div className="p-4 md:p-6">
             {/* Name + Phone + Email + City */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
@@ -129,7 +128,9 @@ const FormPopup = () => {
                   required
                   className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
                   value={form.lastName}
-                  onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, lastName: e.target.value })
+                  }
                 />
               </div>
               {/* First Name */}
@@ -142,7 +143,9 @@ const FormPopup = () => {
                   required
                   className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
                   value={form.firstName}
-                  onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, firstName: e.target.value })
+                  }
                 />
               </div>
 
@@ -155,7 +158,9 @@ const FormPopup = () => {
                   type="text"
                   className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
                   value={form.middleName}
-                  onChange={(e) => setForm({ ...form, middleName: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, middleName: e.target.value })
+                  }
                 />
               </div>
 
@@ -242,7 +247,9 @@ const FormPopup = () => {
                 >
                   <option value="">{t("contact.chooseCity")}</option>
                   <option value="Moscow">{t("contact.moscow")}</option>
-                  <option value="Makhachkala">{t("contact.makhachkala")}</option>
+                  <option value="Makhachkala">
+                    {t("contact.makhachkala")}
+                  </option>
                   <option value="another city">{t("contact.another")}</option>
                 </select>
               </div>
@@ -300,7 +307,7 @@ const FormPopup = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-brand1 rounded-lg cursor-pointer flex items-center justify-center gap-2 px-2 py-3 text-white font-semibold text-base shadow hover:bg-brand2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-brand1 rounded-lg cursor-pointer flex items-center justify-center gap-2 px-2 py-2.5 base-text text-white font-semibold text-base shadow hover:bg-brand2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? (
               <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>

@@ -118,7 +118,7 @@ const BlogDetails = () => {
       }}
     >
       {/* Breadcrumb */}
-      <div className="mb-6 max-w-7xl mx-auto text-gray-700 flex gap-2 font-semibold items-center">
+      <div className="mb-6 max-w-7xl small-text mx-auto text-gray-700 flex gap-2 font-semibold items-center">
         <Link
           to="/for-patients#blog"
           className="text-blue-500 hover:underline font-normal cursor-pointer flex items-center"
@@ -146,11 +146,11 @@ const BlogDetails = () => {
           }}
         >
           <div className="text-white z-40">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+            <h1 className="heading1 font-bold mb-4 leading-tight">
               {blog.title || t("noTitle") || "Untitled"}
             </h1>
             <div className="flex flex-wrap items-center gap-4 text-white/90">
-              <span className="text-sm md:text-base">
+              <span className="base-text">
                 {t("blogDetails.published") || "Published"}:{" "}
                 {formatDate(blog.showAt || blog.createdAt)}
               </span>
@@ -159,7 +159,7 @@ const BlogDetails = () => {
                   {blog.categories.slice(0, 2).map((category, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium backdrop-blur-sm"
+                      className="px-3 py-1 bg-white/20 rounded-full  font-medium backdrop-blur-sm"
                     >
                       {category}
                     </span>
@@ -215,7 +215,7 @@ const BlogDetails = () => {
             {blog.tags.map((tag, index) => (
               <span
                 key={index}
-                className="px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105"
+                className="px-4 py-2 rounded-full small-text font-medium transition-all hover:scale-105"
                 style={{
                   backgroundColor: `${colors.color1}15`,
                   color: colors.color1,
@@ -237,7 +237,7 @@ const BlogDetails = () => {
               {blog.description && (
                 <div className="mb-8">
                   <p
-                    className="text-xl leading-relaxed text-gray-700"
+                    className="base-text leading-relaxed text-gray-700"
                     dangerouslySetInnerHTML={{ __html: blog.description }}
                   ></p>
                 </div>
@@ -254,7 +254,7 @@ const BlogDetails = () => {
                 blog.description && (
                   <div className="prose prose-lg max-w-none">
                     <p
-                      className="text-gray-700 leading-relaxed text-lg"
+                      className="text-gray-700 leading-relaxed base-text"
                       dangerouslySetInnerHTML={{ __html: blog.description }}
                     ></p>
                   </div>

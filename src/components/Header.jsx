@@ -618,7 +618,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
           {/* Contact Info */}
           <div className="hidden lg:flex mx-4 xl:mx-8 items-center gap-3 xl:gap-5  w-fit justify-center lg:justify-end">
-            <div className="flex flex-col  text-xs xl:text-sm">
+            <div className="flex flex-col  small-text">
               <span className="whitespace-nowrap flex items-center gap-1  mb-1">
                 <FaPhoneAlt />{" "}
                 {city === "Makhachkala"
@@ -635,9 +635,12 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             </div>
             {city === "Moscow" ? (
               <div className=" items-center gap-1   whitespace-nowrap">
-                <h6 className="font-semibold "> {t("header.moscow")} </h6>
+                <h6 className="font-semibold base-text">
+                  {" "}
+                  {t("header.moscow")}{" "}
+                </h6>
                 <p
-                  className="text-xs text-brand1 leading-4"
+                  className="small-text text-brand1 leading-4"
                   dangerouslySetInnerHTML={{
                     __html: t("header.moscowAddress"),
                   }}
@@ -692,7 +695,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               <FaGlobe className="text-lg xl:text-2xl text-brand1" />
               <div className="relative">
                 <button
-                  className="cursor-pointer border font-semibold   xl:text-base px-2 hover:bg-brand1/10 transition-all duration-300 py-1 rounded-lg text-xs flex items-center gap-2"
+                  className="cursor-pointer border font-semibold   base-text px-2 hover:bg-brand1/10 transition-all duration-300 py-1 rounded-lg  flex items-center gap-2"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                 >
                   <img
@@ -727,7 +730,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               </div>
             </div>
             <button
-              className="border hidden md:flex border-[#125e84] text-[#125e84] px-4 py-1.5 rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap"
+              className="border hidden md:flex border-[#125e84] text-[#125e84] px-4 py-1.5 rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap base-text"
               onClick={() => {
                 setShowUserAccount(true);
                 setIsOpen(false);
@@ -756,7 +759,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           <img src="/HD.png" alt="Logo" className="h-5 md:h-7 object-contain" />
         </Link>
 
-        <div className="hidden lg:flex justify-end gap-3 xl:gap-6 mr-3 xl:mr-6 items-center flex-1 text-sm xl:text-base font-semibold">
+        <div className="hidden lg:flex justify-end gap-3  xl:gap-6 mx-3 xl:mx-6 items-center flex-1 base-text font-semibold">
           {" "}
           <div
             onMouseEnter={() => setShowAboutDropdown(true)}
@@ -1018,10 +1021,10 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           </button>{" "}
         </div>
 
-        <div className="flex justify-between  md:justify-normal md:w-fit text-sm gap-3">
+        <div className="flex justify-between  md:justify-normal md:w-fit  gap-3">
           <input
             type="text"
-            className="border w-48 xl:min-w-56 hidden lg:flex border-[#125e84] text-[#125e84] px-4 py-1.5 rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap"
+            className="border w-48 xl:min-w-56 hidden lg:flex border-[#125e84] text-[#125e84] px-4 py-2 small-text rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap"
             placeholder={t("header.search")}
           >
             {/* <FaSearch className="" /> */}
@@ -1037,7 +1040,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       </motion.nav>
 
       <nav className="hidden lg:flex z-100 py-2 w-full bg-brand1/10 justify-end ">
-        <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 text-sm xl:text-base font-semibold">
+        <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 base-text font-semibold">
           {" "}
           <button
             onClick={() => setShowPopup(true)}

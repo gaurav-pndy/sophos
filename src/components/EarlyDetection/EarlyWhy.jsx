@@ -46,10 +46,10 @@ const EarlyWhy = () => {
       </div>
       {/* Right: Content */}
       <div className="flex-1 flex flex-col items-start max-w-2xl">
-        <h2 className="text-brand1  text-[2rem] leading-10 font-bold mb-4 ">
+        <h2 className="text-brand1  heading1 leading-10 font-bold mb-4 ">
           {t("earlyDetection.why.heading")}
         </h2>
-        <div className="md:text-lg text-brand1/80 mb-8 max-w-3xl mx-auto">
+        <div className="base-text text-brand1/80 mb-8 max-w-3xl mx-auto">
           {t("earlyDetection.why.preamble")}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 mb-10 w-full">
@@ -62,17 +62,17 @@ const EarlyWhy = () => {
                 {s.icon}
               </span>
               <div>
-                <div className="font-semibold text-black group-hover:text-brand2 transition-all duration-300 mb-1">
+                <div className="font-semibold base-text text-black group-hover:text-brand2 transition-all duration-300 mb-1">
                   {t(s.title)}
                 </div>
-                <div className="text-brand1 group-hover:text-brand2 transition-all duration-300 text-sm">
+                <div className="text-brand1 group-hover:text-brand2 transition-all duration-300 small-text">
                   {t(s.desc)}
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="bg-brand1/10 p-4 md:p-6 rounded-xl font-semibold text-brand2 text-base mt-2">
+        <div className="bg-brand1/10 p-4 md:p-6 rounded-xl font-semibold text-brand2 base-text mt-2">
           {t("earlyDetection.why.important")}
         </div>
       </div>

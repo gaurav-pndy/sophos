@@ -7,10 +7,10 @@ const PatientsHero = () => {
 
   return (
     <section className="w-full min-h-[40vh] py-20 md:py-24 flex flex-col items-center justify-center text-center relative bg-gradient-to-br from-brand5 to-brand1">
-      <h1 className="text-white text-4xl md:text-5xl xl:text-6xl font-bold mb-4 ">
+      <h1 className="text-white heading1 font-bold mb-4 ">
         {t("forPatients.hero.title")}
       </h1>
-      <p className="text-white text-lg md:text-2xl font-medium mb-2 drop-shadow">
+      <p className="text-white base-text font-medium mb-2 drop-shadow">
         {t("forPatients.hero.subtitle")}
       </p>
       <div className="flex flex-col md:flex-row gap-6 md:gap-6 justify-center mt-10">

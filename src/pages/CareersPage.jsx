@@ -489,10 +489,10 @@ const VacancyCard = ({ vacancy, isOpen, onApply, getLocalizedText, t }) => {
             {/* Header */}
             <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="subheading font-bold text-gray-900 mb-2">
                   {getLocalizedText(vacancy.title)}
                 </h3>
-                <div className="flex flex-wrap gap-2 text-sm text-gray-600">
+                <div className="flex flex-wrap gap-2 small-text text-gray-600">
                   <span className="flex items-center gap-1">
                     <FaMapMarkerAlt className="text-gray-400" />
                     {getLocalizedText(vacancy.location)}
@@ -519,7 +519,7 @@ const VacancyCard = ({ vacancy, isOpen, onApply, getLocalizedText, t }) => {
               <div className="flex gap-2">
                 {getStatusBadge()}
                 {vacancy.department && (
-                  <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                  <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full small-text font-semibold">
                     {getLocalizedText(vacancy.department)}
                   </span>
                 )}
@@ -528,7 +528,7 @@ const VacancyCard = ({ vacancy, isOpen, onApply, getLocalizedText, t }) => {
 
             {/* Description with HTML support */}
             <div
-              className="text-gray-600 mb-4 line-clamp-3"
+              className="text-gray-600 mb-4 base-text line-clamp-3"
               dangerouslySetInnerHTML={createMarkup(
                 getLocalizedText(vacancy.description)
               )}
@@ -536,12 +536,12 @@ const VacancyCard = ({ vacancy, isOpen, onApply, getLocalizedText, t }) => {
 
             {/* Requirements (if available) */}
             {vacancy.requirements && (
-              <div className="mb-4">
+              <div className="mb-4 base-text">
                 <h4 className="font-semibold text-gray-900 mb-2">
                   {t("careersPage.requirements", "Requirements")}:
                 </h4>
                 <div
-                  className="text-gray-600 text-sm line-clamp-2"
+                  className="text-gray-600  line-clamp-2"
                   dangerouslySetInnerHTML={createMarkup(
                     getLocalizedText(vacancy.requirements)
                   )}
@@ -551,7 +551,7 @@ const VacancyCard = ({ vacancy, isOpen, onApply, getLocalizedText, t }) => {
 
             {/* Footer */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-gray-100">
-              <div className="flex items-center gap-4 text-sm text-gray-500">
+              <div className="flex items-center gap-4 small-text text-gray-500">
                 <span>
                   {t("careersPage.views", "Views")}: {vacancy.viewCount || 0}
                 </span>
@@ -574,7 +574,7 @@ const VacancyCard = ({ vacancy, isOpen, onApply, getLocalizedText, t }) => {
                 <button
                   onClick={onApply}
                   disabled={!isOpen}
-                  className={`px-6 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${getButtonStyle()}`}
+                  className={`px-6 py-2.5 base-text rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${getButtonStyle()}`}
                 >
                   {getButtonText()}
                   {isOpen && <FaArrowRight className="text-sm" />}
@@ -725,13 +725,13 @@ const ApplicationForm = ({
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <FaCheckCircle className="text-green-600 text-2xl" />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">
+          <h3 className="subheading font-bold text-gray-900 mb-2">
             {t(
               "careersPage.applicationSuccess.title",
               "Application Submitted!"
             )}
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 base-text mb-6">
             {t(
               "careersPage.applicationSuccess.message",
               "Thank you for applying. We will review your application and contact you soon."
@@ -755,10 +755,10 @@ const ApplicationForm = ({
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">
+              <h2 className="subheading font-bold text-gray-900">
                 {t("careersPage.applyFor", "Apply for")}: {vacancy.title}
               </h2>
-              <p className="text-gray-600">
+              <p className="text-gray-600 base-text">
                 {vacancy.department} • {vacancy.location}
               </p>
             </div>
@@ -781,11 +781,11 @@ const ApplicationForm = ({
           )}
 
           {/* Application Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 base-text">
             {/* Personal Information */}
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block  font-medium text-gray-700 mb-2">
                   {t("careersPage.lastName", "Last Name")}{" "}
                   <span className="text-red-500 ml-1">*</span>
                 </label>
@@ -799,14 +799,14 @@ const ApplicationForm = ({
                   }`}
                 />
                 {formErrors.lastName && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 small-text mt-1">
                     {formErrors.lastName}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block  font-medium text-gray-700 mb-2">
                   {t("careersPage.firstName", "First Name")}{" "}
                   <span className="text-red-500 ml-1">*</span>
                 </label>
@@ -820,14 +820,14 @@ const ApplicationForm = ({
                   }`}
                 />
                 {formErrors.firstName && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 small-text mt-1">
                     {formErrors.firstName}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block  font-medium text-gray-700 mb-2">
                   {t("careersPage.middleName", "Middle Name")}
                 </label>
                 <input
@@ -842,7 +842,7 @@ const ApplicationForm = ({
 
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block  font-medium text-gray-700 mb-2">
                   {t("careersPage.email", "Email")}{" "}
                   <span className="text-red-500 ml-1">*</span>
                 </label>
@@ -856,14 +856,14 @@ const ApplicationForm = ({
                   }`}
                 />
                 {formErrors.email && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 small-text mt-1">
                     {formErrors.email}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block font-medium text-gray-700 mb-2">
                   {t("careersPage.phone", "Phone Number")}
                   <span className="text-red-500 ml-1">*</span>
                 </label>
@@ -886,7 +886,7 @@ const ApplicationForm = ({
                 </div>
 
                 {formErrors.phoneNumber && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 small-text mt-1">
                     {formErrors.phoneNumber}
                   </p>
                 )}
@@ -895,7 +895,7 @@ const ApplicationForm = ({
 
             {/* Resume Upload */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block  font-medium text-gray-700 mb-2">
                 {t("careersPage.resume", "Resume/CV")}
               </label>
 
@@ -913,7 +913,7 @@ const ApplicationForm = ({
                   className={`w-full px-3 py-2 border rounded-lg bg-white flex items-center justify-between 
         ${formErrors.resume ? "border-red-500" : "border-gray-300"}`}
                 >
-                  <span className="text-gray-700 text-sm">
+                  <span className="text-gray-700 small-text">
                     {formData.resume
                       ? formData.resume.name
                       : t("careersPage.noFileChosen", "No file chosen")}
@@ -921,7 +921,7 @@ const ApplicationForm = ({
 
                   <button
                     type="button"
-                    className="px-3 py-1 bg-brand1 text-white rounded-md text-sm pointer-events-none"
+                    className="px-3 py-1 bg-brand1 text-white rounded-md small-text pointer-events-none"
                   >
                     {t("careersPage.chooseFile", "Choose File")}
                   </button>
@@ -929,18 +929,20 @@ const ApplicationForm = ({
               </div>
 
               {formErrors.resume && (
-                <p className="text-red-500 text-sm mt-1">{formErrors.resume}</p>
+                <p className="text-red-500 small-text mt-1">
+                  {formErrors.resume}
+                </p>
               )}
 
               {formData.resume && (
-                <p className="text-sm text-green-600 mt-1">
+                <p className=" text-green-600 mt-1">
                   {t("careersPage.fileSelected", "File selected")}:{" "}
                   {formData.resume.name} (
                   {(formData.resume.size / 1024 / 1024).toFixed(2)} MB)
                 </p>
               )}
 
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="small-text text-gray-500 mt-1">
                 {t(
                   "careersPage.acceptedFormats",
                   "Accepted formats: PDF, DOC, DOCX (Max 5MB)"
@@ -959,7 +961,7 @@ const ApplicationForm = ({
                   className="mt-1 rounded border-gray-300 text-brand1 focus:ring-brand1"
                 />
                 <span
-                  className="text-sm text-gray-700"
+                  className="small-text text-gray-700"
                   dangerouslySetInnerHTML={{
                     __html: t("careersPage.agreeTerms"),
                   }}
@@ -968,7 +970,7 @@ const ApplicationForm = ({
               </label>
 
               {formErrors.agreedToTerms && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className="text-red-500 small-text mt-1">
                   {formErrors.agreedToTerms}
                 </p>
               )}
@@ -985,7 +987,7 @@ const ApplicationForm = ({
                   className="mt-1 rounded border-gray-300 text-brand1 focus:ring-brand1"
                 />
                 <span
-                  className="text-sm text-gray-700"
+                  className="small-text text-gray-700"
                   dangerouslySetInnerHTML={{
                     __html: t("contact.checkbox2"),
                   }}
@@ -994,7 +996,9 @@ const ApplicationForm = ({
               </label>
 
               {formErrors.agree2 && (
-                <p className="text-red-500 text-sm mt-1">{formErrors.agree2}</p>
+                <p className="text-red-500 small-text mt-1">
+                  {formErrors.agree2}
+                </p>
               )}
             </div>
 
@@ -1003,14 +1007,14 @@ const ApplicationForm = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 py-3 px-4 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+                className="flex-1 py-2.5 base-text px-4 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
               >
                 {t("careersPage.cancel", "Cancel")}
               </button>
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 py-3 px-4 bg-brand1 text-white rounded-lg font-semibold hover:bg-brand3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="flex-1 py-2.5 base-text px-4 bg-brand1 text-white rounded-lg font-semibold hover:bg-brand3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>

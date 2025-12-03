@@ -268,12 +268,12 @@ const DoctorsPage = ({ setShowPopup }) => {
         />
         <div className="w-full md:min-h-80 flex flex-col justify-center h-full p-6 pb-16 md:p-6 lg:p-10 xl:p-12 bg-gradient-to-b md:bg-gradient-to-r from-[#362d29] to-[#6f6763]">
           {/* Fixed: Using FaUserMd instead of FaUserDoctor */}
-          <FaUserMd className="text-white relative z-40 text-5xl mb-4 drop-shadow-lg" />
-          <h1 className="text-white relative z-40 text-4xl md:text-5xl xl:text-6xl font-bold mb-4">
+          <FaUserMd className="text-white relative z-40 text-4xl mb-4 drop-shadow-lg" />
+          <h1 className="text-white relative z-40 heading1 font-bold mb-4">
             {t("doctors.title") || "Our Doctors"}
           </h1>
           <p
-            className="text-white/90 relative z-40 "
+            className="text-white/90 relative base-text z-40 "
             dangerouslySetInnerHTML={{ __html: t("doctors.subtitle") }}
           ></p>
         </div>
@@ -306,7 +306,7 @@ const DoctorsPage = ({ setShowPopup }) => {
               }
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-3 pl-12 rounded-xl border border-brand4/40 focus:border-brand1 focus:outline-none focus:ring-2 focus:ring-brand1/20 transition-all bg-white"
+              className="w-full px-4 py-3 pl-12 rounded-xl border border-brand4/40 focus:border-brand1 focus:outline-none focus:ring-2 focus:ring-brand1/20 small-text transition-all bg-white"
             />
             <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-brand4">
               <svg
@@ -337,7 +337,7 @@ const DoctorsPage = ({ setShowPopup }) => {
             >
               {/* Type of Consultation */}
               <div>
-                <label className="text-sm font-medium text-brand1 block mb-2">
+                <label className="small-text font-medium text-brand1 block mb-2">
                   {t("doctors.filter.consultType") || "Type of Consultation"}
                 </label>
                 <div className="flex gap-3 flex-wrap">
@@ -355,7 +355,7 @@ const DoctorsPage = ({ setShowPopup }) => {
                     <button
                       key={item.value}
                       onClick={() => setType(item.value)}
-                      className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
+                      className={`px-4 py-2 rounded-lg border small-text font-medium transition-all ${
                         type === item.value
                           ? "bg-brand1 text-white border-brand1"
                           : "bg-white border-brand4 text-brand1 hover:bg-brand4/20"
@@ -369,13 +369,13 @@ const DoctorsPage = ({ setShowPopup }) => {
 
               {/* Specialization */}
               <div>
-                <label className="text-sm font-medium text-brand1 block mb-2">
+                <label className="small-text font-medium text-brand1 block mb-2">
                   {t("doctors.filter.specialization") || "Specialization"}
                 </label>
                 <select
                   value={specialization}
                   onChange={(e) => setSpecialization(e.target.value)}
-                  className="w-full border border-brand4/40 rounded-lg px-3 py-2.5 text-sm text-brand1 outline-none focus:border-brand1 transition-all bg-white"
+                  className="w-full border border-brand4/40 rounded-lg px-3 py-2.5 small-text text-brand1 outline-none focus:border-brand1 transition-all bg-white"
                 >
                   <option value="All">
                     {t("doctors.filter.all") || "All Specializations"}
@@ -395,7 +395,7 @@ const DoctorsPage = ({ setShowPopup }) => {
       {/* Results Count and Loading */}
       <div className="w-full mb-6">
         {!loading && (
-          <p className="text-brand1/70 text-sm">
+          <p className="text-brand1/70 small-text">
             {cards.length === 0
               ? "No doctors found"
               : cards.length === 1
@@ -473,7 +473,7 @@ const DoctorsPage = ({ setShowPopup }) => {
 
                 {/* Doctor Information */}
                 <div className="flex-1">
-                  <h3 className="font-bold text-black text-xl mb-2 line-clamp-2 leading-tight">
+                  <h3 className="font-bold text-black subheading mb-2 line-clamp-2 leading-tight">
                     <span className="uppercase">
                       {" "}
                       {doc.lastName[i18n.language]}
@@ -484,7 +484,7 @@ const DoctorsPage = ({ setShowPopup }) => {
 
                   {/* Position */}
                   {doc.position && (
-                    <p className="text-brand1 text-sm font-medium mb-3">
+                    <p className="text-brand1 small-text font-medium mb-3">
                       {doc.position}
                     </p>
                   )}
@@ -527,13 +527,13 @@ const DoctorsPage = ({ setShowPopup }) => {
               {/* View Profile Button */}
               <button
                 onClick={() => setShowPopup(true)}
-                className="mt-4 px-6 py-2.5 w-full border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                className="mt-4 px-6 py-2.5 w-full border border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer base-text"
               >
                 {t("doctors.btn1")}
               </button>
               <Link
                 to={`/doctors/${doc.id}`}
-                className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer base-text"
               >
                 {t("doctors.btn2")}
               </Link>
@@ -547,7 +547,7 @@ const DoctorsPage = ({ setShowPopup }) => {
         <div className="w-full text-center mt-8">
           <button
             onClick={fetchDoctors}
-            className="px-6 py-2 border border-brand1 text-brand1 rounded-lg hover:bg-brand1 hover:text-white transition-colors font-medium"
+            className="px-6 py-2.5 base-text border border-brand1 text-brand1 rounded-lg hover:bg-brand1 hover:text-white transition-colors font-medium"
           >
             Load More Doctors
           </button>
