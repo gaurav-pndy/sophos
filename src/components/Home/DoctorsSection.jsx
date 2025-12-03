@@ -200,6 +200,7 @@ const DoctorsSection = ({ setShowPopup }) => {
       position,
       tags: tags.filter((tag) => tag && tag.trim() !== ""),
       image: doc.imageUrl || "/default-doctor.jpg",
+      experience: formatExperience(doc.yearOfExperience),
     };
   });
 
@@ -416,11 +417,11 @@ const DoctorsSection = ({ setShowPopup }) => {
                     )}
 
                     {/* Experience Badge */}
-                    {/* {doc.experienceYears && (
-        <div className="absolute bottom-2 left-2 bg-white text-xs px-2 py-1 rounded-md shadow">
-          Стаж работы {doc.experienceYears} лет
-        </div>
-      )} */}
+                    {doc.yearOfExperience && (
+                      <div className="absolute bottom-2 right-2 font-bold bg-white text-xs px-2 py-1 rounded-md shadow">
+                        Стаж работы {doc.yearOfExperience} лет
+                      </div>
+                    )}
                   </div>
 
                   {/* RIGHT COLUMN */}

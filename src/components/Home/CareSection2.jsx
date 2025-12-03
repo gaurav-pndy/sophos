@@ -232,9 +232,12 @@ const CareSection2 = () => {
               <div className="text-3xl text-brand1 mb-2 flex justify-center">
                 {icons.tab8}
               </div>
-              <p className="font-semibold xl:text-lg text-brand1/90">
-                {stepsData.tab8.number}. {stepsData.tab8.title}
-              </p>
+              <p
+                className="font-semibold xl:text-lg text-brand1/90"
+                dangerouslySetInnerHTML={{
+                  __html: `${stepsData.tab8.number}. ${stepsData.tab8.title}`,
+                }}
+              />
             </motion.div>
           </div>
         </div>

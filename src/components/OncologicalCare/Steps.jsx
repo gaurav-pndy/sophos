@@ -108,10 +108,10 @@ const Steps = () => {
       bg-white text-brand1
     `}
         >
-          <p className="flex items-center ">
+          <p className="flex items-center">
             <FaStethoscope className="text-2xl" />
-            <span className=" ml-3 mr-2">8.</span>
-            {t("care.tab8")}
+            <span className="ml-3 mr-2">8.</span>
+            <span dangerouslySetInnerHTML={{ __html: t("care.tab8") }} />
           </p>
         </Link>
       </div>
