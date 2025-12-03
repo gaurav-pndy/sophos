@@ -1111,7 +1111,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   <FaGlobe className="text-2xl text-brand1" />
                   <div className="relative">
                     <button
-                      className="cursor-pointer border font-semibold   md:text-base px-2 hover:bg-brand1/10 transition-all duration-300 py-1 rounded-lg text-lg flex items-center gap-2"
+                      className="cursor-pointer border font-semibold   base-text px-2 hover:bg-brand1/10 transition-all duration-300 py-1 rounded-lg  flex items-center gap-2"
                       onClick={() => setDropdownOpen(!dropdownOpen)}
                     >
                       <img
@@ -1134,7 +1134,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         {languages.map((lang) => (
                           <li
                             key={lang.code}
-                            className="flex items-center gap-2 px-2 md:px-3 py-1 hover:bg-gray-200 cursor-pointer text-xs md:text-base"
+                            className="flex items-center gap-2 px-2 md:px-3 py-1 hover:bg-gray-200 cursor-pointer base-text"
                             onClick={() => changeLanguage(lang.code)}
                           >
                             <img
@@ -1180,9 +1180,9 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2 text-lg mb-4">
+              <div className="flex flex-col gap-2 base-text mb-4">
                 <button
-                  className="bg-[#125e84] text-white px-6 py-2 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4"
+                  className="bg-[#125e84] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4"
                   onClick={() => {
                     setShowUserAccount(true);
                     setIsOpen(false);
@@ -1193,7 +1193,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </button>
                 <button
                   onClick={() => setShowPopup(true)}
-                  className="border border-[#125e84] text-[#125e84] px-6 py-2 rounded-lg font-medium flex gap-2 items-center hover:bg-[#125e84]/10 cursor-pointer transition whitespace-nowrap"
+                  className="border border-[#125e84] text-[#125e84] px-6 py-2.5 rounded-lg font-medium flex gap-2 items-center hover:bg-[#125e84]/10 cursor-pointer transition whitespace-nowrap"
                 >
                   <FaCalendarCheck className="text-lg" />
 
@@ -1215,7 +1215,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </select>
               </div> */}
 
-              <nav className="flex  flex-col gap-4 text-lg">
+              <nav className="flex  flex-col gap-4 base-text">
                 <div>
                   <button
                     onClick={() => setIsAboutOpen(!isAboutOpen)}
