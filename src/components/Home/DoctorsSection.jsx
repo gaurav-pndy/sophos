@@ -56,6 +56,7 @@ const DoctorsSection = ({ setShowPopup }) => {
       params.append("language", i18n.language);
       params.append("page", "1");
       params.append("limit", "12");
+      params.append("expert", true);
 
       const response = await fetch(`${API_BASE}/api/website/doctors?${params}`);
       if (!response.ok) throw new Error("Failed to fetch doctors");
