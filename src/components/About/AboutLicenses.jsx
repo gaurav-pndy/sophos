@@ -203,7 +203,7 @@ const AboutLicenses = () => {
                   <FaFileAlt className="text-brand1 text-2xl" />
                 </div>
 
-                {/* Content */}
+                {/* Content*/}
                 <h3 className="font-semibold  base-text text-brand1 uppercase group-hover:text-brand3 transition-colors line-clamp-2">
                   {doc.name}
                 </h3>
