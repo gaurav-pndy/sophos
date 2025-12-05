@@ -34,7 +34,7 @@ const DocsForm = () => {
   return (
     <div className="h-full flex flex-col">
       <form className="flex-1 flex flex-col">
-        
+        {/* Scrollable form content */}
         <div className="h-[70vh] flex flex-col overflow-auto">
           <div className="p-4 md:p-6">
             {/* Name + Phone + Email + City */}
