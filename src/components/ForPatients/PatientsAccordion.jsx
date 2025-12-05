@@ -54,7 +54,7 @@ const PatientsAccordion = () => {
           }`}
         >
           <button
-            className="w-full flex items-center cursor-pointer justify-between gap-6 px-6 py-5 text-left focus:outline-none"
+            className="w-full flex items-center cursor-pointer justify-between gap-6 p-4 md:p-6  text-left focus:outline-none"
             onClick={() => setOpenIndex(idx === openIndex ? -1 : idx)}
             aria-expanded={openIndex === idx}
             aria-controls={`panel-content-${panel.key}`}

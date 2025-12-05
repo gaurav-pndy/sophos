@@ -14,7 +14,7 @@ const AboutPrivacyPolicy = () => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm px-6 py-6">
+      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row items-center gap-4">
           <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#125e84] to-[#33babd] rounded-xl shrink-0 shadow-md">
             <FaFileAlt className="text-white text-3xl" />
@@ -31,7 +31,7 @@ const AboutPrivacyPolicy = () => {
       </div>
 
       {/* Policy Body */}
-      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-6 md:p-8 space-y-8">
+      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-4 md:p-6 space-y-8">
         <div>
           <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
             <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg  font-bold text-[#63cacc] shrink-0">

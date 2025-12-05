@@ -912,7 +912,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             </AnimatePresence>
           </div>
           {/* Services Dropdown - Desktop */}{" "}
-          <div
+          {/* <div
             onMouseEnter={() => setShowServices(true)}
             onMouseLeave={() => setShowServices(false)}
             className="relative   whitespace-nowrap cursor-pointer"
@@ -924,7 +924,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               {t("header.services")} <FaChevronDown className="text-sm mt-1" />
             </button>
 
-            {/* Animated dropdown */}
+        
             <AnimatePresence>
               {showServices && (
                 <motion.div
@@ -955,7 +955,6 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                           </p>
                         </div>
 
-                        {/* Animated Arrow - appears from left on hover */}
                         <div className="absolute right-2 top-3 overflow-hidden w-6">
                           <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
                         </div>
@@ -965,7 +964,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </div> */}
           <div
             onMouseEnter={() => setShowPatientsDropdown(true)}
             onMouseLeave={() => setShowPatientsDropdown(false)}
@@ -1357,7 +1356,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   </AnimatePresence>
                 </div>
                 {/* Services Dropdown - Mobile */}
-                <div>
+                {/* <div>
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                     className="flex items-center justify-between w-full"
@@ -1390,7 +1389,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+                </div> */}
                 <div>
                   <button
                     onClick={() => setIsPatientsOpen(!isPatientsOpen)}

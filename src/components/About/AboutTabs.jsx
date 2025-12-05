@@ -118,7 +118,9 @@ const AboutTabs = ({ city }) => {
             >
               {tab.icon}
             </span>
-            <span className="base-text text-left">{t(tab.labelKey)}</span>
+            <span className="base-text text-left line-clamp-1 text-ellipsis lg:line-clamp-none">
+              {t(tab.labelKey)}
+            </span>
           </button>
         ))}
       </nav>

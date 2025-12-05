@@ -5,16 +5,177 @@ import {
   FaCheckCircle,
   FaCertificate,
   FaShieldAlt,
+  FaDownload,
+  FaFileAlt,
 } from "react-icons/fa";
 
 const AboutLicenses = () => {
   const { t } = useTranslation();
 
+  const documents = [
+    {
+      id: 1,
+      name: "ИНФОРМАЦИЯ О МЕДИЦИНСКОЙ ОРГАНИЗАЦИИ",
+
+      url: "/docs/licenses/ИНФОРМАЦИЯ О МЕДИЦИНСКОЙ ОРГАНИЗАЦИИ.pdf",
+    },
+    {
+      id: 2,
+      name: "ИНФОРМАЦИЯ ОБ АДРЕСАХ И НОМЕРАХ ТЕЛЕФОНОВ ОРГАНА ГОСУДАРСТВЕННОЙ ВЛАСТИ СУБЪЕКТА РОССИЙСКОЙ ФЕДЕРАЦИИ В СФЕРЕ ОХРАНЫ ЗДОРОВЬЯ, ТЕРРИТОРИАЛЬНОГО ОРГАНА ФЕДЕРАЛЬНОЙ СЛУЖБЫ ПО НАДЗОРУ В СФЕРЕ ЗДРАВООХРАНЕНИЯ, ТЕРРИТОРИАЛЬНОГО ОРГАНА ФЕДЕРАЛЬНОЙ СЛУЖБЫ ПО НАДЗОРУ В СФЕРЕ ЗАЩИТЫ ПРАВ ПОТРЕБИТЕЛЕЙ И БЛАГОПОЛУЧИЯ ЧЕЛОВЕКА",
+
+      url: "/docs/licenses/Информация об адресах и номерах телефонов органа государственной власти субъекта Российской Федерации в сфере охраны здоровья, территориального орган.pdf",
+    },
+    {
+      id: 3,
+      name: "ИНФОРМАЦИЯ О СТРАХОВЫХ МЕДИЦИНСКИХ ОРГАНИЗАЦИЯХ, С КОТОРЫМИ ЗАКЛЮЧЕНЫ ДОГОВОРЫ НА ОКАЗАНИЕ И ОПЛАТУ МЕДИЦИНСКОЙ ПОМОЩИ ПО ОБЯЗАТЕЛЬНОМУ МЕДИЦИНСКОМУ СТРАХОВАНИЮ",
+
+      url: "/docs/licenses/Информация о страховых медицинских организациях, с которыми заключены договоры на оказание и оплату медицинской помощи по обязательному медиц.pdf",
+    },
+    {
+      id: 4,
+      name: "ИНФОРМАЦИЯ О ПРАВАХ И ОБЯЗАННОСТЯХ ГРАЖДАН В СФЕРЕ ОХРАНЫ ЗДОРОВЬЯ",
+
+      url: "/docs/licenses/Информация о правах и обязанностях граждан в сфере охраны здоровья.pdf",
+    },
+    {
+      id: 5,
+      name: "ИНФОРМАЦИЯ О НАЛИЧИИ ЛИЦЕНЗИИ НА ОСУЩЕСТВЛЕНИЕ МЕДИЦИНСКОЙ ДЕЯТЕЛЬНОСТИ, ЕЁ НОМЕРЕ, СРОКАХ ДЕЙСТВИЯ, А ТАКЖЕ ИНФОРМАЦИЯ ОБ ОРГАНЕ, ВЫДАВШЕМ УКАЗАННУЮ ЛИЦЕНЗИЮ",
+
+      url: "/docs/licenses/Информация о наличии лицензии на осуществление медицинской деятельности, её номере, сроках действия, а также информация об органе, выдавшем у.pdf",
+    },
+    {
+      id: 6,
+      name: "из реестра лицензий по состоянию на 15:59 25.11.2025 г.",
+
+      url: "/docs/licenses/Выписка из реестра лицензий по состоянию на 1559 25.11.2025 г.pdf",
+    },
+    {
+      id: 7,
+      name: "ИНФОРМАЦИЯ О ВИДАХ МЕДИЦИНСКОЙ ПОМОЩИ, МЕТОДАХ ОКАЗАНИЯ МЕДИЦИНСКОЙ ПОМОЩИ, СВЯЗАННЫХ С НИМИ РИСКАХ, ВИДАХ МЕДИЦИНСКОГО ВМЕШАТЕЛЬСТВА, ИХ ПОСЛЕДСТВИЯХ И ОЖИДАЕМЫХ РЕЗУЛЬТАТАХ ОКАЗАНИЯ МЕДИЦИНСКОЙ ПОМОЩИ",
+
+      url: "/docs/licenses/Информация о видах медицинской помощи, методах оказания медицинской помощи, связанных с ними рисках, видах медицинского вмешательства, их пос.pdf",
+    },
+    {
+      id: 8,
+      name: "ИНФОРМАЦИЯ О ВОЗМОЖНОСТИ ПОЛУЧЕНИЯ МЕДИЦИНСКОЙ ПОМОЩИ В РАМКАХ ПРОГРАММЫ ГОСУДАРСТВЕННЫХ ГАРАНТИЙ БЕСПЛАТНОГО ОКАЗАНИЯ ГРАЖДАНАМ МЕДИЦИНСКОЙ ПОМОЩИ И ТЕРРИТОРИАЛЬНЫХ ПРОГРАММ ГОСУДАРСТВЕННЫХ ГАРАНТИЙ БЕСПЛАТНОГО ОКАЗАНИЯ ГРАЖДАНАМ МЕДИЦИНСКОЙ ПОМОЩИ",
+
+      url: "/docs/licenses/Информация о возможности получения медицинской помощи в рамках программы государственных гарантий бесплатного оказания гражданам медицинской.pdf",
+    },
+    {
+      id: 9,
+      name: "ИНФОРМАЦИЯ О ПОРЯДКЕ, ОБ ОБЪЕМЕ И УСЛОВИЯХ ОКАЗАНИЯ МЕДИЦИНСКОЙ ПОМОЩИ В СООТВЕТСТВИИ С ПРОГРАММОЙ ГОСУДАРСТВЕННЫХ ГАРАНТИЙ БЕСПЛАТНОГО ОКАЗАНИЯ ГРАЖДАНАМ МЕДИЦИНСКОЙ ПОМОЩИ И ТЕРРИТОРИАЛЬНОЙ ПРОГРАММОЙ ГОСУДАРСТВЕННЫХ ГАРАНТИЙ БЕСПЛАТНОГО ОКАЗАНИЯ ГРАЖДАНАМ МЕДИЦИНСКОЙ ПОМОЩИ",
+
+      url: "/docs/licenses/Информация о порядке, об объеме и условиях оказания медицинской помощи в соответствии с программой государственных гарантий бесплатного оказа.pdf",
+    },
+    {
+      id: 10,
+      name: "ИНФОРМАЦИЯ О ПОКАЗАТЕЛЯХ ДОСТУПНОСТИ И КАЧЕСТВА МЕДИЦИНСКОЙ ПОМОЩИ, УСТАНОВЛЕННЫХ В ТЕРРИТОРИАЛЬНОЙ ПРОГРАММЕ ГОСУДАРСТВЕННЫХ ГАРАНТИЙ БЕСПЛАТНОГО ОКАЗАНИЯ ГРАЖДАНАМ МЕДИЦИНСКОЙ ПОМОЩИ НА СООТВЕТСТВУЮЩИЙ ГОД ",
+
+      url: "/docs/licenses/Информация о показателях доступности и качества медицинской помощи, установленных в территориальной программе государственных гарантий беспла.pdf",
+    },
+    {
+      id: 11,
+      name: "О Территориальной программе государственных гарантий бесплатного оказания гражданам медицинской помощи в городе Москве на 2025 год и на плановый период 2026 и 2027 годов",
+
+      url: "/docs/licenses/27 декабря 2024 г. № 3163-ПП О Территориальной программе.pdf",
+    },
+    {
+      id: 12,
+      name: "ИНФОРМАЦИЯ О СРОКАХ, ПОРЯДКЕ, РЕЗУЛЬТАТАХ ПРОВОДИМОЙ ДИСПАНСЕРИЗАЦИИ НАСЕЛЕНИЯ В МЕДИЦИНСКОЙ ОРГАНИЗАЦИИ, ОКАЗЫВАЮЩЕЙ ПЕРВИЧНУЮ МЕДИКОСАНИТАРНУЮ ПОМОЩЬ, И ИМЕЮЩЕЙ ПРИКРЕПЛЕННОЕ НАСЕЛЕНИЕ",
+
+      url: "/docs/licenses/Информация о сроках, порядке, результатах проводимой диспансеризации населения в медицинской организации, оказывающей первичную медико-санита.pdf",
+    },
+    {
+      id: 13,
+      name: "ИНФОРМАЦИЯ О ПРАВИЛАХ ЗАПИСИ НА ПЕРВИЧНЫЙ ПРИЕМ(КОНСУЛЬТАЦИЮ,ОБСЛЕДОВАНИЕ)",
+
+      url: "/docs/licenses/Информация о правилах записи на первичный прием.pdf",
+    },
+    {
+      id: 14,
+      name: "ИНФОРМАЦИЯ О ПРАВИЛАХ ПОДГОТОВКИ К ДИАГНОСТИЧЕСКИМ ИССЛЕДОВАНИЯМ",
+
+      url: "/docs/licenses/Информация о правилах подготовки к диагностическим исследованиям.pdf",
+    },
+    {
+      id: 15,
+      name: "ИНФОРМАЦИЯ О ПРАВИЛАХ И СРОКАХ ГОСПИТАЛИЗАЦИИ",
+
+      url: "/docs/licenses/Информация о правилах и сроках госпитализации.pdf",
+    },
+    {
+      id: 16,
+      name: "ИНФОРМАЦИЯ О ПРАВИЛАХ ПРЕДОСТАВЛЕНИЯ ПЛАТНЫХМЕДИЦИНСКИХ УСЛУГ",
+
+      url: "/docs/licenses/Информация о правилах предоставления платных медицинских услуг.pdf",
+    },
+    {
+      id: 17,
+      name: "ИНФОРМАЦИЯ О ПЕРЕЧНЕ ОКАЗЫВАЕМЫХ ПЛАТНЫХ МЕДИЦИНСКИХ УСЛУГ, О ЦЕНАХ (ТАРИФАХ) НА МЕДИЦИНСКИЕ УСЛУГИ (ПРЕЙСКУРАНТ НА МЕДИЦИНСКИЕ УСЛУГИ)",
+
+      url: "/docs/licenses/Информация о перечне оказываемых платных медицинских услуг, о ценах (тарифах) на медицинские услуги (прейскурант на медицинские услуги).pdf",
+    },
+    {
+      id: 18,
+      name: "СВЕДЕНИЯ О МЕДИЦИНСКИХ РАБОТНИКАХ, УЧАСТВУЮЩИХ В ПРЕДОСТАВЛЕНИИ МЕДИЦИНСКИХ УСЛУГ, ОБ УРОВНЕ ИХ ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ И КВАЛИФИКАЦИИ, ГРАФИКЕ ИХ РАБОТЫ ",
+
+      url: "/docs/licenses/Сведения о медицинских работниках, участвующих в предоставлении медицинских услуг, об уровне их профессионального образования и квалификации,.pdf",
+    },
+    {
+      id: 19,
+      name: "ИНФОРМАЦИЯ О ВАКАНТНЫХ ДОЛЖНОСТЯХ ООО «ЭЙЧДИ КЛИНИК»",
+
+      url: "/docs/licenses/Информация О ВАКАНТНЫХ ДОЛЖНОСТЯХ ООО «Эйчди клиник».pdf",
+    },
+    {
+      id: 20,
+      name: "Информация о перечне жизненно необходимых и важнейших лекарственных препаратов для медицинского применения, утвержденном распоряжением Правительства Российской Федерации от 12 октября 2019 г. № 2406-р",
+
+      url: "/docs/licenses/Информация о перечне жизненно необходимых и важнейших лекарственных препаратов для медицинского применения, утвержденном распоряжением Правит.pdf",
+    },
+    {
+      id: 21,
+      name: "Информация о перечне лекарственных препаратов, предназначенных для обеспечения лиц, больных гемофилией, муковисцидозом, гипофизарным нанизмом, болезнью Гоше, злокачественными новообразованиями лимфоидной, кроветворной и родственных им тканей, рассеянным склерозом, гемолитико-уремическим синдромом, юношеским артритом с системным началом, мукополисахаридозом I, II и VI типов, апластической анемией неуточненной, наследственным дефицитом факторов II (фибриногена), VII (лабильного), X (Стюарта - Прауэра), лиц после трансплантации органов и (или) тканей, утвержденном распоряжением Правительства Российской Федерации от 12 октября 2019 г. № 2406-р",
+
+      url: "/docs/licenses/Информация о перечне лекарственных препаратов, предназначенных для обеспечения лиц, больных гемофилией, муковисцидозом, гипофизарным нанизмом.pdf",
+    },
+    {
+      id: 22,
+      name: "Информация о перечне лекарственных препаратов для медицинского применения, в том числе лекарственных препаратов для медицинского применения, назначаемых по решению врачебных комиссий медицинских организаций, утвержденном распоряжением Правительства Российской Федерации от 12 октября 2019 г. № 2406-р",
+
+      url: "/docs/licenses/Информация о перечне лекарственных препаратов для медицинского применения, в том числе лекарственных препаратов для медицинского применения,.pdf",
+    },
+    {
+      id: 23,
+      name: "Информация о перечне лекарственных препаратов, отпускаемых населению в соответствии с перечнем групп населения и категорий заболеваний, при амбулаторном лечении которых лекарственные средства и изделия медицинского назначения отпускаются по рецептам врачей бесплатно, а также в соответствии с перечнем групп населения, при амбулаторном лечении которых лекарственные средства отпускаются по рецептам врачей с пятидесятипроцентной скидкой, утвержденными постановлением Правительства Российской Федерации от 30 июля 1994 г. № 890 «О государственной поддержке развития медицинской промышленности и улучшении обеспечения населения и учреждений здравоохранения лекарственными средствами и изделиями медицинского назначения»",
+
+      url: "/docs/licenses/Информация о перечне лекарственных препаратов, отпускаемых населению в соответствии с перечнем групп населения и категорий заболеваний, при а.pdf",
+    },
+    {
+      id: 24,
+      name: "Информация Об отзывах потребителей услуг",
+
+      url: "/docs/licenses/Информация Об отзывах потребителей услуг.pdf",
+    },
+    {
+      id: 25,
+      name: "Политика в отношении обработки персональных данных",
+
+      url: "/docs/licenses/Политика в отношении обработки персональных данных.pdf",
+    },
+    {
+      id: 26,
+      name: "информация о стандартах медицинской помощи и клинических рекомендациях, с учётом и на основании которых (соответственно) оказываются медицинские услуги",
+
+      url: "/docs/licenses/информация о стандартах медицинской помощи и клинических рекомендациях, с учётом и на основании которых (соответственно) оказываются медицинс.pdf",
+    },
+  ];
+
   return (
     <div className="space-y-8">
       {/* Licenses & Certificates Header */}
-      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-6">
-        <div className="flex flex-col md:flex-row items-center gap-4">
+      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-4 md:p-6">
+        <div className="flex flex-col md:flex-row md:items-center gap-4">
           <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#125e84] to-[#33babd] rounded-xl shrink-0 shadow-md">
             <FaFileMedicalAlt className="text-white text-3xl" />
           </div>
@@ -27,203 +188,33 @@ const AboutLicenses = () => {
             </p>
           </div>
         </div>
-      </div>
+        <div className="grid md:grid-cols-2 gap-4 mt-6">
+          {documents.map((doc) => (
+            <a
+              key={doc.id}
+              href={doc.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-xl p-3 md:p-5 shadow-md border border-gray-200 hover:shadow-lg hover:border-brand3 transition-all group flex justify-between min-w-0"
+            >
+              <div className="flex items-center gap-4 min-w-0">
+                {/* Icon */}
+                <div className="flex-shrink-0 bg-brand1/20 p-3 rounded-lg group-hover:bg-brand1/40 transition-colors">
+                  <FaFileAlt className="text-brand1 text-2xl" />
+                </div>
 
-      {/* Main Grid of Licenses and Certificates */}
-      <div className="grid md:grid-cols-2 gap-6">
-        {/* Medical License */}
-        <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-6 hover:border-[#63cacc]/40 transition-colors">
-          <div className="flex items-start gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/10 rounded-lg shrink-0">
-              <FaCertificate className="text-[#63cacc] text-lg" />
-            </div>
-            <div className="font-bold subheading text-[#125e84]">
-              {t("about.licenses.medLicense")}
-            </div>
-          </div>
-
-          <div className="space-y-2 mb-4">
-            <div className="flex flex-col text-[#125e84]/80 ">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.number")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                {t("about.licenses.numberDesc")}
-              </span>
-            </div>
-
-            <div className="flex flex-col text-[#125e84]/80 ">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.issueDate")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                15.01.2020
-              </span>
-            </div>
-
-            <div className="flex flex-col text-[#125e84]/80 ">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.issuedBy")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                {t("about.licenses.issuedByDesc")}
-              </span>
-            </div>
-          </div>
-
-          <div className="text-[#125e84]/70 small-text leading-relaxed pt-3 border-t border-[#63cacc]/10">
-            {t("about.licenses.medLicenseDesc")}
-          </div>
-        </div>
-
-        {/* ISO Certificate */}
-        <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-6 hover:border-[#63cacc]/40 transition-colors">
-          <div className="flex items-start gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/10 rounded-lg shrink-0">
-              <FaShieldAlt className="text-[#63cacc] text-lg" />
-            </div>
-            <div className="font-bold subheading text-[#125e84]">
-              {t("about.licenses.isoTitle")}
-            </div>
-          </div>
-
-          <div className="space-y-2 mb-4">
-            <div className="flex flex-col text-[#125e84]/80 ">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.number")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                ISO-2020-RU-7890
-              </span>
-            </div>
-
-            <div className="flex flex-col text-[#125e84]/80 text-sm">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.issueDate")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                20.03.2021
-              </span>
-            </div>
-
-            <div className="flex flex-col text-[#125e84]/80 text-sm">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.validUntil")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                20.03.2026
-              </span>
-            </div>
-          </div>
-
-          <div className="text-[#125e84]/70 small-text leading-relaxed pt-3 border-t border-[#63cacc]/10">
-            {t("about.licenses.isoDesc")}
-          </div>
-        </div>
-
-        {/* Ministry Accreditation */}
-        <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-6 hover:border-[#63cacc]/40 transition-colors">
-          <div className="flex items-start gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/10 rounded-lg shrink-0">
-              <FaCertificate className="text-[#63cacc] text-lg" />
-            </div>
-            <div className="font-bold subheading text-[#125e84]">
-              {t("about.licenses.ministryAccr")}
-            </div>
-          </div>
-
-          <div className="space-y-2 mb-4">
-            <div className="flex flex-col text-[#125e84]/80 text-sm">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.number")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                AK-77-2022-456
-              </span>
-            </div>
-
-            <div className="flex flex-col text-[#125e84]/80 text-sm">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.category")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                Высшая
-              </span>
-            </div>
-
-            <div className="flex flex-col text-[#125e84]/80 text-sm">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.validUntil")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                15.12.2027
-              </span>
-            </div>
-          </div>
-
-          <div className="text-[#125e84]/70 small-text leading-relaxed pt-3 border-t border-[#63cacc]/10">
-            {t("about.licenses.ministryAccrDesc")}
-          </div>
-        </div>
-
-        {/* JCI International Accreditation */}
-        <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-6 hover:border-[#63cacc]/40 transition-colors">
-          <div className="flex items-start gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/10 rounded-lg shrink-0">
-              <FaShieldAlt className="text-[#63cacc] text-lg" />
-            </div>
-            <div className="font-bold subheading text-[#125e84]">
-              {t("about.licenses.jciTitle")}
-            </div>
-          </div>
-
-          <div className="space-y-2 mb-4">
-            <div className="flex flex-col text-[#125e84]/80 text-sm">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.number")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                JCI-2023-RU-001
-              </span>
-            </div>
-
-            <div className="flex flex-col text-[#125e84]/80 text-sm">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.issueDate")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                10.06.2023
-              </span>
-            </div>
-
-            <div className="flex flex-col text-[#125e84]/80 text-sm">
-              <span className="text-[#125e84]/60 small-text uppercase tracking-wide mb-1">
-                {t("about.licenses.validUntil")}
-              </span>
-              <span className="font-semibold base-text text-[#125e84]">
-                10.06.2026
-              </span>
-            </div>
-          </div>
-
-          <div className="text-[#125e84]/70 small-text leading-relaxed pt-3 border-t border-[#63cacc]/10">
-            {t("about.licenses.jciDesc")}
-          </div>
-        </div>
-      </div>
-
-      {/* Notice */}
-      <div className="bg-[#63cacc]/10 rounded-2xl p-6 flex items-start gap-4 border border-[#63cacc]/30">
-        <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/20 rounded-full shrink-0">
-          <FaCheckCircle className="text-[#63cacc] text-xl" />
-        </div>
-        <div className="flex-1">
-          <div className="font-semibold subheading text-[#125e84] mb-1">
-            {t("about.licenses.documentsAvailable")}
-          </div>
-          <p className="text-[#125e84]/70 base-text leading-relaxed">
-            {t("about.licenses.copyInfo")}
-          </p>
+                {/* Content */}
+                <h3 className="font-semibold  base-text text-brand1 uppercase group-hover:text-brand3 transition-colors line-clamp-2">
+                  {doc.name}
+                </h3>
+              </div>
+              <div className="flex-shrink-0 ">
+                <div className="w-10 h-10 bg-brand4/20 rounded-full flex items-center justify-center group-hover:bg-brand3 transition-colors">
+                  <FaDownload className="text-brand3 text-xl group-hover:text-white transition-colors" />
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </div>

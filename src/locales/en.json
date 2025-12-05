@@ -58,7 +58,7 @@
     "makhachkalaAddress": "Ali-Gadzhi Akushinskogo Avenue 7",
     "search": "Diagnosis/Service Search",
     "about1": "Information about the medical organization",
-    "about2": "Licenses and certificates",
+    "about2": "Licenses and Permits",
     "about3": "Contacts of regulatory authorities",
     "about4": "Information for patients",
     "about5": "Personal Data Processing Policy",
@@ -1263,7 +1263,7 @@
     "scheduleTitle": "Schedule",
     "phoneTitle": "Phone",
     "clinic1": {
-      "title": "HDMC",
+      "title": "SOPHOS",
       "address": "Business center Kvartal West, <br/>Moscow, 6 Aminyevskoe highway,<br>entrance 1, 4th and 5th floors",
       "schedule": "from 8:00 to 23:00, seven days a week"
     },
@@ -1425,7 +1425,7 @@
     },
     "tabs": {
       "info": "Information",
-      "licenses": "Licenses",
+      "licenses": "Licenses and Permits",
       "contacts": "Contacts of Supervisory Authorities",
       "patients": "For Patients",
       "doctors": "Doctors",
@@ -1462,7 +1462,7 @@
       "receptionDesc": "On Wednesdays from 14:00 to 16:00"
     },
     "licenses": {
-      "title": "Licenses and Certificates",
+      "title": "Licenses and Permits",
       "subtitle": "Documents confirming the right to carry out medical activities",
       "medLicense": "License for Medical Activities",
       "number": "License Number",

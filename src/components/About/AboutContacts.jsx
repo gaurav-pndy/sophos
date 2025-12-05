@@ -61,7 +61,7 @@ const AboutContacts = () => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm px-6 py-6">
+      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row lg:items-center gap-4">
           <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#125e84] to-[#33babd] rounded-xl shrink-0 shadow-md">
             <FaRegBuilding className="text-white text-3xl" />

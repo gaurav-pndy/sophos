@@ -54,14 +54,14 @@ const CareSection2 = () => {
   };
 
   const icons = {
-    tab1: <FaClinicMedical className="text-3xl " />,
-    tab2: <FaUserMd className="text-3xl" />,
-    tab3: <FaRegCalendarCheck className="text-3xl" />,
-    tab4: <FaHeartbeat className="text-3xl" />,
-    tab5: <FaClipboardList className="text-3xl" />,
-    tab6: <FaVials className="text-3xl" />,
-    tab7: <FaBriefcaseMedical className="text-3xl" />,
-    tab8: <FaStethoscope className="text-3xl" />,
+    tab1: <FaClinicMedical className="text-3xl  shrink-0" />,
+    tab2: <FaUserMd className="text-3xl shrink-0" />,
+    tab3: <FaRegCalendarCheck className="text-3xl shrink-0" />,
+    tab4: <FaHeartbeat className="text-3xl shrink-0" />,
+    tab5: <FaClipboardList className="text-3xl shrink-0" />,
+    tab6: <FaVials className="text-3xl shrink-0" />,
+    tab7: <FaBriefcaseMedical className="text-3xl shrink-0" />,
+    tab8: <FaStethoscope className="text-3xl shrink-0" />,
   };
 
   return (
@@ -74,24 +74,30 @@ const CareSection2 = () => {
         {/* Flowchart */}
         <div className="mb-16">
           {/* Row 1 */}
-          <div className="flex flex-col md:grid  md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 mb-4 md:mb-8">
+          <div className="flex flex-col md:grid  md:grid-cols-[1fr_0.1fr_1fr_0.1fr_1fr] gap-4 md:gap-6 mb-4 md:mb-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white border-4 border-brand4 rounded-lg p-6 w-full text-center shadow-lg"
+              className="flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
+        shadow transition-all duration-300
+        hover:-translate-y-[2px] hover:shadow-lg
+        bg-white text-brand1"
             >
-              <div className="text-4xl text-brand1 mb-2 flex justify-center">
+              <div className="flex ">
                 {icons.tab1}
+                <span className="mt-px mx-2">{stepsData.tab1.number}.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stepsData.tab1.title,
+                  }}
+                />
               </div>
-              <p className="font-semibold base-text text-brand1/90">
-                {stepsData.tab1.number}. {stepsData.tab1.title}
-              </p>
             </motion.div>
 
             <div className="flex justify-center items-center">
-              <FaArrowRight className=" text-4xl text-brand1 flex-shrink-0 rotate-90 md:rotate-0" />
+              <FaArrowRight className=" text-2xl text-brand1 flex-shrink-0 rotate-90 md:rotate-0" />
             </div>
 
             <motion.div
@@ -99,18 +105,24 @@ const CareSection2 = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white border-4 border-brand4 rounded-lg p-6 w-full text-center shadow-lg"
+              className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
+        shadow transition-all duration-300
+        hover:-translate-y-[2px] hover:shadow-lg
+        bg-white text-brand1"
             >
-              <div className="text-3xl text-brand1 mb-2 flex justify-center">
+              <div className="flex ">
                 {icons.tab2}
+                <span className="mt-px mx-2">{stepsData.tab2.number}.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stepsData.tab2.title,
+                  }}
+                />
               </div>
-              <p className="font-semibold base-text text-brand1/90">
-                {stepsData.tab2.number}. {stepsData.tab2.title}
-              </p>
             </motion.div>
 
             <div className="flex justify-center items-center">
-              <FaArrowRight className=" text-4xl text-brand1 flex-shrink-0 rotate-90 md:rotate-0" />
+              <FaArrowRight className=" text-2xl text-brand1 flex-shrink-0 rotate-90 md:rotate-0" />
             </div>
 
             <motion.div
@@ -118,43 +130,55 @@ const CareSection2 = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="bg-white border-4 border-brand4 rounded-lg p-6 w-full  text-center shadow-lg"
+              className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
+        shadow transition-all duration-300
+        hover:-translate-y-[2px] hover:shadow-lg
+        bg-white text-brand1"
             >
-              <div className="text-3xl text-brand1 mb-2 flex justify-center">
+              <div className="flex ">
                 {icons.tab3}
+                <span className="mt-px mx-2">{stepsData.tab3.number}.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stepsData.tab3.title,
+                  }}
+                />
               </div>
-              <p className="font-semibold base-text text-brand1/90">
-                {stepsData.tab3.number}. {stepsData.tab3.title}
-              </p>
             </motion.div>
           </div>
 
           {/* Arrow down - positioned at the right end */}
-          <div className="flex justify-center md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 mb-4 md:mb-8">
+          {/* <div className="flex justify-center md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 mb-4 md:mb-8">
             <div className="col-start-5 flex justify-center">
               <FaArrowRight className="text-4xl text-brand1 rotate-90" />
             </div>
-          </div>
+          </div> */}
 
           {/* Row 2 - Reversed */}
-          <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 mb-8">
+          <div className="grid  md:grid-cols-[1fr_0.1fr_1fr_0.1fr_1fr] gap-4 md:gap-6 mb-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="bg-white border-4 border-brand4 rounded-lg p-6 w-full  text-center shadow-lg"
+              className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
+        shadow transition-all duration-300
+        hover:-translate-y-[2px] hover:shadow-lg
+        bg-white text-brand1"
             >
-              <div className="text-3xl text-brand1 mb-2 flex justify-center">
+              <div className="flex ">
                 {icons.tab4}
+                <span className="mt-px mx-2">{stepsData.tab4.number}.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stepsData.tab4.title,
+                  }}
+                />
               </div>
-              <p className="font-semibold base-text text-brand1/90">
-                {stepsData.tab4.number}. {stepsData.tab4.title}
-              </p>
             </motion.div>
 
             <div className="flex justify-center  items-center">
-              <FaArrowRight className=" text-4xl text-brand1 flex-shrink-0 rotate-90 md:rotate-180" />
+              <FaArrowRight className=" text-2xl text-brand1 flex-shrink-0 rotate-90 md:rotate-0" />
             </div>
 
             <motion.div
@@ -162,18 +186,24 @@ const CareSection2 = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
-              className="bg-white border-4 border-brand4 rounded-lg p-6 w-full  text-center shadow-lg"
+              className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
+        shadow transition-all duration-300
+        hover:-translate-y-[2px] hover:shadow-lg
+        bg-white text-brand1"
             >
-              <div className="text-3xl text-brand1 mb-2 flex justify-center">
+              <div className="flex ">
                 {icons.tab5}
+                <span className="mt-px mx-2">{stepsData.tab5.number}.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stepsData.tab5.title,
+                  }}
+                />
               </div>
-              <p className="font-semibold base-text text-brand1/90">
-                {stepsData.tab5.number}. {stepsData.tab5.title}
-              </p>
             </motion.div>
 
             <div className="flex justify-center  items-center">
-              <FaArrowRight className=" text-4xl text-brand1 flex-shrink-0 rotate-90 md:rotate-180" />
+              <FaArrowRight className=" text-2xl text-brand1 flex-shrink-0 rotate-90 md:rotate-0" />
             </div>
 
             <motion.div
@@ -181,43 +211,54 @@ const CareSection2 = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
-              className="bg-white border-4 border-brand4 rounded-lg p-6 w-full  text-center shadow-lg"
+              className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
+        shadow transition-all duration-300
+        hover:-translate-y-[2px] hover:shadow-lg
+        bg-white text-brand1"
             >
-              <div className="text-3xl text-brand1 mb-2 flex justify-center">
+              <div className="flex ">
                 {icons.tab6}
+                <span className="mt-px mx-2">{stepsData.tab6.number}.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stepsData.tab6.title,
+                  }}
+                />
               </div>
-              <p className="font-semibold base-text text-brand1/90">
-                {stepsData.tab6.number}. {stepsData.tab6.title}
-              </p>
             </motion.div>
           </div>
 
           {/* Arrow down - positioned at the left end */}
-          <div className="flex justify-center md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 mb-4 md:mb-8">
+          {/* <div className="flex justify-center md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 mb-4 md:mb-8">
             <div className=" flex justify-center">
               <FaArrowRight className="text-4xl text-brand1 rotate-90" />
             </div>
-          </div>
+          </div> */}
 
-          {/* Row 3 - Single centered item */}
-          <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 mb-4 md:mb-8">
+          <div className="grid  md:grid-cols-[1fr_0.1fr_1fr_0.1fr_1fr] gap-4 md:gap-6 mb-4 md:mb-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7 }}
-              className="bg-white border-4 border-brand4 rounded-lg p-6 w-full  text-center shadow-lg"
+              className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
+        shadow transition-all duration-300
+        hover:-translate-y-[2px] hover:shadow-lg
+        bg-white text-brand1"
             >
-              <div className="text-3xl text-brand1 mb-2 flex justify-center">
+              <div className="flex ">
                 {icons.tab7}
+                <span className="mt-px mx-2">{stepsData.tab7.number}.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stepsData.tab7.title,
+                  }}
+                />
               </div>
-              <p className="font-semibold base-text text-brand1/90">
-                {stepsData.tab7.number}. {stepsData.tab7.title}
-              </p>
             </motion.div>
 
             <div className="flex justify-center items-center">
-              <FaArrowRight className=" text-4xl text-brand1 flex-shrink-0 rotate-90 md:rotate-0" />
+              <FaArrowRight className=" text-2xl text-brand1 flex-shrink-0 rotate-90 md:rotate-0" />
             </div>
 
             <motion.div
@@ -226,17 +267,20 @@ const CareSection2 = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white border-4 border-brand4 rounded-lg p-6 w-full text-center shadow-lg cursor-pointer"
+              className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
+        shadow transition-all duration-300
+        hover:-translate-y-[2px] hover:shadow-lg
+        bg-white text-brand1"
             >
-              <div className="text-3xl text-brand1 mb-2 flex justify-center">
+              <div className="flex ">
                 {icons.tab8}
+                <span className="mt-px mx-2">{stepsData.tab8.number}.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stepsData.tab8.title,
+                  }}
+                />
               </div>
-              <p
-                className="font-semibold base-text text-brand1/90"
-                dangerouslySetInnerHTML={{
-                  __html: `${stepsData.tab8.number}. ${stepsData.tab8.title}`,
-                }}
-              />
             </motion.div>
           </div>
         </div>

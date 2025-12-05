@@ -55,7 +55,7 @@ const YandexMap = ({ center, zoom, placemarks, language }) => {
         const placemark = new window.ymaps.Placemark(
           place.coords,
           {
-            balloonContentHeader: `<div style="font-weight: bold; font-size: 24px; color: #1e3a8a; margin-bottom: 8px;">HDMC</div>`,
+            balloonContentHeader: `<div style="font-weight: bold; font-size: 24px; color: #1e3a8a; margin-bottom: 8px;">${place.title}</div>`,
             balloonContentBody: `
               <div style="padding: 5px; font-size: 14px; color: #374151;">
                 <p style="margin: 5px 0;"><strong>📍 ${t(
@@ -78,7 +78,7 @@ const YandexMap = ({ center, zoom, placemarks, language }) => {
           {
             iconLayout: "default#image",
             iconImageHref: "/map-marker.png",
-            iconImageSize: [70, 70],
+            iconImageSize: [65, 70],
             iconImageOffset: [-29, -73],
           }
         );
@@ -103,9 +103,9 @@ const AddressSection = ({ city, setShowPopup }) => {
       address: t("address.clinic1.address"),
       schedule: t("address.clinic1.schedule"),
       phone: "+7 (499) 685-30-00",
-      coords: [55.707299, 37.456828],
+      coords: [55.708031, 37.457268],
       zoom: 17,
-      hintContent: "HDMC",
+      hintContent: t("address.clinic1.title"),
     },
     {
       city: "Makhachkala",

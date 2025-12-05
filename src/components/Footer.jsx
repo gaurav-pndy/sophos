@@ -88,12 +88,12 @@ const Footer = ({ city }) => {
             <Link to="/for-patients" className=" hover:text-brand2">
               {t("header.forPatients")}{" "}
             </Link>
-            <button
+            {/* <button
               onClick={() => handleScrollToSection("#services")}
               className=" hover:text-brand2 text-left cursor-pointer"
             >
               {t("header.services")}{" "}
-            </button>
+            </button> */}
             <a href="#" className=" hover:text-brand2">
               {t("header.priceList")}
             </a>
