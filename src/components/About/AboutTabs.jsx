@@ -30,30 +30,30 @@ import { BiSolidContact } from "react-icons/bi";
 import CareersPage from "../../pages/CareersPage";
 
 const TABS = [
-  {
-    key: "info",
-    labelKey: "about.tabs.info",
-    icon: <FaHospital />,
-    component: AboutInfo,
-  },
+  // {
+  //   key: "info",
+  //   labelKey: "about.tabs.info",
+  //   icon: <FaHospital />,
+  //   component: AboutInfo,
+  // },
   {
     key: "licenses",
     labelKey: "about.tabs.licenses",
     icon: <TbLicense />,
     component: AboutLicenses,
   },
-  {
-    key: "contacts",
-    labelKey: "about.tabs.contacts",
-    icon: <BiSolidContact />,
-    component: AboutContacts,
-  },
-  {
-    key: "patients",
-    labelKey: "about.tabs.patients",
-    icon: <FaUserFriends />,
-    component: ForPatients,
-  },
+  // {
+  //   key: "contacts",
+  //   labelKey: "about.tabs.contacts",
+  //   icon: <BiSolidContact />,
+  //   component: AboutContacts,
+  // },
+  // {
+  //   key: "patients",
+  //   labelKey: "about.tabs.patients",
+  //   icon: <FaUserFriends />,
+  //   component: ForPatients,
+  // },
 
   {
     key: "privacy",
@@ -98,7 +98,7 @@ const AboutTabs = ({ city }) => {
   return (
     <section id="about-tabs" className="max-w-[87rem] mx-auto  py-12">
       {/* Tabs header */}
-      <nav className="mb-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 flex-wrap">
+      <nav className="mb-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 flex-wrap">
         {TABS.map((tab) => (
           <button
             key={tab.key}

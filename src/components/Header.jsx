@@ -194,26 +194,26 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
   ];
 
   const aboutItems = [
-    {
-      path: "/about#info",
-      label: t("header.about1"),
-      icon: <FaHospital className="text-xl text-white" />,
-    },
+    // {
+    //   path: "/about#info",
+    //   label: t("header.about1"),
+    //   icon: <FaHospital className="text-xl text-white" />,
+    // },
     {
       path: "/about#licenses",
       label: t("header.about2"),
       icon: <TbLicense className="text-xl text-white" />,
     },
-    {
-      path: "/about#contacts",
-      label: t("header.about3"),
-      icon: <BiSolidContact className="text-xl text-white" />,
-    },
-    {
-      path: "/about#patients",
-      label: t("header.about4"),
-      icon: <FaUserFriends className="text-xl text-white" />,
-    },
+    // {
+    //   path: "/about#contacts",
+    //   label: t("header.about3"),
+    //   icon: <BiSolidContact className="text-xl text-white" />,
+    // },
+    // {
+    //   path: "/about#patients",
+    //   label: t("header.about4"),
+    //   icon: <FaUserFriends className="text-xl text-white" />,
+    // },
     {
       path: "/about#privacy",
       label: t("header.about5"),
@@ -563,7 +563,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           </div> */}
 
           {/* City Confirmation Popup */}
-          {showCityInit && (
+          {/* {showCityInit && (
             <div className="absolute z-50 top-20 left-1/2 translate-x-[-50%]  bg-white border border-brand4 shadow-black/70 shadow-2xl rounded-lg px-6 py-5 w-[95%] max-w-xs text-center flex flex-col items-center">
               <div className="text-lg md:text-xl font-semibold text-brand1 mb-3">
                 {t("header.cityConfirm.question")}
@@ -583,10 +583,10 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </button>
               </div>
             </div>
-          )}
+          )} */}
 
           {/* City Selection Popup */}
-          {showCitySelect && (
+          {/* {showCitySelect && (
             <div className="absolute z-50 top-20 left-1/2 translate-x-[-50%]   bg-white border border-brand4 shadow-black/70 shadow-2xl rounded-lg px-6 py-5 w-[95%] max-w-xs text-center flex flex-col items-center">
               <div className="text-lg md:text-xl font-semibold text-brand1 mb-5">
                 {t("header.citySelect")}
@@ -614,7 +614,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </button>
               </div>
             </div>
-          )}
+          )} */}
 
           {/* Contact Info */}
           <div className="hidden lg:flex mx-4 xl:mx-8 items-center gap-3 xl:gap-5  w-fit justify-center lg:justify-end">
