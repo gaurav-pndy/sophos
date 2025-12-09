@@ -89,8 +89,8 @@ const CareersPage = () => {
   // Check URL hash on component mount
   useEffect(() => {
     const hash = window.location.hash;
-    if (hash && hash.startsWith("#vacancy-")) {
-      const vacancyId = hash.replace("#vacancy-", "");
+    if (hash && hash.startsWith("#vacancy/")) {
+      const vacancyId = hash.replace("#vacancies/", "");
       // You might want to fetch the specific vacancy here
       console.log("Should show vacancy with ID:", vacancyId);
     }
@@ -99,10 +99,10 @@ const CareersPage = () => {
   // Update URL hash when showing vacancy details
   useEffect(() => {
     if (showVacancyDetails && selectedVacancyForDetails) {
-      window.location.hash = `#vacancy-${selectedVacancyForDetails._id}`;
+      window.location.hash = `#vacancies/${selectedVacancyForDetails._id}`;
     } else if (!showVacancyDetails) {
       // Clear vacancy hash but keep #vacancies
-      if (window.location.hash.includes("vacancy-")) {
+      if (window.location.hash.includes("vacancies/")) {
         window.location.hash = "#vacancies";
       }
     }
@@ -265,7 +265,6 @@ const CareersPage = () => {
   const handleViewVacancyDetails = (vacancy) => {
     setSelectedVacancyForDetails(vacancy);
     setShowVacancyDetails(true);
-    window.scrollTo(0, 0); // Scroll to top
   };
 
   // Close vacancy details
@@ -558,8 +557,6 @@ const VacancyCard = ({
     return String(vacancy[field] || "");
   };
 
-
-
   // Handle card click
   const handleCardClick = (e) => {
     // Don't trigger card click if clicking on apply button
@@ -651,10 +648,13 @@ const VacancyCard = ({
                   {getLocalizedValue("title")}
                 </h3>
                 <p className="flex items-center text-black-800 font-semibold mb-2">
-  {vacancy.salary && typeof vacancy.salary === "object"
-    ? vacancy.salary[i18n.language] || vacancy.salary.en || vacancy.salary.ru || ""
-    : vacancy.salary || ""}
-</p>
+                  {vacancy.salary && typeof vacancy.salary === "object"
+                    ? vacancy.salary[i18n.language] ||
+                      vacancy.salary.en ||
+                      vacancy.salary.ru ||
+                      ""
+                    : vacancy.salary || ""}
+                </p>
                 <div className="flex flex-wrap gap-2 small-text text-gray-600">
                   <span className="flex items-center gap-1 bg-blue-100 text-black-800 px-3 py-1 rounded-full small-text font-semibold">
                     <FaMapMarkerAlt className="text-gray-400" />
@@ -701,7 +701,6 @@ const VacancyCard = ({
                   {t("careersPage.applications", "Applications")}:{" "}
                   {vacancy.applicationCount || 0}
                 </span>
-                
               </div>
 
               <div className="flex items-center gap-3">
@@ -853,7 +852,7 @@ const VacancyDetails = ({
         if (response.ok) {
           const result = await response.json();
 
-          console.log(result.data)
+          console.log(result.data);
           if (result.success && result.data) {
             setCurrentVacancy(result.data);
           }
