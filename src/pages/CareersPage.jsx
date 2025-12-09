@@ -558,33 +558,7 @@ const VacancyCard = ({
     return String(vacancy[field] || "");
   };
 
-  // Format salary for your data structure
-  const formatSalary = () => {
-    // Check for salaryRange object first
-    if (vacancy.salaryRange && vacancy.salaryRange.min) {
-      const min = vacancy.salaryRange.min.toLocaleString();
-      const max = vacancy.salaryRange.max
-        ? ` - ${vacancy.salaryRange.max.toLocaleString()}`
-        : "";
-      const currency =
-        vacancy.salaryRange.currency === "RUB"
-          ? "₽"
-          : vacancy.salaryRange.currency;
-      return `${min}${max} ${currency}`;
-    }
 
-    // Check for direct salary string
-    if (vacancy.salary) {
-      // If it's a number, format it
-      if (!isNaN(vacancy.salary)) {
-        return `${parseInt(vacancy.salary).toLocaleString()} ₽`;
-      }
-      // If it's already a string, return as is
-      return vacancy.salary;
-    }
-
-    return t("careersPage.salaryNotSpecified", "Salary not specified");
-  };
 
   // Handle card click
   const handleCardClick = (e) => {
@@ -677,8 +651,10 @@ const VacancyCard = ({
                   {getLocalizedValue("title")}
                 </h3>
                 <p className="flex items-center text-black-800 font-semibold mb-2">
-                  {formatSalary()}
-                </p>
+  {vacancy.salary && typeof vacancy.salary === "object"
+    ? vacancy.salary[i18n.language] || vacancy.salary.en || vacancy.salary.ru || ""
+    : vacancy.salary || ""}
+</p>
                 <div className="flex flex-wrap gap-2 small-text text-gray-600">
                   <span className="flex items-center gap-1 bg-blue-100 text-black-800 px-3 py-1 rounded-full small-text font-semibold">
                     <FaMapMarkerAlt className="text-gray-400" />
@@ -876,6 +852,8 @@ const VacancyDetails = ({
 
         if (response.ok) {
           const result = await response.json();
+
+          console.log(result.data)
           if (result.success && result.data) {
             setCurrentVacancy(result.data);
           }
@@ -942,28 +920,6 @@ const VacancyDetails = ({
     },
     [currentVacancy, getLocalizedText, currentLanguage]
   );
-
-  // Format salary
-  const formatSalary = () => {
-    if (currentVacancy.salaryRange && currentVacancy.salaryRange.min) {
-      const min = currentVacancy.salaryRange.min.toLocaleString();
-      const max = currentVacancy.salaryRange.max
-        ? ` - ${currentVacancy.salaryRange.max.toLocaleString()}`
-        : "";
-      const currency =
-        currentVacancy.salaryRange.currency === "RUB"
-          ? "₽"
-          : currentVacancy.salaryRange.currency;
-      return `${min}${max} ${currency}`;
-    }
-    if (currentVacancy.salary) {
-      if (!isNaN(currentVacancy.salary)) {
-        return `${parseInt(currentVacancy.salary).toLocaleString()} ₽`;
-      }
-      return currentVacancy.salary;
-    }
-    return t("careersPage.salaryNotSpecified", "Salary not specified");
-  };
 
   // Check if position is open
   const isPositionOpen = () => {
@@ -1162,11 +1118,13 @@ const VacancyDetails = ({
                 {getLocalizedValue("title")}
               </h1>
 
-              {/* Salary and Location Badges */}
+              {/* Salary and Location Badges - FIXED */}
               <div className="flex flex-wrap gap-4 mb-8">
-                <span className="inline-flex items-center gap-2 bg-purple-100 text-purple-800 px-4 py-3 rounded-full font-semibold text-lg">
-                  {formatSalary()}
-                </span>
+                {currentVacancy.salary && (
+                  <span className="inline-flex items-center gap-2 bg-purple-100 text-purple-800 px-4 py-3 rounded-full font-semibold text-lg">
+                    {getLocalizedValue("salary")}
+                  </span>
+                )}
                 <span className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-3 rounded-full font-semibold">
                   <FaMapMarkerAlt className="text-lg" />
                   {getLocalizedValue("location")}
@@ -1180,7 +1138,7 @@ const VacancyDetails = ({
               {/* Job Details Section */}
               <div className="bg-gray-50 rounded-xl p-6 mb-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Work Experience */}
+                  {/* Work Experience - FIXED */}
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <FaClock className="text-gray-400 text-lg" />
@@ -1189,11 +1147,11 @@ const VacancyDetails = ({
                       </span>
                     </div>
                     <p className="text-xl font-semibold text-gray-900">
-                      {currentVacancy.experienceLevel}{" "}
+                      {getLocalizedValue("experienceLevel")}
                     </p>
                   </div>
 
-                  {/* Location */}
+                  {/* Location - FIXED */}
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <FaMapMarkerAlt className="text-gray-400 text-lg" />
