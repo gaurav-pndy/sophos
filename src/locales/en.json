@@ -2551,6 +2551,9 @@
     "experience": "Year Experience",
     "noExperience": "No Experience",
 
+    "laborAgreement": "Labor Agreement",
+    "selfEmployment": "Self Employment",
+
     "learnMore": "Learn more",
 
     "workExperience": "Work Experience",

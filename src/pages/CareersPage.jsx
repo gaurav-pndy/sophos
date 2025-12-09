@@ -689,6 +689,10 @@ const VacancyCard = ({
                     {vacancy.employmentType === "other"
                       ? getLocalizedValue("otherEmploymentType") ||
                         t("careersPage.other", "Other")
+                      : vacancy.employmentType === "labor_agreement"
+                      ? t("careersPage.laborAgreement", "Labor Agreement")
+                      : vacancy.employmentType === "self_employment"
+                      ? t("careersPage.selfEmployment", "Self Employment")
                       : vacancy.employmentType
                       ? t(
                           `careersPage.employmentTypes.${vacancy.employmentType}`,
@@ -696,13 +700,15 @@ const VacancyCard = ({
                         )
                       : t("careersPage.fullTime", "Full-time")}
                   </span>
-                  {vacancy.experienceLevel ? (
+                  {vacancy.experienceLevel && (
                     <span className="flex items-center gap-1 bg-blue-100 text-black-800 px-3 py-1 rounded-full small-text font-semibold">
-                      {vacancy.experienceLevel} {t("careersPage.experience")}
+                      {vacancy.experienceLevel}
                     </span>
-                  ) : (
+                  )}
+
+                  {vacancy.department && (
                     <span className="flex items-center gap-1 bg-blue-100 text-black-800 px-3 py-1 rounded-full small-text font-semibold">
-                      {t("careersPage.noExperience")}
+                      {vacancy.department}
                     </span>
                   )}
                 </div>
@@ -719,18 +725,7 @@ const VacancyCard = ({
                   {t("careersPage.applications", "Applications")}:{" "}
                   {vacancy.applicationCount || 0}
                 </span>
-                {vacancy.applicationDeadline && (
-                  <span
-                    className={
-                      isUrgent && positionIsOpen
-                        ? "text-red-600 font-semibold"
-                        : ""
-                    }
-                  >
-                    {t("careersPage.deadline", "Deadline")}:{" "}
-                    {new Date(vacancy.applicationDeadline).toLocaleDateString()}
-                  </span>
-                )}
+                
               </div>
 
               <div className="flex items-center gap-3">
@@ -1195,7 +1190,6 @@ const VacancyDetails = ({
                     </div>
                     <p className="text-xl font-semibold text-gray-900">
                       {currentVacancy.experienceLevel}{" "}
-                      {t("careersPage.experience", "years")}
                     </p>
                   </div>
 
@@ -1224,6 +1218,10 @@ const VacancyDetails = ({
                       {currentVacancy.employmentType === "other"
                         ? getLocalizedValue("otherEmploymentType") ||
                           t("careersPage.other", "Other")
+                        : currentVacancy.employmentType === "labor_agreement"
+                        ? t("careersPage.laborAgreement", "Labor Agreement")
+                        : currentVacancy.employmentType === "self_employment"
+                        ? t("careersPage.selfEmployment", "Self Employment")
                         : currentVacancy.employmentType
                         ? t(
                             `careersPage.employmentTypes.${currentVacancy.employmentType}`,
