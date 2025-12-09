@@ -2520,6 +2520,33 @@
   },
 
   "careersPage": {
+    "experience": "Year Experience",
+    "noExperience": "No Experience",
+
+    "workExperience": "Work Experience",
+    "location": "Location",
+
+
+    "backToCareers": "Back to Careers",
+    "employmentType": "Employment Type",
+    "status": "Status",
+    "jobDescription": "Job Description",
+    "responsibilities": "Responsibilities",
+    "possibilities": "Possibilities & Prospects",
+    "positionStats": "Position Statistics",
+    "open": "Open",
+    "positionClosed": "Position Closed",
+    "interested": "Interested in this position?",
+    "applyPrompt": "Submit your application and join our team",
+    "applicants": "Applicants",
+    "noDeadline": "No deadline",
+    "positionClosedTitle": "Position Closed",
+    "positionClosedDesc": "This position is no longer accepting applications",
+    "other": "Other",
+
+
+
+
     "noFileChosen": "No file chosen",
     "chooseFile": "Choose File",
     "fileSelected": "File Selected",

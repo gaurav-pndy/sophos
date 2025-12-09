@@ -2809,6 +2809,38 @@
   },
 
   "careersPage": {
+
+
+    "experience": "Годовой опыт работы",
+    "noExperience": "Никакого опыта",
+
+    "workExperience": "опыт работы",
+    "location": "Местоположение",
+
+
+
+
+
+    "backToCareers": "Назад к вакансиям",
+    "employmentType": "Тип занятости",
+    "status": "Статус",
+    "jobDescription": "Описание вакансии",
+    "responsibilities": "Обязанности",
+    "possibilities": "Возможности и перспективы",
+    "positionStats": "Статистика вакансии",
+    "open": "Открыта",
+
+    "positionClosed": "Вакансия закрыта",
+    "interested": "Заинтересованы в этой вакансии?",
+    "applyPrompt": "Отправьте заявку и присоединяйтесь к нашей команде",
+    "applicants": "Заявители",
+    "noDeadline": "Без срока",
+    "positionClosedTitle": "Вакансия закрыта",
+    "positionClosedDesc": "Эта вакансия больше не принимает заявки",
+    "other": "Другое",
+
+
+
     "noFileChosen": "Файл не выбран",
     "chooseFile": "Выбрать файл",
     "fileSelected": "Выбранный файл",
