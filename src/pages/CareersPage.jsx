@@ -687,6 +687,18 @@ const VacancyCard = ({
                       {vacancy.department}
                     </span>
                   )}
+
+                  {vacancy.schedule && (
+                    <span className="flex items-center gap-1 bg-blue-100 text-black-800 px-3 py-1 rounded-full small-text font-semibold">
+                      {vacancy.schedule}
+                    </span>
+                  )}
+
+                  {vacancy.selectionStage && (
+                    <span className="flex items-center gap-1 bg-blue-100 text-black-800 px-3 py-1 rounded-full small-text font-semibold">
+                      {vacancy.selectionStage}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -1132,6 +1144,14 @@ const VacancyDetails = ({
                   <FaBriefcase className="text-lg" />
                   {getLocalizedValue("department")}
                 </span>
+
+                <span className="inline-flex items-center gap-2 bg-cyan-100 text-cyan-800 px-4 py-3 rounded-full font-semibold">
+                  {getLocalizedValue("schedule")}
+                </span>
+
+                <span className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-3 rounded-full font-semibold">
+                  {getLocalizedValue("selectionStage")}
+                </span>
               </div>
 
               {/* Job Details Section */}
@@ -1507,7 +1527,14 @@ const VacancyDetails = ({
                     )}
                   </p>
                   <button
-                    onClick={() => setShowApplicationForm(true)}
+                    type="button"
+                    onClick={() => {
+                      // Show local application form and let parent hook in if provided
+                      setShowApplicationForm(true);
+                      if (typeof onApply === "function") {
+                        onApply(currentVacancy);
+                      }
+                    }}
                     className="w-full px-8 py-4 bg-gradient-to-r from-brand1 to-brand3 text-white rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02]"
                   >
                     {t("careersPage.applyNow", "Apply Now")}
@@ -1591,6 +1618,8 @@ const ApplicationForm = ({
   success,
   t,
 }) => {
+  const { i18n } = useTranslation();
+
   const [formData, setFormData] = useState({
     firstName: "",
     middleName: "",
@@ -1602,6 +1631,17 @@ const ApplicationForm = ({
     agree2: false,
   });
   const [formErrors, setFormErrors] = useState({});
+
+  // Safely localize vacancy fields that may be multilingual objects
+  const getLocalizedVacancyField = (field) => {
+    const value = vacancy?.[field];
+    if (!value) return "";
+    if (typeof value === "string") return value;
+    if (typeof value === "object") {
+      return value[i18n.language] || value.en || value.ru || "";
+    }
+    return String(value);
+  };
 
   const handlePhoneChange = (phone) => {
     setFormData((prev) => ({
@@ -1749,10 +1789,12 @@ const ApplicationForm = ({
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="subheading font-bold text-gray-900">
-                {t("careersPage.applyFor", "Apply for")}: {vacancy.title}
+                {t("careersPage.applyFor", "Apply for")}:{" "}
+                {getLocalizedVacancyField("title")}
               </h2>
               <p className="text-gray-600 base-text">
-                {vacancy.department} • {vacancy.location}
+                {getLocalizedVacancyField("department")} •{" "}
+                {getLocalizedVacancyField("location")}
               </p>
             </div>
             <button
