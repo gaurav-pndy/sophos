@@ -19,7 +19,7 @@ import {
   FaEnvelope,
   FaPaperPlane,
   FaChevronDown,
-  FaInfoCircle
+  FaInfoCircle,
 } from "react-icons/fa";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
@@ -652,7 +652,7 @@ const VacancyCard = ({
 
   const handleLearnMore = (e) => {
     e.stopPropagation();
-    
+
     // Option 1: Use the provided onViewDetails callback
     if (onViewDetails) {
       onViewDetails(vacancy);
@@ -710,67 +710,67 @@ const VacancyCard = ({
             </div>
 
             {/* Footer */}
-<div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-gray-100">
-  <div className="flex items-center gap-4 small-text text-gray-500">
-    <span>
-      {t("careersPage.views", "Views")}: {vacancy.viewCount || 0}
-    </span>
-    <span>
-      {t("careersPage.applications", "Applications")}:{" "}
-      {vacancy.applicationCount || 0}
-    </span>
-    {vacancy.applicationDeadline && (
-      <span
-        className={
-          isUrgent && positionIsOpen
-            ? "text-red-600 font-semibold"
-            : ""
-        }
-      >
-        {t("careersPage.deadline", "Deadline")}:{" "}
-        {new Date(vacancy.applicationDeadline).toLocaleDateString()}
-      </span>
-    )}
-  </div>
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-gray-100">
+              <div className="flex items-center gap-4 small-text text-gray-500">
+                <span>
+                  {t("careersPage.views", "Views")}: {vacancy.viewCount || 0}
+                </span>
+                <span>
+                  {t("careersPage.applications", "Applications")}:{" "}
+                  {vacancy.applicationCount || 0}
+                </span>
+                {vacancy.applicationDeadline && (
+                  <span
+                    className={
+                      isUrgent && positionIsOpen
+                        ? "text-red-600 font-semibold"
+                        : ""
+                    }
+                  >
+                    {t("careersPage.deadline", "Deadline")}:{" "}
+                    {new Date(vacancy.applicationDeadline).toLocaleDateString()}
+                  </span>
+                )}
+              </div>
 
-  <div className="flex items-center gap-3">
-    {/* Apply button - only show if enabled AND position is open */}
-    {vacancy.showApplyButton !== false && positionIsOpen && (
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onApply();
-        }}
-        className={`px-6 py-2.5 base-text rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${getButtonStyle()}`}
-      >
-        {getButtonText()}
-        {positionIsOpen && <FaArrowRight className="text-sm" />}
-      </button>
-    )}
+              <div className="flex items-center gap-3">
+                {/* Apply button - only show if enabled AND position is open */}
+                {vacancy.showApplyButton !== false && positionIsOpen && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onApply();
+                    }}
+                    className={`px-6 py-2.5 base-text rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${getButtonStyle()}`}
+                  >
+                    {getButtonText()}
+                    {positionIsOpen && <FaArrowRight className="text-sm" />}
+                  </button>
+                )}
 
-    {/* Learn More button - shows when position is open but apply might not be available */}
-    {positionIsOpen && (
-      <button
-        onClick={handleLearnMore}
-        className="px-5 py-2.5 base-text rounded-lg font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300 flex items-center gap-2"
-      >
-        {t("careersPage.learnMore", "Learn More")}
-        <FaInfoCircle className="text-sm" />
-      </button>
-    )}
+                {/* Learn More button - shows when position is open but apply might not be available */}
+                {positionIsOpen && (
+                  <button
+                    onClick={handleLearnMore}
+                    className="px-5 py-2.5 base-text rounded-lg font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300 flex items-center gap-2"
+                  >
+                    {t("careersPage.learnMore", "Learn More")}
+                    <FaInfoCircle className="text-sm" />
+                  </button>
+                )}
 
-    {/* If position is closed but showApplyButton is true, show disabled button */}
-    {vacancy.showApplyButton !== false && !positionIsOpen && (
-      <button
-        disabled
-        onClick={(e) => e.stopPropagation()}
-        className="px-6 py-2.5 base-text rounded-lg font-semibold bg-gray-200 text-gray-500 cursor-not-allowed"
-      >
-        {t("careersPage.positionClosed", "Position Closed")}
-      </button>
-    )}
-  </div>
-</div>
+                {/* If position is closed but showApplyButton is true, show disabled button */}
+                {vacancy.showApplyButton !== false && !positionIsOpen && (
+                  <button
+                    disabled
+                    onClick={(e) => e.stopPropagation()}
+                    className="px-6 py-2.5 base-text rounded-lg font-semibold bg-gray-200 text-gray-500 cursor-not-allowed"
+                  >
+                    {t("careersPage.positionClosed", "Position Closed")}
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -909,44 +909,44 @@ const VacancyDetails = ({
     };
   }, [i18n]);
 
-// Enhanced getLocalizedValue function
-const getLocalizedValue = useCallback(
-  (field) => {
-    if (!currentVacancy || !currentVacancy[field]) {
-      return "";
-    }
-
-    const value = currentVacancy[field];
-    
-    // If it's already a string, return it
-    if (typeof value === "string") {
-      return value;
-    }
-
-    // If it's a multilingual object
-    if (value && typeof value === "object") {
-      // Check if it has en/ru properties (multilingual structure)
-      if (value.en !== undefined || value.ru !== undefined) {
-        // Get value for current language
-        return value[currentLanguage] || value.en || value.ru || "";
+  // Enhanced getLocalizedValue function
+  const getLocalizedValue = useCallback(
+    (field) => {
+      if (!currentVacancy || !currentVacancy[field]) {
+        return "";
       }
-      
-      // If it doesn't have en/ru, it might be a different object structure
-      // Try to use getLocalizedText if provided
-      if (typeof getLocalizedText === "function") {
-        const localized = getLocalizedText(value);
-        return typeof localized === "string" ? localized : "";
-      }
-      
-      // Fallback: return empty string or stringify
-      return "";
-    }
 
-    // For any other type, convert to string
-    return String(value || "");
-  },
-  [currentVacancy, getLocalizedText, currentLanguage]
-);
+      const value = currentVacancy[field];
+
+      // If it's already a string, return it
+      if (typeof value === "string") {
+        return value;
+      }
+
+      // If it's a multilingual object
+      if (value && typeof value === "object") {
+        // Check if it has en/ru properties (multilingual structure)
+        if (value.en !== undefined || value.ru !== undefined) {
+          // Get value for current language
+          return value[currentLanguage] || value.en || value.ru || "";
+        }
+
+        // If it doesn't have en/ru, it might be a different object structure
+        // Try to use getLocalizedText if provided
+        if (typeof getLocalizedText === "function") {
+          const localized = getLocalizedText(value);
+          return typeof localized === "string" ? localized : "";
+        }
+
+        // Fallback: return empty string or stringify
+        return "";
+      }
+
+      // For any other type, convert to string
+      return String(value || "");
+    },
+    [currentVacancy, getLocalizedText, currentLanguage]
+  );
 
   // Format salary
   const formatSalary = () => {
@@ -1200,17 +1200,17 @@ const getLocalizedValue = useCallback(
                   </div>
 
                   {/* Location */}
-<div className="space-y-2">
-  <div className="flex items-center gap-2">
-    <FaMapMarkerAlt className="text-gray-400 text-lg" />
-    <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-      {t("careersPage.location", "Location")}
-    </span>
-  </div>
-  <p className="text-lg font-medium text-gray-900">
-    {getLocalizedValue("location")} {/* ← FIXED */}
-  </p>
-</div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <FaMapMarkerAlt className="text-gray-400 text-lg" />
+                      <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                        {t("careersPage.location", "Location")}
+                      </span>
+                    </div>
+                    <p className="text-lg font-medium text-gray-900">
+                      {getLocalizedValue("location")}
+                    </p>
+                  </div>
 
                   {/* Employment Type */}
                   <div className="space-y-2">
