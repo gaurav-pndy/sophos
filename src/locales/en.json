@@ -2520,6 +2520,34 @@
   },
 
   "careersPage": {
+
+     "faq": {
+      "title": "Frequently Asked Questions",
+      "applicationProcess": "What is the application process?",
+      "applicationProcessAnswer": "Submit your application through our portal. Our HR team will review it within 5-7 business days and contact shortlisted candidates.",
+      "responseTime": "How long does it take to get a response?",
+      "responseTimeAnswer": "We aim to respond to all applications within 7-10 business days. For urgent inquiries, you can call us directly.",
+      "documents": "What documents do I need to prepare?",
+      "documentsAnswer": "Please have your resume/CV ready. Additional documents like cover letters, portfolios, or certifications are optional but recommended.",
+      "interview": "What is the interview process like?",
+      "interviewAnswer": "Our process typically includes a phone screening, technical assessment, and 2-3 interview rounds with team members and leadership.",
+      "note": "Click any question to jump to contact options"
+    },
+
+     "needHelp": "Need Help? Contact Us",
+    "callbackTitle": "Request a Call Back",
+    "callbackDesc": "Have questions about this position? Leave your phone number and we'll call you back within 24 hours.",
+    "phoneLabel": "Phone Number",
+    "emailLabel": "Email Address",
+    "yourPhone": "Your Phone Number",
+    "phonePlaceholder": "Enter your phone number",
+    "phoneRequired": "Phone number is required",
+    "phoneInvalid": "Please enter a valid phone number",
+    "phoneSuccess": "Thank you! We'll call you back soon.",
+    "privacyNotice": "By submitting your phone number, you agree to our Privacy Policy. We won't share your information with third parties.",
+    "callUs": "Call us directly",
+    "emailUs": "Send us an email",
+
     "experience": "Year Experience",
     "noExperience": "No Experience",
 

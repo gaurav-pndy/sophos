@@ -1386,7 +1386,7 @@ const VacancyDetails = ({
 
                         {/* Question content */}
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                          <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:transition-colors">
                             {faq.question}
                           </h3>
                         </div>
@@ -1468,7 +1468,7 @@ const VacancyDetails = ({
                                 "careersPage.phonePlaceholder",
                                 "Enter your phone number"
                               )}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent pr-12"
+                              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gradient-to-r from-brand1 to-brand3 focus:border-transparent pr-12"
                               disabled={phoneLoading}
                             />
                             <button
@@ -1586,7 +1586,6 @@ const VacancyDetails = ({
         </div>
       </div>
 
-      {/* Application Form Modal - RENDERED INSIDE VacancyDetails */}
       {showApplicationForm && currentVacancy && (
         <ApplicationForm
           vacancy={currentVacancy}
