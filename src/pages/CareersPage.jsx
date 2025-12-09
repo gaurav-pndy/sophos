@@ -271,6 +271,8 @@ const CareersPage = () => {
   const handleCloseVacancyDetails = () => {
     setShowVacancyDetails(false);
     setSelectedVacancyForDetails(null);
+    setShowApplicationForm(false);
+    setSelectedVacancy(null);
     window.location.hash = "#vacancies";
   };
 
@@ -1529,11 +1531,8 @@ const VacancyDetails = ({
                   <button
                     type="button"
                     onClick={() => {
-                      // Show local application form and let parent hook in if provided
+                      // Only open local application form; avoid triggering parent modal state
                       setShowApplicationForm(true);
-                      if (typeof onApply === "function") {
-                        onApply(currentVacancy);
-                      }
                     }}
                     className="w-full px-8 py-4 bg-gradient-to-r from-brand1 to-brand3 text-white rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02]"
                   >
