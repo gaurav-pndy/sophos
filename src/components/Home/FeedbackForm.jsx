@@ -9,6 +9,8 @@ const FeedbackForm = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
+  console.log("lang", currentLanguage);
+
   const [form, setForm] = useState({
     patientName: {
       en: { firstName: "", middleName: "", lastName: "" },

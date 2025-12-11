@@ -1446,7 +1446,7 @@
     "makhachkala": "Махачкала",
     "another": " Другой город",
     "message": "Сообщение",
-    "checkbox1": "Согласен с  <a href='/about#privacy' target='_blank' class='text-blue-500 underline'> Политикой конфиденциальности </a> и обработкой персональных данных",
+    "checkbox1": "<a href='/согласие.pdf' target='_blank' class='text-blue-500 underline'> Я даю согласие </a> на обработку персональных данных и <a href='' target='_blank' class='text-blue-500 underline'> политикой конфиденциальности</a>  ",
     "checkbox2": "Даю согласие на получение информационных сообщений, рекламных и рекламно-информационных предложений",
     "button": "Отправить",
     "dragAndDrop": "Щелкните или перетащите документы для загрузки"
