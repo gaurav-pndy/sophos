@@ -279,7 +279,7 @@ const CareSection2 = () => {
               className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
         shadow transition-all duration-300
         hover:-translate-y-[2px] hover:shadow-lg
-        bg-brand1 text-white"
+        bg-white text-brand1"
             >
               <div className="flex ">
                 {icons.tab8}
@@ -305,7 +305,7 @@ const CareSection2 = () => {
               className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
         shadow transition-all duration-300
         hover:-translate-y-[2px] hover:shadow-lg
-        bg-white text-brand1"
+        bg-brand1 text-white"
             >
               <div className="flex ">
                 {icons.tab9}
