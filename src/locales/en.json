@@ -2705,7 +2705,8 @@
     "tab5": "Treatment (chemo / targeted / immunotherapy / surgery)",
     "tab6": "Supportive therapy and rehabilitation",
     "tab7": "Dynamic follow-up",
-    "tab8": "Including the most difficult cases!",
+    "tab8": "Treatment of non-oncological diseases in cured cancer patients",
+    "tab9": "Including the most difficult cases!",
     "block1": {
       "title": "Personal Patient Coordinator",
       "point1": "This is your main point of contact: the specialist answers questions, schedules appointments, organizes visits and examinations, and helps with documents.",

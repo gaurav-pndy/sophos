@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaArrowRight, FaStethoscope } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaHandHoldingMedical,
+  FaStethoscope,
+} from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaUserMd,
@@ -51,6 +55,10 @@ const CareSection2 = () => {
       number: 8,
       title: t("care.tab8"),
     },
+    tab9: {
+      number: 9,
+      title: t("care.tab9"),
+    },
   };
 
   const icons = {
@@ -61,7 +69,8 @@ const CareSection2 = () => {
     tab5: <FaClipboardList className="text-3xl shrink-0" />,
     tab6: <FaVials className="text-3xl shrink-0" />,
     tab7: <FaBriefcaseMedical className="text-3xl shrink-0" />,
-    tab8: <FaStethoscope className="text-3xl shrink-0" />,
+    tab8: <FaHandHoldingMedical className="text-3xl shrink-0" />,
+    tab9: <FaStethoscope className="text-3xl shrink-0" />,
   };
 
   return (
@@ -270,7 +279,7 @@ const CareSection2 = () => {
               className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
         shadow transition-all duration-300
         hover:-translate-y-[2px] hover:shadow-lg
-        bg-white text-brand1"
+        bg-brand1 text-white"
             >
               <div className="flex ">
                 {icons.tab8}
@@ -278,6 +287,32 @@ const CareSection2 = () => {
                 <span
                   dangerouslySetInnerHTML={{
                     __html: stepsData.tab8.title,
+                  }}
+                />
+              </div>
+            </motion.div>
+
+            <div className="flex justify-center invisible items-center">
+              <FaArrowRight className=" text-2xl text-brand1 flex-shrink-0 rotate-90 md:rotate-0" />
+            </div>
+
+            <motion.div
+              onClick={() => navigate("/complicated-cases")}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className=" flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left base-text cursor-pointer
+        shadow transition-all duration-300
+        hover:-translate-y-[2px] hover:shadow-lg
+        bg-white text-brand1"
+            >
+              <div className="flex ">
+                {icons.tab9}
+                <span className="mt-px mx-2">{stepsData.tab9.number}.</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stepsData.tab9.title,
                   }}
                 />
               </div>
