@@ -1264,8 +1264,8 @@
     "phoneTitle": "Phone",
     "clinic1": {
       "title": "SOPHOS",
-      "address": "Business center Kvartal West, <br/>Moscow, 6 Aminyevskoe highway,<br>entrance 1, 4th and 5th floors",
-      "schedule": "from 8:00 to 23:00, seven days a week"
+      "address": "Business center Kvartal West, <br/>Moscow, 6 Aminyevskoe highway,<br>entrance 1, 4th floor",
+      "schedule": "from 10:00 to 18:00. Weekend: Saturday and Sunday"
     },
     "clinic2": {
       "title": "Ali-Gadzhi Akushinskogo Avenue",
