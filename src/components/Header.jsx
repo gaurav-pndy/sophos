@@ -132,88 +132,172 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
   // Services list
   const services = [
     {
-      path: "/services/service1",
-      label: t("header.service1"),
+      label: t("header.servicesDrop.s1.title"),
       icon: "/services/1.svg",
+      subItems: [
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s1.subitems.sub1"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s1.subitems.sub2"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s1.subitems.sub3"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s1.subitems.sub4"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s1.subitems.sub5"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s1.subitems.sub6"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s1.subitems.sub7"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s1.subitems.sub8"),
+        },
+      ],
     },
     {
-      path: "/services/service2",
-      label: t("header.service2"),
+      label: t("header.servicesDrop.s2.title"),
       icon: "/services/2.svg",
+      subItems: [
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub1"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub2"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub3"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub4"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub5"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub6"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub7"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub8"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub9"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub10"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s2.subitems.sub11"),
+        },
+      ],
     },
     {
       path: "/services/service3",
-      label: t("header.service3"),
+      label: t("header.servicesDrop.s3.title"),
       icon: "/services/3.svg",
     },
     {
       path: "/services/service4",
-      label: t("header.service4"),
+      label: t("header.servicesDrop.s4.title"),
       icon: "/services/4.svg",
     },
     {
-      path: "/services/service5",
-      label: t("header.service5"),
+      label: t("header.servicesDrop.s5.title"),
       icon: "/services/5.svg",
+      subItems: [
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s5.subitems.sub1"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s5.subitems.sub1"),
+        },
+      ],
     },
     {
-      path: "/services/service6",
-      label: t("header.service6"),
+      label: t("header.servicesDrop.s6.title"),
       icon: "/services/6.svg",
+      subItems: [
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s6.subitems.sub1"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s6.subitems.sub1"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s6.subitems.sub1"),
+        },
+      ],
     },
     {
       path: "/services/service7",
-      label: t("header.service7"),
+      label: t("header.servicesDrop.s7.title"),
       icon: "/services/7.svg",
     },
     {
       path: "/services/service8",
-      label: t("header.service8"),
+      label: t("header.servicesDrop.s8.title"),
       icon: "/services/8.svg",
     },
     {
-      path: "/services/service9",
-      label: t("header.service9"),
+      label: t("header.servicesDrop.s9.title"),
       icon: "/services/9.svg",
-    },
-    {
-      path: "/services/service10",
-      label: t("header.service10"),
-      icon: "/services/10.svg",
-    },
-    {
-      path: "/services/service11",
-      label: t("header.service11"),
-      icon: "/services/11.svg",
-    },
-    {
-      path: "/services/service12",
-      label: t("header.service12"),
-      icon: "/services/12.svg",
+      subItems: [
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s9.subitems.sub1"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s9.subitems.sub1"),
+        },
+        {
+          path: "/services/service1",
+          label: t("header.servicesDrop.s9.subitems.sub1"),
+        },
+      ],
     },
   ];
 
   const aboutItems = [
-    // {
-    //   path: "/about#info",
-    //   label: t("header.about1"),
-    //   icon: <FaHospital className="text-xl text-white" />,
-    // },
     {
       path: "/about#licenses",
       label: t("header.about2"),
       icon: <TbLicense className="text-xl text-white" />,
     },
-    // {
-    //   path: "/about#contacts",
-    //   label: t("header.about3"),
-    //   icon: <BiSolidContact className="text-xl text-white" />,
-    // },
-    // {
-    //   path: "/about#patients",
-    //   label: t("header.about4"),
-    //   icon: <FaUserFriends className="text-xl text-white" />,
-    // },
+
     {
       path: "/about#privacy",
       label: t("header.about5"),
@@ -229,11 +313,6 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       path: "/about#vacancies",
       label: t("header.about7"),
       icon: <FaUserPlus className="text-xl text-white" />,
-    },
-    {
-      path: "/about#partners",
-      label: t("header.about8"),
-      icon: <FaUsers className="text-xl text-white" />,
     },
   ];
 
@@ -268,214 +347,53 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       label: t("header.patient6"),
       icon: <FaFileAlt className="text-xl text-white" />,
     },
+    {
+      path: "/for-patients#price-list",
+      label: t("header.patient7"),
+      icon: <FaMoneyBillAlt className="text-xl text-white" />,
+    },
   ];
 
   const doctorsItems = [
     {
+      path: "/doctors#specialization15",
       label: t("header.doctorsDrop.d1"),
-      icon: <FaFemale className=" text-white" />,
-      subItems: [
-        {
-          category: t("header.doctorsDrop.subItems.h1"),
-          items: [
-            {
-              label: t("header.doctorsDrop.subItems.s1"),
-              path: "/doctors#specialization1",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s2"),
-              path: "/doctors#specialization2",
-            },
-          ],
-        },
-        {
-          category: t("header.doctorsDrop.subItems.h2"),
-          items: [
-            {
-              label: t("header.doctorsDrop.subItems.s3"),
-              path: "/doctors#specialization3",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s4"),
-              path: "/doctors#specialization4",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s5"),
-              path: "/doctors#specialization5",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s6"),
-              path: "/doctors#specialization6",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s7"),
-              path: "/doctors#specialization7",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s8"),
-              path: "/doctors#specialization8",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s9"),
-              path: "/doctors#specialization9",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s10"),
-              path: "/doctors#specialization10",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s11"),
-              path: "/doctors#specialization11",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s12"),
-              path: "/doctors#specialization12",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s13"),
-              path: "/doctors#specialization13",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s14"),
-              path: "/doctors#specialization14",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s15"),
-              path: "/doctors#specialization15",
-            },
-          ],
-        },
-      ],
+      icon: <FaFemale className=" text-white text-xl" />,
     },
     {
       path: "/doctors#specialization16",
       label: t("header.doctorsDrop.d2"),
-      icon: <GiStomach className=" text-white" />,
+      icon: <GiStomach className=" text-white text-xl" />,
     },
     {
       path: "/doctors#specialization17",
       label: t("header.doctorsDrop.d3"),
-      icon: <FaDna className=" text-white" />,
+      icon: <FaDna className=" text-white text-xl" />,
     },
     {
       path: "/doctors#specialization18",
       label: t("header.doctorsDrop.d4"),
-      icon: <GiMedicines className=" text-white" />,
+      icon: <GiMedicines className=" text-white text-xl" />,
     },
     {
       path: "/doctors#specialization19",
       label: t("header.doctorsDrop.d5"),
-      icon: <FaUserMd className=" text-white" />,
+      icon: <FaUserMd className=" text-white text-xl" />,
+    },
+    {
+      path: "/doctors#specialization19",
+      label: t("header.doctorsDrop.d6"),
+      icon: <FaUserMd className=" text-white text-xl" />,
     },
     {
       path: "/doctors#specialization20",
       label: t("header.doctorsDrop.d7"),
-      icon: <FaBrain className=" text-white" />,
+      icon: <FaBrain className=" text-white text-xl" />,
     },
     {
       path: "/doctors#specialization21",
       label: t("header.doctorsDrop.d8"),
-      icon: <GiBrain className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization22",
-      label: t("header.doctorsDrop.d9"),
-      icon: <GiKidneys className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization23",
-      label: t("header.doctorsDrop.d10"),
-      icon: <MdFamilyRestroom className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization24",
-      label: t("header.doctorsDrop.d11"),
-      icon: <GiNoseFront className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization25",
-      label: t("header.doctorsDrop.d12"),
-      icon: <FaEye className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization26",
-      label: t("header.doctorsDrop.d13"),
-      icon: <FaUserNurse className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization27",
-      label: t("header.doctorsDrop.d14"),
-      icon: <GiPsychicWaves className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization28",
-      label: t("header.doctorsDrop.d15"),
-      icon: <MdPsychology className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization29",
-      label: t("header.doctorsDrop.d16"),
-      icon: <FaUserTie className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization30",
-      label: t("header.doctorsDrop.d17"),
-      icon: <GiHeartOrgan className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization31",
-      label: t("header.doctorsDrop.d18"),
-      icon: <BsThermometerHalf className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization32",
-      label: t("header.doctorsDrop.d19"),
-      icon: <FaUserFriends className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization33",
-      label: t("header.doctorsDrop.d20"),
-      icon: <FaBone className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization34",
-      label: t("header.doctorsDrop.d21"),
-      icon: <GiScalpel className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization35",
-      label: t("header.doctorsDrop.d22"),
-      icon: <FaUserMd className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization36",
-      label: t("header.doctorsDrop.d23"),
-      icon: <AiOutlineUserSwitch className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization37",
-      label: t("header.doctorsDrop.d24"),
-      icon: <FaStethoscope className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization38",
-      label: t("header.doctorsDrop.d25"),
-      icon: <GiScalpel className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization39",
-      label: t("header.doctorsDrop.d26"),
-      icon: <GiScalpel className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization40",
-      label: t("header.doctorsDrop.d27"),
-      icon: <GiScalpel className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization41",
-      label: t("header.doctorsDrop.d28"),
-      icon: <GiScalpel className=" text-white" />,
+      icon: <GiBrain className=" text-white text-xl" />,
     },
   ];
 
@@ -548,7 +466,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          {/* <div className="hidden lg:flex flex-col">
+          <div className="hidden lg:flex flex-col">
             <label htmlFor="city" className="text-xs mb-1">
               {t("header.selectCity")}
             </label>
@@ -560,10 +478,10 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               <option value="Moscow">{t("moscow")}</option>
               <option value="Makhachkala">{t("makhachkala")}</option>
             </select>
-          </div> */}
+          </div>
 
           {/* City Confirmation Popup */}
-          {/* {showCityInit && (
+          {showCityInit && (
             <div className="absolute z-50 top-20 left-1/2 translate-x-[-50%]  bg-white border border-brand4 shadow-black/70 shadow-2xl rounded-lg px-6 py-5 w-[95%] max-w-xs text-center flex flex-col items-center">
               <div className="text-lg md:text-xl font-semibold text-brand1 mb-3">
                 {t("header.cityConfirm.question")}
@@ -583,10 +501,10 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </button>
               </div>
             </div>
-          )} */}
+          )}
 
           {/* City Selection Popup */}
-          {/* {showCitySelect && (
+          {showCitySelect && (
             <div className="absolute z-50 top-20 left-1/2 translate-x-[-50%]   bg-white border border-brand4 shadow-black/70 shadow-2xl rounded-lg px-6 py-5 w-[95%] max-w-xs text-center flex flex-col items-center">
               <div className="text-lg md:text-xl font-semibold text-brand1 mb-5">
                 {t("header.citySelect")}
@@ -614,7 +532,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </button>
               </div>
             </div>
-          )} */}
+          )}
 
           {/* Contact Info */}
           <div className="hidden lg:flex mx-4 xl:mx-8 items-center gap-3 xl:gap-5  w-fit justify-center lg:justify-end">
@@ -730,7 +648,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               </div>
             </div>
             <button
-              className="border hidden md:flex border-[#125e84] text-[#125e84] px-4 py-1.5 rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap base-text"
+              className="border hidden md:flex border-[#3a4660] text-[#3a4660] px-4 py-1.5 rounded-lg font-medium hover:bg-[#3a4660]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap base-text"
               onClick={() => {
                 setShowUserAccount(true);
                 setIsOpen(false);
@@ -771,7 +689,42 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           )}
         </Link>
 
-        <div className="hidden lg:flex justify-end gap-3  xl:gap-6 mx-3 xl:mx-6 items-center flex-1 base-text font-semibold">
+        <div className="flex justify-end  w-full  gap-3">
+          <div className="hidden lg:flex items-center ">
+            <input
+              type="text"
+              className="border w-48 xl:min-w-110 border-[#3a4660] text-[#3a4660] px-4 h-full small-text rounded-l-lg font-medium hover:bg-[#3a4660]/10 transition-all duration-300"
+              placeholder={t("header.search")}
+            />
+            <button
+              type="button"
+              className="h-full px-4 small-text rounded-r-lg bg-[#3a4660] text-white font-medium hover:bg-[#3a4660]/90 transition-all duration-300"
+            >
+              {/* <FaSearch className="text-sm" /> */}
+              {t("header.searchBtn")}
+            </button>
+          </div>
+
+          <button
+            onClick={() => setShowPopup(true)}
+            className=" min-w-48 xl:min-w-56 bg-[#3a4660] text-white px-4 py-2 rounded-lg font-normal hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap hidden lg:flex justify-center items-center gap-2"
+          >
+            <FaCalendarCheck className="text-lg" />
+
+            {t("header.bookAppointment")}
+          </button>
+          <button
+            className="lg:hidden text-2xl text-gray-700"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open menu"
+          >
+            <FaBars />
+          </button>
+        </div>
+      </motion.nav>
+
+      <nav className="hidden lg:flex z-100 py-3 w-full bg-gradient-to-r from-white from-20% xl:from-25% to-40% xl:to-45% to-brand1/10 justify-end ">
+        <div className="hidden max-w-[90rem] mx-auto lg:flex justify-end gap-3  xl:gap-6 px-4  items-center flex-1 base-text font-semibold">
           {" "}
           <div
             onMouseEnter={() => setShowAboutDropdown(true)}
@@ -793,7 +746,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/3 mt-18 grid grid-cols-4 gap-6 xl:gap-10 bg-white  shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-3xl xl:w-5xl"
+                  className="absolute left-1/2 -translate-x-1/2 mt-4 grid grid-cols-4 gap-6 xl:gap-10 bg-white  shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-3xl xl:w-5xl"
                 >
                   {aboutItems.map((a, idx) => (
                     <Link
@@ -801,7 +754,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       to={a.path}
                       className="block  group  text-wrap   transition-all relative duration-300 rounded-lg"
                     >
-                      <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#125e84] to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
+                      <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#3a4660] to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                         {a.icon}
                       </div>
                       <p className="group-hover:text-brand2 text-sm xl:text-base font-normal">
@@ -811,6 +764,97 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
                       </div>
                     </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          <div
+            onMouseEnter={() => setShowServices(true)}
+            onMouseLeave={() => {
+              setShowServices(false);
+              setActiveSub(null);
+            }}
+            className="relative whitespace-nowrap cursor-pointer"
+          >
+            <button
+              onClick={() => handleScrollToSection("#services")}
+              className="flex items-center gap-1 hover:text-brand2 transition-all duration-300 cursor-pointer"
+            >
+              {t("header.services")} <FaChevronDown className="text-sm mt-1" />
+            </button>
+
+            <AnimatePresence>
+              {showServices && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-3  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-3xl xl:w-6xl font-normal"
+                >
+                  {services.map((s, idx) => (
+                    <div
+                      key={idx}
+                      className={`${!s.subItems && "group"} relative`}
+                      onMouseEnter={() => s.subItems && setActiveSub(s.label)}
+                      onMouseLeave={() => s.subItems && setActiveSub(null)}
+                    >
+                      <Link
+                        to={s.path || "#"}
+                        className="flex items-center gap-2 group-hover:text-brand2 text-sm xl:text-base font-medium transition-all duration-300"
+                      >
+                        <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#3a4660] to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-12 group-hover:scale-110 flex items-center justify-center shrink-0 transition-all duration-300 ">
+                          <img
+                            src={s.icon}
+                            alt={s.label}
+                            className="w-4 xl:w-6 h-4 xl:h-6 object-contain brightness-0 invert"
+                          />
+                        </div>
+                        <p
+                          className={`${
+                            s.subItems && "text-[#0a3449]"
+                          } group-hover:text-brand2 pr-8 text-sm xl:text-base text-wrap font-normal`}
+                        >
+                          {s.label}
+                        </p>
+                        {s.subItems ? (
+                          <FaChevronDown className="text-sm mt-1 " />
+                        ) : (
+                          <div className="absolute right-0 top-2 overflow-hidden w-6">
+                            <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
+                          </div>
+                        )}
+                      </Link>
+
+                      <AnimatePresence>
+                        {activeSub === s.label && s.subItems && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute left-0   top-[110%]  bg-[#f3f5f7] border border-gray-400 rounded-xl shadow-lg shadow-black/30 p-4 w-xl xl:w-xl z-50 flex flex-col gap-4 justify-between"
+                          >
+                            <ul className="grid grid-cols-2 gap-4">
+                              {s.subItems.map((item, i) => (
+                                <li key={i}>
+                                  <Link
+                                    to={item.path}
+                                    className="block group text-wrap text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                  >
+                                    {item.label}
+                                    <div className="absolute right-2 top-2 overflow-hidden w-6">
+                                      <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
+                                    </div>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   ))}
                 </motion.div>
               )}
@@ -838,7 +882,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/2 mt-18 grid grid-rows-7  grid-flow-col gap-6  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-3xl xl:w-6xl font-normal"
+                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-2  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-3xl xl:w-6xl font-normal"
                 >
                   {doctorsItems.map((d, idx) => (
                     <div
@@ -851,7 +895,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         to={d.path || "#"}
                         className="flex items-center gap-2 group-hover:text-brand2 text-sm xl:text-base font-medium transition-all duration-300"
                       >
-                        <div className="w-8  h-8 rounded-full bg-gradient-to-br from-[#125e84] to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300">
+                        <div className="w-10 xl:w-12  h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#3a4660] to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300">
                           {d.icon}
                         </div>
                         <p
@@ -911,60 +955,6 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               )}
             </AnimatePresence>
           </div>
-          {/* Services Dropdown - Desktop */}{" "}
-          {/* <div
-            onMouseEnter={() => setShowServices(true)}
-            onMouseLeave={() => setShowServices(false)}
-            className="relative   whitespace-nowrap cursor-pointer"
-          >
-            <button
-              onClick={() => handleScrollToSection("#services")}
-              className="flex items-center cursor-pointer gap-1 hover:text-brand2 transition-all duration-300"
-            >
-              {t("header.services")} <FaChevronDown className="text-sm mt-1" />
-            </button>
-
-        
-            <AnimatePresence>
-              {showServices && (
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/2 mt-18 grid grid-cols-4 gap-5 bg-white shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-3xl xl:w-6xl"
-                >
-                  {services.map((s, idx) => (
-                    <Link
-                      key={idx}
-                      to={s.path}
-                      className="block group text-wrap transition-all duration-300 rounded-lg relative"
-                    >
-                      <div className="flex flex-col items-start gap-1">
-                        <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#125e84] to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-12 group-hover:scale-110 flex items-center justify-center shrink-0 transition-all duration-300 ">
-                          <img
-                            src={s.icon}
-                            alt={s.label}
-                            className="w-4 xl:w-6 h-4 xl:h-6 object-contain brightness-0 invert"
-                          />
-                        </div>
-
-                        <div className=" ">
-                          <p className="group-hover:text-brand2 text-sm xl:text-base transition-colors font-normal duration-300">
-                            {s.label}
-                          </p>
-                        </div>
-
-                        <div className="absolute right-2 top-3 overflow-hidden w-6">
-                          <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div> */}
           <div
             onMouseEnter={() => setShowPatientsDropdown(true)}
             onMouseLeave={() => setShowPatientsDropdown(false)}
@@ -986,7 +976,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/2 mt-18 grid grid-cols-3 gap-6 xl:gap-10 bg-white shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-2xl xl:w-4xl"
+                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-cols-3 gap-6 xl:gap-10 bg-white shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-2xl xl:w-4xl"
                 >
                   {patientItems.map((p, idx) => (
                     <Link
@@ -994,7 +984,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       key={idx}
                       className="block  group  text-wrap   transition-all relative duration-300 rounded-lg"
                     >
-                      <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#125e84] to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
+                      <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#3a4660] to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                         {p.icon}
                       </div>
                       <p className="group-hover:text-brand2 text-sm xl:text-base text-left font-normal">
@@ -1030,58 +1020,6 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             {" "}
             {t("header.contact")}
           </button>{" "}
-        </div>
-
-        <div className="flex justify-between  md:justify-normal md:w-fit  gap-3">
-          <input
-            type="text"
-            className="border w-48 xl:min-w-56 hidden lg:flex border-[#125e84] text-[#125e84] px-4 py-2 small-text rounded-lg font-medium hover:bg-[#125e84]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap"
-            placeholder={t("header.search")}
-          >
-            {/* <FaSearch className="" /> */}
-          </input>
-          <button
-            className="lg:hidden text-2xl text-gray-700"
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
-          >
-            <FaBars />
-          </button>
-        </div>
-      </motion.nav>
-
-      <nav className="hidden lg:flex z-100 py-2 w-full bg-gradient-to-r from-white from-20% xl:from-25% to-40% xl:to-45% to-brand1/10 justify-end ">
-        <div className="hidden max-w-[90rem] px-4  mx-auto md:flex gap-3 xl:gap-6  justify-end items-center flex-1 base-text font-semibold">
-          {" "}
-          <button
-            onClick={() => setShowPopup(true)}
-            className=" min-w-48 xl:min-w-56 bg-[#125e84] text-white px-4 py-2 rounded-lg font-normal hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap hidden md:flex justify-center items-center gap-2"
-          >
-            <FaCalendarCheck className="text-lg" />
-
-            {t("header.bookAppointment")}
-          </button>
-          <Link
-            to="/services/service1"
-            className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
-          >
-            {" "}
-            {t("header.service1")}{" "}
-          </Link>{" "}
-          <Link
-            to="/early-detection-program"
-            className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
-          >
-            {" "}
-            {t("header.earlyDiagnosis")}{" "}
-          </Link>{" "}
-          <Link
-            to="/oncological-care"
-            className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
-          >
-            {" "}
-            {t("header.oncologicalCare")}{" "}
-          </Link>{" "}
         </div>
       </nav>
 
@@ -1193,7 +1131,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
               <div className="flex flex-col gap-2 base-text mb-4">
                 <button
-                  className="bg-[#125e84] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4"
+                  className="bg-[#3a4660] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4"
                   onClick={() => {
                     setShowUserAccount(true);
                     setIsOpen(false);
@@ -1204,14 +1142,14 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </button>
                 <button
                   onClick={() => setShowPopup(true)}
-                  className="border border-[#125e84] text-[#125e84] px-6 py-2.5 rounded-lg font-medium flex gap-2 items-center hover:bg-[#125e84]/10 cursor-pointer transition whitespace-nowrap"
+                  className="border border-[#3a4660] text-[#3a4660] px-6 py-2.5 rounded-lg font-medium flex gap-2 items-center hover:bg-[#3a4660]/10 cursor-pointer transition whitespace-nowrap"
                 >
                   <FaCalendarCheck className="text-lg" />
 
                   {t("header.bookAppointment")}
                 </button>
               </div>
-              {/* 
+
               <div className="flex flex-col m-6">
                 <label htmlFor="city" className="text-xs mb-1">
                   {t("header.selectCity")}
@@ -1224,7 +1162,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   <option value="Moscow">{t("header.moscow")}</option>
                   <option value="Makhachkala">{t("header.makhachkala")}</option>
                 </select>
-              </div> */}
+              </div>
 
               <nav className="flex flex-col gap-4 base-text">
                 <div>
@@ -1257,6 +1195,92 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                             {a.label}
                           </Link>
                         ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+                <div>
+                  <button
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    className="flex items-center justify-between w-full"
+                  >
+                    {t("header.services")}
+                    <FaChevronDown
+                      className={`ml-2 transform transition ${
+                        isServicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {/* Expandable Section */}
+                  <AnimatePresence>
+                    {isServicesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
+                      >
+                        {services.map((item, idx) =>
+                          item.subItems ? (
+                            <div key={idx}>
+                              <button
+                                onClick={() =>
+                                  setOpenSubCategory(
+                                    openSubCategory === item.label
+                                      ? null
+                                      : item.label
+                                  )
+                                }
+                                className="flex items-center justify-between w-full"
+                              >
+                                <div className="">
+                                  <span>{item.label}</span>
+                                </div>
+                                <FaChevronDown
+                                  className={`ml-2 transform transition ${
+                                    openSubCategory === item.label
+                                      ? "rotate-180"
+                                      : ""
+                                  }`}
+                                />
+                              </button>
+
+                              <AnimatePresence>
+                                {openSubCategory === item.label && (
+                                  <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    className="ml-4 mt-2 flex flex-col gap-3"
+                                  >
+                                    <div className="flex ml-2 flex-col gap-2 ">
+                                      {item.subItems.map((sub, i) => (
+                                        <Link
+                                          key={i}
+                                          to={sub.path}
+                                          onClick={() => setIsOpen(false)}
+                                          className="block hover:underline"
+                                        >
+                                          {sub.label}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          ) : (
+                            <Link
+                              key={idx}
+                              to={item.path}
+                              onClick={() => setIsOpen(false)}
+                              className=""
+                            >
+                              {item.label}
+                            </Link>
+                          )
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -1355,41 +1379,6 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     )}
                   </AnimatePresence>
                 </div>
-                {/* Services Dropdown - Mobile */}
-                {/* <div>
-                  <button
-                    onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className="flex items-center justify-between w-full"
-                  >
-                    {t("header.services")}
-                    <FaChevronDown
-                      className={`ml-2 transform transition ${
-                        isServicesOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <AnimatePresence>
-                    {isServicesOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
-                      >
-                        {services.map((s, idx) => (
-                          <Link
-                            key={idx}
-                            to={s.path}
-                            onClick={() => setIsOpen(false)}
-                            className="block"
-                          >
-                            {s.label}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div> */}
                 <div>
                   <button
                     onClick={() => setIsPatientsOpen(!isPatientsOpen)}
@@ -1460,7 +1449,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   className="  hover:underline whitespace-nowrap"
                 >
                   {" "}
-                  {t("header.service1")}
+                  {t("header.servicesDrop.s1")}
                 </Link>{" "}
                 <Link
                   onClick={() => setIsOpen(false)}

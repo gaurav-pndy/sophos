@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme inline{
-    --color-brand1: #125e84;
-        --color-brand2: #c668a9;
-        --color-brand3: #af6ca5;
-        --color-brand4: #63cacc;
-        --color-brand5: #33babd;
+    --color-brand1: #3a4660;
+        --color-brand2: #c9af98;
+        --color-brand3: #ed8a63;
+        --color-brand4: #845007;
+        --color-brand5: #845007;
 }
 
 /* In your CSS file or globals.css */

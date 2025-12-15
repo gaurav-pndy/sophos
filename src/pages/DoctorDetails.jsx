@@ -228,7 +228,7 @@ const DoctorDetails = ({ setShowPopup }) => {
     }
     .prose strong { 
       font-weight: 600; 
-      color: #125e84;
+      color: #3a4660;
     }
     .prose em { 
       font-style: italic; 
@@ -237,14 +237,14 @@ const DoctorDetails = ({ setShowPopup }) => {
     .prose h2 { 
       font-size: 1.5rem; 
       font-weight: 600; 
-      color: #125e84; 
+      color: #3a4660; 
       margin-top: 1.5rem; 
       margin-bottom: 1rem;
     }
     .prose h3 { 
       font-size: 1.25rem; 
       font-weight: 600; 
-      color: #33babd; 
+      color: #845007; 
       margin-top: 1.25rem; 
       margin-bottom: 0.75rem;
     }
@@ -253,11 +253,11 @@ const DoctorDetails = ({ setShowPopup }) => {
       line-height: 1.6;
     }
     .prose a { 
-      color: #33babd; 
+      color: #845007; 
       text-decoration: underline;
     }
     .prose blockquote {
-      border-left: 4px solid #33babd;
+      border-left: 4px solid #845007;
       padding-left: 1rem;
       margin-left: 0;
       font-style: italic;

@@ -8,16 +8,16 @@ const AboutOfferContract = ({ city }) => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-4 md:p-6">
+      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#125e84] to-[#33babd] rounded-xl shrink-0 shadow-md">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#3a4660] to-[#845007] rounded-xl shrink-0 shadow-md">
             <FaFileSignature className="text-white text-3xl" />
           </div>
           <div>
-            <h3 className="heading1 font-bold text-[#125e84] ">
+            <h3 className="heading1 font-bold text-[#3a4660] ">
               {t("about.contract.title")}
             </h3>
-            <p className="text-[#125e84]/70 base-text">
+            <p className="text-[#3a4660]/70 base-text">
               {t("about.contract.subtitle")}
             </p>
           </div>
@@ -25,47 +25,47 @@ const AboutOfferContract = ({ city }) => {
       </div>
 
       {/* Contract Sections */}
-      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-4 md:p-6 space-y-8">
+      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6 space-y-8">
         {/* Section 1 */}
         <div>
-          <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg  font-bold text-[#63cacc] shrink-0">
+          <h3 className="font-bold subheading text-[#3a4660] mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
               1
             </span>
             {t("about.contract.section1Title")}
           </h3>
-          <p className="text-[#125e84]/80 base-text leading-relaxed ml-9">
+          <p className="text-[#3a4660]/80 base-text leading-relaxed ml-9">
             {t("about.contract.section1Text")}
           </p>
         </div>
 
         {/* Section 2 */}
         <div>
-          <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg  font-bold text-[#63cacc] shrink-0">
+          <h3 className="font-bold subheading text-[#3a4660] mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
               2
             </span>
             {t("about.contract.section2Title")}
           </h3>
-          <p className="text-[#125e84]/80 base-text leading-relaxed ml-9">
+          <p className="text-[#3a4660]/80 base-text leading-relaxed ml-9">
             {t("about.contract.section2Text")}
           </p>
         </div>
 
         {/* Section 3 */}
         <div>
-          <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg  font-bold text-[#63cacc] shrink-0">
+          <h3 className="font-bold subheading text-[#3a4660] mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
               3
             </span>
             {t("about.contract.section3Title")}
           </h3>
           <div className="ml-9 base-text space-y-4">
             <div>
-              <h4 className="font-semibold text-[#63cacc] mb-2 ">
+              <h4 className="font-semibold text-[#845007] mb-2 ">
                 {t("about.contract.responsibleRights")}
               </h4>
-              <ul className="list-disc text-[#125e84]/80  space-y-2 marker:text-[#63cacc] ml-4">
+              <ul className="list-disc text-[#3a4660]/80  space-y-2 marker:text-[#845007] ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.contractor1")}
                 </li>
@@ -78,10 +78,10 @@ const AboutOfferContract = ({ city }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-[#63cacc] mb-2 ">
+              <h4 className="font-semibold text-[#845007] mb-2 ">
                 {t("about.contract.prohibited")}
               </h4>
-              <ul className="list-disc text-[#125e84]/80  space-y-2 marker:text-[#63cacc] ml-4">
+              <ul className="list-disc text-[#3a4660]/80  space-y-2 marker:text-[#845007] ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.prohibited1")}
                 </li>
@@ -101,18 +101,18 @@ const AboutOfferContract = ({ city }) => {
 
         {/* Section 4 */}
         <div>
-          <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg font-bold text-[#63cacc] shrink-0">
+          <h3 className="font-bold subheading text-[#3a4660] mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg font-bold text-[#845007] shrink-0">
               4
             </span>
             {t("about.contract.section4Title")}
           </h3>
           <div className="ml-9 base-text space-y-4">
             <div>
-              <h4 className="font-semibold text-[#63cacc] mb-2">
+              <h4 className="font-semibold text-[#845007] mb-2">
                 {t("about.contract.customerRights")}
               </h4>
-              <ul className="list-disc text-[#125e84]/80 space-y-2 marker:text-[#63cacc] ml-4">
+              <ul className="list-disc text-[#3a4660]/80 space-y-2 marker:text-[#845007] ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.customer1")}
                 </li>
@@ -128,10 +128,10 @@ const AboutOfferContract = ({ city }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-[#63cacc] mb-2 ">
+              <h4 className="font-semibold text-[#845007] mb-2 ">
                 {t("about.contract.obliged")}
               </h4>
-              <ul className="list-disc text-[#125e84]/80  space-y-2 marker:text-[#63cacc] ml-4">
+              <ul className="list-disc text-[#3a4660]/80  space-y-2 marker:text-[#845007] ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.obliged1")}
                 </li>
@@ -151,21 +151,21 @@ const AboutOfferContract = ({ city }) => {
 
         {/* Section 5 */}
         <div>
-          <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg  font-bold text-[#63cacc] shrink-0">
+          <h3 className="font-bold subheading text-[#3a4660] mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
               5
             </span>
             {t("about.contract.section5Title")}
           </h3>
           <div className="ml-9 base-text space-y-4">
-            <p className="text-[#125e84]/80  leading-relaxed">
+            <p className="text-[#3a4660]/80  leading-relaxed">
               {t("about.contract.section5Text")}
             </p>
             <div>
-              <h4 className="font-semibold text-[#63cacc] mb-2 ">
+              <h4 className="font-semibold text-[#845007] mb-2 ">
                 {t("about.contract.payment")}
               </h4>
-              <ul className="list-disc text-[#125e84]/80  space-y-2 marker:text-[#63cacc] ml-4">
+              <ul className="list-disc text-[#3a4660]/80  space-y-2 marker:text-[#845007] ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.payment1")}
                 </li>
@@ -180,7 +180,7 @@ const AboutOfferContract = ({ city }) => {
                 </li>
               </ul>
             </div>
-            <p className="text-[#125e84]/80  leading-relaxed">
+            <p className="text-[#3a4660]/80  leading-relaxed">
               {t("about.contract.paymentDesc")}
             </p>
           </div>
@@ -188,121 +188,121 @@ const AboutOfferContract = ({ city }) => {
 
         {/* Section 6 */}
         <div>
-          <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg  font-bold text-[#63cacc] shrink-0">
+          <h3 className="font-bold subheading text-[#3a4660] mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
               6
             </span>
             {t("about.contract.section6Title")}
           </h3>
-          <p className="text-[#125e84]/80 base-text leading-relaxed ml-9">
+          <p className="text-[#3a4660]/80 base-text leading-relaxed ml-9">
             {t("about.contract.section6Text")}
           </p>
         </div>
 
         {/* Section 7 */}
         <div>
-          <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg font-bold text-[#63cacc] shrink-0">
+          <h3 className="font-bold subheading text-[#3a4660] mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg font-bold text-[#845007] shrink-0">
               7
             </span>
             {t("about.contract.section7Title")}
           </h3>
-          <p className="text-[#125e84]/80 base-text leading-relaxed ml-9">
+          <p className="text-[#3a4660]/80 base-text leading-relaxed ml-9">
             {t("about.contract.section7Text")}
           </p>
         </div>
 
         {/* Section 8 */}
         <div>
-          <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg  font-bold text-[#63cacc] shrink-0">
+          <h3 className="font-bold subheading text-[#3a4660] mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
               8
             </span>
             {t("about.contract.section8Title")}
           </h3>
-          <p className="text-[#125e84]/80 base-text leading-relaxed ml-9">
+          <p className="text-[#3a4660]/80 base-text leading-relaxed ml-9">
             {t("about.contract.section8Text")}
           </p>
         </div>
 
         {/* Section 9 - Organization Details */}
         <div>
-          <h3 className="font-bold subheading text-[#125e84] mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#63cacc]/10 rounded-lg  font-bold text-[#63cacc] shrink-0">
+          <h3 className="font-bold subheading text-[#3a4660] mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
               9
             </span>
             {t("about.contract.section9Title")}
           </h3>
           <div className="ml-9 base-text space-y-3">
-            <div className="bg-[#63cacc]/5 rounded-xl p-4 border border-[#63cacc]/20 space-y-2">
+            <div className="bg-[#845007]/5 rounded-xl p-4 border border-[#845007]/20 space-y-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
                 <div>
-                  <span className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                  <span className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                     {t("about.contract.orgName")}
                   </span>
-                  <p className="text-[#125e84] font-medium">
+                  <p className="text-[#3a4660] font-medium">
                     {city === "Moscow"
                       ? t("about.info.companyName1")
                       : t("about.info.companyName2")}
                   </p>
                 </div>
                 <div>
-                  <span className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                  <span className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                     {t("about.contract.legalAddress")}
                   </span>
-                  <p className="text-[#125e84] font-medium">
+                  <p className="text-[#3a4660] font-medium">
                     {city === "Moscow"
                       ? t("about.info.moscowAddress")
                       : t("about.info.makhachkalaAddress")}
                   </p>
                 </div>
                 <div>
-                  <span className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                  <span className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                     {t("about.contract.taxId")}
                   </span>
-                  <p className="text-[#125e84] font-medium">9727077651</p>
+                  <p className="text-[#3a4660] font-medium">9727077651</p>
                 </div>
                 <div>
-                  <span className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                  <span className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                     {t("about.contract.checkpoint")}
                   </span>
-                  <p className="text-[#125e84] font-medium">772701001</p>
+                  <p className="text-[#3a4660] font-medium">772701001</p>
                 </div>
                 <div>
-                  <span className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                  <span className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                     {t("about.contract.ogrn")}
                   </span>
-                  <p className="text-[#125e84] font-medium">1247700412068</p>
+                  <p className="text-[#3a4660] font-medium">1247700412068</p>
                 </div>
                 <div>
-                  <span className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                  <span className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                     {t("about.contract.bankName")}
                   </span>
-                  <p className="text-[#125e84] font-medium">
+                  <p className="text-[#3a4660] font-medium">
                     {t("about.contract.bank")}
                   </p>
                 </div>
                 <div>
-                  <span className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                  <span className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                     {t("about.contract.accountNo")}
                   </span>
-                  <p className="text-[#125e84] font-medium">
+                  <p className="text-[#3a4660] font-medium">
                     40702810400000012345
                   </p>
                 </div>
                 <div>
-                  <span className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                  <span className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                     {t("about.contract.cAccount")}
                   </span>
-                  <p className="text-[#125e84] font-medium">
+                  <p className="text-[#3a4660] font-medium">
                     30101810400000000225
                   </p>
                 </div>
                 <div>
-                  <span className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                  <span className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                     {t("about.contract.bic")}
                   </span>
-                  <p className="text-[#125e84] font-medium">044525225</p>
+                  <p className="text-[#3a4660] font-medium">044525225</p>
                 </div>
               </div>
             </div>
@@ -311,15 +311,15 @@ const AboutOfferContract = ({ city }) => {
       </div>
 
       {/* Notice Box At Bottom */}
-      <div className="bg-[#63cacc]/10 rounded-2xl p-6 flex items-start gap-4 border border-[#63cacc]/30">
-        <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/20 rounded-full shrink-0">
-          <FaInfoCircle className="text-[#63cacc] text-xl" />
+      <div className="bg-[#845007]/10 rounded-2xl p-6 flex items-start gap-4 border border-[#845007]/30">
+        <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-full shrink-0">
+          <FaInfoCircle className="text-[#845007] text-xl" />
         </div>
         <div className="flex-1">
-          <div className="font-semibold subheading text-[#125e84] mb-1">
+          <div className="font-semibold subheading text-[#3a4660] mb-1">
             {t("about.contract.addInfoTitle")}
           </div>
-          <p className="text-[#125e84]/70 base-text leading-relaxed">
+          <p className="text-[#3a4660]/70 base-text leading-relaxed">
             {t("about.contract.addInfoText")}
           </p>
         </div>

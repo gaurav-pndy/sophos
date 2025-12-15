@@ -115,8 +115,8 @@ const PatientMap = () => {
                       stroke="#90CAF9"
                       strokeWidth={0.3}
                       style={{
-                        default: { fill: "#125e84", outline: "none" },
-                        hover: { fill: "#af6ca5", outline: "none" },
+                        default: { fill: "#3a4660", outline: "none" },
+                        hover: { fill: "#ed8a63", outline: "none" },
                         pressed: { fill: "#64B5F6", outline: "none" },
                       }}
                     />

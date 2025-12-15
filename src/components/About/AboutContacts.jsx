@@ -61,16 +61,16 @@ const AboutContacts = () => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-4 md:p-6">
+      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row lg:items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#125e84] to-[#33babd] rounded-xl shrink-0 shadow-md">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#3a4660] to-[#845007] rounded-xl shrink-0 shadow-md">
             <FaRegBuilding className="text-white text-3xl" />
           </div>
           <div>
-            <h3 className="heading1 font-bold text-[#125e84] ">
+            <h3 className="heading1 font-bold text-[#3a4660] ">
               {t("about.contacts.title")}
             </h3>
-            <p className="text-[#125e84]/70 base-text">
+            <p className="text-[#3a4660]/70 base-text">
               {t("about.contacts.subtitle")}
             </p>
           </div>
@@ -82,27 +82,27 @@ const AboutContacts = () => {
         {contacts.map((org, idx) => (
           <div
             key={org.title}
-            className="bg-white rounded-2xl border border-[#63cacc]/20 shadow-sm p-6 hover:border-[#63cacc]/40 transition-colors"
+            className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-6 hover:border-[#845007]/40 transition-colors"
           >
             <div className="mb-4">
-              <h3 className="font-bold subheading text-[#125e84] mb-2">
+              <h3 className="font-bold subheading text-[#3a4660] mb-2">
                 {t(org.title)}
               </h3>
-              {/* <p className="text-[#63cacc] text-sm font-medium">
+              {/* <p className="text-[#845007] text-sm font-medium">
                 {t(org.subtitle)}
               </p> */}
             </div>
 
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/20 rounded-lg shrink-0 mt-0.5">
-                  <FaMapMarkerAlt className="text-[#63cacc] text-xl" />
+                <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
+                  <FaMapMarkerAlt className="text-[#845007] text-xl" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-[#125e84]/60 small-text uppercase tracking-wide ">
+                  <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
                     {t("about.contacts.address")}
                   </div>
-                  <p className="text-[#125e84]/90 font-medium base-text leading-relaxed">
+                  <p className="text-[#3a4660]/90 font-medium base-text leading-relaxed">
                     {t(org.address)}
                   </p>
                 </div>
@@ -110,14 +110,14 @@ const AboutContacts = () => {
 
               {org.phone && (
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/20 rounded-lg shrink-0 mt-0.5">
-                    <FaPhoneAlt className="text-[#63cacc] text-xl" />
+                  <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
+                    <FaPhoneAlt className="text-[#845007] text-xl" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-[#125e84]/60 small-text uppercase tracking-wide ">
+                    <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
                       {t("about.contacts.phone")}
                     </div>
-                    <p className="text-[#125e84]/90 base-text font-medium">
+                    <p className="text-[#3a4660]/90 base-text font-medium">
                       {org.phone}
                     </p>
                   </div>
@@ -125,14 +125,14 @@ const AboutContacts = () => {
               )}
               {org.helpdesk && (
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/20 rounded-lg shrink-0 mt-0.5">
-                    <FaPhoneAlt className="text-[#63cacc] text-xl" />
+                  <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
+                    <FaPhoneAlt className="text-[#845007] text-xl" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-[#125e84]/60 small-text uppercase tracking-wide">
+                    <div className="text-[#3a4660]/60 small-text uppercase tracking-wide">
                       {t("about.contacts.helpdesk")}
                     </div>
-                    <p className="text-[#125e84]/90 base-text font-medium">
+                    <p className="text-[#3a4660]/90 base-text font-medium">
                       {org.helpdesk}
                     </p>
                   </div>
@@ -140,14 +140,14 @@ const AboutContacts = () => {
               )}
               {org.multichannel && (
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/20 rounded-lg shrink-0 mt-0.5">
-                    <FaPhoneAlt className="text-[#63cacc] text-xl" />
+                  <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
+                    <FaPhoneAlt className="text-[#845007] text-xl" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-[#125e84]/60 small-text uppercase tracking-wide ">
+                    <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
                       {t("about.contacts.multichannel")}
                     </div>
-                    <p className="text-[#125e84]/90 base-text font-medium">
+                    <p className="text-[#3a4660]/90 base-text font-medium">
                       {org.multichannel}
                     </p>
                   </div>
@@ -155,32 +155,32 @@ const AboutContacts = () => {
               )}
 
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/20 rounded-lg shrink-0 mt-0.5">
-                  <FaEnvelope className="text-[#63cacc] text-xl" />
+                <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
+                  <FaEnvelope className="text-[#845007] text-xl" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-[#125e84]/60 small-text uppercase tracking-wide ">
+                  <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
                     {t("about.contacts.email")}
                   </div>
                   <a
                     href={`mailto:${org.email}`}
-                    className="text-[#125e84]/90 base-text font-medium hover:text-[#63cacc] transition-colors hover:underline"
+                    className="text-[#3a4660]/90 base-text font-medium hover:text-[#845007] transition-colors hover:underline"
                   >
                     {org.email}
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/20 rounded-lg shrink-0 mt-0.5">
-                  <FaGlobe className="text-[#63cacc] text-xl" />
+                <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
+                  <FaGlobe className="text-[#845007] text-xl" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-[#125e84]/60 small-text uppercase tracking-wide ">
+                  <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
                     {t("about.contacts.website")}
                   </div>
                   <a
                     href={org.website}
-                    className="text-[#125e84]/90 base-text font-medium hover:text-[#63cacc] transition-colors hover:underline"
+                    className="text-[#3a4660]/90 base-text font-medium hover:text-[#845007] transition-colors hover:underline"
                   >
                     {org.website}
                   </a>
@@ -189,7 +189,7 @@ const AboutContacts = () => {
               {org.desc1 && (
                 <div className="flex items-start gap-3">
                   <div className="flex-1">
-                    <p className="text-[#125e84]/90 small-text font-medium">
+                    <p className="text-[#3a4660]/90 small-text font-medium">
                       {t(org.desc1)}
                     </p>
                   </div>
@@ -198,7 +198,7 @@ const AboutContacts = () => {
               {org.desc2 && (
                 <div className="flex items-start gap-3">
                   <div className="flex-1">
-                    <p className="text-[#125e84]/90 small-text font-medium">
+                    <p className="text-[#3a4660]/90 small-text font-medium">
                       {t(org.desc2)}
                     </p>
                   </div>
@@ -210,15 +210,15 @@ const AboutContacts = () => {
       </div>
 
       {/* Order of appeal notice */}
-      <div className="bg-[#63cacc]/10 rounded-2xl p-6 flex items-start gap-4 border border-[#63cacc]/30">
-        <div className="flex h-10 w-10 items-center justify-center bg-[#63cacc]/20 rounded-full shrink-0">
-          <FaCheckCircle className="text-[#63cacc] text-xl" />
+      <div className="bg-[#845007]/10 rounded-2xl p-6 flex items-start gap-4 border border-[#845007]/30">
+        <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-full shrink-0">
+          <FaCheckCircle className="text-[#845007] text-xl" />
         </div>
         <div className="flex-1">
-          <div className="font-semibold text-[#125e84] subheading mb-1">
+          <div className="font-semibold text-[#3a4660] subheading mb-1">
             {t("about.contacts.appealOrderTitle")}
           </div>
-          <p className="text-[#125e84]/70 base-text leading-relaxed">
+          <p className="text-[#3a4660]/70 base-text leading-relaxed">
             {t("about.contacts.appealOrderText")}
           </p>
         </div>

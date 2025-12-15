@@ -92,7 +92,7 @@ const Footer = ({ city }) => {
               onClick={() => handleScrollToSection("#services")}
               className=" hover:text-brand2 text-left cursor-pointer"
             >
-              {t("header.services")}{" "}
+              {t("header.servicesDrop.ss")}{" "}
             </button> */}
             <a href="#" className=" hover:text-brand2">
               {t("header.priceList")}

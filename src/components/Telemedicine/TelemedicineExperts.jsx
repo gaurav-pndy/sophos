@@ -98,7 +98,7 @@ const TelemedicineExperts = () => {
               >
                 <Icon
                   className={`text-2xl lg:text-3xl ${
-                    isSelected ? "text-white" : "text-[#63cacc]"
+                    isSelected ? "text-white" : "text-[#845007]"
                   }`}
                 />
                 <div>
@@ -172,8 +172,8 @@ const TelemedicineExperts = () => {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-12 bg-white rounded-2xl border border-[#63cacc]/20">
-                <p className="text-[#125e84]/60">
+              <div className="text-center py-12 bg-white rounded-2xl border border-[#845007]/20">
+                <p className="text-[#3a4660]/60">
                   {t("telemedicine.doctors.noDoctors")}
                 </p>
               </div>

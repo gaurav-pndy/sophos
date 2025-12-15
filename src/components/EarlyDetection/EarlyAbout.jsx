@@ -4,22 +4,22 @@ import { FaShieldAlt, FaUsers, FaHeartbeat, FaAward } from "react-icons/fa";
 
 const features = [
   {
-    icon: <FaShieldAlt className="text-3xl text-[#125e84]" />,
+    icon: <FaShieldAlt className="text-3xl text-[#3a4660]" />,
     title: "earlyDetection.about.evidenceTitle",
     desc: "earlyDetection.about.evidenceDesc",
   },
   {
-    icon: <FaUsers className="text-3xl text-[#125e84]" />,
+    icon: <FaUsers className="text-3xl text-[#3a4660]" />,
     title: "earlyDetection.about.teamTitle",
     desc: "earlyDetection.about.teamDesc",
   },
   {
-    icon: <FaHeartbeat className="text-3xl text-[#125e84]" />,
+    icon: <FaHeartbeat className="text-3xl text-[#3a4660]" />,
     title: "earlyDetection.about.personalTitle",
     desc: "earlyDetection.about.personalDesc",
   },
   {
-    icon: <FaAward className="text-3xl text-[#125e84]" />,
+    icon: <FaAward className="text-3xl text-[#3a4660]" />,
     title: "earlyDetection.about.experienceTitle",
     desc: "earlyDetection.about.experienceDesc",
   },

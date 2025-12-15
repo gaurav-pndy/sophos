@@ -5,6 +5,7 @@
   "moscow": "Moscow",
   "makhachkala": "Makhachkala",
   "header": {
+    "searchBtn": "Search",
     "selectCity": "Select your City:",
     "logoTitle": "MEDICAL CLINIC",
     "location": "Moscow, Makhachkala",
@@ -12,18 +13,72 @@
     "mahachkalaTime": "Makhachkala: 09:00-21:00",
     "home": "Home",
     "services": "Services",
-    "service1": "Specialist Consultation",
-    "service2": "Individual Early diagnosis of Diseases",
-    "service3": "International Multispecialty Expert Telemedicine Consultation (IMETC)",
-    "service4": "Chemotherapy",
-    "service5": "Installation of a venous port system for Chemotherapy",
-    "service6": "CT Scan ",
-    "service7": "Pathomorphological studies at PathoLogica Service",
-    "service8": "Digital diagnosis of skin tumors (Dermatoscopy using artificial intelligence)",
-    "service9": "Molecular consultation",
-    "service10": "Expert review of CT, MRI, PET-CT",
-    "service11": "Medical Assistance",
-    "service12": "Voluntary Follow-up",
+    "servicesDrop": {
+        "s1": {
+          "title": "Specialist Appointment",
+          "subitems": {
+            "sub1": "Ultrasound Doctor",
+            "sub2": "Gynecologist",
+            "sub3": "Dermatovenereologist",
+            "sub4": "Neurologist",
+            "sub5": "Psychotherapist",
+            "sub6": "Rheumatologist",
+            "sub7": "Therapist",
+            "sub8": "Endocrinologist"
+          }
+        },
+        "s2": {
+          "title": "Tests and Diagnostics",
+          "subitems": {
+            "sub1": "Complete Blood Count",
+            "sub2": "Urinalysis",
+            "sub3": "Blood Biochemistry",
+            "sub4": "Coagulogram",
+            "sub5": "HIV, Hepatitis, Syphilis",
+            "sub6": "Ultrasound",
+            "sub7": "ECG",
+            "sub8": "Dermatoscopy",
+            "sub9": "Colposcopy",
+            "sub10": "Trepan Biopsy",
+            "sub11": "Cervical Biopsy"
+          }
+        },
+        "s3": {
+          "title": "Individual Early Diagnostics"
+        },
+        "s4": {
+          "title": "Day Hospital"
+        },
+        "s5": {
+          "title": "Procedure Room",
+          "subitems": {
+            "sub1": "IV Drips",
+            "sub2": "Injections"
+          }
+        },
+        "s6": {
+          "title": "Medical Certificates",
+          "subitems": {
+            "sub1": "Form 027u (temporary disability)",
+            "sub2": "Form 095u (absence of a student from classes due to illness)",
+            "sub3": "Swimming Pool Certificate"
+          }
+        },
+        "s7": {
+          "title": "Telemedicine"
+        },
+        "s8": {
+          "title": "Expert Interpretation of CT/MRI/PET-CT"
+        },
+        "s9": {
+          "title": "Partner Projects",
+          "subitems": {
+            "sub1": "International Expert Centers",
+            "sub2": "PathoLogica",
+            "sub3": "Expert Oncological Care"
+          }
+        }
+      },
     "doctors": "Doctors",
     "bookAppointment": "Book an Appointment",
     "personalAccount": "Personal Account",
@@ -71,57 +126,19 @@
     "patient2": "Preparation for the study",
     "patient5": "About diseases",
     "patient6": "Documents",
+    "patient7": "Price list",
     "oncologist": "Oncologists",
     "oncologicalCare": "Oncological Care",
     "complicated": "Complicated Cases",
     "doctorsDrop": {
-      "d1": "Oncologists",
-      "d2": "Pathologist",
-      "d3": "Family Medicine Doctor",
-      "d4": "Ultrasound Specialist",
-      "d5": "Functional Diagnostics Doctor",
-      "d6": "Diagnostics",
-      "d7": "Gastroenterologist",
-      "d8": "Hematologist",
-      "d9": "Geneticist",
-      "d10": "Gynecologist",
-      "d11": "Dermatovenerologist",
-      "d12": "Cardiologist",
-      "d13": "Neurologist",
-      "d14": "Neurosurgeon",
-      "d15": "Nephrologist",
-      "d16": "Otorhinolaryngologist (ENT)",
-      "d17": "Ophthalmologist",
-      "d18": "Occupational Pathologist",
-      "d19": "Psychiatrist",
-      "d20": "Addiction Psychiatrist",
-      "d21": "Psychotherapist",
-      "d22": "Rheumatologist",
-      "d23": "Cardiovascular Surgeon",
-      "d24": "Therapist",
-      "d25": "Traumatologist and Orthopedist",
-      "d26": "Urologist",
-      "d27": "Surgeon",
-      "d28": "Maxillofacial Surgeon",
-      "subItems": {
-        "h1": "Therapeutic Oncologists",
-        "s1": "Medical Oncologist (Chemotherapist)",
-        "s2": "Radiation Oncologist",
-        "h2": "Surgical Oncologists",
-        "s3": "Abdominal Surgical Oncologist",
-        "s4": "Hematologic Oncologist",
-        "s5": "Hepatopancreatobiliary Oncologic Surgeon",
-        "s6": "Gynecologic Oncologist",
-        "s7": "Head and Neck Oncologist",
-        "s8": "Colorectal Oncologist",
-        "s9": "Breast Oncologist (Mammologist)",
-        "s10": "Neurosurgical Oncologist",
-        "s11": "Orthopedic Oncologist",
-        "s12": "Ophthalmic Oncologist",
-        "s13": "Plastic Oncologic Surgeon",
-        "s14": "Thoracic Oncologic Surgeon",
-        "s15": "Urologic Oncologist"
-      }
+      "d1": "Ultrasound doctor",
+"d2": "Gynecologist",
+"d3": "Dermatovenerologist",
+"d4": "Neurologist",
+"d5": "Psychotherapist",
+      "d6": "Rheumatologist",
+"d7": "Therapist",
+      "d8": "Endocrinologist"
     }
   },
   "hero": {

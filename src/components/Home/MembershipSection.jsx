@@ -12,7 +12,6 @@ import WaveBackground from "../WaveBackground";
 import { Link } from "react-router-dom";
 
 const MembershipSection = () => {
-
   const [openIndex, setOpenIndex] = useState(null);
 
   const { t } = useTranslation();
@@ -78,7 +77,7 @@ const MembershipSection = () => {
               key={i}
               className="bg-white rounded-xl px-8 py-7 flex flex-col items-center text-center hover:scale-105 hover:bg-brand4/20 hover:shadow-lg cursor-pointer shadow-md transition-all duration-300 group"
             >
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#125e84] to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#3a4660] to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                 {f.icon}
               </div>
               <div className="text-black group-hover:text-brand2 transition-all duration-300 font-medium text-xl mb-2">
