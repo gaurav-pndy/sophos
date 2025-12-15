@@ -15,7 +15,7 @@ import Telemedicine from "./pages/Telemedicine";
 import ServiceDetails from "./pages/ServiceDetails";
 import ExpertiseCenter from "./pages/ExpertiseCenter";
 import ExpertiseDirection from "./pages/ExpertiseDirection";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Reviews from "./pages/Reviews";
 import AboutDiseases from "./pages/AboutDiseases";
 import CareersPage from "./pages/CareersPage";
@@ -25,9 +25,46 @@ import OncologicalCare from "./pages/OncologicalCare";
 import Blogs from "./pages/Blogs";
 import ComplicatedCases from "./pages/ComplicatedCases";
 import UserAccountPopup from "./components/UserAccountPopup";
+import i18n from "./utils/i18n";
+
+import enDefault from "./locales/en.json";
+import ruDefault from "./locales/ru.json";
+
+import enMoscow from "./locales/enMoscow.json";
+import ruMoscow from "./locales/ruMoscow.json";
 
 function App() {
-  const [city, setCity] = useState("Moscow");
+  const [city, setCity] = useState(() => {
+    return localStorage.getItem("city") || "Moscow";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("city", city);
+  }, [city]);
+
+  useEffect(() => {
+    if (city === "Moscow") {
+      i18n.addResourceBundle("en", "translation", enMoscow, true, true);
+      i18n.addResourceBundle("ru", "translation", ruMoscow, true, true);
+    } else {
+      i18n.addResourceBundle("en", "translation", enDefault, true, true);
+      i18n.addResourceBundle("ru", "translation", ruDefault, true, true);
+    }
+
+    // Force re-render translations
+    i18n.reloadResources();
+  }, [city]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    root.classList.remove("city-moscow");
+
+    if (city === "Moscow") {
+      root.classList.add("city-moscow");
+    }
+  }, [city]);
+
   const [showPopup, setShowPopup] = useState(false);
   const [showUserAccount, setShowUserAccount] = useState(false);
   const router = createBrowserRouter([
@@ -38,7 +75,7 @@ function App() {
           setCity={setCity}
           showPopup={showPopup}
           setShowPopup={setShowPopup}
-          setShowUserAccount={setShowUserAccount} 
+          setShowUserAccount={setShowUserAccount}
         />
       ),
       children: [

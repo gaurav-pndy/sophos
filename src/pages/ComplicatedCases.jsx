@@ -145,17 +145,17 @@ bg-gradient-to-b lg:bg-gradient-to-r from-[#131e23] to-[#253133]"
           >
             {/* Header Section */}
             <div className="flex lg:items-center gap-4 mb-8">
-              <div className="flex h-14 w-14 items-center justify-center bg-gradient-to-br from-[#3a4660] to-[#845007] rounded-xl shrink-0 shadow-md mt-2 lg:mt-0">
+              <div className="flex h-14 w-14 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-xl shrink-0 shadow-md mt-2 lg:mt-0">
                 {item.icon}{" "}
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl md:text-3xl font-bold text-[#3a4660] mb-1">
+                <h3 className="text-2xl md:text-3xl font-bold text-brand1 mb-1">
                   {item.heading}
                 </h3>
               </div>
             </div>
 
-            <ul className="text-[#3a4660]/80 leading-relaxed space-y-4 list-disc list-inside text-lg">
+            <ul className="text-brand1/80 leading-relaxed space-y-4 list-disc list-inside text-lg">
               {item.desc.map((list, idx) => (
                 <li id={idx}> {list} </li>
               ))}

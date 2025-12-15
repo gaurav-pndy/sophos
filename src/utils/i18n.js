@@ -2,24 +2,34 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import enTranslation from "../locales/en.json";
-import ruTranslation from "../locales/ru.json";
+import enDefault from "../locales/en.json";
+import ruDefault from "../locales/ru.json";
+
+import enMoscow from "../locales/enMoscow.json";
+import ruMoscow from "../locales/ruMoscow.json";
+
+// Get stored city OR fallback
+const city = localStorage.getItem("city") || "Makhachkala";
 
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
-      en: { translation: enTranslation },
-      ru: { translation: ruTranslation },
+      en: {
+        translation: city === "Moscow" ? enMoscow : enDefault,
+      },
+      ru: {
+        translation: city === "Moscow" ? ruMoscow : ruDefault,
+      },
     },
 
     fallbackLng: "ru",
 
     detection: {
-      order: ["querystring", "localStorage"], // <-- navigator removed
+      order: ["querystring", "localStorage"],
       lookupQuerystring: "lng",
-      caches: ["localStorage"], // store selected language
+      caches: ["localStorage"],
     },
 
     interpolation: {

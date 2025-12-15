@@ -173,7 +173,7 @@ const TelemedicineExperts = () => {
               </div>
             ) : (
               <div className="text-center py-12 bg-white rounded-2xl border border-[#845007]/20">
-                <p className="text-[#3a4660]/60">
+                <p className="text-brand1/60">
                   {t("telemedicine.doctors.noDoctors")}
                 </p>
               </div>

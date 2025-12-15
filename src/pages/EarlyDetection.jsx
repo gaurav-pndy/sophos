@@ -16,7 +16,7 @@ const EarlyDetection = ({ setShowPopup }) => {
       <div className="flex w-full justify-center my-10">
         <button
           onClick={() => setShowPopup(true)}
-          className="  bg-[#3a4660] text-white px-10 py-2.5 base-text text-lg rounded-lg  hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap "
+          className="  bg-brand1 text-white px-10 py-2.5 base-text text-lg rounded-lg  hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap "
         >
           {t("earlyDetection.insurance.appointmentBtn")}
         </button>

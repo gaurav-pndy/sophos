@@ -7,6 +7,7 @@ import BookingPopup from "../components/BookingPopup";
 import { useState } from "react";
 import ConsentBanner from "../components/ConsentBanner";
 import UserAccountPopup from "../components/UserAccountPopup";
+import HeaderMoscow from "../components/HeaderMoscow";
 
 const AppLayout = ({ city, setCity, showPopup, setShowPopup }) => {
   const [showUserAccount, setShowUserAccount] = useState(false);
@@ -14,13 +15,27 @@ const AppLayout = ({ city, setCity, showPopup, setShowPopup }) => {
   return (
     <div>
       <ScrollToTop />
-      <Header
-        city={city}
-        setCity={setCity}
-        setShowPopup={setShowPopup}
-        setShowUserAccount={setShowUserAccount}
-      />
-      <div className="mt-20 md:mt-24 lg:mt-42 xl:mt-43">
+      {city === "Makhachkala" ? (
+        <Header
+          city={city}
+          setCity={setCity}
+          setShowPopup={setShowPopup}
+          setShowUserAccount={setShowUserAccount}
+        />
+      ) : (
+        <HeaderMoscow
+          city={city}
+          setCity={setCity}
+          setShowPopup={setShowPopup}
+          setShowUserAccount={setShowUserAccount}
+        />
+      )}
+
+      <div
+        className={`mt-20 md:mt-24 lg:mt-42 ${
+          city === "Makhachkala" ? "xl:mt-43" : "xl:mt-44"
+        } `}
+      >
         <Outlet />
         <FloatingButton onClick={() => setShowPopup(true)} />
         <BookingPopup show={showPopup} onClose={() => setShowPopup(false)} />

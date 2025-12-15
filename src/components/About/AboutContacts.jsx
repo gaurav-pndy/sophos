@@ -63,14 +63,14 @@ const AboutContacts = () => {
       {/* Header */}
       <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row lg:items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#3a4660] to-[#845007] rounded-xl shrink-0 shadow-md">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-xl shrink-0 shadow-md">
             <FaRegBuilding className="text-white text-3xl" />
           </div>
           <div>
-            <h3 className="heading1 font-bold text-[#3a4660] ">
+            <h3 className="heading1 font-bold text-brand1 ">
               {t("about.contacts.title")}
             </h3>
-            <p className="text-[#3a4660]/70 base-text">
+            <p className="text-brand1/70 base-text">
               {t("about.contacts.subtitle")}
             </p>
           </div>
@@ -85,7 +85,7 @@ const AboutContacts = () => {
             className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-6 hover:border-[#845007]/40 transition-colors"
           >
             <div className="mb-4">
-              <h3 className="font-bold subheading text-[#3a4660] mb-2">
+              <h3 className="font-bold subheading text-brand1 mb-2">
                 {t(org.title)}
               </h3>
               {/* <p className="text-[#845007] text-sm font-medium">
@@ -99,10 +99,10 @@ const AboutContacts = () => {
                   <FaMapMarkerAlt className="text-[#845007] text-xl" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
+                  <div className="text-brand1/60 small-text uppercase tracking-wide ">
                     {t("about.contacts.address")}
                   </div>
-                  <p className="text-[#3a4660]/90 font-medium base-text leading-relaxed">
+                  <p className="text-brand1/90 font-medium base-text leading-relaxed">
                     {t(org.address)}
                   </p>
                 </div>
@@ -114,10 +114,10 @@ const AboutContacts = () => {
                     <FaPhoneAlt className="text-[#845007] text-xl" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
+                    <div className="text-brand1/60 small-text uppercase tracking-wide ">
                       {t("about.contacts.phone")}
                     </div>
-                    <p className="text-[#3a4660]/90 base-text font-medium">
+                    <p className="text-brand1/90 base-text font-medium">
                       {org.phone}
                     </p>
                   </div>
@@ -129,10 +129,10 @@ const AboutContacts = () => {
                     <FaPhoneAlt className="text-[#845007] text-xl" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-[#3a4660]/60 small-text uppercase tracking-wide">
+                    <div className="text-brand1/60 small-text uppercase tracking-wide">
                       {t("about.contacts.helpdesk")}
                     </div>
-                    <p className="text-[#3a4660]/90 base-text font-medium">
+                    <p className="text-brand1/90 base-text font-medium">
                       {org.helpdesk}
                     </p>
                   </div>
@@ -144,10 +144,10 @@ const AboutContacts = () => {
                     <FaPhoneAlt className="text-[#845007] text-xl" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
+                    <div className="text-brand1/60 small-text uppercase tracking-wide ">
                       {t("about.contacts.multichannel")}
                     </div>
-                    <p className="text-[#3a4660]/90 base-text font-medium">
+                    <p className="text-brand1/90 base-text font-medium">
                       {org.multichannel}
                     </p>
                   </div>
@@ -159,12 +159,12 @@ const AboutContacts = () => {
                   <FaEnvelope className="text-[#845007] text-xl" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
+                  <div className="text-brand1/60 small-text uppercase tracking-wide ">
                     {t("about.contacts.email")}
                   </div>
                   <a
                     href={`mailto:${org.email}`}
-                    className="text-[#3a4660]/90 base-text font-medium hover:text-[#845007] transition-colors hover:underline"
+                    className="text-brand1/90 base-text font-medium hover:text-[#845007] transition-colors hover:underline"
                   >
                     {org.email}
                   </a>
@@ -175,12 +175,12 @@ const AboutContacts = () => {
                   <FaGlobe className="text-[#845007] text-xl" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-[#3a4660]/60 small-text uppercase tracking-wide ">
+                  <div className="text-brand1/60 small-text uppercase tracking-wide ">
                     {t("about.contacts.website")}
                   </div>
                   <a
                     href={org.website}
-                    className="text-[#3a4660]/90 base-text font-medium hover:text-[#845007] transition-colors hover:underline"
+                    className="text-brand1/90 base-text font-medium hover:text-[#845007] transition-colors hover:underline"
                   >
                     {org.website}
                   </a>
@@ -189,7 +189,7 @@ const AboutContacts = () => {
               {org.desc1 && (
                 <div className="flex items-start gap-3">
                   <div className="flex-1">
-                    <p className="text-[#3a4660]/90 small-text font-medium">
+                    <p className="text-brand1/90 small-text font-medium">
                       {t(org.desc1)}
                     </p>
                   </div>
@@ -198,7 +198,7 @@ const AboutContacts = () => {
               {org.desc2 && (
                 <div className="flex items-start gap-3">
                   <div className="flex-1">
-                    <p className="text-[#3a4660]/90 small-text font-medium">
+                    <p className="text-brand1/90 small-text font-medium">
                       {t(org.desc2)}
                     </p>
                   </div>
@@ -215,10 +215,10 @@ const AboutContacts = () => {
           <FaCheckCircle className="text-[#845007] text-xl" />
         </div>
         <div className="flex-1">
-          <div className="font-semibold text-[#3a4660] subheading mb-1">
+          <div className="font-semibold text-brand1 subheading mb-1">
             {t("about.contacts.appealOrderTitle")}
           </div>
-          <p className="text-[#3a4660]/70 base-text leading-relaxed">
+          <p className="text-brand1/70 base-text leading-relaxed">
             {t("about.contacts.appealOrderText")}
           </p>
         </div>

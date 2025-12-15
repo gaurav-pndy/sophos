@@ -176,14 +176,14 @@ const AboutLicenses = () => {
       {/* Licenses & Certificates Header */}
       <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row md:items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[#3a4660] to-[#845007] rounded-xl shrink-0 shadow-md">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-xl shrink-0 shadow-md">
             <FaFileMedicalAlt className="text-white text-3xl" />
           </div>
           <div className="flex-1">
-            <h3 className="heading1 font-bold text-[#3a4660] ">
+            <h3 className="heading1 font-bold text-brand1 ">
               {t("about.licenses.title")}
             </h3>
-            <p className="text-[#3a4660]/70 base-text">
+            <p className="text-brand1/70 base-text">
               {t("about.licenses.subtitle")}
             </p>
           </div>

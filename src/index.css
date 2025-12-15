@@ -1,11 +1,34 @@
 @import "tailwindcss";
 
-@theme inline{
-    --color-brand1: #3a4660;
-        --color-brand2: #c9af98;
-        --color-brand3: #ed8a63;
-        --color-brand4: #845007;
-        --color-brand5: #845007;
+
+
+
+
+:root {
+  --color-brand1: #3a4660;
+  --color-brand2: #c9af98;
+  --color-brand3: #ed8a63;
+  --color-brand4: #845007;
+  --color-brand5: #845007;
+}
+
+/* =========================
+   MOSCOW CITY
+   ========================= */
+.city-moscow {
+  --color-brand1: #125e84;
+        --color-brand2: #c668a9;
+        --color-brand3: #af6ca5;
+        --color-brand4: #63cacc;
+        --color-brand5: #33babd;
+}
+
+@theme inline {
+  --color-brand1: var(--color-brand1);
+  --color-brand2: var(--color-brand2);
+  --color-brand3: var(--color-brand3);
+  --color-brand4: var(--color-brand4);
+  --color-brand5: var(--color-brand5);
 }
 
 /* In your CSS file or globals.css */

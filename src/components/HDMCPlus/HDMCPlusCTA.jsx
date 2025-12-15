@@ -3,7 +3,7 @@ import { FaCrown } from "react-icons/fa";
 import { LuCrown } from "react-icons/lu";
 
 const HDMCPlusCTA = () => (
-  <section className="w-full min-h-[400px] flex flex-col justify-center text-center items-center bg-gradient-to-r from-[#3a4660] to-[#36bbbe] py-10 px-2">
+  <section className="w-full min-h-[400px] flex flex-col justify-center text-center items-center bg-gradient-to-r from-brand1 to-[#36bbbe] py-10 px-2">
     <LuCrown className="text-white text-6xl mb-8" />
     <h2 className="text-white font-bold text-3xl md:text-4xl  text-center mb-4">
       Готовы начать ваш путь к здоровью?

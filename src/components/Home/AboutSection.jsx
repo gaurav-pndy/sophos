@@ -86,7 +86,7 @@ const AboutSection = () => {
               <div className="grid md:grid-cols-2 gap-2 ">
                 {features.map((f, i) => (
                   <div key={i} className="flex gap-2 xl:items-center xl:gap-4">
-                    <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-[#3a4660] to-[#845007] rounded-lg shrink-0 mt-1 xl:mt-0">
+                    <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-brand1 to-[#845007] rounded-lg shrink-0 mt-1 xl:mt-0">
                       {f.icon}
                     </div>
                     <div>

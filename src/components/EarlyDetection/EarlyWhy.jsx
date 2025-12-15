@@ -4,22 +4,22 @@ import { FaClock, FaDollarSign, FaHeartbeat, FaArrowUp } from "react-icons/fa";
 
 const stats = [
   {
-    icon: <FaClock className="text-[#3a4660] text-xl" />,
+    icon: <FaClock className="text-brand1 text-xl" />,
     title: "earlyDetection.why.timeTitle",
     desc: "earlyDetection.why.timeDesc",
   },
   {
-    icon: <FaDollarSign className="text-[#3a4660] text-xl" />,
+    icon: <FaDollarSign className="text-brand1 text-xl" />,
     title: "earlyDetection.why.moneyTitle",
     desc: "earlyDetection.why.moneyDesc",
   },
   {
-    icon: <FaHeartbeat className="text-[#3a4660] text-xl" />,
+    icon: <FaHeartbeat className="text-brand1 text-xl" />,
     title: "earlyDetection.why.qualityTitle",
     desc: "earlyDetection.why.qualityDesc",
   },
   {
-    icon: <FaArrowUp className="text-[#3a4660] text-xl" />,
+    icon: <FaArrowUp className="text-brand1 text-xl" />,
     title: "earlyDetection.why.prognosisTitle",
     desc: "earlyDetection.why.prognosisDesc",
   },
