@@ -108,6 +108,7 @@ const AddressSection = ({ city, setShowPopup }) => {
       coords: [55.707397, 37.457317],
       zoom: 17,
       hintContent: t("address.clinic1.title"),
+      link: "https://yandex.com/maps/-/CLWImIyZ",
     },
     {
       city: "Makhachkala",
@@ -118,6 +119,7 @@ const AddressSection = ({ city, setShowPopup }) => {
       coords: [42.982315, 47.467977],
       zoom: 17,
       hintContent: "La Clinica",
+      link: "https://yandex.ru/maps/org/la_clinica/49274270398?si=02wzet3j46pe60t6jh7r6a0btg",
     },
   ];
 
@@ -196,7 +198,7 @@ const AddressSection = ({ city, setShowPopup }) => {
               <div className="flex text-black gap-2 mb-1">
                 <TiLocationArrowOutline className="text-brand1 text-xl mt-1" />
                 <a
-                  href="https://yandex.com/maps/-/CLWImIyZ"
+                  href={clinic.link}
                   target="_blank"
                   className="font-semibold hover:text-brand1 transition-all duration-300 base-text"
                 >
