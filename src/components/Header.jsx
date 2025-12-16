@@ -132,6 +132,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
   // Services list
   const services = [
     {
+      id: 1,
       label: t("header.servicesDrop.s1.title"),
       icon: "/services/1.svg",
       subItems: [
@@ -170,66 +171,75 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       ],
     },
     {
+      id: 2,
       label: t("header.servicesDrop.s2.title"),
       icon: "/services/2.svg",
-      subItems: [
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub1"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub2"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub3"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub4"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub5"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub6"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub7"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub8"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub9"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub10"),
-        },
-        {
-          path: "/services/service1",
-          label: t("header.servicesDrop.s2.subitems.sub11"),
-        },
-      ],
+
+      subItems: {
+        tests: [
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub1"),
+          },
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub2"),
+          },
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub3"),
+          },
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub4"),
+          },
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub5"),
+          },
+        ],
+        diagnostics: [
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub6"),
+          },
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub7"),
+          },
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub8"),
+          },
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub9"),
+          },
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub10"),
+          },
+          {
+            path: "/services/service1",
+            label: t("header.servicesDrop.s2.subitems.sub11"),
+          },
+        ],
+      },
     },
     {
+      id: 3,
       path: "/services/service3",
       label: t("header.servicesDrop.s3.title"),
       icon: "/services/3.svg",
     },
     {
+      id: 4,
       path: "/services/service4",
       label: t("header.servicesDrop.s4.title"),
       icon: "/services/4.svg",
     },
     {
+      id: 5,
       label: t("header.servicesDrop.s5.title"),
       icon: "/services/5.svg",
       subItems: [
@@ -239,11 +249,12 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
         {
           path: "/services/service1",
-          label: t("header.servicesDrop.s5.subitems.sub1"),
+          label: t("header.servicesDrop.s5.subitems.sub2"),
         },
       ],
     },
     {
+      id: 6,
       label: t("header.servicesDrop.s6.title"),
       icon: "/services/6.svg",
       subItems: [
@@ -253,25 +264,28 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
         {
           path: "/services/service1",
-          label: t("header.servicesDrop.s6.subitems.sub1"),
+          label: t("header.servicesDrop.s6.subitems.sub2"),
         },
         {
           path: "/services/service1",
-          label: t("header.servicesDrop.s6.subitems.sub1"),
+          label: t("header.servicesDrop.s6.subitems.sub3"),
         },
       ],
     },
     {
+      id: 7,
       path: "/services/service7",
       label: t("header.servicesDrop.s7.title"),
       icon: "/services/7.svg",
     },
     {
+      id: 8,
       path: "/services/service8",
       label: t("header.servicesDrop.s8.title"),
       icon: "/services/8.svg",
     },
     {
+      id: 9,
       label: t("header.servicesDrop.s9.title"),
       icon: "/services/9.svg",
       subItems: [
@@ -281,11 +295,11 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
         {
           path: "/services/service1",
-          label: t("header.servicesDrop.s9.subitems.sub1"),
+          label: t("header.servicesDrop.s9.subitems.sub2"),
         },
         {
           path: "/services/service1",
-          label: t("header.servicesDrop.s9.subitems.sub1"),
+          label: t("header.servicesDrop.s9.subitems.sub3"),
         },
       ],
     },
@@ -648,7 +662,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               </div>
             </div>
             <button
-              className="border hidden md:flex border-[#3a4660] text-[#3a4660] px-4 py-1.5 rounded-lg font-medium hover:bg-[#3a4660]/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap base-text"
+              className="border hidden md:flex border-brand1 text-brand1 px-4 py-1.5 rounded-lg font-medium hover:bg-brand1/10 cursor-pointer transition-all duration-300 gap-2 items-center  whitespace-nowrap base-text"
               onClick={() => {
                 setShowUserAccount(true);
                 setIsOpen(false);
@@ -693,12 +707,12 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           <div className="hidden lg:flex items-center ">
             <input
               type="text"
-              className="border w-48 xl:min-w-110 border-[#3a4660] text-[#3a4660] px-4 h-full small-text rounded-l-lg font-medium hover:bg-[#3a4660]/10 transition-all duration-300"
+              className="border w-48 xl:min-w-110 border-brand1 text-brand1 px-4 h-full small-text rounded-l-lg font-medium hover:bg-brand1/10 transition-all duration-300"
               placeholder={t("header.search")}
             />
             <button
               type="button"
-              className="h-full px-4 small-text rounded-r-lg bg-[#3a4660] text-white font-medium hover:bg-[#3a4660]/90 transition-all duration-300"
+              className="h-full px-4 small-text rounded-r-lg bg-brand1 text-white font-medium hover:bg-brand1/90 transition-all duration-300"
             >
               {/* <FaSearch className="text-sm" /> */}
               {t("header.searchBtn")}
@@ -707,7 +721,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
           <button
             onClick={() => setShowPopup(true)}
-            className=" min-w-48 xl:min-w-56 bg-[#3a4660] text-white px-4 py-2 rounded-lg font-normal hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap hidden lg:flex justify-center items-center gap-2"
+            className=" min-w-48 xl:min-w-56 bg-brand1 text-white px-4 py-2 rounded-lg font-normal hover:bg-brand5/90 cursor-pointer transition-all duration-300 whitespace-nowrap hidden lg:flex justify-center items-center gap-2"
           >
             <FaCalendarCheck className="text-lg" />
 
@@ -746,7 +760,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/2 mt-4 grid grid-cols-4 gap-6 xl:gap-10 bg-white  shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-3xl xl:w-5xl"
+                  className="absolute left-1/2 -translate-x-1/2 mt-4 grid grid-cols-2 gap-6 xl:gap-10 bg-white  shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-xl xl:w-2xl"
                 >
                   {aboutItems.map((a, idx) => (
                     <Link
@@ -754,9 +768,9 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       to={a.path}
                       className="block  group  text-wrap   transition-all relative duration-300 rounded-lg"
                     >
-                      <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#3a4660] to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
+                      {/* <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                         {a.icon}
-                      </div>
+                      </div> */}
                       <p className="group-hover:text-brand2 text-sm xl:text-base font-normal">
                         {a.label}
                       </p>
@@ -791,7 +805,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-3  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-3xl xl:w-6xl font-normal"
+                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-3  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-2xl xl:w-4xl font-normal"
                 >
                   {services.map((s, idx) => (
                     <div
@@ -804,20 +818,19 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         to={s.path || "#"}
                         className="flex items-center gap-2 group-hover:text-brand2 text-sm xl:text-base font-medium transition-all duration-300"
                       >
-                        <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#3a4660] to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-12 group-hover:scale-110 flex items-center justify-center shrink-0 transition-all duration-300 ">
+                        {/* <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-12 group-hover:scale-110 flex items-center justify-center shrink-0 transition-all duration-300 ">
                           <img
                             src={s.icon}
                             alt={s.label}
                             className="w-4 xl:w-6 h-4 xl:h-6 object-contain brightness-0 invert"
                           />
-                        </div>
+                        </div> */}
                         <p
                           className={`${
                             s.subItems && "text-[#0a3449]"
                           } group-hover:text-brand2 pr-8 text-sm xl:text-base text-wrap font-normal`}
-                        >
-                          {s.label}
-                        </p>
+                          dangerouslySetInnerHTML={{ __html: s.label }}
+                        ></p>
                         {s.subItems ? (
                           <FaChevronDown className="text-sm mt-1 " />
                         ) : (
@@ -834,23 +847,70 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute left-0   top-[110%]  bg-[#f3f5f7] border border-gray-400 rounded-xl shadow-lg shadow-black/30 p-4 w-xl xl:w-xl z-50 flex flex-col gap-4 justify-between"
+                            className={`absolute left-0   top-[120%]  bg-[#f3f5f7] border border-gray-400 rounded-xl shadow-lg shadow-black/30 p-4 ${
+                              s.subItems.length < 4 ? "w-sm" : "w-xl"
+                            } z-50 flex flex-col gap-4 justify-between`}
                           >
-                            <ul className="grid grid-cols-2 gap-4">
-                              {s.subItems.map((item, i) => (
-                                <li key={i}>
-                                  <Link
-                                    to={item.path}
-                                    className="block group text-wrap text-gray-700 hover:text-brand2 transition-all relative pr-8"
-                                  >
-                                    {item.label}
-                                    <div className="absolute right-2 top-2 overflow-hidden w-6">
-                                      <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
-                                    </div>
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
+                            {s.id === 2 ? (
+                              <>
+                                <div className="mb-2">
+                                  <div className="grid grid-cols-2 gap-4">
+                                    <ul className="space-y-4">
+                                      {s.subItems.tests.map((item, j) => (
+                                        <li key={j}>
+                                          <Link
+                                            to={item.path}
+                                            className="block group text-wrap text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                          >
+                                            {item.label}
+                                            <div className="absolute right-2 top-2 overflow-hidden w-6">
+                                              <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
+                                            </div>
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                    <ul className="space-y-4">
+                                      {s.subItems.diagnostics.map((item, j) => (
+                                        <li key={j}>
+                                          <Link
+                                            to={item.path}
+                                            className="block group text-wrap text-[#e9865f] hover:text-brand2 transition-all relative pr-8"
+                                          >
+                                            {item.label}
+                                            <div className="absolute right-2 top-2 overflow-hidden w-6">
+                                              <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
+                                            </div>
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <ul
+                                className={`grid ${
+                                  s.subItems.length < 4
+                                    ? "grid-cols-1"
+                                    : "grid-cols-2 "
+                                }   gap-4`}
+                              >
+                                {s.subItems.map((item, i) => (
+                                  <li key={i}>
+                                    <Link
+                                      to={item.path}
+                                      className="block group text-wrap text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                    >
+                                      {item.label}
+                                      <div className="absolute right-2 top-2 overflow-hidden w-6">
+                                        <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
+                                      </div>
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -882,7 +942,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-2  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-3xl xl:w-6xl font-normal"
+                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-2  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-2xl xl:w-4xl font-normal"
                 >
                   {doctorsItems.map((d, idx) => (
                     <div
@@ -895,9 +955,9 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         to={d.path || "#"}
                         className="flex items-center gap-2 group-hover:text-brand2 text-sm xl:text-base font-medium transition-all duration-300"
                       >
-                        <div className="w-10 xl:w-12  h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#3a4660] to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300">
+                        {/* <div className="w-10 xl:w-12  h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300">
                           {d.icon}
-                        </div>
+                        </div> */}
                         <p
                           className={`${
                             d.subItems && "text-[#0a3449]"
@@ -976,7 +1036,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-cols-3 gap-6 xl:gap-10 bg-white shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-2xl xl:w-4xl"
+                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-cols-3 gap-6 xl:gap-10 bg-white shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-xl xl:w-2xl"
                 >
                   {patientItems.map((p, idx) => (
                     <Link
@@ -984,9 +1044,9 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       key={idx}
                       className="block  group  text-wrap   transition-all relative duration-300 rounded-lg"
                     >
-                      <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-[#3a4660] to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
+                      {/* <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                         {p.icon}
-                      </div>
+                      </div> */}
                       <p className="group-hover:text-brand2 text-sm xl:text-base text-left font-normal">
                         {p.label}
                       </p>
@@ -1131,7 +1191,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
               <div className="flex flex-col gap-2 base-text mb-4">
                 <button
-                  className="bg-[#3a4660] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4"
+                  className="bg-brand1 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-sky-600 transition flex items-center gap-2 mt-4"
                   onClick={() => {
                     setShowUserAccount(true);
                     setIsOpen(false);
@@ -1142,7 +1202,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 </button>
                 <button
                   onClick={() => setShowPopup(true)}
-                  className="border border-[#3a4660] text-[#3a4660] px-6 py-2.5 rounded-lg font-medium flex gap-2 items-center hover:bg-[#3a4660]/10 cursor-pointer transition whitespace-nowrap"
+                  className="border border-brand1 text-brand1 px-6 py-2.5 rounded-lg font-medium flex gap-2 items-center hover:bg-brand1/10 cursor-pointer transition whitespace-nowrap"
                 >
                   <FaCalendarCheck className="text-lg" />
 

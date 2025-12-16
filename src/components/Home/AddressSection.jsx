@@ -211,10 +211,12 @@ const AddressSection = ({ city, setShowPopup }) => {
                 {t("address.button")}
               </button>
 
-              <div
-                className="text-brand1 text-left small-text mt-2"
-                dangerouslySetInnerHTML={{ __html: t("address.parkingText") }}
-              ></div>
+              {city === "Moscow" && (
+                <div
+                  className="text-brand1 text-left small-text mt-2"
+                  dangerouslySetInnerHTML={{ __html: t("address.parkingText") }}
+                ></div>
+              )}
             </div>
 
             <div className=" bg-white rounded-xl overflow-hidden shadow">

@@ -28,7 +28,7 @@
           }
         },
         "s2": {
-          "title": "Tests and Diagnostics",
+          "title": "Tests and <span class='text-[#e9865f]'> Diagnostics</span>",
           "subitems": {
             "sub1": "Complete Blood Count",
             "sub2": "Urinalysis",
