@@ -20,6 +20,8 @@ const BlogDetails = () => {
 
   const currentLanguage = i18n.language;
 
+  const [branch] = useState(() => localStorage.getItem("city") || "");
+
   // Default colors for the blog
   const defaultColors = {
     color1: "#3B82F6", // blue-500
@@ -28,11 +30,14 @@ const BlogDetails = () => {
 
   useEffect(() => {
     fetchBlog();
-  }, [blogId, currentLanguage]);
+  }, [blogId, currentLanguage, branch]);
 
   const fetchBlog = async () => {
     try {
       setLoading(true);
+      const params = new URLSearchParams();
+
+      if (branch) params.append("branch", branch);
       const response = await fetch(
         `${API_BASE}/blogs/public/${blogId}?lang=${currentLanguage}`
       );

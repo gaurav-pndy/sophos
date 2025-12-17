@@ -14,13 +14,19 @@ export default function Blogs() {
 
   const currentLanguage = i18n.language;
 
+  const [branch] = useState(() => localStorage.getItem("city") || "");
+
   useEffect(() => {
     fetchBlogs();
-  }, [currentLanguage]); // Refetch when language changes
+  }, [currentLanguage, branch]); // Refetch when language changes
 
   const fetchBlogs = async () => {
     try {
       setLoading(true);
+
+      const params = new URLSearchParams();
+
+      if (branch) params.append("branch", branch);
       const response = await fetch(
         `${API_BASE}/blogs/public?lang=${currentLanguage}`
       );

@@ -45,6 +45,10 @@ const OffersTab = () => {
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
   const { t, i18n } = useTranslation();
 
+  const [branch, setBranch] = useState(
+    () => localStorage.getItem("city") || ""
+  );
+
   // Description component with "See More" functionality - MOVED INSIDE OffersTab
   const DescriptionWithToggle = ({ description, maxLines = 2 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -88,6 +92,10 @@ const OffersTab = () => {
       setLoading(true);
       setError(null);
 
+      const params = new URLSearchParams();
+
+      if (branch) params.append("branch", branch);
+
       const response = await fetch(
         `${API_BASE}/promos/active?lang=${i18n.language}`
       );
@@ -118,7 +126,7 @@ const OffersTab = () => {
 
   useEffect(() => {
     fetchActivePromos();
-  }, [i18n.language]);
+  }, [i18n.language, branch]);
 
   // Helper function to get localized field
   const getLocalizedField = (field, fallback = "") => {

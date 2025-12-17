@@ -23,6 +23,7 @@ const DoctorsPage = ({ setShowPopup }) => {
   const [specializations, setSpecializations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   const formatSpecializationsList = (specString = "") => {
     const formatted = specString
@@ -59,6 +60,8 @@ const DoctorsPage = ({ setShowPopup }) => {
       params.append("page", "1");
       params.append("limit", "50");
 
+      if (branch) params.append("branch", branch);
+
       const response = await fetch(`${API_BASE}/api/website/doctors?${params}`);
       if (!response.ok) throw new Error("Failed to fetch doctors");
 
@@ -80,6 +83,9 @@ const DoctorsPage = ({ setShowPopup }) => {
   // Fetch specializations data from backend
   const fetchSpecializations = async () => {
     try {
+      const params = new URLSearchParams();
+
+      if (branch) params.append("branch", branch);
       const response = await fetch(
         `${API_BASE}/api/website/doctors/specializations?language=${i18n.language}`
       );
@@ -155,7 +161,7 @@ const DoctorsPage = ({ setShowPopup }) => {
   useEffect(() => {
     fetchDoctors();
     fetchSpecializations();
-  }, [i18n.language]);
+  }, [i18n.language, branch]);
 
   // Refetch when filters change with debounce
   useEffect(() => {
