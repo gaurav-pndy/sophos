@@ -818,13 +818,13 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         to={s.path || "#"}
                         className="flex items-center gap-2 group-hover:text-brand2 text-sm xl:text-base font-medium transition-all duration-300"
                       >
-                        {/* <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-12 group-hover:scale-110 flex items-center justify-center shrink-0 transition-all duration-300 ">
+                        <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full   group-hover:rotate-12 group-hover:scale-110 flex items-center justify-center shrink-0 transition-all duration-300 ">
                           <img
                             src={s.icon}
                             alt={s.label}
-                            className="w-4 xl:w-6 h-4 xl:h-6 object-contain brightness-0 invert"
+                            className="w-4 xl:w-8 h-4 xl:h-8 object-contain "
                           />
-                        </div> */}
+                        </div>
                         <p
                           className={`${
                             s.subItems && "text-[#0a3449]"
@@ -1295,7 +1295,11 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                 className="flex items-center justify-between w-full"
                               >
                                 <div className="">
-                                  <span>{item.label}</span>
+                                  <span
+                                    dangerouslySetInnerHTML={{
+                                      __html: item.label,
+                                    }}
+                                  ></span>
                                 </div>
                                 <FaChevronDown
                                   className={`ml-2 transform transition ${
@@ -1314,18 +1318,45 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                     exit={{ height: 0, opacity: 0 }}
                                     className="ml-4 mt-2 flex flex-col gap-3"
                                   >
-                                    <div className="flex ml-2 flex-col gap-2 ">
-                                      {item.subItems.map((sub, i) => (
-                                        <Link
-                                          key={i}
-                                          to={sub.path}
-                                          onClick={() => setIsOpen(false)}
-                                          className="block hover:underline"
-                                        >
-                                          {sub.label}
-                                        </Link>
-                                      ))}
-                                    </div>
+                                    {item.id === 2 ? (
+                                      <div className="flex ml-2 flex-col gap-2 ">
+                                        {item.subItems.tests.map((sub, i) => (
+                                          <Link
+                                            key={i}
+                                            to={sub.path}
+                                            onClick={() => setIsOpen(false)}
+                                            className="block hover:underline"
+                                          >
+                                            {sub.label}
+                                          </Link>
+                                        ))}
+                                        {item.subItems.diagnostics.map(
+                                          (sub, i) => (
+                                            <Link
+                                              key={i}
+                                              to={sub.path}
+                                              onClick={() => setIsOpen(false)}
+                                              className="block text-[#e9865f] hover:underline"
+                                            >
+                                              {sub.label}
+                                            </Link>
+                                          )
+                                        )}
+                                      </div>
+                                    ) : (
+                                      <div className="flex ml-2 flex-col gap-2 ">
+                                        {item.subItems.map((sub, i) => (
+                                          <Link
+                                            key={i}
+                                            to={sub.path}
+                                            onClick={() => setIsOpen(false)}
+                                            className="block hover:underline"
+                                          >
+                                            {sub.label}
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
                                   </motion.div>
                                 )}
                               </AnimatePresence>
@@ -1509,7 +1540,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   className="  hover:underline whitespace-nowrap"
                 >
                   {" "}
-                  {t("header.servicesDrop.s1")}
+                  {t("header.servicesDrop.s1.title")}
                 </Link>{" "}
                 <Link
                   onClick={() => setIsOpen(false)}
