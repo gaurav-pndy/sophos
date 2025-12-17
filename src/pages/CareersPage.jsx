@@ -86,6 +86,8 @@ const CareersPage = () => {
 
   const { t, i18n } = useTranslation();
 
+  const [branch] = useState(() => localStorage.getItem("city") || "");
+
   // Check URL hash on component mount
   useEffect(() => {
     const hash = window.location.hash;
@@ -152,6 +154,10 @@ const CareersPage = () => {
         ...filters,
       });
 
+      const params = new URLSearchParams();
+
+      if (branch) params.append("branch", branch);
+
       const response = await fetch(`${API_BASE}/vacancies?${queryParams}`);
 
       if (!response.ok) {
@@ -177,7 +183,7 @@ const CareersPage = () => {
 
   useEffect(() => {
     fetchVacancies();
-  }, [filters, i18n.language]); // Refetch when language changes
+  }, [filters, i18n.language, branch]); // Refetch when language changes
 
   // Check if vacancy is open for applications
   const isVacancyOpen = (vacancy) => {

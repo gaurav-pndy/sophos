@@ -27,12 +27,16 @@ const DoctorDetails = ({ setShowPopup }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [expanded, setExpanded] = useState();
+  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   // Fetch doctor data from backend
   useEffect(() => {
     const fetchDoctor = async () => {
       try {
         setLoading(true);
+        const params = new URLSearchParams();
+
+        if (branch) params.append("branch", branch);
         const response = await fetch(
           `${API_BASE}/api/website/doctors/${doctorId}`
         );
@@ -56,7 +60,7 @@ const DoctorDetails = ({ setShowPopup }) => {
     };
 
     fetchDoctor();
-  }, [doctorId]);
+  }, [doctorId, branch]);
 
   // Helper function to get localized field from backend data
   const getLocalizedField = (field, fallback = "") => {

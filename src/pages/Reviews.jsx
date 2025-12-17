@@ -12,6 +12,7 @@ const Reviews = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   const API_BASE =
     import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
@@ -100,6 +101,9 @@ const Reviews = () => {
     const fetchReviews = async () => {
       try {
         setLoading(true);
+        const params = new URLSearchParams();
+
+        if (branch) params.append("branch", branch);
         const response = await fetch(`${API_BASE}/api/reviews/public`);
 
         if (!response.ok) {
@@ -166,7 +170,7 @@ const Reviews = () => {
     };
 
     fetchReviews();
-  }, [i18n.language]);
+  }, [i18n.language, branch]);
 
   const handleOpenVideo = (idx) => setVideoModalIdx(idx);
   const handleCloseVideo = () => setVideoModalIdx(null);
@@ -195,8 +199,6 @@ const Reviews = () => {
   return (
     <section id="reviews" className="w-full py-12 bg-white">
       <div className="max-w-[87rem] relative mx-auto px-4">
-      
-
         <div className="mb-7 grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10">
           {testimonials.length > 0 ? (
             testimonials.map((test, idx) => (

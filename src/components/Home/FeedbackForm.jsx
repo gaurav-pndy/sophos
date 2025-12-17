@@ -9,6 +9,10 @@ const FeedbackForm = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
+  const [branch, setBranch] = useState(
+    () => localStorage.getItem("city") || ""
+  );
+
   console.log("lang", currentLanguage);
 
   const [form, setForm] = useState({
@@ -48,7 +52,7 @@ const FeedbackForm = () => {
   // Fetch doctors list on component mount
   useEffect(() => {
     fetchDoctors();
-  }, []);
+  }, [branch]);
 
   // Auto-close success popup after 5 seconds
   useEffect(() => {
@@ -64,6 +68,8 @@ const FeedbackForm = () => {
   const fetchDoctors = async () => {
     setDoctorsLoading(true);
     try {
+      const params = new URLSearchParams();
+      if (branch) params.append("branch", branch);
       const response = await fetch(`${API_BASE}/api/doctors-profile/minimal`);
 
       if (!response.ok) {
