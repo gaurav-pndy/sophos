@@ -4,7 +4,7 @@ import WaveBackground from "../components/WaveBackground";
 import { BiChevronRight } from "react-icons/bi";
 import { useTranslation } from "react-i18next";
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
@@ -28,18 +28,14 @@ const BlogDetails = () => {
     color2: "#8B5CF6", // violet-500
   };
 
-  useEffect(() => {
-    fetchBlog();
-  }, [blogId, currentLanguage, branch]);
-
-  const fetchBlog = async () => {
+  const fetchBlog = useCallback(async () => {
     try {
       setLoading(true);
-      const params = new URLSearchParams();
+      const params = new URLSearchParams({ lang: currentLanguage });
 
       if (branch) params.append("branch", branch);
       const response = await fetch(
-        `${API_BASE}/blogs/public/${blogId}?lang=${currentLanguage}`
+        `${API_BASE}/blogs/public/${blogId}?${params.toString()}`
       );
 
       if (!response.ok) {
@@ -59,7 +55,11 @@ const BlogDetails = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [blogId, branch, currentLanguage]);
+
+  useEffect(() => {
+    fetchBlog();
+  }, [fetchBlog]);
 
   const formatDate = (dateString) => {
     if (!dateString) return t("blogDetails.noDate") || "No date";

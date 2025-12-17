@@ -154,11 +154,11 @@ const CareersPage = () => {
         ...filters,
       });
 
-      const params = new URLSearchParams();
+      if (branch) queryParams.append("branch", branch);
 
-      if (branch) params.append("branch", branch);
-
-      const response = await fetch(`${API_BASE}/vacancies?${queryParams}`);
+      const response = await fetch(
+        `${API_BASE}/vacancies?${queryParams.toString()}`
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -220,8 +220,16 @@ const CareersPage = () => {
         submitData.append("resume", formData.resume);
       }
 
+      const applyParams = new URLSearchParams();
+      if (branch) applyParams.append("branch", branch);
+      if (i18n.language) applyParams.append("lang", i18n.language);
+
+      const applyQuery = applyParams.toString();
+
       const response = await fetch(
-        `${API_BASE}/vacancies/${selectedVacancy._id}/apply`,
+        `${API_BASE}/vacancies/${selectedVacancy._id}/apply${
+          applyQuery ? `?${applyQuery}` : ""
+        }`,
         {
           method: "POST",
           // Don't set Content-Type header - let browser set it with boundary

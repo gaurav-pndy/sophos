@@ -23,6 +23,10 @@ const DoctorsSection = ({ setShowPopup }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const [branch, setBranch] = useState(
+    () => localStorage.getItem("city") || "" // read once on mount
+  );
+
   // Format specializations list (same as DoctorsPage)
   const formatSpecializationsList = (specString = "") => {
     const formatted = specString
@@ -57,6 +61,7 @@ const DoctorsSection = ({ setShowPopup }) => {
       params.append("page", "1");
       params.append("limit", "12");
       params.append("expert", true);
+      if (branch) params.append("branch", branch);
 
       const response = await fetch(`${API_BASE}/api/website/doctors?${params}`);
       if (!response.ok) throw new Error("Failed to fetch doctors");
@@ -114,6 +119,7 @@ const DoctorsSection = ({ setShowPopup }) => {
               params.append("language", i18n.language);
               params.append("page", "1");
               params.append("limit", "1");
+              if (branch) params.append("branch", branch);
 
               const response = await fetch(
                 `${API_BASE}/api/website/doctors?${params}`

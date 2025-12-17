@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
@@ -16,20 +16,14 @@ export default function Blogs() {
 
   const [branch] = useState(() => localStorage.getItem("city") || "");
 
-  useEffect(() => {
-    fetchBlogs();
-  }, [currentLanguage, branch]); // Refetch when language changes
-
-  const fetchBlogs = async () => {
+  const fetchBlogs = useCallback(async () => {
     try {
       setLoading(true);
 
-      const params = new URLSearchParams();
-
+      const params = new URLSearchParams({ lang: currentLanguage });
       if (branch) params.append("branch", branch);
-      const response = await fetch(
-        `${API_BASE}/blogs/public?lang=${currentLanguage}`
-      );
+
+      const response = await fetch(`${API_BASE}/blogs/public?${params.toString()}`);
 
       if (!response.ok) {
         throw new Error("Failed to fetch blogs");
@@ -49,7 +43,11 @@ export default function Blogs() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [branch, currentLanguage]);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, [fetchBlogs]); // Refetch when language/branch changes
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString(currentLanguage, {

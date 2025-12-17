@@ -27,6 +27,7 @@ const TestimonialsSection = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   const API_BASE =
     import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
@@ -115,7 +116,14 @@ const TestimonialsSection = () => {
     const fetchReviews = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${API_BASE}/api/reviews/public`);
+
+        const params = new URLSearchParams();
+        if (branch) params.append("branch", branch);
+        const query = params.toString();
+
+        const response = await fetch(
+          `${API_BASE}/api/reviews/public${query ? `?${query}` : ""}`
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -181,7 +189,7 @@ const TestimonialsSection = () => {
     };
 
     fetchReviews();
-  }, [i18n.language]);
+  }, [i18n.language, branch]);
 
   const handleAddReview = () => {
     console.log("Add review clicked");
