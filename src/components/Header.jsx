@@ -36,6 +36,12 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaFileAlt,
+  FaFlask,
+  FaMicroscope,
+  FaSyringe,
+  FaFileMedical,
+  FaVideo,
+  FaXRay,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import i18n from "../utils/i18n";
@@ -134,7 +140,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
     {
       id: 1,
       label: t("header.servicesDrop.s1.title"),
-      icon: "/services/1.svg",
+      icon: <FaUserMd />, // Specialist Appointment
       subItems: [
         {
           path: "/services/service1",
@@ -170,11 +176,11 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
       ],
     },
+
     {
       id: 2,
       label: t("header.servicesDrop.s2.title"),
-      icon: "/services/2.svg",
-
+      icon: <FaFlask />, // Tests & Diagnostics
       subItems: {
         tests: [
           {
@@ -226,22 +232,25 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         ],
       },
     },
+
     {
       id: 3,
       path: "/services/service3",
       label: t("header.servicesDrop.s3.title"),
-      icon: "/services/3.svg",
+      icon: <FaMicroscope />, // Individual Early Diagnostics
     },
+
     {
       id: 4,
       path: "/services/service4",
       label: t("header.servicesDrop.s4.title"),
-      icon: "/services/4.svg",
+      icon: <FaHospital />, // Day Hospital
     },
+
     {
       id: 5,
       label: t("header.servicesDrop.s5.title"),
-      icon: "/services/5.svg",
+      icon: <FaSyringe />, // Procedure Room
       subItems: [
         {
           path: "/services/service1",
@@ -253,10 +262,11 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
       ],
     },
+
     {
       id: 6,
       label: t("header.servicesDrop.s6.title"),
-      icon: "/services/6.svg",
+      icon: <FaFileMedical />, // Medical Certificates
       subItems: [
         {
           path: "/services/service1",
@@ -272,22 +282,25 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
       ],
     },
+
     {
       id: 7,
       path: "/services/service7",
       label: t("header.servicesDrop.s7.title"),
-      icon: "/services/7.svg",
+      icon: <GiMedicines />, // Telemedicine
     },
+
     {
       id: 8,
       path: "/services/service8",
       label: t("header.servicesDrop.s8.title"),
-      icon: "/services/8.svg",
+      icon: <FaXRay />, // CT / MRI / PET-CT
     },
+
     {
       id: 9,
       label: t("header.servicesDrop.s9.title"),
-      icon: "/services/9.svg",
+      icon: <FaHandshake />, // Partner Projects
       subItems: [
         {
           path: "/services/service1",
@@ -818,13 +831,9 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         to={s.path || "#"}
                         className="flex items-center gap-2 group-hover:text-brand2 text-sm xl:text-base font-medium transition-all duration-300"
                       >
-                        <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full   group-hover:rotate-12 group-hover:scale-110 flex items-center justify-center shrink-0 transition-all duration-300 ">
-                          <img
-                            src={s.icon}
-                            alt={s.label}
-                            className="w-4 xl:w-8 h-4 xl:h-8 object-contain "
-                          />
-                        </div>
+                        <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
+                          {s.icon}
+                        </span>
                         <p
                           className={`${
                             s.subItems && "text-[#0a3449]"
