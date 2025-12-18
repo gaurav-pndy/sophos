@@ -88,7 +88,7 @@ const AboutContacts = () => {
               <h3 className="font-bold subheading text-brand1 mb-2">
                 {t(org.title)}
               </h3>
-              {/* <p className="text-[#845007] text-sm font-medium">
+              {/* <p className="text-[#845007] small-text font-medium">
                 {t(org.subtitle)}
               </p> */}
             </div>

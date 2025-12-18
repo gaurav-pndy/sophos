@@ -310,7 +310,7 @@ const FeedbackForm = () => {
                   style={{ width: "100%" }}
                 ></div>
               </div>
-              <p className="text-sm text-gray-500 mt-2">
+              <p className="small-text text-gray-500 mt-2">
                 {t("testimonials.autoClose") ||
                   "Closing automatically in 5 seconds..."}
               </p>
@@ -348,7 +348,7 @@ const FeedbackForm = () => {
                 )}
               </select>
               {form.doctorId && (
-                <p className="text-sm text-gray-600 mt-2">
+                <p className="small-text text-gray-600 mt-2">
                   {t("testimonials.selected")}:{" "}
                   {
                     doctors.find((d) => d._id === form.doctorId)?.displayName?.[
@@ -422,7 +422,7 @@ const FeedbackForm = () => {
                   defaultCountry="ru"
                   value={form.contactInfo.phone}
                   onChange={(phone) => handleContactChange("phone", phone)}
-                  className="rounded-lg border border-brand4 text-sm w-full"
+                  className="rounded-lg border border-brand4 small-text w-full"
                   inputClassName="!bg-transparent !border-none !w-full !px-3 !py-2 focus:!outline-none"
                 />
                 <div className="mt-2">
@@ -588,7 +588,7 @@ const FeedbackForm = () => {
                     key={index}
                     className="flex items-center justify-between bg-gray-50 p-2 rounded mb-2"
                   >
-                    <span className="text-brand1 text-sm">{file.name}</span>
+                    <span className="text-brand1 small-text">{file.name}</span>
                     <button
                       type="button"
                       onClick={() => removeVideoFile(index)}

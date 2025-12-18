@@ -150,7 +150,7 @@ const TelemedicineExperts = () => {
                          </span>
                        ))}
                      </div> */}
-                      <div className="text-brand1 text-sm mb-3 line-clamp-2">
+                      <div className="text-brand1 small-text mb-3 line-clamp-2">
                         {t(doc.desc)}
                       </div>
                       <div className="flex flex-row gap-4 items-center mb-3 text-brand1/90 text-xs">
@@ -161,7 +161,7 @@ const TelemedicineExperts = () => {
                       <div className="text-brand1/60 text-xs">
                         {t("doctors.languages")}:
                       </div>
-                      <div className="text-brand1 text-sm font-medium">
+                      <div className="text-brand1 small-text font-medium">
                         {t(doc.langs)}
                       </div>
                     </div>

@@ -172,7 +172,7 @@ export default function Blogs({ branch }) {
                     </span>
                   ))}
                   {blog.tags.length > 3 && (
-                    <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs md:text-sm">
+                    <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs md:small-text">
                       +{blog.tags.length - 3} {t("more") || "more"}
                     </span>
                   )}

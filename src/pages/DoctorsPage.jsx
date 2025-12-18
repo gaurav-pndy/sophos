@@ -409,7 +409,7 @@ const DoctorsPage = ({ branch, setShowPopup }) => {
           </p>
         )}
         {loading && doctors.length > 0 && (
-          <div className="flex items-center text-brand1 text-sm">
+          <div className="flex items-center text-brand1 small-text">
             <FaSpinner className="animate-spin mr-2" />
             <span>Updating results...</span>
           </div>
@@ -503,7 +503,7 @@ const DoctorsPage = ({ branch, setShowPopup }) => {
                           5 - Math.floor(doc.reviewStats.averageRating)
                         )}
                       </div>
-                      <span className="text-sm text-brand1/70">
+                      <span className="small-text text-brand1/70">
                         ({doc.reviewStats.totalReviews} review
                         {doc.reviewStats.totalReviews !== 1 ? "s" : ""})
                       </span>

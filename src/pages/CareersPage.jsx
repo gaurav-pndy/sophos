@@ -370,7 +370,7 @@ const CareersPage = ({ branch }) => {
                 style={{ width: "100%" }}
               ></div>
             </div>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="small-text text-gray-500 mt-2">
               {t(
                 "careersPage.autoClose",
                 "Closing automatically in 5 seconds..."
@@ -740,7 +740,7 @@ const VacancyCard = ({
                     className={`px-6 py-2.5 base-text rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${getButtonStyle()}`}
                   >
                     {getButtonText()}
-                    {positionIsOpen && <FaArrowRight className="text-sm" />}
+                    {positionIsOpen && <FaArrowRight className="small-text" />}
                   </button>
                 )}
 
@@ -751,7 +751,7 @@ const VacancyCard = ({
                     className="px-5 py-2.5 base-text rounded-lg font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300 flex items-center gap-2"
                   >
                     {t("careersPage.learnMore", "Learn More")}
-                    <FaInfoCircle className="text-sm" />
+                    <FaInfoCircle className="small-text" />
                   </button>
                 )}
 
@@ -1112,7 +1112,7 @@ const VacancyDetails = ({
                 style={{ width: "100%" }}
               ></div>
             </div>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="small-text text-gray-500 mt-2">
               {t(
                 "careersPage.autoClose",
                 "Closing automatically in 5 seconds..."
@@ -1128,7 +1128,7 @@ const VacancyDetails = ({
           onClick={onClose}
           className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
         >
-          <FaArrowRight className="text-sm rotate-180" />
+          <FaArrowRight className="small-text rotate-180" />
           {t("careersPage.backToCareers", "Back to Careers")}
         </button>
       </div>
@@ -1175,7 +1175,7 @@ const VacancyDetails = ({
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <FaClock className="text-gray-400 text-lg" />
-                      <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                      <span className="small-text font-medium text-gray-500 uppercase tracking-wide">
                         {t("careersPage.workExperience", "Work Experience")}
                       </span>
                     </div>
@@ -1188,7 +1188,7 @@ const VacancyDetails = ({
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <FaMapMarkerAlt className="text-gray-400 text-lg" />
-                      <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                      <span className="small-text font-medium text-gray-500 uppercase tracking-wide">
                         {t("careersPage.location", "Location")}
                       </span>
                     </div>
@@ -1201,7 +1201,7 @@ const VacancyDetails = ({
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <FaBriefcase className="text-gray-400 text-lg" />
-                      <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                      <span className="small-text font-medium text-gray-500 uppercase tracking-wide">
                         {t("careersPage.employmentType", "Employment Type")}
                       </span>
                     </div>
@@ -1227,7 +1227,7 @@ const VacancyDetails = ({
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <FaCalendarAlt className="text-gray-400 text-lg" />
-                        <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                        <span className="small-text font-medium text-gray-500 uppercase tracking-wide">
                           {t("careersPage.deadline", "Application Deadline")}
                         </span>
                       </div>
@@ -1250,12 +1250,12 @@ const VacancyDetails = ({
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <FaCheckCircle className="text-gray-400 text-lg" />
-                      <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                      <span className="small-text font-medium text-gray-500 uppercase tracking-wide">
                         {t("careersPage.status", "Status")}
                       </span>
                     </div>
                     <span
-                      className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold ${
+                      className={`inline-flex items-center gap-1 px-3 py-1 rounded-full small-text font-semibold ${
                         positionIsOpen
                           ? "bg-green-100 text-green-800"
                           : "bg-red-100 text-red-800"
@@ -1271,7 +1271,7 @@ const VacancyDetails = ({
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <FaEye className="text-gray-400 text-lg" />
-                      <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                      <span className="small-text font-medium text-gray-500 uppercase tracking-wide">
                         {t("careersPage.views", "Views")}
                       </span>
                     </div>
@@ -1434,7 +1434,7 @@ const VacancyDetails = ({
                             <FaPhone className="text-white" />
                           </div>
                           <div>
-                            <p className="text-sm text-gray-500">
+                            <p className="small-text text-gray-500">
                               {t("careersPage.phoneLabel", "Phone Number")}
                             </p>
                             <p className="text-lg font-semibold text-gray-900">
@@ -1448,7 +1448,7 @@ const VacancyDetails = ({
                             <FaEnvelope className="text-white" />
                           </div>
                           <div>
-                            <p className="text-sm text-gray-500">
+                            <p className="small-text text-gray-500">
                               {t("careersPage.emailLabel", "Email Address")}
                             </p>
                             <p className="text-lg font-semibold text-gray-900">
@@ -1463,7 +1463,7 @@ const VacancyDetails = ({
                     <div className="lg:w-96 w-full">
                       <form onSubmit={handlePhoneSubmit} className="space-y-4">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block small-text font-medium text-gray-700 mb-2">
                             {t("careersPage.yourPhone", "Your Phone Number")}
                           </label>
                           <div className="relative">
@@ -1495,13 +1495,13 @@ const VacancyDetails = ({
                           </div>
 
                           {phoneError && (
-                            <p className="mt-2 text-sm text-red-600">
+                            <p className="mt-2 small-text text-red-600">
                               {phoneError}
                             </p>
                           )}
 
                           {phoneSuccess && (
-                            <p className="mt-2 text-sm text-green-600">
+                            <p className="mt-2 small-text text-green-600">
                               {t(
                                 "careersPage.phoneSuccess",
                                 "Thank you! We'll call you back soon."
@@ -1554,7 +1554,7 @@ const VacancyDetails = ({
 
                   {/* Quick info */}
                   <div className="mt-6 space-y-3">
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <div className="flex items-center gap-2 small-text text-gray-500">
                       <FaCalendarAlt />
                       <span>
                         {t("careersPage.deadline", "Deadline")}:{" "}
@@ -1565,7 +1565,7 @@ const VacancyDetails = ({
                           : t("careersPage.noDeadline", "No deadline")}
                       </span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <div className="flex items-center gap-2 small-text text-gray-500">
                       <FaUsers />
                       <span>
                         {t("careersPage.applicants", "Applicants")}:{" "}

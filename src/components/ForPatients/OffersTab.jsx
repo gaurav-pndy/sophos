@@ -67,7 +67,7 @@ const OffersTab = () => {
         {description.length > 100 && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-2 text-brand1 hover:text-brand3 text-sm font-medium flex items-center gap-1 transition-colors duration-200"
+            className="mt-2 text-brand1 hover:text-brand3 small-text font-medium flex items-center gap-1 transition-colors duration-200"
           >
             {isExpanded ? (
               <>

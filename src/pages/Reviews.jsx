@@ -260,7 +260,7 @@ const Reviews = ({ branch }) => {
                   {testimonials[readMoreIdx].rating}{" "}
                   <FaStar className="text-yellow-400" />
                 </div>
-                <div className="text-sm text-gray-500 mt-1">
+                <div className="small-text text-gray-500 mt-1">
                   {testimonials[readMoreIdx].date &&
                     new Date(
                       testimonials[readMoreIdx].date
@@ -271,14 +271,14 @@ const Reviews = ({ branch }) => {
 
             {/* Doctor info */}
             <div className="mb-4 p-3 bg-gray-50 rounded-lg">
-              <div className="text-sm text-gray-600">Review for:</div>
+              <div className="small-text text-gray-600">Review for:</div>
               <div className="font-semibold text-brand1">
                 {testimonials[readMoreIdx].doctorName}
               </div>
             </div>
 
             {/* Full review text */}
-            <div className="text-brand1 text-base leading-relaxed">
+            <div className="text-brand1 base-text leading-relaxed">
               "{testimonials[readMoreIdx].text}"
             </div>
 
@@ -286,7 +286,7 @@ const Reviews = ({ branch }) => {
             {testimonials[readMoreIdx].reviewFileIds &&
               testimonials[readMoreIdx].reviewFileIds.length > 0 && (
                 <div className="mt-6">
-                  <div className="text-sm text-gray-600 mb-2">
+                  <div className="small-text text-gray-600 mb-2">
                     Attached videos:
                   </div>
                   <div className="grid grid-cols-2 gap-2">
@@ -341,7 +341,7 @@ const Reviews = ({ branch }) => {
               <div className="font-semibold text-lg">
                 {testimonials[videoModalIdx].name}
               </div>
-              <div className="text-sm text-gray-300">
+              <div className="small-text text-gray-300">
                 Review for {testimonials[videoModalIdx].doctorName}
               </div>
               <div className="flex items-center gap-1 mt-1">
@@ -531,7 +531,7 @@ const TestimonialCard = ({
               e.stopPropagation();
               handleReadMore(idx);
             }}
-            className={`mt-2 text-sm cursor-pointer font-semibold underline ${
+            className={`mt-2 small-text cursor-pointer font-semibold underline ${
               test.hasVideo
                 ? "text-white hover:text-brand4"
                 : "text-black hover:text-brand1"

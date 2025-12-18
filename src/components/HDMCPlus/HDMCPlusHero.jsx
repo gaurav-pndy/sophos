@@ -23,7 +23,7 @@ const HDMCPlusHero = () => (
         </div>
       </div>
       <div className="text-left md:text-right w-full md:min-h-96  h-full  p-6  md:p-6 lg:pr-10 xl:pr-12 bg-gradient-to-t md:bg-gradient-to-l from-[#b2c3d2] flex flex-col justify-center to-[#708b9c]">
-        <div className="flex justify-center md:justify-end z-40 mb-2 text-sm lg:text-base">
+        <div className="flex justify-center md:justify-end z-40 mb-2 small-text lg:base-text">
           <span className="flex items-center gap-2 px-7 py-2.5  font-semibold rounded-full bg-brand1/60 text-white ">
             <FaCrown className="  " />
             HDMC+ Премиум Членство

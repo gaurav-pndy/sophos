@@ -25,7 +25,7 @@ const ConsentBanner = () => {
     <>
       {/* Popup dialog */}
       <div className="fixed z-50 bottom-10 left-1/2 translate-x-[-50%] bg-white border border-brand4 shadow-black/70 shadow-2xl rounded-lg px-6 py-4 w-[95%] max-w-4xl text-center flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <p className="text-base font-semibold text-brand1 mb-0">
+        <p className="base-text font-semibold text-brand1 mb-0">
           {t("cookie.message")}
           <Link
             to="/cookie-policy"

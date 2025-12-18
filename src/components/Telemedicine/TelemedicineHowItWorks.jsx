@@ -55,7 +55,7 @@ const TelemedicineHowItWorks = () => {
               <div className=" text-xl font-semibold mb-2">
                 {t(step.titleKey)}
               </div>
-              <div className="text-brand1/70 text-base">{t(step.descKey)}</div>
+              <div className="text-brand1/70 base-text">{t(step.descKey)}</div>
             </div>
           ))}
         </div>

@@ -31,7 +31,7 @@ const ExpertiseDirection = () => {
               <div className="font-bold text-2xl text-gray-800 mb-1">
                 {t(doctors[0].name)}{" "}
                 {doctors[0].location && (
-                  <span className="text-gray-600 font-normal text-base">
+                  <span className="text-gray-600 font-normal base-text">
                     ({t(doctors[0].location)})
                   </span>
                 )}
@@ -44,7 +44,7 @@ const ExpertiseDirection = () => {
                 <div className="text-3xl font-bold text-brand3">
                   {t(doctors[0].years)}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="small-text text-gray-600">
                   {t("expertise.experience")}
                 </div>
               </div>
@@ -52,7 +52,7 @@ const ExpertiseDirection = () => {
                 <div className="text-brand3 text-3xl font-bold">
                   {t("expertise.since")} {t(doctors[0].memberSince)}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="small-text text-gray-600">
                   {t("expertise.workAtHDMC")}
                 </div>
               </div>
@@ -100,7 +100,7 @@ const ExpertiseDirection = () => {
                 <div className="font-semibold text-lg text-gray-800 mb-1">
                   {t(doc.name)}
                 </div>
-                <div className="text-sm line-clamp-2 text-ellipsis text-gray-500 mb-2">
+                <div className="small-text line-clamp-2 text-ellipsis text-gray-500 mb-2">
                   {t(doc.position)}
                 </div>
                 <div className="text-xs text-brand3">
@@ -134,7 +134,7 @@ const ExpertiseDirection = () => {
                     <h3 className="font-semibold text-gray-800 mb-2">
                       {t(sec.label)}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p className="small-text text-gray-600 leading-relaxed">
                       {t(sec.desc)}
                     </p>
                   </div>

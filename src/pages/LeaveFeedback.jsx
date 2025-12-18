@@ -272,14 +272,14 @@ const LeaveFeedback = () => {
                   className="flex items-center justify-center gap-2 border-2 border-dashed border-gray-300 rounded-lg py-3 px-4 cursor-pointer hover:border-brand3  transition-all"
                 >
                   <FaPaperclip className="text-gray-500" />
-                  <span className="text-gray-600 text-sm">
+                  <span className="text-gray-600 small-text">
                     {t("feedback.form.attach")}
                   </span>
                 </label>
 
                 {form.file && (
                   <div className="mt-2 flex items-center justify-between bg-blue-50 border border-brand4 rounded-lg py-2 px-4">
-                    <span className="text-sm text-gray-700 truncate">
+                    <span className="small-text text-gray-700 truncate">
                       {form.file.name}
                     </span>
                     <button

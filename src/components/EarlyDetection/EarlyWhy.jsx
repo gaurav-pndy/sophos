@@ -39,7 +39,7 @@ const EarlyWhy = () => {
         />
         <div className="absolute -right-5 -bottom-7 bg-brand3 px-8 py-7 rounded-xl  text-white text-2xl  flex flex-col items-start max-w-xs drop-shadow-xl">
           <span className="text-4xl font-bold">15+</span>
-          <span className="text-white/80 text-sm md:text-base mt-1">
+          <span className="text-white/80 small-text md:base-text mt-1">
             {t("earlyDetection.why.statText")}
           </span>
         </div>

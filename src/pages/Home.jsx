@@ -65,7 +65,7 @@ const Home = ({ city, setShowPopup }) => {
   return (
     <div>
       <HeroSection setShowPopup={setShowPopup} />
-      <AboutSection />
+      <AboutSection city={city} />
 
       <DoctorsSection branch={city} setShowPopup={setShowPopup} />
       {/* <CareSection /> */}

@@ -13,22 +13,22 @@ import BookingPopup from "../BookingPopup";
 
 const features = [
   {
-    icon: <LuBuilding2 className="text-white text-lg" />,
+    icon: <LuBuilding2 className="" />,
     title: "aboutClinic.feature1.title",
     desc: "aboutClinic.feature1.desc",
   },
   {
-    icon: <RiPsychotherapyLine className="text-white text-lg" />,
+    icon: <RiPsychotherapyLine className="" />,
     title: "aboutClinic.feature2.title",
     desc: "aboutClinic.feature2.desc",
   },
   {
-    icon: <FaUserDoctor className="text-white text-lg" />,
+    icon: <FaUserDoctor className="shrink-0" />,
     title: "aboutClinic.feature3.title",
     desc: "aboutClinic.feature3.desc",
   },
   {
-    icon: <FaStethoscope className="text-white text-lg" />,
+    icon: <FaStethoscope className="" />,
     title: "aboutClinic.feature4.title",
     desc: "aboutClinic.feature4.desc",
   },
@@ -52,7 +52,7 @@ const stats = [
   },
 ];
 
-const AboutSection = () => {
+const AboutSection = ({ city }) => {
   const { t } = useTranslation();
   const [showBookingPopup, setShowBookingPopup] = useState(false);
 
@@ -86,9 +86,16 @@ const AboutSection = () => {
               <div className="grid md:grid-cols-2 gap-2 ">
                 {features.map((f, i) => (
                   <div key={i} className="flex gap-2 xl:items-center xl:gap-4">
-                    <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-brand1 to-[#845007] rounded-lg shrink-0 mt-1 xl:mt-0">
-                      {f.icon}
-                    </div>
+                    {city === "Moscow" ? (
+                      <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-brand1 to-[#845007] text-white text-lg rounded-lg shrink-0 mt-1 xl:mt-0">
+                        {f.icon}
+                      </div>
+                    ) : (
+                      <span className=" rounded-full text-2xl   items-center justify-center shrink-0  text-[#e9865f]">
+                        {f.icon}
+                      </span>
+                    )}
+
                     <div>
                       <div className="text-black z-40 base-text leading-tight font-semibold">
                         {t(f.desc)}
@@ -98,12 +105,19 @@ const AboutSection = () => {
                 ))}
               </div>
 
-              <p className="font-bold text-black base-text ">
-                {t("aboutClinic.footnote")}
-              </p>
+              <p
+                className="font-bold text-black base-text "
+                dangerouslySetInnerHTML={{ __html: t("aboutClinic.footnote") }}
+              ></p>
 
               {/* Button */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div
+                className={`flex ${
+                  city == "Moscow"
+                    ? "flex-col sm:flex-row"
+                    : "flex-col-reverse sm:flex-row-reverse w-fit"
+                }  gap-4`}
+              >
                 <Link
                   to={"/about"}
                   className="bg-brand1 relative z-40 text-white font-semibold rounded-lg px-8 py-2.5 base-text shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 w-fit text-center"

@@ -77,7 +77,7 @@ const HDMCPlusBenefits = () => (
                 {benefit.title}
               </span>
             </div>
-            <ul className="pl-0 mt-2 flex flex-col gap-3 text-brand1/80 text-base">
+            <ul className="pl-0 mt-2 flex flex-col gap-3 text-brand1/80 base-text">
               {benefit.points.map((pt, i) => (
                 <li key={i} className="flex gap-2">
                   <LuCircleCheckBig className="text-brand1 text-lg mt-1" />

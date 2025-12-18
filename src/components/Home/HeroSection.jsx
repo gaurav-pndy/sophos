@@ -127,14 +127,14 @@ const HeroSection = ({ setShowPopup }) => {
                   <h1 className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-4">
                     {t("hero.slide2.title")}
                   </h1>
-                  <ul className="text-gray-200 list-disc ml-4   text-sm z-40 lg:text-lg xl:text-xl  mb-6">
+                  <ul className="text-gray-200 list-disc ml-4   small-text z-40 lg:text-lg xl:text-xl  mb-6">
                     <li>{t("hero.slide2.subtitle1")} </li>
                     <li>{t("hero.slide2.subtitle2")} </li>
                     <li>{t("hero.slide2.subtitle3")} </li>
                     <li>{t("hero.slide2.subtitle4")} </li>
                     <li>{t("hero.slide2.subtitle5")} </li>
                   </ul>
-                  <div className="flex text-sm md:text-base gap-2 md:gap-4">
+                  <div className="flex small-text md:base-text gap-2 md:gap-4">
                     <button
                       onClick={() => setShowPopup(true)}
                       className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-4 md:px-8 py-3 shadow hover:bg-gray-200 transition-all duration-300"
@@ -184,7 +184,7 @@ const HeroSection = ({ setShowPopup }) => {
                     className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-2"
                     dangerouslySetInnerHTML={{ __html: t("hero.slide3.title") }}
                   ></h1>
-                  <ul className="text-gray-200 list-disc ml-4  text-sm  lg:text-lg z-40 xl:text-xl mb-6">
+                  <ul className="text-gray-200 list-disc ml-4  small-text  lg:text-lg z-40 xl:text-xl mb-6">
                     <li>{t("hero.slide3.subtitle1")} </li>
                     <li>{t("hero.slide3.subtitle2")} </li>
                     <li>{t("hero.slide3.subtitle3")} </li>
@@ -281,7 +281,7 @@ const HeroSection = ({ setShowPopup }) => {
                     className="text-white font-bold z-40 text-2xl xl:text-4xl xl:leading-12 mb-4"
                     dangerouslySetInnerHTML={{ __html: t("hero.slide5.title") }}
                   ></h1>
-                  <ul className="text-gray-200 list-disc ml-4  text-sm  lg:text-lg z-40 xl:text-xl mb-6">
+                  <ul className="text-gray-200 list-disc ml-4  small-text  lg:text-lg z-40 xl:text-xl mb-6">
                     <li>{t("hero.slide5.subtitle1")} </li>
                   </ul>
                   <div className="flex gap-4">

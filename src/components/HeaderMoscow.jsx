@@ -543,13 +543,13 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       {/* Top Bar */}
       <div className="flex w-full bg-gradient-to-r from-white from-20% xl:from-25% to-40% xl:to-45% to-[#f3f5f7]">
         <motion.div
-          className="flex max-w-[90rem] w-full mx-auto flex-col lg:flex-row items-center justify-between lg:justify-end  px-4 lg:py-3 text-xs xl:text-sm"
+          className="flex max-w-[90rem] w-full mx-auto flex-col lg:flex-row items-center justify-between lg:justify-end  px-4 lg:py-3 small-text xl:base-text"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
           <div className="hidden lg:flex flex-col">
-            <label htmlFor="city" className="text-xs mb-1">
+            <label htmlFor="city" className="small-text mb-1">
               {t("header.selectCity")}
             </label>
             <select
@@ -635,7 +635,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             </div>
             {city === "Moscow" ? (
               <div className=" items-center gap-1   whitespace-nowrap">
-                <h6 className="font-semibold base-text">
+                <h6 className="font-semibold small-text">
                   {" "}
                   {t("header.moscow")}{" "}
                 </h6>
@@ -648,9 +648,12 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               </div>
             ) : (
               <div className=" items-center gap-1  whitespace-nowrap">
-                <h6 className="font-semibold"> {t("header.makhachkala")} </h6>
+                <h6 className="font-semibold small-text">
+                  {" "}
+                  {t("header.makhachkala")}{" "}
+                </h6>
                 <p
-                  className="text-xs text-brand1 leading-4"
+                  className="small-text text-brand1 leading-4"
                   dangerouslySetInnerHTML={{
                     __html: t("header.makhachkalaAddress"),
                   }}
@@ -706,7 +709,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     className="w-3 xl:w-4 h-3 xl:h-4"
                   />
                   {languages.find((lang) => lang.code === selectedLang)?.name}
-                  <IoIosArrowDown className=" text-sm " />
+                  <IoIosArrowDown className=" small-text " />
                 </button>
 
                 {dropdownOpen && (
@@ -714,7 +717,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     {languages.map((lang) => (
                       <li
                         key={lang.code}
-                        className="flex items-center gap-2 px-2 md:px-3 py-1 hover:bg-gray-200 cursor-pointer text-xs xl:text-base"
+                        className="flex items-center gap-2 px-2 md:px-3 py-1 hover:bg-gray-200 cursor-pointer base-text"
                         onClick={() => changeLanguage(lang.code)}
                       >
                         <img
@@ -782,7 +785,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               onClick={() => handleScrollToSection("#about")}
               className="flex items-center cursor-pointer gap-1 hover:text-brand2 transition-all duration-300"
             >
-              {t("header.about")} <FaChevronDown className="text-sm mt-1" />
+              {t("header.about")} <FaChevronDown className="small-text mt-1" />
             </button>
 
             {/* Animated dropdown */}
@@ -804,7 +807,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                         {a.icon}
                       </div>
-                      <p className="group-hover:text-brand2 text-sm xl:text-base font-normal">
+                      <p className="group-hover:text-brand2 small-text xl:base-text font-normal">
                         {a.label}
                       </p>
                       <div className="absolute right-2 top-3 overflow-hidden w-6">
@@ -828,7 +831,8 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               onClick={() => handleScrollToSection("#doctors")}
               className="flex items-center gap-1 hover:text-brand2 transition-all duration-300 cursor-pointer"
             >
-              {t("header.doctors")} <FaChevronDown className="text-sm mt-1" />
+              {t("header.doctors")}{" "}
+              <FaChevronDown className="small-text mt-1" />
             </button>
 
             <AnimatePresence>
@@ -849,7 +853,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     >
                       <Link
                         to={d.path || "#"}
-                        className="flex items-center gap-2 group-hover:text-brand2 text-sm xl:text-base font-medium transition-all duration-300"
+                        className="flex items-center gap-2 group-hover:text-brand2 small-text xl:base-text font-medium transition-all duration-300"
                       >
                         <div className="w-8  h-8 rounded-full bg-gradient-to-br from-brand1 to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300">
                           {d.icon}
@@ -857,12 +861,12 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         <p
                           className={`${
                             d.subItems && "text-[#0a3449]"
-                          } group-hover:text-brand2 pr-8 text-sm xl:text-base text-wrap font-normal`}
+                          } group-hover:text-brand2 pr-8 small-text xl:base-text text-wrap font-normal`}
                         >
                           {d.label}
                         </p>
                         {d.subItems ? (
-                          <FaChevronRight className="text-sm mt-1 " />
+                          <FaChevronRight className="small-text mt-1 " />
                         ) : (
                           <div className="absolute right-0 top-2 overflow-hidden w-6">
                             <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
@@ -882,7 +886,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                           >
                             {d.subItems.map((cat, i) => (
                               <div key={i} className="mb-2">
-                                <h4 className="text-brand1 font-semibold mb-4 text-xl">
+                                <h4 className="text-brand1 font-semibold mb-4 base-text">
                                   {cat.category}
                                 </h4>
                                 <ul className="grid grid-cols-2 gap-4">
@@ -890,7 +894,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                     <li key={j}>
                                       <Link
                                         to={item.path}
-                                        className="block group text-wrap text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                        className="block group text-wrap text-gray-700 small-text xl:base-text hover:text-brand2 transition-all relative pr-8"
                                       >
                                         {item.label}
                                         <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -921,7 +925,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               onClick={() => handleScrollToSection("#services")}
               className="flex items-center cursor-pointer gap-1 hover:text-brand2 transition-all duration-300"
             >
-              {t("header.services")} <FaChevronDown className="text-sm mt-1" />
+              {t("header.services")} <FaChevronDown className="small-text mt-1" />
             </button>
 
         
@@ -950,7 +954,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         </div>
 
                         <div className=" ">
-                          <p className="group-hover:text-brand2 text-sm xl:text-base transition-colors font-normal duration-300">
+                          <p className="group-hover:text-brand2 small-text xl:base-text transition-colors font-normal duration-300">
                             {s.label}
                           </p>
                         </div>
@@ -975,7 +979,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               className="flex items-center cursor-pointer gap-1 hover:text-brand2 transition-all duration-300"
             >
               {t("header.forPatients")}{" "}
-              <FaChevronDown className="text-sm mt-1" />
+              <FaChevronDown className="small-text mt-1" />
             </Link>
 
             {/* Animated dropdown */}
@@ -997,7 +1001,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                         {p.icon}
                       </div>
-                      <p className="group-hover:text-brand2 text-sm xl:text-base text-left font-normal">
+                      <p className="group-hover:text-brand2 small-text xl:base-text text-left font-normal">
                         {p.label}
                       </p>
                       <div className="absolute right-2 top-3 overflow-hidden w-6">
@@ -1137,7 +1141,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         languages.find((lang) => lang.code === selectedLang)
                           ?.name
                       }
-                      <IoIosArrowDown className=" text-sm " />
+                      <IoIosArrowDown className=" small-text " />
                     </button>
 
                     {dropdownOpen && (
@@ -1245,7 +1249,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
+                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
                       >
                         {aboutItems.map((a, idx) => (
                           <Link
@@ -1282,7 +1286,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
+                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
                       >
                         {doctorsItems.map((item, idx) =>
                           item.subItems ? (
@@ -1374,7 +1378,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
+                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
                       >
                         {services.map((s, idx) => (
                           <Link
@@ -1408,7 +1412,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
+                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
                       >
                         {patientItems.map((p, idx) => (
                           <button

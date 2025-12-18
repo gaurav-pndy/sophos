@@ -292,7 +292,7 @@ const BlogDetails = ({ branch }) => {
                   {blog.categories.map((category, index) => (
                     <span
                       key={index}
-                      className="px-3 py-2 rounded-full text-sm font-medium"
+                      className="px-3 py-2 rounded-full small-text font-medium"
                       style={{
                         backgroundColor: `${colors.color1}10`,
                         color: colors.color1,
@@ -318,7 +318,7 @@ const BlogDetails = ({ branch }) => {
               >
                 {t("blogDetails.blogInfo") || "Blog Information"}
               </h3>
-              <div className="space-y-4 text-sm">
+              <div className="space-y-4 small-text">
                 <div>
                   <span className="font-medium text-gray-600 block mb-1">
                     {t("blogDetails.published") || "Published"}:

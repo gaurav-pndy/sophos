@@ -336,7 +336,7 @@ const DoctorDetails = ({ branch, setShowPopup }) => {
                     <span className="text-brand1 font-semibold">
                       {formattedDoctor.reviewStats.averageRating.toFixed(1)}
                     </span>
-                    <span className="text-brand1/70 text-sm">
+                    <span className="text-brand1/70 small-text">
                       ({formattedDoctor.reviewStats.totalReviews} review
                       {formattedDoctor.reviewStats.totalReviews !== 1
                         ? "s"
@@ -389,11 +389,11 @@ const DoctorDetails = ({ branch, setShowPopup }) => {
                   {tag}
                 </span>
               ))}
-              <span className="px-4 py-1.5 bg-brand4/20 text-brand1 rounded-full text-base font-semibold border border-brand4/30">
+              <span className="px-4 py-1.5 bg-brand4/20 text-brand1 rounded-full base-text font-semibold border border-brand4/30">
                 {t("doctors.experience")} :{" "}
                 {doctor.yearOfExperience ? doctor.yearOfExperience : "N/A"}
               </span>
-              <span className="px-4 py-1.5 bg-brand4/20 text-brand1 rounded-full text-base font-semibold border border-brand4/30">
+              <span className="px-4 py-1.5 bg-brand4/20 text-brand1 rounded-full base-text font-semibold border border-brand4/30">
                 {t("doctors.cost")} : ₽{" "}
                 {doctor.feesAmount ? doctor.feesAmount : "N/A"}
               </span>
@@ -405,7 +405,7 @@ const DoctorDetails = ({ branch, setShowPopup }) => {
                 {ACTIVE_TABS.map((tab) => (
                   <button
                     key={tab.key}
-                    className="font-semibold text-brand1 px-1 pb-2 border-b-2 border-transparent hover:border-brand1 transition whitespace-nowrap hover:text-brand1 focus:outline-none uppercase text-sm cursor-pointer"
+                    className="font-semibold text-brand1 px-1 pb-2 border-b-2 border-transparent hover:border-brand1 transition whitespace-nowrap hover:text-brand1 focus:outline-none uppercase small-text cursor-pointer"
                     onClick={() => handleTabClick(tab.key)}
                   >
                     {t(tab.labelKey)}
@@ -642,7 +642,7 @@ const DoctorDetails = ({ branch, setShowPopup }) => {
                             {review.patientName}
                           </h3>
                           {review.date && (
-                            <p className="text-sm text-gray-500">
+                            <p className="small-text text-gray-500">
                               {new Date(review.date).toLocaleDateString()}
                             </p>
                           )}

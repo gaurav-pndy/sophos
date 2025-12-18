@@ -53,10 +53,10 @@ const ServiceDoctors = () => (
           <div className="font-semibold text-center text-brand1 mb-1">
             {d.name}
           </div>
-          <div className="text-center text-brand1/70 text-sm">{d.role}</div>
+          <div className="text-center text-brand1/70 small-text">{d.role}</div>
           <a
             href="#"
-            className="mt-2 text-brand4 underline text-sm hover:text-brand5 transition"
+            className="mt-2 text-brand4 underline small-text hover:text-brand5 transition"
           >
             Подробнее
           </a>

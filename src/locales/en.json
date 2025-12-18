@@ -77,6 +77,9 @@
             "sub2": "PathoLogica",
             "sub3": "Expert Oncological Care"
           }
+        },
+        "s10": {
+          "title": "SOFOS+"
         }
       },
     "doctors": "Doctors",
@@ -181,28 +184,25 @@
     }
   },
 "aboutClinic": {
-  "title": "Multidisciplinary Expert-Level Clinic",
-  "bookBtn": "Book a Consultation",
-
-  "desc": "Our approach combines medical knowledge and wisdom in relation to each patient. We treat not just the disease, but the person — with their character, physiological traits, and individual needs. <br/> Every specialist at the clinic, in addition to their own specialization, has experience working with oncology patients and maintains oncological vigilance. Diagnostics and treatment are carried out at the highest level, taking into account knowledge of prevention, early detection, treatment, management, and follow-up examinations of all patients, including oncological ones. Years of experience allow us to professionally supervise even the most complex cases.",
-
+  "title": "A multidisciplinary clinic in Makhachkala with advanced diagnostics and expert specialists.",
+  "bookBtn": "Book a consultation",
+  "desc": "At our clinic, diagnostics and treatment are carried out at the highest professional level, covering the full spectrum of medical expertise in prevention, early detection, treatment, patient management, and further evaluation. We believe in the power of combining deep medical knowledge with genuine care for every individual.",
   "feature1": {
-    "desc": "Diagnostics and treatment in one place"
+    "desc": "International standards"
   },
   "feature2": {
-    "desc": "Center for modern anti-tumor therapy"
+    "desc": "Multidisciplinary team"
   },
   "feature3": {
-    "desc": "Expert consultations"
+    "desc": "Top-tier physicians"
   },
   "feature4": {
-    "desc": "Second opinion from leading oncologists"
+    "desc": "Personalized approach"
   },
   "feature5": {
-    "desc": "Personal coordinator at every step"
+    "desc": "Dedicated personal coordinator at every stage"
   },
-
-  "footnote": "Book a consultation — start with a clear action plan."
+  "footnote": "We don’t treat diseases — we treat people living with them. <br/> Want to understand what to do next?"
 },
   "doctors": {
     "title1": "A modern multidisciplinary outpatient clinic. A wide diagnostic and treatment base",

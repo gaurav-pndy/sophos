@@ -157,7 +157,7 @@ const ContactSection = () => {
                   style={{ width: "100%" }}
                 ></div>
               </div>
-              <p className="text-sm text-gray-500 mt-2">
+              <p className="small-text text-gray-500 mt-2">
                 {t("contact.autoClose") ||
                   "Closing automatically in 5 seconds..."}
               </p>
@@ -199,7 +199,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       required
-                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className="bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.lastName}
                       onChange={(e) =>
                         setForm({ ...form, lastName: e.target.value })
@@ -214,7 +214,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       required
-                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className="bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.firstName}
                       onChange={(e) =>
                         setForm({ ...form, firstName: e.target.value })
@@ -229,7 +229,7 @@ const ContactSection = () => {
                     </label>
                     <input
                       type="text"
-                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className="bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.middleName}
                       onChange={(e) =>
                         setForm({ ...form, middleName: e.target.value })
@@ -245,7 +245,7 @@ const ContactSection = () => {
                     <input
                       type="email"
                       required
-                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className="bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.email}
                       onChange={(e) =>
                         setForm({ ...form, email: e.target.value })
@@ -262,7 +262,7 @@ const ContactSection = () => {
                       defaultCountry="ru"
                       value={form.phone}
                       onChange={(phone) => setForm({ ...form, phone })}
-                      className="rounded-lg bg-white/90 text-sm w-full backdrop-blur-sm"
+                      className="rounded-lg bg-white/90 small-text w-full backdrop-blur-sm"
                       inputClassName="!bg-transparent !border-none !w-full !px-3 !py-2 focus:!outline-none"
                     />
                     {/* Messaging apps below phone */}
@@ -313,7 +313,7 @@ const ContactSection = () => {
                     </label>
                     <select
                       required
-                      className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                      className="bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                       value={form.city}
                       onChange={(e) =>
                         setForm({ ...form, city: e.target.value })
@@ -337,7 +337,7 @@ const ContactSection = () => {
                     {t("contact.message")}
                   </label>
                   <textarea
-                    className="bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm"
+                    className="bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm"
                     rows={3}
                     value={form.message}
                     onChange={(e) =>
@@ -386,7 +386,7 @@ const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#59302a] rounded-lg cursor-pointer flex items-center justify-center gap-2 mt-2 px-2 py-2.5 base-text text-white font-semibold text-base shadow hover:bg-[#69372c] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#59302a] rounded-lg cursor-pointer flex items-center justify-center gap-2 mt-2 px-2 py-2.5 base-text text-white font-semibold base-text shadow hover:bg-[#69372c] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>

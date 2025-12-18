@@ -49,7 +49,7 @@ const ThankYou = () => {
         </div>
 
         {/* Description Section */}
-        <div className=" mb-12 text-brand1/70 text-base leading-relaxed space-y-4 bg-white/60 backdrop-blur rounded-2xl p-8 shadow-md">
+        <div className=" mb-12 text-brand1/70 base-text leading-relaxed space-y-4 bg-white/60 backdrop-blur rounded-2xl p-8 shadow-md">
           <p className="text-center font-semibold text-brand1 text-lg">
             {t("thankyou.para1")}
           </p>
@@ -77,7 +77,7 @@ const ThankYou = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-brand1">
+                <label className="small-text font-semibold text-brand1">
                   {t("thankyou.lastName")} *
                 </label>
                 <input
@@ -93,7 +93,7 @@ const ThankYou = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-brand1">
+                <label className="small-text font-semibold text-brand1">
                   {t("thankyou.firstName")} *
                 </label>
                 <input
@@ -109,7 +109,7 @@ const ThankYou = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-brand1">
+                <label className="small-text font-semibold text-brand1">
                   {t("thankyou.patronymic")}
                 </label>
                 <input
@@ -124,7 +124,7 @@ const ThankYou = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-brand1">
+                <label className="small-text font-semibold text-brand1">
                   E-mail *
                 </label>
                 <input
@@ -140,7 +140,7 @@ const ThankYou = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-brand1">
+                <label className="small-text font-semibold text-brand1">
                   {t("thankyou.phone")}
                 </label>
                 <input
@@ -155,7 +155,7 @@ const ThankYou = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-brand1">
+                <label className="small-text font-semibold text-brand1">
                   {t("thankyou.amount")} *
                 </label>
                 <input
@@ -171,7 +171,7 @@ const ThankYou = () => {
               </div>
 
               <div className="flex flex-col gap-2 md:col-span-2">
-                <label className="text-sm font-semibold text-brand1">
+                <label className="small-text font-semibold text-brand1">
                   {t("thankyou.fundPurpose")} *
                 </label>
                 <select
@@ -190,7 +190,7 @@ const ThankYou = () => {
               </div>
 
               <div className="flex flex-col gap-2 md:col-span-2">
-                <label className="text-sm font-semibold text-brand1">
+                <label className="small-text font-semibold text-brand1">
                   {t("thankyou.facility")}
                 </label>
                 <input
@@ -205,7 +205,7 @@ const ThankYou = () => {
               </div>
 
               <div className="flex flex-col gap-2 md:col-span-2">
-                <label className="text-sm font-semibold text-brand1">
+                <label className="small-text font-semibold text-brand1">
                   {t("thankyou.message")}
                 </label>
                 <textarea
@@ -249,7 +249,7 @@ const ThankYou = () => {
 
         {/* Contact Information */}
         <div className=" text-center bg-white/60 backdrop-blur rounded-xl p-6 shadow-md">
-          <p className="text-sm text-brand1/70 mb-2">
+          <p className="small-text text-brand1/70 mb-2">
             <a
               href="#"
               className="text-brand4 font-semibold hover:text-brand5 underline transition-colors"
@@ -257,7 +257,7 @@ const ThankYou = () => {
               {t("thankyou.downloadGifts")}:{" "}
             </a>
           </p>
-          <p className="text-sm text-brand1/70">
+          <p className="small-text text-brand1/70">
             {t("thankyou.supportNote")}:{" "}
             <a
               href="mailto:donate@medsi.ru"

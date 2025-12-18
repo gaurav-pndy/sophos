@@ -126,7 +126,7 @@ const FormPopup = () => {
                 <input
                   type="text"
                   required
-                  className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
+                  className="border border-gray-300 bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
                   value={form.lastName}
                   onChange={(e) =>
                     setForm({ ...form, lastName: e.target.value })
@@ -141,7 +141,7 @@ const FormPopup = () => {
                 <input
                   type="text"
                   required
-                  className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
+                  className="border border-gray-300 bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
                   value={form.firstName}
                   onChange={(e) =>
                     setForm({ ...form, firstName: e.target.value })
@@ -156,7 +156,7 @@ const FormPopup = () => {
                 </label>
                 <input
                   type="text"
-                  className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
+                  className="border border-gray-300 bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
                   value={form.middleName}
                   onChange={(e) =>
                     setForm({ ...form, middleName: e.target.value })
@@ -172,7 +172,7 @@ const FormPopup = () => {
                 <input
                   type="email"
                   required
-                  className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
+                  className="border border-gray-300 bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                 />
@@ -189,13 +189,13 @@ const FormPopup = () => {
                     value={form.phone}
                     onChange={(phone) => setForm({ ...form, phone })}
                     className="phone-input-custom"
-                    inputClassName="!bg-white/90 !border !border-gray-300 !rounded-lg !text-sm !w-full !px-3 !py-2 focus:!outline-none focus:!border-brand1 focus:!ring-1 focus:!ring-brand1"
+                    inputClassName="!bg-white/90 !border !border-gray-300 !rounded-lg !small-text !w-full !px-3 !py-2 focus:!outline-none focus:!border-brand1 focus:!ring-1 focus:!ring-brand1"
                     dropdownClassName="!z-50 !relative"
                   />
                 </div>
                 {/* Messaging apps below phone */}
                 <div className="mt-2">
-                  <div className="flex flex-wrap gap-4 text-brand1 text-sm">
+                  <div className="flex flex-wrap gap-4 text-brand1 small-text">
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="checkbox"
@@ -241,7 +241,7 @@ const FormPopup = () => {
                 </label>
                 <select
                   required
-                  className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
+                  className="border border-gray-300 bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
                   value={form.city}
                   onChange={(e) => setForm({ ...form, city: e.target.value })}
                 >
@@ -261,7 +261,7 @@ const FormPopup = () => {
                 {t("contact.message")}
               </label>
               <textarea
-                className="border border-gray-300 bg-white/90 text-sm rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
+                className="border border-gray-300 bg-white/90 small-text rounded-lg px-3 py-2 w-full backdrop-blur-sm focus:outline-none focus:border-brand1 focus:ring-1 focus:ring-brand1 transition-colors"
                 rows={3}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -280,7 +280,7 @@ const FormPopup = () => {
               />
               <label
                 htmlFor="form-agree1"
-                className="text-sm font-medium text-brand1"
+                className="small-text font-medium text-brand1"
                 dangerouslySetInnerHTML={{ __html: t("contact.checkbox1") }}
               ></label>
             </div>
@@ -295,7 +295,7 @@ const FormPopup = () => {
               />
               <label
                 htmlFor="form-agree2"
-                className="text-sm font-medium text-brand1"
+                className="small-text font-medium text-brand1"
                 dangerouslySetInnerHTML={{ __html: t("contact.checkbox2") }}
               ></label>
             </div>
@@ -307,7 +307,7 @@ const FormPopup = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-brand1 rounded-lg cursor-pointer flex items-center justify-center gap-2 px-2 py-2.5 base-text text-white font-semibold text-base shadow hover:bg-brand2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-brand1 rounded-lg cursor-pointer flex items-center justify-center gap-2 px-2 py-2.5 base-text text-white font-semibold base-text shadow hover:bg-brand2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? (
               <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>

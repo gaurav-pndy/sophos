@@ -42,6 +42,7 @@ import {
   FaFileMedical,
   FaVideo,
   FaXRay,
+  FaPlus,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import i18n from "../utils/i18n";
@@ -316,30 +317,37 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
       ],
     },
+
+    {
+      id: 10,
+      path: "/services/service10",
+      label: t("header.servicesDrop.s10.title"),
+      icon: <FaPlus />, // CT / MRI / PET-CT
+    },
   ];
 
   const aboutItems = [
     {
       path: "/about#licenses",
       label: t("header.about2"),
-      icon: <TbLicense className="text-xl text-white" />,
+      icon: <TbLicense className="" />,
     },
 
     {
       path: "/about#privacy",
       label: t("header.about5"),
-      icon: <LuShield className="text-xl text-white" />,
+      icon: <LuShield className="" />,
     },
 
     {
       path: "/about#offer",
       label: t("header.about6"),
-      icon: <MdOutlineLocalOffer className="text-xl text-white" />,
+      icon: <MdOutlineLocalOffer className="" />,
     },
     {
       path: "/about#vacancies",
       label: t("header.about7"),
-      icon: <FaUserPlus className="text-xl text-white" />,
+      icon: <FaUserPlus className="" />,
     },
   ];
 
@@ -347,37 +355,37 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
     {
       path: "/for-patients#appointment",
       label: t("header.patient1"),
-      icon: <ImUsers className="text-xl text-white" />,
+      icon: <ImUsers />,
     },
     {
       path: "/for-patients#preparation",
       label: t("header.patient2"),
-      icon: <FaClipboardList className="text-xl text-white" />,
+      icon: <FaClipboardList />,
     },
     {
       path: "/for-patients#offers",
       label: t("header.patient3"),
-      icon: <FaTag className="text-xl text-white" />,
+      icon: <FaTag />,
     },
     {
       path: "/for-patients#insurance",
       label: t("header.patient4"),
-      icon: <MdMedicalServices className="text-xl text-white" />,
+      icon: <MdMedicalServices />,
     },
     {
       path: "/for-patients#blog",
       label: t("header.patient5"),
-      icon: <IoDocumentText className="text-xl text-white" />,
+      icon: <IoDocumentText />,
     },
     {
       path: "/for-patients#documents",
       label: t("header.patient6"),
-      icon: <FaFileAlt className="text-xl text-white" />,
+      icon: <FaFileAlt />,
     },
     {
       path: "/for-patients#price-list",
       label: t("header.patient7"),
-      icon: <FaMoneyBillAlt className="text-xl text-white" />,
+      icon: <FaMoneyBillAlt />,
     },
   ];
 
@@ -385,42 +393,42 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
     {
       path: "/doctors#specialization15",
       label: t("header.doctorsDrop.d1"),
-      icon: <FaFemale className=" text-white text-xl" />,
+      icon: <FaFemale />,
     },
     {
       path: "/doctors#specialization16",
       label: t("header.doctorsDrop.d2"),
-      icon: <GiStomach className=" text-white text-xl" />,
+      icon: <GiStomach />,
     },
     {
       path: "/doctors#specialization17",
       label: t("header.doctorsDrop.d3"),
-      icon: <FaDna className=" text-white text-xl" />,
+      icon: <FaDna />,
     },
     {
       path: "/doctors#specialization18",
       label: t("header.doctorsDrop.d4"),
-      icon: <GiMedicines className=" text-white text-xl" />,
+      icon: <GiMedicines />,
     },
     {
       path: "/doctors#specialization19",
       label: t("header.doctorsDrop.d5"),
-      icon: <FaUserMd className=" text-white text-xl" />,
+      icon: <FaUserMd />,
     },
     {
       path: "/doctors#specialization19",
       label: t("header.doctorsDrop.d6"),
-      icon: <FaUserMd className=" text-white text-xl" />,
+      icon: <FaUserMd />,
     },
     {
       path: "/doctors#specialization20",
       label: t("header.doctorsDrop.d7"),
-      icon: <FaBrain className=" text-white text-xl" />,
+      icon: <FaBrain />,
     },
     {
       path: "/doctors#specialization21",
       label: t("header.doctorsDrop.d8"),
-      icon: <GiBrain className=" text-white text-xl" />,
+      icon: <GiBrain />,
     },
   ];
 
@@ -488,13 +496,13 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       {/* Top Bar */}
       <div className="flex w-full bg-gradient-to-r from-white from-20% xl:from-25% to-40% xl:to-45% to-[#f3f5f7]">
         <motion.div
-          className="flex max-w-[90rem] w-full mx-auto flex-col lg:flex-row items-center justify-between lg:justify-end  px-4 lg:py-3 text-xs xl:text-sm"
+          className="flex max-w-[90rem] w-full mx-auto flex-col lg:flex-row items-center justify-between lg:justify-end  px-4 lg:py-3 small-text xl:base-text"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
           <div className="hidden lg:flex flex-col">
-            <label htmlFor="city" className="text-xs mb-1">
+            <label htmlFor="city" className="small-text mb-1">
               {t("header.selectCity")}
             </label>
             <select
@@ -580,7 +588,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             </div>
             {city === "Moscow" ? (
               <div className=" items-center gap-1   whitespace-nowrap">
-                <h6 className="font-semibold base-text">
+                <h6 className="font-semibold small-text">
                   {" "}
                   {t("header.moscow")}{" "}
                 </h6>
@@ -593,9 +601,12 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               </div>
             ) : (
               <div className=" items-center gap-1  whitespace-nowrap">
-                <h6 className="font-semibold"> {t("header.makhachkala")} </h6>
+                <h6 className="font-semibold small-text">
+                  {" "}
+                  {t("header.makhachkala")}{" "}
+                </h6>
                 <p
-                  className="text-xs text-brand1 leading-4"
+                  className="small-text text-brand1 leading-4"
                   dangerouslySetInnerHTML={{
                     __html: t("header.makhachkalaAddress"),
                   }}
@@ -651,7 +662,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     className="w-3 xl:w-4 h-3 xl:h-4"
                   />
                   {languages.find((lang) => lang.code === selectedLang)?.name}
-                  <IoIosArrowDown className=" text-sm " />
+                  <IoIosArrowDown className=" small-text " />
                 </button>
 
                 {dropdownOpen && (
@@ -659,7 +670,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     {languages.map((lang) => (
                       <li
                         key={lang.code}
-                        className="flex items-center gap-2 px-2 md:px-3 py-1 hover:bg-gray-200 cursor-pointer text-xs xl:text-base"
+                        className="flex items-center gap-2 px-2 md:px-3 py-1 hover:bg-gray-200 cursor-pointer base-text  xl:base-text"
                         onClick={() => changeLanguage(lang.code)}
                       >
                         <img
@@ -727,7 +738,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               type="button"
               className="h-full px-4 small-text rounded-r-lg bg-brand1 text-white font-medium hover:bg-brand1/90 transition-all duration-300"
             >
-              {/* <FaSearch className="text-sm" /> */}
+              {/* <FaSearch className="small-text" /> */}
               {t("header.searchBtn")}
             </button>
           </div>
@@ -762,7 +773,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               onClick={() => handleScrollToSection("#about")}
               className="flex items-center cursor-pointer gap-1 hover:text-brand2 transition-all duration-300"
             >
-              {t("header.about")} <FaChevronDown className="text-sm mt-1" />
+              {t("header.about")} <FaChevronDown className="small-text mt-1" />
             </button>
 
             {/* Animated dropdown */}
@@ -779,12 +790,12 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     <Link
                       key={idx}
                       to={a.path}
-                      className="block  group  text-wrap   transition-all relative duration-300 rounded-lg"
+                      className="flex items-center gap-2 group-hover:text-brand2 small-text xl:base-text font-medium transition-all duration-300"
                     >
-                      {/* <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
+                      <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                         {a.icon}
-                      </div> */}
-                      <p className="group-hover:text-brand2 text-sm xl:text-base font-normal">
+                      </span>
+                      <p className="group-hover:text-brand2 text-wrap small-text xl:base-text font-normal">
                         {a.label}
                       </p>
                       <div className="absolute right-2 top-3 overflow-hidden w-6">
@@ -806,9 +817,10 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           >
             <button
               onClick={() => handleScrollToSection("#services")}
-              className="flex items-center gap-1 hover:text-brand2 transition-all duration-300 cursor-pointer"
+              className="flex  items-center gap-1 hover:text-brand2 transition-all duration-300 cursor-pointer"
             >
-              {t("header.services")} <FaChevronDown className="text-sm mt-1" />
+              {t("header.services")}{" "}
+              <FaChevronDown className="small-text mt-1" />
             </button>
 
             <AnimatePresence>
@@ -818,7 +830,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-3  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-2xl xl:w-4xl font-normal"
+                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-4  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-2xl xl:w-4xl font-normal"
                 >
                   {services.map((s, idx) => (
                     <div
@@ -829,7 +841,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     >
                       <Link
                         to={s.path || "#"}
-                        className="flex items-center gap-2 group-hover:text-brand2 text-sm xl:text-base font-medium transition-all duration-300"
+                        className="flex items-center gap-2 group-hover:text-brand2 small-text xl:base-text font-medium transition-all duration-300"
                       >
                         <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                           {s.icon}
@@ -837,11 +849,11 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         <p
                           className={`${
                             s.subItems && "text-[#0a3449]"
-                          } group-hover:text-brand2 pr-8 text-sm xl:text-base text-wrap font-normal`}
+                          } group-hover:text-brand2 pr-8 small-text xl:base-text text-wrap font-normal`}
                           dangerouslySetInnerHTML={{ __html: s.label }}
                         ></p>
                         {s.subItems ? (
-                          <FaChevronDown className="text-sm mt-1 " />
+                          <FaChevronDown className="small-text mt-1 " />
                         ) : (
                           <div className="absolute right-0 top-2 overflow-hidden w-6">
                             <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
@@ -869,7 +881,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                         <li key={j}>
                                           <Link
                                             to={item.path}
-                                            className="block group text-wrap text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                            className="block group text-wrap small-text xl:base-text text-gray-700 hover:text-brand2 transition-all relative pr-8"
                                           >
                                             {item.label}
                                             <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -884,7 +896,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                         <li key={j}>
                                           <Link
                                             to={item.path}
-                                            className="block group text-wrap text-[#e9865f] hover:text-brand2 transition-all relative pr-8"
+                                            className="block group text-wrap text-[#e9865f] small-text xl:base-text hover:text-brand2 transition-all relative pr-8"
                                           >
                                             {item.label}
                                             <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -909,7 +921,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                   <li key={i}>
                                     <Link
                                       to={item.path}
-                                      className="block group text-wrap text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                      className="block group text-wrap small-text xl:base-text text-gray-700 hover:text-brand2 transition-all relative pr-8"
                                     >
                                       {item.label}
                                       <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -941,7 +953,8 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               onClick={() => handleScrollToSection("#doctors")}
               className="flex items-center gap-1 hover:text-brand2 transition-all duration-300 cursor-pointer"
             >
-              {t("header.doctors")} <FaChevronDown className="text-sm mt-1" />
+              {t("header.doctors")}{" "}
+              <FaChevronDown className="small-text mt-1" />
             </button>
 
             <AnimatePresence>
@@ -962,20 +975,20 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     >
                       <Link
                         to={d.path || "#"}
-                        className="flex items-center gap-2 group-hover:text-brand2 text-sm xl:text-base font-medium transition-all duration-300"
+                        className="flex items-center gap-2 group-hover:text-brand2 small-text xl:base-text font-medium transition-all duration-300"
                       >
-                        {/* <div className="w-10 xl:w-12  h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300">
+                        <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                           {d.icon}
-                        </div> */}
+                        </span>
                         <p
                           className={`${
                             d.subItems && "text-[#0a3449]"
-                          } group-hover:text-brand2 pr-8 text-sm xl:text-base text-wrap font-normal`}
+                          } group-hover:text-brand2 pr-8 small-text xl:base-text text-wrap font-normal`}
                         >
                           {d.label}
                         </p>
                         {d.subItems ? (
-                          <FaChevronRight className="text-sm mt-1 " />
+                          <FaChevronRight className="small-text mt-1 " />
                         ) : (
                           <div className="absolute right-0 top-2 overflow-hidden w-6">
                             <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
@@ -1034,7 +1047,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               className="flex items-center cursor-pointer gap-1 hover:text-brand2 transition-all duration-300"
             >
               {t("header.forPatients")}{" "}
-              <FaChevronDown className="text-sm mt-1" />
+              <FaChevronDown className="small-text mt-1" />
             </Link>
 
             {/* Animated dropdown */}
@@ -1045,18 +1058,18 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-cols-3 gap-6 xl:gap-10 bg-white shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-xl xl:w-2xl"
+                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-cols-3 gap-6 xl:gap-10 bg-white shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-xl xl:w-3xl"
                 >
                   {patientItems.map((p, idx) => (
                     <Link
                       to={p.path}
                       key={idx}
-                      className="block  group  text-wrap   transition-all relative duration-300 rounded-lg"
+                      className="flex items-center gap-2 group-hover:text-brand2 small-text xl:base-text font-medium transition-all duration-300"
                     >
-                      {/* <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
+                      <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                         {p.icon}
-                      </div> */}
-                      <p className="group-hover:text-brand2 text-sm xl:text-base text-left font-normal">
+                      </span>
+                      <p className="group-hover:text-brand2 small-text xl:base-text text-left text-wrap font-normal">
                         {p.label}
                       </p>
                       <div className="absolute right-2 top-3 overflow-hidden w-6">
@@ -1144,7 +1157,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         languages.find((lang) => lang.code === selectedLang)
                           ?.name
                       }
-                      <IoIosArrowDown className=" text-sm " />
+                      <IoIosArrowDown className=" small-text " />
                     </button>
 
                     {dropdownOpen && (
@@ -1252,7 +1265,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
+                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
                       >
                         {aboutItems.map((a, idx) => (
                           <Link
@@ -1288,7 +1301,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
+                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
                       >
                         {services.map((item, idx) =>
                           item.subItems ? (
@@ -1406,7 +1419,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
+                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
                       >
                         {doctorsItems.map((item, idx) =>
                           item.subItems ? (
@@ -1443,7 +1456,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                   >
                                     {item.subItems.map((sub, i) => (
                                       <div key={i}>
-                                        <p className="font-semibold text-[15px] mb-1">
+                                        <p className="font-semibold  mb-1">
                                           {sub.category}
                                         </p>
                                         <div className="flex ml-2 flex-col gap-2 ">
@@ -1497,7 +1510,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto text-sm font-normal flex flex-col gap-4"
+                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
                       >
                         {patientItems.map((p, idx) => (
                           <button

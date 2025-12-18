@@ -463,7 +463,7 @@ const ServiceDetails = ({ setShowPopup }) => {
                     >
                       {/* Type of Consultation */}
                       <div>
-                        <label className="text-sm font-medium text-brand1 block mb-2">
+                        <label className="small-text font-medium text-brand1 block mb-2">
                           {t("doctors.filter.consultType")}
                         </label>
                         <div className="flex flex-wrap gap-3">
@@ -481,7 +481,7 @@ const ServiceDetails = ({ setShowPopup }) => {
                             <button
                               key={item.value}
                               onClick={() => setType(item.value)}
-                              className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
+                              className={`px-4 py-2 rounded-lg border small-text font-medium transition-all ${
                                 type === item.value
                                   ? "bg-brand1 text-white border-brand1"
                                   : "bg-white border-brand4 text-brand1 hover:bg-brand4/20"
@@ -495,13 +495,13 @@ const ServiceDetails = ({ setShowPopup }) => {
 
                       {/* Specialization */}
                       <div>
-                        <label className="text-sm font-medium text-brand1 block mb-2">
+                        <label className="small-text font-medium text-brand1 block mb-2">
                           {t("doctors.filter.specialization")}
                         </label>
                         <select
                           value={specialization}
                           onChange={(e) => setSpecialization(e.target.value)}
-                          className="w-full border border-brand4/40 rounded-lg px-3 py-2.5 text-sm text-brand1 outline-none focus:border-brand1 transition-all bg-white"
+                          className="w-full border border-brand4/40 rounded-lg px-3 py-2.5 small-text text-brand1 outline-none focus:border-brand1 transition-all bg-white"
                         >
                           <option value="All">{t("doctors.filter.all")}</option>
                           {specializationOptions.map((opt) => (
@@ -625,7 +625,7 @@ const ServiceDetails = ({ setShowPopup }) => {
                             )
                           )}
                         </div>
-                        <div className="text-brand1 text-sm mb-3 line-clamp-2">
+                        <div className="text-brand1 small-text mb-3 line-clamp-2">
                           {t(doc.desc)}
                         </div>
                         <div className="flex flex-row gap-4 items-center mb-3 text-brand1/90 text-xs">
@@ -636,7 +636,7 @@ const ServiceDetails = ({ setShowPopup }) => {
                         <div className="text-brand1/60 text-xs">
                           {t("doctors.languages")}:
                         </div>
-                        <div className="text-brand1 text-sm font-medium">
+                        <div className="text-brand1 small-text font-medium">
                           {t(doc.langs)}
                         </div>
                       </div>

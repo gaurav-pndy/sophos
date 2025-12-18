@@ -83,7 +83,7 @@ const MembershipSection = () => {
               <div className="text-black group-hover:text-brand2 transition-all duration-300 font-medium text-xl mb-2">
                 {f.title}
               </div>
-              <div className="text-brand1 group-hover:text-brand2 transition-all duration-300 text-base">
+              <div className="text-brand1 group-hover:text-brand2 transition-all duration-300 base-text">
                 {f.text}
               </div>
             </div>

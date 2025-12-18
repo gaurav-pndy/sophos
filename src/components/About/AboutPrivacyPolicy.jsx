@@ -307,7 +307,7 @@ const AboutPrivacyPolicy = () => {
         <div className="flex flex-col md:flex-row gap-4 ml-14">
           <div className="flex items-center gap-2 ">
             <div className="flex h-8 w-8 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0">
-              <FaEnvelope className="text-[#845007] text-sm" />
+              <FaEnvelope className="text-[#845007] small-text" />
             </div>
             <a
               href="mailto:privacy@healthdirect.ru"
@@ -318,7 +318,7 @@ const AboutPrivacyPolicy = () => {
           </div>
           <div className="flex items-center gap-2 ">
             <div className="flex h-8 w-8 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0">
-              <FaPhoneAlt className="text-[#845007] text-sm" />
+              <FaPhoneAlt className="text-[#845007] small-text" />
             </div>
             <span className="text-brand1/90 font-medium">
               +7 (495) 123-45-67, доб. 105

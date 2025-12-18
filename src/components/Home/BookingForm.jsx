@@ -98,7 +98,7 @@ const BookingForm = () => {
       {stepLabels.map((stepItem, idx) => (
         <React.Fragment key={idx}>
           <button
-            className={`px-3 py-2.5 text-left rounded-lg font-medium text-brand1 text-sm flex items-center md:gap-2 transition ${
+            className={`px-3 py-2.5 text-left rounded-lg font-medium text-brand1 small-text flex items-center md:gap-2 transition ${
               step === idx
                 ? "bg-brand1 text-white"
                 : idx < step
@@ -248,7 +248,7 @@ const BookingForm = () => {
                   >
                     <div>{doc.name}</div>
                     {doc.desc && (
-                      <div className="text-brand1 font-normal text-sm">
+                      <div className="text-brand1 font-normal small-text">
                         {doc.desc}
                       </div>
                     )}
@@ -300,14 +300,14 @@ const BookingForm = () => {
                     type="date"
                     value={selectedDate}
                     onChange={(e) => setSelectedDate(e.target.value)}
-                    className="border text-sm rounded-md px-3 py-2 w-full max-w-xs"
+                    className="border small-text rounded-md px-3 py-2 w-full max-w-xs"
                   />
                 </div>
                 <div>
                   <label className="block mb-3 font-semibold">
                     Выберите время
                   </label>
-                  <div className="grid text-sm grid-cols-3  gap-4">
+                  <div className="grid small-text grid-cols-3  gap-4">
                     {times.map((time) => (
                       <button
                         key={time}
@@ -361,7 +361,7 @@ const BookingForm = () => {
                   <label className="block font-semibold mb-1">ФИО</label>
                   <input
                     type="text"
-                    className="border border-gray-200 text-sm rounded-lg px-3 py-2 w-full"
+                    className="border border-gray-200 small-text rounded-lg px-3 py-2 w-full"
                     placeholder="Иванов Иван Иванович"
                     value={patientData.name}
                     onChange={(e) =>
@@ -373,7 +373,7 @@ const BookingForm = () => {
                   <label className="block font-semibold mb-1">Телефон</label>
                   <input
                     type="text"
-                    className="border border-gray-200 text-sm rounded-lg px-3 py-2 w-full"
+                    className="border border-gray-200 small-text rounded-lg px-3 py-2 w-full"
                     placeholder="+7 (999) 123-45-67"
                     value={patientData.phone}
                     onChange={(e) =>
@@ -386,7 +386,7 @@ const BookingForm = () => {
                 <label className="block font-semibold mb-1">Email</label>
                 <input
                   type="email"
-                  className="border border-gray-200 text-sm rounded-lg px-3 py-2 w-full"
+                  className="border border-gray-200 small-text rounded-lg px-3 py-2 w-full"
                   placeholder="ivan@example.com"
                   value={patientData.email}
                   onChange={(e) =>
@@ -397,7 +397,7 @@ const BookingForm = () => {
               <div className="mb-6">
                 <label className="block font-semibold mb-1">Сообщение</label>
                 <textarea
-                  className="border border-gray-200 text-sm rounded-lg px-3 py-2 w-full"
+                  className="border border-gray-200 small-text rounded-lg px-3 py-2 w-full"
                   rows={3}
                   placeholder="Дополнительная информация (необязательно)"
                   value={patientData.message}
@@ -406,7 +406,7 @@ const BookingForm = () => {
                   }
                 />
               </div>
-              <div className="mb-5 flex flex-col text-sm font-medium gap-2">
+              <div className="mb-5 flex flex-col small-text font-medium gap-2">
                 <label className="flex gap-2 items-center">
                   <input
                     type="checkbox"
