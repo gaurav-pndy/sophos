@@ -20,14 +20,13 @@ import { GiDiploma } from "react-icons/gi";
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
-const DoctorDetails = ({ setShowPopup }) => {
+const DoctorDetails = ({ branch, setShowPopup }) => {
   const { doctorId } = useParams();
   const { t, i18n } = useTranslation();
   const [doctor, setDoctor] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [expanded, setExpanded] = useState();
-  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   // Fetch doctor data from backend
   useEffect(() => {

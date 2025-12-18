@@ -4,7 +4,7 @@ import { CiPlay1 } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { FaStar, FaPause, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
-const Reviews = () => {
+const Reviews = ({ branch }) => {
   const { t, i18n } = useTranslation();
   const [selectedIdx, setSelectedIdx] = useState(null);
   const [readMoreIdx, setReadMoreIdx] = useState(null);
@@ -12,7 +12,6 @@ const Reviews = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   const API_BASE =
     import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";

@@ -18,7 +18,7 @@ import {
 import { Link } from "react-router-dom";
 import FeedbackForm from "./FeedbackForm";
 
-const TestimonialsSection = () => {
+const TestimonialsSection = ({ branch }) => {
   const { t, i18n } = useTranslation();
   const [selectedIdx, setSelectedIdx] = useState(null);
   const [readMoreIdx, setReadMoreIdx] = useState(null);
@@ -27,7 +27,6 @@ const TestimonialsSection = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
-  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   const API_BASE =
     import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";

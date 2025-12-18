@@ -89,11 +89,11 @@ function App() {
         },
         {
           path: "/doctors",
-          element: <DoctorsPage setShowPopup={setShowPopup} />,
+          element: <DoctorsPage branch={city} setShowPopup={setShowPopup} />,
         },
         {
           path: "/doctors/:doctorId",
-          element: <DoctorDetails setShowPopup={setShowPopup} />,
+          element: <DoctorDetails branch={city} setShowPopup={setShowPopup} />,
         },
         {
           path: "/for-patients",
@@ -105,7 +105,7 @@ function App() {
         },
         {
           path: "/reviews",
-          element: <Reviews />,
+          element: <Reviews branch={city} />,
         },
         {
           path: "/telemedicine-consultation",
@@ -137,7 +137,7 @@ function App() {
         },
         {
           path: "/vacancies",
-          element: <CareersPage setShowPopup={setShowPopup} />,
+          element: <CareersPage branch={city} setShowPopup={setShowPopup} />,
         },
         {
           path: "/leave-a-feedback",
@@ -154,11 +154,11 @@ function App() {
 
         {
           path: "/blogs",
-          element: <Blogs />,
+          element: <Blogs branch={city} />,
         },
         {
           path: "/blog/:blogId",
-          element: <BlogDetails />,
+          element: <BlogDetails branch={city} />,
         },
         {
           path: "/cookie-policy",

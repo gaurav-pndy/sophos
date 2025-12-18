@@ -14,7 +14,7 @@ import WaveBackground from "../components/WaveBackground";
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
-const DoctorsPage = ({ setShowPopup }) => {
+const DoctorsPage = ({ branch, setShowPopup }) => {
   const { t, i18n } = useTranslation();
   const [type, setType] = useState("All");
   const [specialization, setSpecialization] = useState("All");
@@ -23,7 +23,6 @@ const DoctorsPage = ({ setShowPopup }) => {
   const [specializations, setSpecializations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   const formatSpecializationsList = (specString = "") => {
     const formatted = specString
@@ -537,12 +536,9 @@ const DoctorsPage = ({ setShowPopup }) => {
               >
                 {t("doctors.btn1")}
               </button>
-              <Link
-                to={`/doctors/${doc.id}`}
-                className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer base-text"
-              >
+              <button className="mt-2 px-6 py-2.5 w-full border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer base-text">
                 {t("doctors.btn2")}
-              </Link>
+              </button>
             </Link>
           ))}
         </div>

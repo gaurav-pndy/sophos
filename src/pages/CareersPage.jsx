@@ -66,7 +66,7 @@ const getLocalizedText = (data) => {
   return "";
 };
 
-const CareersPage = () => {
+const CareersPage = ({ branch }) => {
   const [vacancies, setVacancies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -85,8 +85,6 @@ const CareersPage = () => {
     useState(null);
 
   const { t, i18n } = useTranslation();
-
-  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   // Check URL hash on component mount
   useEffect(() => {

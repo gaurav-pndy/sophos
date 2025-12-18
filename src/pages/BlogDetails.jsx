@@ -10,7 +10,7 @@ const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
   "https://apimanager.health-direct.ru/api";
 
-const BlogDetails = () => {
+const BlogDetails = ({ branch }) => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const { t, i18n } = useTranslation();
   const { blogId } = useParams();
@@ -19,8 +19,6 @@ const BlogDetails = () => {
   const [error, setError] = useState(null);
 
   const currentLanguage = i18n.language;
-
-  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   // Default colors for the blog
   const defaultColors = {

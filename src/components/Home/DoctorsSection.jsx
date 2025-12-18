@@ -13,7 +13,7 @@ import ReactCountryFlag from "react-country-flag";
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
-const DoctorsSection = ({ setShowPopup }) => {
+const DoctorsSection = ({ branch, setShowPopup }) => {
   const { t, i18n } = useTranslation();
   const [type, setType] = useState("All");
   const [specialization, setSpecialization] = useState("All");
@@ -22,10 +22,6 @@ const DoctorsSection = ({ setShowPopup }) => {
   const [specializations, setSpecializations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const [branch, setBranch] = useState(
-    () => localStorage.getItem("city") || "" // read once on mount
-  );
 
   // Format specializations list (same as DoctorsPage)
   const formatSpecializationsList = (specString = "") => {
@@ -61,6 +57,7 @@ const DoctorsSection = ({ setShowPopup }) => {
       params.append("page", "1");
       params.append("limit", "12");
       params.append("expert", true);
+      console.log("Branch in DoctorsSection:", branch);
       if (branch) params.append("branch", branch);
 
       const response = await fetch(`${API_BASE}/api/website/doctors?${params}`);
@@ -156,9 +153,13 @@ const DoctorsSection = ({ setShowPopup }) => {
 
   // Initial data fetch
   useEffect(() => {
-    fetchDoctors();
-    console.log("API Response:", doctors);
-    fetchSpecializations();
+    const timeoutId = setTimeout(() => {
+      fetchDoctors();
+      console.log("API Response:", doctors);
+      fetchSpecializations();
+    }, 300);
+
+    return () => clearTimeout(timeoutId);
   }, [i18n.language, branch]);
 
   // Refetch when filters change with debounce

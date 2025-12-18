@@ -6,15 +6,13 @@ const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
   "https://apimanager.health-direct.ru/api";
 
-export default function Blogs() {
+export default function Blogs({ branch }) {
   const { t, i18n } = useTranslation();
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const currentLanguage = i18n.language;
-
-  const [branch] = useState(() => localStorage.getItem("city") || "");
 
   const fetchBlogs = useCallback(async () => {
     try {
@@ -23,7 +21,9 @@ export default function Blogs() {
       const params = new URLSearchParams({ lang: currentLanguage });
       if (branch) params.append("branch", branch);
 
-      const response = await fetch(`${API_BASE}/blogs/public?${params.toString()}`);
+      const response = await fetch(
+        `${API_BASE}/blogs/public?${params.toString()}`
+      );
 
       if (!response.ok) {
         throw new Error("Failed to fetch blogs");

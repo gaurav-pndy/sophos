@@ -67,7 +67,7 @@ const Home = ({ city, setShowPopup }) => {
       <HeroSection setShowPopup={setShowPopup} />
       <AboutSection />
 
-      <DoctorsSection setShowPopup={setShowPopup} />
+      <DoctorsSection branch={city} setShowPopup={setShowPopup} />
       {/* <CareSection /> */}
       <CareSection2 />
       {/* <ServicesSection /> */}
@@ -75,7 +75,7 @@ const Home = ({ city, setShowPopup }) => {
       {/* <PatientMap /> 
       <MembershipSection />
       */}
-      <TestimonialsSection />
+      <TestimonialsSection branch={city} />
       {/* <FeedbackForm /> */}
 
       {/* <BookingForm /> */}
