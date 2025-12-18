@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 import { GiMedicines } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { servicesConfig } from "../data/ServicesConfig";
+import servicesConfig from "../config/servicesConfig";
 
 const ServicesPage = () => {
   const { t } = useTranslation();
