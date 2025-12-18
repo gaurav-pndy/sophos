@@ -139,40 +139,41 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
   // Services list
   const services = [
     {
+      path: "/all-services/consultation",
       id: 1,
       label: t("header.servicesDrop.s1.title"),
       icon: <FaUserMd />, // Specialist Appointment
       subItems: [
         {
-          path: "/services/service1",
+          path: "/all-services/consultation",
           label: t("header.servicesDrop.s1.subitems.sub1"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/consultation",
           label: t("header.servicesDrop.s1.subitems.sub2"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/consultation",
           label: t("header.servicesDrop.s1.subitems.sub3"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/consultation",
           label: t("header.servicesDrop.s1.subitems.sub4"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/consultation",
           label: t("header.servicesDrop.s1.subitems.sub5"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/consultation",
           label: t("header.servicesDrop.s1.subitems.sub6"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/consultation",
           label: t("header.servicesDrop.s1.subitems.sub7"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/consultation",
           label: t("header.servicesDrop.s1.subitems.sub8"),
         },
       ],
@@ -180,54 +181,55 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
     {
       id: 2,
+      path: "/all-services/lab-tests",
       label: t("header.servicesDrop.s2.title"),
       icon: <FaFlask />, // Tests & Diagnostics
       subItems: {
         tests: [
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub1"),
           },
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub2"),
           },
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub3"),
           },
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub4"),
           },
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub5"),
           },
         ],
         diagnostics: [
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub6"),
           },
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub7"),
           },
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub8"),
           },
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub9"),
           },
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub10"),
           },
           {
-            path: "/services/service1",
+            path: "/all-services/lab-tests",
             label: t("header.servicesDrop.s2.subitems.sub11"),
           },
         ],
@@ -236,29 +238,31 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
     {
       id: 3,
-      path: "/services/service3",
+      path: "/all-services/early-diagnostics",
       label: t("header.servicesDrop.s3.title"),
       icon: <FaMicroscope />, // Individual Early Diagnostics
     },
 
     {
       id: 4,
-      path: "/services/service4",
+      path: "/all-services/day-hospital",
       label: t("header.servicesDrop.s4.title"),
       icon: <FaHospital />, // Day Hospital
     },
 
     {
       id: 5,
+      path: "/all-services/treatment-room",
+
       label: t("header.servicesDrop.s5.title"),
       icon: <FaSyringe />, // Procedure Room
       subItems: [
         {
-          path: "/services/service1",
+          path: "/all-services/treatment-room",
           label: t("header.servicesDrop.s5.subitems.sub1"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/treatment-room",
           label: t("header.servicesDrop.s5.subitems.sub2"),
         },
       ],
@@ -266,19 +270,21 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
     {
       id: 6,
+      path: "/all-services/medical-certificates",
+
       label: t("header.servicesDrop.s6.title"),
       icon: <FaFileMedical />, // Medical Certificates
       subItems: [
         {
-          path: "/services/service1",
+          path: "/all-services/medical-certificates",
           label: t("header.servicesDrop.s6.subitems.sub1"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/medical-certificates",
           label: t("header.servicesDrop.s6.subitems.sub2"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/service1",
           label: t("header.servicesDrop.s6.subitems.sub3"),
         },
       ],
@@ -286,33 +292,35 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
     {
       id: 7,
-      path: "/services/service7",
+      path: "/all-services/telemedicine",
       label: t("header.servicesDrop.s7.title"),
       icon: <GiMedicines />, // Telemedicine
     },
 
     {
       id: 8,
-      path: "/services/service8",
+      path: "/all-services/expert-imaging-review",
       label: t("header.servicesDrop.s8.title"),
       icon: <FaXRay />, // CT / MRI / PET-CT
     },
 
     {
       id: 9,
+      path: "/all-services/partnership-programs",
+
       label: t("header.servicesDrop.s9.title"),
       icon: <FaHandshake />, // Partner Projects
       subItems: [
         {
-          path: "/services/service1",
+          path: "/all-services/partnership-programs",
           label: t("header.servicesDrop.s9.subitems.sub1"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/partnership-programs",
           label: t("header.servicesDrop.s9.subitems.sub2"),
         },
         {
-          path: "/services/service1",
+          path: "/all-services/partnership-programs",
           label: t("header.servicesDrop.s9.subitems.sub3"),
         },
       ],
@@ -320,7 +328,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
     {
       id: 10,
-      path: "/services/service10",
+      path: "/all-services/sophos-plus",
       label: t("header.servicesDrop.s10.title"),
       icon: <FaPlus />, // CT / MRI / PET-CT
     },
@@ -790,12 +798,12 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     <Link
                       key={idx}
                       to={a.path}
-                      className="flex items-center gap-2 group-hover:text-brand2 small-text xl:base-text font-medium transition-all duration-300"
+                      className="flex items-center gap-2 group-hover:text-brand2 base-text font-medium transition-all duration-300"
                     >
                       <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                         {a.icon}
                       </span>
-                      <p className="group-hover:text-brand2 text-wrap small-text xl:base-text font-normal">
+                      <p className="group-hover:text-brand2 text-wrap base-text font-normal">
                         {a.label}
                       </p>
                       <div className="absolute right-2 top-3 overflow-hidden w-6">
@@ -815,13 +823,13 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             }}
             className="relative whitespace-nowrap cursor-pointer"
           >
-            <button
-              onClick={() => handleScrollToSection("#services")}
+            <Link
+              to="/services"
               className="flex  items-center gap-1 hover:text-brand2 transition-all duration-300 cursor-pointer"
             >
               {t("header.services")}{" "}
               <FaChevronDown className="small-text mt-1" />
-            </button>
+            </Link>
 
             <AnimatePresence>
               {showServices && (
@@ -830,7 +838,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-4  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-2xl xl:w-4xl font-normal"
+                  className="absolute left-1/2 -translate-x-2/3 mt-4 grid grid-rows-4  grid-flow-col gap-6 xl:gap-10  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-3xl xl:w-4xl font-normal"
                 >
                   {services.map((s, idx) => (
                     <div
@@ -841,7 +849,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     >
                       <Link
                         to={s.path || "#"}
-                        className="flex items-center gap-2 group-hover:text-brand2 small-text xl:base-text font-medium transition-all duration-300"
+                        className="flex items-center gap-2 group-hover:text-brand2 base-text font-medium transition-all duration-300"
                       >
                         <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                           {s.icon}
@@ -849,7 +857,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         <p
                           className={`${
                             s.subItems && "text-[#0a3449]"
-                          } group-hover:text-brand2 pr-8 small-text xl:base-text text-wrap font-normal`}
+                          } group-hover:text-brand2 pr-8 base-text text-wrap font-normal`}
                           dangerouslySetInnerHTML={{ __html: s.label }}
                         ></p>
                         {s.subItems ? (
@@ -881,7 +889,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                         <li key={j}>
                                           <Link
                                             to={item.path}
-                                            className="block group text-wrap small-text xl:base-text text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                            className="block group text-wrap base-text text-gray-700 hover:text-brand2 transition-all relative pr-8"
                                           >
                                             {item.label}
                                             <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -896,7 +904,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                         <li key={j}>
                                           <Link
                                             to={item.path}
-                                            className="block group text-wrap text-[#e9865f] small-text xl:base-text hover:text-brand2 transition-all relative pr-8"
+                                            className="block group text-wrap text-[#e9865f] base-text hover:text-brand2 transition-all relative pr-8"
                                           >
                                             {item.label}
                                             <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -921,7 +929,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                   <li key={i}>
                                     <Link
                                       to={item.path}
-                                      className="block group text-wrap small-text xl:base-text text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                      className="block group text-wrap base-text text-gray-700 hover:text-brand2 transition-all relative pr-8"
                                     >
                                       {item.label}
                                       <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -975,7 +983,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     >
                       <Link
                         to={d.path || "#"}
-                        className="flex items-center gap-2 group-hover:text-brand2 small-text xl:base-text font-medium transition-all duration-300"
+                        className="flex items-center gap-2 group-hover:text-brand2 base-text font-medium transition-all duration-300"
                       >
                         <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                           {d.icon}
@@ -983,7 +991,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         <p
                           className={`${
                             d.subItems && "text-[#0a3449]"
-                          } group-hover:text-brand2 pr-8 small-text xl:base-text text-wrap font-normal`}
+                          } group-hover:text-brand2 pr-8 base-text text-wrap font-normal`}
                         >
                           {d.label}
                         </p>
@@ -995,42 +1003,6 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                           </div>
                         )}
                       </Link>
-
-                      {/* Submenu for oncologists */}
-                      <AnimatePresence>
-                        {activeSub === d.label && d.subItems && (
-                          <motion.div
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -10 }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute left-[90%]   top-0  bg-[#f3f5f7] border border-gray-400 rounded-xl shadow-lg shadow-black/30 p-4 w-xl xl:w-3xl z-50 flex flex-col gap-4 justify-between"
-                          >
-                            {d.subItems.map((cat, i) => (
-                              <div key={i} className="mb-2">
-                                <h4 className="text-brand1 font-semibold mb-4 text-xl">
-                                  {cat.category}
-                                </h4>
-                                <ul className="grid grid-cols-2 gap-4">
-                                  {cat.items.map((item, j) => (
-                                    <li key={j}>
-                                      <Link
-                                        to={item.path}
-                                        className="block group text-wrap text-gray-700 hover:text-brand2 transition-all relative pr-8"
-                                      >
-                                        {item.label}
-                                        <div className="absolute right-2 top-2 overflow-hidden w-6">
-                                          <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
-                                        </div>
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
                     </div>
                   ))}
                 </motion.div>
@@ -1069,7 +1041,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                         {p.icon}
                       </span>
-                      <p className="group-hover:text-brand2 small-text xl:base-text text-left text-wrap font-normal">
+                      <p className="group-hover:text-brand2 base-text text-left text-wrap font-normal">
                         {p.label}
                       </p>
                       <div className="absolute right-2 top-3 overflow-hidden w-6">

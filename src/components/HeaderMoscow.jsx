@@ -807,7 +807,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                         {a.icon}
                       </div>
-                      <p className="group-hover:text-brand2 small-text xl:base-text font-normal">
+                      <p className="group-hover:text-brand2 base-text font-normal">
                         {a.label}
                       </p>
                       <div className="absolute right-2 top-3 overflow-hidden w-6">
@@ -861,7 +861,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         <p
                           className={`${
                             d.subItems && "text-[#0a3449]"
-                          } group-hover:text-brand2 pr-8 small-text xl:base-text text-wrap font-normal`}
+                          } group-hover:text-brand2 pr-8 base-text text-wrap font-normal`}
                         >
                           {d.label}
                         </p>
@@ -894,7 +894,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                     <li key={j}>
                                       <Link
                                         to={item.path}
-                                        className="block group text-wrap text-gray-700 small-text xl:base-text hover:text-brand2 transition-all relative pr-8"
+                                        className="block group text-wrap text-gray-700 base-text hover:text-brand2 transition-all relative pr-8"
                                       >
                                         {item.label}
                                         <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -1001,7 +1001,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                       <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                         {p.icon}
                       </div>
-                      <p className="group-hover:text-brand2 small-text xl:base-text text-left font-normal">
+                      <p className="group-hover:text-brand2 base-text text-left font-normal">
                         {p.label}
                       </p>
                       <div className="absolute right-2 top-3 overflow-hidden w-6">

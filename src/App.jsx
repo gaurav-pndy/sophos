@@ -34,6 +34,8 @@ import enMoscow from "./locales/enMoscow.json";
 import ruMoscow from "./locales/ruMoscow.json";
 import { changeCity } from "./utils/changeCity";
 import { I18nextProvider } from "react-i18next";
+import ServicesPage from "./pages/ServicesPage";
+import ServiceDetails2 from "./pages/ServiceDetails2";
 
 function App() {
   const [city, setCity] = useState(() => {
@@ -92,6 +94,10 @@ function App() {
           element: <DoctorsPage branch={city} setShowPopup={setShowPopup} />,
         },
         {
+          path: "/services",
+          element: <ServicesPage />,
+        },
+        {
           path: "/doctors/:doctorId",
           element: <DoctorDetails branch={city} setShowPopup={setShowPopup} />,
         },
@@ -126,6 +132,10 @@ function App() {
         {
           path: "/services/:serviceId",
           element: <ServiceDetails setShowPopup={setShowPopup} />,
+        },
+        {
+          path: "/all-services/:serviceId",
+          element: <ServiceDetails2 setShowPopup={setShowPopup} />,
         },
         {
           path: "/early-detection-program",

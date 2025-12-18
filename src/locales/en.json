@@ -15,7 +15,7 @@
     "services": "Services",
     "servicesDrop": {
         "s1": {
-          "title": "Specialist Appointment",
+          "title": "Specialist Consultation",
           "subitems": {
             "sub1": "Ultrasound Doctor",
             "sub2": "Gynecologist",
@@ -68,7 +68,7 @@
           "title": "Telemedicine"
         },
         "s8": {
-          "title": "Expert Interpretation of CT/MRI/PET-CT"
+          "title": "Expert Review of CT/MRI/PET-CT"
         },
         "s9": {
           "title": "Partner Projects",
@@ -79,7 +79,7 @@
           }
         },
         "s10": {
-          "title": "SOFOS+"
+          "title": "SOPHOS+"
         }
       },
     "doctors": "Doctors",
@@ -207,7 +207,7 @@
   "doctors": {
     "title1": "A modern multidisciplinary outpatient clinic. A wide diagnostic and treatment base",
     "title": "Our Doctors",
-    "subtitle": "Our approach is based on evidence-based medicine and interdisciplinary collaboration. Each clinical step is evaluated taking into account the patient's medical history: we choose safe examination methods, plan treatment without increasing risks, and coordinate tactics in medical consultations. Our priority is safety, consistency, precision of actions and respect for the patient. The long-term experience of specialists working with patients, including after oncological diseases, allows them to correctly assess the condition after surgery, chemotherapy and radiation therapy, and take into account the specifics of drug interactions and limitations in diagnosis. We are here to carefully understand the situation and offer an informed, safe solution.",
+    "subtitle": "Our team is more than just experienced specialists. We organize conferences, publish scientific papers, develop recommendations and educational programs. By combining expertise from different fields, we create effective solutions for complex cases. Our goal is a community of professionals working for the benefit of the patient.",
     "filter": {
       "consultType": "Type of Consultation",
       "enterName": "Enter specialization or doctor's name",
@@ -1069,93 +1069,653 @@
     }
   },
   "services": {
-    "title": "Our Services",
-    "subtitle": "Multidisciplinary clinics in Moscow and Makhachkala with advanced diagnostics and expert specialists.</div> <br/> Our medical centers bring together professionals from various fields to provide comprehensive care under one roof. From initial consultations and preventive screenings to complex diagnostic procedures, every patient receives personalized attention and evidence-based treatment recommendations.</div> <br/>Equipped with cutting-edge technology, our clinics ensure early and accurate detection of diseases, allowing patients to begin treatment without delay.",
-    "moreBtn": "Learn More",
-    "askBtn": "Ask a Question",
-    "referralBtn": "Submit a Request",
-    "services": "Services",
-    "tab1": "About the Service",
-    "tab2": "Doctors",
-    "tab3": "Reviews",
-    "tab4": "Prices",
-    "tab5": "Other Services",
-    "tab6": "Diseases",
-    "bookAppointment": "Book an Appointment",
-    "contactPopup": "Order a callback",
-    "s1": {
-      "title": "Specialist Consultation",
-      "subtitle": "In-person and Remote Consultations",
-      "btn": "Book an Appointment",
-      "about": "You can receive this service through an in-person meeting with an expert or submit a request for a remote online consultation if you are in another region and cannot come in person. In addition, you can obtain a written opinion regarding the course of the disease, diagnosis, and an individualized treatment plan based on the provided medical documentation.<br/><br/>An expert consultation is necessary immediately after being diagnosed with a 'malignant neoplasm' to effectively plan examinations and treatment. It can also serve as a second opinion. Only a properly structured, step-by-step treatment program ensures maximum results without complications or unnecessary anxiety for patients and their families, providing recovery from cancer or, at the very least, maintaining quality of life and extending its duration.<br/><br/>Getting an in-person appointment with leading experts in specialized medical institutions is extremely difficult. Health-Direct provides the opportunity to obtain an expert opinion from such specialists in the field of oncology both in person and remotely.<br/><br/>For the consultation, you will need to prepare and upload all available medical documentation in your personal account: discharge summaries, laboratory and instrumental test results.<br/><br/>As a result, you will receive an expert opinion on the necessary additional examinations, diagnosis, or a verified personalized treatment plan.<br/><br/><p class='font-semibold'>Duration: 60 minutes.</p>"
-    },
-    "s2": {
-      "title": "Individual Early Disease Diagnosis",
-      "subtitle": "Individual Early Disease Diagnosis",
-      "btn": "Book an Appointment",
-      "about": "A cancer diagnosis always disrupts the usual course of life for any person, their relatives, and loved ones. To stay one step ahead and rule out oncological and other life-threatening diseases, we offer a comprehensive health check-up.<br/><br/><b>Individual Early Disease Diagnosis at Health-Direct</b><br/><br/>The service consists of the following stages:<br/><ol class='list-decimal mt-2 list-inside space-y-2'><li>Remote consultation with an oncologist who will assess risks, identify potential health threats based on medical history, and prescribe an examination plan.</li><li>The examination can be completed independently, or the Health-Direct team will organize it with top specialists.</li><li>In-person consultation with an oncologist who, based on test and examination results, will provide an accurate assessment of your current health condition regarding the presence or absence of oncological diseases and predispositions. You will also receive a comprehensive evaluation that identifies accompanying conditions.</li></ol><br/>Mandatory tests include:<br/><ul class='list-disc mt-2 list-inside space-y-2'><li>Complete blood count (used to diagnose anemia, blood disorders, acute infectious diseases, etc.);</li><li>Biochemical blood test (used to assess the functional state of organs and systems such as the liver, kidneys, etc.);</li><li>Comprehensive lipid profile (used to assess the risk of developing atherosclerosis and cardiovascular events such as myocardial infarction or stroke);</li><li>Coagulogram (used to diagnose blood clotting disorders);</li><li>Tumor markers (performed when indicated).</li></ul><br/>In addition to tests, your doctor may recommend instrumental studies, which may include:<br/><ul class='list-disc mt-2 list-inside space-y-2'><li>Ultrasound of pelvic organs;</li><li>Ultrasound of abdominal organs;</li><li>Ultrasound of mammary glands (for women);</li><li>Ultrasound of cervical lymph nodes;</li><li>Mammography (for women);</li><li>Gastro- and colonoscopy (with or without sedation);</li><li>Low-dose CT scan of the chest;</li><li>Dermatoscopy;</li><li>Cytological and/or histological examination (if necessary);</li><li>Additionally, the doctor will perform a detailed examination of the skin, checking for the presence and size of moles, freckles, and birthmarks.</li></ul><br/>Individual early diagnosis is essential for people who care about their health, understand that it is much easier to prevent a disease than to treat it, and for those who have previously overcome cancer and recognize the importance of a personalized approach and well-planned examination."
-    },
-    "s3": {
-      "title": "International Oncological Board",
-      "about": "The oncological board is a mandatory requirement before starting specific treatment (according to Order No. 116n dated February 19, 2021, 'On the procedure for providing medical care to the adult population for oncological diseases'). A high flow of patients in public healthcare institutions and heavy workloads on hospital laboratories often lead to irreversible consequences: mandatory boards become a mere formality, examinations are not carried out in full. Patients are forced to turn to private clinics, undergo fragmented tests, and as a result, lose precious time.<br /><br /><b>Why is a board needed?</b><br/><ul class='list-inside mt-2 space-y-2 list-disc'><li>to confirm or refute the diagnosis of a malignant tumor;</li><li>to adjust an already prescribed treatment or examination plan;</li><li>to develop an effective treatment strategy;</li><li>to obtain a second expert opinion;</li><li>to ensure the correctness of the ongoing treatment.</li></ul><br /><br /><b>Which oncological diseases are reviewed at the board?</b><br /><br />At the international oncological board of Health-Direct, a multidisciplinary team of specialists discusses the diagnostic, treatment, and follow-up strategies for the following diseases:<br /><ul class='list-inside mt-2 space-y-2 list-disc'><li>malignant tumors of the head and neck (laryngeal cancer, nasopharyngeal cancer, thyroid cancer, parotid gland cancer, pharyngeal cancer, etc.);</li><li>melanoma of the skin and other localizations;</li><li>stomach cancer;</li><li>lung cancer;</li><li>adrenal cancer;</li><li>esophageal cancer;</li><li>prostate cancer;</li><li>rectal cancer;</li><li>cervical cancer;</li><li>endometrial (uterine body) cancer;</li><li>ovarian cancer;</li><li>Hodgkin's lymphoma;</li><li>non-Hodgkin lymphomas;</li><li>brain tumors;</li><li>breast cancer;</li><li>male breast cancer;</li><li>gallbladder cancer;</li><li>anal canal cancer;</li><li>skin cancer;</li><li>liver cancer;</li><li>pancreatic cancer;</li><li>colon cancer;</li><li>soft tissue sarcomas.</li></ul><br/><br/>A malignant tumor may be accompanied by conditions such as diabetes mellitus, hypertension, previous myocardial infarction, stroke, and other chronic diseases. In such cases, a comprehensive approach is required to determine the treatment strategy and predict possible complications in order to prevent them.<br/><br/>The board involves specialists needed at different stages of specific antitumor treatment: surgical oncologists, chemotherapists, and radiotherapists.<br /><br /><b>Who makes up the international oncological board of Health-Direct?</b><br /><br />Your case will be reviewed by experienced doctors and candidates of medical sciences: at least two surgical oncologists, two radiotherapists, and three chemotherapists, as well as an anesthesiologist-resuscitator who will assess the tolerability of various treatment methods based on your health condition. Our team will carefully study your medical history, test results, and conclusions to select the optimal treatment plan.<br /><br />The Health-Direct project engages not only domestic experts but also international practicing physicians, expanding the patient’s opportunities to receive treatment both in Russia and in partner foreign clinics, in accordance with global standards and treatment protocols.<br /><br />Permanent members of the international oncological board of Health-Direct:<br /><ul class='list-inside mt-2 space-y-2 list-disc'><li>Nechushkina Valentina Mikhailovna – Chairperson of the International Oncological Board of Health-Direct, oncologist, surgeon, obstetrician-gynecologist, Doctor of Medical Sciences, Professor;</li><li>Snegovoy Anton Vladimirovich – oncologist, chemotherapist, Doctor of Medical Sciences, Professor;</li><li>Kononenko Inessa Borisovna – oncologist, chemotherapist, Candidate of Medical Sciences;</li><li>Sinyavin Dmitry Yurievich – oncologist, chemotherapist;</li><li>Dzhugashvili Maya Shalikoevna – oncologist, radiotherapist, Candidate of Medical Sciences;</li><li>Valkov Mikhail Yurievich – oncologist, radiotherapist, Doctor of Medical Sciences, Professor;</li><li>Novikov Sergey Nikolaevich – oncologist, radiotherapist, Doctor of Medical Sciences, Professor;</li><li>Subramanian Somasundaram – oncologist, surgeon, plastic surgeon;</li><li>Prikhodchenko Alexey Olegovich – anesthesiologist-resuscitator, Candidate of Medical Sciences.</li></ul><br /><br /><b>What documents are required for the board?</b><br /><br />To conduct a remote board consultation, you need to attach all available medical documentation to the application:<br /><ul class='list-inside mt-2 space-y-2 list-disc'><li>discharge summaries of prior treatments;</li><li>oncologists' reports;</li><li>records of surgical procedures;</li><li>results of radiological examinations (CT, MRI, PET-CT);</li><li>results of laboratory and other instrumental studies from diagnosis to the present moment;</li><li>histological and cytological examination reports.</li></ul><br /><br /><b>How is the oncological board conducted at Health-Direct?</b><br /><br />The patient’s in-person presence is not required. You can be anywhere in the world. The supervising doctor prepares a presentation of the clinical case. Experts study the attached documents in advance. In a closed session, specialists discuss your case and develop an optimal diagnostic or treatment strategy.<br /><br />Diagnosis and treatment recommendations are made strictly in accordance with international protocols and standards for the treatment of malignant tumors.<br /><br />As a result, you will receive the conclusion of the International Oncological Board of Health-Direct in the shortest possible time and gain the opportunity to proceed with additional examinations and specific treatment in one of the specialized medical institutions, either public or private, under the supervision of an assigned specialist.<br /><br />",
+"title": "Our Services",
+  "subtitle": "We offer a comprehensive approach to healthcare, personalized attention, and treatment based on evidence-based medicine. Modern equipment ensures early and accurate disease detection.",
+  "moreBtn": "Learn more",
+  "askBtn": "Ask a question",
+  "referralBtn": "Submit a request",
+  "services": "Services",
+  "btn1": "Book an appointment",
+  "tab1": "About the service",
+  "tab2": "Doctors",
+  "tab3": "Reviews",
+  "tab4": "Prices",
+  "tab5": "Other services",
+  "tab6": "Conditions",
+  "bookAppointment": "Submit a request",
+  "contactPopup": "Request a callback",
+   "consultation": {
+  "title": "Specialist Consultation",
+  "subtitle": "Personalized care and professional health assessment",
+  "introTitle": "A professional approach to your health",
+  "introText": "Are you feeling unwell, concerned about your health, or simply seeking professional advice? A doctor’s consultation is your reliable path to understanding your body, identifying issues in a timely manner, and effectively addressing concerns related to your well-being.",
 
-      "diseases": "<b>Which oncological diseases are reviewed at the board?</b><br/><br/>At the international oncological board of Health-Direct, a multidisciplinary team of specialists discusses the diagnostic, treatment, and follow-up strategies for the following diseases:<br/><ul class='list-disc list-inside mt-2 space-y-2'><li>malignant tumors of the head and neck (laryngeal cancer, nasopharyngeal cancer, thyroid cancer, parotid gland cancer, pharyngeal cancer, etc.);</li><li>melanoma of the skin and other localizations;</li><li>stomach cancer;</li><li>lung cancer;</li><li>adrenal cancer;</li><li>esophageal cancer;</li><li>prostate cancer;</li><li>rectal cancer;</li><li>cervical cancer;</li><li>endometrial (uterine body) cancer;</li><li>ovarian cancer;</li><li>Hodgkin's lymphoma;</li><li>non-Hodgkin lymphomas;</li><li>brain tumors;</li><li>breast cancer;</li><li>male breast cancer;</li><li>gallbladder cancer;</li><li>anal canal cancer;</li><li>skin cancer;</li><li>liver cancer;</li><li>pancreatic cancer;</li><li>colon cancer;</li><li>soft tissue sarcomas.</li></ul>"
+  "stats": [
+    { "value": "15+", "label": "Years of experience" },
+    { "value": "98%", "label": "Satisfied patients" },
+    { "value": "30 min", "label": "Average appointment time" }
+  ],
+
+  "includesTitle": "What does a doctor’s consultation include?",
+  "includes": [
+    "Personalized approach: The doctor carefully listens to your concerns, asks clarifying questions, and collects a complete medical history to understand your unique situation.",
+    "Professional assessment: Based on the information provided, the specialist conducts an initial examination and evaluates your condition.",
+    "Diagnostics and recommendations: If necessary, the doctor orders additional tests (laboratory analyses, instrumental examinations) to establish an accurate diagnosis.",
+    "Treatment plan development: You receive clear and practical recommendations for treatment, prevention, and health maintenance tailored to your individual needs.",
+    "Answers to your questions: Feel free to ask any health-related questions. The doctor will provide comprehensive explanations and address your concerns."
+  ],
+
+  "whenTitle": "When should you seek a doctor’s consultation?",
+  "when": [
+    "When experiencing any symptoms of discomfort: Pain, weakness, changes in well-being, or unusual sensations — do not ignore your body’s signals.",
+    "For preventive check-ups: Regular visits help detect diseases at early stages, when they are easier to treat.",
+    "If you have chronic conditions: For monitoring, treatment adjustment, and prevention of flare-ups.",
+    "Before starting new physical activities or making lifestyle changes: To ensure there are no medical contraindications.",
+    "For a second opinion: If you want to clarify a diagnosis or discuss alternative treatment options.",
+    "For healthy lifestyle guidance: Nutrition, physical activity, and stress management — your doctor will help you create an optimal strategy."
+  ],
+
+  "whyTitle": "Why is it important to choose a qualified specialist?",
+  "whyItems": [
+    {
+      "title": "High level of expertise",
+      "text": "Our specialists continuously enhance their knowledge and follow the latest medical advancements."
     },
-    "s4": {
-      "title": "Chemotherapy",
-      "about": "Center for Modern Antitumor Drug Therapy<br/><br/>Drug therapy for malignant neoplasms is the treatment of oncological diseases using medications aimed at destroying or restraining the growth of cancer cells. In our clinic, we combine international standards of oncological care with attentive and caring attitude towards each patient. Our team provides modern antitumor treatment based on scientific evidence and clinical experience, creating all conditions for comfortable therapy.<br/><br/>We accompany the patient at every stage — from diagnosis to recovery, helping to maintain quality of life and inner balance.<br/><br/><b>Accurate diagnosis is the foundation of successful treatment.</b><br/><br/>At HDMC, the diagnostic process is organized in accordance with international clinical protocols. Patients undergo a full range of examinations — laboratory, instrumental and molecular genetic studies, imaging methods (MRI, CT, PET/CT) — quickly, safely and in comfortable conditions. This approach allows not only to determine the stage and characteristics of the tumor, but also to select personalized therapy specifically for your type of disease. All decisions are made collectively at the oncological council.<br/><br/>We pay great attention to informing the patient and their family — we explain in detail all stages of therapy, possible side effects and methods of their prevention.<br/><br/><b>Modern methods of drug therapy</b><br/><br/>HDMC uses all modern types of antitumor drug treatment.<br/>The choice of method is always individual — depending on the type and stage of the tumor, concomitant diseases and the patient's general condition.<br/>The main goal of therapy is to maximally effectively affect the tumor while maintaining quality of life.<br/><br/><b>Chemotherapy</b><br/><br/>Chemotherapy remains one of the main methods of treating malignant tumors.<br/>Its task is to stop the growth and spread of tumor cells.<br/>At HDMC, chemotherapy is conducted according to international protocols, with precise selection of dosages and administration regimens. We use both classical and modern drugs with improved tolerability profiles. Treatment is accompanied by supportive therapy that helps minimize side effects — nausea, weakness, reduced immunity.<br/>Patients are under constant supervision of doctors and nurses, and all procedures are performed in the comfortable conditions of a day hospital.<br/><br/><b>Targeted Therapy</b><br/><br/>Targeted therapy acts on specific molecules involved in the growth of tumor cells. Such treatment works selectively, almost without affecting healthy tissues. Before prescription, molecular genetic testing of the tumor is performed to determine the presence of targets for targeted drugs.<br/>This allows selecting treatment that is maximally effective for this particular patient.<br/><br/>Advantages:<br/><ul class='list-disc list-inside mt-2 space-y-2'><li>high precision and selectivity of action;</li><li>lower toxicity compared to classical chemotherapy;</li><li>possibility of long-term use without hospitalization;</li><li>maintenance of usual lifestyle during treatment.</li></ul><br/><b>Immunotherapy</b><br/><br/>Immunotherapy helps the body fight the tumor on its own by activating its own immune system. HDMC uses modern drugs — immune checkpoint inhibitors and monoclonal antibodies acting at the cellular mechanism level. Immunotherapy can be used both independently and in combination with other methods. It has the potential for long-term disease control and formation of sustainable antitumor immunity with good tolerability.<br/><br/><b>Endocrine Therapy</b><br/><br/>Endocrine (hormonal) therapy is used for tumors sensitive to hormones — for example, breast cancer or prostate cancer.<br/>The goal of treatment is to block the effects of hormones that stimulate tumor growth.<br/>Treatment is conducted in the form of tablet preparations or injections, often — on an outpatient basis. Endocrine therapy is easily tolerated, suitable for long-term use and allows patients to maintain their usual active life.<br/><br/><b>Supportive Therapy</b><br/><br/>Supportive therapy is an integral part of treatment at HDMC.<br/>It is aimed at maintaining quality of life, preventing and correcting possible side effects.<br/>We apply:<br/><ul class='list-disc list-inside mt-2 space-y-2'><li>antiemetic therapy;</li><li>prevention of neutropenia and anemia;</li><li>nutritional support (individual nutrition);</li><li>pain control;</li><li>psychological support.</li></ul><br/>Oncological treatment is a journey that requires not only professionalism but also support. We accompany patients and their loved ones at every stage: from diagnosis to the recovery period.<br/>The HDMC team is always available — to answer questions, adjust therapy and help maintain confidence in recovery.<br/><br/><p class='font-semibold'>Call by phone: +7 (499) 685-30-00</p>"
+    {
+      "title": "Empathy and attentiveness",
+      "text": "We understand that health is a sensitive matter and treat every patient with respect and care."
     },
-    "s5": {
-      "title": "Placement of a Venous Port System for Chemotherapy",
-      "subtitle": "Venous Port System Placement",
-      "btn": "Book",
-      "about": "<b>What is a port system?</b><br/><br/>A port system consists of a catheter placed into a central vein and a chamber to which the catheter is connected. It is implanted under the skin in the subclavian area. For prolonged courses of chemotherapy, this is the most optimal option for comfortable treatment. In addition, a port system can be used for blood sampling, prolonged antibacterial therapy, parenteral nutrition, and/or frequent blood transfusions. Like any catheter, a port system can be used to administer contrast agents for MRI and CT or to deliver any intravenous medications.<br/><br/><b>Possible contraindications for port system placement</b><br/><br/>Placement of a port system is recommended by the physician based on clinical data and the treatment plan. Each case is considered individually, since all listed contraindications are relative. However, implantation should be approached with caution in the following cases:<br/><ul class='list-disc list-inside space-y-2 mt-2'><li>blood clotting disorders;</li><li>individual intolerance to port materials;</li><li>radiation therapy at the intended implantation site;</li><li>superior vena cava syndrome;</li><li>inflammation of the skin at the implantation site;</li><li>sepsis.</li></ul><br/><b>How is port system placement performed?</b><br/><br/>The procedure for placing a port system is not considered an operation and takes 30–90 minutes. The implantation site is disinfected, a local anesthetic is administered, the vein is punctured and the catheter is inserted. A small skin incision of no more than 3–4 cm is made, a subcutaneous pocket is formed, and the port system is placed in it. The incision is closed with cosmetic sutures, which fully heal within 2–3 weeks. The implantation site is protected with a special dressing that can be removed by the patient later.<br/><br/><b>What does the patient feel after the procedure?</b><br/><br/>The port system is perceived by the body as a foreign object, so pulling, aching and tingling sensations at the implantation site are normal. People have different pain thresholds; to reduce discomfort, painkillers prescribed by the treating physician can be taken immediately after implantation if necessary. Discomfort should completely subside one week after the procedure. Any unpleasant sensations are a reason to contact a physician immediately.<br/><br/>Also, in the early period after port implantation it is recommended to limit certain routine activities:<br/><ul class='list-disc list-inside space-y-2 mt-2'><li>avoid lifting heavy objects (over 5 kg) for 7 days;</li><li>limit visits to pools, baths, and saunas for 14–28 days;</li><li>refrain from intense physical exercise for 7 days.</li></ul><br/><br/><b>How to prepare for the procedure?</b><br/><ul class='list-disc list-inside space-y-2 mt-2'><li>Consult with the specialist who will place the port system and discuss timing and location of implantation.</li><li>Prepare and provide the physician with copies of tests and examinations:</li><li>complete blood count with leukocyte formula and platelet count – valid for 14 days;<ul class=' list-inside space-y-2 ml-6'><li>- complete urine analysis – valid for 14 days;</li><li>- biochemical blood tests (total protein, glucose, total bilirubin, creatinine, urea, ALT, AST) – valid for 14 days;</li><li>- coagulogram (fibrinogen, APTT, INR) – valid for 14 days;</li><li>- blood group and Rh factor – valid for 3 months or after the last transfusion if one was given within the last 3 months (on a form with an original stamp);</li><li>- phenotype – valid for 3 months or after the last transfusion if one was given within the last 3 months (on a form with an original stamp);</li><li>- anti-erythrocyte antibodies – valid for 3 months or after the last transfusion if one was given within the last 3 months (on a form with an original stamp);</li><li>- tests for infectious diseases: RW, HBs antigen, antibodies to HCV, HIV – valid for 3 months;</li><li>- electrocardiogram (ECG) – valid for 14 days;</li></ul></li></ul><br/>It is worth noting that the port system is usually implanted before systemic antitumor drug therapy (chemotherapy), and the set of tests and examinations is identical to those required for chemotherapy. Thus, you will not need to collect them twice. It is only necessary to correctly determine the timing of port placement. Provide the supervising physician with copies of medical documents about the oncological disease and prior treatments.<br/><br/><b>Preparation for port system placement on the day of the procedure:</b><br/><br/><ul class='list-disc list-inside space-y-2 mt-2'><li>Be sure to bring your passport and copies of documents if they were not submitted in advance.</li><li>Have a light breakfast in the morning; then refrain from eating for 6 hours and avoid any liquids for 2 hours before the scheduled port placement time.</li><li>Take routine medications, except for blood-thinning drugs (this should be agreed with the treating physician in advance).</li><li>Shower beforehand and, if necessary, remove hair at the implantation site. Note: we recommend wearing dark clothing.</li></ul><br/><br/><b>After the procedure</b><br/><br/>Usually, about 2 hours after port implantation the patient is ready to go home. Within a month one can fully return to normal life. The port system is one of the safest implantable devices: complications occur in less than 2% of patients.<br/><br/><b>Care recommendations for the port system</b><br/><br/>A port system can be implanted for a long term (several years or lifelong). With regular use, special care is not required because the system is flushed before and after use.<br/>However, if a break in treatment is planned, the port system should be flushed every 4 weeks. If the patient has entered stable remission, the port system can be removed. The removal procedure is also performed under local anesthesia.<br/><br/><b>Important:</b><ul class='list-disc list-inside space-y-2 mt-2'><li>Keep the card with the port system data and diagnosis, as well as the technical passport of the port system. Carry it with you, especially when moving to other cities or countries. Always inform medical personnel about the presence of a port system when undergoing CT or MRI (the port can be used to administer contrast agents).</li><li>The port system may ONLY be used with special Huber needles. Always confirm their availability with medical staff to avoid deformation of the silicone septum.</li><li>Symptoms that require immediate medical attention:<br/><ul class=' list-inside space-y-2 ml-6'><li>- burning sensation, pain, fever above 38°C, redness and swelling at the implantation site;</li><li>- swelling of the arm or bluish discoloration of the skin on the side of the implanted port system;</li><li>- pain during infusion of medications through the port system.</li></ul></li></ul>"
+    {
+      "title": "Confidentiality",
+      "text": "All information obtained during the consultation is strictly confidential."
     },
-    "s6": {
-      "title": "CT Scan",
-      "about": "A second, reliable expert review — our radiology specialists re-analyze your images to confirm the results and provide precise, dependable recommendations for your treatment. Each image is carefully examined so that no detail is missed."
-    },
-    "s7": {
-      "title": "Pathomorphological Studies at PathoLogica Service",
-      "btn": "Get Service",
-      "about": "PathoLogica Service is a unique remote service offering the full spectrum of pathomorphological studies (cytological, histological, immunohistochemical, molecular-genetic).<br/><br/><b>Services:</b><br/><ol class='list-decimal mt-2 space-y-6 list-inside'><li>Initial cytological/histological examination.<br/><p class='my-3'>Cytological examination involves studying the structure of cells and non-cellular elements to diagnose benign or malignant neoplasms. It is also used to evaluate cellular changes during treatment and for recurrence diagnosis. Advantages include simplicity, minimal invasiveness, relative safety and painless sample collection, and speed of the study.</p><p class='mb-3'>Histological examination differs from cytological as it studies tissue samples instead of individual cells. This method is more complex due to multi-level tissue processing and preparation.</p>Immunohistochemical, immunocytochemical, and molecular-genetic studies are used if additional diagnostics are needed.</li><li>Expert initial cytological/histological examination.<br/><p class='mt-3'>The study will be conducted by leading experts from PathoLogica Service. International experts may be involved if necessary.</p></li><li>Consultative review of existing cytological/histological samples.<br/><p class='mt-3'>If you have existing samples (slides, paraffin blocks) previously examined but you doubt the diagnosis and want a second opinion, PathoLogica Service staff will perform a consultative review. Additional consultants may be involved if required.</p></li><li>Expert review of existing cytological/histological samples.<br/><p class='my-3'>The consultative review will be performed by leading experts from PathoLogica Service. International experts may be involved if necessary.</p><p class='mb-3'>On the day of submission, a courier will collect slides and blocks. The pathologist will review them, organize a consortium with domestic and international specialists if needed, and send a final report with high-resolution digital images of suspicious areas. Convenient, fast, and high-quality!</p></li></ol><br/><br/><b>HOW TO USE PathoLogica Service?</b><br/><ol class='list-decimal mt-2 space-y-6 list-inside'><li>Step 1: Submit an application<p class='mt-3'>Register in your personal account, provide all necessary information about your current condition, attach existing documents, and fill in delivery details. You can also submit the application with the help of a PathoLogica Service manager at the office.</p></li><li>Step 2: Pay for the study<p class='mt-3'>After submitting the application on the website, a payment link will be sent to your email. Payment can be made via online services. A digital receipt will be sent to the email provided during payment.</p></li><li>Step 3: Deliver the materials and documents to the courier<p class='mt-3'>After submitting the application, a PathoLogica Service manager will contact you during working hours to arrange a date and time for courier pick-up. You may also deliver materials to the office yourself after coordinating with the managers.</p></li><li>Step 4: Delivery<p class='mt-3'>We provide free courier delivery throughout Russia. Delivery takes 1–7 days depending on the distance from Moscow via \"Dostavista\" or \"CDEK\" services.</p></li><li>Step 5: Conducting the study<p class='mt-3'>The study is performed within 2–15 business days from payment, material submission, and document receipt. The final price may change after the first stage depending on workload. Additional blocks, slides, staining, or molecular-genetic tests may increase the cost. The final price will be agreed upon with you.</p></li><li>Step 6: Receiving results and materials<p class='mt-3'>After completion, we will send the original report, materials, and documents via courier (\"Dostavista\", \"CDEK\"). A PDF copy of the report will be sent to your email on the day the study is completed.</p></li></ol>"
-    },
-    "s8": {
-      "title": "Digital Diagnosis of Skin Tumors (AI-Assisted Dermatoscopy)",
-      "subtitle": "Digital Diagnosis of Skin Neoplasms (AI-Assisted Dermatoscopy)",
-      "btn": "Book",
-      "about": "Digital diagnosis of skin neoplasms is a modern, highly accurate method of examining the skin to detect any formations such as moles, pigmented spots, and nevi, and determine whether they are benign or malignant. This computerized examination allows early detection of malignant skin neoplasms, particularly melanoma. Studies show that planned dermatoscopy using AI increases early melanoma detection by 20%.<br/><br/><b>Why use AI-assisted dermatoscopy?</b><br/><br/>Digital skin neoplasm diagnosis is applied for:<br/><ul class='list-disc mt-1 space-y-2 list-inside'><li>Early detection of malignant skin neoplasms, including melanoma;</li><li>Differential diagnosis between benign and malignant neoplasms;</li><li>Detection of parasitic skin conditions (lice, demodicosis, scabies, etc.);</li><li>Detection of bacterial, viral, and fungal skin infections;</li><li>Assessment of nail plate condition;</li><li>Investigating causes of hair loss (alopecia).</li></ul><br/><b>When is digital skin neoplasm diagnosis important?</b><br/><br/>Indications include:<br/><ul class='list-disc mt-1 space-y-2 list-inside'><li>Uneven skin growths;</li><li>Irregular skin color (especially black-blue shades);</li><li>Changes in size, shape, or color of a lesion;</li><li>Itching, burning, or pain in a pigmented spot;</li><li>Bleeding or ulceration of any lesion;</li><li>High number of moles with light hair color;</li><li>Moles larger than 0.5 cm in diameter;</li><li>Appearance of lesions during pregnancy;</li><li>Lesions in individuals over 60 years old;</li><li>Family history of melanoma;</li><li>Pre-surgical assessment of any skin lesion.</li></ul><br/>Important: These symptoms may be early signs of malignant skin neoplasms. Consultation with a specialist is necessary. Health-Direct’s experienced oncologist-dermatologists conduct comprehensive AI-assisted digital skin diagnosis using the FotoFinder system.<br/><br/>AI-assisted dermatoscopy should be performed annually for individuals at risk of malignant skin neoplasms:<br/><ul class='list-disc mt-1 space-y-2 list-inside'><li>Frequent prolonged sun exposure;</li><li>Repeated trauma to moles or pigmented spots (from clothing, combing, etc.);</li><li>Regular chemical exposure;</li><li>Age-related skin changes.</li></ul><br/><br/><b>How is digital skin neoplasm diagnosis performed?</b><br/><br/>No preparation is needed. The patient undresses to underwear, and a special gel is applied. Using the FotoFinder system, the skin is photographed from multiple angles. FotoFinder detects preclinical-stage neoplasms, invisible to the naked eye, with 140x magnification. Examining one lesion takes 1–3 minutes; the full procedure usually lasts about an hour. Data is analyzed in the Moleanalyzer program, which compares the patient’s neoplasms with a global database using AI, generating a report on malignancy, benignity, or borderline nature. AI combined with oncologist-dermatologist expertise provides up to 98% accuracy. Patients receive a detailed report and a mole map to monitor new skin lesions.<br/><br/><b>Important!</b><br/><br/>Early detection of malignant skin neoplasms enables minimally invasive treatment with positive outcomes. Care for yourself and loved ones! Perform AI-assisted digital skin diagnosis annually.<br/><br/>Book an appointment via phone +74996853000 or through your personal account at www.health-direct.info.<br/><br/>Cost: 30,000 rubles"
-    },
-    "s9": {
-      "title": "Molecular Consultation",
-      "subtitle": "Molecular Consultation",
-      "btn": "Book",
-      "about": "Comprehensive genomic sequencing is increasingly used for various malignant neoplasms. Well-known programs include FoundationOne and OncoAtlas. The main goal of such studies is to identify molecular targets for personalized selection of targeted therapy for malignant tumors when standard therapy is ineffective. Often, patients conduct these studies independently. The result is a multi-page report that can only be interpreted by specialists.<br/><br/>The Health-Direct team offers the “Molecular Consortium” service. Leading specialists in drug therapy and molecular genetics interpret the results of comprehensive genomic sequencing and propose possible personalized targeted treatment options."
-    },
-    "s10": {
-      "title": "Expert Evaluation of CT, MRI, PET-CT",
-      "subtitle": "Expert Evaluation of CT, MRI, PET-CT",
-      "btn": "Book",
-      "about": "Computed tomography (CT), magnetic resonance imaging (MRI), and positron emission tomography (PET-CT) are modern radiological diagnostic methods that allow visualization of internal organs, establishing diagnoses, and assessing treatment efficacy. The success of therapy directly depends on correct data interpretation.<br/><br/>If you doubt the accuracy of your report or want a second professional opinion, our specialists can remotely review the radiology results and provide an expert conclusion.<br/><br/>Conveniently, a courier can deliver the disk (for Moscow), or our technical team can upload your data to a cloud storage.<br/><br/><b>Expert Review Time</b><br/><br/>3–7 business days depending on case complexity and number of studies. You will receive the conclusion in a PDF format."
-    },
-    "s11": {
-      "title": "Medical Assistance",
-      "subtitle": "Medical Assistance",
-      "btn": "Book Appointment",
-      "about": "Treatment success depends on the physician’s involvement. Unfortunately, the healthcare system often involves a multi-step approach where each specialist is limited to their area of responsibility. To ensure nothing is missed, Health-Direct offers an assigned supervising doctor who monitors prescriptions, adequacy of therapy, patient stability, supports relatives, provides care recommendations, and advises on diet. Patients may receive treatment at any medical institution (public or private) while staying in contact and receiving independent evaluation (second opinion).<br/><br/>If treatment opinions differ significantly, Health-Direct refers the patient to trusted specialists and continues to oversee the quality of medical services provided."
-    },
-    "s12": {
-      "title": "Voluntary Observation",
-      "about": "Professional care for bone, joint, and musculoskeletal system conditions — whether due to injury or the need for long-term orthopedic treatment. We use modern surgical and non-surgical methods to restore mobility and reduce pain."
-    },
-    "s13": {
-      "title": "Ultrasound Examination",
-      "about": " <b>Ultrasound of the abdominal cavity and retroperitoneal space</b> <br /> <ul class='list-disc list-inside space-y-2 mt-2'> <li>The examination is performed on an empty stomach.</li>   <li>If the examination is scheduled in the morning, it is recommended to have a light dinner before 8:00 p.m., and do not eat or drink in the morning.</li><li>If the examination is scheduled in the evening, a light breakfast is allowed in the morning, but the last meal and fluid intake should be 6–8 hours before the examination.</li> <li>Three days before the examination, a special diet must be followed: exclude flour products, legumes, raw fruits and vegetables, carbonated drinks, and alcohol.</li> <li>The night before the examination, it is recommended to take any absorbent such as activated charcoal, “Smecta”, or “Polysorb”.</li></ul><br /><br /><b>Ultrasound of the pelvic organs (transabdominal)</b><br /><ul class='list-disc list-inside space-y-2 mt-2'>  <li>The examination must be performed on an empty stomach.</li> <li>If the examination is in the morning, a light dinner is recommended before 8:00 p.m., and no food in the morning.</li> <li>If the examination is scheduled in the evening, a light breakfast is allowed, but the last meal must be 6–8 hours before the procedure.</li> <li>Three days prior to the examination, follow a diet: exclude flour products, legumes, raw fruits and vegetables, carbonated drinks, and alcohol.</li><li>Before the examination, drink about one liter of water and do not go to the restroom, since ultrasound waves do not pass through air-filled areas, which makes diagnosis difficult. Therefore, the bladder should be full and the intestines free of gases.</li></ul> <br /> <br /><b>Ultrasound of the pelvic organs (transvaginal)</b><br /> <ul class='list-disc list-inside space-y-2 mt-2'><li>The examination must be performed on an empty stomach.</li> <li>If the examination is in the morning, a light dinner is recommended before 8:00 p.m., and no food in the morning.</li><li>If the examination is scheduled in the evening, a light breakfast is allowed, but the last meal should be no later than 6–8 hours before the examination.</li><li>It is recommended to refrain from sexual intercourse the day before the procedure, as traces of seminal fluid or condom lubricants may affect the results. If vaginal smears are taken on the same day, their results may also be distorted.</li></ul><br /><br /><b>Ultrasound of the pelvic organs (transrectal)</b><br />    <ul class='list-disc list-inside space-y-2 mt-2'><li>For three days before the examination, follow a diet limiting fatty foods and foods that cause gas formation.</li> <li>The examination is performed on an empty stomach with a full bladder.</li>  <li>The day before the procedure, take bowel-cleansing medications, and 2–3 hours before the test, perform an enema.</li> </ul>"
-    },
-    "s14": {
-      "title": "Instrumental Examination",
-      "about": "  <b>Esophagogastroduodenoscopy (EGD)</b> <br /> <ul class='list-disc list-inside space-y-2 mt-2'> <li>The examination is performed on an empty stomach.</li> <li>If the procedure is scheduled in the morning, food intake should be stopped the night before.</li> <li>If the examination is scheduled in the afternoon, a light breakfast (yogurt, cottage cheese, juice, unsweetened tea) is allowed.</li> <li>It is important that at least 8 hours pass between the last meal and the procedure.</li> <li>Drinking is almost completely prohibited; no more than 100 ml of water may be consumed 3–4 hours before the examination.</li><li>Smoking should be avoided on the day of the procedure, as nicotine affects the secretory function of the gastrointestinal tract.</li></ul> <br /> <br /> <b>Colonoscopy</b> <br /> <ul class='list-disc list-inside space-y-2 mt-2'> <li>The most important condition for a high-quality colonoscopy is complete bowel cleansing, so the patient must prepare in advance.</li> <li>Three days before the procedure, it is advisable to avoid foods that cause fermentation or increase bowel activity (whole grain bread, nuts, seeds, dried fruits, raw vegetables, and fruits).</li> <li>The day before the examination, take a special medication (such as lactulose, Fortrans, or Moviprep) to ensure complete bowel cleansing.</li></ul> <br /> <br /><b>PET-CT</b><br /> <br /> <p class='font-semibold'>Allocate at least 2–3 hours for the procedure.</p> <p class='font-semibold'>Before the examination, be sure to inform your doctor of any allergic reactions you may have.</p><p class='font-semibold'>Stage 1 – takes about 70 minutes.</p> Before the scan, the patient changes into clean clothes and removes all metal objects. Then a radioactive tracer is injected intravenously. This is a quick and painless process. The patient is asked to drink plenty of water and rest in a relaxation room. Within an hour, the tracer spreads throughout the body and accumulates in tumor sites. It is important to remain still and avoid talking during this period. <br /> <br /> <p class='font-semibold'>Stage 2 – takes about 40 minutes.</p> First, a computed tomography (CT) scan is performed, followed by positron emission tomography (PET). The CT scan takes a few minutes, while the PET scan can take up to half an hour. Both procedures are performed in the same scanner. The patient does not experience any discomfort. In some cases, an additional contrast agent may be administered to improve image quality. <ul class='list-disc list-inside space-y-2 mt-2'>  <li>Depending on the type of radiopharmaceutical used, the preparation requirements may vary. After consulting your doctor, you will receive detailed individual instructions.</li> </ul>"
+    {
+      "title": "Modern equipment",
+      "text": "We use advanced diagnostic and treatment technologies."
     }
+  ],
+
+  "bottomNote": "Don’t postpone taking care of your health! Book a doctor’s consultation today and take a confident step toward a healthy and active life."
+},
+
+"labTests": {
+  "title": "Tests & Diagnostics",
+  "subtitle": "A wide range of laboratory analyses and diagnostic procedures",
+  "introTitle": "A professional approach to your health",
+  "introText": "In today’s world, caring for your health is not just a trend — it is a necessity. Regular testing and accurate diagnostics form the foundation of long-term well-being, disease prevention, and early detection of any abnormalities.",
+
+  "stats": [
+    { "value": "500+", "label": "Types of tests" },
+    { "value": "24h", "label": "Turnaround time" },
+    { "value": "99%", "label": "Accuracy of results" }
+  ],
+
+  "advantagesTitle": "Our advantages",
+  "advantages": [
+    {
+      "title": "Wide range",
+      "text": "From basic laboratory tests to genetic diagnostics."
+    },
+    {
+      "title": "Modern equipment",
+      "text": "Ensures accuracy and reliability of results."
+    },
+    {
+      "title": "Qualified specialists",
+      "text": "Experienced doctors and medical staff."
+    },
+    {
+      "title": "Speed and convenience",
+      "text": "Comfortable sample collection and fast turnaround times."
+    },
+    {
+      "title": "Confidentiality",
+      "text": "We guarantee complete data privacy."
+    },
+    {
+      "title": "Personalized approach",
+      "text": "We select the optimal set of tests for each patient."
+    }
+  ],
+
+  "whoTitle": "Who is this service especially important for?",
+  "whoItems": [
+    {
+      "title": "Those focused on prevention",
+      "text": "Regular check-ups help identify potential risks and prevent disease development."
+    },
+    {
+      "title": "Those feeling unwell",
+      "text": "Accurate diagnostics help determine the cause of symptoms and guide effective treatment."
+    },
+    {
+      "title": "Patients undergoing treatment",
+      "text": "Tests help monitor treatment effectiveness and adjust therapy if needed."
+    },
+    {
+      "title": "Pregnant women",
+      "text": "Specialized tests are essential for monitoring the health of both mother and baby."
+    },
+    {
+      "title": "Athletes",
+      "text": "Health assessments help optimize training and avoid overload."
+    }
+  ],
+
+  "stepsTitle": "How it works",
+  "steps": [
+    {
+      "title": "Consultation (if needed)",
+      "text": "You can consult with our specialist to determine which tests are required."
+    },
+    {
+      "title": "Sample collection",
+      "text": "Performed in comfortable conditions and in full compliance with sanitary standards."
+    },
+    {
+      "title": "Laboratory analysis",
+      "text": "Tests are conducted using advanced equipment by experienced professionals."
+    },
+    {
+      "title": "Receiving results",
+      "text": "Results are provided in a clear format, with explanations and a doctor’s consultation if needed."
+    }
+  ],
+
+  "bottomNote": "Don’t postpone taking care of your health!"
+},
+
+"earlyDiagnostics": {
+  "title": "Individual Early Diagnostics",
+  "subtitle": "A personalized approach to early-stage disease detection",
+  "introTitle": "A professional approach to your health",
+  "introText": "Personalized early diagnostics is a comprehensive approach to identifying diseases at the earliest stages, when treatment is most effective. We develop an individual examination program based on your age, lifestyle, genetic background, and personal risk factors.",
+
+  "stats": [
+    { "value": "95%", "label": "Early-stage detection rate" },
+    { "value": "50+", "label": "Types of examinations" },
+    { "value": "1 day", "label": "Complete assessment" }
+  ],
+
+  "advantagesTitle": "Benefits of early diagnostics",
+  "advantages": [
+    {
+      "title": "Early detection",
+      "text": "Identifying conditions at a stage when they are most treatable"
+    },
+    {
+      "title": "Personalized approach",
+      "text": "Examination programs are tailored individually for each patient"
+    },
+    {
+      "title": "Cost efficiency",
+      "text": "Prevention and early treatment are significantly more affordable than treating advanced conditions"
+    },
+    {
+      "title": "Peace of mind",
+      "text": "Regular check-ups provide confidence in your health status"
+    }
+  ],
+
+  "programTitle": "What the program includes",
+  "programItems": [
+    "Comprehensive laboratory tests of blood and urine",
+    "Instrumental diagnostics (ultrasound, ECG, X-ray)",
+    "Consultations with specialized physicians",
+    "Genetic testing for disease predisposition",
+    "Cancer screening using advanced biomarkers",
+    "Cardiovascular risk assessment"
+  ],
+
+  "whoTitle": "Who is this service especially important for?",
+  "whoItems": [
+    {
+      "title": "People over 40",
+      "text": "With age, the risk of developing many conditions increases."
+    },
+    {
+      "title": "People with a family history of disease",
+      "text": "If your family has a history of oncological, cardiovascular, or other serious conditions."
+    },
+    {
+      "title": "People with chronic conditions",
+      "text": "For monitoring health status and preventing flare-ups."
+    },
+    {
+      "title": "People with unhealthy lifestyles",
+      "text": "Smoking, excessive alcohol use, poor nutrition, and lack of physical activity."
+    },
+    {
+      "title": "People exposed to high stress levels",
+      "text": "Those working in harmful environments or experiencing constant stress."
+    }
+  ],
+
+  "bottomNote": "Invest in your health today to enjoy it tomorrow! Personalized early diagnostics is not just a medical service — it is your personal long-term health plan."
+},
+
+"dayHospital": {
+  "title": "Day Hospital",
+  "subtitle": "Comprehensive treatment and monitoring in comfortable conditions without overnight stays",
+  "introTitle": "A professional approach to your health",
+  "introText": "A day hospital is a modern form of medical care that allows patients to receive full treatment and professional supervision without the need for round-the-clock hospitalization. All necessary procedures are completed during the day, and you return home to your family in the evening.",
+
+  "advantagesTitle": "Advantages of the day hospital",
+  "advantages": [
+    {
+      "title": "Comfort",
+      "text": "Treatment in a pleasant environment with the ability to return home in the evening"
+    },
+    {
+      "title": "Time-saving",
+      "text": "No need for long-term hospitalization"
+    },
+    {
+      "title": "Comprehensive care",
+      "text": "Access to all types of diagnostics and treatment"
+    },
+    {
+      "title": "Continuous monitoring",
+      "text": "Qualified medical staff closely monitor your condition"
+    }
+  ],
+
+  "proceduresTitle": "Procedures provided",
+  "procedures": [
+    "Infusion therapy (IV drips) for various indications",
+    "Intramuscular and intravenous injections",
+    "Physiotherapy procedures",
+    "Post-procedure monitoring after minor surgical interventions",
+    "Course-based treatment of chronic conditions",
+    "Rehabilitation therapy following surgical procedures"
+  ],
+
+  "indicationsTitle": "Indications for day hospital care",
+  "indications": [
+    "Planned course-based treatment of chronic diseases",
+    "Recovery after previous illnesses",
+    "Complex diagnostic procedures",
+    "Preparation for scheduled surgeries",
+    "Post-surgical rehabilitation"
+  ],
+
+  "bottomNote": "The day hospital at the SOPHOS Medical Center is an optimal combination of high-quality medical care and comfort. Entrust your health to professionals!"
+},
+
+"treatmentRoom": {
+  "title": "Procedure Room",
+  "subtitle": "Professional performance of medical procedures of any complexity",
+  "introTitle": "A professional approach to your health",
+  "introText": "No medical facility can operate without a procedure room, where various medical procedures are performed—primarily those that involve invasive interventions. SOPHOS, a multidisciplinary medical center in Makhachkala, offers paid procedure room services. Our nurses are highly qualified professionals with extensive practical experience.",
+
+  "biomatTitle": "Biological sample collection",
+  "biomatItems": [
+    "Blood tests: Used to diagnose a wide range of conditions, assess overall health, and monitor treatment effectiveness. We collect both venous and capillary blood samples.",
+    "Urine tests: Used to evaluate kidney and urinary tract function, detect infections, and identify other pathologies.",
+    "Stool tests: Used to diagnose gastrointestinal diseases, detect parasites, and identify hidden bleeding.",
+    "Swabs and scrapings: Used to detect sexually transmitted infections and diagnose skin conditions."
+  ],
+
+  "drugsTitle": "Medication administration",
+  "drugsItems": [
+    "Intramuscular injections: For fast and effective drug delivery when oral administration is not possible or ineffective.",
+    "Intravenous injections: For administering medications directly into the bloodstream, ensuring immediate effect.",
+    "Subcutaneous injections: For administering certain medications, such as insulin or heparin.",
+    "IV drips (intravenous infusion therapy): Used for rehydration, detoxification, vitamin therapy, and administration of other therapeutic solutions."
+  ],
+
+  "bottomNote": "The procedure room at the SOPHOS Medical Center in Makhachkala operates daily, without days off or breaks. Don’t delay taking care of your health—visit our procedure room for timely and high-quality medical care."
+},
+
+"medCertificates": {
+  "title": "Medical Certificates",
+  "subtitle": "Official medical documents for work, education, and other purposes",
+  "introTitle": "A professional approach to your health",
+  "introText": "Medical certificates are required for many life situations: employment, admission to educational institutions, obtaining a driver’s license, visiting swimming pools, and more. At our medical center, you can quickly and conveniently obtain all necessary medical documents.",
+
+  "typesTitle": "Types of certificates we issue",
+  "types": [
+    {
+      "title": "Work certificate",
+      "text": "Medical examinations for employment and periodic health check-ups"
+    },
+    {
+      "title": "Education certificate",
+      "text": "For admission to schools, universities, and kindergartens (Form 086/U)"
+    },
+    {
+      "title": "Driver’s license certificate",
+      "text": "Medical certificate required for obtaining or renewing a driver’s license"
+    },
+    {
+      "title": "Swimming pool certificate",
+      "text": "Medical clearance for swimming pools and sports facilities"
+    },
+    {
+      "title": "Sanatorium certificate",
+      "text": "Health resort card required for sanatorium treatment"
+    },
+    {
+      "title": "General health certificate",
+      "text": "General statement of current health condition"
+    }
+  ],
+
+  "advantagesTitle": "Why choose us",
+  "advantages": [
+    "Fast processing — most certificates are issued on the day of your visit",
+    "All required specialists available in one place",
+    "Official documents with doctor’s signature and stamp",
+    "Convenient working hours with no queues",
+    "Affordable prices for all types of certificates"
+  ],
+
+  "stepsTitle": "How to obtain a certificate",
+  "steps": [
+    {
+      "title": "Book an appointment or visit during working hours",
+      "text": "Book an appointment or visit during working hours without prior registration"
+    },
+    {
+      "title": "Complete required examinations and specialist visits",
+      "text": "Complete all necessary examinations and consultations"
+    },
+    {
+      "title": "Collect your certificate at the reception desk",
+      "text": "Receive your completed certificate at the reception desk"
+    },
+    {
+      "title": "Certification by the chief physician if required",
+      "text": "Have the certificate approved by the chief physician if necessary"
+    }
+  ],
+
+  "bottomNote": "Don’t waste time waiting in public clinics! Obtain all required medical certificates at our center quickly and without unnecessary hassle."
+},
+
+"telemedicine": {
+  "title": "Telemedicine",
+  "subtitle": "Online consultations with qualified specialists",
+  "introTitle": "A professional approach to your health",
+  "introText": "Tired of long queues at clinics? Don’t want to spend time traveling when you’re not feeling well? Want to consult a qualified specialist without leaving your home? Telemedicine is a set of services that allows you to receive medical care remotely using modern information and telecommunication technologies.",
+
+  "canGetTitle": "What you can receive",
+  "canGet": [
+    "Doctor consultation: Discuss your symptoms, receive treatment recommendations, and learn about disease prevention.",
+    "Remote assessment: The doctor can evaluate your condition via video consultation and review your test results.",
+    "Interpretation of test results and examinations: Clarify findings, receive explanations, and get professional recommendations.",
+    "Management of chronic conditions: Regular online consultations help keep your condition under control.",
+    "Second opinion: Discuss your diagnosis and treatment plan with another specialist."
+  ],
+
+  "advantagesTitle": "Advantages of telemedicine",
+  "advantages": [
+    {
+      "title": "Accessibility",
+      "text": "Consultations with leading specialists regardless of your location"
+    },
+    {
+      "title": "Convenience",
+      "text": "Consultations from home, at any time, without travel or waiting"
+    },
+    {
+      "title": "Cost efficiency",
+      "text": "Reduced expenses for transportation, parking, and time off work"
+    },
+    {
+      "title": "Safety",
+      "text": "Lower risk of infection, especially during epidemics"
+    },
+    {
+      "title": "Prompt assistance",
+      "text": "Fast support for acute symptoms or urgent concerns"
+    },
+    {
+      "title": "Confidentiality",
+      "text": "Reliable protection of your personal and medical data"
+    }
+  ],
+
+  "stepsTitle": "How it works",
+  "steps": [
+    {
+      "title": "Choose a specialist and book an appointment",
+      "text": "Select the appropriate doctor from our directory and schedule an online consultation via a convenient platform."
+    },
+    {
+      "title": "Preparation",
+      "text": "Before the consultation, prepare your medical documents, test results, and a list of questions."
+    },
+    {
+      "title": "Online consultation",
+      "text": "At the scheduled time, connect with the doctor via video call."
+    },
+    {
+      "title": "Recommendations",
+      "text": "Following the consultation, the doctor provides written recommendations and prescriptions."
+    }
+  ],
+
+  "bottomNote": "Telemedicine is not a replacement for in-person visits, but an effective tool for receiving timely and qualified medical care. Take care of your health with comfort!"
+},
+
+"expertImaging": {
+  "title": "Expert Review of CT/MRI/PET-CT",
+  "subtitle": "In-depth analysis of imaging results by highly qualified specialists",
+  "introTitle": "A professional approach to your health",
+  "introText": "When it comes to diagnosing diseases, accuracy and a deep understanding of medical imaging results are crucial. That is why expert interpretation of CT, MRI, and PET-CT scans is an essential part of modern healthcare. It involves a thorough analysis performed by a highly qualified specialist.",
+
+  "whatTitle": "What expert imaging review includes",
+  "whatItems": [
+    "In-depth understanding of pathologies: The specialist has extensive knowledge of various diseases and their imaging manifestations.",
+    "Data integration: The expert analyzes all available data in conjunction with clinical findings and medical history.",
+    "Accurate differential diagnosis: Helps establish a precise diagnosis while eliminating incorrect assumptions.",
+    "Disease staging: Precise determination of disease stage, tumor size, and presence of metastases.",
+    "Monitoring treatment effectiveness: Tracking disease progression during therapy.",
+    "Detection of hidden pathologies: Identification of diseases at early stages."
+  ],
+
+  "whenTitle": "When expert imaging review is needed",
+  "whenItems": [
+    {
+      "title": "Initial diagnosis",
+      "text": "To clarify primary imaging results and establish an accurate diagnosis."
+    },
+    {
+      "title": "Diagnostic confirmation",
+      "text": "To ensure the correctness of the diagnosis and avoid unnecessary treatment."
+    },
+    {
+      "title": "Complex cases",
+      "text": "When standard interpretation does not provide a complete clinical picture."
+    },
+    {
+      "title": "Second opinion",
+      "text": "To confirm or challenge the conclusions of a previous examination."
+    },
+    {
+      "title": "Treatment planning",
+      "text": "To select the most effective therapeutic strategy."
+    },
+    {
+      "title": "Monitoring chronic conditions",
+      "text": "For timely detection of disease exacerbations."
+    },
+    {
+      "title": "Oncology",
+      "text": "For accurate assessment of tumor stage and disease progression."
+    }
+  ],
+
+  "advantagesTitle": "Advantages of expert imaging review",
+  "advantages": [
+    "Improved diagnostic accuracy: Reduced risk of diagnostic errors.",
+    "Optimized treatment planning: Selection of the most effective therapy based on precise data.",
+    "Time and cost efficiency: Avoidance of unnecessary procedures and treatments.",
+    "Confidence in your health: Receiving complete and reliable information about your condition."
+  ],
+
+  "bottomNote": "Don’t put your health at risk! Entrust the interpretation of CT, MRI, and PET-CT results to experienced specialists. It is an investment in your well-being and a guarantee of timely treatment."
+},
+"partnership": {
+  "title": "Partner Projects",
+  "subtitle": "Collaboration with leading medical institutions and organizations",
+  "introTitle": "A professional approach to your health",
+  "introText": "The SOPHOS Medical Center actively develops partnerships with leading medical institutions, laboratories, and healthcare organizations. Through these collaborations, our patients gain access to an expanded range of services and advanced medical technologies.",
+
+  "directionsTitle": "Areas of collaboration",
+  "directions": [
+    {
+      "title": "Laboratory diagnostics",
+      "text": "Partnerships with leading laboratories for complex and specialized tests"
+    },
+    {
+      "title": "High-tech medical care",
+      "text": "Referral of patients to specialized centers for complex surgical procedures"
+    },
+    {
+      "title": "Rehabilitation",
+      "text": "Collaboration with sanatoriums and rehabilitation centers"
+    },
+    {
+      "title": "International cooperation",
+      "text": "Consultations with international specialists and treatment abroad"
+    },
+    {
+      "title": "Corporate healthcare",
+      "text": "Medical service programs for organizations and companies"
+    },
+    {
+      "title": "Insurance companies",
+      "text": "Services covered by voluntary health insurance (VHI) policies from leading insurers"
+    }
+  ],
+
+  "benefitsTitle": "Benefits for patients",
+  "benefits": [
+    "Access to rare and complex diagnostic and treatment services",
+    "Opportunity to consult with leading national and international specialists",
+    "Comprehensive support at every stage of treatment",
+    "Special conditions and discounts from our partners",
+    "Unified medical ecosystem — all information in one place"
+  ],
+
+  "stepsTitle": "How to use partner programs",
+  "steps": [
+    {
+      "title": "Contact our specialist with your medical concern",
+      "text": "Contact our specialist and describe your medical issue"
+    },
+    {
+      "title": "The doctor determines the need for partner resources",
+      "text": "The doctor evaluates whether partner services are required"
+    },
+    {
+      "title": "We organize all necessary procedures and consultations",
+      "text": "We coordinate diagnostics, consultations, and treatment with partner organizations"
+    },
+    {
+      "title": "You receive high-quality medical care with full support",
+      "text": "You receive comprehensive medical care with complete coordination"
+    }
+  ],
+
+  "bottomNote": "SOPHOS partner projects give you access to the best medical resources. We combine our efforts for your health!"
+},
+
+"sophosPlus": {
+  "title": "SOPHOS+",
+  "subtitle": "A comprehensive medical care program with a personalized approach",
+  "introTitle": "A professional approach to your health",
+  "introText": "SOPHOS+ is an exclusive comprehensive medical care program designed for those who value their time and health. We offer a personalized approach, priority service, and access to the best specialists and technologies of our medical center.",
+
+  "stats": [
+    { "value": "VIP", "label": "Personalized service" },
+    { "value": "24/7", "label": "Support" },
+    { "value": "100%", "label": "Service coverage" }
+  ],
+
+  "programTitle": "What the SOPHOS+ program includes",
+  "programItems": [
+    {
+      "title": "Personal care coordinator",
+      "text": "Your personal health manager who organizes all appointments and consultations"
+    },
+    {
+      "title": "Priority scheduling",
+      "text": "Appointments with any specialist at a convenient time without waiting"
+    },
+    {
+      "title": "Advanced diagnostics",
+      "text": "A full range of examinations included in the program"
+    },
+    {
+      "title": "Home consultations",
+      "text": "Doctor house calls in emergency situations"
+    },
+    {
+      "title": "24/7 telemedicine",
+      "text": "Round-the-clock access to online consultations"
+    },
+    {
+      "title": "Service discounts",
+      "text": "Special pricing on additional procedures and laboratory tests"
+    }
+  ],
+
+  "benefitsTitle": "Program benefits",
+  "benefits": [
+    "Time-saving: no queues or waiting — everything is planned in advance",
+    "Comprehensive care: regular check-ups according to an individualized schedule",
+    "Unified medical record: complete medical history and test results in one place",
+    "Expert opinions: access to multidisciplinary medical boards",
+    "Hospitalization support: coordination of treatment in leading clinics",
+    "Preventive programs: personalized lifestyle and health recommendations"
+  ],
+
+  "stepsTitle": "How to join SOPHOS+",
+  "steps": [
+    {
+      "title": "Submit a request",
+      "subtitle": "Contact us to receive a detailed consultation"
+    },
+    {
+      "title": "Program selection",
+      "text": "We help you choose the optimal care package based on your needs"
+    },
+    {
+      "title": "Initial assessment",
+      "text": "We conduct a comprehensive evaluation of your health"
+    },
+    {
+      "title": "Program activation",
+      "text": "Receive your personal coordinator and start enjoying the benefits"
+    }
+  ],
+
+  "whoTitle": "Who is this program especially suitable for?",
+  "whoItems": [
+    {
+      "title": "Busy professionals",
+      "text": "Those who value their time and want medical care without waiting"
+    },
+    {
+      "title": "Families",
+      "text": "Comprehensive family programs with care for every family member"
+    },
+    {
+      "title": "People with chronic conditions",
+      "text": "Continuous monitoring and health management"
+    },
+    {
+      "title": "Those focused on prevention",
+      "text": "Regular check-ups and personalized health recommendations"
+    }
+  ],
+
+  "bottomNote": "SOPHOS+ is an investment in your health and quality of life. Join the program and gain access to premium medical care!"
+}
+
   },
   "patientMap": {
     "title": "We Help Patients from All Over the World",
