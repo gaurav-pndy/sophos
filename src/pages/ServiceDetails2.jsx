@@ -6,14 +6,14 @@ import { useMediaQuery } from "react-responsive";
 import WaveBackground from "../components/WaveBackground";
 import BookingPopup from "../components/BookingPopup";
 import ContactViaPhonePopup from "../components/ContactViaPhonePopup";
-import { servicesConfig } from "../data/ServicesConfig";
+import { servicesConfig } from "../data/servicesConfig";
 
 // block components
-import IntroStrip from "../components/service/IntroStrip";
-import StatsStrip from "../components/service/StatsStrip";
-import GridType1 from "../components/service/GridType1";
-import GridType2 from "../components/service/GridType2";
-import GridType3 from "../components/service/GridType3";
+import IntroStrip from "../components/Service/IntroStrip";
+import StatsStrip from "../components/Service/StatsStrip";
+import GridType1 from "../components/Service/GridType1";
+import GridType2 from "../components/Service/GridType2";
+import GridType3 from "../components/Service/GridType3";
 import GridType4 from "../components/Service/GridType4";
 import OtherServices2 from "../components/Service/OtherServices2";
 import { FiPhone } from "react-icons/fi";
