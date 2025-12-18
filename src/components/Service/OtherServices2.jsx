@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
-import { servicesConfig } from "../../data/ServicesConfig";
+import { servicesConfig } from "../../data/servicesConfig";
 
 const OtherServices2 = () => {
   const { t } = useTranslation();
