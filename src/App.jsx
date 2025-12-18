@@ -32,6 +32,8 @@ import ruDefault from "./locales/ru.json";
 
 import enMoscow from "./locales/enMoscow.json";
 import ruMoscow from "./locales/ruMoscow.json";
+import { changeCity } from "./utils/changeCity";
+import { I18nextProvider } from "react-i18next";
 
 function App() {
   const [city, setCity] = useState(() => {
@@ -39,21 +41,23 @@ function App() {
   });
 
   useEffect(() => {
-    localStorage.setItem("city", city);
+    changeCity(city);
+    console.log("City changed to:", city);
   }, [city]);
 
-  useEffect(() => {
-    if (city === "Moscow") {
-      i18n.addResourceBundle("en", "translation", enMoscow, true, true);
-      i18n.addResourceBundle("ru", "translation", ruMoscow, true, true);
-    } else {
-      i18n.addResourceBundle("en", "translation", enDefault, true, true);
-      i18n.addResourceBundle("ru", "translation", ruDefault, true, true);
-    }
+  // useEffect(() => {
+  //   if (city === "Moscow") {
+  //     i18n.addResourceBundle("en", "translation", enMoscow, true, true);
+  //     i18n.addResourceBundle("ru", "translation", ruMoscow, true, true);
+  //   } else {
+  //     i18n.addResourceBundle("en", "translation", enDefault, true, true);
+  //     i18n.addResourceBundle("ru", "translation", ruDefault, true, true);
+  //   }
 
-    // Force re-render translations
-    i18n.reloadResources();
-  }, [city]);
+  //   console.log("Current city:", city);
+
+  //   i18n.reloadResources();
+  // }, [city]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -172,7 +176,11 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <I18nextProvider i18n={i18n} key={city}>
+      <RouterProvider router={router} />
+    </I18nextProvider>
+  );
 }
 
 export default App;

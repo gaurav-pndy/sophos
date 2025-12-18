@@ -8,8 +8,8 @@ import ruDefault from "../locales/ru.json";
 import enMoscow from "../locales/enMoscow.json";
 import ruMoscow from "../locales/ruMoscow.json";
 
-// Get stored city OR fallback
-const city = localStorage.getItem("city") || "Makhachkala";
+const storedCity = localStorage.getItem("city") || "Makhachkala";
+const storedLang = localStorage.getItem("i18nextLng") || "ru";
 
 i18n
   .use(LanguageDetector)
@@ -17,14 +17,20 @@ i18n
   .init({
     resources: {
       en: {
-        translation: city === "Moscow" ? enMoscow : enDefault,
+        Makhachkala: enDefault,
+        Moscow: enMoscow,
       },
       ru: {
-        translation: city === "Moscow" ? ruMoscow : ruDefault,
+        Makhachkala: ruDefault,
+        Moscow: ruMoscow,
       },
     },
 
+    lng: storedLang,
     fallbackLng: "ru",
+
+    ns: ["Makhachkala", "Moscow"],
+    defaultNS: storedCity,
 
     detection: {
       order: ["querystring", "localStorage"],
@@ -34,6 +40,10 @@ i18n
 
     interpolation: {
       escapeValue: false,
+    },
+
+    react: {
+      useSuspense: false,
     },
   });
 
