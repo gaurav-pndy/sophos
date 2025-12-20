@@ -16,6 +16,7 @@ export const servicesConfig = [
   {
     slug: "consultation",
     title: "services.consultation.title",
+    slogan: "services.consultation.slogan",
     subtitle: "services.consultation.subtitle",
     icon: FaUserMd,
     video:
@@ -23,6 +24,13 @@ export const servicesConfig = [
     color1: "#4c5165",
     color2: "#c1c7db",
     stroke: "rgba(51, 186, 189,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "doctors", labelKey: "services.tab2" },
+
+      { key: "other", labelKey: "services.tab5" },
+    ],
+
     blocks: [
       {
         type: "introStrip",
@@ -40,21 +48,29 @@ export const servicesConfig = [
         },
       },
       {
-        // "What does consultation include?"
-        type: "proceduresGrid",
+        // first grid: text left, image right
+        type: "consultationProceduresGrid",
         title: "",
         props: {
           titleKey: "services.consultation.includesTitle",
           itemsKey: "services.consultation.includes",
+          imageSrc:
+            "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=1191&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          imageAltKey: "services.consultation.includesImageAlt",
+          imageLeft: false,
         },
       },
       {
-        // "When to see a doctor?"
-        type: "proceduresGrid",
+        // second grid: image left, text right
+        type: "consultationProceduresGrid",
         title: "",
         props: {
           titleKey: "services.consultation.whenTitle",
           itemsKey: "services.consultation.when",
+          imageSrc:
+            "https://images.unsplash.com/photo-1597764690472-ec054f1c8637?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          imageAltKey: "services.consultation.whenImageAlt",
+          imageLeft: true,
         },
       },
       {
@@ -69,8 +85,9 @@ export const servicesConfig = [
       {
         // Common bottom text box (#f7eede) – you said same for all, so just content
         type: "bottomNote",
-        title: "",
+
         props: {
+          titleKey: "services.consultation.noteTitle",
           textKey: "services.consultation.bottomNote",
         },
       },
@@ -80,6 +97,7 @@ export const servicesConfig = [
   {
     slug: "lab-tests",
     title: "services.labTests.title",
+    slogan: "services.labTests.slogan",
     subtitle: "services.labTests.subtitle",
     icon: FaFlask,
     video:
@@ -87,6 +105,14 @@ export const servicesConfig = [
     color1: "#304f62",
     color2: "#3c7795",
     stroke: "rgba(51, 186, 189,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "diseases", labelKey: "services.tab6" },
+      { key: "doctors", labelKey: "services.tab2" },
+      { key: "reviews", labelKey: "services.tab3" },
+      { key: "prices", labelKey: "services.tab4" },
+      { key: "other", labelKey: "services.tab5" },
+    ],
     blocks: [
       {
         type: "introStrip",
@@ -143,12 +169,21 @@ export const servicesConfig = [
   {
     slug: "early-diagnostics",
     title: "services.earlyDiagnostics.title",
+    slogan: "services.earlyDiagnostics.slogan",
     subtitle: "services.earlyDiagnostics.subtitle",
     icon: FaMicroscope,
     video: "/imetc.mp4",
     color1: "#816861",
     color2: "#e2dad4",
     stroke: "rgba(116, 143, 122,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "diseases", labelKey: "services.tab6" },
+      { key: "doctors", labelKey: "services.tab2" },
+      { key: "reviews", labelKey: "services.tab3" },
+      { key: "prices", labelKey: "services.tab4" },
+      { key: "other", labelKey: "services.tab5" },
+    ],
     blocks: [
       {
         type: "introStrip",
@@ -210,6 +245,14 @@ export const servicesConfig = [
     color1: "#698bff",
     color2: "#000039",
     stroke: "rgba(51, 186, 189,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "diseases", labelKey: "services.tab6" },
+      { key: "doctors", labelKey: "services.tab2" },
+      { key: "reviews", labelKey: "services.tab3" },
+      { key: "prices", labelKey: "services.tab4" },
+      { key: "other", labelKey: "services.tab5" },
+    ],
     blocks: [
       {
         type: "introStrip",
@@ -258,6 +301,7 @@ export const servicesConfig = [
   {
     slug: "treatment-room",
     title: "services.treatmentRoom.title",
+    slogan: "services.treatmentRoom.slogan",
     subtitle: "services.treatmentRoom.subtitle",
     icon: FaSyringe,
     video:
@@ -265,6 +309,14 @@ export const servicesConfig = [
     color1: "#674c40",
     color2: "#d1bcb3",
     stroke: "rgba(45, 115, 64,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "diseases", labelKey: "services.tab6" },
+      { key: "doctors", labelKey: "services.tab2" },
+      { key: "reviews", labelKey: "services.tab3" },
+      { key: "prices", labelKey: "services.tab4" },
+      { key: "other", labelKey: "services.tab5" },
+    ],
     blocks: [
       {
         type: "introStrip",
@@ -312,6 +364,14 @@ export const servicesConfig = [
     color1: "#4784b1",
     color2: "#93d1f3",
     stroke: "rgba(51, 186, 189,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "diseases", labelKey: "services.tab6" },
+      { key: "doctors", labelKey: "services.tab2" },
+      { key: "reviews", labelKey: "services.tab3" },
+      { key: "prices", labelKey: "services.tab4" },
+      { key: "other", labelKey: "services.tab5" },
+    ],
     blocks: [
       {
         type: "introStrip",
@@ -361,6 +421,7 @@ export const servicesConfig = [
   {
     slug: "telemedicine",
     title: "services.telemedicine.title",
+    slogan: "services.telemedicine.slogan",
     subtitle: "services.telemedicine.subtitle",
     icon: GiMedicines,
     video:
@@ -368,6 +429,14 @@ export const servicesConfig = [
     color1: "#7c8c89",
     color2: "#bdceca",
     stroke: "rgba(89, 107, 94,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "diseases", labelKey: "services.tab6" },
+      { key: "doctors", labelKey: "services.tab2" },
+      { key: "reviews", labelKey: "services.tab3" },
+      { key: "prices", labelKey: "services.tab4" },
+      { key: "other", labelKey: "services.tab5" },
+    ],
     blocks: [
       {
         type: "introStrip",
@@ -417,6 +486,7 @@ export const servicesConfig = [
   {
     slug: "expert-imaging-review",
     title: "services.expertImaging.title",
+    slogan: "services.expertImaging.slogan",
     subtitle: "services.expertImaging.subtitle",
     icon: FaXRay,
     video:
@@ -424,6 +494,14 @@ export const servicesConfig = [
     color2: "#d4c3ae",
     color1: "#75523b",
     stroke: "rgba(51, 186, 189,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "diseases", labelKey: "services.tab6" },
+      { key: "doctors", labelKey: "services.tab2" },
+      { key: "reviews", labelKey: "services.tab3" },
+      { key: "prices", labelKey: "services.tab4" },
+      { key: "other", labelKey: "services.tab5" },
+    ],
     blocks: [
       {
         type: "introStrip",
@@ -480,6 +558,14 @@ export const servicesConfig = [
     color1: "#355159",
     color2: "#9bc2d0",
     stroke: "rgba(51, 186, 189,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "diseases", labelKey: "services.tab6" },
+      { key: "doctors", labelKey: "services.tab2" },
+      { key: "reviews", labelKey: "services.tab3" },
+      { key: "prices", labelKey: "services.tab4" },
+      { key: "other", labelKey: "services.tab5" },
+    ],
     blocks: [
       {
         type: "introStrip",
@@ -536,6 +622,14 @@ export const servicesConfig = [
     color1: "#7e4a37",
     color2: "#1f1612",
     stroke: "rgba(51, 186, 189,",
+    tabs: [
+      { key: "about", labelKey: "services.tab1" },
+      { key: "diseases", labelKey: "services.tab6" },
+      { key: "doctors", labelKey: "services.tab2" },
+      { key: "reviews", labelKey: "services.tab3" },
+      { key: "prices", labelKey: "services.tab4" },
+      { key: "other", labelKey: "services.tab5" },
+    ],
     blocks: [
       {
         type: "introStrip",

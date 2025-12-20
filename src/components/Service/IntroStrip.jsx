@@ -3,14 +3,21 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { IoIosOptions } from "react-icons/io"; // you can swap icon if needed
 import { LuTarget } from "react-icons/lu";
+import { motion } from "framer-motion";
+import { fadeInUp } from "../../lib/motionVariants";
 
 const IntroStrip = ({ titleKey, textKey }) => {
   const { t } = useTranslation();
 
   return (
-    <section
-      className="w-full rounded-2xl px-4 py-5 md:px-8 md:py-6 "
+    <motion.section
+      className="w-full rounded-2xl px-4 py-5 md:px-8 md:py-6"
       style={{ backgroundColor: "var(--color-brand1)" }}
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="flex flex-col md:flex-row items-start gap-4">
         {/* Icon badge */}
@@ -34,7 +41,7 @@ const IntroStrip = ({ titleKey, textKey }) => {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

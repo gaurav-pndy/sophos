@@ -1,13 +1,11 @@
-// components/service/GridType1.jsx
-import React from "react";
-import { useTranslation } from "react-i18next";
+// GridType1.jsx
+import { motion } from "framer-motion";
 import {
-  IoIosStar,
-  IoIosHeart,
-  IoIosMedkit,
-  IoIosPulse,
-  IoIosCheckmarkCircle,
-} from "react-icons/io";
+  fadeInUp,
+  fadeInUpStagger,
+  hoverFloat,
+} from "../../lib/motionVariants";
+import { useTranslation } from "react-i18next";
 import { LuTarget } from "react-icons/lu";
 import {
   FaShieldAlt,
@@ -19,6 +17,7 @@ import {
 import { SlBadge } from "react-icons/sl";
 import { RiFlashlightLine } from "react-icons/ri";
 import { IoShieldOutline } from "react-icons/io5";
+import { IoIosCheckmarkCircle, IoIosMedkit, IoIosPulse } from "react-icons/io";
 
 const ICONS = [
   LuTarget,
@@ -38,21 +37,37 @@ const GridType1 = ({ titleKey, itemsKey }) => {
 
   return (
     <section className="w-full">
-      <h2
-        className="subheading leading-0 font-semibold mb-12"
+      <motion.h2
+        className="subheading leading-0 font-semibold text-center mb-12"
         style={{ color: "var(--color-brand1)" }}
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
       >
         {t(titleKey)}
-      </h2>
+      </motion.h2>
 
-      <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3"
+        variants={fadeInUpStagger}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {items.map((item, idx) => {
-          const Icon = ICONS[idx] || ICONS[ICONS.length - 1]; // last as fallback
+          const Icon = ICONS[idx] || ICONS[ICONS.length - 1];
 
           return (
-            <article
+            <motion.article
               key={idx}
               className="bg-white rounded-2xl border border-[#f0ede8] shadow-sm p-5 md:p-6 flex flex-col"
+              variants={fadeInUp}
+              whileHover="hover"
+              initial="rest"
+              animate="rest"
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              {...{ variants: hoverFloat }}
             >
               <div className="flex flex-col items-start gap-3 mb-3">
                 <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 bg-brand3/20">
@@ -76,10 +91,10 @@ const GridType1 = ({ titleKey, itemsKey }) => {
               >
                 {item.text}
               </p>
-            </article>
+            </motion.article>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };

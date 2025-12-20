@@ -17,6 +17,7 @@ import GridType3 from "../components/Service/GridType3";
 import GridType4 from "../components/Service/GridType4";
 import OtherServices2 from "../components/Service/OtherServices2";
 import { FiPhone } from "react-icons/fi";
+import ConsultationGridType2 from "../components/Service/ConsultationGridType2";
 
 const ServiceDetails2 = ({ setShowPopup }) => {
   const { t } = useTranslation();
@@ -40,16 +41,19 @@ const ServiceDetails2 = ({ setShowPopup }) => {
     return null;
   }
 
-  const baseTabs = [
-    { key: "about", label: t("services.tab1") },
-    { key: "diseases", label: t("services.tab6") },
-    { key: "doctors", label: t("services.tab2") },
-    { key: "reviews", label: t("services.tab3") },
-    { key: "prices", label: t("services.tab4") },
-    { key: "other", label: t("services.tab5") },
+  const defaultTabs = [
+    { key: "about", labelKey: "services.tab1" },
+    { key: "diseases", labelKey: "services.tab6" },
+    { key: "doctors", labelKey: "services.tab2" },
+    { key: "reviews", labelKey: "services.tab3" },
+    { key: "prices", labelKey: "services.tab4" },
+    { key: "other", labelKey: "services.tab5" },
   ];
 
-  const TABS = baseTabs;
+  const TABS = (service.tabs || defaultTabs).map((tab) => ({
+    ...tab,
+    label: t(tab.labelKey),
+  }));
 
   const renderBlock = (block, index) => {
     const p = block.props || {};
@@ -69,6 +73,17 @@ const ServiceDetails2 = ({ setShowPopup }) => {
         return (
           <GridType2 key={index} titleKey={p.titleKey} itemsKey={p.itemsKey} />
         );
+      case "consultationProceduresGrid":
+        return (
+          <ConsultationGridType2
+            key={index}
+            titleKey={p.titleKey}
+            itemsKey={p.itemsKey}
+            imageSrc={p.imageSrc}
+            imageAltKey={p.imageAltKey}
+            imageLeft={p.imageLeft}
+          />
+        );
       case "stepsStrip":
         return (
           <GridType3 key={index} titleKey={p.titleKey} stepsKey={p.stepsKey} />
@@ -83,6 +98,14 @@ const ServiceDetails2 = ({ setShowPopup }) => {
             key={index}
             className="w-full border border-brand4/50 rounded-2xl px-4 py-4 md:px-8 md:py-5 mt-4 bg-brand4/20 "
           >
+            {p.titleKey && (
+              <h3
+                className="base-text mb-2 text-center"
+                style={{ color: "var(--color-brand1)" }}
+              >
+                {t(p.titleKey)}
+              </h3>
+            )}
             <p className="base-text text-center text-[var(--color-brand1)]">
               {t(p.textKey)}
             </p>
@@ -127,11 +150,17 @@ const ServiceDetails2 = ({ setShowPopup }) => {
             }, ${service.color1}, ${service.color2})`,
           }}
         >
-          <h1 className="text-white z-40 heading1 font-bold mb-8">
+          <h2 className="text-white z-40 heading1 font-bold  leading-10">
             {t(service.title)}
-          </h1>
+          </h2>
+          {service.slogan && (
+            <p className="base-text mt-4 z-40 text-white">
+              {" "}
+              {t(service.slogan)}
+            </p>
+          )}
 
-          <div className="flex gap-4 flex-col sm:flex-row">
+          <div className="flex gap-4 flex-col sm:flex-row mt-8">
             <button
               onClick={() => setShowPopup(true)}
               className="flex relative z-40 items-center justify-center gap-2 w-full sm:w-fit px-6 py-2.5 rounded-lg bg-white text-brand1 base-text font-medium hover:text-white hover:bg-transparent cursor-pointer transition-all duration-300 border border-white"
@@ -204,6 +233,20 @@ const ServiceDetails2 = ({ setShowPopup }) => {
         {activeTab === "about" && (
           <div className="space-y-12 bg-white rounded-2xl shadow p-8 base-text ">
             {service.blocks && service.blocks.map(renderBlock)}
+            <div className="flex justify-center gap-4 flex-col sm:flex-row ">
+              <button
+                onClick={() => setShowPopup(true)}
+                className="bg-brand1 cursor-pointer border border-brand1 text-white font-semibold rounded-lg px-6 py-2.5 base-text shadow hover:bg-brand5/90 transition-all duration-300 w-full md:w-fit"
+              >
+                {service.btn ? t(service.btn) : t("services.btn1")}
+              </button>
+              <button
+                onClick={() => setIsContactPopupOpen(true)}
+                className="bg-transparent cursor-pointer border border-brand1 w-full md:w-fit text-brand1 font-semibold rounded-lg px-6 py-2.5 base-text shadow hover:bg-brand1 hover:text-white transition-all duration-300 flex items-center gap-2"
+              >
+                <FiPhone /> {t("services.contactPopup")}
+              </button>
+            </div>
           </div>
         )}
 
