@@ -3,11 +3,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
-};
+import {
+  fadeInUp,
+  fadeInUpStagger,
+  hoverFloat,
+} from "../../lib/motionVariants";
 
 const ConsultationGridType2 = ({
   titleKey,
@@ -36,13 +36,9 @@ const ConsultationGridType2 = ({
           return (
             <motion.div
               key={idx}
-              className="flex items-start gap-3 rounded-xl px-4 py-3 md:px-5 md:py-4 bg-brand2/10"
+              className="flex items-start hover:shadow-md transition-all duration-300 hover:scale-101 gap-3 rounded-xl px-4 py-3 md:px-5 md:py-4 bg-brand2/10"
               variants={fadeInUp}
-              transition={{
-                duration: 0.35,
-                ease: "easeOut",
-                delay: idx * 0.05,
-              }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
             >
               <div className="mt-0.5 w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 bg-brand3/20">
                 <FaCheck
@@ -84,11 +80,10 @@ const ConsultationGridType2 = ({
     <section className="w-full">
       <motion.div
         className="rounded-2xl bg-white border border-[#f3eee7] p-4 md:p-6"
-        variants={fadeInUp}
+        variants={fadeInUpStagger}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <h2
           className="subheading text-center font-semibold mb-6"

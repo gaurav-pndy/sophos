@@ -6,6 +6,11 @@ import { useTranslation } from "react-i18next";
 function ContactViaPhonePopup({ onClose }) {
   const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [fullName, setFullName] = useState({
+    firstName: "",
+    lastName: "",
+    middleName: "",
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -45,7 +50,7 @@ function ContactViaPhonePopup({ onClose }) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ phone: phoneNumber }),
+          body: JSON.stringify({ phone: phoneNumber, fullName }),
         }
       );
 
@@ -79,6 +84,8 @@ function ContactViaPhonePopup({ onClose }) {
       setError("");
     }
   };
+
+  const RequiredAsterisk = () => <span className="text-red-500 ml-1">*</span>;
 
   // Check if form can be submitted
   const canSubmit =
@@ -142,6 +149,48 @@ function ContactViaPhonePopup({ onClose }) {
               inputClassName={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] ${
                 error ? "border-red-300" : "border-gray-300"
               }`}
+            />
+          </div>
+          <div>
+            <label className="block small-text font-medium mb-2">
+              {t("contact.lastName")} <RequiredAsterisk />
+            </label>
+            <input
+              type="text"
+              required
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] border-gray-300"
+              value={fullName.lastName}
+              onChange={(e) =>
+                setFullName({ ...fullName, lastName: e.target.value })
+              }
+            />
+          </div>
+          <div>
+            <label className="block small-text font-medium mb-2">
+              {t("contact.firstName")} <RequiredAsterisk />
+            </label>
+            <input
+              type="text"
+              required
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] border-gray-300"
+              value={fullName.firstName}
+              onChange={(e) =>
+                setFullName({ ...fullName, firstName: e.target.value })
+              }
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block small-text font-medium mb-2">
+              {t("contact.middleName")}
+            </label>
+            <input
+              type="text"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] border-gray-300"
+              value={fullName.middleName}
+              onChange={(e) =>
+                setFullName({ ...fullName, middleName: e.target.value })
+              }
             />
           </div>
 
