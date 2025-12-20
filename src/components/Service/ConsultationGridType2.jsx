@@ -38,7 +38,10 @@ const ConsultationGridType2 = ({
               key={idx}
               className="flex items-start hover:shadow-md transition-all duration-300 hover:scale-101 gap-3 rounded-xl px-4 py-3 md:px-5 md:py-4 bg-brand2/10"
               variants={fadeInUp}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <div className="mt-0.5 w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 bg-brand3/20">
                 <FaCheck
