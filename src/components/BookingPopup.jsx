@@ -10,9 +10,15 @@ const BookingPopup = ({ show, onClose }) => {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+      onClick={onClose}
+    >
       {/* Popup Container */}
-      <div className="bg-white rounded-xl w-[95%] max-w-3xl overflow-hidden shadow-2xl pt-12 relative animate-[popup_0.25s_ease]">
+      <div
+        className="bg-white rounded-xl w-[95%] max-w-3xl overflow-hidden shadow-2xl pt-12 relative animate-[popup_0.25s_ease]"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close Button */}
         <button
           onClick={onClose}

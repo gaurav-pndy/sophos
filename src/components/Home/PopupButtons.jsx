@@ -39,6 +39,7 @@ const PopupButtons = () => {
           <>
             <motion.div
               className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
+              onClick={() => setShowFeedbackPopup(false)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -46,6 +47,7 @@ const PopupButtons = () => {
             >
               <motion.div
                 className="bg-white rounded-xl shadow-lg max-w-4xl w-full mx-4 p-4 md:p-6 pt-10 md:pt-12 relative  overflow-hidden "
+                onClick={(e) => e.stopPropagation()}
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
@@ -72,12 +74,14 @@ const PopupButtons = () => {
           <>
             <motion.div
               className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
+              onClick={() => setShowContactPopup(false)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
               <motion.div
+                onClick={(e) => e.stopPropagation()}
                 className="bg-white rounded-xl shadow-lg max-w-[87rem] w-full mx-4 p-4 md:p-6 pt-10 md:pt-12 relative  overflow-hidden "
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}

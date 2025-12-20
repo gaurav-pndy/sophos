@@ -2,6 +2,7 @@ import { useState } from "react";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { useTranslation } from "react-i18next";
+import { RxCross1 } from "react-icons/rx";
 
 function ContactViaPhonePopup({ onClose }) {
   const { t } = useTranslation();
@@ -18,11 +19,8 @@ function ContactViaPhonePopup({ onClose }) {
   const API_BASE =
     import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
 
-  // Validate phone number - check if it's a valid international phone number
   const isValidPhoneNumber = (phone) => {
-    // Remove any non-digit characters except + for basic validation
     const cleanPhone = phone.replace(/[^\d+]/g, "");
-    // Check if phone has at least 10 digits (including country code)
     return cleanPhone.replace(/\D/g, "").length >= 10;
   };
 
@@ -30,7 +28,6 @@ function ContactViaPhonePopup({ onClose }) {
     e.preventDefault();
     setError("");
 
-    // Validate phone number
     if (!phoneNumber.trim()) {
       setError(t("contactViaPhone.validation.required"));
       return;
@@ -59,7 +56,6 @@ function ContactViaPhonePopup({ onClose }) {
         console.log("Success:", result);
         setIsSuccess(true);
 
-        // Auto close after 5 seconds
         setTimeout(() => {
           setIsSuccess(false);
           onClose();
@@ -76,10 +72,8 @@ function ContactViaPhonePopup({ onClose }) {
     }
   };
 
-  // Handle phone input change with validation
   const handlePhoneChange = (phone) => {
     setPhoneNumber(phone);
-    // Clear error when user starts typing
     if (error) {
       setError("");
     }
@@ -87,14 +81,20 @@ function ContactViaPhonePopup({ onClose }) {
 
   const RequiredAsterisk = () => <span className="text-red-500 ml-1">*</span>;
 
-  // Check if form can be submitted
   const canSubmit =
     phoneNumber.trim() && isValidPhoneNumber(phoneNumber) && !isSubmitting;
 
+  // Success state popup (also closes on outside click)
   if (isSuccess) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-        <div className="bg-white p-6 rounded-lg w-96 shadow-xl">
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+        onClick={onClose}
+      >
+        <div
+          className="bg-white p-6 rounded-lg max-w-xl shadow-xl"
+          onClick={(e) => e.stopPropagation()}
+        >
           <div className="text-center">
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg
@@ -124,11 +124,20 @@ function ContactViaPhonePopup({ onClose }) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="bg-white p-6 rounded-lg w-96 shadow-xl">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white p-6 rounded-lg max-w-xl relative shadow-xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <RxCross1
+          onClick={onClose}
+          className="absolute top-4 right-4 cursor-pointer"
+        />
         <h2 className="text-xl font-bold mb-4">{t("contactViaPhone.title")}</h2>
 
-        {/* Error Message */}
         {error && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
             <p className="text-red-700 small-text">{error}</p>
@@ -136,6 +145,51 @@ function ContactViaPhonePopup({ onClose }) {
         )}
 
         <form onSubmit={handleSubmit}>
+          <div className="grid md:grid-cols-3 gap-2 mb-4">
+            <div>
+              <label className="block small-text font-medium mb-2">
+                {t("contact.lastName")} <RequiredAsterisk />
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] border-gray-300"
+                value={fullName.lastName}
+                onChange={(e) =>
+                  setFullName({ ...fullName, lastName: e.target.value })
+                }
+              />
+            </div>
+            <div>
+              <label className="block small-text font-medium mb-2">
+                {t("contact.firstName")} <RequiredAsterisk />
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] border-gray-300"
+                value={fullName.firstName}
+                onChange={(e) =>
+                  setFullName({ ...fullName, firstName: e.target.value })
+                }
+              />
+            </div>
+
+            <div>
+              <label className="block small-text font-medium mb-2">
+                {t("contact.middleName")}
+              </label>
+              <input
+                type="text"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] border-gray-300"
+                value={fullName.middleName}
+                onChange={(e) =>
+                  setFullName({ ...fullName, middleName: e.target.value })
+                }
+              />
+            </div>
+          </div>
+
           <div className="mb-4">
             <label className="block small-text font-medium mb-2">
               {t("contactViaPhone.phoneLabel")}{" "}
@@ -149,48 +203,6 @@ function ContactViaPhonePopup({ onClose }) {
               inputClassName={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] ${
                 error ? "border-red-300" : "border-gray-300"
               }`}
-            />
-          </div>
-          <div>
-            <label className="block small-text font-medium mb-2">
-              {t("contact.lastName")} <RequiredAsterisk />
-            </label>
-            <input
-              type="text"
-              required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] border-gray-300"
-              value={fullName.lastName}
-              onChange={(e) =>
-                setFullName({ ...fullName, lastName: e.target.value })
-              }
-            />
-          </div>
-          <div>
-            <label className="block small-text font-medium mb-2">
-              {t("contact.firstName")} <RequiredAsterisk />
-            </label>
-            <input
-              type="text"
-              required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] border-gray-300"
-              value={fullName.firstName}
-              onChange={(e) =>
-                setFullName({ ...fullName, firstName: e.target.value })
-              }
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block small-text font-medium mb-2">
-              {t("contact.middleName")}
-            </label>
-            <input
-              type="text"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#947d76] border-gray-300"
-              value={fullName.middleName}
-              onChange={(e) =>
-                setFullName({ ...fullName, middleName: e.target.value })
-              }
             />
           </div>
 
