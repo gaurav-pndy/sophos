@@ -61,7 +61,11 @@ const ServiceDetails2 = ({ setShowPopup }) => {
     switch (block.type) {
       case "introStrip":
         return (
-          <IntroStrip key={index} titleKey={p.titleKey} textKey={p.textKey} />
+          <IntroStrip
+            key={index}
+            titleKey={service.slogan}
+            textKey={p.textKey}
+          />
         );
       case "statsStrip":
         return <StatsStrip key={index} itemsKey={p.itemsKey} />;
@@ -96,7 +100,7 @@ const ServiceDetails2 = ({ setShowPopup }) => {
         return (
           <section
             key={index}
-            className="w-full border border-brand4/50 rounded-2xl px-4 py-4 md:px-8 md:py-5 mt-4 bg-brand4/20 "
+            className="w-full border border-brand4/50 font-semibold rounded-2xl px-4 py-4 md:px-8 md:py-5 mt-4 bg-brand4/20 "
           >
             {p.titleKey && (
               <h3
@@ -153,12 +157,12 @@ const ServiceDetails2 = ({ setShowPopup }) => {
           <h2 className="text-white z-40 heading1 font-bold  leading-10">
             {t(service.title)}
           </h2>
-          {service.slogan && (
+          {/* {service.slogan && (
             <p className="base-text mt-4 z-40 text-white">
               {" "}
               {t(service.slogan)}
             </p>
-          )}
+          )} */}
 
           <div className="flex gap-4 flex-col sm:flex-row mt-8">
             <button

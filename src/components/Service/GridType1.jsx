@@ -61,7 +61,7 @@ const GridType1 = ({ titleKey, itemsKey }) => {
           return (
             <motion.article
               key={idx}
-              className="bg-white rounded-2xl border border-[#f0ede8] shadow-sm p-5 md:p-6 flex flex-col"
+              className="bg-white rounded-2xl border border-[#f0ede8] shadow-lg p-5 md:p-6 flex flex-col"
               variants={fadeInUp}
               whileHover="hover"
               initial="rest"

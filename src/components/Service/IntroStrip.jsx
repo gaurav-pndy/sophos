@@ -30,12 +30,15 @@ const IntroStrip = ({ titleKey, textKey }) => {
 
         {/* Text */}
         <div className="flex-1">
-          <h2
-            className="subheading font-semibold mb-2"
-            style={{ color: "#ffffff" }}
-          >
-            {t(titleKey)}
-          </h2>
+          {titleKey && (
+            <h2
+              className="subheading font-semibold mb-2"
+              style={{ color: "#ffffff" }}
+            >
+              {t(titleKey)}
+            </h2>
+          )}
+
           <p className="base-text leading-relaxed" style={{ color: "#f9fafb" }}>
             {t(textKey)}
           </p>
