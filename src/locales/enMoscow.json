@@ -71,6 +71,11 @@
     "patient2": "Preparation for the study",
     "patient5": "About diseases",
     "patient6": "Documents",
+    "patientSub": {
+"s1": "Expert consultations",
+"s2": "Specialist consultations",
+"s3": "Ultrasound examination (ultrasound)"
+},
     "oncologist": "Oncologists",
     "oncologicalCare": "Oncological Care",
     "complicated": "Complicated Cases",
