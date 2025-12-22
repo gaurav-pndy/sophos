@@ -18,8 +18,10 @@ import GridType4 from "../components/Service/GridType4";
 import OtherServices2 from "../components/Service/OtherServices2";
 import { FiPhone } from "react-icons/fi";
 import ConsultationGridType2 from "../components/Service/ConsultationGridType2";
+import Specialists from "../components/Service/Specialists";
+import MembershipSection from "../components/Home/MembershipSection";
 
-const ServiceDetails2 = ({ setShowPopup }) => {
+const ServiceDetails2 = ({ city, setShowPopup }) => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const navigate = useNavigate();
@@ -70,7 +72,9 @@ const ServiceDetails2 = ({ setShowPopup }) => {
       case "statsStrip":
         return <StatsStrip key={index} itemsKey={p.itemsKey} />;
       case "advantagesGrid":
-        return (
+        return service.slug == "sophos-plus" ? (
+          <MembershipSection key={index} />
+        ) : (
           <GridType1 key={index} titleKey={p.titleKey} itemsKey={p.itemsKey} />
         );
       case "proceduresGrid":
@@ -110,9 +114,10 @@ const ServiceDetails2 = ({ setShowPopup }) => {
                 {t(p.titleKey)}
               </h3>
             )}
-            <p className="base-text text-center text-[var(--color-brand1)]">
-              {t(p.textKey)}
-            </p>
+            <p
+              className="base-text text-center text-[var(--color-brand1)]"
+              dangerouslySetInnerHTML={{ __html: t(p.textKey) }}
+            ></p>
           </section>
         );
       default:
@@ -154,9 +159,10 @@ const ServiceDetails2 = ({ setShowPopup }) => {
             }, ${service.color1}, ${service.color2})`,
           }}
         >
-          <h2 className="text-white z-40 heading1 font-bold  leading-10">
-            {t(service.title)}
-          </h2>
+          <h2
+            className="text-white z-40 heading1 font-bold  leading-10"
+            dangerouslySetInnerHTML={{ __html: t(service.title) }}
+          ></h2>
           {/* {service.slogan && (
             <p className="base-text mt-4 z-40 text-white">
               {" "}
@@ -169,7 +175,7 @@ const ServiceDetails2 = ({ setShowPopup }) => {
               onClick={() => setShowPopup(true)}
               className="flex relative z-40 items-center justify-center gap-2 w-full sm:w-fit px-6 py-2.5 rounded-lg bg-white text-brand1 base-text font-medium hover:text-white hover:bg-transparent cursor-pointer transition-all duration-300 border border-white"
             >
-              {service.btn ? t(service.btn) : t("services.btn1")}
+              {service.btn1 ? t(service.btn1) : t("services.btn1")}
             </button>
             <button
               onClick={() => setIsContactPopupOpen(true)}
@@ -265,6 +271,9 @@ const ServiceDetails2 = ({ setShowPopup }) => {
         {activeTab === "doctors" && (
           <div className="bg-white rounded-2xl shadow p-8 base-text ">
             {/* TODO: list doctors for this service */}
+            {service.slug == "consultation" && (
+              <Specialists branch={city} setShowPopup={setShowPopup} />
+            )}
           </div>
         )}
 

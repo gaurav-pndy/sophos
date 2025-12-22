@@ -99,6 +99,7 @@ export const servicesConfig = [
     title: "services.labTests.title",
     slogan: "services.labTests.slogan",
     subtitle: "services.labTests.subtitle",
+    btn1: "services.labTests.btn1",
     icon: FaFlask,
     video:
       "https://www.shutterstock.com/shutterstock/videos/3769370609/preview/stock-footage-meeting-between-doctor-and-patient-to-examine-mri-scan-showing-a-tumor-exploring-treatment-options.webm",
@@ -107,9 +108,7 @@ export const servicesConfig = [
     stroke: "rgba(51, 186, 189,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
-      { key: "diseases", labelKey: "services.tab6" },
-      { key: "doctors", labelKey: "services.tab2" },
-      { key: "reviews", labelKey: "services.tab3" },
+
       { key: "prices", labelKey: "services.tab4" },
       { key: "other", labelKey: "services.tab5" },
     ],
@@ -171,6 +170,7 @@ export const servicesConfig = [
     title: "services.earlyDiagnostics.title",
     slogan: "services.earlyDiagnostics.slogan",
     subtitle: "services.earlyDiagnostics.subtitle",
+    btn1: "services.earlyDiagnostics.btn1",
     icon: FaMicroscope,
     video: "/imetc.mp4",
     color1: "#816861",
@@ -178,9 +178,7 @@ export const servicesConfig = [
     stroke: "rgba(116, 143, 122,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
-      { key: "diseases", labelKey: "services.tab6" },
       { key: "doctors", labelKey: "services.tab2" },
-      { key: "reviews", labelKey: "services.tab3" },
       { key: "prices", labelKey: "services.tab4" },
       { key: "other", labelKey: "services.tab5" },
     ],
@@ -303,6 +301,7 @@ export const servicesConfig = [
     title: "services.treatmentRoom.title",
     slogan: "services.treatmentRoom.slogan",
     subtitle: "services.treatmentRoom.subtitle",
+    btn1: "services.treatmentRoom.btn1",
     icon: FaSyringe,
     video:
       "https://www.shutterstock.com/shutterstock/videos/1057599388/preview/stock-footage-close-up-shot-of-unrecognizable-man-holding-hand-of-sick-woman-lying-in-hospital-bed.webm",
@@ -311,9 +310,7 @@ export const servicesConfig = [
     stroke: "rgba(45, 115, 64,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
-      { key: "diseases", labelKey: "services.tab6" },
-      { key: "doctors", labelKey: "services.tab2" },
-      { key: "reviews", labelKey: "services.tab3" },
+
       { key: "prices", labelKey: "services.tab4" },
       { key: "other", labelKey: "services.tab5" },
     ],
@@ -423,6 +420,7 @@ export const servicesConfig = [
     title: "services.telemedicine.title",
     slogan: "services.telemedicine.slogan",
     subtitle: "services.telemedicine.subtitle",
+    btn1: "services.telemedicine.btn1",
     icon: GiMedicines,
     video:
       "https://www.shutterstock.com/shutterstock/videos/3788749615/preview/stock-footage-close-up-of-biologist-gloved-hands-using-microscope-in-sterile-laboratory-vibrant-blue-gloves.webm",
@@ -431,10 +429,7 @@ export const servicesConfig = [
     stroke: "rgba(89, 107, 94,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
-      { key: "diseases", labelKey: "services.tab6" },
       { key: "doctors", labelKey: "services.tab2" },
-      { key: "reviews", labelKey: "services.tab3" },
-      { key: "prices", labelKey: "services.tab4" },
       { key: "other", labelKey: "services.tab5" },
     ],
     blocks: [
@@ -487,6 +482,7 @@ export const servicesConfig = [
     slug: "expert-imaging-review",
     title: "services.expertImaging.title",
     slogan: "services.expertImaging.slogan",
+    btn1: "services.expertImaging.btn1",
     subtitle: "services.expertImaging.subtitle",
     icon: FaXRay,
     video:
@@ -496,10 +492,8 @@ export const servicesConfig = [
     stroke: "rgba(51, 186, 189,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
-      { key: "diseases", labelKey: "services.tab6" },
       { key: "doctors", labelKey: "services.tab2" },
-      { key: "reviews", labelKey: "services.tab3" },
-      { key: "prices", labelKey: "services.tab4" },
+
       { key: "other", labelKey: "services.tab5" },
     ],
     blocks: [
@@ -639,13 +633,7 @@ export const servicesConfig = [
           textKey: "services.sophosPlus.introText",
         },
       },
-      {
-        type: "statsStrip",
-        title: "",
-        props: {
-          itemsKey: "services.sophosPlus.stats",
-        },
-      },
+
       {
         // Что входит в программу
         type: "advantagesGrid",

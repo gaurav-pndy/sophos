@@ -727,7 +727,7 @@ const PreparationTab = ({ t }) => {
                 <FaMicroscope className="text-brand1 " />
               </div>
               <span className="font-semibold  text-brand1 text-left">
-                Эзофагогастродуоденоскопия:
+                Эзофагогастродуоденоскопия
               </span>
             </div>
             <BiChevronDown
@@ -778,7 +778,7 @@ const PreparationTab = ({ t }) => {
                 <FaMicroscope className="text-brand1 " />
               </div>
               <span className="font-semibold  text-brand1 text-left">
-                Колоноскопия:{" "}
+                Колоноскопия{" "}
               </span>
             </div>
             <BiChevronDown
@@ -824,7 +824,7 @@ const PreparationTab = ({ t }) => {
                 <FaMicroscope className="text-brand1 " />
               </div>
               <span className="font-semibold  text-brand1 text-left">
-                ПЭТ-КТ:
+                ПЭТ-КТ
               </span>
             </div>
             <BiChevronDown

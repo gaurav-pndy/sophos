@@ -51,7 +51,7 @@ const MembershipSection = () => {
   ];
 
   return (
-    <section className="w-full  py-6">
+    <section className="w-full  ">
       <div className="max-w-[87rem] text-center mx-auto px-4 ">
         <section className="relative rounded-xl  mx-auto  items-center overflow-hidden ">
           <div className="text-center w-full  h-full   ">

@@ -34,9 +34,12 @@ const AboutOfferContract = ({ city }) => {
             </span>
             {t("about.contract.section1Title")}
           </h3>
-          <p className="text-brand1/80 base-text leading-relaxed ml-9">
-            {t("about.contract.section1Text")}
-          </p>
+          <p
+            className="text-brand1/80 base-text leading-relaxed ml-9"
+            dangerouslySetInnerHTML={{
+              __html: t("about.contract.section1Text"),
+            }}
+          ></p>
         </div>
 
         {/* Section 2 */}
@@ -47,9 +50,12 @@ const AboutOfferContract = ({ city }) => {
             </span>
             {t("about.contract.section2Title")}
           </h3>
-          <p className="text-brand1/80 base-text leading-relaxed ml-9">
-            {t("about.contract.section2Text")}
-          </p>
+          <p
+            className="text-brand1/80 base-text leading-relaxed ml-9"
+            dangerouslySetInnerHTML={{
+              __html: t("about.contract.section2Text"),
+            }}
+          ></p>
         </div>
 
         {/* Section 3 */}
@@ -194,9 +200,12 @@ const AboutOfferContract = ({ city }) => {
             </span>
             {t("about.contract.section6Title")}
           </h3>
-          <p className="text-brand1/80 base-text leading-relaxed ml-9">
-            {t("about.contract.section6Text")}
-          </p>
+          <p
+            className="text-brand1/80 base-text leading-relaxed ml-9"
+            dangerouslySetInnerHTML={{
+              __html: t("about.contract.section6Text"),
+            }}
+          ></p>
         </div>
 
         {/* Section 7 */}
@@ -207,9 +216,12 @@ const AboutOfferContract = ({ city }) => {
             </span>
             {t("about.contract.section7Title")}
           </h3>
-          <p className="text-brand1/80 base-text leading-relaxed ml-9">
-            {t("about.contract.section7Text")}
-          </p>
+          <p
+            className="text-brand1/80 base-text leading-relaxed ml-9"
+            dangerouslySetInnerHTML={{
+              __html: t("about.contract.section7Text"),
+            }}
+          ></p>
         </div>
 
         {/* Section 8 */}
@@ -250,11 +262,15 @@ const AboutOfferContract = ({ city }) => {
                   <span className="text-brand1/60 small-text uppercase tracking-wide">
                     {t("about.contract.legalAddress")}
                   </span>
-                  <p className="text-brand1 font-medium">
-                    {city === "Moscow"
-                      ? t("about.info.moscowAddress")
-                      : t("about.info.makhachkalaAddress")}
-                  </p>
+                  <p
+                    className="text-brand1 font-medium"
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        city === "Moscow"
+                          ? t("about.info.moscowAddress")
+                          : t("about.info.makhachkalaAddress"),
+                    }}
+                  ></p>
                 </div>
                 <div>
                   <span className="text-brand1/60 small-text uppercase tracking-wide">

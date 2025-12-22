@@ -68,7 +68,7 @@
           "title": "Telemedicine"
         },
         "s8": {
-          "title": "Expert Review of CT/MRI/PET-CT"
+          "title": "Expert Review of <br/> CT/MRI/PET-CT"
         },
         "s9": {
           "title": "Partner Projects",
@@ -1144,6 +1144,7 @@
   "title": "Tests & Diagnostics",
   "subtitle": "A wide range of laboratory analyses and diagnostic procedures",
   "slogan": "Your key to health and confidence",
+  "btn1": "Sign Up",
   "introTitle": "A professional approach to your health",
   "introText": "In today’s world, caring for your health is not just a trend — it is a necessity. Regular testing and accurate diagnostics form the foundation of long-term well-being, disease prevention, and early detection of any abnormalities.",
 
@@ -1232,6 +1233,7 @@
   "title": "Individual Early Diagnostics",
   "subtitle": "A personalized approach to early-stage disease detection",
   "slogan": "Your key to a long and healthy life",
+  "btn1": "Select a package",
   "introTitle": "A professional approach to your health",
   "introText": "Personalized early diagnostics is a comprehensive approach to identifying diseases at the earliest stages, when treatment is most effective. We develop an individual examination program based on your age, lifestyle, genetic background, and personal risk factors.",
 
@@ -1350,6 +1352,7 @@
   "title": "Procedure Room",
   "subtitle": "Professional performance of medical procedures of any complexity",
   "slogan": "Your health is in good hands",
+  "btn1": "Get a service",
   "introTitle": "A professional approach to your health",
   "introText": "No medical facility can operate without a procedure room, where various medical procedures are performed—primarily those that involve invasive interventions. SOPHOS, a multidisciplinary medical center in Makhachkala, offers paid procedure room services. Our nurses are highly qualified professionals with extensive practical experience.",
 
@@ -1369,7 +1372,7 @@
     "IV drips (intravenous infusion therapy): Used for rehydration, detoxification, vitamin therapy, and administration of other therapeutic solutions."
   ],
 
-  "bottomNote": "The procedure room at the SOPHOS Medical Center in Makhachkala operates daily, without days off or breaks. Don’t delay taking care of your health—visit our procedure room for timely and high-quality medical care."
+  "bottomNote": "The procedure room at the SOPHOS Medical Center in Makhachkala operates daily, without days off or breaks.<br/> Don’t delay taking care of your health! <br/> Visit our procedure room for timely and high-quality medical care."
 },
 
 "medCertificates": {
@@ -1442,6 +1445,7 @@
   "title": "Telemedicine",
   "subtitle": "Online consultations with qualified specialists",
   "slogan": "Your Health is at Arm's Length",
+  "btn1": "Make an appointment for a consultation",
   "introTitle": "A professional approach to your health",
   "introText": "Tired of long queues at clinics? Don’t want to spend time traveling when you’re not feeling well? Want to consult a qualified specialist without leaving your home? Telemedicine is a set of services that allows you to receive medical care remotely using modern information and telecommunication technologies.",
 
@@ -1506,9 +1510,10 @@
 },
 
 "expertImaging": {
-  "title": "Expert Review of CT/MRI/PET-CT",
+  "title": "Expert Review of <br/> CT/MRI/PET-CT",
   "subtitle": "In-depth analysis of imaging results by highly qualified specialists",
   "slogan": "Your view of health with maximum precision",
+  "btn1": "Get a score",
   "introTitle": "A professional approach to your health",
   "introText": "When it comes to diagnosing diseases, accuracy and a deep understanding of medical imaging results are crucial. That is why expert interpretation of CT, MRI, and PET-CT scans is an essential part of modern healthcare. It involves a thorough analysis performed by a highly qualified specialist.",
 
@@ -1562,7 +1567,7 @@
     "Confidence in your health: Receiving complete and reliable information about your condition."
   ],
 
-  "bottomNote": "Don’t put your health at risk! Entrust the interpretation of CT, MRI, and PET-CT results to experienced specialists. It is an investment in your well-being and a guarantee of timely treatment."
+  "bottomNote": "Don’t put your health at risk! Entrust the interpretation of CT, MRI, and PET-CT results to experienced specialists. <br/> It is an investment in your well-being and a guarantee of timely treatment."
 },
 "partnership": {
   "title": "Partner Projects",
@@ -1737,7 +1742,7 @@
     "patients": "Patients"
   },
   "membership": {
-    "badge": "HDMC+ Membership",
+    "badge": "SOPHOS+ Membership",
     "title": "Premium Medical Care",
     "subtitle": "An exclusive membership program for those who value quality healthcare and a personalized approach",
     "features": {
@@ -2088,10 +2093,10 @@
       "subtitle": "Information on the protection and processing of patients’ personal data",
 
       "section1Title": "General Provisions",
-      "point1": "This Personal Data Processing Policy (hereinafter referred to as the Policy) is developed in accordance with Clause 2, Article 18.1 of the Federal Law of July 27, 2006 No. 152-FZ 'On Personal Data' (hereinafter referred to as the Law on Personal Data) and is a fundamental internal document of LLC 'HD CLINIC' (hereinafter referred to as the Organization), defining key directions of activity in the field of processing and protection of personal data.",
-      "point2": "The Policy defines the procedure for processing personal data and measures to ensure their security in LLC 'HD CLINIC', and is developed to implement the requirements of the legislation of the Russian Federation in the field of protecting human and civil rights and freedoms during the processing of personal data, including the protection of the right to privacy, personal, family, and medical confidentiality.",
+      "point1": "This Personal Data Processing Policy (hereinafter referred to as the Policy) is developed in accordance with Clause 2, Article 18.1 of the Federal Law of July 27, 2006 No. 152-FZ 'On Personal Data' (hereinafter referred to as the Law on Personal Data) and is a fundamental internal document of LLC 'La Clinica' (hereinafter referred to as the Organization), defining key directions of activity in the field of processing and protection of personal data.",
+      "point2": "The Policy defines the procedure for processing personal data and measures to ensure their security in LLC 'La Clinica', and is developed to implement the requirements of the legislation of the Russian Federation in the field of protecting human and civil rights and freedoms during the processing of personal data, including the protection of the right to privacy, personal, family, and medical confidentiality.",
       "point3": "The provisions of this Policy apply to all relationships related to the processing and protection of personal data obtained by the Organization both before and after the approval of this Policy.",
-      "point4": "This Policy is a publicly available document and is published on the official resources of LLC 'HD CLINIC'.",
+      "point4": "This Policy is a publicly available document and is published on the official resources of LLC 'La Clinica'.",
 
       "section2Title": "Key Terms",
       "section2Subtitle": "The following terms are used in this document:",
@@ -2104,7 +2109,7 @@
       "point27": "<b>Protection of Personal Data</b> – a set of legal, organizational, and technical measures aimed at preventing unlawful actions involving personal data.",
 
       "section3Title": "Purposes of Personal Data Processing",
-      "section3Subtitle": "The processing of personal data by LLC 'HD CLINIC' is carried out solely to achieve specific, lawful purposes, including:",
+      "section3Subtitle": "The processing of personal data by LLC 'La Clinica' is carried out solely to achieve specific, lawful purposes, including:",
       "point31": "providing medical services to patients;",
       "point32": "maintaining medical documentation;",
       "point33": "organizing appointments with doctors;",
@@ -2156,7 +2161,7 @@
       "point81": "obtain information about the processing of their personal data;",
       "point82": "demand clarification, blocking, or deletion of personal data;",
       "point83": "withdraw consent to processing;",
-      "point84": "appeal the actions or inaction of LLC 'HD CLINIC' to Roskomnadzor or to court;",
+      "point84": "appeal the actions or inaction of LLC 'La Clinica' to Roskomnadzor or to court;",
       "point85": "require notification of all persons to whom inaccurate or incomplete data were transferred about the corrections made;",
       "point86": "protect their rights in court.",
 
@@ -2181,7 +2186,7 @@
       "section10Text": "Liability for violating personal data legislation requirements is determined in accordance with the current legislation of the Russian Federation.",
 
       "section11Title": "Final Provisions",
-      "section11Subtitle": "This Policy comes into force upon approval by the General Director of LLC 'HD CLINIC' and remains valid indefinitely until replaced by a new edition.<br/>The Policy is publicly available and published in open access on the Organization’s official website."
+      "section11Subtitle": "This Policy comes into force upon approval by the General Director of LLC 'La Clinica' and remains valid indefinitely until replaced by a new edition.<br/>The Policy is publicly available and published in open access on the Organization’s official website."
     },
     "contract": {
       "title": "Public Offer Agreement",
@@ -2380,7 +2385,7 @@
   },
   "forPatientsPage": {
     "title": "For Patients",
-    "subtitle": "All the necessary information for a comfortable medical experience at HDMC",
+    "subtitle": "All the necessary information for a comfortable medical experience at SOPHOS",
     "heading1": "Appointment Booking",
     "text1": "Convenient online booking with our clinic specialists. Choose a doctor, select a time, and confirm your visit in just a few clicks. Our booking system operates 24/7, allowing you to schedule your visit at any convenient time.",
     "btn1": "Book Online",

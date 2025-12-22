@@ -138,7 +138,9 @@ function App() {
         },
         {
           path: "/all-services/:serviceId",
-          element: <ServiceDetails2 setShowPopup={setShowPopup} />,
+          element: (
+            <ServiceDetails2 branch={city} setShowPopup={setShowPopup} />
+          ),
         },
         {
           path: "/early-detection-program",

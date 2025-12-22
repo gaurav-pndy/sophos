@@ -20,9 +20,13 @@ import {
 } from "react-icons/fa";
 import { MdHealthAndSafety } from "react-icons/md";
 import ContactViaPhonePopup from "../ContactViaPhonePopup";
+import { RxCross1 } from "react-icons/rx";
+import { AnimatePresence, motion } from "framer-motion";
+import FeedbackForm from "../Home/FeedbackForm";
 
 const AppointmentTab = ({ t, city }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [showFeedbackPopup, setShowFeedbackPopup] = useState(false);
 
   return (
     <div className="space-y-8">
@@ -194,12 +198,12 @@ const AppointmentTab = ({ t, city }) => {
             <h4 className="font-bold  text-brand1 mb-3">Через сайт</h4>
             <p className="text-gray-600 mb-3">
               <span className="font-bold">
-                <a
-                  href="/for-patients#appointment"
-                  className="text-brand3 hover:text-brand1 transition-colors"
+                <span
+                  onClick={() => setShowFeedbackPopup(true)}
+                  className="text-brand3 cursor-pointer hover:text-brand1 transition-colors"
                 >
                   Оставьте заявку
-                </a>
+                </span>
               </span>{" "}
               в форме обратной связи, и мы свяжемся с вами.
             </p>
@@ -278,6 +282,41 @@ const AppointmentTab = ({ t, city }) => {
       {isPopupOpen && (
         <ContactViaPhonePopup onClose={() => setIsPopupOpen(false)} />
       )}
+
+      <AnimatePresence>
+        {showFeedbackPopup && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
+              onClick={() => setShowFeedbackPopup(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="bg-white rounded-xl shadow-lg max-w-4xl w-full mx-4 p-4 md:p-6 pt-10 md:pt-12 relative  overflow-hidden "
+                onClick={(e) => e.stopPropagation()}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <button
+                  className="absolute top-4 z-50 right-4 text-brand1 cursor-pointer text-2xl"
+                  onClick={() => setShowFeedbackPopup(false)}
+                  aria-label="Close"
+                >
+                  <RxCross1 />
+                </button>
+                <div className="max-h-[80vh] overflow-y-scroll">
+                  <FeedbackForm />
+                </div>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
