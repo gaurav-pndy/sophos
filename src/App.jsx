@@ -36,6 +36,9 @@ import { changeCity } from "./utils/changeCity";
 import { I18nextProvider } from "react-i18next";
 import ServicesPage from "./pages/ServicesPage";
 import ServiceDetails2 from "./pages/ServiceDetails2";
+import ExpertConsultations from "./pages/ExpertConsultations";
+import SpecialistConsultations from "./pages/SpecialistConsultation";
+import UltrasoundDiagnostics from "./pages/UltrasoundDiagnostics";
 
 function App() {
   const [city, setCity] = useState(() => {
@@ -103,7 +106,7 @@ function App() {
         },
         {
           path: "/for-patients",
-          element: <ForPatients />,
+          element: <ForPatients city={city} />,
         },
         {
           path: "/about",
@@ -181,6 +184,27 @@ function App() {
         {
           path: "/complicated-cases",
           element: <ComplicatedCases />,
+        },
+        {
+          path: "/expert-consultations",
+          element: (
+            <ExpertConsultations branch={city} setShowPopup={setShowPopup} />
+          ),
+        },
+        {
+          path: "/specialist-consultations",
+          element: (
+            <SpecialistConsultations
+              branch={city}
+              setShowPopup={setShowPopup}
+            />
+          ),
+        },
+        {
+          path: "/ultrasound-diagnostics",
+          element: (
+            <UltrasoundDiagnostics branch={city} setShowPopup={setShowPopup} />
+          ),
         },
       ],
     },

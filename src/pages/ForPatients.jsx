@@ -56,7 +56,7 @@ const PATIENT_TABS = [
   },
 ];
 
-const ForPatients = () => {
+const ForPatients = ({ city }) => {
   const { t } = useTranslation();
   const location = useLocation();
   const [activeTab, setActiveTab] = useState(PATIENT_TABS[0].key);
@@ -155,7 +155,9 @@ const ForPatients = () => {
         {/* Tabs Content */}
         <div className="bg-white rounded-3xl shadow-xl p-6 md:p-8 lg:p-10 border border-brand4/10">
           {PATIENT_TABS.map((tab) =>
-            tab.key === activeTab ? <tab.component key={tab.key} t={t} /> : null
+            tab.key === activeTab ? (
+              <tab.component city={city} key={tab.key} t={t} />
+            ) : null
           )}
         </div>
       </section>

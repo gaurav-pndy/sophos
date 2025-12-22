@@ -148,13 +148,23 @@ const Footer = ({ city }) => {
                 : t("address.clinic1.schedule")}
             </span>
           </div>
-          <a
-            href="mailto:info@hdmc.info"
-            target="_blank"
-            className="flex items-center gap-2 mb-2"
-          >
-            <FaEnvelope /> <span>info@hdmc.info</span>
-          </a>
+          {city === "Makhachkala" ? (
+            <a
+              href="mailto:info@hdmc.info"
+              target="_blank"
+              className="flex items-center gap-2 mb-2"
+            >
+              <FaEnvelope /> <span>info@hdmc.info</span>
+            </a>
+          ) : (
+            <a
+              href="mailto:contact@sophos-med.ru"
+              target="_blank"
+              className="flex items-center gap-2 mb-2"
+            >
+              <FaEnvelope /> <span>contact@sophos-med.ru</span>
+            </a>
+          )}
           {city === "Makhachkala" ? (
             <a
               href="tel:+74951234567"
@@ -165,11 +175,11 @@ const Footer = ({ city }) => {
             </a>
           ) : (
             <a
-              href="tel:+74996853000"
+              href="tel:+74953241111"
               target="_blank"
               className="flex items-center gap-2 mb-4"
             >
-              <FaPhoneAlt /> <span>+7 (499) 685-30-00</span>
+              <FaPhoneAlt /> <span>+7 (495) 324-11-11</span>
             </a>
           )}
 
@@ -184,7 +194,7 @@ const Footer = ({ city }) => {
               </a>
             ) : (
               <a
-                href="https://wa.me/74955142058"
+                href="https://wa.me/74953241111"
                 target="_blank"
                 className="bg-[#2aa81a] hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-full"
               >

@@ -248,26 +248,39 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       label: t("header.patient2"),
       icon: <FaClipboardList className="text-xl text-white" />,
     },
+    // {
+    //   path: "/for-patients#offers",
+    //   label: t("header.patient3"),
+    //   icon: <FaTag className="text-xl text-white" />,
+    // },
     {
-      path: "/for-patients#offers",
-      label: t("header.patient3"),
-      icon: <FaTag className="text-xl text-white" />,
-    },
-    {
-      path: "/for-patients#insurance",
       label: t("header.patient4"),
       icon: <MdMedicalServices className="text-xl text-white" />,
+      subItems: [
+        {
+          label: t("header.patientSub.s1"),
+          path: "/expert-consultations",
+        },
+        {
+          label: t("header.patientSub.s2"),
+          path: "/specialist-consultations",
+        },
+        {
+          label: t("header.patientSub.s3"),
+          path: "/ultrasound-diagnostics",
+        },
+      ],
     },
-    {
-      path: "/for-patients#blog",
-      label: t("header.patient5"),
-      icon: <IoDocumentText className="text-xl text-white" />,
-    },
-    {
-      path: "/for-patients#documents",
-      label: t("header.patient6"),
-      icon: <FaFileAlt className="text-xl text-white" />,
-    },
+    // {
+    //   path: "/for-patients#blog",
+    //   label: t("header.patient5"),
+    //   icon: <IoDocumentText className="text-xl text-white" />,
+    // },
+    // {
+    //   path: "/for-patients#documents",
+    //   label: t("header.patient6"),
+    //   icon: <FaFileAlt className="text-xl text-white" />,
+    // },
   ];
 
   const doctorsItems = [
@@ -347,111 +360,111 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
       ],
     },
-    {
-      path: "/doctors#specialization16",
-      label: t("header.doctorsDrop.d2"),
-      icon: <GiStomach className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization17",
-      label: t("header.doctorsDrop.d3"),
-      icon: <FaDna className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization18",
-      label: t("header.doctorsDrop.d4"),
-      icon: <GiMedicines className=" text-white" />,
-    },
+    // {
+    //   path: "/doctors#specialization16",
+    //   label: t("header.doctorsDrop.d2"),
+    //   icon: <GiStomach className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization17",
+    //   label: t("header.doctorsDrop.d3"),
+    //   icon: <FaDna className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization18",
+    //   label: t("header.doctorsDrop.d4"),
+    //   icon: <GiMedicines className=" text-white" />,
+    // },
     {
       path: "/doctors#specialization19",
       label: t("header.doctorsDrop.d5"),
       icon: <FaUserMd className=" text-white" />,
     },
-    {
-      path: "/doctors#specialization20",
-      label: t("header.doctorsDrop.d7"),
-      icon: <FaBrain className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization21",
-      label: t("header.doctorsDrop.d8"),
-      icon: <GiBrain className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization22",
-      label: t("header.doctorsDrop.d9"),
-      icon: <GiKidneys className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization23",
-      label: t("header.doctorsDrop.d10"),
-      icon: <MdFamilyRestroom className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization24",
-      label: t("header.doctorsDrop.d11"),
-      icon: <GiNoseFront className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization25",
-      label: t("header.doctorsDrop.d12"),
-      icon: <FaEye className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization26",
-      label: t("header.doctorsDrop.d13"),
-      icon: <FaUserNurse className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization27",
-      label: t("header.doctorsDrop.d14"),
-      icon: <GiPsychicWaves className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization28",
-      label: t("header.doctorsDrop.d15"),
-      icon: <MdPsychology className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization29",
-      label: t("header.doctorsDrop.d16"),
-      icon: <FaUserTie className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization30",
-      label: t("header.doctorsDrop.d17"),
-      icon: <GiHeartOrgan className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization31",
-      label: t("header.doctorsDrop.d18"),
-      icon: <BsThermometerHalf className=" text-white" />,
-    },
+    // {
+    //   path: "/doctors#specialization20",
+    //   label: t("header.doctorsDrop.d7"),
+    //   icon: <FaBrain className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization21",
+    //   label: t("header.doctorsDrop.d8"),
+    //   icon: <GiBrain className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization22",
+    //   label: t("header.doctorsDrop.d9"),
+    //   icon: <GiKidneys className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization23",
+    //   label: t("header.doctorsDrop.d10"),
+    //   icon: <MdFamilyRestroom className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization24",
+    //   label: t("header.doctorsDrop.d11"),
+    //   icon: <GiNoseFront className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization25",
+    //   label: t("header.doctorsDrop.d12"),
+    //   icon: <FaEye className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization26",
+    //   label: t("header.doctorsDrop.d13"),
+    //   icon: <FaUserNurse className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization27",
+    //   label: t("header.doctorsDrop.d14"),
+    //   icon: <GiPsychicWaves className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization28",
+    //   label: t("header.doctorsDrop.d15"),
+    //   icon: <MdPsychology className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization29",
+    //   label: t("header.doctorsDrop.d16"),
+    //   icon: <FaUserTie className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization30",
+    //   label: t("header.doctorsDrop.d17"),
+    //   icon: <GiHeartOrgan className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization31",
+    //   label: t("header.doctorsDrop.d18"),
+    //   icon: <BsThermometerHalf className=" text-white" />,
+    // },
     {
       path: "/doctors#specialization32",
       label: t("header.doctorsDrop.d19"),
       icon: <FaUserFriends className=" text-white" />,
     },
-    {
-      path: "/doctors#specialization33",
-      label: t("header.doctorsDrop.d20"),
-      icon: <FaBone className=" text-white" />,
-    },
+    // {
+    //   path: "/doctors#specialization33",
+    //   label: t("header.doctorsDrop.d20"),
+    //   icon: <FaBone className=" text-white" />,
+    // },
     {
       path: "/doctors#specialization34",
       label: t("header.doctorsDrop.d21"),
       icon: <GiScalpel className=" text-white" />,
     },
-    {
-      path: "/doctors#specialization35",
-      label: t("header.doctorsDrop.d22"),
-      icon: <FaUserMd className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization36",
-      label: t("header.doctorsDrop.d23"),
-      icon: <AiOutlineUserSwitch className=" text-white" />,
-    },
+    // {
+    //   path: "/doctors#specialization35",
+    //   label: t("header.doctorsDrop.d22"),
+    //   icon: <FaUserMd className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization36",
+    //   label: t("header.doctorsDrop.d23"),
+    //   icon: <AiOutlineUserSwitch className=" text-white" />,
+    // },
     {
       path: "/doctors#specialization37",
       label: t("header.doctorsDrop.d24"),
@@ -462,21 +475,21 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       label: t("header.doctorsDrop.d25"),
       icon: <GiScalpel className=" text-white" />,
     },
-    {
-      path: "/doctors#specialization39",
-      label: t("header.doctorsDrop.d26"),
-      icon: <GiScalpel className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization40",
-      label: t("header.doctorsDrop.d27"),
-      icon: <GiScalpel className=" text-white" />,
-    },
-    {
-      path: "/doctors#specialization41",
-      label: t("header.doctorsDrop.d28"),
-      icon: <GiScalpel className=" text-white" />,
-    },
+    // {
+    //   path: "/doctors#specialization39",
+    //   label: t("header.doctorsDrop.d26"),
+    //   icon: <GiScalpel className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization40",
+    //   label: t("header.doctorsDrop.d27"),
+    //   icon: <GiScalpel className=" text-white" />,
+    // },
+    // {
+    //   path: "/doctors#specialization41",
+    //   label: t("header.doctorsDrop.d28"),
+    //   icon: <GiScalpel className=" text-white" />,
+    // },
   ];
 
   const scrollToSection = (sectionId) => {
@@ -623,14 +636,14 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 <FaPhoneAlt />{" "}
                 {city === "Makhachkala"
                   ? "+7 (495) 123-45-67"
-                  : "+7 (499) 685-30-00"}
+                  : "+7 (495) 324-11-11"}
               </span>
               <a
-                href="mailto:info@hdmc.info"
+                href="mailto:contact@sophos-med.ru"
                 className="underline  flex items-center gap-1 whitespace-nowrap"
               >
                 <FaEnvelope />
-                info@hdmc.info
+                contact@sophos-med.ru
               </a>
             </div>
             {city === "Moscow" ? (
@@ -665,7 +678,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           {/* Socials & Language Switch */}
           <div className="hidden lg:flex items-center gap-2 justify-end min-w-0">
             <a
-              href="https://wa.me/74951234567"
+              href="https://wa.me/74953241111"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-500 text-lg xl:text-2xl hover:scale-125 transition-all duration-300"
@@ -842,7 +855,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/2 mt-18 grid grid-rows-7  grid-flow-col gap-6  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-3xl xl:w-6xl font-normal"
+                  className="absolute left-1/2 -translate-x-1/2 mt-18 grid grid-rows-2  grid-flow-col gap-6  bg-white shadow-lg shadow-black/40 rounded-xl p-6  z-50 w-3xl xl:w-6xl font-normal"
                 >
                   {doctorsItems.map((d, idx) => (
                     <div
@@ -915,60 +928,6 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               )}
             </AnimatePresence>
           </div>
-          {/* Services Dropdown - Desktop */}{" "}
-          {/* <div
-            onMouseEnter={() => setShowServices(true)}
-            onMouseLeave={() => setShowServices(false)}
-            className="relative   whitespace-nowrap cursor-pointer"
-          >
-            <button
-              onClick={() => handleScrollToSection("#services")}
-              className="flex items-center cursor-pointer gap-1 hover:text-brand2 transition-all duration-300"
-            >
-              {t("header.services")} <FaChevronDown className="small-text mt-1" />
-            </button>
-
-        
-            <AnimatePresence>
-              {showServices && (
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/2 mt-18 grid grid-cols-4 gap-5 bg-white shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-3xl xl:w-6xl"
-                >
-                  {services.map((s, idx) => (
-                    <Link
-                      key={idx}
-                      to={s.path}
-                      className="block group text-wrap transition-all duration-300 rounded-lg relative"
-                    >
-                      <div className="flex flex-col items-start gap-1">
-                        <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-12 group-hover:scale-110 flex items-center justify-center shrink-0 transition-all duration-300 ">
-                          <img
-                            src={s.icon}
-                            alt={s.label}
-                            className="w-4 xl:w-6 h-4 xl:h-6 object-contain brightness-0 invert"
-                          />
-                        </div>
-
-                        <div className=" ">
-                          <p className="group-hover:text-brand2 small-text xl:base-text transition-colors font-normal duration-300">
-                            {s.label}
-                          </p>
-                        </div>
-
-                        <div className="absolute right-2 top-3 overflow-hidden w-6">
-                          <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div> */}
           <div
             onMouseEnter={() => setShowPatientsDropdown(true)}
             onMouseLeave={() => setShowPatientsDropdown(false)}
@@ -993,21 +952,66 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   className="absolute left-1/2 -translate-x-1/2 mt-18 grid grid-cols-3 gap-6 xl:gap-10 bg-white shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-2xl xl:w-4xl"
                 >
                   {patientItems.map((p, idx) => (
-                    <Link
-                      to={p.path}
+                    <div
                       key={idx}
-                      className="block  group  text-wrap   transition-all relative duration-300 rounded-lg"
+                      className={`${!p.subItems && "group"} relative`}
+                      onMouseEnter={() => p.subItems && setActiveSub(p.label)}
+                      onMouseLeave={() => p.subItems && setActiveSub(null)}
                     >
-                      <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
-                        {p.icon}
-                      </div>
-                      <p className="group-hover:text-brand2 base-text text-left font-normal">
-                        {p.label}
-                      </p>
-                      <div className="absolute right-2 top-3 overflow-hidden w-6">
-                        <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
-                      </div>
-                    </Link>
+                      <Link
+                        to={p.path}
+                        key={idx}
+                        className="block  group  text-wrap   transition-all relative duration-300 rounded-lg"
+                      >
+                        <div className="w-10 xl:w-12 h-10 xl:h-12 rounded-full bg-gradient-to-br from-brand1 to-[#33babd] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
+                          {p.icon}
+                        </div>
+                        <p className="group-hover:text-brand2 base-text text-left font-normal">
+                          <p
+                            className={`${
+                              p.subItems && "text-[#0a3449]"
+                            } group-hover:text-brand2 pr-8 base-text text-wrap font-normal flex items-center gap-4`}
+                          >
+                            <span> {p.label}</span>
+                            {p.subItems ? (
+                              <FaChevronDown className="small-text mt-1 " />
+                            ) : (
+                              <div className="absolute right-0 top-2 overflow-hidden w-6">
+                                <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
+                              </div>
+                            )}
+                          </p>
+                        </p>
+                      </Link>
+
+                      <AnimatePresence>
+                        {activeSub === p.label && p.subItems && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute left-0   top-[110%] bg-[#f3f5f7] border border-gray-400 rounded-xl shadow-lg shadow-black/30 p-4 w-sm z-50 flex flex-col gap-4 justify-between"
+                          >
+                            <ul className="grid grid-cols-1 gap-4">
+                              {p.subItems.map((item, i) => (
+                                <li key={i}>
+                                  <Link
+                                    to={item.path}
+                                    className="block group font-normal text-wrap text-gray-700 base-text hover:text-brand2 transition-all relative pr-8"
+                                  >
+                                    {item.label}
+                                    <div className="absolute right-2 top-2 overflow-hidden w-6">
+                                      <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
+                                    </div>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   ))}
                 </motion.div>
               )}
@@ -1065,20 +1069,27 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
             {t("header.bookAppointment")}
           </button>
-          <Link
-            to="/services/service1"
+          <button
+            onClick={() => handleScrollToSection("#doctors")}
+            className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
+          >
+            {" "}
+            {t("header.expertConsultation")}{" "}
+          </button>{" "}
+          <button
+            onClick={() => handleScrollToSection("#doctors")}
             className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
           >
             {" "}
             {t("header.service1")}{" "}
-          </Link>{" "}
-          <Link
+          </button>{" "}
+          {/* <Link
             to="/early-detection-program"
             className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
           >
             {" "}
             {t("header.earlyDiagnosis")}{" "}
-          </Link>{" "}
+          </Link>{" "} */}
           <Link
             to="/oncological-care"
             className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"

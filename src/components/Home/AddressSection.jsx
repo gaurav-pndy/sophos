@@ -104,7 +104,7 @@ const AddressSection = ({ city, setShowPopup }) => {
       title: t("address.clinic1.title"),
       address: t("address.clinic1.address"),
       schedule: t("address.clinic1.schedule"),
-      phone: "+7 (499) 685-30-00",
+      phone: "+7 (495) 324-11-11",
       coords: [55.707397, 37.457317],
       zoom: 17,
       hintContent: t("address.clinic1.title"),

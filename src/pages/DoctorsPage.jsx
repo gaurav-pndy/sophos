@@ -65,6 +65,7 @@ const DoctorsPage = ({ branch, setShowPopup }) => {
       if (!response.ok) throw new Error("Failed to fetch doctors");
 
       const result = await response.json();
+      console.log(result);
 
       if (result.success) {
         setDoctors(result.data);

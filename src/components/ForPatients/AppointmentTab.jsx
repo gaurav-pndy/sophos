@@ -21,7 +21,7 @@ import {
 import { MdHealthAndSafety } from "react-icons/md";
 import ContactViaPhonePopup from "../ContactViaPhonePopup";
 
-const AppointmentTab = ({ t }) => {
+const AppointmentTab = ({ t, city }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
@@ -143,12 +143,21 @@ const AppointmentTab = ({ t }) => {
             </div>
             <h4 className="font-bold text-brand1 mb-3">По телефону</h4>
             <p className="text-gray-600 mb-3">Позвоните нам по номеру</p>
-            <a
-              href="tel:+74996853000"
-              className="text-brand3 font-bold  hover:text-brand1 transition-colors block mb-3"
-            >
-              +7 (499) 685 3000
-            </a>
+            {city === "Moscow" ? (
+              <a
+                href="tel:+74953241111"
+                className="text-brand3 font-bold  hover:text-brand1 transition-colors block mb-3"
+              >
+                +7 (495) 324 1111
+              </a>
+            ) : (
+              <a
+                href="tel:+74996853000"
+                className="text-brand3 font-bold  hover:text-brand1 transition-colors block mb-3"
+              >
+                +7 (499) 685 3000
+              </a>
+            )}
 
             {/* Callback Button */}
             <button
@@ -219,12 +228,21 @@ const AppointmentTab = ({ t }) => {
           </p>
           <p className="leading-relaxed">
             Если вы не можете посетить врача — просто позвоните нам по телефону{" "}
-            <a
-              href="tel:+74996853000"
-              className="text-brand3 font-bold hover:text-brand1 transition-colors"
-            >
-              +7 (499) 685 3000
-            </a>
+            {city === "Moscow" ? (
+              <a
+                href="tel:+74953241111"
+                className="text-brand3 font-bold hover:text-brand1 transition-colors"
+              >
+                +7 (495) 324 1111
+              </a>
+            ) : (
+              <a
+                href="tel:+74996853000"
+                className="text-brand3 font-bold hover:text-brand1 transition-colors"
+              >
+                +7 (499) 685 3000
+              </a>
+            )}
             , чтобы отменить или перенести запись.
           </p>
           <div className="bg-white p-4 rounded-xl border-l-4 border-brand1">

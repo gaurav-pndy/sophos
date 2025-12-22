@@ -584,7 +584,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                 <FaPhoneAlt />{" "}
                 {city === "Makhachkala"
                   ? "+7 (495) 123-45-67"
-                  : "+7 (499) 685-30-00"}
+                  : "+7 (495) 324-11-11"}
               </span>
               <a
                 href="mailto:info@hdmc.info"

@@ -172,7 +172,7 @@ const AboutInfo = ({ city }) => {
             </div>
             <div className="text-brand1/80 leading-relaxed ml-8 ">
               <p className="font-medium base-text">
-                {city === "Moscow" ? "+7 (499) 685 3000" : ""}{" "}
+                {city === "Moscow" ? "+7 (495) 324 1111" : ""}{" "}
               </p>
             </div>
           </div>
