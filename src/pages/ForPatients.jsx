@@ -73,12 +73,12 @@ const ForPatients = ({ city }) => {
         icon: <IoDocumentText />,
         component: NewsTab,
       },
-      {
-        key: "documents",
-        labelKey: "forPatientsPage.heading6",
-        icon: <FaFileAlt />,
-        component: DocumentsTab,
-      },
+      // {
+      //   key: "documents",
+      //   labelKey: "forPatientsPage.heading6",
+      //   icon: <FaFileAlt />,
+      //   component: DocumentsTab,
+      // },
     ];
   }, [city]);
   const { t } = useTranslation();

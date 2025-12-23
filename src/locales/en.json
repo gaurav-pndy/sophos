@@ -144,45 +144,40 @@
       "d8": "Endocrinologist"
     }
   },
-  "hero": {
-    "slide1": {
-      "title": "Expert oncological care",
-      "subtitle1": "Expert-level oncologists",
-      "subtitle2": "Personalized approach for every patient",
-      "subtitle3": "Center for modern anti-tumor therapy",
-      "button": "Join HDMC+",
-      "button2": "Contact the coordinator"
-    },
-    "slide2": {
-      "title": "NECHUSHKINA Valentina Mikhailovna",
-      "subtitle1": "Head of the Oncogynecology Department at Health-Direct",
-      "subtitle2": "Over 25 years of experience in oncogynecology, more than 10,000 successful surgeries",
-      "subtitle3": "Practicing surgeon, oncologist, obstetrician-gynecologist, Doctor of Medical Sciences, professor",
-      "subtitle4": "World-renowned oncogynecologist",
-      "subtitle5": "Five-year overall survival rate for ovarian cancer patients (stages IIIC–IV) operated on at the first stage is over 80%",
-      "button1": "Make an appointment",
-      "button2": "About the specialist"
-    },
-    "slide3": {
-      "title": "Center for modern anti-tumor therapy",
-      "subtitle1": "Your comfort and safety",
-      "subtitle2": "International treatment standards",
-      "subtitle3": "Personalized pathways without unnecessary procedures",
-      "subtitle4": "A personal coordinator at every step"
-    },
-    "slide4": {
-      "title": "A modern multidisciplinary outpatient clinic.",
-      "button2": "Make an appointment for a consultation"
-    },
-    "slide5": {
-      "title": "Comprehensive check-up programs",
-      "subtitle1": "Take care of yourself in advance",
-      "button2": "Подобрать программу"
-    },
-    "slide6": {
-      "title": "Open House Day"
-    }
+ "hero": {
+  "slide1": {
+    "title": "A Modern Multidisciplinary Clinic: <br/>Your Health Is Our Priority",
+    "subtitle1": "Highly Qualified Specialists",
+    "subtitle2": "Evidence-Based Medicine",
+    "subtitle3": "A Wide Range of Medical Services",
+    "button": "Book a Consultation",
+    "button2": "Contact a Care Coordinator"
   },
+  "slide2": {
+    "title": "Personalized Early Disease Detection — <br/>Your Key to Health and Longevity",
+    "subtitle1": "Expert Medical Team",
+    "subtitle2": "International Clinical Guidelines",
+    "subtitle3": "Personalized Approach",
+    "button": "Choose a Package",
+    "button2": "About the Specialist"
+  },
+  "slide3": {
+    "title": "Telemedicine: When Your Doctor Is Closer Than You Think",
+    "subtitle1": "Accessibility",
+    "subtitle2": "Convenience",
+    "subtitle3": "Confidentiality",
+    "subtitle4": "A Personal Care Coordinator at Every Step",
+    "button": "Book a Consultation"
+  },
+  "slide4": {
+    "title": "SOFOS+ Premium Membership: Your Step Toward Maximum Benefits",
+    "subtitle1": "Priority Appointment Scheduling",
+    "subtitle2": "Discounts on Diagnostic Services",
+    "subtitle3": "Personal Care Coordinator",
+    "button": "Become a Member"
+  }
+},
+
 "aboutClinic": {
   "title": "A multidisciplinary clinic in Makhachkala with advanced diagnostics and expert specialists.",
   "bookBtn": "Book a consultation",

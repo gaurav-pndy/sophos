@@ -19,6 +19,7 @@ import FeedbackForm from "../components/Home/FeedbackForm";
 import PopupButtons from "../components/Home/PopupButtons";
 import CareSection from "../components/Home/CareSection";
 import CareSection2 from "../components/Home/CareSection2";
+import HeroMoscow from "../components/Home/HeroMoscow";
 
 const Home = ({ city, setShowPopup }) => {
   const location = useLocation();
@@ -64,7 +65,12 @@ const Home = ({ city, setShowPopup }) => {
   };
   return (
     <div>
-      <HeroSection setShowPopup={setShowPopup} />
+      {city === "Moscow" ? (
+        <HeroMoscow setShowPopup={setShowPopup} />
+      ) : (
+        <HeroSection setShowPopup={setShowPopup} />
+      )}
+
       <AboutSection city={city} />
 
       <DoctorsSection branch={city} setShowPopup={setShowPopup} />
