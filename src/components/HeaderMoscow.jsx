@@ -678,7 +678,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           {/* Socials & Language Switch */}
           <div className="hidden lg:flex items-center gap-2 justify-end min-w-0">
             <a
-              href="https://wa.me/79104656707"
+              href="https://wa.me/79770898731"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-500 text-lg xl:text-2xl hover:scale-125 transition-all duration-300"
@@ -687,7 +687,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               <FaWhatsapp />
             </a>
             <a
-              href="https://t.me/+79104656707"
+              href="https://t.me/+79770898731"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sky-500 text-lg xl:text-2xl hover:scale-125 transition-all duration-300"

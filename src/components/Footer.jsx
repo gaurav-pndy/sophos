@@ -186,7 +186,7 @@ const Footer = ({ city }) => {
           <div className="flex gap-4">
             {city === "Makhachkala" ? (
               <a
-                href="https://wa.me/798820455775"
+                href="https://wa.me/79882045577"
                 target="_blank"
                 className="bg-[#2aa81a] hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-full"
               >
@@ -194,7 +194,7 @@ const Footer = ({ city }) => {
               </a>
             ) : (
               <a
-                href="https://wa.me/79104656707"
+                href="https://wa.me/79770898731"
                 target="_blank"
                 className="bg-[#2aa81a] hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-full"
               >
@@ -202,7 +202,7 @@ const Footer = ({ city }) => {
               </a>
             )}
             <a
-              href="https://t.me/+79104656707"
+              href="https://t.me/+79770898731"
               target="_blank"
               className="bg-[#039be5] hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-full"
             >
