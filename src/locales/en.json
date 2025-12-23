@@ -1347,7 +1347,7 @@
   "title": "Procedure Room",
   "subtitle": "Professional performance of medical procedures of any complexity",
   "slogan": "Your health is in good hands",
-  "btn1": "Get a service",
+  "btn1": "Sign up for the procedure",
   "introTitle": "A professional approach to your health",
   "introText": "No medical facility can operate without a procedure room, where various medical procedures are performed—primarily those that involve invasive interventions. SOPHOS, a multidisciplinary medical center in Makhachkala, offers paid procedure room services. Our nurses are highly qualified professionals with extensive practical experience.",
 
@@ -1720,7 +1720,7 @@
     }
   ],
 
-  "bottomNote": "SOPHOS+ is an investment in your health and quality of life. Join the program and gain access to premium medical care!"
+  "bottomNote": "SOPHOS+ is an investment in your health and quality of life.<br/> Join the program and gain access to premium medical care!"
 }
 
   },
@@ -2028,7 +2028,7 @@
       "moscow": "Moscow",
       "moscowAddress": "119517, Moscow, Aminyevskoye Highway, Building 6",
       "makhachka": "Makhachkala",
-      "makhachkalaAddress": "367026, Republic of Dagestan, Makhachkala, Ali-Gadji Akushinsky Avenue, Building 7",
+      "makhachkalaAddress": "367026, Republic of Dagestan, Makhachkala,<br/> Ali-Gadji Akushinsky Avenue, Building 7",
       "ogrn": "OGRN and date of entry in the Unified State Register of Legal Entities",
       "tax": "INN (Taxpayer Identification Number)",
       "checkpoint": "KPP (Tax Registration Reason Code)",

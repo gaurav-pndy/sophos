@@ -49,9 +49,12 @@ const HeroSection = ({ setShowPopup }) => {
                     <div className="w-1 h-12 bg-white/40 rounded" />
                   </div>
                   <h1
-                    className="text-white font-bold z-40 heading1 xl:leading-12 mb-4"
+                    className="text-white font-bold z-40 heading1 leading-10 mb-2"
                     dangerouslySetInnerHTML={{ __html: t("hero.slide1.title") }}
                   ></h1>
+                  <h3 className="text-white font-semibold z-40 subheading mb-2">
+                    {t("hero.slide1.slogan")}
+                  </h3>
                   <ul className="text-gray-200 list-disc ml-4 base-text z-40  mb-6">
                     <li>{t("hero.slide1.subtitle1")} </li>
                     <li>{t("hero.slide1.subtitle2")} </li>
@@ -99,9 +102,12 @@ const HeroSection = ({ setShowPopup }) => {
                     <div className="w-1 h-12 bg-white/40 rounded" />
                   </div>
                   <h1
-                    className="text-white font-bold z-40 heading1 xl:leading-12 mb-4"
+                    className="text-white font-bold z-40 heading1 leading-10 mb-2"
                     dangerouslySetInnerHTML={{ __html: t("hero.slide2.title") }}
                   ></h1>
+                  <h3 className="text-white font-semibold z-40 subheading mb-2">
+                    {t("hero.slide2.slogan")}
+                  </h3>
                   <ul className="text-gray-200 list-disc ml-4 base-text z-40  mb-6">
                     <li>{t("hero.slide2.subtitle1")} </li>
                     <li>{t("hero.slide2.subtitle2")} </li>
@@ -153,9 +159,12 @@ const HeroSection = ({ setShowPopup }) => {
                     <div className="w-1 h-12 bg-white/40 rounded" />
                   </div>
                   <h1
-                    className="text-white font-bold z-40 heading1 xl:leading-12 mb-4"
+                    className="text-white font-bold z-40 heading1 leading-10 mb-2"
                     dangerouslySetInnerHTML={{ __html: t("hero.slide3.title") }}
                   ></h1>
+                  <h3 className="text-white font-semibold z-40 subheading mb-2">
+                    {t("hero.slide3.slogan")}
+                  </h3>
                   <ul className="text-gray-200 list-disc ml-4 base-text z-40  mb-6">
                     <li>{t("hero.slide3.subtitle1")} </li>
                     <li>{t("hero.slide3.subtitle2")} </li>
@@ -207,9 +216,12 @@ const HeroSection = ({ setShowPopup }) => {
                     <div className="w-1 h-12 bg-white/40 rounded" />
                   </div>
                   <h1
-                    className="text-white font-bold z-40 heading1 xl:leading-12 mb-4"
+                    className="text-white font-bold z-40 heading1 leading-10 mb-2"
                     dangerouslySetInnerHTML={{ __html: t("hero.slide4.title") }}
                   ></h1>
+                  <h3 className="text-white font-semibold z-40 subheading mb-2">
+                    {t("hero.slide4.slogan")}
+                  </h3>
                   <ul className="text-gray-200 list-disc ml-4 base-text z-40  mb-6">
                     <li>{t("hero.slide4.subtitle1")} </li>
                     <li>{t("hero.slide4.subtitle2")} </li>

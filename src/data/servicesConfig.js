@@ -618,10 +618,7 @@ export const servicesConfig = [
     stroke: "rgba(51, 186, 189,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
-      { key: "diseases", labelKey: "services.tab6" },
-      { key: "doctors", labelKey: "services.tab2" },
-      { key: "reviews", labelKey: "services.tab3" },
-      { key: "prices", labelKey: "services.tab4" },
+
       { key: "other", labelKey: "services.tab5" },
     ],
     blocks: [
