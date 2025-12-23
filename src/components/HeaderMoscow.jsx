@@ -1371,41 +1371,6 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     )}
                   </AnimatePresence>
                 </div>
-                {/* Services Dropdown - Mobile */}
-                {/* <div>
-                  <button
-                    onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className="flex items-center justify-between w-full"
-                  >
-                    {t("header.services")}
-                    <FaChevronDown
-                      className={`ml-2 transform transition ${
-                        isServicesOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <AnimatePresence>
-                    {isServicesOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
-                      >
-                        {services.map((s, idx) => (
-                          <Link
-                            key={idx}
-                            to={s.path}
-                            onClick={() => setIsOpen(false)}
-                            className="block"
-                          >
-                            {s.label}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div> */}
                 <div>
                   <button
                     onClick={() => setIsPatientsOpen(!isPatientsOpen)}
@@ -1426,18 +1391,97 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                         exit={{ height: 0, opacity: 0 }}
                         className="ml-4 mt-2 max-h-80 py-2  overflow-y-auto small-text font-normal flex flex-col gap-4"
                       >
-                        {patientItems.map((p, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => {
-                              handleScrollToPatientsSection(p.path);
-                              setIsOpen(false);
-                            }}
-                            className="block text-left"
-                          >
-                            {p.label}
-                          </button>
-                        ))}
+                        {patientItems.map((item, idx) =>
+                          item.subItems ? (
+                            <div key={idx}>
+                              <button
+                                onClick={() =>
+                                  setOpenSubCategory(
+                                    openSubCategory === item.label
+                                      ? null
+                                      : item.label
+                                  )
+                                }
+                                className="flex items-center justify-between w-full"
+                              >
+                                <div className="">
+                                  <span
+                                    dangerouslySetInnerHTML={{
+                                      __html: item.label,
+                                    }}
+                                  ></span>
+                                </div>
+                                <FaChevronDown
+                                  className={`ml-2 transform transition ${
+                                    openSubCategory === item.label
+                                      ? "rotate-180"
+                                      : ""
+                                  }`}
+                                />
+                              </button>
+
+                              <AnimatePresence>
+                                {openSubCategory === item.label && (
+                                  <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    className="ml-4 mt-2 flex flex-col gap-3"
+                                  >
+                                    {item.id === 2 ? (
+                                      <div className="flex ml-2 flex-col gap-2 ">
+                                        {item.subItems.tests.map((sub, i) => (
+                                          <Link
+                                            key={i}
+                                            to={sub.path}
+                                            onClick={() => setIsOpen(false)}
+                                            className="block hover:underline"
+                                          >
+                                            {sub.label}
+                                          </Link>
+                                        ))}
+                                        {item.subItems.diagnostics.map(
+                                          (sub, i) => (
+                                            <Link
+                                              key={i}
+                                              to={sub.path}
+                                              onClick={() => setIsOpen(false)}
+                                              className="block text-[#e9865f] hover:underline"
+                                            >
+                                              {sub.label}
+                                            </Link>
+                                          )
+                                        )}
+                                      </div>
+                                    ) : (
+                                      <div className="flex ml-2 flex-col gap-2 ">
+                                        {item.subItems.map((sub, i) => (
+                                          <Link
+                                            key={i}
+                                            to={sub.path}
+                                            onClick={() => setIsOpen(false)}
+                                            className="block hover:underline"
+                                          >
+                                            {sub.label}
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          ) : (
+                            <Link
+                              key={idx}
+                              to={item.path}
+                              onClick={() => setIsOpen(false)}
+                              className=""
+                            >
+                              {item.label}
+                            </Link>
+                          )
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
