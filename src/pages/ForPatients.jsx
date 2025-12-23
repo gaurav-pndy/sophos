@@ -17,49 +17,77 @@ import InsuranceTab from "../components/ForPatients/InsuranceTab";
 import DocumentsTab from "../components/ForPatients/DocumentsTab";
 import { IoDocumentText } from "react-icons/io5";
 
-const PATIENT_TABS = [
-  {
-    key: "appointment",
-    labelKey: "forPatientsPage.heading1",
-    icon: <FaCalendarCheck />,
-    component: AppointmentTab,
-  },
-  {
-    key: "preparation",
-    labelKey: "forPatientsPage.heading2",
-    icon: <FaFileAlt />,
-    component: PreparationTab,
-  },
-  {
-    key: "offers",
-    labelKey: "forPatientsPage.heading3",
-    icon: <FaTag />,
-    component: OffersTab,
-  },
-  {
-    key: "insurance",
-    labelKey: "forPatientsPage.heading4",
-    icon: <FaShieldAlt />,
-    component: InsuranceTab,
-  },
-  {
-    key: "blog",
-    labelKey: "header.patient5",
-    icon: <IoDocumentText />,
-    component: NewsTab,
-  },
-  {
-    key: "documents",
-    labelKey: "forPatientsPage.heading6",
-    icon: <FaFileAlt />,
-    component: DocumentsTab,
-  },
-];
-
 const ForPatients = ({ city }) => {
   const { t } = useTranslation();
   const location = useLocation();
   const [activeTab, setActiveTab] = useState(PATIENT_TABS[0].key);
+
+  let PATIENT_TABS = [];
+
+  useEffect(() => {
+    if (city === "Moscow") {
+      PATIENT_TABS = [
+        {
+          key: "appointment",
+          labelKey: "forPatientsPage.heading1",
+          icon: <FaCalendarCheck />,
+          component: AppointmentTab,
+        },
+        {
+          key: "preparation",
+          labelKey: "forPatientsPage.heading2",
+          icon: <FaFileAlt />,
+          component: PreparationTab,
+        },
+
+        {
+          key: "blog",
+          labelKey: "header.patient5",
+          icon: <IoDocumentText />,
+          component: NewsTab,
+        },
+      ];
+    } else {
+      PATIENT_TABS = [
+        {
+          key: "appointment",
+          labelKey: "forPatientsPage.heading1",
+          icon: <FaCalendarCheck />,
+          component: AppointmentTab,
+        },
+        {
+          key: "preparation",
+          labelKey: "forPatientsPage.heading2",
+          icon: <FaFileAlt />,
+          component: PreparationTab,
+        },
+        {
+          key: "offers",
+          labelKey: "forPatientsPage.heading3",
+          icon: <FaTag />,
+          component: OffersTab,
+        },
+        {
+          key: "insurance",
+          labelKey: "forPatientsPage.heading4",
+          icon: <FaShieldAlt />,
+          component: InsuranceTab,
+        },
+        {
+          key: "blog",
+          labelKey: "header.patient5",
+          icon: <IoDocumentText />,
+          component: NewsTab,
+        },
+        {
+          key: "documents",
+          labelKey: "forPatientsPage.heading6",
+          icon: <FaFileAlt />,
+          component: DocumentsTab,
+        },
+      ];
+    }
+  }, [city]);
 
   // Handle hash navigation
   useEffect(() => {
