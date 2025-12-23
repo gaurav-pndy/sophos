@@ -1187,7 +1187,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     <img src="/max.png" alt="" className="w-7" />
                   </a>
                   <a
-                    href="https://wa.me/74951234567"
+                    href="https://wa.me/79770898731"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-500 text-3xl hover:scale-125 transition-all duration-300"
@@ -1196,7 +1196,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     <FaWhatsapp />
                   </a>
                   <a
-                    href="https://t.me/medclinic"
+                    href="https://t.me/79770898731"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sky-500 text-3xl hover:scale-125 transition-all duration-300"
