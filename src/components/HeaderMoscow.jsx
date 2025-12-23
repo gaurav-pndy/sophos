@@ -271,11 +271,11 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
       ],
     },
-    // {
-    //   path: "/for-patients#blog",
-    //   label: t("header.patient5"),
-    //   icon: <IoDocumentText className="text-xl text-white" />,
-    // },
+    {
+      path: "/for-patients#blog",
+      label: t("header.patient5"),
+      icon: <IoDocumentText className="text-xl text-white" />,
+    },
     // {
     //   path: "/for-patients#documents",
     //   label: t("header.patient6"),
@@ -678,7 +678,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           {/* Socials & Language Switch */}
           <div className="hidden lg:flex items-center gap-2 justify-end min-w-0">
             <a
-              href="https://wa.me/74953241111"
+              href="https://wa.me/79104656707"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-500 text-lg xl:text-2xl hover:scale-125 transition-all duration-300"
@@ -687,7 +687,7 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
               <FaWhatsapp />
             </a>
             <a
-              href="https://t.me/medclinic"
+              href="https://t.me/+79104656707"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sky-500 text-lg xl:text-2xl hover:scale-125 transition-all duration-300"
@@ -1069,20 +1069,21 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
 
             {t("header.bookAppointment")}
           </button>
-          <button
-            onClick={() => handleScrollToSection("#doctors")}
+          <Link
+            to="expert-consultations"
             className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
           >
             {" "}
             {t("header.expertConsultation")}{" "}
-          </button>{" "}
-          <button
+          </Link>{" "}
+          <Link
+            to="specialist-consultations"
             onClick={() => handleScrollToSection("#doctors")}
             className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"
           >
             {" "}
             {t("header.service1")}{" "}
-          </button>{" "}
+          </Link>{" "}
           {/* <Link
             to="/early-detection-program"
             className="   hover:text-brand2 transition-all duration-300 cursor-pointer whitespace-nowrap"

@@ -194,7 +194,7 @@ const Footer = ({ city }) => {
               </a>
             ) : (
               <a
-                href="https://wa.me/74953241111"
+                href="https://wa.me/79104656707"
                 target="_blank"
                 className="bg-[#2aa81a] hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-full"
               >
@@ -202,7 +202,7 @@ const Footer = ({ city }) => {
               </a>
             )}
             <a
-              href="https://t.me/medclinic"
+              href="https://t.me/+79104656707"
               target="_blank"
               className="bg-[#039be5] hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-full"
             >
