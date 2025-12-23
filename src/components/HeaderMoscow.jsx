@@ -1453,12 +1453,12 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   {t("header.reviews")}
                 </button>{" "}
                 <Link
-                  to="/blogs"
+                  to="/for-patients#blog"
                   onClick={() => setIsOpen(false)}
                   className="  hover:underline whitespace-nowrap"
                 >
                   {" "}
-                  {t("header.blog")}
+                  {t("header.patient5")}
                 </Link>{" "}
                 <button
                   onClick={() => {
