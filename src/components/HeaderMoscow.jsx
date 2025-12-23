@@ -1025,11 +1025,11 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
             {t("header.reviews")}{" "}
           </button>{" "}
           <Link
-            to="/blogs"
+            to="/for-patients#blog"
             className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
           >
             {" "}
-            {t("header.blog")}
+            {t("header.patient5")}
           </Link>{" "}
           <button
             onClick={() => handleScrollToSection("#contact")}
