@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import WaveBackground from "../components/WaveBackground";
 import { Link } from "react-router-dom";
+import { FaSpinner } from "react-icons/fa6";
+import { motion, AnimatePresence } from "framer-motion";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL || "https://apimanager.health-direct.ru";
@@ -12,42 +14,147 @@ const ExpertConsultations = ({ branch, setShowPopup }) => {
   const [experts, setExperts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [type, setType] = useState("All");
+  const [specialization, setSpecialization] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [specializations, setSpecializations] = useState([]);
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
-  useEffect(() => {
-    const fetchExperts = async () => {
-      setLoading(true);
-      setError("");
-      try {
-        const params = new URLSearchParams();
+  const formatSpecializationsList = (specString = "") => {
+    const formatted = specString
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((s) => {
+        return s
+          .split(" ")
+          .map(
+            (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+          )
+          .join(" ");
+      })
+      .filter((s, i, arr) => arr.indexOf(s) === i);
 
-        params.append("language", i18n.language);
-        params.append("page", "1");
-        params.append("limit", "50");
-        params.append("expert", "true");
+    return formatted;
+  };
 
-        if (branch) params.append("branch", branch);
-        const response = await fetch(
-          `${API_BASE}/api/website/doctors?${params}`
-        );
-        if (!response.ok) throw new Error("Failed to fetch doctors");
+  const fetchExperts = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const params = new URLSearchParams();
 
-        const result = await response.json();
-        console.log(result);
-
-        setExperts(result.data || []);
-        console.log("experts", result);
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load experts.");
-      } finally {
-        setLoading(false);
+      if (type !== "All") params.append("type", type);
+      if (specialization !== "All") {
+        params.append("specialization", specialization);
       }
-    };
+      if (searchTerm) params.append("search", searchTerm);
 
+      params.append("language", i18n.language);
+      params.append("page", "1");
+      params.append("limit", "50");
+      params.append("expert", "true");
+
+      if (branch) params.append("branch", branch);
+      const response = await fetch(`${API_BASE}/api/website/doctors?${params}`);
+      if (!response.ok) throw new Error("Failed to fetch doctors");
+
+      const result = await response.json();
+      console.log(result);
+
+      setExperts(result.data || []);
+      console.log("experts", result);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load experts.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchSpecializations = async () => {
+    try {
+      const response = await fetch(
+        `${API_BASE}/api/website/doctors/specializations?language=${i18n.language}`
+      );
+      if (!response.ok) throw new Error("Failed to fetch specializations");
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Use the same formatting logic as DoctorsPage
+        const labelMap = new Map();
+
+        result.data.forEach((item) => {
+          const formattedLabels = formatSpecializationsList(item.label);
+
+          formattedLabels.forEach((label) => {
+            if (!labelMap.has(label)) {
+              labelMap.set(label, {
+                id: label,
+                label: label,
+                originalItems: [],
+              });
+            }
+            labelMap.get(label).originalItems.push(item);
+          });
+        });
+
+        const specializationsWithCount = await Promise.all(
+          Array.from(labelMap.values()).map(async (spec) => {
+            try {
+              const params = new URLSearchParams();
+              params.append("specialization", spec.id);
+              params.append("language", i18n.language);
+              params.append("page", "1");
+              params.append("limit", "1");
+
+              const response = await fetch(
+                `${API_BASE}/api/website/doctors?${params}`
+              );
+              if (response.ok) {
+                const result = await response.json();
+                return {
+                  ...spec,
+                  count: result.pagination?.totalDoctors || 0,
+                  uniqueKey: `${spec.id.replace(/\s+/g, "-")}-${Date.now()}`,
+                };
+              }
+            } catch (err) {
+              console.error(`Error fetching count for ${spec.label}:`, err);
+            }
+
+            return {
+              ...spec,
+              count: 0,
+              uniqueKey: `${spec.id.replace(/\s+/g, "-")}-${Date.now()}`,
+            };
+          })
+        );
+
+        setSpecializations(specializationsWithCount);
+      } else {
+        throw new Error(result.error);
+      }
+    } catch (err) {
+      console.error("Error fetching specializations:", err);
+      setSpecializations([]);
+    }
+  };
+
+  useEffect(() => {
     fetchExperts();
-  }, []);
+    fetchSpecializations();
+  }, [i18n.language]);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      fetchExperts();
+    }, 300);
+
+    return () => clearTimeout(timeoutId);
+  }, [type, specialization, searchTerm, i18n.language]);
 
   const getLocalizedField = (field, fallback = "") => {
     if (!field) return fallback;
@@ -192,8 +299,71 @@ const ExpertConsultations = ({ branch, setShowPopup }) => {
 
           {/* EXPERTS LIST */}
           <section className="">
+            <div className="w-full bg-white border border-brand4/30 rounded-xl shadow-sm mt-10 md:mt-12">
+              {/* Expandable Filters */}
+              <AnimatePresence>
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  className="px-4 py-4 grid md:grid-cols-2 gap-6 bg-brand4/10"
+                >
+                  {/* Type of Consultation */}
+                  <div>
+                    <label className="small-text font-medium text-brand1 block mb-2">
+                      {t("doctors.filter.consultType")}
+                    </label>
+                    <div className="flex small-text gap-3">
+                      {[
+                        { label: t("doctors.filter.all"), value: "All" },
+                        {
+                          label: t("doctors.filter.personal"),
+                          value: "Personal",
+                        },
+                        { label: t("doctors.filter.remote"), value: "Remote" },
+                      ].map((item) => (
+                        <button
+                          key={item.value}
+                          onClick={() => setType(item.value)}
+                          className={`px-4 py-2 rounded-lg border font-medium transition-all ${
+                            type === item.value
+                              ? "bg-brand1 text-white border-brand1"
+                              : "bg-white border-brand4 text-brand1 hover:bg-brand4/20"
+                          }`}
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Specialization */}
+                  <div>
+                    <label className="small-text font-medium text-brand1 block mb-2">
+                      {t("doctors.filter.specialization")}
+                    </label>
+                    <select
+                      value={specialization}
+                      onChange={(e) => setSpecialization(e.target.value)}
+                      className="w-full border border-brand4/40 rounded-lg px-3 py-2.5 small-text text-brand1 outline-none focus:border-brand1 transition-all bg-white"
+                    >
+                      <option value="All">
+                        {t("doctors.filter.all") || "All Specializations"}
+                      </option>
+                      {specializations.map((opt) => (
+                        <option key={opt.uniqueKey} value={opt.id}>
+                          {opt.label} {opt.count && `(${opt.count})`}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
             {loading && (
-              <p className="small-text text-gray-500">Loading experts…</p>
+              <div className="w-full flex justify-center py-8">
+                <FaSpinner className="animate-spin text-brand1 text-xl" />
+              </div>
             )}
             {error && !loading && (
               <p className="small-text text-red-600">{error}</p>
@@ -221,12 +391,21 @@ const ExpertConsultations = ({ branch, setShowPopup }) => {
                     />
                   </svg>
                   <h3 className="text-brand1 text-xl font-semibold mb-2">
-                    No doctors found
+                    {t("doctors.notFound")}
                   </h3>
                   <p className="text-brand1/70 mb-6">
-                    No doctors match your current filters. Try adjusting your
-                    search criteria.
+                    {t("doctors.notFoundDesc")}
                   </p>
+                  <button
+                    onClick={() => {
+                      setType("All");
+                      setSpecialization("All");
+                      setSearchTerm("");
+                    }}
+                    className="px-6 py-2 bg-brand1 text-white rounded-lg hover:bg-brand5/90 transition-colors font-medium"
+                  >
+                    {t("doctors.resetFilters")}
+                  </button>
                 </div>
               </div>
             ) : (
