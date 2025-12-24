@@ -37,7 +37,7 @@ const PatientsInfo = () => {
       {/* Patient Rights */}
       <div className="bg-white border border-brand4/20 rounded-2xl p-4 md:p-6 mb-7 shadow-sm">
         <div className="flex items-center  gap-3 mb-6 text-brand1">
-          <div className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-lg shrink-0 mt-1">
+          <div className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-brand1 to-brand4 rounded-lg shrink-0 mt-1">
             <LuShield className="text-white text-2xl" />
           </div>
           <div>

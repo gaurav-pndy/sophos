@@ -61,9 +61,9 @@ const AboutContacts = () => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6">
+      <div className="bg-white rounded-2xl border border-brand4/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row lg:items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-xl shrink-0 shadow-md">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-brand4 rounded-xl shrink-0 shadow-md">
             <FaRegBuilding className="text-white text-3xl" />
           </div>
           <div>
@@ -82,21 +82,21 @@ const AboutContacts = () => {
         {contacts.map((org, idx) => (
           <div
             key={org.title}
-            className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-6 hover:border-[#845007]/40 transition-colors"
+            className="bg-white rounded-2xl border border-brand4/20 shadow-sm p-6 hover:border-brand4/40 transition-colors"
           >
             <div className="mb-4">
               <h3 className="font-bold subheading text-brand1 mb-2">
                 {t(org.title)}
               </h3>
-              {/* <p className="text-[#845007] small-text font-medium">
+              {/* <p className="text-brand4 small-text font-medium">
                 {t(org.subtitle)}
               </p> */}
             </div>
 
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
-                  <FaMapMarkerAlt className="text-[#845007] text-xl" />
+                <div className="flex h-10 w-10 items-center justify-center bg-brand4/20 rounded-lg shrink-0 mt-0.5">
+                  <FaMapMarkerAlt className="text-brand4 text-xl" />
                 </div>
                 <div className="flex-1">
                   <div className="text-brand1/60 small-text uppercase tracking-wide ">
@@ -110,8 +110,8 @@ const AboutContacts = () => {
 
               {org.phone && (
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
-                    <FaPhoneAlt className="text-[#845007] text-xl" />
+                  <div className="flex h-10 w-10 items-center justify-center bg-brand4/20 rounded-lg shrink-0 mt-0.5">
+                    <FaPhoneAlt className="text-brand4 text-xl" />
                   </div>
                   <div className="flex-1">
                     <div className="text-brand1/60 small-text uppercase tracking-wide ">
@@ -125,8 +125,8 @@ const AboutContacts = () => {
               )}
               {org.helpdesk && (
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
-                    <FaPhoneAlt className="text-[#845007] text-xl" />
+                  <div className="flex h-10 w-10 items-center justify-center bg-brand4/20 rounded-lg shrink-0 mt-0.5">
+                    <FaPhoneAlt className="text-brand4 text-xl" />
                   </div>
                   <div className="flex-1">
                     <div className="text-brand1/60 small-text uppercase tracking-wide">
@@ -140,8 +140,8 @@ const AboutContacts = () => {
               )}
               {org.multichannel && (
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
-                    <FaPhoneAlt className="text-[#845007] text-xl" />
+                  <div className="flex h-10 w-10 items-center justify-center bg-brand4/20 rounded-lg shrink-0 mt-0.5">
+                    <FaPhoneAlt className="text-brand4 text-xl" />
                   </div>
                   <div className="flex-1">
                     <div className="text-brand1/60 small-text uppercase tracking-wide ">
@@ -155,8 +155,8 @@ const AboutContacts = () => {
               )}
 
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
-                  <FaEnvelope className="text-[#845007] text-xl" />
+                <div className="flex h-10 w-10 items-center justify-center bg-brand4/20 rounded-lg shrink-0 mt-0.5">
+                  <FaEnvelope className="text-brand4 text-xl" />
                 </div>
                 <div className="flex-1">
                   <div className="text-brand1/60 small-text uppercase tracking-wide ">
@@ -164,15 +164,15 @@ const AboutContacts = () => {
                   </div>
                   <a
                     href={`mailto:${org.email}`}
-                    className="text-brand1/90 base-text font-medium hover:text-[#845007] transition-colors hover:underline"
+                    className="text-brand1/90 base-text font-medium hover:text-brand4 transition-colors hover:underline"
                   >
                     {org.email}
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0 mt-0.5">
-                  <FaGlobe className="text-[#845007] text-xl" />
+                <div className="flex h-10 w-10 items-center justify-center bg-brand4/20 rounded-lg shrink-0 mt-0.5">
+                  <FaGlobe className="text-brand4 text-xl" />
                 </div>
                 <div className="flex-1">
                   <div className="text-brand1/60 small-text uppercase tracking-wide ">
@@ -180,7 +180,7 @@ const AboutContacts = () => {
                   </div>
                   <a
                     href={org.website}
-                    className="text-brand1/90 base-text font-medium hover:text-[#845007] transition-colors hover:underline"
+                    className="text-brand1/90 base-text font-medium hover:text-brand4 transition-colors hover:underline"
                   >
                     {org.website}
                   </a>
@@ -210,9 +210,9 @@ const AboutContacts = () => {
       </div>
 
       {/* Order of appeal notice */}
-      <div className="bg-[#845007]/10 rounded-2xl p-6 flex items-start gap-4 border border-[#845007]/30">
-        <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-full shrink-0">
-          <FaCheckCircle className="text-[#845007] text-xl" />
+      <div className="bg-brand4/10 rounded-2xl p-6 flex items-start gap-4 border border-brand4/30">
+        <div className="flex h-10 w-10 items-center justify-center bg-brand4/20 rounded-full shrink-0">
+          <FaCheckCircle className="text-brand4 text-xl" />
         </div>
         <div className="flex-1">
           <div className="font-semibold text-brand1 subheading mb-1">

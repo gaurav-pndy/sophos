@@ -75,30 +75,30 @@ const Footer = ({ city }) => {
           <div className="flex md:grid base-text md:grid-cols-1 flex-col gap-1">
             <button
               onClick={() => handleScrollToSection("#about")}
-              className=" hover:text-brand2 text-left cursor-pointer"
+              className=" hover:text-brand4 text-left cursor-pointer"
             >
               {t("header.about")}{" "}
             </button>
             <button
               onClick={() => handleScrollToSection("#doctors")}
-              className=" hover:text-brand2 text-left cursor-pointer"
+              className=" hover:text-brand4 text-left cursor-pointer"
             >
               {t("header.doctors")}{" "}
             </button>
-            <Link to="/for-patients" className=" hover:text-brand2">
+            <Link to="/for-patients" className=" hover:text-brand4">
               {t("header.forPatients")}{" "}
             </Link>
             {/* <button
               onClick={() => handleScrollToSection("#services")}
-              className=" hover:text-brand2 text-left cursor-pointer"
+              className=" hover:text-brand4 text-left cursor-pointer"
             >
               {t("header.servicesDrop.ss")}{" "}
             </button> */}
-            <a href="#" className=" hover:text-brand2">
+            <a href="#" className=" hover:text-brand4">
               {t("header.priceList")}
             </a>
 
-            <Link to="/about#vacancies" className=" hover:text-brand2">
+            <Link to="/about#vacancies" className=" hover:text-brand4">
               {t("header.vacancies")}
             </Link>
           </div>

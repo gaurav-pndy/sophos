@@ -56,17 +56,18 @@ const ServicesPage = () => {
           <Link
             to={`/all-services/${service.slug}`}
             key={service.slug}
-            className="flex items-center  group gap-6 cursor-pointer bg-white rounded-2xl border border-[#845007]/10 shadow-sm p-4 "
+            className="flex items-center  group gap-6 cursor-pointer bg-white rounded-2xl border border-brand4/10 shadow-sm p-4 "
           >
-            <span className=" rounded-full text-2xl xl:text-3xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300  text-[#e9865f] mt-1">
+            <span className=" rounded-full text-2xl xl:text-3xl   shake-once group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300  text-[#e9865f] mt-1">
               <service.icon />
             </span>
 
             <div>
-              <h3 className="text-left group-hover:text-brand3 group-hover:scale-105 font-semibold transition-all duration-300 cursor-pointer text-brand1 mb-1 base-text leading-snug">
-                {t(service.title)}
-              </h3>
-              <p className="text-left group-hover:text-brand3 group-hover:scale-105 transition-all duration-300 cursor-pointer text-brand4  small-text leading-snug">
+              <h3
+                className="text-left group-hover:text-brand4 group-hover:scale-105 font-semibold transition-all duration-300 cursor-pointer text-brand1 mb-1 base-text leading-snug"
+                dangerouslySetInnerHTML={{ __html: t(service.title) }}
+              ></h3>
+              <p className="text-left group-hover:text-brand4 group-hover:scale-105 transition-all duration-300 cursor-pointer text-brand4  small-text leading-snug">
                 {t(service.subtitle)}
               </p>
             </div>

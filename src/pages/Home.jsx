@@ -10,7 +10,7 @@ import BookingForm from "../components/Home/BookingForm";
 import ContactSection from "../components/Home/ContactSection";
 import AddressSection from "../components/Home/AddressSection";
 import ActionButtons from "../components/Home/ActionButtons";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
@@ -74,14 +74,26 @@ const Home = ({ city, setShowPopup }) => {
       <AboutSection city={city} />
 
       <DoctorsSection branch={city} setShowPopup={setShowPopup} />
+
+      <div className="py-6">
+        <MembershipSection />
+        <div className="flex justify-center mt-10 ">
+          <Link
+            to={"/all-services/sophos-plus"}
+            className="bg-brand1 text-white base-text font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 block mx-auto"
+          >
+            {t("moreBtn")}
+          </Link>
+        </div>
+      </div>
       {/* <CareSection /> */}
-      <CareSection2 />
+      {/* <CareSection2 /> */}
       {/* <ServicesSection /> */}
 
       {/* <PatientMap /> 
-      <MembershipSection />
+    
       */}
-      <TestimonialsSection branch={city} />
+      {/* <TestimonialsSection branch={city} /> */}
       {/* <FeedbackForm /> */}
 
       {/* <BookingForm /> */}

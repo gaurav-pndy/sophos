@@ -62,10 +62,10 @@ const EarlyWhy = () => {
                 {s.icon}
               </span>
               <div>
-                <div className="font-semibold base-text text-black group-hover:text-brand2 transition-all duration-300 mb-1">
+                <div className="font-semibold base-text text-black group-hover:text-brand4 transition-all duration-300 mb-1">
                   {t(s.title)}
                 </div>
-                <div className="text-brand1 group-hover:text-brand2 transition-all duration-300 small-text">
+                <div className="text-brand1 group-hover:text-brand4 transition-all duration-300 small-text">
                   {t(s.desc)}
                 </div>
               </div>

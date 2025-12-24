@@ -60,7 +60,7 @@ const PatientsAccordion = () => {
             aria-controls={`panel-content-${panel.key}`}
           >
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-lg shrink-0 mt-1">
+              <div className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-brand1 to-brand4 rounded-lg shrink-0 mt-1">
                 {panel.icon}
               </div>
               <div>

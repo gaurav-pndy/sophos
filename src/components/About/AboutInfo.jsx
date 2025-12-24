@@ -23,10 +23,10 @@ const AboutInfo = ({ city }) => {
   return (
     <div className="space-y-8">
       {/* Main Card */}
-      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6 ">
+      <div className="bg-white rounded-2xl border border-brand4/20 shadow-sm p-4 md:p-6 ">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row lg:items-center gap-4 mb-8">
-          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-xl shrink-0 shadow-md mt-2 lg:mt-0">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-brand4 rounded-xl shrink-0 shadow-md mt-2 lg:mt-0">
             <FaHospital className="text-white text-3xl" />
           </div>
           <div className="flex-1">
@@ -40,11 +40,11 @@ const AboutInfo = ({ city }) => {
         </div>
 
         {/* Company Name & Locations */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 border-b border-[#845007]/20 pb-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 border-b border-brand4/20 pb-8 mb-8">
           {/* Company Name */}
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <FaClipboardList className="text-2xl text-[#845007]" />
+              <FaClipboardList className="text-2xl text-brand4" />
               <span className="font-semibold subheading text-brand1">
                 {t("about.info.fullName")}
               </span>
@@ -59,14 +59,14 @@ const AboutInfo = ({ city }) => {
           {/* Locations */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <FaMapMarkerAlt className="text-2xl text-[#845007]" />
+              <FaMapMarkerAlt className="text-2xl text-brand4" />
               <span className="font-semibold subheading text-brand1">
                 {t("about.info.locations")}
               </span>
             </div>
             <div className="space-y-4 ml-9">
               <div className="flex flex-col gap-2">
-                {/* <span className="bg-[#845007]/50 text-brand1 font-medium rounded-full text-xs px-3 py-1 w-fit">
+                {/* <span className="bg-brand4/50 text-brand1 font-medium rounded-full text-xs px-3 py-1 w-fit">
                   {t("about.info.moscow")}
                 </span> */}
                 <p className="text-brand1/80 base-text leading-relaxed">
@@ -80,9 +80,9 @@ const AboutInfo = ({ city }) => {
         </div>
 
         {/* Registration Details */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 border-b border-[#845007]/20 pb-8 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 border-b border-brand4/20 pb-8 mb-8">
           <div className="space-y-1">
-            <div className="font-bold text-[#845007] small-text uppercase tracking-wide">
+            <div className="font-bold text-brand4 small-text uppercase tracking-wide">
               {t("about.info.ogrn")}
             </div>
             <div className="text-brand1/90 font-medium base-text">
@@ -92,7 +92,7 @@ const AboutInfo = ({ city }) => {
             </div>
           </div>
           <div className="space-y-1">
-            <div className="font-bold text-[#845007] small-text uppercase tracking-wide">
+            <div className="font-bold text-brand4 small-text uppercase tracking-wide">
               {t("about.info.tax")}
             </div>
             <div className="text-brand1/90 font-medium base-text">
@@ -100,7 +100,7 @@ const AboutInfo = ({ city }) => {
             </div>
           </div>
           <div className="space-y-1">
-            <div className="font-bold text-[#845007] small-text uppercase tracking-wide">
+            <div className="font-bold text-brand4 small-text uppercase tracking-wide">
               {t("about.info.checkpoint")}
             </div>
             <div className="text-brand1/90 font-medium base-text">
@@ -110,11 +110,11 @@ const AboutInfo = ({ city }) => {
         </div>
 
         {/* Ownership & Management */}
-        <div className="border-b border-[#845007]/20 pb-8 mb-8 space-y-6">
+        <div className="border-b border-brand4/20 pb-8 mb-8 space-y-6">
           {/* Owners */}
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <FaUserTie className="text-xl text-[#845007]" />
+              <FaUserTie className="text-xl text-brand4" />
               <span className="font-semibold subheading text-brand1">
                 {t("about.info.owners")}
               </span>
@@ -127,7 +127,7 @@ const AboutInfo = ({ city }) => {
           {/* Management */}
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <FaClipboardList className="text-xl text-[#845007]" />
+              <FaClipboardList className="text-xl text-brand4" />
               <span className="font-semibold subheading text-brand1">
                 {t("about.info.management")}
               </span>
@@ -148,11 +148,11 @@ const AboutInfo = ({ city }) => {
         </div>
 
         {/* Schedule and Contacts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-8 mb-8 border-b border-[#845007]/20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-8 mb-8 border-b border-brand4/20">
           {/* Work Schedule */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <FaRegClock className="text-xl text-[#845007]" />
+              <FaRegClock className="text-xl text-brand4" />
               <span className="font-semibold subheading text-brand1">
                 {t("about.info.schedule")}
               </span>
@@ -165,7 +165,7 @@ const AboutInfo = ({ city }) => {
           {/* Service Contacts */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <FaPhoneAlt className="text-xl text-[#845007]" />
+              <FaPhoneAlt className="text-xl text-brand4" />
               <span className="font-semibold subheading text-brand1">
                 {t("about.info.serviceContacts")}
               </span>
@@ -179,8 +179,8 @@ const AboutInfo = ({ city }) => {
         </div>
 
         {/* Chief Doctor Reception */}
-        <div className="flex items-start gap-4 bg-[#845007]/10 rounded-xl p-6">
-          <FaCalendarCheck className="text-[#845007] text-2xl shrink-0 mt-1" />
+        <div className="flex items-start gap-4 bg-brand4/10 rounded-xl p-6">
+          <FaCalendarCheck className="text-brand4 text-2xl shrink-0 mt-1" />
           <div className="space-y-2">
             <div className="font-semibold subheading text-brand1">
               {t("about.info.chiefReception")}

@@ -141,11 +141,11 @@ bg-gradient-to-b lg:bg-gradient-to-r from-[#131e23] to-[#253133]"
         {content.map((item) => (
           <div
             id={item.id}
-            className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-6 "
+            className="bg-white rounded-2xl border border-brand4/20 shadow-sm p-6 "
           >
             {/* Header Section */}
             <div className="flex lg:items-center gap-4 mb-8">
-              <div className="flex h-14 w-14 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-xl shrink-0 shadow-md mt-2 lg:mt-0">
+              <div className="flex h-14 w-14 items-center justify-center bg-gradient-to-br from-brand1 to-brand4 rounded-xl shrink-0 shadow-md mt-2 lg:mt-0">
                 {item.icon}{" "}
               </div>
               <div className="flex-1">

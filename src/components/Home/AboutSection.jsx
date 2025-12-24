@@ -87,7 +87,7 @@ const AboutSection = ({ city }) => {
                 {features.map((f, i) => (
                   <div key={i} className="flex gap-2 xl:items-center xl:gap-4">
                     {city === "Moscow" ? (
-                      <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-brand1 to-[#845007] text-white text-lg rounded-lg shrink-0 mt-1 xl:mt-0">
+                      <div className="flex h-8 w-8 items-center justify-center bg-gradient-to-br z-40 from-brand1 to-brand4 text-white text-lg rounded-lg shrink-0 mt-1 xl:mt-0">
                         {f.icon}
                       </div>
                     ) : (

@@ -202,7 +202,7 @@ export default function Blogs({ branch }) {
               <div className="mt-auto">
                 <Link
                   to={`/blog/${blog._id}?lang=${currentLanguage}`}
-                  className="inline-flex items-center base-text font-medium text-brand1 hover:text-brand2 transition-colors group"
+                  className="inline-flex items-center base-text font-medium text-brand1 hover:text-brand4 transition-colors group"
                 >
                   {t("readMore") || "Read more"}
                   <svg

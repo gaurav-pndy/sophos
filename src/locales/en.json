@@ -146,7 +146,8 @@
   },
  "hero": {
   "slide1": {
-    "title": "A Modern Multidisciplinary Clinic: <br/>Your Health Is Our Priority",
+    "title": "Modern multidisciplinary medical center",
+    "slogan": "Your Health Is Our Priority",
     "subtitle1": "Highly Qualified Specialists",
     "subtitle2": "Evidence-Based Medicine",
     "subtitle3": "A Wide Range of Medical Services",
@@ -154,7 +155,9 @@
     "button2": "Contact a Care Coordinator"
   },
   "slide2": {
-    "title": "Personalized Early Disease Detection — <br/>Your Key to Health and Longevity",
+    "title": "Personalized Early Disease Detection",
+        "slogan": "Your Key to Health and Longevity",
+
     "subtitle1": "Expert Medical Team",
     "subtitle2": "International Clinical Guidelines",
     "subtitle3": "Personalized Approach",
@@ -162,7 +165,9 @@
     "button2": "About the Specialist"
   },
   "slide3": {
-    "title": "Telemedicine: When Your Doctor Is Closer Than You Think",
+    "title": "Telemedicine",
+            "slogan": "When Your Doctor Is Closer Than You Think",
+
     "subtitle1": "Accessibility",
     "subtitle2": "Convenience",
     "subtitle3": "Confidentiality",
@@ -170,7 +175,9 @@
     "button": "Book a Consultation"
   },
   "slide4": {
-    "title": "SOPHOS+ Premium Membership: Your Step Toward Maximum Benefits",
+    "title": "SOPHOS+ Premium Membership",
+                "slogan": "Your Step Toward Maximum Benefits",
+
     "subtitle1": "Priority Appointment Scheduling",
     "subtitle2": "Discounts on Diagnostic Services",
     "subtitle3": "Personal Care Coordinator",
@@ -179,9 +186,9 @@
 },
 
 "aboutClinic": {
-  "title": "A multidisciplinary clinic in Makhachkala with advanced diagnostics and expert specialists.",
+  "title": "Modern multidisciplinary medical center in Makhachkala",
   "bookBtn": "Book a consultation",
-  "desc": "At our clinic, diagnostics and treatment are carried out at the highest professional level, covering the full spectrum of medical expertise in prevention, early detection, treatment, patient management, and further evaluation. We believe in the power of combining deep medical knowledge with genuine care for every individual.",
+  "desc": "In our medical center, diagnostics and therapy are carried out at the highest professional level, covering the full range of knowledge about prevention, early detection, treatment, management and follow-up of patients. Forget about the usual idea of a medical institution. Here, in our space, a new era of caring is being born: cutting-edge scientific discoveries are intertwined with deep human involvement, and true expertise comes to life in practice.",
   "feature1": {
     "desc": "International standards"
   },
@@ -200,7 +207,7 @@
   "footnote": "We don’t treat diseases — we treat people living with them. <br/> Want to understand what to do next?"
 },
   "doctors": {
-    "title1": "A modern multidisciplinary outpatient clinic. A wide diagnostic and treatment base",
+    "title1": " A wide diagnostic and treatment base",
     "title": "Our Doctors",
     "subtitle": "Our team is more than just experienced specialists. We organize conferences, publish scientific papers, develop recommendations and educational programs. By combining expertise from different fields, we create effective solutions for complex cases. Our goal is a community of professionals working for the benefit of the patient.",
     "filter": {

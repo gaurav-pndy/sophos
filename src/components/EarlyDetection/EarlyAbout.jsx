@@ -76,10 +76,10 @@ const EarlyAbout = () => {
             <span className="flex items-center justify-center w-14 h-14 rounded-lg bg-brand1/30 mb-4">
               {feat.icon}
             </span>
-            <div className="mt-2 mb-4 subheading font-semibold text-black group-hover:text-brand2 transition-all duration-300 ">
+            <div className="mt-2 mb-4 subheading font-semibold text-black group-hover:text-brand4 transition-all duration-300 ">
               {t(feat.title)}
             </div>
-            <div className="text-brand1 base-text group-hover:text-brand2 transition-all duration-300 ">
+            <div className="text-brand1 base-text group-hover:text-brand4 transition-all duration-300 ">
               {t(feat.desc)}
             </div>
           </div>

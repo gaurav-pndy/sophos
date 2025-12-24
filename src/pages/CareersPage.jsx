@@ -1452,7 +1452,7 @@ const VacancyDetails = ({
                               {t("careersPage.emailLabel", "Email Address")}
                             </p>
                             <p className="text-lg font-semibold text-gray-900">
-                              careers@company.com
+                              contact@sophos-med.ru
                             </p>
                           </div>
                         </div>

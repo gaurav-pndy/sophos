@@ -271,11 +271,11 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
         },
       ],
     },
-    {
-      path: "/for-patients#blog",
-      label: t("header.patient5"),
-      icon: <IoDocumentText className="text-xl text-white" />,
-    },
+    // {
+    //   path: "/for-patients#blog",
+    //   label: t("header.patient5"),
+    //   icon: <IoDocumentText className="text-xl text-white" />,
+    // },
     // {
     //   path: "/for-patients#documents",
     //   label: t("header.patient6"),

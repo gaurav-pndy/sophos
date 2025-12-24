@@ -75,27 +75,19 @@ const MembershipSection = () => {
           {features.map((f, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl px-8 py-7 flex flex-col items-center text-center hover:scale-105 hover:bg-brand4/20 hover:shadow-lg cursor-pointer shadow-md transition-all duration-300 group"
+              className="bg-white rounded-xl px-8 py-7 flex flex-col items-center text-center hover:scale-105 hover:bg-brand4/10 hover:shadow-lg cursor-pointer shadow-md transition-all duration-300 group"
             >
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand1 to-[#845007] group-hover:from-brand2 group-hover:to-brand1 group-hover:rotate-15 group-hover:scale-110 flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand1 to-brand4 group-hover:from-brand2 group-hover:to-brand1 shake-once group-hover:scale-110  flex items-center justify-center shrink-0   transition-all duration-300 mb-1">
                 {f.icon}
               </div>
-              <div className="text-black group-hover:text-brand2 transition-all duration-300 font-medium text-xl mb-2">
+              <div className="text-black group-hover:text-brand4 transition-all duration-300 font-medium text-xl mb-2">
                 {f.title}
               </div>
-              <div className="text-brand1 group-hover:text-brand2 transition-all duration-300 base-text">
+              <div className="text-brand1 group-hover:text-brand4 transition-all duration-300 base-text">
                 {f.text}
               </div>
             </div>
           ))}
-        </div>
-        <div className="flex justify-center mt-10 ">
-          <Link
-            to={"/hdmc-plus"}
-            className="bg-brand1 text-white font-semibold rounded-lg px-8 py-3 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 block mx-auto"
-          >
-            {t("moreBtn")}
-          </Link>
         </div>
 
         {/* FAQ Accordion */}

@@ -43,6 +43,7 @@ import {
   FaVideo,
   FaXRay,
   FaPlus,
+  FaHandHoldingMedical,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import i18n from "../utils/i18n";
@@ -50,8 +51,8 @@ import { FaLocationDot, FaUserDoctor } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import { TbLicense } from "react-icons/tb";
 import { BiSolidContact } from "react-icons/bi";
-import { IoDocumentText, IoInformation } from "react-icons/io5";
-import { LuShield } from "react-icons/lu";
+import { IoBody, IoDocumentText, IoInformation } from "react-icons/io5";
+import { LuBone, LuBrain, LuShield } from "react-icons/lu";
 import {
   MdFamilyRestroom,
   MdMedicalServices,
@@ -71,6 +72,7 @@ import {
 } from "react-icons/gi";
 import { BsThermometerHalf } from "react-icons/bs";
 import { AiOutlineUserSwitch } from "react-icons/ai";
+import { RiPsychotherapyLine } from "react-icons/ri";
 
 const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
   const { t, i18n } = useTranslation();
@@ -401,42 +403,42 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
     {
       path: "/doctors#specialization15",
       label: t("header.doctorsDrop.d1"),
-      icon: <FaFemale />,
+      icon: <FaUserDoctor />,
     },
     {
       path: "/doctors#specialization16",
       label: t("header.doctorsDrop.d2"),
-      icon: <GiStomach />,
+      icon: <FaFemale />,
     },
     {
       path: "/doctors#specialization17",
       label: t("header.doctorsDrop.d3"),
-      icon: <FaDna />,
+      icon: <IoBody />,
     },
     {
       path: "/doctors#specialization18",
       label: t("header.doctorsDrop.d4"),
-      icon: <GiMedicines />,
+      icon: <LuBrain />,
     },
     {
       path: "/doctors#specialization19",
       label: t("header.doctorsDrop.d5"),
-      icon: <FaUserMd />,
+      icon: <RiPsychotherapyLine />,
     },
     {
       path: "/doctors#specialization19",
       label: t("header.doctorsDrop.d6"),
-      icon: <FaUserMd />,
+      icon: <LuBone />,
     },
     {
       path: "/doctors#specialization20",
       label: t("header.doctorsDrop.d7"),
-      icon: <FaBrain />,
+      icon: <FaHandHoldingMedical />,
     },
     {
       path: "/doctors#specialization21",
       label: t("header.doctorsDrop.d8"),
-      icon: <GiBrain />,
+      icon: <GiKidneys />,
     },
   ];
 
@@ -779,7 +781,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           >
             <button
               onClick={() => handleScrollToSection("#about")}
-              className="flex items-center cursor-pointer gap-1 hover:text-brand2 transition-all duration-300"
+              className="flex items-center cursor-pointer gap-1 hover:text-brand4 transition-all duration-300"
             >
               {t("header.about")} <FaChevronDown className="small-text mt-1" />
             </button>
@@ -792,21 +794,21 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/2 mt-4 grid grid-cols-2 gap-6 xl:gap-10 bg-white  shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-xl xl:w-2xl"
+                  className="absolute left-1/2 -translate-x-1/2 mt-4 grid grid-cols-2 gap-6 xl:gap-10 bg-white  shadow-lg shadow-black/40 rounded-xl p-6 z-40 w-xl xl:w-3xl"
                 >
                   {aboutItems.map((a, idx) => (
                     <Link
                       key={idx}
                       to={a.path}
-                      className="flex items-center gap-2 group-hover:text-brand2 base-text font-medium transition-all duration-300"
+                      className="flex relative group items-center gap-2 group-hover:text-brand4 base-text font-medium transition-all duration-300"
                     >
-                      <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
+                      <span className="shake-once rounded-full text-xl    group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                         {a.icon}
                       </span>
-                      <p className="group-hover:text-brand2 text-wrap base-text font-normal">
+                      <p className="group-hover:text-brand4 text-wrap base-text font-normal ">
                         {a.label}
                       </p>
-                      <div className="absolute right-2 top-3 overflow-hidden w-6">
+                      <div className="absolute right-2 top-2 overflow-hidden w-6">
                         <FaArrowRight className="text-lg text-brand2 transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-out" />
                       </div>
                     </Link>
@@ -825,7 +827,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           >
             <Link
               to="/services"
-              className="flex  items-center gap-1 hover:text-brand2 transition-all duration-300 cursor-pointer"
+              className="flex  items-center gap-1 hover:text-brand4 transition-all duration-300 cursor-pointer"
             >
               {t("header.services")}{" "}
               <FaChevronDown className="small-text mt-1" />
@@ -849,15 +851,15 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     >
                       <Link
                         to={s.path || "#"}
-                        className="flex items-center gap-2 group-hover:text-brand2 base-text font-medium transition-all duration-300"
+                        className="flex items-center gap-2 group-hover:text-brand4 base-text font-medium transition-all duration-300"
                       >
-                        <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
+                        <span className=" rounded-full text-xl   shake-once group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                           {s.icon}
                         </span>
                         <p
                           className={`${
                             s.subItems && "text-[#0a3449]"
-                          } group-hover:text-brand2 pr-8 base-text text-wrap font-normal`}
+                          } group-hover:text-brand4 pr-8 base-text text-wrap font-normal`}
                           dangerouslySetInnerHTML={{ __html: s.label }}
                         ></p>
                         {s.subItems ? (
@@ -889,7 +891,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                         <li key={j}>
                                           <Link
                                             to={item.path}
-                                            className="block group text-wrap base-text text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                            className="block group text-wrap base-text text-gray-700 hover:text-brand4 transition-all relative pr-8"
                                           >
                                             {item.label}
                                             <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -904,7 +906,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                         <li key={j}>
                                           <Link
                                             to={item.path}
-                                            className="block group text-wrap text-[#e9865f] base-text hover:text-brand2 transition-all relative pr-8"
+                                            className="block group text-wrap text-[#e9865f] base-text hover:text-brand4 transition-all relative pr-8"
                                           >
                                             {item.label}
                                             <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -929,7 +931,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                                   <li key={i}>
                                     <Link
                                       to={item.path}
-                                      className="block group text-wrap base-text text-gray-700 hover:text-brand2 transition-all relative pr-8"
+                                      className="block group text-wrap base-text text-gray-700 hover:text-brand4 transition-all relative pr-8"
                                     >
                                       {item.label}
                                       <div className="absolute right-2 top-2 overflow-hidden w-6">
@@ -959,7 +961,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           >
             <button
               onClick={() => handleScrollToSection("#doctors")}
-              className="flex items-center gap-1 hover:text-brand2 transition-all duration-300 cursor-pointer"
+              className="flex items-center gap-1 hover:text-brand4 transition-all duration-300 cursor-pointer"
             >
               {t("header.doctors")}{" "}
               <FaChevronDown className="small-text mt-1" />
@@ -983,15 +985,15 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     >
                       <Link
                         to={d.path || "#"}
-                        className="flex items-center gap-2 group-hover:text-brand2 base-text font-medium transition-all duration-300"
+                        className="flex items-center gap-2 group-hover:text-brand4 base-text font-medium transition-all duration-300"
                       >
-                        <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
+                        <span className=" rounded-full text-xl   shake-once group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                           {d.icon}
                         </span>
                         <p
                           className={`${
                             d.subItems && "text-[#0a3449]"
-                          } group-hover:text-brand2 pr-8 base-text text-wrap font-normal`}
+                          } group-hover:text-brand4 pr-8 base-text text-wrap font-normal`}
                         >
                           {d.label}
                         </p>
@@ -1016,7 +1018,7 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           >
             <Link
               to="/for-patients"
-              className="flex items-center cursor-pointer gap-1 hover:text-brand2 transition-all duration-300"
+              className="flex items-center cursor-pointer gap-1 hover:text-brand4 transition-all duration-300"
             >
               {t("header.forPatients")}{" "}
               <FaChevronDown className="small-text mt-1" />
@@ -1036,12 +1038,12 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
                     <Link
                       to={p.path}
                       key={idx}
-                      className="flex items-center gap-2 group-hover:text-brand2 small-text xl:base-text font-medium transition-all duration-300"
+                      className="flex group relative items-center gap-2 group-hover:text-brand4 small-text xl:base-text font-medium transition-all duration-300"
                     >
-                      <span className=" rounded-full text-xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
+                      <span className=" rounded-full text-xl   shake-once group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300 mr-1 text-[#e9865f]">
                         {p.icon}
                       </span>
-                      <p className="group-hover:text-brand2 base-text text-left text-wrap font-normal">
+                      <p className="group-hover:text-brand4 base-text text-left text-wrap font-normal">
                         {p.label}
                       </p>
                       <div className="absolute right-2 top-3 overflow-hidden w-6">
@@ -1055,21 +1057,21 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
           </div>
           <button
             onClick={() => handleScrollToSection("#contact-and-feedback")}
-            className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
+            className=" whitespace-nowrap hover:text-brand4 transition-all duration-300 cursor-pointer"
           >
             {" "}
             {t("header.reviews")}{" "}
           </button>{" "}
           <Link
             to="/blogs"
-            className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
+            className=" whitespace-nowrap hover:text-brand4 transition-all duration-300 cursor-pointer"
           >
             {" "}
             {t("header.blog")}
           </Link>{" "}
           <button
             onClick={() => handleScrollToSection("#contact")}
-            className=" whitespace-nowrap hover:text-brand2 transition-all duration-300 cursor-pointer"
+            className=" whitespace-nowrap hover:text-brand4 transition-all duration-300 cursor-pointer"
           >
             {" "}
             {t("header.contact")}

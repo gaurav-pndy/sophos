@@ -23,8 +23,8 @@ const HeroSection = ({ setShowPopup }) => {
     <div>
       <div className="relative w-full flex items-center justify-center overflow-hidden">
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          // autoplay={{ delay: 3000, disableOnInteraction: false }}
+          modules={[Pagination, Autoplay]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop={true}
           navigation
           pagination={{ clickable: true }}
@@ -63,7 +63,7 @@ const HeroSection = ({ setShowPopup }) => {
                   <div className="flex gap-4">
                     <button
                       onClick={() => setShowFormPopup(true)}
-                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-gray-200 transition-all duration-300"
+                      className="bg-white relative base-text z-40 text-[#40260c] font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-gray-200 transition-all cursor-pointer hover:scale-105 duration-300"
                     >
                       {t("hero.slide1.button")}
                     </button>
@@ -116,7 +116,7 @@ const HeroSection = ({ setShowPopup }) => {
                   <div className="flex gap-4">
                     <button
                       onClick={() => setShowFormPopup(true)}
-                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-gray-200 transition-all duration-300"
+                      className="bg-white relative z-40 text-[#172242] font-semibold rounded-lg px-8 py-2.5 base-text shadow hover:bg-gray-200 hover:scale-105 cursor-pointer transition-all duration-300"
                     >
                       {t("hero.slide2.button")}
                     </button>
@@ -173,7 +173,7 @@ const HeroSection = ({ setShowPopup }) => {
                   <div className="flex gap-4">
                     <button
                       onClick={() => setShowFormPopup(true)}
-                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-gray-200 transition-all duration-300"
+                      className="bg-white relative z-40 text-[#231717] font-semibold rounded-lg px-8 py-2.5 base-text shadow hover:bg-gray-200 hover:scale-105 cursor-pointer transition-all duration-300"
                     >
                       {t("hero.slide3.button")}
                     </button>
@@ -230,7 +230,7 @@ const HeroSection = ({ setShowPopup }) => {
                   <div className="flex gap-4">
                     <button
                       onClick={() => setShowFormPopup(true)}
-                      className="bg-white relative z-40 text-teal-900 font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-gray-200 transition-all duration-300"
+                      className="bg-white relative z-40 base-text text-[#002b3e] font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-gray-200 cursor-pointer hover:scale-105 transition-all duration-300"
                     >
                       {t("hero.slide4.button")}
                     </button>

@@ -49,7 +49,7 @@ const ServicesSection = () => {
               key={index}
               className="flex  items-center group gap-4 cursor-pointer"
             >
-              <div className="w-16 h-16 rounded-full from-brand1 to-[#845007] flex items-center justify-center shrink-0 group-hover:rotate-15 bg-gradient-to-br group-hover:from-brand2 group-hover:to-brand1 transition-all duration-300 group-hover:scale-110">
+              <div className="w-16 h-16 rounded-full from-brand1 to-brand4 flex items-center justify-center shrink-0 group-hover:rotate-15 bg-gradient-to-br group-hover:from-brand2 group-hover:to-brand1 transition-all duration-300 group-hover:scale-110">
                 <img
                   src={service.image}
                   alt={t(service.title)}
@@ -58,7 +58,7 @@ const ServicesSection = () => {
               </div>
 
               <div>
-                <h3 className="text-left group-hover:text-brand2 group-hover:scale-105 transition-all duration-300 cursor-pointer text-gray-900 mb-1 base-text leading-snug">
+                <h3 className="text-left group-hover:text-brand4 group-hover:scale-105 transition-all duration-300 cursor-pointer text-gray-900 mb-1 base-text leading-snug">
                   {t(service.title)}
                 </h3>
               </div>

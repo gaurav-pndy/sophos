@@ -14,9 +14,9 @@ const AboutPrivacyPolicy = () => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6">
+      <div className="bg-white rounded-2xl border border-brand4/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-xl shrink-0 shadow-md">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-brand4 rounded-xl shrink-0 shadow-md">
             <FaFileAlt className="text-white text-3xl" />
           </div>
           <div>
@@ -31,15 +31,15 @@ const AboutPrivacyPolicy = () => {
       </div>
 
       {/* Policy Body */}
-      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6 space-y-8">
+      <div className="bg-white rounded-2xl border border-brand4/20 shadow-sm p-4 md:p-6 space-y-8">
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               1
             </span>
             {t("about.privacy.section1Title")}
           </h3>
-          <ul className="ml-9  text-brand1/80 base-text space-y-2 marker:text-[#845007]">
+          <ul className="ml-9  text-brand1/80 base-text space-y-2 marker:text-brand4">
             <li className="leading-relaxed">{t("about.privacy.point1")}</li>
             <li className="leading-relaxed">{t("about.privacy.point2")}</li>
             <li className="leading-relaxed">{t("about.privacy.point3")}</li>
@@ -49,7 +49,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               2
             </span>
             {t("about.privacy.section2Title")}
@@ -57,7 +57,7 @@ const AboutPrivacyPolicy = () => {
           <p className="text-brand1/80  leading-relaxed ml-9 mb-3">
             {t("about.privacy.section2Subtitle")}
           </p>
-          <ul className="ml-9 list-disc base-text list-inside text-brand1/80  space-y-2 marker:text-[#845007]">
+          <ul className="ml-9 list-disc base-text list-inside text-brand1/80  space-y-2 marker:text-brand4">
             <li
               className="leading-relaxed"
               dangerouslySetInnerHTML={{ __html: t("about.privacy.point21") }}
@@ -91,7 +91,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               3
             </span>
             {t("about.privacy.section3Title")}
@@ -99,7 +99,7 @@ const AboutPrivacyPolicy = () => {
           <p className="text-brand1/80  leading-relaxed ml-9 mb-3">
             {t("about.privacy.section3Subtitle")}
           </p>
-          <ul className="ml-9 list-disc list-inside base-text text-brand1/80 space-y-2 marker:text-[#845007]">
+          <ul className="ml-9 list-disc list-inside base-text text-brand1/80 space-y-2 marker:text-brand4">
             <li className="leading-relaxed">{t("about.privacy.point31")}</li>
             <li className="leading-relaxed">{t("about.privacy.point32")}</li>
             <li className="leading-relaxed">{t("about.privacy.point33")}</li>
@@ -117,7 +117,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               4
             </span>
             {t("about.privacy.section4Title")}
@@ -132,7 +132,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               5
             </span>
             {t("about.privacy.section5Title")}
@@ -140,7 +140,7 @@ const AboutPrivacyPolicy = () => {
           <p className="text-brand1/80 base-text leading-relaxed ml-9 mb-3">
             {t("about.privacy.section5Subtitle")}
           </p>
-          <ul className="ml-9 list-disc base-text list-inside text-brand1/80 space-y-2 marker:text-[#845007]">
+          <ul className="ml-9 list-disc base-text list-inside text-brand1/80 space-y-2 marker:text-brand4">
             <li className="leading-relaxed">{t("about.privacy.point51")}</li>
             <li className="leading-relaxed">{t("about.privacy.point52")}</li>
             <li className="leading-relaxed">{t("about.privacy.point53")}</li>
@@ -162,7 +162,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               6
             </span>
             {t("about.privacy.section6Title")}
@@ -170,7 +170,7 @@ const AboutPrivacyPolicy = () => {
           <p className="text-brand1/80 base-text leading-relaxed ml-9 mb-3">
             {t("about.privacy.section6Subtitle")}
           </p>
-          <ul className="ml-9 list-disc list-inside text-brand1/80 base-text space-y-2 marker:text-[#845007]">
+          <ul className="ml-9 list-disc list-inside text-brand1/80 base-text space-y-2 marker:text-brand4">
             <li className="leading-relaxed">{t("about.privacy.point61")}</li>
             <li className="leading-relaxed">{t("about.privacy.point62")}</li>
             <li className="leading-relaxed">{t("about.privacy.point63")}</li>
@@ -182,7 +182,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               7
             </span>
             {t("about.privacy.section7Title")}
@@ -196,7 +196,7 @@ const AboutPrivacyPolicy = () => {
           <h6 className="font-bold ml-9 base-text">
             {t("about.privacy.section7Heading")}
           </h6>
-          <ul className="ml-9 list-disc text-brand1/80 list-inside base-text  space-y-2 marker:text-[#845007]">
+          <ul className="ml-9 list-disc text-brand1/80 list-inside base-text  space-y-2 marker:text-brand4">
             <li className="leading-relaxed">{t("about.privacy.point71")}</li>
             <li className="leading-relaxed">{t("about.privacy.point72")}</li>
             <li className="leading-relaxed">{t("about.privacy.point73")}</li>
@@ -205,7 +205,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               8
             </span>
             {t("about.privacy.section8Title")}
@@ -214,7 +214,7 @@ const AboutPrivacyPolicy = () => {
             {t("about.privacy.section8Subtitle")}
           </p>
 
-          <ul className="ml-9 list-disc text-brand1/80 base-text list-inside space-y-2 marker:text-[#845007]">
+          <ul className="ml-9 list-disc text-brand1/80 base-text list-inside space-y-2 marker:text-brand4">
             <li className="leading-relaxed">{t("about.privacy.point81")}</li>
             <li className="leading-relaxed">{t("about.privacy.point82")}</li>
             <li className="leading-relaxed">{t("about.privacy.point83")}</li>
@@ -226,7 +226,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               9
             </span>
             {t("about.privacy.section9Title")}
@@ -237,7 +237,7 @@ const AboutPrivacyPolicy = () => {
           <h6 className="font-bold base-text">
             {t("about.privacy.section7Heading")}
           </h6>
-          <ul className="ml-9 list-disc text-brand1/80 base-text list-inside space-y-2 marker:text-[#845007]">
+          <ul className="ml-9 list-disc text-brand1/80 base-text list-inside space-y-2 marker:text-brand4">
             <li className="leading-relaxed">{t("about.privacy.point91")}</li>
             <li className="leading-relaxed">{t("about.privacy.point92")}</li>
             <li className="leading-relaxed">{t("about.privacy.point93")}</li>
@@ -249,7 +249,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               10
             </span>
             {t("about.privacy.section10Title")}
@@ -258,7 +258,7 @@ const AboutPrivacyPolicy = () => {
             {t("about.privacy.section10Subtitle")}
           </p>
 
-          <ul className="ml-9 list-disc text-brand1/80 base-text list-inside space-y-2 marker:text-[#845007]">
+          <ul className="ml-9 list-disc text-brand1/80 base-text list-inside space-y-2 marker:text-brand4">
             <li className="leading-relaxed">{t("about.privacy.point101")}</li>
             <li className="leading-relaxed">{t("about.privacy.point102")}</li>
             <li className="leading-relaxed">{t("about.privacy.point103")}</li>
@@ -274,7 +274,7 @@ const AboutPrivacyPolicy = () => {
 
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               11
             </span>
             {t("about.privacy.section11Title")}
@@ -289,10 +289,10 @@ const AboutPrivacyPolicy = () => {
       </div>
 
       {/* Appeal Contacts */}
-      {/* <div className="bg-[#845007]/10 rounded-2xl p-6 border border-[#845007]/30">
+      {/* <div className="bg-brand4/10 rounded-2xl p-6 border border-brand4/30">
         <div className="flex items-start gap-4 mb-4">
-          <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-full shrink-0">
-            <FaInfoCircle className="text-[#845007] text-xl" />
+          <div className="flex h-10 w-10 items-center justify-center bg-brand4/20 rounded-full shrink-0">
+            <FaInfoCircle className="text-brand4 text-xl" />
           </div>
           <div className="flex-1">
             <div className="font-semibold text-brand1 mb-1">
@@ -306,19 +306,19 @@ const AboutPrivacyPolicy = () => {
 
         <div className="flex flex-col md:flex-row gap-4 ml-14">
           <div className="flex items-center gap-2 ">
-            <div className="flex h-8 w-8 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0">
-              <FaEnvelope className="text-[#845007] small-text" />
+            <div className="flex h-8 w-8 items-center justify-center bg-brand4/20 rounded-lg shrink-0">
+              <FaEnvelope className="text-brand4 small-text" />
             </div>
             <a
               href="mailto:privacy@healthdirect.ru"
-              className="text-brand1/90 hover:text-[#845007] transition-colors font-medium"
+              className="text-brand1/90 hover:text-brand4 transition-colors font-medium"
             >
               privacy@healthdirect.ru
             </a>
           </div>
           <div className="flex items-center gap-2 ">
-            <div className="flex h-8 w-8 items-center justify-center bg-[#845007]/20 rounded-lg shrink-0">
-              <FaPhoneAlt className="text-[#845007] small-text" />
+            <div className="flex h-8 w-8 items-center justify-center bg-brand4/20 rounded-lg shrink-0">
+              <FaPhoneAlt className="text-brand4 small-text" />
             </div>
             <span className="text-brand1/90 font-medium">
               +7 (495) 123-45-67, доб. 105
@@ -327,7 +327,7 @@ const AboutPrivacyPolicy = () => {
         </div>
       </div>
 
-      <div className="bg-[#845007]/5 rounded-xl p-4 border border-[#845007]/20">
+      <div className="bg-brand4/5 rounded-xl p-4 border border-brand4/20">
         <p className="text-brand1/70  italic leading-relaxed">
           {t("about.privacy.footer")}
         </p>

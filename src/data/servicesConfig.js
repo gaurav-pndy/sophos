@@ -102,9 +102,9 @@ export const servicesConfig = [
     btn1: "services.labTests.btn1",
     icon: FaFlask,
     video:
-      "https://www.shutterstock.com/shutterstock/videos/3769370609/preview/stock-footage-meeting-between-doctor-and-patient-to-examine-mri-scan-showing-a-tumor-exploring-treatment-options.webm",
-    color1: "#304f62",
-    color2: "#3c7795",
+      "https://www.shutterstock.com/shutterstock/videos/3788749615/preview/stock-footage-close-up-of-biologist-gloved-hands-using-microscope-in-sterile-laboratory-vibrant-blue-gloves.webm",
+    color1: "#7c8c89",
+    color2: "#bdceca",
     stroke: "rgba(51, 186, 189,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
@@ -172,9 +172,10 @@ export const servicesConfig = [
     subtitle: "services.earlyDiagnostics.subtitle",
     btn1: "services.earlyDiagnostics.btn1",
     icon: FaMicroscope,
-    video: "/imetc.mp4",
-    color1: "#816861",
-    color2: "#e2dad4",
+    video:
+      "https://www.shutterstock.com/shutterstock/videos/3769370609/preview/stock-footage-meeting-between-doctor-and-patient-to-examine-mri-scan-showing-a-tumor-exploring-treatment-options.webm",
+    color1: "#304f62",
+    color2: "#3c7795",
     stroke: "rgba(116, 143, 122,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
@@ -357,9 +358,9 @@ export const servicesConfig = [
     subtitle: "services.medCertificates.subtitle",
     icon: FaFileMedical,
     video:
-      "https://www.shutterstock.com/shutterstock/videos/3823541937/preview/stock-footage-doctor-explaining-ct-scan-results-to-patient-in-hospital-setting.webm",
-    color1: "#4784b1",
-    color2: "#93d1f3",
+      "https://www.shutterstock.com/shutterstock/videos/3478697917/preview/stock-footage-doctor-fills-out-medical-documents-signing-patient-prescription-healthcare-service.webm",
+    color1: "#35383b",
+    color2: "#616567",
     stroke: "rgba(51, 186, 189,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
@@ -422,10 +423,9 @@ export const servicesConfig = [
     subtitle: "services.telemedicine.subtitle",
     btn1: "services.telemedicine.btn1",
     icon: GiMedicines,
-    video:
-      "https://www.shutterstock.com/shutterstock/videos/3788749615/preview/stock-footage-close-up-of-biologist-gloved-hands-using-microscope-in-sterile-laboratory-vibrant-blue-gloves.webm",
-    color1: "#7c8c89",
-    color2: "#bdceca",
+    video: "/imetc.mp4",
+    color1: "#816861",
+    color2: "#e2dad4",
     stroke: "rgba(89, 107, 94,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
@@ -486,9 +486,9 @@ export const servicesConfig = [
     subtitle: "services.expertImaging.subtitle",
     icon: FaXRay,
     video:
-      "https://www.shutterstock.com/shutterstock/videos/3733950387/preview/stock-footage-closeup-doctor-examines-neoplasms-or-moles-on-the-woman-hand-patient-s-skin-using-special.webm",
-    color2: "#d4c3ae",
-    color1: "#75523b",
+      "https://www.shutterstock.com/shutterstock/videos/3751868441/preview/stock-footage-a-patient-mri-scan-is-reviewed-by-doctors-and-the-patient-to-assess-brain-health-and-determine-the.webm",
+    color1: "#7e4a37",
+    color2: "#1f1612",
     stroke: "rgba(51, 186, 189,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },
@@ -612,9 +612,9 @@ export const servicesConfig = [
     subtitle: "services.sophosPlus.subtitle",
     icon: FaPlus,
     video:
-      "https://www.shutterstock.com/shutterstock/videos/3751868441/preview/stock-footage-a-patient-mri-scan-is-reviewed-by-doctors-and-the-patient-to-assess-brain-health-and-determine-the.webm",
-    color1: "#7e4a37",
-    color2: "#1f1612",
+      "https://www.shutterstock.com/shutterstock/videos/3837314933/preview/stock-footage-phone-screen-health-insurance-and-hands-of-person-in-cafe-for-digital-application-ui-and-check.webm",
+    color1: "#3a2b2b",
+    color2: "#c3b19e",
     stroke: "rgba(51, 186, 189,",
     tabs: [
       { key: "about", labelKey: "services.tab1" },

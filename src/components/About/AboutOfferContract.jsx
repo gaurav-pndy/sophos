@@ -8,9 +8,9 @@ const AboutOfferContract = ({ city }) => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6">
+      <div className="bg-white rounded-2xl border border-brand4/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-xl shrink-0 shadow-md">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-brand4 rounded-xl shrink-0 shadow-md">
             <FaFileSignature className="text-white text-3xl" />
           </div>
           <div>
@@ -25,11 +25,11 @@ const AboutOfferContract = ({ city }) => {
       </div>
 
       {/* Contract Sections */}
-      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6 space-y-8">
+      <div className="bg-white rounded-2xl border border-brand4/20 shadow-sm p-4 md:p-6 space-y-8">
         {/* Section 1 */}
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               1
             </span>
             {t("about.contract.section1Title")}
@@ -45,7 +45,7 @@ const AboutOfferContract = ({ city }) => {
         {/* Section 2 */}
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               2
             </span>
             {t("about.contract.section2Title")}
@@ -61,17 +61,17 @@ const AboutOfferContract = ({ city }) => {
         {/* Section 3 */}
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               3
             </span>
             {t("about.contract.section3Title")}
           </h3>
           <div className="ml-9 base-text space-y-4">
             <div>
-              <h4 className="font-semibold text-[#845007] mb-2 ">
+              <h4 className="font-semibold text-brand4 mb-2 ">
                 {t("about.contract.responsibleRights")}
               </h4>
-              <ul className="list-disc text-brand1/80  space-y-2 marker:text-[#845007] ml-4">
+              <ul className="list-disc text-brand1/80  space-y-2 marker:text-brand4 ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.contractor1")}
                 </li>
@@ -84,10 +84,10 @@ const AboutOfferContract = ({ city }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-[#845007] mb-2 ">
+              <h4 className="font-semibold text-brand4 mb-2 ">
                 {t("about.contract.prohibited")}
               </h4>
-              <ul className="list-disc text-brand1/80  space-y-2 marker:text-[#845007] ml-4">
+              <ul className="list-disc text-brand1/80  space-y-2 marker:text-brand4 ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.prohibited1")}
                 </li>
@@ -108,17 +108,17 @@ const AboutOfferContract = ({ city }) => {
         {/* Section 4 */}
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg font-bold text-brand4 shrink-0">
               4
             </span>
             {t("about.contract.section4Title")}
           </h3>
           <div className="ml-9 base-text space-y-4">
             <div>
-              <h4 className="font-semibold text-[#845007] mb-2">
+              <h4 className="font-semibold text-brand4 mb-2">
                 {t("about.contract.customerRights")}
               </h4>
-              <ul className="list-disc text-brand1/80 space-y-2 marker:text-[#845007] ml-4">
+              <ul className="list-disc text-brand1/80 space-y-2 marker:text-brand4 ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.customer1")}
                 </li>
@@ -134,10 +134,10 @@ const AboutOfferContract = ({ city }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-[#845007] mb-2 ">
+              <h4 className="font-semibold text-brand4 mb-2 ">
                 {t("about.contract.obliged")}
               </h4>
-              <ul className="list-disc text-brand1/80  space-y-2 marker:text-[#845007] ml-4">
+              <ul className="list-disc text-brand1/80  space-y-2 marker:text-brand4 ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.obliged1")}
                 </li>
@@ -158,7 +158,7 @@ const AboutOfferContract = ({ city }) => {
         {/* Section 5 */}
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               5
             </span>
             {t("about.contract.section5Title")}
@@ -168,10 +168,10 @@ const AboutOfferContract = ({ city }) => {
               {t("about.contract.section5Text")}
             </p>
             <div>
-              <h4 className="font-semibold text-[#845007] mb-2 ">
+              <h4 className="font-semibold text-brand4 mb-2 ">
                 {t("about.contract.payment")}
               </h4>
-              <ul className="list-disc text-brand1/80  space-y-2 marker:text-[#845007] ml-4">
+              <ul className="list-disc text-brand1/80  space-y-2 marker:text-brand4 ml-4">
                 <li className="leading-relaxed">
                   {t("about.contract.payment1")}
                 </li>
@@ -195,7 +195,7 @@ const AboutOfferContract = ({ city }) => {
         {/* Section 6 */}
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               6
             </span>
             {t("about.contract.section6Title")}
@@ -211,7 +211,7 @@ const AboutOfferContract = ({ city }) => {
         {/* Section 7 */}
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg font-bold text-brand4 shrink-0">
               7
             </span>
             {t("about.contract.section7Title")}
@@ -227,7 +227,7 @@ const AboutOfferContract = ({ city }) => {
         {/* Section 8 */}
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               8
             </span>
             {t("about.contract.section8Title")}
@@ -240,13 +240,13 @@ const AboutOfferContract = ({ city }) => {
         {/* Section 9 - Organization Details */}
         <div>
           <h3 className="font-bold subheading text-brand1 mb-3 flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center bg-[#845007]/10 rounded-lg  font-bold text-[#845007] shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center bg-brand4/10 rounded-lg  font-bold text-brand4 shrink-0">
               9
             </span>
             {t("about.contract.section9Title")}
           </h3>
           <div className="ml-9 base-text space-y-3">
-            <div className="bg-[#845007]/5 rounded-xl p-4 border border-[#845007]/20 space-y-2">
+            <div className="bg-brand4/5 rounded-xl p-4 border border-brand4/20 space-y-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
                 <div>
                   <span className="text-brand1/60 small-text uppercase tracking-wide">
@@ -327,9 +327,9 @@ const AboutOfferContract = ({ city }) => {
       </div>
 
       {/* Notice Box At Bottom */}
-      <div className="bg-[#845007]/10 rounded-2xl p-6 flex items-start gap-4 border border-[#845007]/30">
-        <div className="flex h-10 w-10 items-center justify-center bg-[#845007]/20 rounded-full shrink-0">
-          <FaInfoCircle className="text-[#845007] text-xl" />
+      <div className="bg-brand4/10 rounded-2xl p-6 flex items-start gap-4 border border-brand4/30">
+        <div className="flex h-10 w-10 items-center justify-center bg-brand4/20 rounded-full shrink-0">
+          <FaInfoCircle className="text-brand4 text-xl" />
         </div>
         <div className="flex-1">
           <div className="font-semibold subheading text-brand1 mb-1">

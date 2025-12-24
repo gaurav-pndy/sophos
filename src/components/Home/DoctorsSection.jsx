@@ -478,14 +478,14 @@ const DoctorsSection = ({ branch, setShowPopup }) => {
                         e.stopPropagation();
                         setShowPopup(true);
                       }}
-                      className="w-full px-6 py-2.5 border small-text border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
+                      className="w-full px-6 py-2.5 border base-text border-brand1 bg-brand1 hover:bg-brand5/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer"
                     >
                       {" "}
                       {t("doctors.btn1")}{" "}
                     </button>{" "}
                     <Link
                       to={`/doctors/${doc.id}`}
-                      className="w-full px-6 py-2.5 small-text border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer block"
+                      className="w-full px-6 py-2.5 base-text border bg-white border-brand1 hover:bg-brand1 text-brand1 hover:text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-brand1/30 text-center cursor-pointer block"
                     >
                       {" "}
                       {t("doctors.btn2")}{" "}

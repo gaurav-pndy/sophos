@@ -25,7 +25,7 @@ const OtherServices2 = () => {
             }
             className="flex items-center  group gap-6 cursor-pointer bg-white rounded-2xl  shadow-sm p-4 "
           >
-            <span className=" rounded-full text-2xl xl:text-3xl   group-hover:rotate-12 group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300  text-[#e9865f] mt-1">
+            <span className=" rounded-full text-2xl xl:text-3xl   shake-once group-hover:scale-110 items-center justify-center shrink-0 transition-all duration-300  text-[#e9865f] mt-1">
               <service.icon />
             </span>
 

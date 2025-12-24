@@ -15,7 +15,9 @@ const AboutFooter = ({ city }) => {
       </p>
       <div className="flex flex-col md:flex-row gap-6 justify-center">
         <a
-          href="tel:+74951234567"
+          href={
+            city === "Makhachkala" ? "tel:+74951234567" : "tel:+74953241111"
+          }
           className="flex items-center gap-3 px-6 py-2.5 base-text bg-white rounded-xl  text-brand1  font-semibold hover:bg-transparent border border-white transition-all  duration-300 cursor-pointer hover:text-white"
         >
           <FaPhoneAlt className="text-2xl text-brand4" />
@@ -27,11 +29,20 @@ const AboutFooter = ({ city }) => {
           </span>
         </a>
         <a
-          href="mailto:info@hdmc.info"
+          href={
+            city === "Makhachkala"
+              ? "mailto:info@hdmc.info"
+              : "mailto:contact@sophos-med.ru"
+          }
           className="flex items-center gap-3 px-6 py-2.5 base-text bg-white rounded-xl shadow text-brand1  font-semibold hover:bg-transparent border border-white transition-all  duration-300 cursor-pointer hover:text-white"
         >
           <FaEnvelope className="text-2xl text-brand4" />
-          <span>info@hdmc.info</span>
+          <span>
+            {" "}
+            {city === "Makhachkala"
+              ? "info@hdmc.info"
+              : "contact@sophos-med.ru"}
+          </span>
         </a>
       </div>
     </section>

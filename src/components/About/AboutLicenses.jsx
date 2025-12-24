@@ -174,9 +174,9 @@ const AboutLicenses = () => {
   return (
     <div className="space-y-8">
       {/* Licenses & Certificates Header */}
-      <div className="bg-white rounded-2xl border border-[#845007]/20 shadow-sm p-4 md:p-6">
+      <div className="bg-white rounded-2xl border border-brand4/20 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row md:items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-[#845007] rounded-xl shrink-0 shadow-md">
+          <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-brand1 to-brand4 rounded-xl shrink-0 shadow-md">
             <FaFileMedicalAlt className="text-white text-3xl" />
           </div>
           <div className="flex-1">
