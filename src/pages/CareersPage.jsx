@@ -66,7 +66,7 @@ const getLocalizedText = (data) => {
   return "";
 };
 
-const CareersPage = () => {
+const CareersPage = ({ city }) => {
   const [vacancies, setVacancies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -318,6 +318,7 @@ const CareersPage = () => {
         }}
         getLocalizedText={getLocalizedText}
         t={t}
+        city={city}
       />
     );
   }
@@ -769,6 +770,7 @@ const VacancyDetails = ({
   getLocalizedText,
   onApply,
   t,
+  city,
 }) => {
   // Add application form state within VacancyDetails
   const [showApplicationForm, setShowApplicationForm] = useState(false);
@@ -1418,7 +1420,7 @@ const VacancyDetails = ({
                       {/* Contact Details */}
                       <div className="space-y-2">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-gradient-to-r from-brand1 to-brand3 rounded-lg flex items-center justify-center">
+                          <div className="w-10 h-10 bg-gradient-to-r from-brand1 to-brand3 rounded-lg flex items-center justify-center shrink-0">
                             <FaPhone className="text-white" />
                           </div>
                           <div>
@@ -1426,13 +1428,15 @@ const VacancyDetails = ({
                               {t("careersPage.phoneLabel", "Phone Number")}
                             </p>
                             <p className="base-text font-semibold text-gray-900">
-                              +1 (555) 123-4567
+                              {city === "Makhachkala"
+                                ? "+7 (495) 123-45-67"
+                                : "+7 (495) 324-11-11"}
                             </p>
                           </div>
                         </div>
 
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-gradient-to-r from-brand1 to-brand3 rounded-lg flex items-center justify-center">
+                          <div className="w-10 h-10 bg-gradient-to-r from-brand1 to-brand3 rounded-lg flex items-center justify-center shrink-0">
                             <FaEnvelope className="text-white" />
                           </div>
                           <div>
@@ -1448,7 +1452,7 @@ const VacancyDetails = ({
                     </div>
 
                     {/* Phone Input Form */}
-                    <div className="xl:w-72 2xl:w-96 w-full">
+                    <div className="lg:w-72 2xl:w-96 w-full">
                       <form onSubmit={handlePhoneSubmit} className="space-y-4">
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1512,7 +1516,7 @@ const VacancyDetails = ({
             </div>
 
             {/* Right Sidebar - Apply Button and Contact Box */}
-            <div className="xl:self-start xl:sticky xl:top-24 space-y-6">
+            <div className="xl:self-start xl:max-w-100 xl:sticky xl:top-24 space-y-6">
               {/* Apply Button Box */}
               {positionIsOpen && currentVacancy.showApplyButton !== false && (
                 <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-lg">
