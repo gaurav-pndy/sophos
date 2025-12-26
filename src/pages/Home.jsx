@@ -75,19 +75,24 @@ const Home = ({ city, setShowPopup }) => {
 
       <DoctorsSection branch={city} setShowPopup={setShowPopup} />
 
-      <div className="py-6">
-        <MembershipSection />
-        <div className="flex justify-center mt-10 ">
-          <Link
-            to={"/all-services/sophos-plus"}
-            className="bg-brand1 text-white base-text font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 block mx-auto"
-          >
-            {t("moreBtn")}
-          </Link>
+      {city === "Moscow" ? (
+        <CareSection2 />
+      ) : (
+        <div className="py-6">
+          <MembershipSection />
+          <div className="flex justify-center mt-10 ">
+            <Link
+              to={"/all-services/sophos-plus"}
+              className="bg-brand1 text-white base-text font-semibold rounded-lg px-8 py-2.5 shadow hover:bg-brand5/90 cursor-pointer transition-all duration-300 block mx-auto"
+            >
+              {t("moreBtn")}
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
+
       {/* <CareSection /> */}
-      {/* <CareSection2 /> */}
+
       {/* <ServicesSection /> */}
 
       {/* <PatientMap /> 
