@@ -791,6 +791,7 @@ const VacancyDetails = ({
   const [phoneLoading, setPhoneLoading] = useState(false);
   const [phoneError, setPhoneError] = useState(null);
   const [phoneSuccess, setPhoneSuccess] = useState(false);
+  const [phoneSubmitted, setPhoneSubmitted] = useState(false);
 
   // Track current vacancy data that updates with language
   const [currentVacancy, setCurrentVacancy] = useState(initialVacancy);
@@ -1011,6 +1012,15 @@ const VacancyDetails = ({
   // Handle phone number submission
   const handlePhoneSubmit = async (e) => {
     e.preventDefault();
+    setPhoneSubmitted(true);
+
+    // Checkbox validation FIRST
+    if (!checkbox1) {
+      setPhoneError(
+        t("careersPage.validation.agreeTerms", "Please accept the terms")
+      );
+      return;
+    }
 
     if (!phoneNumber.trim()) {
       setPhoneError(t("careersPage.phoneRequired", "Phone number is required"));
@@ -1499,7 +1509,6 @@ const VacancyDetails = ({
                           <div className="flex items-start mt-2 text-brand1">
                             <input
                               type="checkbox"
-                              required
                               checked={checkbox1}
                               onChange={(e) => setCheckbox1(e.target.checked)}
                               className="mr-2 mt-1"
@@ -1513,10 +1522,16 @@ const VacancyDetails = ({
                               }}
                             ></label>
                           </div>
+
+                          {phoneSubmitted && !checkbox1 && (
+                            <p className="text-red-500 small-text mt-1">
+                              {t("careersPage.validation.agreeTerms")}
+                            </p>
+                          )}
+
                           <div className="flex items-start mt-2 text-brand1">
                             <input
                               type="checkbox"
-                              required
                               checked={checkbox2}
                               onChange={(e) => setCheckbox2(e.target.checked)}
                               className="mr-2 mt-1"
@@ -1531,11 +1546,11 @@ const VacancyDetails = ({
                             ></label>
                           </div>
 
-                          {phoneError && (
+                          {/* {phoneError && (
                             <p className="mt-2 text-sm text-red-600">
                               {phoneError}
                             </p>
-                          )}
+                          )} */}
 
                           {phoneSuccess && (
                             <p className="mt-2 text-sm text-green-600">
@@ -1590,26 +1605,28 @@ const VacancyDetails = ({
                   </button>
 
                   {/* Quick info */}
-                  <div className="mt-6 space-y-3">
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <FaCalendarAlt />
-                      <span>
-                        {t("careersPage.deadline", "Deadline")}:{" "}
-                        {currentVacancy.applicationDeadline
-                          ? new Date(
-                              currentVacancy.applicationDeadline
-                            ).toLocaleDateString()
-                          : t("careersPage.noDeadline", "No deadline")}
-                      </span>
+                  {city !== "Moscow" && (
+                    <div className="mt-6 space-y-3">
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <FaCalendarAlt />
+                        <span>
+                          {t("careersPage.deadline", "Deadline")}:{" "}
+                          {currentVacancy.applicationDeadline
+                            ? new Date(
+                                currentVacancy.applicationDeadline
+                              ).toLocaleDateString()
+                            : t("careersPage.noDeadline", "No deadline")}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <FaUsers />
+                        <span>
+                          {t("careersPage.applicants", "Applicants")}:{" "}
+                          {currentVacancy.applicationCount || 0}
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <FaUsers />
-                      <span>
-                        {t("careersPage.applicants", "Applicants")}:{" "}
-                        {currentVacancy.applicationCount || 0}
-                      </span>
-                    </div>
-                  </div>
+                  )}
                 </div>
               )}
 
