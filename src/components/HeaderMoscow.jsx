@@ -287,78 +287,80 @@ const HeaderMoscow = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
     {
       label: t("header.doctorsDrop.d1"),
       icon: <FaFemale className=" text-white" />,
-      subItems: [
-        {
-          category: t("header.doctorsDrop.subItems.h1"),
-          items: [
-            {
-              label: t("header.doctorsDrop.subItems.s1"),
-              path: "/doctors#specialization1",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s2"),
-              path: "/doctors#specialization2",
-            },
-          ],
-        },
-        {
-          category: t("header.doctorsDrop.subItems.h2"),
-          items: [
-            {
-              label: t("header.doctorsDrop.subItems.s3"),
-              path: "/doctors#specialization3",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s4"),
-              path: "/doctors#specialization4",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s5"),
-              path: "/doctors#specialization5",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s6"),
-              path: "/doctors#specialization6",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s7"),
-              path: "/doctors#specialization7",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s8"),
-              path: "/doctors#specialization8",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s9"),
-              path: "/doctors#specialization9",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s10"),
-              path: "/doctors#specialization10",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s11"),
-              path: "/doctors#specialization11",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s12"),
-              path: "/doctors#specialization12",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s13"),
-              path: "/doctors#specialization13",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s14"),
-              path: "/doctors#specialization14",
-            },
-            {
-              label: t("header.doctorsDrop.subItems.s15"),
-              path: "/doctors#specialization15",
-            },
-          ],
-        },
-      ],
+      path: "/doctors#oncologist",
+
+      // subItems: [
+      //   {
+      //     category: t("header.doctorsDrop.subItems.h1"),
+      //     items: [
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s1"),
+      //         path: "/doctors#specialization1",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s2"),
+      //         path: "/doctors#specialization2",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     category: t("header.doctorsDrop.subItems.h2"),
+      //     items: [
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s3"),
+      //         path: "/doctors#specialization3",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s4"),
+      //         path: "/doctors#specialization4",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s5"),
+      //         path: "/doctors#specialization5",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s6"),
+      //         path: "/doctors#specialization6",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s7"),
+      //         path: "/doctors#specialization7",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s8"),
+      //         path: "/doctors#specialization8",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s9"),
+      //         path: "/doctors#specialization9",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s10"),
+      //         path: "/doctors#specialization10",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s11"),
+      //         path: "/doctors#specialization11",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s12"),
+      //         path: "/doctors#specialization12",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s13"),
+      //         path: "/doctors#specialization13",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s14"),
+      //         path: "/doctors#specialization14",
+      //       },
+      //       {
+      //         label: t("header.doctorsDrop.subItems.s15"),
+      //         path: "/doctors#specialization15",
+      //       },
+      //     ],
+      //   },
+      // ],
     },
     // {
     //   path: "/doctors#specialization16",

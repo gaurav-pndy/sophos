@@ -50,10 +50,14 @@ const DoctorsPage = ({ branch, setShowPopup }) => {
       const params = new URLSearchParams();
 
       if (type !== "All") params.append("type", type);
-      if (specialization !== "All") {
-        // Pass the specialization label directly to backend
-        params.append("specialization", specialization);
+      if (specialization !== "all") {
+        const selected = specializations.find((s) => s.key === specialization);
+
+        if (selected) {
+          params.append("specialization", selected.backendValue);
+        }
       }
+
       if (searchTerm) params.append("search", searchTerm);
       params.append("language", i18n.language);
       params.append("page", "1");
@@ -83,74 +87,90 @@ const DoctorsPage = ({ branch, setShowPopup }) => {
   // Fetch specializations data from backend
   const fetchSpecializations = async () => {
     try {
-      const params = new URLSearchParams();
+      // 1️⃣ Fetch EN data for stable keys
+      const enRes = await fetch(
+        `${API_BASE}/api/website/doctors/specializations?language=en`
+      );
+      if (!enRes.ok) throw new Error("Failed to fetch EN specializations");
 
-      if (branch) params.append("branch", branch);
-      const response = await fetch(
+      const enResult = await enRes.json();
+
+      // 2️⃣ Fetch localized data for UI + backend filter
+      const localRes = await fetch(
         `${API_BASE}/api/website/doctors/specializations?language=${i18n.language}`
       );
-      if (!response.ok) throw new Error("Failed to fetch specializations");
+      if (!localRes.ok)
+        throw new Error("Failed to fetch localized specializations");
 
-      const result = await response.json();
+      const localResult = await localRes.json();
 
-      if (result.success) {
-        // First, collect all unique labels and map them to their original data
-        const labelMap = new Map();
+      if (!enResult.success || !localResult.success) {
+        throw new Error("Invalid specialization response");
+      }
 
-        result.data.forEach((item) => {
-          const formattedLabels = formatSpecializationsList(item.label);
+      // 3️⃣ Slug helper (EN only!)
+      const toKey = (str = "") =>
+        str
+          .toLowerCase()
+          .replace(/[^\p{L}\p{N}]+/gu, "-")
+          .replace(/^-|-$/g, "");
 
-          formattedLabels.forEach((label) => {
-            if (!labelMap.has(label)) {
-              labelMap.set(label, {
-                id: label,
-                label: label,
-                originalItems: [],
-              });
-            }
-            // Store the original item to calculate count later
-            labelMap.get(label).originalItems.push(item);
-          });
+      const specMap = new Map();
+
+      enResult.data.forEach((enItem, index) => {
+        const localItem = localResult.data[index];
+        if (!localItem) return;
+
+        const enLabels = formatSpecializationsList(enItem.label);
+        const localLabels = formatSpecializationsList(localItem.label);
+
+        enLabels.forEach((enLabel, i) => {
+          const localLabel = localLabels[i];
+          if (!localLabel) return;
+
+          const key = toKey(enLabel);
+
+          // ✅ DEDUPLICATE HERE
+          if (!specMap.has(key)) {
+            specMap.set(key, {
+              key, // stable
+              label: localLabel, // localized
+              backendValue: localLabel,
+              count: 0,
+            });
+          }
         });
+      });
 
-        // Now fetch the actual count for each unique specialization
-        const specializationsWithCount = await Promise.all(
-          Array.from(labelMap.values()).map(async (spec) => {
-            try {
-              // Fetch doctors count for this specific specialization
-              const params = new URLSearchParams();
-              params.append("specialization", spec.id);
-              params.append("language", i18n.language);
-              params.append("page", "1");
-              params.append("limit", "1"); // We only need the count
+      const specs = Array.from(specMap.values());
 
-              const response = await fetch(
-                `${API_BASE}/api/website/doctors?${params}`
-              );
-              if (response.ok) {
-                const result = await response.json();
-                return {
-                  ...spec,
-                  count: result.pagination?.totalDoctors || 0,
-                  uniqueKey: `${spec.id.replace(/\s+/g, "-")}-${Date.now()}`,
-                };
-              }
-            } catch (err) {
-              console.error(`Error fetching count for ${spec.label}:`, err);
-            }
+      // 5️⃣ Fetch counts
+      const specsWithCount = await Promise.all(
+        specs.map(async (spec) => {
+          try {
+            const params = new URLSearchParams({
+              specialization: spec.backendValue,
+              language: i18n.language,
+              page: "1",
+              limit: "1",
+            });
+
+            const res = await fetch(
+              `${API_BASE}/api/website/doctors?${params}`
+            );
+            const json = await res.json();
 
             return {
               ...spec,
-              count: 0,
-              uniqueKey: `${spec.id.replace(/\s+/g, "-")}-${Date.now()}`,
+              count: json.pagination?.totalDoctors || 0,
             };
-          })
-        );
+          } catch {
+            return spec;
+          }
+        })
+      );
 
-        setSpecializations(specializationsWithCount);
-      } else {
-        throw new Error(result.error);
-      }
+      setSpecializations(specsWithCount);
     } catch (err) {
       console.error("Error fetching specializations:", err);
       setSpecializations([]);
@@ -161,6 +181,7 @@ const DoctorsPage = ({ branch, setShowPopup }) => {
   useEffect(() => {
     fetchDoctors();
     fetchSpecializations();
+    console.log("spec", specializations);
   }, [i18n.language, branch]);
 
   // Refetch when filters change with debounce
@@ -224,11 +245,18 @@ const DoctorsPage = ({ branch, setShowPopup }) => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash) {
-      const hashKey = location.hash.replace("#", "");
-      // Check if hash matches any specialization label
-      const specExists = specializations.some((s) => s.id === hashKey);
-      if (specExists) setSpecialization(hashKey);
+    if (!specializations.length || !location.hash) return;
+
+    const hashKey = location.hash.replace("#", "");
+
+    const exists = specializations.some((s) => s.key === hashKey);
+
+    console.log("specs", specializations);
+    console.log("hash", hashKey);
+    console.log("exists", exists);
+
+    if (exists) {
+      setSpecialization(hashKey);
     }
   }, [location.hash, specializations]);
 
@@ -383,12 +411,10 @@ const DoctorsPage = ({ branch, setShowPopup }) => {
                   onChange={(e) => setSpecialization(e.target.value)}
                   className="w-full border border-brand4/40 rounded-lg px-3 py-2.5 small-text text-brand1 outline-none focus:border-brand1 transition-all bg-white"
                 >
-                  <option value="All">
-                    {t("doctors.filter.all") || "All Specializations"}
-                  </option>
+                  <option value="all">All</option>
                   {specializations.map((opt) => (
-                    <option key={opt.uniqueKey} value={opt.id}>
-                      {opt.label} {opt.count && `(${opt.count})`}
+                    <option key={opt.key} value={opt.key}>
+                      {opt.label} {opt.count ? `(${opt.count})` : ""}
                     </option>
                   ))}
                 </select>

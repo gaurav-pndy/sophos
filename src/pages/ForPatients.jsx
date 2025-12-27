@@ -8,6 +8,7 @@ import {
   FaShieldAlt,
   FaBlog,
   FaFileAlt,
+  FaMoneyBillAlt,
 } from "react-icons/fa";
 import AppointmentTab from "../components/ForPatients/AppointmentTab";
 import PreparationTab from "../components/ForPatients/PreparationTab";
@@ -16,6 +17,7 @@ import OffersTab from "../components/ForPatients/OffersTab";
 import InsuranceTab from "../components/ForPatients/InsuranceTab";
 import DocumentsTab from "../components/ForPatients/DocumentsTab";
 import { IoDocumentText } from "react-icons/io5";
+import PreparationMoscow from "../components/ForPatients/PreparationMoscow";
 
 const ForPatients = ({ city }) => {
   const PATIENT_TABS = React.useMemo(() => {
@@ -31,7 +33,7 @@ const ForPatients = ({ city }) => {
           key: "preparation",
           labelKey: "forPatientsPage.heading2",
           icon: <FaFileAlt />,
-          component: PreparationTab,
+          component: PreparationMoscow,
         },
         {
           key: "blog",
@@ -73,12 +75,12 @@ const ForPatients = ({ city }) => {
         icon: <IoDocumentText />,
         component: NewsTab,
       },
-      // {
-      //   key: "documents",
-      //   labelKey: "forPatientsPage.heading6",
-      //   icon: <FaFileAlt />,
-      //   component: DocumentsTab,
-      // },
+      {
+        key: "price-list",
+        labelKey: "header.patient7",
+        icon: <FaMoneyBillAlt />,
+        component: DocumentsTab,
+      },
     ];
   }, [city]);
   const { t } = useTranslation();

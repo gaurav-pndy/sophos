@@ -387,11 +387,11 @@ const Header = ({ city, setCity, setShowPopup, setShowUserAccount }) => {
       label: t("header.patient5"),
       icon: <IoDocumentText />,
     },
-    {
-      path: "/for-patients#documents",
-      label: t("header.patient6"),
-      icon: <FaFileAlt />,
-    },
+    // {
+    //   path: "/for-patients#documents",
+    //   label: t("header.patient6"),
+    //   icon: <FaFileAlt />,
+    // },
     {
       path: "/for-patients#price-list",
       label: t("header.patient7"),

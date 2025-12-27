@@ -12,6 +12,8 @@ function ContactViaPhonePopup({ onClose }) {
     lastName: "",
     middleName: "",
   });
+  const [checkbox1, setCheckbox1] = useState(false);
+  const [checkbox2, setCheckbox2] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -206,7 +208,42 @@ function ContactViaPhonePopup({ onClose }) {
             />
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex items-start mt-2 text-brand1">
+            <input
+              type="checkbox"
+              required
+              checked={checkbox1}
+              onChange={(e) => setCheckbox1(e.target.checked)}
+              className="mr-2 mt-1"
+              id="form-agree1"
+            />
+            <label
+              htmlFor="form-agree1"
+              className="small-text "
+              dangerouslySetInnerHTML={{
+                __html: t("contact.checkbox1"),
+              }}
+            ></label>
+          </div>
+          <div className="flex items-start mt-2 text-brand1">
+            <input
+              type="checkbox"
+              required
+              checked={checkbox2}
+              onChange={(e) => setCheckbox2(e.target.checked)}
+              className="mr-2 mt-1"
+              id="form-agree2"
+            />
+            <label
+              htmlFor="form-agree2"
+              className="small-text "
+              dangerouslySetInnerHTML={{
+                __html: t("contact.checkbox2"),
+              }}
+            ></label>
+          </div>
+
+          <div className="flex gap-3 mt-4">
             <button
               type="submit"
               disabled={!canSubmit}

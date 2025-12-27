@@ -124,7 +124,7 @@ const Footer = ({ city }) => {
             {t("footer.contact")}
           </h3>
           <div className="flex items-start gap-2 mb-2">
-            <FaMapMarkerAlt className="mt-1.5" />
+            <FaMapMarkerAlt className="mt-1.5 shrink-0" />
             {city === "Makhachkala" ? (
               <span
                 dangerouslySetInnerHTML={{
@@ -140,12 +140,16 @@ const Footer = ({ city }) => {
             )}
           </div>
           <div className="flex items-center gap-2 mb-2">
-            <FaClock />{" "}
-            <span>
+            <FaClock className="shrink-0" />{" "}
+            <span
+              dangerouslySetInnerHTML={{
+                __html:
+                  city === "Makhachkala"
+                    ? t("address.clinic2.schedule")
+                    : t("address.clinic1.schedule"),
+              }}
+            >
               {}
-              {city === "Makhachkala"
-                ? t("address.clinic2.schedule")
-                : t("address.clinic1.schedule")}
             </span>
           </div>
           {city === "Makhachkala" ? (

@@ -781,6 +781,8 @@ const VacancyDetails = ({
 
   // Add state for phone number input
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [checkbox1, setCheckbox1] = useState(false);
+  const [checkbox2, setCheckbox2] = useState(false);
   const [phoneLoading, setPhoneLoading] = useState(false);
   const [phoneError, setPhoneError] = useState(null);
   const [phoneSuccess, setPhoneSuccess] = useState(false);
@@ -1213,7 +1215,7 @@ const VacancyDetails = ({
                   </div>
 
                   {/* Application Deadline (if exists) */}
-                  {currentVacancy.applicationDeadline && (
+                  {currentVacancy.applicationDeadline && city !== "Moscow" && (
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <FaCalendarAlt className="text-gray-400 text-lg" />
@@ -1258,17 +1260,19 @@ const VacancyDetails = ({
                   </div>
 
                   {/* Views */}
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <FaEye className="text-gray-400 text-lg" />
-                      <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-                        {t("careersPage.views", "Views")}
-                      </span>
+                  {city !== "Moscow" && (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <FaEye className="text-gray-400 text-lg" />
+                        <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                          {t("careersPage.views", "Views")}
+                        </span>
+                      </div>
+                      <p className="text-lg font-medium text-gray-900">
+                        {currentVacancy.viewCount || 0}
+                      </p>
                     </div>
-                    <p className="text-lg font-medium text-gray-900">
-                      {currentVacancy.viewCount || 0}
-                    </p>
-                  </div>
+                  )}
                 </div>
               </div>
 
@@ -1355,47 +1359,48 @@ const VacancyDetails = ({
                 </div>
               )}
 
-              <div className="mb-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-2 h-8 bg-gradient-to-r from-brand1 to-brand3 rounded-full"></div>
-                  <h2 className="text-2xl font-bold text-gray-900">
-                    {t("careersPage.faq.title", "Frequently Asked Questions")}
-                  </h2>
-                </div>
+              {city !== "Moscow" && (
+                <div className="mb-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-8 bg-gradient-to-r from-brand1 to-brand3 rounded-full"></div>
+                    <h2 className="text-2xl font-bold text-gray-900">
+                      {t("careersPage.faq.title", "Frequently Asked Questions")}
+                    </h2>
+                  </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {faqItems.map((faq, index) => (
-                    <div
-                      key={index}
-                      className="bg-white border border-orange-200 rounded-xl p-5 hover:shadow-md transition-shadow duration-300 cursor-pointer group"
-                      onClick={() => {
-                        // Scroll to phone input section when any FAQ box is clicked
-                        phoneInputRef.current?.scrollIntoView({
-                          behavior: "smooth",
-                          block: "center",
-                        });
-                      }}
-                    >
-                      <div className="flex items-start gap-3">
-                        {/* Question number/icon */}
-                        <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-brand1 to-brand3 text-white rounded-lg flex items-center justify-center group-hover:bg-orange-200 transition-colors">
-                          <span className="text-white font-bold text-lg">
-                            {index + 1}
-                          </span>
-                        </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {faqItems.map((faq, index) => (
+                      <div
+                        key={index}
+                        className="bg-white border border-orange-200 rounded-xl p-5 hover:shadow-md transition-shadow duration-300 cursor-pointer group"
+                        onClick={() => {
+                          // Scroll to phone input section when any FAQ box is clicked
+                          phoneInputRef.current?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center",
+                          });
+                        }}
+                      >
+                        <div className="flex items-start gap-3">
+                          {/* Question number/icon */}
+                          <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-brand1 to-brand3 text-white rounded-lg flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                            <span className="text-white font-bold text-lg">
+                              {index + 1}
+                            </span>
+                          </div>
 
-                        {/* Question content */}
-                        <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:transition-colors">
-                            {faq.question}
-                          </h3>
+                          {/* Question content */}
+                          <div className="flex-1">
+                            <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:transition-colors">
+                              {faq.question}
+                            </h3>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-
+              )}
               {/* Contact Us Phone Input Section */}
               <div ref={phoneInputRef} className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
@@ -1484,6 +1489,41 @@ const VacancyDetails = ({
                                 <FaPaperPlane />
                               )}
                             </button>
+                          </div>
+
+                          <div className="flex items-start mt-2 text-brand1">
+                            <input
+                              type="checkbox"
+                              required
+                              checked={checkbox1}
+                              onChange={(e) => setCheckbox1(e.target.checked)}
+                              className="mr-2 mt-1"
+                              id="form-agree1"
+                            />
+                            <label
+                              htmlFor="form-agree1"
+                              className="small-text "
+                              dangerouslySetInnerHTML={{
+                                __html: t("contact.checkbox1"),
+                              }}
+                            ></label>
+                          </div>
+                          <div className="flex items-start mt-2 text-brand1">
+                            <input
+                              type="checkbox"
+                              required
+                              checked={checkbox2}
+                              onChange={(e) => setCheckbox2(e.target.checked)}
+                              className="mr-2 mt-1"
+                              id="form-agree2"
+                            />
+                            <label
+                              htmlFor="form-agree2"
+                              className="small-text "
+                              dangerouslySetInnerHTML={{
+                                __html: t("contact.checkbox2"),
+                              }}
+                            ></label>
                           </div>
 
                           {phoneError && (

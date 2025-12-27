@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaArrowRight, FaStethoscope } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaHandHoldingMedical,
+  FaStethoscope,
+} from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaUserMd,
@@ -60,6 +64,12 @@ const Steps = () => {
       image:
         "https://images.unsplash.com/photo-1626863905121-3b0c0ed7b94c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    tab8: {
+      number: 8,
+      title: t("care.tab8"),
+      image:
+        "https://images.unsplash.com/photo-1564732005956-20420ebdab60?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
   };
 
   const icons = {
@@ -70,10 +80,11 @@ const Steps = () => {
     tab5: <FaClipboardList className="text-2xl" />,
     tab6: <FaVials className="text-2xl" />,
     tab7: <FaBriefcaseMedical className="text-2xl" />,
+    tab8: <FaHandHoldingMedical className="text-2xl" />,
   };
 
   return (
-    <section className="grid max-w-7xl mt-12 mx-auto md:grid-cols-2 gap-6 md:gap-10 bg-brand1/10 p-4 md:p-8 xl:p-12 rounded-2xl">
+    <section className="grid max-w-7xl mt-12 mx-auto md:grid-cols-2 gap-6  bg-brand1/10 p-4 md:p-8 rounded-2xl">
       {/* Left Column - Tabs */}
       <div className="flex flex-col gap-2">
         {Object.keys(stepsData).map((tabKey) => (
@@ -93,7 +104,7 @@ const Steps = () => {
           >
             <p className="flex items-center ">
               {icons[tabKey] /* icon */}
-              <span className=" ml-3 mr-2">{stepsData[tabKey].number}.</span>
+              <span className=" mx-2">{stepsData[tabKey].number}.</span>
               {stepsData[tabKey].title}
             </p>
             {activeTab === tabKey && <FaArrowRight />}
@@ -105,13 +116,13 @@ const Steps = () => {
       flex items-center justify-between gap-3 p-4 rounded-xl font-semibold text-left text-[1rem] cursor-pointer
       shadow transition-all duration-300
       hover:-translate-y-[2px] hover:shadow-lg
-      bg-white text-brand1
+      bg-brand1 text-white
     `}
         >
           <p className="flex items-center">
             <FaStethoscope className="text-2xl" />
-            <span className="ml-3 mr-2">8.</span>
-            <span dangerouslySetInnerHTML={{ __html: t("care.tab8") }} />
+            <span className="ml-3 mr-2">9.</span>
+            <span dangerouslySetInnerHTML={{ __html: t("care.tab9") }} />
           </p>
         </Link>
       </div>

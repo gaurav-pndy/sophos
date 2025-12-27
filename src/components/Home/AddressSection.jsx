@@ -151,7 +151,10 @@ const AddressSection = ({ city, setShowPopup }) => {
                     className="text-brand1 small-text"
                     dangerouslySetInnerHTML={{ __html: clinic.address }}
                   ></p>
-                  <p className="text-brand1 small-text">{clinic.schedule}</p>
+                  <p
+                    className="text-brand1 small-text"
+                    dangerouslySetInnerHTML={{ __html: clinic.schedule }}
+                  ></p>
                 </div>
               </div>
 
@@ -216,7 +219,9 @@ const AddressSection = ({ city, setShowPopup }) => {
               {city === "Moscow" && (
                 <div
                   className="text-brand1 text-left small-text mt-2"
-                  dangerouslySetInnerHTML={{ __html: t("address.parkingText") }}
+                  dangerouslySetInnerHTML={{
+                    __html: t("address.clinic1.parkingText"),
+                  }}
                 ></div>
               )}
             </div>

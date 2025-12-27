@@ -54,7 +54,7 @@
     "citySelect": "Please select your city",
     "moscow": "Moscow",
     "makhachkala": "Makhachkala",
-    "moscowAddress": "6 Aminyevskoe highway,<br>entrance 1, 4th and 5th floors",
+    "moscowAddress": "Aminyevskoe highway, 6, floor 4,5. <br/>KVARTAL-WEST Business Center.",
     "makhachkalaAddress": "Ali-Gadzhi Akushinskogo Avenue 7",
     "search": "Diagnosis/Service Search",
     "about1": "Information about the medical organization",
@@ -80,7 +80,7 @@
     "oncologicalCare": "Oncological Care",
     "complicated": "Complicated Cases",
     "doctorsDrop": {
-      "d1": "Oncologists",
+      "d1": "Oncologist",
       "d2": "Pathologist",
       "d3": "Family Medicine Doctor",
       "d4": "Ultrasound Specialist",
@@ -1268,16 +1268,18 @@
     "scheduleTitle": "Schedule",
     "phoneTitle": "Phone",
     "clinic1": {
-      "title": "SOPHOS",
-      "address": "Business center Kvartal West, <br/>Moscow, 6 Aminyevskoe highway,<br>entrance 1, 4th floor",
-      "schedule": "from 10:00 to 18:00. Weekend: Saturday and Sunday"
+      "title": "SOPHOS Medical Center",
+      "address": "KVARTAL WEST Business Center<br/> 119517, Moscow, ext.ter.g. Ochakovo-Matveevskoye municipal district, Aminyevskoye highway, building 6, floor 4.5",
+      "schedule": "<span class='font-medium'>Operating mode:</span><br/> Monday-Friday from 10.00 to 18.00 <br/> <span class='font-medium'>Weekend:</span> Saturday, Sunday",
+      "parkingText": "<b>Parking:</b> covered parking of KVARTAL WEST shopping center, free outdoor parking. <br/> <b>How to get there by public transport:</b> 10 min. walk from the metro station. <span class='whitespace-nowrap'> Davydkovo or M. Aminevskaya</span>"
     },
     "clinic2": {
       "title": "Ali-Gadzhi Akushinskogo Avenue",
       "address": "Ali-Gadzhi Akushinskogo Avenue Building 7, Makhachkala, 2nd floor",
-      "schedule": "From 8:00 to 23:00, without days off"
+      "schedule": "From 8:00 to 23:00, without days off",
+       "parkingText": "<b>Parking:</b> paid indoor mall parking; free public parking.<br/><b>How to get there by public transport:</b> 10 min. walk from the metro station. <span class='whitespace-nowrap'> Davydkovo or M. Aminevskaya </span>"
     },
-    "parkingText": "<b>Parking:</b> paid indoor mall parking; free public parking.<br/><b>How to get there by public transport:</b> 10 min. walk from the metro station. <span class='whitespace-nowrap'> Davydkovo or M. Aminevskaya </span>",
+   
     "button": "Make an appointment"
   },
   "actionBtns": {
@@ -2550,6 +2552,8 @@
     "phoneInvalid": "Please enter a valid phone number",
     "phoneSuccess": "Thank you! We'll call you back soon.",
     "privacyNotice": "By submitting your phone number, you agree to our Privacy Policy. We won't share your information with third parties.",
+     "checkbox1": "I consent to the processing of personal data and the privacy policy *",
+    "checkbox2": "I give my consent to receive informational messages, advertising and promotional offers",
     "callUs": "Call us directly",
     "emailUs": "Send us an email",
 
@@ -2632,7 +2636,7 @@
     "deadline": "Deadline",
     "urgent": "Urgent",
     "active": "Active",
-    "applyNow": "Apply Now",
+    "applyNow": "Send your Resume",
     "closed": "Closed",
     "applyFor": "Apply for",
     "requirements": "Requirements",
