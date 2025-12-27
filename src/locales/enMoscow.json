@@ -1247,7 +1247,7 @@
     "makhachkala": "Makhachkala",
     "another": "Another city",
     "message": "Message",
-    "checkbox1": "<a href='/согласие.pdf' target='_blank' class='text-blue-500 underline'> I consent </a> to the processing of personal data and the <a href='' target='_blank' class='text-blue-500 underline'> privacy policy</a>",
+    "checkbox1": "<a href='/согласие.pdf' target='_blank' class='text-blue-500 underline'> I consent </a> to the processing of personal data and the <a href='' target='_blank' class='text-blue-500 underline'> privacy policy</a> *",
     "checkbox2": "I give my consent to receive informational messages, advertising and promotional offer",
     "button": "Send",
     "successTitle": "Thank You!",
@@ -1269,7 +1269,7 @@
     "phoneTitle": "Phone",
     "clinic1": {
       "title": "SOPHOS Medical Center",
-      "address": "KVARTAL WEST Business Center<br/> 119517, Moscow, ext.ter.g. Ochakovo-Matveevskoye municipal district, Aminyevskoye highway, building 6, floor 4.5",
+      "address": "KVARTAL WEST Business Center<br/> 119517, Moscow, ext.ter.g. Ochakovo-Matveevskoye municipal district,<br/> Aminyevskoye highway, building 6, floor 4.5",
       "schedule": "<span class='font-medium'>Operating mode:</span><br/> Monday-Friday from 10.00 to 18.00 <br/> <span class='font-medium'>Weekend:</span> Saturday, Sunday",
       "parkingText": "<b>Parking:</b> covered parking of KVARTAL WEST shopping center, free outdoor parking. <br/> <b>How to get there by public transport:</b> 10 min. walk from the metro station. <span class='whitespace-nowrap'> Davydkovo or M. Aminevskaya</span>"
     },

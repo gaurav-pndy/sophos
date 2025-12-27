@@ -484,6 +484,7 @@ const CareersPage = ({ city }) => {
                 onViewDetails={() => handleViewVacancyDetails(vacancy)}
                 getLocalizedText={getLocalizedText}
                 t={t}
+                city={city}
               />
             ))}
           </div>
@@ -541,6 +542,7 @@ const VacancyCard = ({
   onViewDetails,
   getLocalizedText,
   t,
+  city,
 }) => {
   // Get localized text from your data structure
   const getLocalizedValue = (field) => {
@@ -709,9 +711,12 @@ const VacancyCard = ({
             {/* Footer */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-gray-100">
               <div className="flex items-center gap-4 small-text text-gray-500">
-                <span>
-                  {t("careersPage.views", "Views")}: {vacancy.viewCount || 0}
-                </span>
+                {city !== "Moscow" && (
+                  <span>
+                    {t("careersPage.views", "Views")}: {vacancy.viewCount || 0}
+                  </span>
+                )}
+
                 <span>
                   {t("careersPage.applications", "Applications")}:{" "}
                   {vacancy.applicationCount || 0}
@@ -1825,8 +1830,14 @@ const ApplicationForm = ({
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+      >
         <div className="p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
@@ -2041,10 +2052,9 @@ const ApplicationForm = ({
                 <span
                   className="small-text text-gray-700"
                   dangerouslySetInnerHTML={{
-                    __html: t("careersPage.agreeTerms"),
+                    __html: t("contact.checkbox1"),
                   }}
                 ></span>
-                <span className="text-red-500 ml-1">*</span>
               </label>
 
               {formErrors.agreedToTerms && (
@@ -2055,7 +2065,7 @@ const ApplicationForm = ({
             </div>
 
             {/* Second Checkbox */}
-            <div className="mt-4">
+            <div className="mt-2">
               <label className="flex items-start gap-3">
                 <input
                   type="checkbox"
@@ -2070,14 +2080,13 @@ const ApplicationForm = ({
                     __html: t("contact.checkbox2"),
                   }}
                 ></span>
-                <span className="text-red-500 ml-1">*</span>
               </label>
-
+              {/* 
               {formErrors.agree2 && (
                 <p className="text-red-500 small-text mt-1">
                   {formErrors.agree2}
                 </p>
-              )}
+              )} */}
             </div>
 
             {/* Submit Button */}

@@ -18,6 +18,7 @@ import InsuranceTab from "../components/ForPatients/InsuranceTab";
 import DocumentsTab from "../components/ForPatients/DocumentsTab";
 import { IoDocumentText } from "react-icons/io5";
 import PreparationMoscow from "../components/ForPatients/PreparationMoscow";
+import PriceTab from "../components/ForPatients/PriceTab";
 
 const ForPatients = ({ city }) => {
   const PATIENT_TABS = React.useMemo(() => {
@@ -79,7 +80,7 @@ const ForPatients = ({ city }) => {
         key: "price-list",
         labelKey: "header.patient7",
         icon: <FaMoneyBillAlt />,
-        component: DocumentsTab,
+        component: PriceTab,
       },
     ];
   }, [city]);
